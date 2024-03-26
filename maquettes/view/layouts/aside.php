@@ -5,7 +5,7 @@ $current_route = $_SERVER['REQUEST_URI'];
   <!-- Logo de la marque -->
   <a href="/view/home.php" class="brand-link">
     <img src="/view/assets/images/logo.png" class="brand-image img-circle elevation-3" alt="Image de groupe">
-    <span class="brand-text font-weight-light text-center h6">Gestion des Projets</span>
+    <span class="brand-text font-weight-light text-center h6">Solicode LMS</span>
   </a>
 
   <!-- Barre latérale -->
@@ -21,30 +21,29 @@ $current_route = $_SERVER['REQUEST_URI'];
             </p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="/view/GestionProjets/projets/index.php" class="nav-link <?php echo (strpos($current_route, 'projets') !== false) ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-table"></i>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link <?php echo (strpos($current_route, 'Gestion des briefs') !== false) ? 'active' : ''; ?>">
+            <i class="nav-icon fas fa-project-diagram"></i>
             <p>
-              Projets
+              Gestion des briefs
+              <i class="fas fa-angle-left right"></i>
             </p>
           </a>
-        </li>
-        <li class="nav-item">
-          <a href="/view/GestionProjets/taches/index.php" class="nav-link <?php echo (strpos($current_route, 'taches') !== false) ? 'active' : ''; ?>">
-            <i class="nav-icon fas fa-tasks"></i>
-            <p>
-              Tâches
-            </p>
-          </a>
-        </li>
-        <!-- MEMBRE -->
-        <li class="nav-item">
-          <a href="/view/GestionProjets/utilisateurs/index.php" class="nav-link <?php echo (strpos($current_route, 'utilisateurs') !== false) ? 'active' : ''; ?>">
-            <i class="fa-solid fa-users pl-1 pr-1"></i>
-            <p>
-              Utilisateurs
-            </p>
-          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/view/GestionBriefProjet/Formateur/GestionBriefs" class="nav-link <?php echo (strpos($current_route, 'Briefs') !== false) ? 'active' : ''; ?>">
+                <i class="far fa-file-alt nav-icon"></i>
+                <p>Briefs</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/view/GestionBriefProjet/Formateur/Realisations" class="nav-link <?php echo (strpos($current_route, 'Réalisations') !== false) ? 'active' : ''; ?>">
+                <i class="far fa-chart-bar nav-icon"></i>
+                <p>Réalisations</p>
+              </a>
+            </li>
+
+          </ul>
         </li>
 
         <!-- Authorisation -->
