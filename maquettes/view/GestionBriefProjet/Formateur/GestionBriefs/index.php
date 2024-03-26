@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <?php include_once "../../layouts/header.php" ?>
+    <?php include_once "../../../layouts/heade.php" ?>
 
 <body class="sidebar-mini" style="height: auto;">
 
     <div class="wrapper">
         <!-- Navigation -->
-        <?php include_once "../../layouts/nav.php" ?>
+        <?php include_once "../../../layouts/nav.php" ?>
         <!-- Barre latérale -->
-        <?php include_once "../../layouts/aside.php" ?>
+        <?php include_once "../../../layouts/aside.php" ?>
 
 <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
@@ -19,7 +19,7 @@
                                 <h1>Les briefs projets</h1>
                             </div>
                             <div class="col-sm-6">
-                                <a href="./create.php" type="button" class="btn btn-primary float-right">
+                                <a href="GestionBriefs/create.php" type="button" class="btn btn-primary float-right">
                                     <i class="fas fa-plus"></i> Ajouter une brief projet
                                 </a>
                             </div>
@@ -158,6 +158,6 @@
 </body>
 
 <!-- get script -->
-<?php include_once "../../layouts/script-link.php"; ?>
+<?php include_once "../../../layouts/script-link.php"; ?>
 
 </html>

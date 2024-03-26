@@ -2,15 +2,15 @@
 <html lang="fr">
 
 <!-- Inclure l'en-tête -->
-<?php include_once "../../layouts/header.php" ?>
+<?php include_once "../../../layouts/heade.php" ?>
 
 <body class="sidebar-mini" style="height: auto;">
 
     <div class="wrapper">
         <!-- Navigation -->
-        <?php include_once "../../layouts/nav.php" ?>
+        <?php include_once "../../../layouts/nav.php" ?>
         <!-- Barre latérale -->
-        <?php include_once "../../layouts/aside.php" ?>
+        <?php include_once "../../../layouts/aside.php" ?>
 
         <div class="content-wrapper" style="min-height: 1302.4px;">
 
@@ -288,20 +288,20 @@
     </div>
 
     <!-- Include footer -->
-    <?php include_once "../../layouts/footer.php" ?>
+    <?php include_once "../../../layouts/footer.php" ?>
 
     <!-- Include scripts -->
-    <?php include_once "../../layouts/scripts.php" ?>
+    <?php include_once "../../../layouts/scripts.php" ?>
 
 
 
     <!-- Inclure le pied de page -->
-    <?php include_once "../../layouts/footer.php" ?>
+    <?php include_once "../../../layouts/footer.php" ?>
 
     </div>
 
     <!-- Inclure le script -->
-    <?php include_once "../../layouts/script-link.php" ?>
+    <?php include_once "../../../layouts/script-link.php" ?>
     <script>
         function addLink() {
             var linksContainer = document.getElementById("links-container");
