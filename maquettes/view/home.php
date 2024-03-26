@@ -29,7 +29,7 @@
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3>15</h3>
-                                    <p>Projets</p>
+                                    <p>Briefs Projet</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -43,7 +43,7 @@
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3>23</h3>
-                                    <p>Taches</p>
+                                    <p>Réalisations</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -57,7 +57,7 @@
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3>60</h3>
-                                    <p>Utilisateurs</p>
+                                    <p>Apprenant</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
