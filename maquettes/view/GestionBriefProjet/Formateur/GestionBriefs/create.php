@@ -290,8 +290,6 @@
     <!-- Include footer -->
     <?php include_once "../../../layouts/footer.php" ?>
 
-    <!-- Include scripts -->
-    <?php include_once "../../../layouts/scripts.php" ?>
 
 
 
