@@ -121,7 +121,7 @@
                                                                     <i class="fas fa-mobile-alt"></i> Maquetter une application mobile
                                                                 </label>
                                                                 <select name="competence_mobile_level"
-                                                                    class="form-control  mr-2">
+                                                                    class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -136,7 +136,7 @@
                                                                         id="competence_db" value="adapter">
                                                                     <i class="fas fa-database"></i>Manipuler une base de données - perfectionnement
                                                                 </label>
-                                                                <select name="competence_db_level" class="form-control  mr-2">
+                                                                <select name="competence_db_level" class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -152,7 +152,7 @@
                                                                     <i class="fas fa-code"></i>  Développer la partie back-end d’une application web ou web mobile - perfectionnement
                                                                 </label>
                                                                 <select name="competence_backend_level"
-                                                                    class="form-control  mr-2">
+                                                                    class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -168,7 +168,7 @@
                                                                     <i class="fas fa-cogs"></i> Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control  mr-2">
+                                                                    class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -183,7 +183,7 @@
                                                                     <i class="fas fa-cogs"></i>  Développer une application mobile native, avec Android et React Native
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control  mr-2">
+                                                                    class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -198,7 +198,7 @@
                                                                     <i class="fas fa-cogs"></i> Préparer et exécuter les plans de tests d’une application
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control  mr-2">
+                                                                    class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -213,7 +213,7 @@
                                                                     <i class="fas fa-cogs"></i>  Préparer et exécuter le déploiement d’une application web et mobile
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control  mr-2">
+                                                                    class="form-control  col-sm-3 mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
