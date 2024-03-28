@@ -88,19 +88,34 @@
                                                     <input type="date" class="form-control" id="dateFin" name="dateFin">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="resources">Ressources</label>
-                                                    <div id="link-container">
-                                                        <input type="url" class="form-control input-small" id="new-link"
-                                                            placeholder="Enter Link URL">
-                                                        <button class="btn btn-secondary" onclick="addLink()">Add
-                                                            Link</button>
+                                                    <label for="project_resources">Resources</label>
+                                                    <div class="input-group mb-3">
+                                                        <input type="text"
+                                                            class="form-control new-link-input resource-link"
+                                                            placeholder="Enter a link">
+                                                        <div class="input-group-append">
+                                                            <button type="button"
+                                                                class="btn btn-outline-success add-link-btn">Ajouter un
+                                                                lien</button>
+                                                        </div>
                                                     </div>
-                                                    <ul id="link-list"></ul>
+                                                    <ul class="list-group linked-items resource-list">
+                                                    </ul>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="resources">Ressources</label>
-                                                    <input type="text" class="form-control" id="resources"
-                                                        name="resources[]" placeholder="Enter a link" multiple>
+                                                    <label for="project_references">Reference</label>
+                                                    <div class="input-group mb-3">
+                                                        <input type="text"
+                                                            class="form-control new-link-input reference-link"
+                                                            placeholder="Enter a link">
+                                                        <div class="input-group-append">
+                                                            <button type="button"
+                                                                class="btn btn-outline-success add-link-btn">Ajouter un
+                                                                lien</button>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="list-group linked-items reference-list">
+                                                    </ul>
                                                 </div>
 
 
@@ -321,38 +336,80 @@
             }
         });
     </script>
-    <script>
-        function addLink() {
-            // Get the value of the input field
-            const newLink = document.getElementById("new-link").value;
+<script>
+    // Get references to elements
+    const addLinkButtons = document.querySelectorAll('.add-link-btn');
+    const resourceList = document.querySelector('.resource-list');
+    const referenceList = document.querySelector('.reference-list');
 
-            // Validate the URL format (optional)
-            if (!newLink.trim() || !/^https?:\/\/.+/.test(newLink)) {
-                alert("Please enter a valid URL.");
-                return;
-            }
+    // Function to add a new link
+    function addNewLink(event) {
+        const newLinkInput = event.target.parentElement.parentElement.querySelector('.new-link-input');
+        const newLinkValue = newLinkInput.value.trim();
+        const targetList = event.target.parentElement.parentElement.nextElementSibling;
 
-            // Create a new list item element
-            const listItem = document.createElement("li");
+        if (newLinkValue) {
+            const linkedItem = document.createElement('li');
+            linkedItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
 
-            // Create an anchor tag with the entered URL
-            const link = document.createElement("a");
-            link.href = newLink;
-            link.textContent = newLink; // Display the URL as the link text
+            const linkText = document.createElement('span');
+            linkText.textContent = newLinkValue;
 
-            // Add the anchor tag to the list item
-            listItem.appendChild(link);
+            const removeLinkBtn = document.createElement('button');
+            removeLinkBtn.classList.add('btn', 'btn-sm', 'btn-danger');
+            removeLinkBtn.textContent = 'Remove';
+            removeLinkBtn.addEventListener('click', function () {
+                targetList.removeChild(linkedItem);
+            });
 
-            // Get the link list element
-            const linkList = document.getElementById("link-list");
+            linkedItem.appendChild(linkText);
+            linkedItem.appendChild(removeLinkBtn);
 
-            // Add the list item to the link list
-            linkList.appendChild(listItem);
+            targetList.appendChild(linkedItem);
 
-            // Clear the input field for the next link
-            document.getElementById("new-link").value = "";
+            newLinkInput.value = '';
         }
-    </script>
+    }
+
+    // Add event listeners to the "Add Link" buttons
+    addLinkButtons.forEach(button => button.addEventListener('click', addNewLink));
+
+    // Populate existing links based on your project data
+    const existingResources = [
+        { url: "https://www.example.com/resource1", text: "Resource 1" },
+        { url: "https://www.example.com/resource2", text: "Resource 2" },
+    ];
+
+    const existingReferences = [
+        { url: "https://www.example.com/reference1", text: "Reference 1" },
+        { url: "https://www.example.com/reference2", text: "Reference 2" },
+    ];
+
+    // Function to populate existing links (optional)
+    function populateExistingLinks(linkData, targetList) {
+        linkData.forEach(link => {
+            const linkedItem = document.createElement('li');
+            linkedItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+
+            const linkText = document.createElement('span');
+            linkText.textContent = link.text;
+
+            const removeLinkBtn = document.createElement('button');
+            removeLinkBtn.classList.add('btn', 'btn-sm', 'btn-danger');
+            removeLinkBtn.textContent = 'Remove';
+            removeLinkBtn.addEventListener('click', function () {
+                targetList.removeChild(linkedItem);
+            });
+
+            linkedItem.appendChild(linkText);
+            linkedItem.appendChild(removeLinkBtn);
+            targetList.appendChild(linkedItem);
+        });
+    }
+
+    populateExistingLinks(existingResources, resourceList);
+    populateExistingLinks(existingReferences, referenceList);
+</script>
 </body>
 
 </html>
