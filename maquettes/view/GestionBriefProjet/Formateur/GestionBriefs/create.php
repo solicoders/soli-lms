@@ -179,7 +179,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2" name="competence"
-                                                                        id="competence_deploy" value="other">
+                                                                         value="other">
                                                                     <i class="fas fa-cogs"></i> Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement
                                                                 </label>
                                                                 <select name="competence_deploy_level"
@@ -194,7 +194,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2" name="competence"
-                                                                        id="competence_deploy" value="other">
+                                                                         value="other">
                                                                     <i class="fas fa-cogs"></i>  Développer une application mobile native, avec Android et React Native
                                                                 </label>
                                                                 <select name="competence_deploy_level"
@@ -209,7 +209,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2" name="competence"
-                                                                        id="competence_deploy" value="other">
+                                                                         value="other">
                                                                     <i class="fas fa-cogs"></i> Préparer et exécuter les plans de tests d’une application
                                                                 </label>
                                                                 <select name="competence_deploy_level"
@@ -224,7 +224,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2" name="competence"
-                                                                        id="competence_deploy" value="other">
+                                                                         value="other">
                                                                     <i class="fas fa-cogs"></i>  Préparer et exécuter le déploiement d’une application web et mobile
                                                                 </label>
                                                                 <select name="competence_deploy_level"
@@ -267,15 +267,15 @@
                                                     ];
 
                                                     foreach ($apprenants as $apprenant) {
-                                                        echo '<input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate" value="' . $apprenant . '">';
+                                                        echo '<input type="checkbox" name="apprenants[]" class="apprenant form-check-input"  value="' . $apprenant . '">';
                                                         echo '<label class="form-check-label" for="flexCheckIndeterminate">' . $apprenant . '<br>';
                                                     }
                                                     ?>
                                                 </div>
 
                                                 <button class="btn btn-primary"
-                                                    onclick="stepper.previous()">Previous</button>
-                                                <a href="./index.php" type="submit" class="btn btn-primary">Submit</a>
+                                                    onclick="stepper.previous()">Précédent</button>
+                                                <a href="./index.php" type="submit" class="btn btn-primary">Soumettre</a>
                                             </div>
                                         </div>
                                     </div>

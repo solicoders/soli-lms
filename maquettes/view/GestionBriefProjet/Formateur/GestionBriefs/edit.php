@@ -189,7 +189,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_deploy"
+                                                                        name="competence" 
                                                                         value="other" checked>
                                                                     <i class="fas fa-cogs"></i> Collaborer à la gestion
                                                                     d’un projet informatique et à l’organisation de
@@ -207,7 +207,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_deploy"
+                                                                        name="competence" 
                                                                         value="other" checked>
                                                                     <i class="fas fa-cogs"></i> Développer une
                                                                     application web responsive avec HTML, CSS et
@@ -225,7 +225,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_deploy"
+                                                                        name="competence" 
                                                                         value="other" checked>
                                                                     <i class="fas fa-cogs"></i> Utiliser un framework
                                                                     PHP pour le développement backend (par exemple,
@@ -243,7 +243,7 @@
                                                             <div class="d-flex justify-content-between">
                                                                 <label class="btn btn-secondary ">
                                                                     <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_deploy"
+                                                                        name="competence" 
                                                                         value="other" checked>
                                                                     <i class="fas fa-cogs"></i> Créer et gérer une base
                                                                     de données MySQL pour l'application web
@@ -268,7 +268,7 @@
                                                 aria-labelledby="affectation-part-trigger">
                                                 <div class="d-flex flex-column mt-3 form-check">
                                                     <input type="checkbox" id="checkAll" class="form-check-input"
-                                                        id="flexCheckIndeterminate">
+                                                        id="flexCheckIndeterminate" checked>
                                                     <label class="form-check-label" for="flexCheckIndeterminate">Tout
                                                         cocher<br>
                                                         <?php
@@ -290,7 +290,7 @@
                                                         ];
 
                                                         foreach ($apprenants as $apprenant) {
-                                                            echo '<input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate" value="' . $apprenant . '" checked>';
+                                                            echo '<input type="checkbox" name="apprenants[]" class="apprenant form-check-input"  value="' . $apprenant . '" checked>';
                                                             echo '<label class="form-check-label" for="flexCheckIndeterminate">' . $apprenant . '<br>';
                                                         }
                                                         ?>
@@ -300,7 +300,7 @@
                                                 <button class="btn btn-primary"
                                                     onclick="stepper.previous()">Précédent</button>
                                                 <a href="./index.php" type="submit"
-                                                    class="btn btn-primary">Soumettre</a>
+                                                    class="btn btn-primary">Modifier</a>
                                             </div>
                                         </div>
                                     </div>
