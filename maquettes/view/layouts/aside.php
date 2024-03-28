@@ -31,13 +31,13 @@ $current_route = $_SERVER['REQUEST_URI'];
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="/view/GestionBriefProjet/Formateur/GestionBriefs" class="nav-link <?php echo (strpos($current_route, 'Briefs') !== false) ? 'active' : ''; ?>">
+              <a href="/view/GestionBriefProjet/Formateur/GestionBriefs/index.php" class="nav-link <?php echo (strpos($current_route, 'Briefs') !== false) ? 'active' : ''; ?>">
                 <i class="far fa-file-alt nav-icon"></i>
                 <p>Briefs</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="/view/GestionBriefProjet/Formateur/Realisations" class="nav-link <?php echo (strpos($current_route, 'Réalisations') !== false) ? 'active' : ''; ?>">
+              <a href="/view/GestionBriefProjet/Formateur/Realisations/index.php" class="nav-link <?php echo (strpos($current_route, 'Réalisations') !== false) ? 'active' : ''; ?>">
                 <i class="far fa-chart-bar nav-icon"></i>
                 <p>Réalisations</p>
               </a>
