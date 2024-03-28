@@ -19,7 +19,7 @@
                                 <h1>Les briefs projets</h1>
                             </div>
                             <div class="col-sm-6">
-                                <a href="GestionBriefs/create.php" type="button" class="btn btn-primary float-right">
+                                <a href="./create.php" type="button" class="btn btn-primary float-right">
                                     <i class="fas fa-plus"></i> Ajouter une brief projet
                                 </a>
                             </div>

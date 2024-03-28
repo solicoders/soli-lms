@@ -115,13 +115,13 @@
                                                     <div class="d-flex flex-column mt-3" data-toggle="buttons">
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_mobile" value="imiter">
                                                                     <i class="fas fa-mobile-alt"></i> Maquetter une application mobile
                                                                 </label>
                                                                 <select name="competence_mobile_level"
-                                                                    class="form-control">
+                                                                    class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -131,12 +131,12 @@
 
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_db" value="adapter">
                                                                     <i class="fas fa-database"></i>Manipuler une base de données - perfectionnement
                                                                 </label>
-                                                                <select name="competence_db_level" class="form-control">
+                                                                <select name="competence_db_level" class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -146,13 +146,13 @@
 
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_backend" value="transposer">
                                                                     <i class="fas fa-code"></i>  Développer la partie back-end d’une application web ou web mobile - perfectionnement
                                                                 </label>
                                                                 <select name="competence_backend_level"
-                                                                    class="form-control">
+                                                                    class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -162,13 +162,13 @@
 
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_deploy" value="other">
-                                                                    <i class="fas fa-cogs"></i> Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement - perfectionnement
+                                                                    <i class="fas fa-cogs"></i> Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control">
+                                                                    class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -177,13 +177,13 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_deploy" value="other">
                                                                     <i class="fas fa-cogs"></i>  Développer une application mobile native, avec Android et React Native
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control">
+                                                                    class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -192,13 +192,13 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_deploy" value="other">
                                                                     <i class="fas fa-cogs"></i> Préparer et exécuter les plans de tests d’une application
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control">
+                                                                    class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -207,13 +207,13 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary">
-                                                                    <input type="checkbox" name="competence"
+                                                                <label class="btn btn-secondary ">
+                                                                    <input type="checkbox" class="mr-2" name="competence"
                                                                         id="competence_deploy" value="other">
-                                                                    <i class="fas fa-cogs"></i>  Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement
+                                                                    <i class="fas fa-cogs"></i>  Préparer et exécuter le déploiement d’une application web et mobile
                                                                 </label>
                                                                 <select name="competence_deploy_level"
-                                                                    class="form-control">
+                                                                    class="form-control  mr-2">
                                                                     <option value="imiter">Imiter</option>
                                                                     <option value="adapter">Adapter</option>
                                                                     <option value="transposer">Transposer</option>
@@ -230,46 +230,32 @@
                                             </div>
                                             <div id="affectation-part" class="content" role="tabpanel"
                                                 aria-labelledby="affectation-part-trigger">
-                                                <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-  <label class="form-check-label" for="flexCheckIndeterminate">
-    Indeterminate checkbox
-  </label>
-</div>
                                                 <div class="d-flex flex-column mt-3 form-check">
-                                                    <input type="checkbox" id="checkAll">Check All<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="sarsri imrane">
-                                                        <label class="form-check-label" for="flexCheckIndeterminate">Sarsri Imrane<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Grain Reda">  <label class="form-check-label" for="flexCheckIndeterminate">Grain
-                                                    Reda<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Bouik Hussein">  <label class="form-check-label" for="flexCheckIndeterminate">Bouik Hussein<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Assaid Amina">  <label class="form-check-label" for="flexCheckIndeterminate">Assaid Amina<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="zaani hamza">  <label class="form-check-label" for="flexCheckIndeterminate">Zaani
-                                                    Hamza<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="FAIZ SAFAA">  <label class="form-check-label" for="flexCheckIndeterminate">Faiz
-                                                    Safaa<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="El ajoumi Mohammed aymane">  <label class="form-check-label" for="flexCheckIndeterminate">El Ajoumi Mohammed Aymane<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Lharrak Adnan">  <label class="form-check-label" for="flexCheckIndeterminate">Lharrak Adnan<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="YASMINE DAIFANE">  <label class="form-check-label" for="flexCheckIndeterminate">Yasmine Daifane<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="BEN NASAR ADNAN">  <label class="form-check-label" for="flexCheckIndeterminate">Ben Nasar Adnan<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Achaou Hamid">  <label class="form-check-label" for="flexCheckIndeterminate">Achaou Hamid<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Betroji Jalil">  <label class="form-check-label" for="flexCheckIndeterminate">Betroji Jalil<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="lamchatab amine">  <label class="form-check-label" for="flexCheckIndeterminate">Lamchatab Amine<br>
-                                                    <input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate"
-                                                        value="Boukhar Soufiane">Boukhar Soufiane<br>
+                                                    <input type="checkbox" id="checkAll" class="form-check-input" id="flexCheckIndeterminate">
+                                                    <label class="form-check-label" for="flexCheckIndeterminate" > Check All<br>
+                                                    <?php
+                                                    $apprenants = [
+                                                        "sarsri imrane",
+                                                        "Grain Reda",
+                                                        "Bouik Hussein",
+                                                        "Assaid Amina",
+                                                        "zaani hamza",
+                                                        "FAIZ SAFAA",
+                                                        "El ajoumi Mohammed aymane",
+                                                        "Lharrak Adnan",
+                                                        "YASMINE DAIFANE",
+                                                        "BEN NASAR ADNAN",
+                                                        "Achaou Hamid",
+                                                        "Betroji Jalil",
+                                                        "lamchatab amine",
+                                                        "Boukhar Soufiane"
+                                                    ];
+
+                                                    foreach ($apprenants as $apprenant) {
+                                                        echo '<input type="checkbox" name="apprenants[]" class="apprenant form-check-input" id="flexCheckIndeterminate" value="' . $apprenant . '">';
+                                                        echo '<label class="form-check-label" for="flexCheckIndeterminate">' . $apprenant . '<br>';
+                                                    }
+                                                    ?>
                                                 </div>
 
                                                 <button class="btn btn-primary"
