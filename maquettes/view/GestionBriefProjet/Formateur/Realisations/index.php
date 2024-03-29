@@ -110,7 +110,7 @@
                   <tbody>
                     <tr>
                       <td class="nom-brief">Lab-Markdown</td>
-                      <td class="apprenants">hussein </td>
+                      <td class="apprenants">Hussein </td>
                       <td class="etat">
                         <span class="badge badge-success">Terminer</span>
                       </td>
@@ -118,14 +118,14 @@
                         <span class="badge badge-success">Validé</span>
                       </td>
                       <td class='actions'>
-                        <a href="./rendus.php" class="btn btn-success btn-sm">
+                        <a href="./valider.php" class="btn btn-success btn-sm">
                           <i class="fas fa-check"></i> Valider
                         </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="nom-brief">lab-crud-standard</td>
-                      <td class="apprenants">souhaibe</td>
+                      <td class="apprenants">Sohaibe</td>
                       <td class="etat">
                       <span class="badge badge-info">En cours</span>
                       </td>
@@ -134,14 +134,14 @@
                       </td>
          
                       <td class='actions'>
-                        <a href="./rendus.php" class="btn btn-success btn-sm">
+                        <a href="./valider.php" class="btn btn-success btn-sm">
                           <i class="fas fa-check"></i> Valider
                         </a>
                       </td>
                     </tr>
                     <tr>
                       <td class="nom-brief">lab-rapport</td>
-                      <td class="apprenants">oussama</td>
+                      <td class="apprenants">Oussama</td>
                       <td class="etat">
                       <span class="badge badge-warning">En pause </span>
                       </td>
@@ -150,7 +150,7 @@
                       </td>
   
                       <td class='actions'>
-                      <a href="./rendus.php" class="btn btn-success btn-sm">
+                      <a href="./valider.php" class="btn btn-success btn-sm">
                           <i class="fas fa-check"></i> Valider
                         </a>
                       </td>
@@ -165,7 +165,7 @@
                         <span class="badge badge-success">Validé</span>
                       </td>
                       <td class='actions'>
-                      <a href="./rendus.php" class="btn btn-success btn-sm">
+                      <a href="./valider.php" class="btn btn-success btn-sm">
                           <i class="fas fa-check"></i> Valider
                         </a>
                       </td>
