@@ -27,20 +27,17 @@
                                 </div>
                                 <div class="card-body p-0">
                                     <!-- form -->
-                                    <form></form>
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="nom">Nom</label>
-                                            <input type="text" class="form-control" id="nom" name="nom">
                                         </div>
                                         <div class="form-group">
                                             <label for="prenom">Prénom</label>
-                                            <input type="text" class="form-control" id="prenom" name="prenom">
                                         </div>
                                         <div class="form-group">
                                             <label for="livrables">Les livrables</label>
-                                            <textarea class="form-control" id="livrables" name="livrables"></textarea>
                                         </div>
+                                        <form>
                                         <table class="table">
                                             <thead>
                                                 <tr>
