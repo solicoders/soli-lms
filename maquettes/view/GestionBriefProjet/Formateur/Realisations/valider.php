@@ -29,10 +29,10 @@
                                     <!-- form -->
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="nom">Nom: bouik</label>
+                                            <label for="nom">Nom: </label>  bouik
                                         </div>
                                         <div class="form-group">
-                                            <label for="prenom">Prénom: hussein</label>
+                                            <label for="prenom">Prénom: </label>  hussein
                                         </div>
                                         <div class="form-group">
                                             <label for="livrables">Les livrables:</label>
@@ -50,7 +50,7 @@
                                         </div>
 
                                     <form>
-                                        <table class="table  ">
+                                        <table class="table table-bordered ">
                                             <thead>
                                                 <tr>
                                                     <th>Compétence</th>

@@ -25,7 +25,6 @@
       <!-- Contenu principal -->
       <section class="content">
         <div class="container-fluid">
-          <div class="row">
             <div class="col-12">
               <!-- Boîte par défaut -->
               <div class="card">
@@ -84,6 +83,16 @@
                         <option value="Prototype">Prototype</option>
                       </select>
                     </div>
+                    <div class="col-md-3">
+                      <label for="project">Etat :</label>
+                      <select class="form-control" id="project">
+                        <option value="">Tous</option>
+                        <option value="à faire" >à faire</option>
+                        <option value="en cours">en cours</option>
+                        <option value="en pause">en pause</option>
+                        <option value="terminé">terminé</option>
+
+                    </div>
                     <div class="col-md-4 mt-4">
                       <div class="input-group">
                         <input type="text" class="form-control" placeholder="Rechercher...">
@@ -95,12 +104,10 @@
                       </div>
                     </div>
                   </div>
-
-                </div>
-                <table class="table table-hover text-nowrap">
+                  <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>Titre</th>
+                      <th>Brief</th>
                       <th>Apprenants</th>
                       <th>Etat de réalisation</th>
                       <th>Etat de validation</th>
@@ -172,6 +179,8 @@
                     </tr>
                   </tbody>
                 </table>
+                </div>
+          
           </div>
               <!-- /.card-body -->
               <div class="card-footer">
@@ -198,7 +207,6 @@
               <!-- /.card-footer-->
             </div>
             <!-- /.card -->
-          </div>
         </div>
     </div>
     </section>
