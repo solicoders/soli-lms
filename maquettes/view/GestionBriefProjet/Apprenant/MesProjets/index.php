@@ -21,7 +21,6 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-
             <!-- Contenu principal -->
             <section class="content">
                 <div class="container-fluid">
