@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title">Ajoute un brief projet</h3>
+                                    <h3 class="card-title">Modifier un brief projet</h3>
                                 </div>
                                 <div class="card-body p-0">
                                     <div class="bs-stepper">
@@ -130,133 +130,151 @@
                                                 <div class="form-group">
                                                     <h2>Compétences</h2>
                                                     <p>Veuillez sélectionner les compétences que vous possédez.</p>
-                                                    <div class="d-flex flex-column mt-3" data-toggle="buttons">
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_mobile"
-                                                                        value="imiter">
-                                                                    <i class="fas fa-mobile-alt"></i> Maquetter une
-                                                                    application mobile
-                                                                </label>
-                                                                <select name="competence_mobile_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Competence</th>
+                                                                <th>Niveaux</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" id="competence_mobile"
+                                                                            value="imiter">
+                                                                        <i class="fas fa-mobile-alt"></i> Maquetter une
+                                                                        application mobile
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_mobile_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" id="competence_db"
+                                                                            value="adapter">
+                                                                        <i class="fas fa-database"></i> Manipuler une
+                                                                        base de données - perfectionnement
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_db_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" id="competence_backend"
+                                                                            value="transposer">
+                                                                        <i class="fas fa-code"></i> Développer la partie
+                                                                        back-end d’une application web ou web mobile -
+                                                                        perfectionnement
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_backend_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" value="other" checked>
+                                                                        <i class="fas fa-cogs"></i> Collaborer à la
+                                                                        gestion d’un projet informatique et à
+                                                                        l’organisation de l’environnement de
+                                                                        développement
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_deploy_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" value="other" checked>
+                                                                        <i class="fas fa-cogs"></i> Développer une
+                                                                        application web responsive avec HTML, CSS et
+                                                                        JavaScript
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_deploy_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" value="other" checked>
+                                                                        <i class="fas fa-cogs"></i> Utiliser un
+                                                                        framework PHP pour le développement backend (par
+                                                                        exemple, Laravel)
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_deploy_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <label>
+                                                                        <input type="checkbox" class="mr-2"
+                                                                            name="competence" value="other" checked>
+                                                                        <i class="fas fa-cogs"></i> Créer et gérer une
+                                                                        base de données MySQL pour l'application web
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="competence_deploy_level"
+                                                                        class="form-control">
+                                                                        <option value="imiter">Imiter</option>
+                                                                        <option value="adapter">Adapter</option>
+                                                                        <option value="transposer">Transposer</option>
+                                                                    </select>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
 
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_db"
-                                                                        value="adapter">
-                                                                    <i class="fas fa-database"></i>Manipuler une base de
-                                                                    données - perfectionnement
-                                                                </label>
-                                                                <select name="competence_db_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" id="competence_backend"
-                                                                        value="transposer">
-                                                                    <i class="fas fa-code"></i> Développer la partie
-                                                                    back-end d’une application web ou web mobile -
-                                                                    perfectionnement
-                                                                </label>
-                                                                <select name="competence_backend_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" 
-                                                                        value="other" checked>
-                                                                    <i class="fas fa-cogs"></i> Collaborer à la gestion
-                                                                    d’un projet informatique et à l’organisation de
-                                                                    l’environnement de développement
-                                                                </label>
-                                                                <select name="competence_deploy_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" 
-                                                                        value="other" checked>
-                                                                    <i class="fas fa-cogs"></i> Développer une
-                                                                    application web responsive avec HTML, CSS et
-                                                                    JavaScript
-                                                                </label>
-                                                                <select name="competence_deploy_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" 
-                                                                        value="other" checked>
-                                                                    <i class="fas fa-cogs"></i> Utiliser un framework
-                                                                    PHP pour le développement backend (par exemple,
-                                                                    Laravel)
-                                                                </label>
-                                                                <select name="competence_deploy_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="d-flex justify-content-between">
-                                                                <label class="btn btn-secondary ">
-                                                                    <input type="checkbox" class="mr-2"
-                                                                        name="competence" 
-                                                                        value="other" checked>
-                                                                    <i class="fas fa-cogs"></i> Créer et gérer une base
-                                                                    de données MySQL pour l'application web
-                                                                </label>
-                                                                <select name="competence_deploy_level"
-                                                                    class="form-control  col-sm-3 mr-2">
-                                                                    <option value="imiter">Imiter</option>
-                                                                    <option value="adapter">Adapter</option>
-                                                                    <option value="transposer">Transposer</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
                                                 </div>
                                                 <button class="btn btn-primary"
@@ -268,7 +286,7 @@
                                                 aria-labelledby="affectation-part-trigger">
                                                 <div class="d-flex flex-column mt-3 form-check">
                                                     <input type="checkbox" id="checkAll" class="form-check-input"
-                                                        id="flexCheckIndeterminate" checked>
+                                                        id="flexCheckIndeterminate">
                                                     <label class="form-check-label" for="flexCheckIndeterminate">Tout
                                                         cocher<br>
                                                         <?php
@@ -288,19 +306,30 @@
                                                             "lamchatab amine",
                                                             "Boukhar Soufiane"
                                                         ];
-
-                                                        foreach ($apprenants as $apprenant) {
-                                                            echo '<input type="checkbox" name="apprenants[]" class="apprenant form-check-input"  value="' . $apprenant . '" checked>';
-                                                            echo '<label class="form-check-label" for="flexCheckIndeterminate">' . $apprenant . '<br>';
-                                                        }
                                                         ?>
+
+                                                        <div class="row">
+                                                            <?php foreach ($apprenants as $apprenant): ?>
+                                                                <div class="col-sm-4 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                            name="apprenants[]"
+                                                                            value="<?php echo $apprenant; ?>" checked>
+                                                                        <label class="form-check-label"
+                                                                            for="<?php echo $apprenant; ?>">
+                                                                            <?php echo $apprenant; ?>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            <?php endforeach; ?>
+                                                        </div>
+
                                                     </label>
                                                 </div>
 
                                                 <button class="btn btn-primary"
                                                     onclick="stepper.previous()">Précédent</button>
-                                                <a href="./index.php" type="submit"
-                                                    class="btn btn-primary">Modifier</a>
+                                                <a href="./index.php" type="submit" class="btn btn-primary">Modifier</a>
                                             </div>
                                         </div>
                                     </div>
@@ -344,11 +373,12 @@
     </script>
     <script>
         document.getElementById('checkAll').addEventListener('change', function () {
-            var checkboxes = document.querySelectorAll('input.apprenant');
-            for (var checkbox of checkboxes) {
-                checkbox.checked = this.checked;
+            var checkboxes = document.querySelectorAll('.form-check-input');  // Select all checkboxes
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = this.checked;  // Set checked state based on "checkAll"
             }
         });
+
     </script>
     <script>
         // Get references to elements
@@ -390,13 +420,13 @@
 
         // Populate existing links based on your project data
         const existingResources = [
-            { url: "https://www.example.com/resource1", text: "Resource 1" },
-            { url: "https://www.example.com/resource2", text: "Resource 2" },
+            { url: "https://grafikart.fr/formations/laravel", text: "https://grafikart.fr/formations/laravel" },
+            { url: "https://laracasts.com/series/phpunit-testing-in-laravel", text: "https://laracasts.com/series/phpunit-testing-in-laravel" },
         ];
 
         const existingReferences = [
-            { url: "https://www.example.com/reference1", text: "Reference 1" },
-            { url: "https://www.example.com/reference2", text: "Reference 2" },
+            { url: "https://www.figma.com/file/Aciw4FSMe0rRsC3x1LH3R1/biblioth%C3%A8que-website?type=design&node-id=55%3A344&mode=design&t=bXJnh73iQoHkdkdj-1", text: "https://www.figma.com/file/Aciw4FSMe0rRsC3x1LH3R1/biblioth%C3%A8que-website?type=design&node-id=55%3A344&mode=design&t=bXJnh73iQoHkdkdj-1" },
+            { url: "https://m3.material.io/", text: "https://m3.material.io/" },
         ];
 
         // Function to populate existing links (optional)

@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title">Ajoute un brief projet</h3>
+                                    <h3 class="card-title">Validation</h3>
                                 </div>
                                 <div class="card-body p-0">
 <!-- form -->
