@@ -29,16 +29,28 @@
                                     <!-- form -->
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="nom">Nom</label>
+                                            <label for="nom">Nom: bouik</label>
                                         </div>
                                         <div class="form-group">
-                                            <label for="prenom">Prénom</label>
+                                            <label for="prenom">Prénom: hussein</label>
                                         </div>
                                         <div class="form-group">
-                                            <label for="livrables">Les livrables</label>
+                                            <label for="livrables">Les livrables:</label>
+                                            <div class="d-flex flex-column">
+                                                <a href="">
+                                                    <i class="fa-brands fa-github"></i> Github
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-brands fa-google-drive"></i> Drive
+                                                </a>
+                                                <a href="">
+                                                    <i class="fa-brands fa-figma"></i> Figma
+                                                </a>
+                                            </div>
                                         </div>
-                                        <form>
-                                        <table class="table">
+
+                                    <form>
+                                        <table class="table  ">
                                             <thead>
                                                 <tr>
                                                     <th>Compétence</th>
@@ -62,55 +74,55 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Manipuler une
-                                                                        base de données - perfectionnement</td>
+                                                    <td>Manipuler une base de données - perfectionnement</td>
                                                     <td>
-                                                    <select name="competence_mobile_level"
-                                                                        class="form-control">
-                                                                        <option value="imiter">Imiter</option>
-                                                                        <option value="adapter">Adapter</option>
-                                                                        <option value="transposer">Transposer</option>
-                                                                    </select>
+                                                        <select name="competence_database_level" class="form-control">
+                                                            <option value="imiter">Imiter</option>
+                                                            <option value="adapter">Adapter</option>
+                                                            <option value="transposer">Transposer</option>
+                                                        </select>
                                                     </td>
                                                     <td>
-                                                    <button class="btn btn-success"><i class="fas fa-check"></i></button>
+                                                        <button class="btn btn-success"><i class="fas fa-check"></i></button>
                                                         <button class="btn btn-danger"><i class="fas fa-times"></i></button>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Développer la partie back-end d’une application web ou web mobile -
-                                                                        perfectionnement</td>
+                                                    <td>Développer la partie back-end d’une application web ou web mobile - perfectionnement</td>
                                                     <td>
-                                                    <select name="competence_mobile_level"
-                                                                        class="form-control">
-                                                                        <option value="imiter">Imiter</option>
-                                                                        <option value="adapter">Adapter</option>
-                                                                        <option value="transposer">Transposer</option>
-                                                                    </select>
+                                                        <select name="competence_backend_level" class="form-control">
+                                                            <option value="imiter">Imiter</option>
+                                                            <option value="adapter">Adapter</option>
+                                                            <option value="transposer">Transposer</option>
+                                                        </select>
                                                     </td>
                                                     <td>
-                                                    <button class="btn btn-success"><i class="fas fa-check"></i></button>
+                                                        <button class="btn btn-success"><i class="fas fa-check"></i></button>
                                                         <button class="btn btn-danger"><i class="fas fa-times"></i></button>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div>
+                                        <div class="text-right m-5">
+                                            <button type="submit" class="btn btn-primary">Valider le brief</button>
+                                        </div>
                                     </form>
-
-                                    <!-- Include footer -->
-                                    <?php include_once "../../../layouts/footer.php" ?>
+                                    </div>
 
 
+                                <!-- Include footer -->
+                                <?php include_once "../../../layouts/footer.php" ?>
 
 
-                                    <!-- Inclure le pied de page -->
-                                    <?php include_once "../../../layouts/footer.php" ?>
 
-                                </div>
 
-                                <!-- Inclure le script -->
-                                <?php include_once "../../../layouts/script-link.php" ?>
+                                <!-- Inclure le pied de page -->
+                                <?php include_once "../../../layouts/footer.php" ?>
+
+                            </div>
+
+                            <!-- Inclure le script -->
+                            <?php include_once "../../../layouts/script-link.php" ?>
 </body>
 
 </html>

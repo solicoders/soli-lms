@@ -130,7 +130,7 @@
                       <span class="badge badge-info">En cours</span>
                       </td>
                       <td class="etat">
-                        <span class="badge badge-success">Validé</span>
+                        <span class="badge badge-secondary">-</span>
                       </td>
          
                       <td class='actions'>
@@ -146,7 +146,7 @@
                       <span class="badge badge-warning">En pause </span>
                       </td>
                       <td class="etat">
-                        <span class="badge badge-success">Validé</span>
+                        <span class="badge badge-secondary">-</span>
                       </td>
   
                       <td class='actions'>
@@ -162,7 +162,7 @@
                         <span class="badge badge-secondary">A faire</span>
                       </td>
                       <td class="etat">
-                        <span class="badge badge-success">Validé</span>
+                        <span class="badge badge-secondary">-</span>
                       </td>
                       <td class='actions'>
                       <a href="./valider.php" class="btn btn-success btn-sm">
