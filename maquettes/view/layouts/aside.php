@@ -49,6 +49,7 @@ $current_route = $_SERVER['REQUEST_URI'];
                   <p>Réalisations</p>
                 </a>
               </li>
+            </ul>
                 <!-- Authorisation -->
         <li class="nav-item has-treeview">
           <a href="#"
