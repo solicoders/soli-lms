@@ -40,10 +40,10 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="row mb-3">
-                    <div class="col-md-3">
+                  <div class="row">
+                    <div class="col-md-2">
                       <label for="skill">Compétence :</label>
-                      <select class="form-control" id="skill">
+                      <select class="form-control-sm form-control" id="skill">
                         <option value="">Toutes</option>
                         <option value="C1">Maquetter une application mobile</option>
                         <option value="C2">Manipuler une base de données - perfectionnement
@@ -61,9 +61,9 @@
                           web et mobile - perfectionnement</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                       <label for="project">Projet :</label>
-                      <select class="form-control" id="project">
+                      <select class="form-control-sm form-control" id="project">
                         <option value="">Tous</option>
                         <option value="Lab-Markdown">Lab-Markdown</option>
                         <option value="Lab-Github">Lab-Github</option>
@@ -83,9 +83,9 @@
                         <option value="Prototype">Prototype</option>
                       </select>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                       <label for="project">Etat :</label>
-                      <select class="form-control" id="project">
+                      <select class="form-control-sm form-control" id="project">
                         <option value="">Tous</option>
                         <option value="à faire" >à faire</option>
                         <option value="en cours">en cours</option>
@@ -93,15 +93,9 @@
                         <option value="terminé">terminé</option>
 
                     </div>
-                    <div class="col-md-4 mt-4">
-                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Rechercher...">
-                        <div class="input-group-append">
-                          <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search"></i>
-                          </button>
-                        </div>
-                      </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control-sm form-control" placeholder="Rechercher...">
+                      
                     </div>
                   </div>
                   <table class="table table-hover text-nowrap">
