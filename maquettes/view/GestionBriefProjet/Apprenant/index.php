@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php include_once "../../../layouts/heade.php" ?>
+<?php include_once "../../layouts/heade.php" ?>
 
 <body class="sidebar-mini" style="height: auto;">
 
     <div class="wrapper">
         <!-- Navigation -->
-        <?php include_once "../../../layouts/nav.php" ?>
+        <?php include_once "../../layouts/nav.php" ?>
         <!-- Barre latérale -->
-        <?php include_once "../../../layouts/aside.php" ?>
+        <?php include_once "../../layouts/aside.php" ?>
 
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -63,31 +63,9 @@
                                                     web et mobile - perfectionnement</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-3">
-                                            <label for="project">Projet :</label>
-                                            <select class="form-control" id="project">
-                                                <option value="">Tous</option>
-                                                <option value="Lab-Markdown">Lab-Markdown</option>
-                                                <option value="Lab-Github">Lab-Github</option>
-                                                <option value="lab-présentation">lab-présentation</option>
-                                                <option value="Lab-debug-laravel">Lab-debug-laravel</option>
-                                                <option value="Lab-crud-basic">Lab-crud-basic</option>
-                                                <option value="Lab-crud-standard">Lab-crud-standard</option>
-                                                <option value="Lab-authentification basic">Lab-authentification basic
-                                                </option>
-                                                <option value="Lab-starter">Lab-starter</option>
-                                                <option value="Lab-authentification-standard">
-                                                    Lab-authentification-standard</option>
-                                                <option value="Lab-autorisation-basic">Lab-autorisation-basic</option>
-                                                <option value="Lab-autorisation-standard">Lab-autorisation-standard
-                                                </option>
-                                                <option value="Lab-deploiement">Lab-deploiement</option>
-                                                <option value="Prototype">Prototype</option>
-                                            </select>
-                                        </div>
                                         <div class="col-md-4 mt-4">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Rechercher...">
+                                                <input type="text" class="form-control" placeholder="nom brief projet...">
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="button">
                                                         <i class="fas fa-search"></i>
@@ -101,7 +79,7 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Projet</th>
+                                            <th>Brief projet</th>
                                             <th>Competences</th>
                                             <th>Etat de réalisation</th>
                                             <th>Date debut</th>
@@ -172,6 +150,6 @@
 </body>
 
 <!-- get script -->
-<?php include_once "../../../layouts/script-link.php"; ?>
+<?php include_once "../../layouts/script-link.php"; ?>
 
 </html>

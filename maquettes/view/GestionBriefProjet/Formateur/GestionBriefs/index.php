@@ -35,16 +35,7 @@
                                                             <!-- Boîte par défaut -->
                                                             <div class="card">
                                                                 <div class="card-header">
-                                                                    <h3 class="card-title">Tableau des brief projets</h3>
-                                                                    <div class="card-tools">
-                                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Réduire">
-                                                                            <i class="fas fa-minus"></i>
-                                                                        </button>
-                                                                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Supprimer">
-                                                                            <i class="fas fa-times"></i>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
+                                                                    <h3 class="card-title">Tableau des brief projets</h3>                                                                </div>
                                                                 <div class="card-body">
                                                                     <div class="row mb-3">
                                                                         <div class="col-md-3">
@@ -78,16 +69,6 @@
                                                                                 <option value="Lab-deploiement">Lab-deploiement</option>
                                                                                 <option value="Prototype">Prototype</option>
                                                                             </select>
-                                                                        </div>
-                                                                        <div class="col-md-4 mt-4">
-                                                                            <div class="input-group">
-                                                                                <input type="text" class="form-control" placeholder="Rechercher...">
-                                                                                <div class="input-group-append">
-                                                                                    <button class="btn btn-primary" type="button">
-                                                                                        <i class="fas fa-search"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                         

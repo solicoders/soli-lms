@@ -29,8 +29,13 @@
             <!-- Boîte par défaut -->
             <div class="card">
               <!-- Card from second design -->
+
               <div class="card-header col-md-12">
-                <div class=" p-0">
+              <h3 class="card-title">Tableau des réalisations</h3>
+
+              </div>
+              <div class="card-body">
+              <div class=" p-0 mb-3">
                   <form>
                     <div class="form-row">
                       <div class="col-md-2">
@@ -98,9 +103,6 @@
                     </div>
                   </form>
                 </div>
-              </div>
-              <div class="card-body">
-
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
