@@ -86,6 +86,7 @@
                                             <th>Date de fin</th>
                                             <th>Actions</th>
                                         </tr>
+                                        
                                     </thead>
                                     <tbody>
                                         <tr>
