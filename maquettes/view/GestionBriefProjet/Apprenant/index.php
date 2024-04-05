@@ -82,7 +82,7 @@
                                             <th>Brief projet</th>
                                             <th>Competences</th>
                                             <th>Etat de réalisation</th>
-                                            <th>Date debut</th>
+                                            <th>Date debut</th> 
                                             <th>Date de fin</th>
                                             <th>Actions</th>
                                         </tr>
