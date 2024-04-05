@@ -2,29 +2,6 @@
 <html lang="fr">
 
 <?php include_once "view/layouts/heade.php" ?>
-<?php
-
-if (isset($_POST['login'])) {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    if ($email === 'apprenant@solicode.com') {
-        session_start();
-        $_SESSION['email'] = $email;
-        header('Location: view/GestionBriefProjet/Apprenant/index.php');
-        exit();
-    }elseif($email === 'formateur@solicode.com'){
-        session_start();
-        $_SESSION['email'] = $email;
-        header('Location: view/home.php');
-        exit();
-    }else{
-        header('refresh: 0');
-    }
-
-}
-
-?>
 
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -40,7 +17,7 @@ if (isset($_POST['login'])) {
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Connectez-vous pour démarrer votre session</p>
 
-                <form method="post" action="" >
+                <form method="post">
                     <div class="input-group mb-3">
                         <input type="email" name="email" value="chef-project@solicode.com" placeholder="Email" class="form-control" autofocus>
                         <div class="input-group-append">
@@ -67,7 +44,7 @@ if (isset($_POST['login'])) {
                         </div>
 
                         <div class="col-5">
-                            <button  type="submit" class="btn btn-info btn-block" name="login">connecter</button>
+                            <a href="./view/home.php" type="submit" class="btn btn-info btn-block">connecter</a>
                         </div>
 
                     </div>
