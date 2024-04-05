@@ -64,19 +64,20 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
-                                                    <textarea class="form-control" id="description" name="description"
+                                                    <textarea class="form-control" id="inputDescription" name="description"
                                                         rows="3">Description du projet</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="travail">Travail à faire</label>
-                                                    <textarea class="form-control" id="travail" name="travail"
+                                                    <textarea class="form-control" id="inputTravailafaire" name="travail"
                                                         rows="3">Concevoir et développer un site Web responsive pour le client</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="critere">Critère de validation</label>
-                                                    <textarea class="form-control" id="critere" name="critere"
+                                                    <textarea class="form-control" id="inputcriterevalidation" name="critere"
                                                         rows="3">Le site Web doit être entièrement responsive, respecter les meilleures pratiques en développement Web et répondre aux exigences du client.</textarea>
                                                 </div>
+
 
 
                                                 <div class="form-group">
@@ -355,6 +356,20 @@
     <!-- Inclure le script -->
     <?php include_once "../../../layouts/script-link.php" ?>
 
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+  var quill1 = new Quill('#inputDescription', {
+    theme: 'snow'
+  });
+
+  var quill2 = new Quill('#inputTravailafaire', {
+    theme: 'snow'
+  });
+  var quill3 = new Quill('#inputcriterevalidation', {
+    theme: 'snow'
+  });
+
+</script>
     <script>
 
         // BS-Stepper Init
