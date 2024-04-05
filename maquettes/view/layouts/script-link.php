@@ -36,4 +36,3 @@
    <script src="/../../node_modules/admin-lte/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 
 
-  <!-- Include the Quill library -->

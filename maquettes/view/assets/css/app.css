@@ -10,7 +10,7 @@
 @import '../../../node_modules/admin-lte/plugins/daterangepicker/daterangepicker.css';
 @import '../../../node_modules/admin-lte/plugins/summernote/summernote-bs4.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import '../../../node_modules/admin-lte/plugins/bs-stepper/css/bs-stepper.min.css';
+
 body {
     font-family: "Poppins", sans-serif;
 }
