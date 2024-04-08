@@ -65,7 +65,7 @@
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
                                                     <textarea class="form-control" id="inputDescription" name="description"
-                                                        rows="3"></textarea>
+                                                        rows="3">Description du projet</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="travail">Travail à faire</label>
