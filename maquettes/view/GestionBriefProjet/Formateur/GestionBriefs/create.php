@@ -64,20 +64,22 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="description">Description</label>
-                                                    <textarea class="form-control" id="inputDescription" name="description"
-                                                        rows="3">Description du projet</textarea>
+                                                    <textarea class="form-control" id="inputDescription"
+                                                        name="description" rows="3">Description du projet</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="travail">Travail à faire</label>
-                                                    <textarea class="form-control" id="inputTravailafaire" name="travail"
+                                                    <textarea class="form-control" id="inputTravailafaire"
+                                                        name="travail"
                                                         rows="3">Concevoir et développer un site Web responsive pour le client</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="critere">Critère de validation</label>
-                                                    <textarea class="form-control" id="inputcriterevalidation" name="critere"
+                                                    <textarea class="form-control" id="inputcriterevalidation"
+                                                        name="critere"
                                                         rows="3">Le site Web doit être entièrement responsive, respecter les meilleures pratiques en développement Web et répondre aux exigences du client.</textarea>
                                                 </div>
-
+                                         
 
                                                 <div class="form-group">
                                                     <label for="dateDebut">Date de début</label>
@@ -390,7 +392,7 @@
     </script>
 
     <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
- 
+
     <script>
         document.getElementById('checkAll').addEventListener('change', function () {
             var checkboxes = document.querySelectorAll('.form-check-input');  // Select all checkboxes
