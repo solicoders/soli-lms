@@ -354,21 +354,33 @@
 
     <!-- Inclure le script -->
     <?php include_once "../../../layouts/script-link.php" ?>
-
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
     <script>
-  var quill1 = new Quill('#inputDescription', {
-    theme: 'snow'
-  });
-
-  var quill2 = new Quill('#inputTravailafaire', {
-    theme: 'snow'
-  });
-  var quill3 = new Quill('#inputcriterevalidation', {
-    theme: 'snow'
-  });
-
-</script>
+        ClassicEditor
+            .create(document.querySelector('#inputDescription'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#inputTravailafaire'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        ClassicEditor
+            .create(document.querySelector('#inputcriterevalidation'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
     <script>
 
         // BS-Stepper Init
@@ -378,13 +390,7 @@
     </script>
 
     <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        });
-    </script>
+ 
     <script>
         document.getElementById('checkAll').addEventListener('change', function () {
             var checkboxes = document.querySelectorAll('.form-check-input');  // Select all checkboxes
