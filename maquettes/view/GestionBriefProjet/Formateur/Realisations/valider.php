@@ -29,100 +29,129 @@
                                     <!-- form -->
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="nom">Nom: </label>  bouik
+                                            <label for="nom">Nom: </label> bouik
                                         </div>
                                         <div class="form-group">
-                                            <label for="prenom">Prénom: </label>  hussein
+                                            <label for="prenom">Prénom: </label> hussein
                                         </div>
                                         <div class="form-group">
                                             <label for="livrables">Les livrables:</label>
-                                            <div class="d-flex flex-column">
-                                                <a href="">
-                                                    <i class="fa-brands fa-github"></i> Github
-                                                </a>
-                                                <a href="">
-                                                    <i class="fa-brands fa-google-drive"></i> Drive
-                                                </a>
-                                                <a href="">
-                                                    <i class="fa-brands fa-figma"></i> Figma
-                                                </a>
-                                            </div>
-                                        </div>
+                                            <ul class="list-group list-group-horizontal d-flex flex-row">
+                                                <li class="list-group-item mr-2">
+                                                    <strong>Code:</strong> <a href=""><i class="fab fa-github"></i>
+                                                        Github</a>
+                                                </li>
+                                                <li class="list-group-item mr-2">
+                                                    <strong>Rapport:</strong> <a href=""><i
+                                                            class="fab fa-google-drive"></i> Drive</a>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Maquette:</strong> <a href=""><i class="fab fa-figma"></i>
+                                                        Figma</a>
+                                                </li>
+                                            </ul>
 
-                                    <form>
-                                        <table class="table table-bordered ">
-                                            <thead>
-                                                <tr>
-                                                    <th>Compétence</th>
-                                                    <th>Niveau</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Maquetter une application mobile</td>
-                                                    <td>
-                                                        <select name="competence_mobile_level" class="form-control">
-                                                            <option value="imiter">Imiter</option>
-                                                            <option value="adapter">Adapter</option>
-                                                            <option value="transposer">Transposer</option>
-                                                        </select>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                        <button class="btn btn-danger"><i class="fas fa-times"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Manipuler une base de données - perfectionnement</td>
-                                                    <td>
-                                                        <select name="competence_database_level" class="form-control">
-                                                            <option value="imiter">Imiter</option>
-                                                            <option value="adapter">Adapter</option>
-                                                            <option value="transposer">Transposer</option>
-                                                        </select>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                        <button class="btn btn-danger"><i class="fas fa-times"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Développer la partie back-end d’une application web ou web mobile - perfectionnement</td>
-                                                    <td>
-                                                        <select name="competence_backend_level" class="form-control">
-                                                            <option value="imiter">Imiter</option>
-                                                            <option value="adapter">Adapter</option>
-                                                            <option value="transposer">Transposer</option>
-                                                        </select>
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-success"><i class="fas fa-check"></i></button>
-                                                        <button class="btn btn-danger"><i class="fas fa-times"></i></button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="text-right m-5">
-                                            <button type="submit" class="btn btn-primary">Valider le brief</button>
                                         </div>
-                                    </form>
+                                        <form action="index.php">
+                                            <table class="table table-bordered ">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Compétence</th>
+                                                        <th>Niveau</th>
+                                                        <th><i class="fas fa-check"></i></th>
+                                                        <th><i class="fas fa-times"></i></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Maquetter une application mobile</td>
+                                                        <td>
+                                                            <select name="competence_mobile_level" class="form-control">
+                                                                <option value="imiter">Imiter</option>
+                                                                <option value="adapter">Adapter</option>
+                                                                <option value="transposer">Transposer</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                        <input type="radio" name="competence_backend_level1" value="imiter"> 
+                                                        </td>
+                                                        <td>
+                                                        <input type="radio" name="competence_backend_level1" value="adapter"> 
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Manipuler une base de données - perfectionnement</td>
+                                                        <td>
+                                                            <select name="competence_database_level"
+                                                                class="form-control">
+                                                                <option value="imiter">Imiter</option>
+                                                                <option value="adapter">Adapter</option>
+                                                                <option value="transposer">Transposer</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input type="radio" name="competence_backend_level2" value="imiter" class="form-check-input">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input type="radio" name="competence_backend_level2" value="adapter" class="form-check-input">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Développer la partie back-end d’une application web ou web
+                                                            mobile - perfectionnement</td>
+                                                        <td>
+                                                            <select name="competence_backend_level"
+                                                                class="form-control">
+                                                                <option value="imiter">Imiter</option>
+                                                                <option value="adapter">Adapter</option>
+                                                                <option value="transposer">Transposer</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                        <input type="radio" name="competence_backend_level3" value="imiter"> 
+                                                        </td>
+                                                        <td>
+                                                        <input type="radio" name="competence_backend_level3" value="adapter"> 
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="text-right m-5">
+                                                <button type="submit" class="btn btn-primary">Valider le brief</button>
+                                            </div>
+                                        </form>
                                     </div>
 
 
-                                <!-- Include footer -->
-                                <?php include_once "../../../layouts/footer.php" ?>
+
+                                    <!-- Include footer -->
+                                    <?php include_once "../../../layouts/footer.php" ?>
 
 
 
 
-                                <!-- Inclure le pied de page -->
-                                <?php include_once "../../../layouts/footer.php" ?>
+                                    <!-- Inclure le pied de page -->
+                                    <?php include_once "../../../layouts/footer.php" ?>
 
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
-                            <!-- Inclure le script -->
-                            <?php include_once "../../../layouts/script-link.php" ?>
+
+
+
+
+    <!-- Inclure le script -->
+    <?php include_once "../../../layouts/script-link.php" ?>
 </body>
 
 </html>
