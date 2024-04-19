@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('Competences', function (Blueprint $table) {
             $table->id();
-            $table->string('Reference');
             $table->string('Code');
-            $table->string('Nom_de_competence');
+            $table->string('Nom');
             $table->string('Description');
             $table->timestamps();
-            
+
         });
     }
 
