@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Competences', function (Blueprint $table) {
+        Schema::create('Modules', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom_de_modules');
+            $table->string('Nom');
             $table->string('Description');
             $table->string('masse_horaire');
             $table->timestamps();
         });
+        
     }
 
     /**
