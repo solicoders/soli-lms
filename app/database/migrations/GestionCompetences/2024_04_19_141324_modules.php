@@ -14,7 +14,7 @@ return new class extends Migration
             $table->id();
             $table->string('Nom');
             $table->string('Description');
-            $table->string('masse_horaire');
+            $table->string('Masse_horaire');
             $table->unsignedBigInteger('Competences_id');
             $table->foreign('Competences_id')->references('id')->on('Competences')->onDelete('cascade');
             $table->timestamps();
