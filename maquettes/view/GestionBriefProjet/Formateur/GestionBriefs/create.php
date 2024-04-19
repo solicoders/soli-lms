@@ -26,8 +26,8 @@
                                     <h3 class="card-title">Ajouter un brief projet</h3>
                                 </div>
                                 <div class="card-body p-0">
-                                <div class="bs-stepper">
-                                        <form id="deliverable-form">
+                                    <div class="bs-stepper">
+                                        <div id="deliverable-form">
 
                                             <div class="bs-stepper-header" role="tablist">
                                                 <!-- your steps here -->
@@ -362,14 +362,14 @@
                                                     <a href="./index.php" type="submit"
                                                         class="btn btn-primary">Ajouter</a>
                                                 </div>
-                                        </form>
+                                                </d>
 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </section>
         </div>
     </div>
