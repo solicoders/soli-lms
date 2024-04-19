@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('Nom_de_competence');
             $table->string('Description');
             $table->timestamps();
+            
         });
     }
 
