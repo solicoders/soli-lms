@@ -42,6 +42,11 @@ class CompetencesSeeder extends Seeder
                 'Code' => 'C6',
                 'Nom' => 'Préparer et exécuter les plans de tests d\'une application',
                 'Description' => 'Cette compétence vous aidera à élaborer des stratégies de test efficaces pour garantir la qualité des applications',
+            ],
+            [
+                'Code' => 'C7',
+                'Nom' => 'C7. Préparer et exécuter le déploiement d\'une application web et mobile - perfectionnement',
+                'Description' => 'Cette compétence vous permettra de maîtriser le processus de déploiement d\'applications web et mobiles avancées',
             ]
 
         ];
