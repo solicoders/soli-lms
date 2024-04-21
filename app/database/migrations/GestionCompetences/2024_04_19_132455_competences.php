@@ -1,8 +1,10 @@
 <?php
+namespace App\Models\GestionCompetences;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+
 
 return new class extends Migration
 {
@@ -13,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('Competences', function (Blueprint $table) {
             $table->id();
-            $table->string('Reference');
             $table->string('Code');
-            $table->string('Nom_de_competence');
+            $table->string('Nom');
             $table->string('Description');
             $table->timestamps();
-            
+
         });
     }
 
