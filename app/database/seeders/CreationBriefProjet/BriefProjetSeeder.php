@@ -20,5 +20,6 @@ class BriefProjetSeeder extends Seeder
             'critere_de_validation' => 'Mobile responsiveness, User-friendly interface, Functional links',
             'date_debut' => '2024-05-01',
             'date_fin' => '2024-06-30',
+            'user_id' => 1,
         ]);    }
 }

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('critere_de_validation');
             $table->date('date_debut');
             $table->date('date_fin');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
