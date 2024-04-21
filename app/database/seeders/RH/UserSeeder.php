@@ -1,9 +1,13 @@
 <?php
 
 namespace Database\Seeders\RH;
-use Illuminate\Support\Facades\DB;
 
+use App\Models\RH\Apprenant;
+use App\Models\RH\Formateur;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,45 +18,35 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Insert Formateur users
-        DB::table('users')->insert([
-            'nom' => 'Williams',
-            'prenom' => 'David',
-            'email' => 'david.williams@example.com',
-            'password' => Hash::make('password'),
-            'created_at' => now(),
-            'updated_at' => now(),
+        User::create([
+            'prenom' => 'hussein',
+            'nom' => 'bouik',
+            'type'=> 'Apprenant',
+            'email' => 'apprenant@gmail.com',
+            'password' => Hash::make('apprenant'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+
+        ] );  
+
+        User::create([
+            'prenom' => 'Formateur',
+            'nom' => 'madani',
+            'type'=> 'Formateur',
+            'email' => 'formateur@gmail.com',
+            'password' => Hash::make('formateur'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);  
+
+        User::create([
+            'prenom' => 'admin',
+            'nom' => 'admin',
+            'type'=> 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
-
-        DB::table('users')->insert([
-            'nom' => 'Brown',
-            'prenom' => 'Sarah',
-            'email' => 'sarah.brown@example.com',
-            'password' => Hash::make('password'),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-
-
-
-        DB::table('users')->insert([
-            'nom' => 'Williams',
-            'prenom' => 'Liam',
-            'email' => 'liam.williams@example.com',
-            'password' => Hash::make('password'),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        DB::table('users')->insert([
-            'nom' => 'Will',
-            'prenom' => 'Joseph',
-            'email' => 'joseph.Will@example.com',
-            'password' => Hash::make('password'),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-     
     }
 }
