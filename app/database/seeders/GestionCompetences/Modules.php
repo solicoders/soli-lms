@@ -79,7 +79,7 @@ class ModulesTableSeeder extends Seeder
             ],
             [
                 'Nom' => 'Projet de fin de formation',
-                'Description' => '',
+                'Description' => ' ',
                 'Masse_horaire' => '120 hours',
             ],
             [
