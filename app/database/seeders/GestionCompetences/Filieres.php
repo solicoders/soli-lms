@@ -14,18 +14,21 @@ class FilieresSeeder extends Seeder
      */
     public function run()
     {
+        
+        $filieres = [
+            [
+                'Nom' => 'Développeur Web – mode Bootcamp',
+                'Description' => 'Le développeur web réalise l’ensemble des fonctionnalités techniques d’une application web',
+            ],
+            [
+                'Nom' => 'Développeur Mobile – mode Bootcamp',
+                'Description' => 'Le développeur mobile effectue la réalisation technique et le développement informatique d’applications mobiles.',
+            ]
+        ];
 
-        Filieres::create(
-        [
-            'Nom' => 'Développeur Web – mode Bootcamp',
-            'Description' => 'Le développeur web réalise l’ensemble des fonctionnalités techniques d’une application web',
 
-        ],
-        [
-            'Nom' => 'Développeur Mobile – mode Bootcamp',
-            'Description' => 'Le développeur mobile effectue la réalisation technique et le développement informatique d’applications mobiles.',
-        ]);
-
-
+        foreach ($filieres as $filiere) {
+            Filieres::create($filiere);
+        }
     }
 }
