@@ -4,15 +4,14 @@ namespace App\Models\GestionCompetences;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\GestionCompetences\Modules;
+use App\Models\GestionCompetences\Competences;
 
-class Competences extends Model
+class Filieres extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'Nom',
-        'Code',
         'Description',
         'Module_id',
     ];
