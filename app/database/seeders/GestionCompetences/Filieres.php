@@ -27,5 +27,8 @@ class FilieresSeeder extends Seeder
         ]);
 
 
+        foreach ($filieresData as $filiere) {
+            $createdFiliere = Filieres::create($filiere);
+
     }
 }
