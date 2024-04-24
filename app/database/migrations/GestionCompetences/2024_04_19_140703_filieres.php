@@ -12,12 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Filieres', function (Blueprint $table) {
+        Schema::create('filieres', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom');
-            $table->string('Description');
-            $table->unsignedBigInteger('Module_id');
-            $table->foreign('Module_id')->references('id')->on('Modules')->onDelete('cascade');
+            $table->string('nom');
+            $table->string('description');
             $table->timestamps();
         });
     }
