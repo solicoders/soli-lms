@@ -9,6 +9,8 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
+     *
+     * @return void
      */
     public function register(): void
     {
@@ -17,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
+     *
+     * @return void
      */
     public function boot(): void
     {
@@ -27,6 +31,12 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
     }
 
+    /**
+     * Recursively get all subdirectories under a given directory.
+     *
+     * @param string $dir The directory path.
+     * @return array An array of subdirectory paths.
+     */
     function getAllSubdirectoriesOptimized($dir)
     {
         $subdirectories = [];
