@@ -38,7 +38,7 @@
                                     <th>Nom</th>
                                     <th>Prénom</th>
                                     <th>Numéro d'étudiant</th>
-                                    <th>Classe</th>
+                                    <th>DWM 10th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -47,7 +47,7 @@
                                     <td>Grain</td>
                                     <td>Reda</td>
                                     <td>123456</td>
-                                    <td>Classe A</td>
+                                    <td>DWM 10</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -60,7 +60,7 @@
                                     <td>Grain</td>
                                     <td>Reda</td>
                                     <td>123456</td>
-                                    <td>Classe A</td>
+                                    <td>DWM 10</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -73,7 +73,7 @@
                                     <td>Grain</td>
                                     <td>Reda</td>
                                     <td>123456</td>
-                                    <td>Classe B</td>
+                                    <td>DWM 10</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -86,7 +86,7 @@
                                     <td>Grain</td>
                                     <td>Reda</td>
                                     <td>123456</td>
-                                    <td>Classe C</td>
+                                    <td>DWM 10</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -99,7 +99,7 @@
                                     <td>Grain</td>
                                     <td>Reda</td>
                                     <td>123456</td>
-                                    <td>Classe D</td>
+                                    <td>DWM 10</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
