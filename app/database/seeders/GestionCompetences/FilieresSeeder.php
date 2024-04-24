@@ -17,12 +17,12 @@ class FilieresSeeder extends Seeder
         
         $filieres = [
             [
-                'Nom' => 'Développeur Web – mode Bootcamp',
-                'Description' => 'Le développeur web réalise l’ensemble des fonctionnalités techniques d’une application web',
+                'nom' => 'Développeur Web – mode Bootcamp',
+                'description' => 'Le développeur web réalise l’ensemble des fonctionnalités techniques d’une application web',
             ],
             [
-                'Nom' => 'Développeur Mobile – mode Bootcamp',
-                'Description' => 'Le développeur mobile effectue la réalisation technique et le développement informatique d’applications mobiles.',
+                'nom' => 'Développeur Mobile – mode Bootcamp',
+                'description' => 'Le développeur mobile effectue la réalisation technique et le développement informatique d’applications mobiles.',
             ]
         ];
 
