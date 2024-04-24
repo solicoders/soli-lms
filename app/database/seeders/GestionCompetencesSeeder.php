@@ -8,8 +8,6 @@ use Database\Seeders\GestionCompetences\{
     FilieresSeeder,
     ModulesTableSeeder,
     CompetencesSeeder,
-
-
 };
 
 class GestionCompetencesSeeder extends Seeder
