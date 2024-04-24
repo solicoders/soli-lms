@@ -1,4 +1,5 @@
 <?php
+namespace App\Models\GestionCompetences;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,10 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('filieres', function (Blueprint $table) {
+        Schema::create('Filieres', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom_de_filiere');
+            $table->string('Nom');
             $table->string('Description');
+            $table->unsignedBigInteger('Module_id');
+            $table->foreign('Module_id')->references('id')->on('Modules')->onDelete('cascade');
             $table->timestamps();
         });
     }

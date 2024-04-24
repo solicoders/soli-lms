@@ -1,10 +1,8 @@
 <?php
-namespace App\Models\GestionCompetences;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
 
 return new class extends Migration
 {
@@ -13,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Competences', function (Blueprint $table) {
+        Schema::create('livrables', function (Blueprint $table) {
             $table->id();
-            $table->string('Code');
-            $table->string('Nom');
-            $table->string('Description');
-            $table->timestamps();
-
+            $table->string('nom');
+            $table->string('description');
+            $table->unsignedBigInteger('brief_projet_id'); 
+            $table->foreign('brief_projet_id')->references('id')->on('brief_projets')->onDelete('cascade');            $table->timestamps();
         });
     }
 
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Competences');
+        Schema::dropIfExists('livrables');
     }
 };
