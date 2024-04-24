@@ -9,7 +9,7 @@ class BriefProjet extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'titre', 'description', 'travail_a_faire', 'critere_de_validation', 'date_debut', 'date_fin'
+        'titre', 'description', 'travail_a_faire', 'critere_de_validation', 'date_debut', 'date_fin','formateur_id'
     ];
 
     public function resources()
