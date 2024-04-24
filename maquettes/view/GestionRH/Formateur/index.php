@@ -87,6 +87,27 @@
                         </table>
                     </div>
                     <!-- /.card-body -->
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between align-items-center p-2">
+                            <div class="d-flex align-items-center mb-2">
+                                <button type="button" class="btn btn-default btn-sm">
+                                    <i class="fas fa-download"></i> IMPORT
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm mt-0 mx-2">
+                                    <i class="fas fa-upload"></i> EXPORT
+                                </button>
+                            </div>
+                            <div class="mr-5">
+                                <ul class="pagination  m-0 float-right">
+                                    <li class="page-item"><a class="page-link" href="#">«</a></li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
