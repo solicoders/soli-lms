@@ -20,6 +20,7 @@ class CreationBriefProjetSeeder extends Seeder
     {
         $this->call(CreationBriefProjetSeeder::Classes());
     }
+    
 
     public static function Classes(): array
     {
