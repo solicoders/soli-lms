@@ -11,10 +11,10 @@ class Competences extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Nom',
-        'Code',
-        'Description',
-        'Module_id',
+        'nom',
+        'code',
+        'description',
+        'module_id',
     ];
 
     public function module()

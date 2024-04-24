@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Competences', function (Blueprint $table) {
+        Schema::create('competences', function (Blueprint $table) {
             $table->id();
-            $table->string('Code');
-            $table->string('Nom');
-            $table->string('Description');
+            $table->string('code');
+            $table->string('nom');
+            $table->string('description');
+            $table->unsignedBigInteger('module_id');
+            $table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
             $table->timestamps();
 
         });
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Competences');
+        Schema::dropIfExists('competences');
     }
 };

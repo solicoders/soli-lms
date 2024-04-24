@@ -11,13 +11,12 @@ class Filieres extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Nom',
-        'Description',
-        'Module_id',
+        'nom',
+        'description',
     ];
 
     public function module()
     {
-        return $this->belongsTo(Modules::class);
+        return $this->hasMany(Modules::class);
     }
 }
