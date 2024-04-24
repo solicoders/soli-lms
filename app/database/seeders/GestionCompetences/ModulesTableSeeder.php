@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\GestionCompetences;
+namespace Database\Seeders\GestionCompetences;
 
 use Illuminate\Database\Seeder;
 use App\Models\GestionCompetences\Modules;
