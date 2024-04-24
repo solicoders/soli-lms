@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(RHSeeder::class);
+        $this->call(GestionCompetencesSeeder::class);
         $this->call(CreationBriefProjetSeeder::class);
 
     }
