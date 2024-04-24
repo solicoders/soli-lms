@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\GestionCompetences;
+namespace Database\Seeders\GestionCompetences;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
