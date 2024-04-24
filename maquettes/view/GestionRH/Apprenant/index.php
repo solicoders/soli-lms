@@ -38,7 +38,7 @@
                                     <th>Nom</th>
                                     <th>Prénom</th>
                                     <th>Numéro d'étudiant</th>
-                                    <th>DWM 10th>
+                                    <th>Classe</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
