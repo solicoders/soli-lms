@@ -44,8 +44,7 @@ php artisan db:seed --class="RHSeeder"
 php artisan db:seed --class="GestionCompetencesSeeder"
 php artisan db:seed --class="CreationBriefProjetSeeder"
 php artisan db:seed --class="RealisationBriefProjetSeeder"
-php artisan db:seed --class="RealisationBriefProjetSeeder"
-php artisan db:seed --class="RealisationBriefProjetSeeder"
+php artisan db:seed --class="GestionValidationsSeeder"
 
 
 ```
