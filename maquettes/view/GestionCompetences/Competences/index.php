@@ -81,7 +81,7 @@
                                             <th>C1</th>
                                             <td style="text-align: start;">Maquetter une application mobile</td>
                                             <td class="">
-                                                <a href="détails.html" class="btn btn-sm btn-default">
+                                                <a href="/view/GestionCompetences/Competences/show.php" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
                                                 <a href="/view/GestionCompetences/Competences/edit.php" class="btn btn-sm btn-default mx-1">
