@@ -42,8 +42,7 @@
                                             <input type="hidden">
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Modules</a>
-                                                <a class="dropdown-item" href="#" value="1">Communication écrite et
-                                                    orale</a>
+                                                <a class="dropdown-item" href="#" value="1">Communication écrite et orale</a>
                                                 <a class="dropdown-item" href="#" value="2">Anglais technique</a>
                                                 <a class="dropdown-item" href="#" value="3">Maquettage d’une application
                                                     mobile</a>
@@ -95,8 +94,7 @@
                                             </tr>
                                             </tr>
                                             <th>C2</th>
-                                            <td style="text-align: start;">Manipuler une base de données -
-                                                perfectionnement</td>
+                                            <td style="text-align: start;">Manipuler une base de données - perfectionnement</td>
                                             <td class="">
                                                 <a href="" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
@@ -111,8 +109,7 @@
                                             </tr>
                                             </tr>
                                             <th>C3</th>
-                                            <td style="text-align: start;">Développer la partie back-end d’une
-                                                application web ou web mobile - perfectionnement</td>
+                                            <td style="text-align: start;">Développer la partie back-end d’un application web ou web mobile - perfectionnement</td>
                                             <td class="">
                                                 <a href="" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
@@ -127,8 +124,7 @@
                                             </tr>
                                             </tr>
                                             <th>C4</th>
-                                            <td style="text-align: start;">Collaborer à la gestion d’un projet
-                                                informatique et à l’organisation de l’environnement de développement
+                                            <td style="text-align: start;">Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement
                                             </td>
                                             <td class="">
                                                 <a href="" class="btn btn-sm btn-default">
@@ -144,8 +140,7 @@
                                             </tr>
                                             </tr>
                                             <th>C5</th>
-                                            <td style="text-align: start;">Développer une application mobile native,
-                                                avec Android et React Native</td>
+                                            <td style="text-align: start;">Développer une application mobile native, avec Android et React Native</td>
                                             <td class="">
                                                 <a href="" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
@@ -160,8 +155,7 @@
                                             </tr>
                                             </tr>
                                             <th>C6</th>
-                                            <td style="text-align: start;">Préparer et exécuter les plans de tests d’une
-                                                application</td>
+                                            <td style="text-align: start;">Préparer et exécuter les plans de tests d’une application</td>
                                             <td class="">
                                                 <a href="" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
@@ -176,8 +170,7 @@
                                             </tr>
                                             </tr>
                                             <th>C7</th>
-                                            <td style="text-align: start;">Préparer et exécuter le déploiement d’une
-                                                application web et mobile - perfectionnement</td>
+                                            <td style="text-align: start;">Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement</td>
                                             <td class="">
                                                 <a href="" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
