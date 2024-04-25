@@ -17,12 +17,12 @@
                     <div class="col-sm-6">
                         <h1>Liste des Modules</h1>
                     </div>
-                    <div class="col-sm-6">
+                    <!-- <div class="col-sm-6">
                         <div class="float-sm-right">
                             <a href="create.html" style="background-color: #17A2B8;" class="btn">
                                 <i class="fas fa-plus"></i> Ajouter</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -73,7 +73,7 @@
                                             <th>N° </th>
                                             <th>MODULE</th>
                                             <th>Masse horaire</th>
-                                            <th>Action</th>
+                                            <!-- <th>Action</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -81,7 +81,7 @@
                                             <th>M01</th>
                                             <td style="text-align: start;">Communication écrite et orale</td>
                                             <td style="text-align: start;">30 hours</td>
-                                            <td class="">
+                                            <!-- <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -91,13 +91,13 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <tr>
                                             <th>M02</th>
                                             <td style="text-align: start;">Anglais technique</td>
                                             <td style="text-align: start;">30 hours</td>
-                                            <td class="">
+                                            <!-- <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -107,13 +107,13 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <tr>
                                             <th>M03</th>
                                             <td style="text-align: start;">Culture d'entreprenariat</td>
                                             <td style="text-align: start;">30 hours</td>
-                                            <td class="">
+                                            <!-- <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -123,13 +123,13 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <tr>
                                             <th>M04</th>
                                             <td style="text-align: start;">Compétences comportementales et sociales (Soft Skills)</td>
                                             <td style="text-align: start;">30 hours</td>
-                                            <td class="">
+                                            <!-- <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -139,13 +139,13 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <tr>
                                             <th>M05</th>
                                             <td style="text-align: start;">Initiation à l’environnement du développement mobile par la pédagogie active</td>
                                             <td style="text-align: start;">70 hours</td>
-                                            <td class="">
+                                            <!-- <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -155,13 +155,13 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                         <tr>
                                             <th>M06</th>
                                             <td style="text-align: start;">Maquettage d’une application mobile</td>
                                             <td style="text-align: start;">50 hours</td>
-                                            <td class="">
+                                            <!-- <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -171,7 +171,7 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     </tbody>
                                     <input type="hidden" id='page' value="1">
