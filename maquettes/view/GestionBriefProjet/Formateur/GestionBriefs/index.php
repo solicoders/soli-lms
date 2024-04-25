@@ -52,23 +52,8 @@
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-md-3">
-                                                                            <label for="project">Projet :</label>
-                                                                            <select class="form-control" id="project">
-                                                                                <option value="">Tous</option>
-                                                                                <option value="Lab-Markdown">Lab-Markdown</option>
-                                                                                <option value="Lab-Github">Lab-Github</option>
-                                                                                <option value="lab-présentation">lab-présentation</option>
-                                                                                <option value="Lab-debug-laravel">Lab-debug-laravel</option>
-                                                                                <option value="Lab-crud-basic">Lab-crud-basic</option>
-                                                                                <option value="Lab-crud-standard">Lab-crud-standard</option>
-                                                                                <option value="Lab-authentification basic">Lab-authentification basic</option>
-                                                                                <option value="Lab-starter">Lab-starter</option>
-                                                                                <option value="Lab-authentification-standard">Lab-authentification-standard</option>
-                                                                                <option value="Lab-autorisation-basic">Lab-autorisation-basic</option>
-                                                                                <option value="Lab-autorisation-standard">Lab-autorisation-standard</option>
-                                                                                <option value="Lab-deploiement">Lab-deploiement</option>
-                                                                                <option value="Prototype">Prototype</option>
-                                                                            </select>
+                                                                            <label for="projectName">Rechercher</label>
+                                                                            <input type="text" class="form-control" id="projectName" placeholder="Nom du projet :...">
                                                                         </div>
                                                                     </div>
                                                                         

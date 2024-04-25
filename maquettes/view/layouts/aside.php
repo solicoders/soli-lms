@@ -50,7 +50,35 @@ $current_route = $_SERVER['REQUEST_URI'];
                 </a>
               </li>
             </ul>
-                <!-- Authorisation -->
+          </li>
+        <!-- Gestion RH -->
+        <li class="nav-item has-treeview">
+          <a href="#"
+            class="nav-link <?php echo (strpos($current_route, 'Gestion RH') !== false) ? 'active' : ''; ?>">
+            <i class="fa-solid fa-people-group"></i>
+            <p>
+              Gestion RH
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="../GestionRH/Formateur/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Formateurs') !== false) ? 'active' : ''; ?>">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <p>Gestion Formateurs</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../GestionRH/Apprenant/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Apprenants') !== false) ? 'active' : ''; ?>">
+                <i class="fa-solid fa-users"></i>
+                <p>Gestion Apprenants</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <!-- Authorisation -->
         <li class="nav-item has-treeview">
           <a href="#"
             class="nav-link <?php echo (strpos($current_route, 'autorisation') !== false) ? 'active' : ''; ?>">
@@ -92,7 +120,7 @@ $current_route = $_SERVER['REQUEST_URI'];
           </ul>
         </li>
               <?php
-        } else {
+        } elseif (isset($_SESSION['email']) && $_SESSION['email'] === 'formateur@solicode.com') {
           ?>
               <li class="nav-item">
                 <a href="/view/GestionBriefProjet/Apprenant/index.php" class="nav-link listBriefFormateur">
@@ -101,7 +129,25 @@ $current_route = $_SERVER['REQUEST_URI'];
                 </a>
               </li>
 
-            <?php }
+            <?php 
+        }elseif(isset($_SESSION['email']) && $_SESSION['email'] === 'ResponsableFormation@solicode.com'){
+          ?>
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="/view/GestionCompetences/Modules/index.php" class="nav-link">
+                        <i class="fas fa-table nav-icon"></i>
+                        <p>Modules</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/view/GestionCompetences/Competences/index.php" class="nav-link">
+                        <i class="fas fa-tasks nav-icon"></i>
+                        <p>Compétence</p>
+                    </a>
+                </li>
+            </ul>
+          <?php
+        }
         ?>
 
           </ul>

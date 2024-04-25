@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Models\RH;
+namespace App\Models\GestionRH;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Apprenant extends User
+
+class Formateur extends User
 {
     use HasFactory;
 }
