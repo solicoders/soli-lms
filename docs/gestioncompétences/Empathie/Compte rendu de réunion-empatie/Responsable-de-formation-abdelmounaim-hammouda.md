@@ -4,6 +4,14 @@
 
 Abdelmounaim Hammouda 
 
+## Carte d'empathie 
+
+![Responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png){:width="700px" }
+
+*Figure : Carte d'empathie de responsable de formation *
+
+<!-- note -->
+
 ## Ce qu'il dit : 
 
 - Il y a deux filières : développement web et développement mobile.
