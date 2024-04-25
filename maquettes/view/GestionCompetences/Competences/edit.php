@@ -112,7 +112,7 @@
                             </div>
                             <div class="card-footer">
                                 <a href="" class="btn btn-default">Cancel</a>
-                                <button href="index.html" type="submit" class="btn btn-primary mx-2">Submit</button>
+                                <button href="/view/GestionCompetences/Competences/index.php" type="submit" class="btn btn-info mx-2">Submit</button>
                             </div>
                         </form>
                     </div>
