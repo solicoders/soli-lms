@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\CreationBriefProjet\BriefProjet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,6 +38,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function BriefProjet()
+    {
+        return $this->hasMany(BriefProjet::class, 'formateur_id');
+    }
     /**
      * The attributes that should be cast.
      *
