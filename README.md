@@ -40,7 +40,7 @@ php artisan migrate
 
 8. Exécuter les seeders pour peupler la base de données :
 ```bash
-php artisan db:seed --class="RHSeeder"
+php artisan db:seed --class="GestionRHSeeder"
 php artisan db:seed --class="GestionCompetencesSeeder"
 php artisan db:seed --class="CreationBriefProjetSeeder"
 php artisan db:seed --class="RealisationBriefProjetSeeder"

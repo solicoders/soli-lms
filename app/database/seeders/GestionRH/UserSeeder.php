@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Seeders\RH;
+namespace Database\Seeders\GestionRH;
 
-use App\Models\RH\Apprenant;
-use App\Models\RH\Formateur;
+use App\Models\GestionRH\Apprenant;
+use App\Models\GestionRH\Formateur;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
