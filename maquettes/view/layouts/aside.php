@@ -92,7 +92,7 @@ $current_route = $_SERVER['REQUEST_URI'];
           </ul>
         </li>
               <?php
-        } }elseif (isset($_SESSION['email']) && $_SESSION['email'] === 'formateur@solicode.com') {
+        } elseif (isset($_SESSION['email']) && $_SESSION['email'] === 'formateur@solicode.com') {
           ?>
               <li class="nav-item">
                 <a href="/view/GestionBriefProjet/Apprenant/index.php" class="nav-link listBriefFormateur">
@@ -120,6 +120,7 @@ $current_route = $_SERVER['REQUEST_URI'];
             </ul>
           <?php
         }
+        ?>
 
           </ul>
         </li>
