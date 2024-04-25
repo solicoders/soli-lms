@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="float-sm-right">
-                                <a href="/view/GestionCompetences/Modules/create.php" class="btn btn-info">
+                                <a href="/view/GestionCompetences/Competences/create.php" class="btn btn-info">
                                     <i class="fas fa-plus"></i> Ajouter</a>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
-                                                <a href="/view/GestionCompetences/Modules/edit.php" class="btn btn-sm btn-default mx-1">
+                                                <a href="/view/GestionCompetences/Competences/edit.php" class="btn btn-sm btn-default mx-1">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
                                                 <button type="submit" class="btn btn-sm btn-danger">
