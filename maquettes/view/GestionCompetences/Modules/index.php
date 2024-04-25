@@ -129,7 +129,7 @@
                                             <th>M04</th>
                                             <td style="text-align: start;">Compétences comportementales et sociales (Soft Skills)</td>
                                             <td style="text-align: start;">30 hours</td>
-                                            <!-- <td class="">
+                                            <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -139,13 +139,13 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td> -->
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>M05</th>
                                             <td style="text-align: start;">Initiation à l’environnement du développement mobile par la pédagogie active</td>
                                             <td style="text-align: start;">70 hours</td>
-                                            <!-- <td class="">
+                                            <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
@@ -155,7 +155,7 @@
                                                 <button type="submit" class="btn btn-sm btn-danger">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </button>
-                                            </td> -->
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>M06</th>
