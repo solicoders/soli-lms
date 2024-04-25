@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
         $this->call(RHSeeder::class);
         $this->call(GestionCompetencesSeeder::class);
         $this->call(CreationBriefProjetSeeder::class);
+        $this->call(RealisationBriefProjetSeeder::class);
+        $this->call(GestionValidationsSeeder::class);
+
 
     }
 }
