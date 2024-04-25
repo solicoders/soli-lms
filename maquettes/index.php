@@ -18,6 +18,11 @@ if (isset($_POST['login'])) {
         $_SESSION['email'] = $email;
         header('Location: view/home.php');
         exit();
+    }elseif($email === 'ResponsableFormation@solicode.com'){
+        session_start();
+        $_SESSION['email'] = $email;
+        header('Location: view/GestionCompetences/Competences/index.php');
+        exit();
     }else{
         header('refresh: 0');
     }
