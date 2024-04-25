@@ -92,7 +92,7 @@ $current_route = $_SERVER['REQUEST_URI'];
           </ul>
         </li>
               <?php
-        } else {
+        }elseif (isset($_SESSION['email']) && $_SESSION['email'] === 'formateur@solicode.com') {
           ?>
               <li class="nav-item">
                 <a href="/view/GestionBriefProjet/Apprenant/index.php" class="nav-link listBriefFormateur">
@@ -101,7 +101,25 @@ $current_route = $_SERVER['REQUEST_URI'];
                 </a>
               </li>
 
-            <?php }
+            <?php 
+        }elseif(isset($_SESSION['email']) && $_SESSION['email'] === 'ResponsableFormation@solicode.com'){
+          ?>
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="/view/GestionCompetences/Modules/index.php" class="nav-link">
+                        <i class="fas fa-table nav-icon"></i>
+                        <p>Modules</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/view/GestionCompetences/Competences/index.php" class="nav-link">
+                        <i class="fas fa-tasks nav-icon"></i>
+                        <p>Compétence</p>
+                    </a>
+                </li>
+            </ul>
+          <?php
+        }
         ?>
 
           </ul>

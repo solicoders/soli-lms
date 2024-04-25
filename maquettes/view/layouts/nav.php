@@ -27,8 +27,10 @@ if (isset($_POST['logout'])) {
                     <?php
                     if (isset($_SESSION['email']) && $_SESSION['email'] === 'apprenant@solicode.com') {
                         echo 'hussein bouik';
-                    } else {
+                    } elseif (isset($_SESSION['email']) && $_SESSION['email'] === 'formateur@solicode.com'){
                         echo 'Formateur';
+                    }elseif(isset($_SESSION['email']) && $_SESSION['email'] === 'ResponsableFormation@solicode.com') {
+                        echo 'ResponsableFormation' ;
                     }
                     ?>
                 </span>
