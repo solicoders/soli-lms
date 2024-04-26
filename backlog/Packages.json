@@ -1,7 +1,9 @@
 {
     "Description":"Liste des packages avec des livrables personnalisés",
     "DefaultAuthorizedDirectories":[
-        "docs/{{package_name}}",
+        "docs/Conception/{{package_name}}",
+        "docs/Analyse/{{package_name}}",
+        "docs/Besoin/{{package_name}}",
         "scripts"
         
     ],
