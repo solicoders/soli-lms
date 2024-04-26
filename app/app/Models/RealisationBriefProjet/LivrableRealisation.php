@@ -20,4 +20,5 @@ class LivrableRealisation extends Model
     {
         return $this->belongsTo(RealisationBriefProjet::class);
     }
+    
 }
