@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
+use Database\Seeders\GestionValidations\NiveauSeeder;
+use Database\Seeders\GestionValidations\ValidationSeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\GestionValidations\{
 
-};
 
 class GestionValidationsSeeder extends Seeder
 {
@@ -21,7 +21,8 @@ class GestionValidationsSeeder extends Seeder
     public static function Classes(): array
     {
         return [
- 
+            NiveauSeeder::class,
+            ValidationSeeder::class,
         ];
     }
 }

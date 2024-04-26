@@ -5,7 +5,7 @@ namespace App\Models\GestionValidations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class niveau extends Model
+class Niveau extends Model
 {
     use HasFactory;
 
