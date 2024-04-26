@@ -6,6 +6,7 @@
         
     ],
     "LaravelAuthorizedDirectories":[
+        "conception/{{package_name}}",
         "maquettes/view/{{package_name}}",
         "{{directory_code}}/app/Exports/{{package_name}}",
         "{{directory_code}}/app/Imports/{{package_name}}",
