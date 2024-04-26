@@ -7,4 +7,4 @@ order: 3
 
 ## Diagramme de class pour la GestionRH
 
-![Diagramme de class pour la GestionRH](./images/Gestionvalidations.png)
+![Diagramme de class pour la GestionRH](./images/diagramme-classe.PNG)
