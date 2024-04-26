@@ -5,6 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RealisationBriefProjet\{
+    LivrableRealisationTableSeeder,
+
+    RealisationBriefProjetTableSeeder,
+    
 
 };
 
@@ -21,6 +25,9 @@ class RealisationBriefProjetSeeder extends Seeder
     public static function Classes(): array
     {
         return [
+            LivrableRealisationTableSeeder::class,
+
+            RealisationBriefProjetTableSeeder::class,
  
         ];
     }

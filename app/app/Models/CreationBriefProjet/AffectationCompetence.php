@@ -14,4 +14,5 @@ class AffectationCompetence extends Model
     {
         return $this->belongsTo(BriefProjet::class);
     }
+
 }
