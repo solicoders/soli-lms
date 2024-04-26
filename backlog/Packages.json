@@ -4,6 +4,8 @@
         "docs/Conception/{{package_name}}",
         "docs/Analyse/{{package_name}}",
         "docs/Besoin/{{package_name}}",
+        "docs/documentation/{{package_name}}",
+        "docs/Realisation/{{package_name}}",
         "scripts"
         
     ],
