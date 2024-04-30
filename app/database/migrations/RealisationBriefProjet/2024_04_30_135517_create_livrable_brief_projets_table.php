@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('livrable_brief_projets', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('description');
+            $table->string('lien');
             $table->timestamps();
         });
     }
