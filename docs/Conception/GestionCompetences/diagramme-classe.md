@@ -7,4 +7,4 @@ order: 3
 
 ## Diagramme de class pour la gestion gestion competences
 
-![Diagramme de class pour la gestion des competences](/conception/GestionCompetences/images/GestionCopmetences.png)
+![Diagramme de class pour la gestion des competences](/conception/GestionCompetences/images/GestionCompetences.png)
