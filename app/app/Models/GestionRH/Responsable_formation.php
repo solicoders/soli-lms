@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\GestionRH\Personel;
 
-
-class Formateur extends Personel
+class Responsable_formation extends Personel
 {
     use HasFactory;
 }
