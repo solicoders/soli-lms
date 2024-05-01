@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('formateur', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('personnel_id');
+            $table->foreign('personnel_id')->references('id')->on('personnel')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('formateur');
+
     }
 };
