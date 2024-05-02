@@ -6,6 +6,7 @@ use App\Models\CreationBriefProjet\BriefProjet;
 use App\Repositories\BaseRepositorie;
 use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\CreationBriefProjet\BriefProjetAlreadyExistException;
+use App\Models\GestionCompetences\Competences;
 
 class CreationBriefProjet extends BaseRepositorie
 {
@@ -34,4 +35,9 @@ class CreationBriefProjet extends BaseRepositorie
                 ->orWhere('description', 'like', '%' . $searchableData . '%');
         })->paginate($perPage);
     }
+    public function filter()
+    {
+       return Competences::all();
+    }
+    
 }
