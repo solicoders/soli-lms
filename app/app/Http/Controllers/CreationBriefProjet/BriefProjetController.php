@@ -13,15 +13,25 @@ use App\Repositories\CreationBriefProjet\BriefProjetRepository;
 use App\Http\Controllers\AppBaseController;
 use Carbon\Carbon;
 use App\Exports\CreationBriefProjet\briefprojetExport;
+use App\Repositories\CreationBriefProjet\LiverableRepository;
+use App\Repositories\CreationBriefProjet\ResourceRepository;
 use Maatwebsite\Excel\Facades\Excel;
 
 
 class BriefProjetController extends Controller
 {
     protected $briefprojetRepository;
-    public function __construct(BriefProjetRepository $briefprojetRepository)
-    {
+    protected $liverableRepository;
+    protected $resourceRepository;
+
+    public function __construct(
+        BriefProjetRepository $briefprojetRepository,
+        LiverableRepository $liverableRepository,
+        ResourceRepository $resourceRepository
+    ) {
         $this->briefprojetRepository = $briefprojetRepository;
+        $this->liverableRepository = $liverableRepository;
+        $this->resourceRepository = $resourceRepository;
     }
 
 
