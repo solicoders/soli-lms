@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('niveau', function (Blueprint $table) {
             $table->id();
             $table->string('niveau');
-            $table->text('niveau_description');
+            $table->text('description');
         });
     }
 
