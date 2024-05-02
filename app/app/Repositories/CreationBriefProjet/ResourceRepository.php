@@ -6,38 +6,15 @@ use App\Models\CreationBriefProjet\BriefProjet;
 use App\Repositories\BaseRepositorie;
 use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\CreationBriefProjet\BriefProjetAlreadyExistException;
+use App\Models\CreationBriefProjet\Resource;
 use App\Models\GestionCompetences\Competences;
 
 class ResourceRepository extends BaseRepositorie
 {
-    protected $model;
+    protected $resource;
 
-    public function __construct(BriefProjet $briefprojet)
+    public function __construct(Resource $resource)
     {
-        $this->model = $briefprojet;
+        $this->resource = $resource;
     }
-    public function create(array $data)
-    {
-        $titre = $data['titre'];
-
-        $existingbriefprojet = BriefProjet::where('titre', $titre)->exists();
-
-        if ($existingbriefprojet) {
-            throw BriefProjetAlreadyExistException::createBriefProjet();
-        } else {
-            return parent::create($data);
-        }
-    }
-    public function searchData($searchableData, $perPage = 4)
-    {
-        return $this->model->where(function ($query) use ($searchableData) {
-            $query->where('titre', 'like', '%' . $searchableData . '%')
-                ->orWhere('description', 'like', '%' . $searchableData . '%');
-        })->paginate($perPage);
-    }
-    public function filter()
-    {
-       return Competences::all();
-    }
-    
 }

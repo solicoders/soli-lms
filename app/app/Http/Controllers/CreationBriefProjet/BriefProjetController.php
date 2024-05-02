@@ -62,11 +62,37 @@ class BriefProjetController extends Controller
 
         try {
             $validatedData = $request->validated();
-            $this->briefprojetRepository->create($validatedData);
+            // Create BriefProject
+    $briefProject = $this->briefprojetRepository->create($validatedData);
+
+    // Create Deliverables
+    foreach ($request->input('deliverable') as $deliverableName) {
+        $this->liverableRepository->create([
+            'name' => $deliverableName,
+            'brief_project_id' => $briefProject->id
+        ]);
+    }
+
+    // Create Resources
+    foreach ($request->input('project_resources') as $resourceLink) {
+        $this->resourceRepository->create([
+            'link' => $resourceLink,
+            'nature' => 'resource',
+            'brief_project_id' => $briefProject->id
+        ]);
+    }
+
+    foreach ($request->input('project_references') as $referenceLink) {
+        $this->resourceRepository->create([
+            'link' => $referenceLink,
+            'nature' => 'reference',
+            'briefprojet_id' => $briefProject->id
+        ]);
+    }
             return redirect()->route('briefprojets.index')->with('success', 'Le briefprojet a été ajouté avec succès.');
 
         } catch (BriefProjetAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['project_exists' => __('CreationBriefProjet/briefprojet/message.createProjectException')]);
+            return back()->withInput()->withErrors(['briefprojet_exists' => __('CreationBriefProjet/briefprojet/message.createProjectException')]);
         } catch (\Exception $e) {
             return abort(500);
         }
