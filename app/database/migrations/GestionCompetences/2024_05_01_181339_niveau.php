@@ -14,8 +14,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('competences', function (Blueprint $table) {
-            $table->string('niveau')->after('module_id');
-            $table->text('description')->nullable()->after('niveau');
+            $table->string('niveau');
+            $table->text('niveau_description');
         });
     }
 
