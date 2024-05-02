@@ -15,8 +15,3 @@ class Resource extends Model
         return $this->belongsTo(BriefProjet::class);
     }
 }
-php artisan make:exception CreationBriefProjet/BriefProjetAlreadyExistException
-php artisan make:exception CreationBriefProjet/AffectationCompetenceAlreadyExistException
-php artisan make:exception CreationBriefProjet/EtatRealisationAlreadyExistException
-php artisan make:exception CreationBriefProjet/LivrableAlreadyExistException
-php artisan make:exception CreationBriefProjet/ResourceAlreadyExistException
