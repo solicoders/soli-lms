@@ -23,15 +23,18 @@ class BriefProjetController extends Controller
     protected $briefprojetRepository;
     protected $liverableRepository;
     protected $resourceRepository;
+    protected $competenceRepository;
 
     public function __construct(
         BriefProjetRepository $briefprojetRepository,
         LiverableRepository $liverableRepository,
-        ResourceRepository $resourceRepository
+        ResourceRepository $resourceRepository,
+        CompetenceRepository $competenceRepository
     ) {
         $this->briefprojetRepository = $briefprojetRepository;
         $this->liverableRepository = $liverableRepository;
         $this->resourceRepository = $resourceRepository;
+        $this->competenceRepository = $competenceRepository;
     }
 
 
@@ -100,10 +103,17 @@ class BriefProjetController extends Controller
     }
 
 
-    public function show(string $id)
+    public function show(Request $request, $id)
     {
-        $fetchedData = $this->briefprojetRepository->find($id);
-        return view('CreationBriefProjet.briefprojet.show', compact('fetchedData'));
+        $competence = $this->competenceRepisotory->find($id);
+        $competences = $this->briefprojetRepository->filter();
+        $briefprojets = $competence->briefprojets()->paginate();
+        if ($request->ajax()) {
+            $searchBriefProjet = $request->get('searchBriefProjet');
+            $searchBriefProjet = str_replace(" ", "%", $searchBriefProjet);
+            $briefprojets = $this->briefprojetRepository->searchData($searchBriefProjet, $id);
+            return view('GestionProjets.briefprojet.index', compact('briefprojets', 'projects', 'project'))->render();
+        }        return view('CreationBriefProjet.briefprojet.show', compact('fetchedData'));
     }
 
 
