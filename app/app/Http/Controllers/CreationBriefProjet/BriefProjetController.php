@@ -37,16 +37,17 @@ class BriefProjetController extends Controller
 
     public function index(Request $request)
     {
+        $competences = $this->briefprojetRepository->filter();
         $briefprojetData = $this->briefprojetRepository->paginate();
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $briefprojetData = $this->briefprojetRepository->searchData($searchQuery);
-                return view('CreationBriefProjet.briefprojet.index', compact('briefprojetData'))->render();
+                return view('CreationBriefProjet.briefprojet.index', compact('briefprojetData','competences'))->render();
             }
         }
-        return view('CreationBriefProjet.briefprojet.index', compact('briefprojetData'));
+        return view('CreationBriefProjet.briefprojet.index', compact('briefprojetData','competences'));
     }
 
 
