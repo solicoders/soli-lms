@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\CreationBriefProjet\BriefProjetAlreadyExistException;
 use App\Models\GestionCompetences\Competences;
 
-class CreationBriefProjet extends BaseRepositorie
+class BriefProjetRepository extends BaseRepositorie
 {
     protected $model;
 
