@@ -11,24 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resources', function (Blueprint $table) {
+        Schema::create('livrable_brief_projets', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
             $table->string('description');
             $table->string('lien');
-            $table->string('nature');
-            $table->unsignedBigInteger('brief_projet_id'); 
-            $table->foreign('brief_projet_id')->references('id')->on('brief_projets')->onDelete('cascade');  
             $table->timestamps();
-            
         });
     }
+    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('resources');
+        Schema::dropIfExists('livrable_brief_projets');
     }
 };
