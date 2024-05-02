@@ -55,7 +55,7 @@ class BriefProjetController extends Controller
             $this->briefprojetRepository->create($validatedData);
             return redirect()->route('briefprojets.index')->with('success', 'Le briefprojet a été ajouté avec succès.');
 
-        } catch (ProjectAlreadyExistException $e) {
+        } catch (BriefProjetAlreadyExistException $e) {
             return back()->withInput()->withErrors(['project_exists' => __('CreationBriefProjet/briefprojet/message.createProjectException')]);
         } catch (\Exception $e) {
             return abort(500);
@@ -100,7 +100,7 @@ class BriefProjetController extends Controller
     {
         $projects = briefprojet::all();
 
-        return Excel::download(new ProjetExport($projects), 'briefprojet_export.xlsx');
+        return Excel::download(new BriefProjetExport($projects), 'briefprojet_export.xlsx');
     }
 
 
@@ -111,10 +111,10 @@ class BriefProjetController extends Controller
         ]);
 
         try {
-            Excel::import(new ProjetImport, $request->file('file'));
+            Excel::import(new BriefProjetImport, $request->file('file'));
         } catch (\InvalidArgumentException $e) {
             return redirect()->route('briefprojets.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
         }
-        return redirect()->route('briefprojets.index')->with('success', 'Projet a ajouté avec succès');
+        return redirect()->route('briefprojets.index')->with('success', 'BriefProjet a ajouté avec succès');
     }
 }
