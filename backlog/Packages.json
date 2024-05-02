@@ -1,11 +1,16 @@
 {
     "Description":"Liste des packages avec des livrables personnalisés",
     "DefaultAuthorizedDirectories":[
-        "docs/{{package_name}}",
+        "docs/Conception/{{package_name}}",
+        "docs/Analyse/{{package_name}}",
+        "docs/Besoin/{{package_name}}",
+        "docs/documentation/{{package_name}}",
+        "docs/Realisation/{{package_name}}",
         "scripts"
         
     ],
     "LaravelAuthorizedDirectories":[
+        "conception/{{package_name}}",
         "maquettes/view/{{package_name}}",
         "{{directory_code}}/app/Exports/{{package_name}}",
         "{{directory_code}}/app/Imports/{{package_name}}",

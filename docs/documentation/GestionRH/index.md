@@ -1,11 +1,11 @@
 ---
-layout: presentation
+layout: default
 order: 1
 ---
 
 {% assign pages = site.pages | sort: "order" %}
 {% for page in pages %}
- {% if page.presentation or page.presentationPackage == "gestionCompetences" %}
+  {% if page.chapitre or page.package == "GestionRH" %}
     {{- page.content | markdownify -}}
   {% endif %}
 {% endfor %}

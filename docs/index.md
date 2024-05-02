@@ -8,8 +8,8 @@ order: 1
 - [Présentation](https://solicoders.github.io/soli-lms/documentation/presentation.html#/) 
 
 - Gestion des Compétences
-    - [Rapport Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/gestionCompetences/)
-    - [Présentation Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/gestionCompetences/presentation.html#/)
+    - [Rapport Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/)
+    - [Présentation Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/presentation.html#/)
   
 - Gestion des RH
     - [Rapport Gestion des RH](https://solicoders.github.io/soli-lms/documentation/GestionRH/)
