@@ -17,6 +17,7 @@ class ResourceSeeder extends Seeder
             'nom' => 'HTML Basics',
             'description' => 'Introduction to HTML',
             'lien' => 'https://www.w3schools.com/html/',
+            'nature' => 'resource',
             'brief_projet_id' => 1,
         ]);
 
@@ -24,6 +25,7 @@ class ResourceSeeder extends Seeder
             'nom' => 'CSS Flexbox Guide',
             'description' => 'Complete Guide to Flexbox',
             'lien' => 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/',
+            'nature' => 'reference',
             'brief_projet_id' => 1,
         ]);    }
 }
