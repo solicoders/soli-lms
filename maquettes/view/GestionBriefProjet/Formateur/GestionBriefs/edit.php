@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="card-body p-0">
                                     <div class="bs-stepper">
-                                        <form id="deliverable-form">
+                                        <div id="deliverable-form">
 
                                             <div class="bs-stepper-header" role="tablist">
                                                 <!-- your steps here -->
@@ -360,10 +360,12 @@
                                                     <button class="btn btn-primary"
                                                         onclick="stepper.previous()">Précédent</button>
                                                     <a href="./index.php" type="submit"
-                                                        class="btn btn-primary">Modifier</a>
+                                                        class="btn btn-primary">Ajouter</a>
                                                 </div>
-                                        </form>
+                                                </d>
 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
