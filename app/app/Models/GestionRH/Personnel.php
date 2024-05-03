@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Personel extends User
+class Personnel extends User
 {
     use HasFactory;
+    protected $table = 'personnel';
 
     protected $fillable = [
         'matricule',
@@ -16,4 +17,13 @@ class Personel extends User
         'specialite_id',
         'etablissement_id',
     ];
+
+    public function Formateur()
+    {
+        return $this->hasMany(Formateur::class);
+    }
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
