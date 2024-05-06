@@ -9,4 +9,5 @@ use App\Repositories\BaseRepository;
 class GestionrhRepository extends BaseRepository
 {
 
+
 }
