@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('competences', function (Blueprint $table) {
-            $table->string('Niveau');
-            $table->text('Description')->nullable();
+        Schema::create('niveaux', function (Blueprint $table) {
+            $table->id();
+            $table->string('nom');
+            $table->text('description');
+            $table->unsignedBigInteger('competence_id');
+            $table->foreign('competence_id')->references('id')->on('competences')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -24,10 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('competences', function (Blueprint $table) {
-            $table->dropColumn('Niveau');
-            $table->dropColumn('Description');
-        });
+        Schema::dropIfExists('niveaux');
     }
 };
 
