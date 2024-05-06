@@ -17,6 +17,13 @@ class EtatRealisationSeeder extends Seeder
             'nom' => 'Design Completed',
             'description' => 'Completed the design phase with approval from the client',
             'brief_projet_id' => 1,
+            'nature' => 'realisation'
+        ]);
+        EtatRealisation::create([
+            'nom' => 'Validé',
+            'description' => 'Completed the development phase with approval from the client',
+            'brief_projet_id' => 1,
+            'nature' => 'validation'
         ]);
     }
 }
