@@ -102,4 +102,5 @@ bundle exec jekyll serve
 
 
 
-## Extra commandes
+## Références 
+- [Rapport](https://solicoders.github.io/soli-lms/)
