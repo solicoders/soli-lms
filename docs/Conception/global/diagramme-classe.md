@@ -1,6 +1,6 @@
 ---
 layout: default
-package: global
+package: Global
 presentation: global
 order: 4
 ---
