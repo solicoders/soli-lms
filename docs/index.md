@@ -7,6 +7,9 @@ order: 1
 - [Rapport](https://solicoders.github.io/soli-lms/documentation/) 
 - [Présentation](https://solicoders.github.io/soli-lms/documentation/presentation.html#/) 
 
+- Global
+  - [Rapport Global](https://solicoders.github.io/soli-lms/documentation/Global/)
+  - [Présentation Global](https://solicoders.github.io/soli-lms/documentation/Global/presentation.html#/)
 - Gestion des Compétences
     - [Rapport Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/)
     - [Présentation Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/presentation.html#/)
