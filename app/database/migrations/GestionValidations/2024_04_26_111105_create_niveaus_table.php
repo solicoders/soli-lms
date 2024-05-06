@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('description');
             $table->float('note_max');
             $table->float('note_min');
+            $table->unsignedBigInteger('competence_id');
+            $table->foreign('competence_id')->references('id')->on('competences')->onDelete('cascade');
             $table->timestamps();
         });
     }
