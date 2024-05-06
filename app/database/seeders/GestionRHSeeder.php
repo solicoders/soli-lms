@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\GestionRH\UserSeeder;
+use Database\Seeders\GestionRH\ApprenantSeeder;
+use Database\Seeders\GestionRH\FormateurSeeder;
 class GestionRHSeeder extends Seeder
 {
     /**
@@ -19,7 +20,8 @@ class GestionRHSeeder extends Seeder
     public static function Classes(): array
     {
         return [
-            UserSeeder::class,
+            ApprenantSeeder::class,
+            FormateurSeeder::class,
         ];
     }
 }
