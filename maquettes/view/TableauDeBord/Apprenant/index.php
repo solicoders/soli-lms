@@ -35,29 +35,8 @@
                                             <select class="form-control" id="skill">
                                                 <option value="">Diagrammes</option>
                                                 <option value="Autoformations" selected>Autoformations</option>
-                                                <option value="Apprenants">Apprenants</option>
                                                 <option value="Briefs">Briefs</option>
                                                 <option value="Compétences">Compétences</option>
-                                                <option value="Class">Avencement de Class</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <label for="skill">Class</label>
-                                            <select class="form-control" id="">
-                                                <option value="">Class</option>
-                                                <option value="DWB101">DWB101</option>
-                                                <option value="DWB102">DWB102</option>
-                                                <option value="DWB103">DWB103</option>
-                                                <option value="DMB101" selected>DMB101</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label for="skill">Apprenant</label>
-                                            <select class="form-control" id="">
-                                                <option value="Adnan l'harrak" selected>Adnan l'harrak</option>
-                                                <option value="Reda grain">Reda grain</option>
-                                                <option value="Hamza zaani">Hamza zaani</option>
-                                                <option value="Imran sarsri">Imran sarsri</option>
                                             </select>
                                         </div>
                                     </div>
