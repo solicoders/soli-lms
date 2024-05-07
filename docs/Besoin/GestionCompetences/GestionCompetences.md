@@ -7,9 +7,13 @@ order: 4
 
 # Définir Problème
 
+<!-- new slide -->
+
 ## Définir probleme 
 
 ![Définir probleme](./images/definir-probleme.jpg)*figure 1:Définir problem*
+
+<!-- new slide -->
 
 <!-- note -->
 
@@ -17,9 +21,13 @@ order: 4
 
 # Idéation
 
+<!-- new slide -->
+
 ## Idéation 
 
 ![Idéation](./images/ideation.png)*figure 2:Idéation*
+
+<!-- new slide -->
 
 
 
@@ -28,14 +36,20 @@ order: 4
 
 # Carte d'empathie 
 
+<!-- new slide -->
+
 ## Persona :
 
 Abdelmounaim Hammouda  
+
+<!-- new slide -->
 
 
 ## Carte d'empathie 
 
 ![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png)*figure 3:Carte d'empathie responsable de formation*
+
+<!-- new slide -->
 
 
 <!-- note -->
