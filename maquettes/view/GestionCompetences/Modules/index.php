@@ -82,7 +82,7 @@
                                             <td style="text-align: start;">Communication écrite et orale</td>
                                             <td style="text-align: start;">30 hours</td>
                                             <td class="">
-                                                <a href="détails.html" class="btn btn-sm btn-default">
+                                                <a href="/view/GestionCompetences/Modules/show.php" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
                                                 <a href="/view/GestionCompetences/Modules/edit.php" class="btn btn-sm btn-default mx-1">
@@ -100,7 +100,7 @@
                                             <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
-                                                </a>
+                                                </a> 
                                                 <a href="Edit.html" class="btn btn-sm btn-default mx-1">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
