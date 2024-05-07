@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('livrable_brief_projets', function (Blueprint $table) {
+        Schema::create('responsable_formation', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('description');
-            $table->string('lien');
+            $table->unsignedBigInteger('personnel_id');
+            $table->foreign('personnel_id')->references('id')->on('personnel')->onDelete('cascade');
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('livrable_brief_projets');
+        Schema::dropIfExists('responsable_formation');
+
     }
 };
