@@ -100,7 +100,7 @@
                                             <td class="">
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
-                                                </a>
+                                                </a> 
                                                 <a href="Edit.html" class="btn btn-sm btn-default mx-1">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
