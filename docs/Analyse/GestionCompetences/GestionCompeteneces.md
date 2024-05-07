@@ -11,6 +11,6 @@ order: 5
 
 ## Cas d'utilisation Responsable de formation
 
-![Cas d'utilisation](./images/Cas-dutilisation.png){:width="500px"} 
+![Cas d'utilisation](./images/Cas-dutilisation.png){:width="900px"} 
 
 <!-- new slide -->

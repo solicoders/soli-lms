@@ -12,6 +12,6 @@ order: 5
 
 ## Diagramme de class pour la gestion gestion competences
 
-![Diagramme de class pour la gestion des competences](./images/GestionCompetences.png){:width="500px"}
+![Diagramme de class pour la gestion des competences](./images/GestionCompetences.png){:width="900px"}
 
 <!-- new slide -->
