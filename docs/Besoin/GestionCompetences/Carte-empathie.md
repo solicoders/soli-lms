@@ -6,7 +6,8 @@ order: 6
 ---
 
 
-# Carte d'empathie 
+# Carte d'empathie
+{:sectionHeader} 
 
 <!-- new slide -->
 

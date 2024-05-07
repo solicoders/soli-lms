@@ -6,6 +6,7 @@ order: 8
 ---
 
 # Diagramme de class
+{:sectionHeader}
 
 <!-- new slide -->
 

@@ -6,6 +6,7 @@ order: 4
 ---
 
 # Définir Problème
+{:sectionHeader}
 
 <!-- new slide -->
 

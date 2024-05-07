@@ -6,6 +6,7 @@ order: 5
 ---
 
 # Idéation
+{:sectionHeader}
 
 <!-- new slide -->
 

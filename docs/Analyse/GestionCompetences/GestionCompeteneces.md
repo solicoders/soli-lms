@@ -6,6 +6,7 @@ order: 7
 ---
 
 # Cas d'utilisation
+{:sectionHeader}
 
 <!-- new slide -->
 
