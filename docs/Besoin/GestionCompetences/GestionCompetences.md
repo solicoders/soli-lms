@@ -11,7 +11,7 @@ order: 4
 
 ## Définir probleme 
 
-![Définir probleme](./images/definir-probleme.jpg)*figure 1:Définir problem*
+![Définir probleme](./images/definir-probleme.jpg){:width="500px"}*figure 1:Définir problem*
 
 <!-- new slide -->
 
@@ -25,7 +25,7 @@ order: 4
 
 ## Idéation 
 
-![Idéation](./images/ideation.png)*figure 2:Idéation*
+![Idéation](./images/ideation.png){:width="500px"}*figure 2:Idéation*
 
 <!-- new slide -->
 
@@ -47,7 +47,7 @@ Abdelmounaim Hammouda
 
 ## Carte d'empathie 
 
-![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png)*figure 3:Carte d'empathie responsable de formation*
+![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png){:width="500px"}*figure 3:Carte d'empathie responsable de formation*
 
 <!-- new slide -->
 
