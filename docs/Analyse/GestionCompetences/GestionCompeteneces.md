@@ -5,8 +5,8 @@ presentation: gestionCompetences
 order: 7
 ---
 
-# Cas d'utilisation
-{:sectionHeader}
+# Cas d'utilisation 
+{:class="sectionHeader"}
 
 <!-- new slide -->
 

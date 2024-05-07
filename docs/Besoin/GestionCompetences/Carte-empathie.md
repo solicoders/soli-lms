@@ -7,7 +7,7 @@ order: 6
 
 
 # Carte d'empathie
-{:sectionHeader} 
+{:class="sectionHeader"}
 
 <!-- new slide -->
 
