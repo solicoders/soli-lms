@@ -2,10 +2,32 @@
 layout: default
 package: gestionCompetences
 presentation: gestionCompetences
-order: 4
+order: 2
 ---
 
-## Carte d'empathie responsable de formation 
+# Définir Problème
+
+<!-- note -->
+
+
+
+
+
+
+
+## Définir probleme 
+
+![Définir probleme](./images/definir-probleme.jpg)*figure 1:Définir problem*
+
+- Chaque formateur et responsable de formation devrait avoir une connaissance approfondie de chaque filière, des modules, des compétences et des niveaux correspondants, avec leurs définitions et leur masse horaire
+
+## Idéation 
+
+![Idéation](./images/ideation.png)*figure 2:Idéation*
+
+- Créer un système modulaire avec des modules spécifiques à différentes compétences et niveaux.
+
+
 
 
 ## Persona :
@@ -15,7 +37,7 @@ Abdelmounaim Hammouda
 
 ## Carte d'empathie 
 
-![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png)*figure 2:Carte d'empathie responsable de formation*
+![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png)*figure 3:Carte d'empathie responsable de formation*
 
 
 <!-- note -->
