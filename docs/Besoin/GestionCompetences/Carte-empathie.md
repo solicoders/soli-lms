@@ -22,8 +22,6 @@ Abdelmounaim Hammouda
 
 ![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png){:width="800px"}*figure 3:Carte d'empathie responsable de formation*
 
-<!-- new slide -->
-
 
 <!-- note -->
 
@@ -38,3 +36,5 @@ Abdelmounaim Hammouda
 
 - Pour chaque filière, découvrez les modules avec leurs compétences ainsi que la masse horaire de chaque module.
 - De plus, retrouvez la définition de chaque compétence et de chaque niveau dans ces compétences.
+
+<!-- new slide -->

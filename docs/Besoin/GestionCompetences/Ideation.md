@@ -14,8 +14,9 @@ order: 5
 
 ![Idéation](./images/ideation.png){:width="900px"}*figure 2:Idéation*
 
-<!-- new slide -->
 
 <!-- note -->
 
 - Créer un système modulaire avec des modules spécifiques à différentes compétences et niveaux.
+
+<!-- new slide -->
