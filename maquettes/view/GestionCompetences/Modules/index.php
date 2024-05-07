@@ -73,7 +73,7 @@
                                             <th>N° </th>
                                             <th>MODULE</th>
                                             <th>Masse horaire</th>
-                                            <!-- <th>Action</th> -->
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

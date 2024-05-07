@@ -35,13 +35,13 @@
                                 <p>Maquetter une application mobile</p>
                             </div>
 
-                            <!-- Projects Title -->
+                            
                             <div class="col-sm-12">
                                 <label for="description">Titre du Module:</label>
                                     <p>Maquettage d’une application mobile</p>
                             </div>
 
-                            <!-- Description Field -->
+                            
                             <div class="col-sm-12">
                                 <label for="description">Description:</label>
                                 <p>Cette compétence vous permettra de concevoir des maquettes d'applications mobiles, aidant ainsi à visualiser et à planifier l'interface utilisateur</p>
