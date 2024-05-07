@@ -7,11 +7,9 @@ order: 5
 
 # Idéation
 
-
 <!-- new slide -->
 
-
-## Idéation 
+## Idéation
 
 ![Idéation](./images/ideation.png){:width="900px"}*figure 2:Idéation*
 
