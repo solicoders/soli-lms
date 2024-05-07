@@ -14,9 +14,16 @@ class EtatRealisationSeeder extends Seeder
     public function run(): void
     {
         EtatRealisation::create([
-            'nom' => 'Design Completed',
-            'description' => 'Completed the design phase with approval from the client',
+            'nom' => 'Terminé',
+            'description' => 'Phase de conception terminée avec approbation du client',
             'brief_projet_id' => 1,
+            'nature' => 'realisation'
+        ]);
+        EtatRealisation::create([
+            'nom' => 'Validé',
+            'description' => 'Phase de développement terminée avec approbation du client',
+            'brief_projet_id' => 1,
+            'nature' => 'validation'
         ]);
     }
 }
