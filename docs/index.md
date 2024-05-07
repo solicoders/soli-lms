@@ -26,3 +26,8 @@ order: 1
 - Gestion des Validation
     - [RapporT Gestion Validations](https://solicoders.github.io/soli-lms/documentation/GestionValidations/)
     - [Présentation Gestion Validations](https://solicoders.github.io/soli-lms/documentation/GestionValidations/presentation.html#/)
+
+
+- Gestion des Formations
+    - [Rapport Gestion Formations](https://solicoders.github.io/soli-lms/documentation/GestionFormation/)
+    - [Présentation Gestion Formations](https://solicoders.github.io/soli-lms/documentation/GestionFormation/presentation.html#/)

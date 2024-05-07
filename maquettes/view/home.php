@@ -66,6 +66,20 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-4 col-6">
+
+                            <div class="small-box bg-gray">
+                                <div class="inner">
+                                    <h3>10</h3>
+                                    <p>Formation</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="./taches/index.php" class="small-box-footer">Plus d'informations <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
