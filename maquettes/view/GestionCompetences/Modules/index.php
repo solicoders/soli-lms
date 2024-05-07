@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="float-sm-right">
-                            <a href="create.html" style="background-color: #17A2B8;" class="btn">
+                            <a href="/view/GestionCompetences/Modules/create.php" style="background-color: #17A2B8;" class="btn">
                                 <i class="fas fa-plus"></i> Ajouter</a>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                                                 <a href="détails.html" class="btn btn-sm btn-default">
                                                     <i class="fa-regular fa-eye"></i>
                                                 </a>
-                                                <a href="Edit.html" class="btn btn-sm btn-default mx-1">
+                                                <a href="/view/GestionCompetences/Modules/edit.php" class="btn btn-sm btn-default mx-1">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
                                                 <button type="submit" class="btn btn-sm btn-danger">
