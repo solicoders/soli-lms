@@ -49,7 +49,7 @@ Abdelmounaim Hammouda
 
 ## Carte d'empathie 
 
-![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png){:width="900px"}*figure 3:Carte d'empathie responsable de formation*
+![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png){:width="800px"}*figure 3:Carte d'empathie responsable de formation*
 
 <!-- new slide -->
 
