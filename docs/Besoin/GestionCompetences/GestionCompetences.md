@@ -11,7 +11,7 @@ order: 4
 
 ## Définir probleme 
 
-![Définir probleme](./images/definir-probleme.jpg){:width="900px"}*figure 1:Définir problem*
+![Définir probleme](./images/definir-probleme.jpg){:width="500px"}*figure 1:Définir problem*
 
 <!-- new slide -->
 
