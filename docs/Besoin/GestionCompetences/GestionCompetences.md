@@ -12,6 +12,9 @@ order: 4
 
 Abdelmounaim Hammouda  
 
+
+## Carte d'empathie 
+
 ![Carte d'empathie responsable de formation](./images/carte-empathie-responsable-de-formation-abdelmounaim-hammouda.png)*figure 2:Carte d'empathie responsable de formation*
 
 
