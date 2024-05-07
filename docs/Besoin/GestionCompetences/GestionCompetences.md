@@ -15,6 +15,8 @@ order: 4
 
 - Chaque formateur et responsable de formation devrait avoir une connaissance approfondie de chaque filière, des modules, des compétences et des niveaux correspondants, avec leurs définitions et leur masse horaire
 
+# Idéation
+
 ## Idéation 
 
 ![Idéation](./images/ideation.png)*figure 2:Idéation*
@@ -22,7 +24,7 @@ order: 4
 - Créer un système modulaire avec des modules spécifiques à différentes compétences et niveaux.
 
 
-
+# Carte d'empathie 
 
 ## Persona :
 
