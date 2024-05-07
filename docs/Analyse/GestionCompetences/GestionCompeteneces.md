@@ -5,6 +5,8 @@ presentation: gestionCompetences
 order: 5
 ---
 
-## 
+# Cas d'utilisation
 
-![Diagramme de class pour la gestion des competences](./images/Cas-dutilisation.png) 
+## Cas d'utilisation Responsable de formation
+
+![Cas d'utilisation](./images/Cas-dutilisation.png) 
