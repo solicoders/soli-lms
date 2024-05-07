@@ -2,7 +2,7 @@
 layout: default
 package: gestionCompetences
 presentation: gestionCompetences
-order: 3
+order: 6
 ---
 
 ## Diagramme de class pour la gestion gestion competences
