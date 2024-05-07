@@ -2,7 +2,7 @@
 layout: default
 package: gestionCompetences
 presentation: gestionCompetences
-order: 5
+order: 7
 ---
 
 # Cas d'utilisation
