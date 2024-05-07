@@ -4,12 +4,12 @@ order: 1
 ---
 
 
-- [Rapport](https://solicoders.github.io/soli-lms/documentation/) 
-- [Présentation](https://solicoders.github.io/soli-lms/documentation/presentation.html#/) 
+- [Rapport](https://aminaassaid1.github.io/soli-lms/documentation/) 
+- [Présentation](https://aminaassaid1.github.io/soli-lms/documentation/presentation.html#/) 
 
 - Gestion des Compétences
-    - [Rapport Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/)
-    - [Présentation Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/presentation.html#/)
+    - [Rapport Gestion des Compétences](https://aminaassaid1.github.io/soli-lms/documentation/GestionCompetences/)
+    - [Présentation Gestion des Compétences](https://aminaassaid1.github.io/soli-lms/documentation/GestionCompetences/presentation.html#/)
   
 - Gestion des RH
     - [Rapport Gestion des RH](https://solicoders.github.io/soli-lms/documentation/GestionRH/)

@@ -25,7 +25,7 @@
 
                             <div class="card card-info">
                                 <div class="card-header">
-                                    <h2 class="card-title"> <i class="nav-icon fas fa-tasks"></i> Editer Une Compétence</h2>
+                                    <h2 class="card-title"> <i class="nav-icon fas fa-tasks"></i> Modifier une module</h2>
                                 </div>
                                 <form method="POST" class="container pt-2" action="">
 
@@ -41,29 +41,24 @@
                                             <div class="invalid-feedback text-danger"></div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="nom" class="form-label">Module</label>
-                                            <select name="projetId" id="projetId" class="form-control">
-
-                                                <option value="1">Anglais technique</option>
-                                                <option value="2">Maquettage d’une application mobile</option>
-                                                <option value="3">Communication écrite et orale</option>
-                                            </select>
-
-                                            <div class="invalid-feedback text-danger"></div>
-
-                                        </div>
 
                                         <div class="form-group mb-3">
-                                            <label for="nom">Code</label>
-                                            <input name="nom" type="text" class="form-control" id="nom" value="C1">
+                                            <label for="N">N°</label>
+                                            <input name="N" type="text" class="form-control" id="N" value="M01">
 
                                             <div class="text-danger"></div>
                                         </div>
 
                                         <div class="form-group mb-3">
-                                            <label for="nom">Nom</label>
-                                            <input name="nom" type="text" class="form-control" id="nom" value="Maquetter une application mobile">
+                                            <label for="module">MODULE</label>
+                                            <input name="module" type="text" class="form-control" id="module" value="Communication écrite et orale">
+
+                                            <div class="text-danger"></div>
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label for="MasseHoraire">Masse horaire</label>
+                                            <input name="MasseHoraire" type="text" class="form-control" id="MasseHoraire" value="30 hours">
 
                                             <div class="text-danger"></div>
                                         </div>
@@ -76,36 +71,6 @@
 
                                             </div>
                                         </div>
-
-                                        <div class="form-group mb-3">
-                                            <label for="Description">Niveau imiter</label>
-                                            <textarea name="description" id="inputDescription" class="form-control"></textarea>
-
-                                            <div class="text-danger">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group mb-3">
-                                            <label for="Description">Niveau adapter</label>
-                                            <textarea name="description" id="inputDescription" class="form-control"></textarea>
-
-                                            <div class="text-danger">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group mb-3">
-                                            <label for="Description">Niveau Transposé</label>
-                                            <textarea name="description" id="inputDescription" class="form-control"></textarea>
-
-                                            <div class="text-danger">
-
-                                            </div>
-                                        </div>
-
-
-
                                     </div>
                                     <div class="card-footer">
                                         <a href="" class="btn btn-default">Cancel</a>
