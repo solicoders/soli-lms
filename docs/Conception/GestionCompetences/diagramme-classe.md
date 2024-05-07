@@ -5,7 +5,7 @@ presentation: gestionCompetences
 order: 5
 ---
 
-## Diagramme de class 
+# Diagramme de class 
 
 ## Diagramme de class pour la gestion gestion competences
 
