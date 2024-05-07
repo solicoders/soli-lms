@@ -2,7 +2,7 @@
 layout: default
 package: gestionCompetences
 presentation: gestionCompetences
-order: 2
+order: 4
 ---
 
 # Définir Problème
