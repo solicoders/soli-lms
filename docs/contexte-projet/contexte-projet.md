@@ -5,4 +5,3 @@ presentation: contexte-projet
 order: 3
 ---
 
-# Contexte du projet

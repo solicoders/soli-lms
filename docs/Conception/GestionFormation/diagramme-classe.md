@@ -7,4 +7,4 @@ order: 3
 
 ## Diagramme de class pour la GestionFormation
 
-![Diagramme de class pour la GestionFormation](./images/Diagramme-de-classe.PNG)
+![Diagramme de class pour la GestionFormation](/soli-lms/Conception/GestionFormation/images/Diagramme-de-classe.PNG)*figure 3:Diagramme de classe gestion de formation*
