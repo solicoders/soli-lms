@@ -4,13 +4,14 @@ namespace App\Models\GestionCompetences;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\GestionCompetences\Competences; 
+use App\Models\GestionCompetences\Competences;
 use App\Models\GestionCompetences\Filieres;
 class Modules extends Model
 {
     use HasFactory;
 
     protected $fillable = [
+        'N',
         'nom',
         'description',
         'filiere_id',
@@ -23,5 +24,5 @@ class Modules extends Model
     {
         return $this->hasMany(Competences::class);
     }
-  
+
 }

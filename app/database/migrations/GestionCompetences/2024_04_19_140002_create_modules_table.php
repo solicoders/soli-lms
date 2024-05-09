@@ -12,6 +12,7 @@ return new class extends Migration
     {
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
+            $table->string('N');
             $table->string('nom');
             $table->string('description');
             $table->string('masse_horaire');
