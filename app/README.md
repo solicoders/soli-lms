@@ -68,4 +68,12 @@ npm run build
 ```
 
 <!-- TODO :Loin and password   -->
-## Loin and password 
+## Login and password 
+
+- Login :
+    - formateur :
+      - email : Formateure@gmail.com
+      - password : Formateure
+    - Apprenant :
+      - email :  apprenant@gmail.com
+      - password : apprenant
