@@ -2,10 +2,10 @@
 layout: default
 package: GestionFormation
 presentation: GestionFormation
-order: 4
+order: 5
 ---
 
-## Idéation
+# Idéation
 
 - Créer une plateforme de gestion de formation permettant aux formateurs d'ajouter, de modifier et de supprimer des formations, tout en offrant aux apprenants un accès à plusieurs liens de formations sélectionnés. Cette plateforme sera dotée de fonctionnalités de recherche et de pagination pour une navigation efficace.
 
