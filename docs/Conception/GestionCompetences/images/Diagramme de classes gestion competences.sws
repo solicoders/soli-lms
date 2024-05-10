@@ -4,7 +4,9 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{1B84D8EE-18BB-4676-8207-FCD74E09D484}" Name="Diagramme de classes_1" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../../gestioncompétences/Diagramme de classes_1.moo"/>
+		<Model Expanded="Yes" ID="{1B84D8EE-18BB-4676-8207-FCD74E09D484}" Loaded="No" Name="Diagramme de classes_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="../../../gestioncompétences/Diagramme de classes_1.moo"/>
+		<Model Expanded="Yes" ID="{42A71CD5-939E-4FCA-83DB-E80D971DAF1C}" Loaded="No" Name="Diagramme de classes_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="/Lab-web/lab_crud/conception/Diagramme de classes.moo"/>
+		<Model Expanded="Yes" ID="{42A71CD5-939E-4FCA-83DB-E80D971DAF1C}" Name="Diagramme de classes_1" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="/Lab-web/lab_crud/conception/Diagramme de classes.moo"/>
 	</Local>
 	<BrowserModule Name="Référentiel"/>
 </Workspace>
