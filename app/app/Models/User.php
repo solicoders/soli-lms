@@ -3,18 +3,20 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-
-use App\Models\CreationBriefProjet\BriefProjet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\GestionRH\Apprenant;
 use App\Models\GestionRH\Personnel;
+use Spatie\Permission\Traits\HasRoles;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
+
+    public const ADMIN = "admin";
+    public const MEMBRE = "membre";
 
     /**
      * The attributes that are mass assignable.
@@ -47,10 +49,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function BriefProjet()
-    {
-        return $this->hasMany(BriefProjet::class, 'formateur_id');
-    }
     /**
      * The attributes that should be cast.
      *

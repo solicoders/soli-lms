@@ -9,8 +9,6 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -18,29 +16,36 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
+     * Migration by packages.
      */
     public function boot(): void
     {
-        $migrationsPath = database_path('migrations');
-        $paths = $this->getAllSubdirectoriesOptimized($migrationsPath);
-
-        $this->loadMigrationsFrom($paths);
+        $this->loadMigrationsFrom($this->getMigrationPaths());
+        
+        // Bootstrap any application services.
         Paginator::useBootstrap();
     }
 
     /**
-     * Recursively get all subdirectories under a given directory.
+     * Get all migration paths.
      *
-     * @param string $dir The directory path.
-     * @return array An array of subdirectory paths.
+     * @return array
      */
-    function getAllSubdirectoriesOptimized($dir)
+    protected function getMigrationPaths(): array
+    {
+        $migrationsPath = database_path('migrations');
+        return $this->getAllSubdirectoriesOptimized($migrationsPath);
+    }
+
+    /**
+     * Get all subdirectories.
+     *
+     * @param string $dir
+     * @return array
+     */
+    protected function getAllSubdirectoriesOptimized(string $dir): array
     {
         $subdirectories = [];
-
         $items = scandir($dir);
 
         foreach ($items as $item) {
@@ -48,10 +53,7 @@ class AppServiceProvider extends ServiceProvider
                 $path = $dir . DIRECTORY_SEPARATOR . $item;
                 if (is_dir($path)) {
                     $subdirectories[] = $path;
-                    $subdirectoriesToAdd = $this->getAllSubdirectoriesOptimized($path);
-                    foreach ($subdirectoriesToAdd as $subdirToAdd) {
-                        $subdirectories[] = $subdirToAdd;
-                    }
+                    $subdirectories = array_merge($subdirectories, $this->getAllSubdirectoriesOptimized($path));
                 }
             }
         }
