@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(GestionRHSeeder::class);
         $this->call(GestionCompetencesSeeder::class);
-        $this->call(CreationBriefProjetSeeder::class);
-        $this->call(RealisationBriefProjetSeeder::class);
-        $this->call(GestionValidationsSeeder::class);
+        // $this->call(CreationBriefProjetSeeder::class);
+        // $this->call(RealisationBriefProjetSeeder::class);
+        // $this->call(GestionValidationsSeeder::class);
 
 
     }
