@@ -28,14 +28,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/view/GestionBriefProjet/Formateur/GestionBriefs/index.php"
+                <a href=""
                   class="nav-link  ">
                   <i class="far fa-file-alt nav-icon"></i>
                   <p>Briefs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/view/GestionBriefProjet/Formateur/Realisations/index.php"
+                <a href=""
                   class="nav-link  ">
                   <i class="far fa-chart-bar nav-icon"></i>
                   <p>Réalisations</p>
