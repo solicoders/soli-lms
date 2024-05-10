@@ -2,6 +2,8 @@
 layout: default
 package: GestionFormation
 presentation: GestionFormation
+presentationPackage: GestionFormation
+
 order: 5
 ---
 

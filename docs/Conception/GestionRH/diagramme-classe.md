@@ -2,6 +2,8 @@
 layout: default
 package: GestionRH
 presentation: GestionRH
+presentationPackage: GestionFormation
+
 order: 3
 ---
 

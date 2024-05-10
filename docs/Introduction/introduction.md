@@ -2,6 +2,7 @@
 layout: default
 chapitre: introduction
 presentation: introduction
+presentationPackage: GestionFormation
 order: 2
 ---
 
