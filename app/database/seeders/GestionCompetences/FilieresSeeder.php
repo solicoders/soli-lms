@@ -14,7 +14,7 @@ class FilieresSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $filieres = [
             [
                 'nom' => 'Développeur Web – mode Bootcamp',

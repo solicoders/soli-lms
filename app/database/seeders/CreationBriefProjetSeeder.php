@@ -22,6 +22,8 @@ class CreationBriefProjetSeeder extends Seeder
     }
     
 
+
+    
     public static function Classes(): array
     {
         return [

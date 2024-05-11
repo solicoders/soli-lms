@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('description');
+            $table->string('nature');
             $table->unsignedBigInteger('brief_projet_id'); 
             $table->foreign('brief_projet_id')->references('id')->on('brief_projets')->onDelete('cascade');  
             $table->timestamps();
