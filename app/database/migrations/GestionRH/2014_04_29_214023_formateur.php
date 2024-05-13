@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('formateur', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('specialite_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // $table->foreign('specialite_id')->references('id')->on('specialite')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

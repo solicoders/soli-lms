@@ -26,26 +26,23 @@ class ApprenantSeeder extends Seeder
             'date_naissance' => '2003/10/17',
             'tele_num' => '010414141814',
             'rue' => 'tanger',
-            'ville_id' => 1,
+            'ville_id' => 2,
+            'role_id' => 1,
             'cin' => 'kl447787',
             'profile_image' => 'default_profile_image.png',
             'remember_token' => '40hfg44q444gUGU4y56guyg5uG45HQGQE4IAY5584',
-            'type'=> 'Apprenant',
             'email' => 'apprenant@gmail.com',
             'password' => Hash::make('apprenant'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
-
         ]);
 
         Apprenant::create([
-            'niveau_scholaire' => 'Bac',
-            'cne'=> 12345678989,
-            'lieu_naissance' => 'tange',
+            'nivaeu_scholaire_id' => 1,
+            'cne'=> 'P145555575',
+            'lieu_naissance_id' => 1,
             'date_inscription' => '2023/10/14',
-            'user_id' => $user1->id,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'user_id' => $user1->id
         ]);
 
 

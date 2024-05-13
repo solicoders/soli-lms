@@ -21,7 +21,6 @@ return new class extends Migration
             $table->foreign('lieu_naissance_id')->references('id')->on('ville')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             // $table->foreign('nivaeu_scholaire_id')->references('id')->on('nivaeu_scholaire')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
