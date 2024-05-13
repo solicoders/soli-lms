@@ -4,17 +4,14 @@ namespace App\Models\GestionRH;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
+use App\Models\GestionRH\Formateur;
 
-class Formateur extends Model
+class Specialite extends Model
 {
-    
-    protected $table = 'formateur';
-
     use HasFactory;
 
-    public function User()
+    public function Formateur()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Formateur::class);
     }
 }
