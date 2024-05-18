@@ -39,4 +39,10 @@ class VilleTest extends TestCase
         ]);
         $this->assertNotNull($update_ville);
     }
+
+    public function test_delete_ville()
+    {
+        $delete_ville = $this->VilleRepository->destroy(6);
+        $this->assertNotNull($delete_ville);
+    }
 }
