@@ -18,7 +18,7 @@ class ApprenantSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = fopen(base_path("database/data/apprenant.csv"), "r");
+        $csvFile = fopen(base_path("database/data/GestionRH/apprenant.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
