@@ -27,7 +27,6 @@ return new class extends Migration
             $table->string('cin');
             $table->string('type')->nullable();
             $table->string('profile_image');
-            
             $table->rememberToken();
             $table->timestamps();
         });
