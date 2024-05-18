@@ -23,10 +23,20 @@ class VilleTest extends TestCase
     public function test_create_ville()
     {
         $create_ville = $this->VilleRepository->create([
-            'nom' => 'Marakkech',
+            'nom' => 'Casablanca',
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()
         ]);
         $this->assertNotNull($create_ville);
+    }
+
+    public function test_update_ville()
+    {
+        $update_ville = $this->VilleRepository->update(1, [
+            'nom' => 'Tanger',
+            'updated_at' => Carbon::now(),
+            'created_at' => Carbon::now()
+        ]);
+        $this->assertNotNull($update_ville);
     }
 }
