@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{8EC67CEF-9E3F-4A2D-BA3D-51F4BF33C161}" Label="" LastModificationDate="1715447864" Name="ModeleOrienteObjet_1" Objects="88" Symbols="14" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{8EC67CEF-9E3F-4A2D-BA3D-51F4BF33C161}" Label="" LastModificationDate="1716033936" Name="ModeleOrienteObjet_1" Objects="153" Symbols="35" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,8 +12,8 @@
 <a:Code>ModeleOrienteObjet_1</a:Code>
 <a:CreationDate>1713429459</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715446127</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ModificationDate>1716033631</a:ModificationDate>
+<a:Modifier>hp</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
 [FolderOptions\Class Diagram Objects]
@@ -982,8 +982,8 @@ NameToCode=No</a:ModelOptionsText>
 <a:Code>DiagrammeClasses_1</a:Code>
 <a:CreationDate>1713429459</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715446127</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ModificationDate>1716033858</a:ModificationDate>
+<a:Modifier>hp</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
 [DisplayPreferences\CLD]
@@ -1394,16 +1394,17 @@ Shadow=0</a:DisplayPreferences>
 <a:PageOrientation>1</a:PageOrientation>
 <a:PaperSource>15</a:PaperSource>
 <c:Symbols>
-<o:GeneralizationSymbol Id="o6">
-<a:CreationDate>1714338602</a:CreationDate>
-<a:ModificationDate>1715434580</a:ModificationDate>
-<a:Rect>((-37007,12002), (-27099,16725))</a:Rect>
-<a:ListOfPoints>((-27099,16725),(-29392,16725),(-29392,12002),(-37007,12002))</a:ListOfPoints>
+<o:AssociationSymbol Id="o6">
+<a:CreationDate>1713433770</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-33993,23611), (17272,25548))</a:Rect>
+<a:ListOfPoints>((17272,25235),(-1768,25235),(-1768,23924),(-33993,23924))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
-<a:ArrowStyle>7</a:ArrowStyle>
-<a:LineColor>4194432</a:LineColor>
+<a:ArrowStyle>8</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
 <c:SourceSymbol>
 <o:ClassSymbol Ref="o7"/>
 </c:SourceSymbol>
@@ -1411,19 +1412,20 @@ Shadow=0</a:DisplayPreferences>
 <o:ClassSymbol Ref="o8"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:Generalization Ref="o9"/>
+<o:Association Ref="o9"/>
 </c:Object>
-</o:GeneralizationSymbol>
-<o:GeneralizationSymbol Id="o10">
-<a:CreationDate>1714420703</a:CreationDate>
-<a:ModificationDate>1715445415</a:ModificationDate>
-<a:Rect>((-36595,18253), (-27609,25279))</a:Rect>
-<a:ListOfPoints>((-27609,25279),(-30417,25279),(-30417,18253),(-36595,18253))</a:ListOfPoints>
+</o:AssociationSymbol>
+<o:AssociationSymbol Id="o10">
+<a:CreationDate>1713433932</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-35902,16719), (31589,20873))</a:Rect>
+<a:ListOfPoints>((31589,20873),(11627,20873),(11627,16719),(-35902,16719))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
-<a:ArrowStyle>7</a:ArrowStyle>
-<a:LineColor>4194432</a:LineColor>
+<a:ArrowStyle>8</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
 <c:SourceSymbol>
 <o:ClassSymbol Ref="o11"/>
 </c:SourceSymbol>
@@ -1431,172 +1433,163 @@ Shadow=0</a:DisplayPreferences>
 <o:ClassSymbol Ref="o8"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:Generalization Ref="o12"/>
+<o:Association Ref="o12"/>
 </c:Object>
-</o:GeneralizationSymbol>
+</o:AssociationSymbol>
 <o:AssociationSymbol Id="o13">
-<a:CreationDate>1715356020</a:CreationDate>
-<a:ModificationDate>1715447864</a:ModificationDate>
-<a:Rect>((-17231,26585), (14961,27768))</a:Rect>
-<a:ListOfPoints>((-17231,26594),(-4029,26594),(-4029,27759),(14961,27759))</a:ListOfPoints>
+<a:CreationDate>1713434082</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-2273,40426), (8164,45597))</a:Rect>
+<a:ListOfPoints>((577,40426),(577,42778),(5314,42778),(5314,45597))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-MULA 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
 <c:SourceSymbol>
-<o:ClassSymbol Ref="o11"/>
-</c:SourceSymbol>
-<c:DestinationSymbol>
 <o:ClassSymbol Ref="o14"/>
-</c:DestinationSymbol>
-<c:Object>
-<o:Association Ref="o15"/>
-</c:Object>
-</o:AssociationSymbol>
-<o:AssociationSymbol Id="o16">
-<a:CreationDate>1715356562</a:CreationDate>
-<a:ModificationDate>1715447862</a:ModificationDate>
-<a:Rect>((-7950,16814), (9644,19499))</a:Rect>
-<a:ListOfPoints>((-7950,16814),(-3897,16814),(-3897,19499),(9644,19499))</a:ListOfPoints>
-<a:CornerStyle>2</a:CornerStyle>
-<a:ArrowStyle>8</a:ArrowStyle>
-<a:LineColor>0</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-MULA 0 Arial,8,N</a:FontList>
-<c:SourceSymbol>
-<o:ClassSymbol Ref="o7"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:ClassSymbol Ref="o17"/>
+<o:ClassSymbol Ref="o15"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:Association Ref="o18"/>
+<o:Association Ref="o16"/>
 </c:Object>
 </o:AssociationSymbol>
-<o:AssociationSymbol Id="o19">
-<a:CreationDate>1715433240</a:CreationDate>
-<a:ModificationDate>1715447861</a:ModificationDate>
-<a:Rect>((-41039,7113), (7145,9024))</a:Rect>
-<a:ListOfPoints>((-41039,7113),(-13217,7113),(-13217,9024),(7145,9024))</a:ListOfPoints>
+<o:AssociationSymbol Id="o17">
+<a:CreationDate>1713434085</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((3967,47539), (27113,54426))</a:Rect>
+<a:ListOfPoints>((27113,52197),(7041,52197),(7041,47539))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-MULA 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
+<c:SourceSymbol>
+<o:ClassSymbol Ref="o18"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:ClassSymbol Ref="o15"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:Association Ref="o19"/>
+</c:Object>
+</o:AssociationSymbol>
+<o:AssociationSymbol Id="o20">
+<a:CreationDate>1713434486</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-42561,27131), (5379,46004))</a:Rect>
+<a:ListOfPoints>((-39487,27131),(-39487,46004),(5379,46004))</a:ListOfPoints>
+<a:CornerStyle>2</a:CornerStyle>
+<a:ArrowStyle>8</a:ArrowStyle>
+<a:LineColor>0</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
 <c:SourceSymbol>
 <o:ClassSymbol Ref="o8"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:ClassSymbol Ref="o20"/>
+<o:ClassSymbol Ref="o15"/>
 </c:DestinationSymbol>
 <c:Object>
 <o:Association Ref="o21"/>
 </c:Object>
 </o:AssociationSymbol>
 <o:AssociationSymbol Id="o22">
-<a:CreationDate>1715433708</a:CreationDate>
-<a:ModificationDate>1715447851</a:ModificationDate>
-<a:Rect>((-47428,870), (9608,7872))</a:Rect>
-<a:ListOfPoints>((-47428,7872),(-47428,2044),(9608,2044))</a:ListOfPoints>
+<a:CreationDate>1713434716</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-23173,50859), (3423,55420))</a:Rect>
+<a:ListOfPoints>((-23173,53796),(3423,53796),(3423,50859))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-MULA 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
 <c:SourceSymbol>
-<o:ClassSymbol Ref="o8"/>
+<o:ClassSymbol Ref="o23"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:ClassSymbol Ref="o23"/>
+<o:ClassSymbol Ref="o15"/>
 </c:DestinationSymbol>
 <c:Object>
 <o:Association Ref="o24"/>
 </c:Object>
 </o:AssociationSymbol>
 <o:AssociationSymbol Id="o25">
-<a:CreationDate>1715446126</a:CreationDate>
-<a:ModificationDate>1715447861</a:ModificationDate>
-<a:Rect>((-7437,11000), (5724,25059))</a:Rect>
-<a:ListOfPoints>((-7437,23885),(5724,23885),(5724,11000))</a:ListOfPoints>
+<a:CreationDate>1713439088</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-36911,26618), (105,36154))</a:Rect>
+<a:ListOfPoints>((-2745,36154),(-2745,26618),(-36911,26618))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
-<a:LineColor>4194432</a:LineColor>
+<a:LineColor>0</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N
-MULA 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
 <c:SourceSymbol>
-<o:ClassSymbol Ref="o11"/>
+<o:ClassSymbol Ref="o14"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:ClassSymbol Ref="o20"/>
+<o:ClassSymbol Ref="o8"/>
 </c:DestinationSymbol>
 <c:Object>
 <o:Association Ref="o26"/>
 </c:Object>
 </o:AssociationSymbol>
-<o:ClassSymbol Id="o11">
-<a:CreationDate>1713431593</a:CreationDate>
-<a:ModificationDate>1715445415</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((-27746,22433), (-6716,30755))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<o:AssociationSymbol Id="o27">
+<a:CreationDate>1713439759</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((27922,16106), (32198,46588))</a:Rect>
+<a:ListOfPoints>((27922,46588),(27922,30327),(32198,30327),(32198,16106))</a:ListOfPoints>
+<a:CornerStyle>2</a:CornerStyle>
+<a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
-<a:FillColor>16777215</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,12,N
-DISPNAME 0 Arial,12,N
-CNTR 0 Arial,12,N
-Attributes 0 Arial,12,N
-ClassPrimaryAttribute 0 Arial,12,N
-Operations 0 Arial,12,N
-InnerClassifiers 0 Arial,12,N
-LABL 0 Arial,12,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
+<c:SourceSymbol>
+<o:ClassSymbol Ref="o18"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:ClassSymbol Ref="o11"/>
+</c:DestinationSymbol>
 <c:Object>
-<o:Class Ref="o27"/>
+<o:Association Ref="o28"/>
 </c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o7">
-<a:CreationDate>1713440786</a:CreationDate>
-<a:ModificationDate>1715434437</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((-27752,13147), (-7300,20187))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
+</o:AssociationSymbol>
+<o:AssociationSymbol Id="o29">
+<a:CreationDate>1713440616</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:Rect>((-26082,38399), (-6026,48870))</a:Rect>
+<a:ListOfPoints>((-26082,38399),(-17288,38399),(-17288,48870),(-6026,48870))</a:ListOfPoints>
+<a:CornerStyle>2</a:CornerStyle>
+<a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>0</a:LineColor>
-<a:FillColor>16777215</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,12,N
-DISPNAME 0 Arial,12,N
-CNTR 0 Arial,12,N
-Attributes 0 Arial,12,N
-ClassPrimaryAttribute 0 Arial,12,N
-Operations 0 Arial,12,N
-InnerClassifiers 0 Arial,12,N
-LABL 0 Arial,12,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
+<a:FontList>DISPNAME 0 Arial,12,N
+MULA 0 Arial,12,N</a:FontList>
+<c:SourceSymbol>
+<o:ClassSymbol Ref="o30"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:ClassSymbol Ref="o15"/>
+</c:DestinationSymbol>
 <c:Object>
-<o:Class Ref="o28"/>
+<o:Association Ref="o31"/>
 </c:Object>
-</o:ClassSymbol>
+</o:AssociationSymbol>
 <o:ClassSymbol Id="o8">
-<a:CreationDate>1713441382</a:CreationDate>
-<a:ModificationDate>1715434580</a:ModificationDate>
+<a:CreationDate>1713429469</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-50030,6595), (-35226,29241))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>0</a:LineColor>
-<a:FillColor>16777215</a:FillColor>
+<a:Rect>((-46038,14850), (-30462,28572))</a:Rect>
+<a:LineColor>12632256</a:LineColor>
+<a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,12,N
 DISPNAME 0 Arial,12,N
@@ -1609,93 +1602,17 @@ LABL 0 Arial,12,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
-<c:Object>
-<o:Class Ref="o29"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o14">
-<a:CreationDate>1715355867</a:CreationDate>
-<a:ModificationDate>1715447864</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((9496,24460), (20426,31058))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>0</a:LineColor>
-<a:FillColor>16777215</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,12,N
-DISPNAME 0 Arial,12,N
-CNTR 0 Arial,12,N
-Attributes 0 Arial,12,N
-ClassPrimaryAttribute 0 Arial,12,N
-Operations 0 Arial,12,N
-InnerClassifiers 0 Arial,12,N
-LABL 0 Arial,12,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
-<c:Object>
-<o:Class Ref="o30"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o17">
-<a:CreationDate>1715356531</a:CreationDate>
-<a:ModificationDate>1715447862</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((9288,16715), (20152,23313))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>0</a:LineColor>
-<a:FillColor>16777215</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,12,N
-DISPNAME 0 Arial,12,N
-CNTR 0 Arial,12,N
-Attributes 0 Arial,12,N
-ClassPrimaryAttribute 0 Arial,12,N
-Operations 0 Arial,12,N
-InnerClassifiers 0 Arial,12,N
-LABL 0 Arial,12,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
-<c:Object>
-<o:Class Ref="o31"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o20">
-<a:CreationDate>1715433231</a:CreationDate>
-<a:ModificationDate>1715447861</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((5391,7005), (16253,13603))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>0</a:LineColor>
-<a:FillColor>16777215</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,12,N
-DISPNAME 0 Arial,12,N
-CNTR 0 Arial,12,N
-Attributes 0 Arial,12,N
-ClassPrimaryAttribute 0 Arial,12,N
-Operations 0 Arial,12,N
-InnerClassifiers 0 Arial,12,N
-LABL 0 Arial,12,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
 <c:Object>
 <o:Class Ref="o32"/>
 </c:Object>
 </o:ClassSymbol>
-<o:ClassSymbol Id="o23">
-<a:CreationDate>1715433698</a:CreationDate>
-<a:ModificationDate>1715447851</a:ModificationDate>
+<o:ClassSymbol Id="o7">
+<a:CreationDate>1713430052</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((5663,-756), (16625,5842))</a:Rect>
+<a:Rect>((9766,22316), (21942,32358))</a:Rect>
 <a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>0</a:LineColor>
+<a:LineColor>12632256</a:LineColor>
 <a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,12,N
@@ -1714,6 +1631,162 @@ LABL 0 Arial,12,N</a:FontList>
 <o:Class Ref="o33"/>
 </c:Object>
 </o:ClassSymbol>
+<o:ClassSymbol Id="o11">
+<a:CreationDate>1713430320</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((25737,13475), (37913,21497))</a:Rect>
+<a:LineColor>12632256</a:LineColor>
+<a:FillColor>12632256</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,12,N
+DISPNAME 0 Arial,12,N
+CNTR 0 Arial,12,N
+Attributes 0 Arial,12,N
+ClassPrimaryAttribute 0 Arial,12,N
+Operations 0 Arial,12,N
+InnerClassifiers 0 Arial,12,N
+LABL 0 Arial,12,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o34"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o23">
+<a:CreationDate>1713431593</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-27956,51690), (-21958,56864))</a:Rect>
+<a:LineColor>12632256</a:LineColor>
+<a:FillColor>12632256</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,12,N
+DISPNAME 0 Arial,12,N
+CNTR 0 Arial,12,N
+Attributes 0 Arial,12,N
+ClassPrimaryAttribute 0 Arial,12,N
+Operations 0 Arial,12,N
+InnerClassifiers 0 Arial,12,N
+LABL 0 Arial,12,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o35"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o14">
+<a:CreationDate>1713432110</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-5734,32952), (6442,40974))</a:Rect>
+<a:LineColor>12632256</a:LineColor>
+<a:FillColor>12632256</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,12,N
+DISPNAME 0 Arial,12,N
+CNTR 0 Arial,12,N
+Attributes 0 Arial,12,N
+ClassPrimaryAttribute 0 Arial,12,N
+Operations 0 Arial,12,N
+InnerClassifiers 0 Arial,12,N
+LABL 0 Arial,12,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o36"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o18">
+<a:CreationDate>1713432353</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((18424,45728), (30600,55176))</a:Rect>
+<a:LineColor>16744448</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,12,N
+DISPNAME 0 Arial,12,N
+CNTR 0 Arial,12,N
+Attributes 0 Arial,12,N
+ClassPrimaryAttribute 0 Arial,12,N
+Operations 0 Arial,12,N
+InnerClassifiers 0 Arial,12,N
+LABL 0 Arial,12,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o37"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o15">
+<a:CreationDate>1713432428</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-7145,44418), (8419,51602))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>16744448</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,12,N
+DISPNAME 0 Arial,12,N
+CNTR 0 Arial,12,N
+Attributes 0 Arial,12,N
+ClassPrimaryAttribute 0 Arial,12,N
+Operations 0 Arial,12,N
+InnerClassifiers 0 Arial,12,N
+LABL 0 Arial,12,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:ManuallyResized>1</a:ManuallyResized>
+<c:Object>
+<o:Class Ref="o38"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o30">
+<a:CreationDate>1713440278</a:CreationDate>
+<a:ModificationDate>1716033931</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-34322,35495), (-21424,42709))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>12632256</a:LineColor>
+<a:FillColor>12632256</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,12,N
+DISPNAME 0 Arial,12,N
+CNTR 0 Arial,12,N
+Attributes 0 Arial,12,N
+ClassPrimaryAttribute 0 Arial,12,N
+Operations 0 Arial,12,N
+InnerClassifiers 0 Arial,12,N
+LABL 0 Arial,12,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:ManuallyResized>1</a:ManuallyResized>
+<c:Object>
+<o:Class Ref="o39"/>
+</c:Object>
+</o:ClassSymbol>
+<o:RectangleSymbol Id="o40">
+<a:Text>RealisationBreif 
+</a:Text>
+<a:CreationDate>1713525031</a:CreationDate>
+<a:ModificationDate>1716033936</a:ModificationDate>
+<a:Rect>((-8922,63788), (1877,59834))</a:Rect>
+<a:TextStyle>4130</a:TextStyle>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>16744448</a:LineColor>
+<a:FillColor>16777215</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontName>Arial,14,N</a:FontName>
+<a:ManuallyResized>1</a:ManuallyResized>
+</o:RectangleSymbol>
 </c:Symbols>
 </o:ClassDiagram>
 </c:ClassDiagrams>
@@ -1721,52 +1794,414 @@ LABL 0 Arial,12,N</a:FontList>
 <o:ClassDiagram Ref="o5"/>
 </c:DefaultDiagram>
 <c:Classes>
-<o:Class Id="o27">
-<a:ObjectID>368CD512-A731-4D2A-8F15-8448AFA0A478</a:ObjectID>
-<a:Name>Apprenant</a:Name>
-<a:Code>Apprenant</a:Code>
-<a:CreationDate>1713431593</a:CreationDate>
+<o:Class Id="o32">
+<a:ObjectID>CD8F73AC-AB95-4FF2-88C1-CFA52C3320BE</a:ObjectID>
+<a:Name>BriefProjet</a:Name>
+<a:Code>BriefProjet</a:Code>
+<a:CreationDate>1713429469</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715446318</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ModificationDate>1713515458</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o34">
-<a:ObjectID>7FA41279-BA91-4333-995C-DB8847E2111A</a:ObjectID>
+<o:Attribute Id="o41">
+<a:ObjectID>DEF5E710-5EAC-4F0E-92F9-F8FDBB5366EA</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
-<a:CreationDate>1715434236</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715434242</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713429526</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430182</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:DataType>int</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
-<o:Attribute Id="o35">
-<a:ObjectID>DDEAC31D-41B1-4635-A1AD-A2674C58C4C2</a:ObjectID>
-<a:Name>cne</a:Name>
-<a:Code>cne</a:Code>
-<a:CreationDate>1714134670</a:CreationDate>
+<o:Attribute Id="o42">
+<a:ObjectID>EAC4A92E-4A6C-4277-ADE0-B87C31B98C6E</a:ObjectID>
+<a:Name>titre</a:Name>
+<a:Code>titre</a:Code>
+<a:CreationDate>1713429543</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355825</a:ModificationDate>
+<a:ModificationDate>1713429609</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o36">
-<a:ObjectID>D27C2523-8424-475F-9941-42E12F07766B</a:ObjectID>
-<a:Name>date_inscription</a:Name>
-<a:Code>dateInscription</a:Code>
-<a:CreationDate>1714135152</a:CreationDate>
+<o:Attribute Id="o43">
+<a:ObjectID>08AB849F-3CEA-4381-A135-33217903D586</a:ObjectID>
+<a:Name>travail_a_faire</a:Name>
+<a:Code>travailAFaire</a:Code>
+<a:CreationDate>1713429555</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714136311</a:ModificationDate>
+<a:ModificationDate>1713429758</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o44">
+<a:ObjectID>5BE85CA0-24A6-4E38-98A3-ED1E15FE5AC4</a:ObjectID>
+<a:Name>critere_de_travail</a:Name>
+<a:Code>critereDeTravail</a:Code>
+<a:CreationDate>1713429610</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429758</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o45">
+<a:ObjectID>AE41DD93-4911-4D34-9DE7-5F9D01CEF2A3</a:ObjectID>
+<a:Name>Description</a:Name>
+<a:Code>description</a:Code>
+<a:CreationDate>1713429610</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429758</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o46">
+<a:ObjectID>FDFFD78A-F463-4002-AAA7-756B0ED78F3D</a:ObjectID>
+<a:Name>date_debut</a:Name>
+<a:Code>dateDebut</a:Code>
+<a:CreationDate>1713429610</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429758</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>Date</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o47">
+<a:ObjectID>2BA50B23-6D96-4ACE-B20E-53794D1DAD94</a:ObjectID>
+<a:Name>date_fin</a:Name>
+<a:Code>dateFin</a:Code>
+<a:CreationDate>1713429610</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429758</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 <a:DataType>Date</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 </c:Attributes>
 <c:Identifiers>
-<o:Identifier Id="o37">
+<o:Identifier Id="o48">
+<a:ObjectID>B1FB7F86-934B-48E3-A5C9-946EDDF7F534</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713429526</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430180</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o41"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o49">
+<a:ObjectID>B25E3104-1006-46B3-A206-28838094FCB7</a:ObjectID>
+<a:Name>Identifiant_2</a:Name>
+<a:Code>Identifiant_2</a:Code>
+<a:CreationDate>1713429555</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429565</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o50">
+<a:ObjectID>A4898CC0-A4E8-4B8D-80AE-6379824A5DF3</a:ObjectID>
+<a:Name>Identifiant_3</a:Name>
+<a:Code>Identifiant_3</a:Code>
+<a:CreationDate>1713429814</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429820</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o51">
+<a:ObjectID>EE1C9AC1-A404-4084-9BF2-85463808CD5D</a:ObjectID>
+<a:Name>id_briefprojet</a:Name>
+<a:Code>id_briefprojet</a:Code>
+<a:CreationDate>1713429975</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713429981</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o41"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o52">
+<a:ObjectID>3479B2E3-B12E-4632-A049-32E1288A6D8F</a:ObjectID>
+<a:Name>Identifiant_5</a:Name>
+<a:Code>Identifiant_5</a:Code>
+<a:CreationDate>1713430017</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430021</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o53">
+<a:ObjectID>C010DA7A-5FDF-4196-A9CC-D99FB6B0E2C9</a:ObjectID>
+<a:Name>Identifiant_6</a:Name>
+<a:Code>Identifiant_6</a:Code>
+<a:CreationDate>1713430167</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430182</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o41"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="o48"/>
+</c:PrimaryIdentifier>
+</o:Class>
+<o:Class Id="o33">
+<a:ObjectID>C8508CBA-A73C-449E-963F-C4FE078924B5</a:ObjectID>
+<a:Name>Resource</a:Name>
+<a:Code>Resource</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443652</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o54">
+<a:ObjectID>B2326708-7868-4C3A-B869-7A11363657CB</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430148</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:Multiplicity>1..1</a:Multiplicity>
+</o:Attribute>
+<o:Attribute Id="o55">
+<a:ObjectID>C36366C9-3F23-46D8-AEFF-04DE5DEC4869</a:ObjectID>
+<a:Name>nom</a:Name>
+<a:Code>nom</a:Code>
+<a:CreationDate>1713437232</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713438301</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o56">
+<a:ObjectID>14234099-05F1-45C5-BD20-CD74621D6083</a:ObjectID>
+<a:Name>lien</a:Name>
+<a:Code>lien</a:Code>
+<a:CreationDate>1713430247</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430284</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o57">
+<a:ObjectID>85DA3FB2-7942-4F59-B389-650533153C51</a:ObjectID>
+<a:Name>description</a:Name>
+<a:Code>description</a:Code>
+<a:CreationDate>1713437232</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713438301</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
+<c:Identifiers>
+<o:Identifier Id="o58">
+<a:ObjectID>BCC64925-9FBB-4184-B59F-435A23A6D8AF</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430146</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o54"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o59">
+<a:ObjectID>50ED0BB4-5834-4B6F-AEC2-C671499CC5CB</a:ObjectID>
+<a:Name>Identifiant_2</a:Name>
+<a:Code>Identifiant_2</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430052</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o60">
+<a:ObjectID>589BC27A-D5BB-440B-A6BB-F78F5AFF0724</a:ObjectID>
+<a:Name>Identifiant_3</a:Name>
+<a:Code>Identifiant_3</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430052</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o61">
+<a:ObjectID>E94CA5FD-EEE2-48C2-AB1F-586ADC95F687</a:ObjectID>
+<a:Name>id_briefprojet</a:Name>
+<a:Code>id_briefprojet</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430052</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o54"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o62">
+<a:ObjectID>62BD8835-E826-4EBF-A4A3-1B1855B09DFC</a:ObjectID>
+<a:Name>Identifiant_5</a:Name>
+<a:Code>Identifiant_5</a:Code>
+<a:CreationDate>1713430052</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430052</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o63">
+<a:ObjectID>305EF1B3-62BC-43C4-BB02-FA0B10C75D06</a:ObjectID>
+<a:Name>Identifiant_6</a:Name>
+<a:Code>Identifiant_6</a:Code>
+<a:CreationDate>1713430110</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430148</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o54"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="o58"/>
+</c:PrimaryIdentifier>
+</o:Class>
+<o:Class Id="o34">
+<a:ObjectID>34788AF3-0610-485F-8702-83C70397A4C6</a:ObjectID>
+<a:Name>Livrable</a:Name>
+<a:Code>Livrable</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443702</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o64">
+<a:ObjectID>D1D338A6-5182-4CED-BBC7-A90895043DB4</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:Multiplicity>1..1</a:Multiplicity>
+</o:Attribute>
+<o:Attribute Id="o65">
+<a:ObjectID>BFA58EED-1714-42B1-BEA5-FF928C889981</a:ObjectID>
+<a:Name>nom</a:Name>
+<a:Code>nom</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430348</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o66">
+<a:ObjectID>EB2D85A0-B0D8-4679-8E49-09A7F5486D46</a:ObjectID>
+<a:Name>description</a:Name>
+<a:Code>description</a:Code>
+<a:CreationDate>1713438503</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713438523</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
+<c:Identifiers>
+<o:Identifier Id="o67">
+<a:ObjectID>8A0690EB-F800-4CBF-9DCC-68F40B86BBD9</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o64"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o68">
+<a:ObjectID>0F5E3915-7BF4-41C7-9FAA-4BAD5B9DB140</a:ObjectID>
+<a:Name>Identifiant_2</a:Name>
+<a:Code>Identifiant_2</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o69">
+<a:ObjectID>9C3A97A0-1855-47F6-BDDD-CD0D5FBD41CA</a:ObjectID>
+<a:Name>Identifiant_3</a:Name>
+<a:Code>Identifiant_3</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o70">
+<a:ObjectID>29C6481E-FB40-4A7B-BF09-8CE71D84944D</a:ObjectID>
+<a:Name>id_briefprojet</a:Name>
+<a:Code>id_briefprojet</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o64"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o71">
+<a:ObjectID>9D2934D5-5682-4409-9FF1-CB68E517A9C6</a:ObjectID>
+<a:Name>Identifiant_5</a:Name>
+<a:Code>Identifiant_5</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o72">
+<a:ObjectID>02F1CA9E-6D9A-4790-B8B7-A4D34292AF9F</a:ObjectID>
+<a:Name>Identifiant_6</a:Name>
+<a:Code>Identifiant_6</a:Code>
+<a:CreationDate>1713430320</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713430320</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o64"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="o67"/>
+</c:PrimaryIdentifier>
+</o:Class>
+<o:Class Id="o35">
+<a:ObjectID>368CD512-A731-4D2A-8F15-8448AFA0A478</a:ObjectID>
+<a:Name>Apprenant</a:Name>
+<a:Code>Apprenant</a:Code>
+<a:CreationDate>1713431593</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713531383</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Identifiers>
+<o:Identifier Id="o73">
 <a:ObjectID>1475D0BB-A40F-4342-9420-9BBFEFE202D2</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
@@ -1775,7 +2210,7 @@ LABL 0 Arial,12,N</a:FontList>
 <a:ModificationDate>1713531383</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o38">
+<o:Identifier Id="o74">
 <a:ObjectID>0F719727-6A79-4E00-A2A6-DAD48A09AB1F</a:ObjectID>
 <a:Name>Identifiant_2</a:Name>
 <a:Code>Identifiant_2</a:Code>
@@ -1784,7 +2219,7 @@ LABL 0 Arial,12,N</a:FontList>
 <a:ModificationDate>1713431593</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o39">
+<o:Identifier Id="o75">
 <a:ObjectID>1FCE2F52-256A-4F5D-A2E8-2FC9E6EFA772</a:ObjectID>
 <a:Name>Identifiant_3</a:Name>
 <a:Code>Identifiant_3</a:Code>
@@ -1793,7 +2228,7 @@ LABL 0 Arial,12,N</a:FontList>
 <a:ModificationDate>1713431593</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o40">
+<o:Identifier Id="o76">
 <a:ObjectID>DC60A8ED-FA23-4563-9737-30FBCBA1A02D</a:ObjectID>
 <a:Name>id_briefprojet</a:Name>
 <a:Code>id_briefprojet</a:Code>
@@ -1802,7 +2237,7 @@ LABL 0 Arial,12,N</a:FontList>
 <a:ModificationDate>1713531383</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o41">
+<o:Identifier Id="o77">
 <a:ObjectID>F3046AE5-82E8-422E-8845-167C48223765</a:ObjectID>
 <a:Name>Identifiant_5</a:Name>
 <a:Code>Identifiant_5</a:Code>
@@ -1811,7 +2246,7 @@ LABL 0 Arial,12,N</a:FontList>
 <a:ModificationDate>1713431593</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o42">
+<o:Identifier Id="o78">
 <a:ObjectID>B30D3C13-33D5-4FFD-85B6-44A4DA55E095</a:ObjectID>
 <a:Name>Identifiant_6</a:Name>
 <a:Code>Identifiant_6</a:Code>
@@ -1822,685 +2257,441 @@ LABL 0 Arial,12,N</a:FontList>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o37"/>
+<o:Identifier Ref="o73"/>
 </c:PrimaryIdentifier>
 </o:Class>
-<o:Class Id="o28">
-<a:ObjectID>1489B943-4C11-4C82-913E-DD749E75ED96</a:ObjectID>
-<a:Name>Formateur</a:Name>
-<a:Code>Formateur</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
+<o:Class Id="o36">
+<a:ObjectID>FD813AFB-2E62-41A7-A50B-BAAA0F34F837</a:ObjectID>
+<a:Name>EtatRealisation</a:Name>
+<a:Code>EtatRealisation</a:Code>
+<a:CreationDate>1713432110</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715434265</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ModificationDate>1713443567</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o43">
-<a:ObjectID>2469FE01-12C2-44D9-88A5-D0447C03EBD9</a:ObjectID>
+<o:Attribute Id="o79">
+<a:ObjectID>9B7F511E-C5E7-4E94-A56D-B3B0145FC182</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
-<a:CreationDate>1715434255</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715434265</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:DataType>int</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-</c:Attributes>
-<c:Identifiers>
-<o:Identifier Id="o44">
-<a:ObjectID>5FD29027-5630-4F41-A0A1-702E98553AEC</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
+<a:CreationDate>1713432110</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713531390</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o45">
-<a:ObjectID>1B00BE3C-FC2C-4F6A-A0EC-3781BB839D4A</a:ObjectID>
-<a:Name>Identifiant_2</a:Name>
-<a:Code>Identifiant_2</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713440786</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o46">
-<a:ObjectID>E5E4E320-6CE8-4AA1-9361-53A9FE95A0E4</a:ObjectID>
-<a:Name>Identifiant_3</a:Name>
-<a:Code>Identifiant_3</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713440786</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o47">
-<a:ObjectID>F9CC8B81-06DA-4F04-865C-F1DD794C0328</a:ObjectID>
-<a:Name>id_briefprojet</a:Name>
-<a:Code>id_briefprojet</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713531390</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o48">
-<a:ObjectID>AD4D2C11-D757-4608-B894-06A5D02C1664</a:ObjectID>
-<a:Name>Identifiant_5</a:Name>
-<a:Code>Identifiant_5</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713440786</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o49">
-<a:ObjectID>228D038F-1F7E-4F82-9C3C-88BF7C15C3AA</a:ObjectID>
-<a:Name>Identifiant_6</a:Name>
-<a:Code>Identifiant_6</a:Code>
-<a:CreationDate>1713440786</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713531390</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-</c:Identifiers>
-<c:PrimaryIdentifier>
-<o:Identifier Ref="o44"/>
-</c:PrimaryIdentifier>
-</o:Class>
-<o:Class Id="o29">
-<a:ObjectID>4718C8C5-2643-45FE-BC68-A32E0463BE40</a:ObjectID>
-<a:Name>Utilisateur</a:Name>
-<a:Code>Utilisateur</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715433983</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-<c:Attributes>
-<o:Attribute Id="o50">
-<a:ObjectID>AE7317EA-5E63-4ACF-92A6-8DF06EBE253B</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
+<a:ModificationDate>1713432110</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 <a:DataType>int</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 <a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
-<o:Attribute Id="o51">
-<a:ObjectID>5D050131-89C4-4667-9C1B-16A54C91009C</a:ObjectID>
+<o:Attribute Id="o80">
+<a:ObjectID>C665775A-2056-4373-BD1E-CE90851FA29C</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>nom</a:Code>
-<a:CreationDate>1713531393</a:CreationDate>
+<a:CreationDate>1713432110</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713531420</a:ModificationDate>
+<a:ModificationDate>1713432110</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o52">
-<a:ObjectID>B9BAA9E9-B54C-4213-BD8B-EFA27E4F05FB</a:ObjectID>
-<a:Name>prenom</a:Name>
-<a:Code>prenom</a:Code>
-<a:CreationDate>1713531400</a:CreationDate>
+<o:Attribute Id="o81">
+<a:ObjectID>170A06B3-0886-4DE9-AA05-2A3C4C2072DB</a:ObjectID>
+<a:Name>description</a:Name>
+<a:Code>description</a:Code>
+<a:CreationDate>1713438792</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713531420</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o53">
-<a:ObjectID>2D6D621A-672D-4A9A-9BAF-055B4E212D46</a:ObjectID>
-<a:Name>nom_arab</a:Name>
-<a:Code>nomArab</a:Code>
-<a:CreationDate>1714135053</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714136538</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o54">
-<a:ObjectID>30BF7475-1842-4D25-97B7-4C24CAD3065B</a:ObjectID>
-<a:Name>prenom_arab</a:Name>
-<a:Code>prenomArab</a:Code>
-<a:CreationDate>1714135067</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714136538</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o55">
-<a:ObjectID>9B55A5FB-1E5E-4801-BDB8-B62D8EC29889</a:ObjectID>
-<a:Name>email</a:Name>
-<a:Code>email</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o56">
-<a:ObjectID>432CAA63-FEB5-4794-904E-676D5281DE84</a:ObjectID>
-<a:Name>mot_de_passe</a:Name>
-<a:Code>motDePasse</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o57">
-<a:ObjectID>6EC10CB1-98BD-48FC-A1FE-310255668FE2</a:ObjectID>
-<a:Name>cin</a:Name>
-<a:Code>cin</a:Code>
-<a:CreationDate>1714135025</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714135035</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>int</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o58">
-<a:ObjectID>17BFEBC0-8262-44C7-B9B7-8431BDC8A9F4</a:ObjectID>
-<a:Name>date_naissance</a:Name>
-<a:Code>dateNaissance</a:Code>
-<a:CreationDate>1714135189</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714136538</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>Date</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o59">
-<a:ObjectID>E46EFB20-2C16-4B05-A0D7-8C68559C6A94</a:ObjectID>
-<a:Name>tele_num</a:Name>
-<a:Code>teleNum</a:Code>
-<a:CreationDate>1714135226</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714136538</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>int</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o60">
-<a:ObjectID>A47C66ED-D602-480D-89B9-1D6C49146099</a:ObjectID>
-<a:Name>rue</a:Name>
-<a:Code>rue</a:Code>
-<a:CreationDate>1714135296</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714136538</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o61">
-<a:ObjectID>EA77FA79-8032-4E56-A04C-A555730AED20</a:ObjectID>
-<a:Name>profile_image</a:Name>
-<a:Code>profileImage</a:Code>
-<a:CreationDate>1714136580</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714140096</a:ModificationDate>
+<a:ModificationDate>1713438830</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 </c:Attributes>
 <c:Identifiers>
-<o:Identifier Id="o62">
-<a:ObjectID>96D66A4D-4FB8-4357-9C35-CF36C963332F</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<c:Identifier.Attributes>
-<o:Attribute Ref="o50"/>
-</c:Identifier.Attributes>
-</o:Identifier>
-<o:Identifier Id="o63">
-<a:ObjectID>565D12F2-FC38-4F2A-BE04-52FF7B085ECB</a:ObjectID>
-<a:Name>Identifiant_2</a:Name>
-<a:Code>Identifiant_2</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o64">
-<a:ObjectID>D7DB7D84-D751-45C0-8274-DDB93687925D</a:ObjectID>
-<a:Name>Identifiant_3</a:Name>
-<a:Code>Identifiant_3</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o65">
-<a:ObjectID>0A6FFF75-D253-493B-9950-884198063E65</a:ObjectID>
-<a:Name>id_briefprojet</a:Name>
-<a:Code>id_briefprojet</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<c:Identifier.Attributes>
-<o:Attribute Ref="o50"/>
-</c:Identifier.Attributes>
-</o:Identifier>
-<o:Identifier Id="o66">
-<a:ObjectID>C1A18C2E-BC30-46F9-BBA1-A0140732E572</a:ObjectID>
-<a:Name>Identifiant_5</a:Name>
-<a:Code>Identifiant_5</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o67">
-<a:ObjectID>3B9E924E-F1ED-43C3-A01C-F76D0D26FF8F</a:ObjectID>
-<a:Name>Identifiant_6</a:Name>
-<a:Code>Identifiant_6</a:Code>
-<a:CreationDate>1713441382</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1713441382</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<c:Identifier.Attributes>
-<o:Attribute Ref="o50"/>
-</c:Identifier.Attributes>
-</o:Identifier>
-</c:Identifiers>
-<c:PrimaryIdentifier>
-<o:Identifier Ref="o62"/>
-</c:PrimaryIdentifier>
-</o:Class>
-<o:Class Id="o30">
-<a:ObjectID>E416CCAB-C3F2-4B0D-BBA3-6AFD93F563DB</a:ObjectID>
-<a:Name>nivaeu scholaire</a:Name>
-<a:Code>NivaeuScholaire</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715447827</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-<c:Attributes>
-<o:Attribute Id="o68">
-<a:ObjectID>9FF9EBDC-FB78-4AE5-B20F-8A8FAFCF17D4</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1715355918</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355956</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>int</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o69">
-<a:ObjectID>7B0209D0-EB12-4ECB-9330-8E72E3C461CF</a:ObjectID>
-<a:Name>nom</a:Name>
-<a:Code>nom</a:Code>
-<a:CreationDate>1715355959</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355977</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-</c:Attributes>
-<c:Identifiers>
-<o:Identifier Id="o70">
-<a:ObjectID>897615E3-1B90-4169-ABDA-9E00F5E5026D</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355868</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o71">
-<a:ObjectID>5D0464C7-EB5B-4CBF-9A74-7F1BEAA97AA3</a:ObjectID>
-<a:Name>Identifiant_2</a:Name>
-<a:Code>Identifiant_2</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355868</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o72">
-<a:ObjectID>0F4263DE-10A6-45A9-9C6C-F9E231B88442</a:ObjectID>
-<a:Name>Identifiant_3</a:Name>
-<a:Code>Identifiant_3</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355868</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o73">
-<a:ObjectID>254E2414-9EBE-4A7B-8314-5533171663CD</a:ObjectID>
-<a:Name>id_briefprojet</a:Name>
-<a:Code>id_briefprojet</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355868</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o74">
-<a:ObjectID>D646B5C2-FAF9-4169-9CDC-E111BBABCC8C</a:ObjectID>
-<a:Name>Identifiant_5</a:Name>
-<a:Code>Identifiant_5</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355868</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o75">
-<a:ObjectID>4D67A918-4527-477F-88DB-7D1243837BDF</a:ObjectID>
-<a:Name>Identifiant_6</a:Name>
-<a:Code>Identifiant_6</a:Code>
-<a:CreationDate>1715355867</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715355868</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-</c:Identifiers>
-<c:PrimaryIdentifier>
-<o:Identifier Ref="o70"/>
-</c:PrimaryIdentifier>
-</o:Class>
-<o:Class Id="o31">
-<a:ObjectID>D551070C-30F0-4C20-8862-DC90C69E449D</a:ObjectID>
-<a:Name>specialite</a:Name>
-<a:Code>Specialite</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356556</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-<c:Attributes>
-<o:Attribute Id="o76">
-<a:ObjectID>F9ED8D2B-BFAA-4FB3-BD49-33323DCC9CFB</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>int</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o77">
-<a:ObjectID>C71944D4-B058-405C-806A-6A23C08EA5F2</a:ObjectID>
-<a:Name>nom</a:Name>
-<a:Code>nom</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-</c:Attributes>
-<c:Identifiers>
-<o:Identifier Id="o78">
-<a:ObjectID>13717E30-BA44-4956-B93D-E1846257A513</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o79">
-<a:ObjectID>E1A9A502-0E8F-4DBA-9481-68D4D1C5E224</a:ObjectID>
-<a:Name>Identifiant_2</a:Name>
-<a:Code>Identifiant_2</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o80">
-<a:ObjectID>17B8F9F4-15DC-45D8-BA2E-64FD449EA86A</a:ObjectID>
-<a:Name>Identifiant_3</a:Name>
-<a:Code>Identifiant_3</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o81">
-<a:ObjectID>319B2A00-4DC1-4CB6-B4F0-748F66332F6E</a:ObjectID>
-<a:Name>id_briefprojet</a:Name>
-<a:Code>id_briefprojet</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
-<a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-</o:Identifier>
 <o:Identifier Id="o82">
-<a:ObjectID>4DD397ED-89A6-45ED-BF5C-321B0827AB8E</a:ObjectID>
-<a:Name>Identifiant_5</a:Name>
-<a:Code>Identifiant_5</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
+<a:ObjectID>9CEC9ED1-C3EF-47C6-A22F-4D2B3FD3620D</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713432110</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
+<a:ModificationDate>1713432110</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o79"/>
+</c:Identifier.Attributes>
 </o:Identifier>
 <o:Identifier Id="o83">
-<a:ObjectID>7B24C012-5D4B-4A7F-B0F2-5C56F8C65501</a:ObjectID>
-<a:Name>Identifiant_6</a:Name>
-<a:Code>Identifiant_6</a:Code>
-<a:CreationDate>1715356531</a:CreationDate>
+<a:ObjectID>3E6D3A86-DD80-48BC-9710-276FC4B44FF5</a:ObjectID>
+<a:Name>Identifiant_2</a:Name>
+<a:Code>Identifiant_2</a:Code>
+<a:CreationDate>1713432110</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356531</a:ModificationDate>
+<a:ModificationDate>1713432110</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-</c:Identifiers>
-<c:PrimaryIdentifier>
-<o:Identifier Ref="o78"/>
-</c:PrimaryIdentifier>
-</o:Class>
-<o:Class Id="o32">
-<a:ObjectID>D25E9293-A69C-4E1F-A98C-E3E9E8EE29FC</a:ObjectID>
-<a:Name>ville</a:Name>
-<a:Code>Ville</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715446318</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-<c:Attributes>
-<o:Attribute Id="o84">
-<a:ObjectID>24EC95A3-C84D-4441-8E93-644429691BD4</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:DataType>int</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-<o:Attribute Id="o85">
-<a:ObjectID>75BB9185-0205-47F7-A2A4-ED6C01E1C477</a:ObjectID>
-<a:Name>nom</a:Name>
-<a:Code>nom</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:DataType>String</a:DataType>
-<a:Attribute.Visibility>-</a:Attribute.Visibility>
-</o:Attribute>
-</c:Attributes>
-<c:Identifiers>
+<o:Identifier Id="o84">
+<a:ObjectID>D981D175-9C4B-4CB8-B4C2-0BD46FFD1E03</a:ObjectID>
+<a:Name>Identifiant_3</a:Name>
+<a:Code>Identifiant_3</a:Code>
+<a:CreationDate>1713432110</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432110</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o85">
+<a:ObjectID>5CF38B0E-41DA-4CE4-874C-A84386F65FF1</a:ObjectID>
+<a:Name>id_briefprojet</a:Name>
+<a:Code>id_briefprojet</a:Code>
+<a:CreationDate>1713432110</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432110</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o79"/>
+</c:Identifier.Attributes>
+</o:Identifier>
 <o:Identifier Id="o86">
-<a:ObjectID>4E44B822-8B01-40C7-9CEA-21EAC9921E7B</a:ObjectID>
-<a:Name>id</a:Name>
-<a:Code>id</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ObjectID>E0EC835E-70D3-4C0C-9DC9-C72A919681EA</a:ObjectID>
+<a:Name>Identifiant_5</a:Name>
+<a:Code>Identifiant_5</a:Code>
+<a:CreationDate>1713432110</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432110</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
 <o:Identifier Id="o87">
-<a:ObjectID>EA64968E-D4DD-4DD1-98E8-B61CC25278FD</a:ObjectID>
-<a:Name>Identifiant_2</a:Name>
-<a:Code>Identifiant_2</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o88">
-<a:ObjectID>8E682FD2-8082-435B-B1C3-AF817170625A</a:ObjectID>
-<a:Name>Identifiant_3</a:Name>
-<a:Code>Identifiant_3</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o89">
-<a:ObjectID>02AFDD5E-A649-4B73-8D98-AE7DA283753A</a:ObjectID>
-<a:Name>id_briefprojet</a:Name>
-<a:Code>id_briefprojet</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o90">
-<a:ObjectID>564BA056-C410-405E-BB33-C70259605DFC</a:ObjectID>
-<a:Name>Identifiant_5</a:Name>
-<a:Code>Identifiant_5</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-</o:Identifier>
-<o:Identifier Id="o91">
-<a:ObjectID>88C19871-E1CB-4386-8AAD-E42FC5C67E97</a:ObjectID>
+<a:ObjectID>8FEE8ADB-A237-41FF-8B4C-D5B7B28A1A64</a:ObjectID>
 <a:Name>Identifiant_6</a:Name>
 <a:Code>Identifiant_6</a:Code>
-<a:CreationDate>1715433231</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433232</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432110</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432110</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o79"/>
+</c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o86"/>
+<o:Identifier Ref="o82"/>
 </c:PrimaryIdentifier>
 </o:Class>
-<o:Class Id="o33">
-<a:ObjectID>86593AF3-53AA-4480-9542-9F6048CA270D</a:ObjectID>
-<a:Name>role</a:Name>
-<a:Code>Role</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433983</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<o:Class Id="o37">
+<a:ObjectID>23468F52-60D9-4000-9711-8D4427E67B14</a:ObjectID>
+<a:Name>LivrableRealisation</a:Name>
+<a:Code>LivrableRealisation</a:Code>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443042</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o92">
-<a:ObjectID>3D5E0C1B-6925-4494-A7F7-4607B83B9473</a:ObjectID>
+<o:Attribute Id="o88">
+<a:ObjectID>456547FA-02F0-4D9B-B16A-C1D7D29C8947</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:DataType>int</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:Multiplicity>1..1</a:Multiplicity>
 </o:Attribute>
-<o:Attribute Id="o93">
-<a:ObjectID>3D2731EC-2A91-475C-91AF-B99BEEE2A71E</a:ObjectID>
+<o:Attribute Id="o89">
+<a:ObjectID>867A6F80-637E-4149-94B7-2789EDE3F459</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>nom</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713439784</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713439814</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o90">
+<a:ObjectID>71CB9498-A5D0-4A98-A0E1-FAC0C0237F98</a:ObjectID>
+<a:Name>description</a:Name>
+<a:Code>description</a:Code>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713439814</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o91">
+<a:ObjectID>885FF77B-6DE9-4D35-8667-49A6E18568B4</a:ObjectID>
+<a:Name>lien</a:Name>
+<a:Code>lien</a:Code>
+<a:CreationDate>1713432356</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432384</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 </c:Attributes>
 <c:Identifiers>
-<o:Identifier Id="o94">
-<a:ObjectID>E53B8FE5-3A33-49E2-9881-E2AA34FD0C30</a:ObjectID>
+<o:Identifier Id="o92">
+<a:ObjectID>D0DBD024-CA6B-4437-9F72-AB6C1421D343</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o88"/>
+</c:Identifier.Attributes>
 </o:Identifier>
-<o:Identifier Id="o95">
-<a:ObjectID>8410924D-D85F-454D-88DF-3183AE8F250D</a:ObjectID>
+<o:Identifier Id="o93">
+<a:ObjectID>B8D348C9-69CB-4513-AEE1-5686391471CA</a:ObjectID>
 <a:Name>Identifiant_2</a:Name>
 <a:Code>Identifiant_2</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o96">
-<a:ObjectID>CFAF9972-8254-4E8D-90B7-4CB41459A9A1</a:ObjectID>
+<o:Identifier Id="o94">
+<a:ObjectID>B8E741C7-8B61-4125-874F-63C8FA78B03B</a:ObjectID>
 <a:Name>Identifiant_3</a:Name>
 <a:Code>Identifiant_3</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o97">
-<a:ObjectID>18DF016F-CABF-46E2-B069-D83F7EE20EA2</a:ObjectID>
+<o:Identifier Id="o95">
+<a:ObjectID>9CA8F28B-B16E-43B5-9DA4-1F5BE1104AD8</a:ObjectID>
 <a:Name>id_briefprojet</a:Name>
 <a:Code>id_briefprojet</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o88"/>
+</c:Identifier.Attributes>
 </o:Identifier>
-<o:Identifier Id="o98">
-<a:ObjectID>37463D02-7ADB-47BC-B053-482D17D17CD9</a:ObjectID>
+<o:Identifier Id="o96">
+<a:ObjectID>2453E704-35D7-4E37-8F37-D78F91C590A7</a:ObjectID>
 <a:Name>Identifiant_5</a:Name>
 <a:Code>Identifiant_5</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 </o:Identifier>
-<o:Identifier Id="o99">
-<a:ObjectID>CDB76CF3-2D18-43A3-91D3-E98FB98A3A5E</a:ObjectID>
+<o:Identifier Id="o97">
+<a:ObjectID>53CD363E-55DC-4528-A547-F6C62E5DD83F</a:ObjectID>
 <a:Name>Identifiant_6</a:Name>
 <a:Code>Identifiant_6</a:Code>
-<a:CreationDate>1715433698</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433698</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:CreationDate>1713432353</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432353</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o88"/>
+</c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o94"/>
+<o:Identifier Ref="o92"/>
+</c:PrimaryIdentifier>
+</o:Class>
+<o:Class Id="o38">
+<a:ObjectID>385D63A1-14C1-4C40-B994-710E6CE1FF53</a:ObjectID>
+<a:Name>Realisation</a:Name>
+<a:Code>Realisation</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443487</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o98">
+<a:ObjectID>98930BFF-6124-4BB6-91CB-D3D7C340460B</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:Multiplicity>1..1</a:Multiplicity>
+</o:Attribute>
+</c:Attributes>
+<c:Identifiers>
+<o:Identifier Id="o99">
+<a:ObjectID>162DCC09-0314-4655-B50D-54DF6249F510</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o98"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o100">
+<a:ObjectID>CB198F18-AD99-4F9F-8BF9-F726ACE9FABE</a:ObjectID>
+<a:Name>Identifiant_2</a:Name>
+<a:Code>Identifiant_2</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o101">
+<a:ObjectID>36CC6955-5423-434E-BF31-8230AF6DAD6A</a:ObjectID>
+<a:Name>Identifiant_3</a:Name>
+<a:Code>Identifiant_3</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o102">
+<a:ObjectID>05E1D5D4-BEAE-46D1-82A7-BF60FFA6A0D6</a:ObjectID>
+<a:Name>id_briefprojet</a:Name>
+<a:Code>id_briefprojet</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o98"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o103">
+<a:ObjectID>5912BC3D-A726-4553-989E-E159D9F04727</a:ObjectID>
+<a:Name>Identifiant_5</a:Name>
+<a:Code>Identifiant_5</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o104">
+<a:ObjectID>07FB2FBC-E52C-48C3-990F-03CD3F6333EF</a:ObjectID>
+<a:Name>Identifiant_6</a:Name>
+<a:Code>Identifiant_6</a:Code>
+<a:CreationDate>1713432428</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713432428</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o98"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="o99"/>
+</c:PrimaryIdentifier>
+</o:Class>
+<o:Class Id="o39">
+<a:ObjectID>C68BE977-5B87-4A5D-8D48-FB74896A2618</a:ObjectID>
+<a:Name>AffectationCompetence</a:Name>
+<a:Code>AffectationCompetence</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443368</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o105">
+<a:ObjectID>D6948012-EF99-438B-B7EC-F05B63A29E21</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+<a:Multiplicity>1..1</a:Multiplicity>
+</o:Attribute>
+</c:Attributes>
+<c:Identifiers>
+<o:Identifier Id="o106">
+<a:ObjectID>E2E0A154-CC5B-407E-A28D-CE7ECD2A0DB7</a:ObjectID>
+<a:Name>id</a:Name>
+<a:Code>id</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o105"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o107">
+<a:ObjectID>41F5A055-125C-41EB-ADD3-62A10A477725</a:ObjectID>
+<a:Name>Identifiant_2</a:Name>
+<a:Code>Identifiant_2</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o108">
+<a:ObjectID>13882F3A-5C0A-49DE-89FA-717E750D7464</a:ObjectID>
+<a:Name>Identifiant_3</a:Name>
+<a:Code>Identifiant_3</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o109">
+<a:ObjectID>04FA1735-71EB-41E2-9735-3F176AA1CFA5</a:ObjectID>
+<a:Name>id_briefprojet</a:Name>
+<a:Code>id_briefprojet</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o105"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+<o:Identifier Id="o110">
+<a:ObjectID>60F8D9B1-29B3-4B54-A284-1A6E2757DD55</a:ObjectID>
+<a:Name>Identifiant_5</a:Name>
+<a:Code>Identifiant_5</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+</o:Identifier>
+<o:Identifier Id="o111">
+<a:ObjectID>E31897F4-C871-4003-B88C-59FC7C639136</a:ObjectID>
+<a:Name>Identifiant_6</a:Name>
+<a:Code>Identifiant_6</a:Code>
+<a:CreationDate>1713440278</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713440278</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<c:Identifier.Attributes>
+<o:Attribute Ref="o105"/>
+</c:Identifier.Attributes>
+</o:Identifier>
+</c:Identifiers>
+<c:PrimaryIdentifier>
+<o:Identifier Ref="o106"/>
 </c:PrimaryIdentifier>
 </o:Class>
 </c:Classes>
 <c:Associations>
-<o:Association Id="o15">
-<a:ObjectID>BB8CA16A-0B32-4B1F-91F3-4E7105F94B31</a:ObjectID>
-<a:Name>association1</a:Name>
-<a:Code>association1</a:Code>
-<a:CreationDate>1715356020</a:CreationDate>
+<o:Association Id="o9">
+<a:ObjectID>2C53BA47-D94D-4F00-9764-3FBFAF817242</a:ObjectID>
+<a:Name>Association_2</a:Name>
+<a:Code>association2</a:Code>
+<a:CreationDate>1713433770</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356414</a:ModificationDate>
+<a:ModificationDate>1713443652</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
 <a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
@@ -2511,21 +2702,44 @@ LABL 0 Arial,12,N</a:FontList>
 
 </a:ExtendedAttributesText>
 <c:Object1>
-<o:Class Ref="o30"/>
+<o:Class Ref="o32"/>
 </c:Object1>
 <c:Object2>
-<o:Class Ref="o27"/>
+<o:Class Ref="o33"/>
 </c:Object2>
 </o:Association>
-<o:Association Id="o18">
-<a:ObjectID>AC158C30-6D22-44AD-85BC-72B39589D9EE</a:ObjectID>
-<a:Name>Association_2</a:Name>
-<a:Code>association2</a:Code>
-<a:CreationDate>1715356562</a:CreationDate>
+<o:Association Id="o12">
+<a:ObjectID>60D87BCE-1BD7-4551-B20F-E8D463F970B0</a:ObjectID>
+<a:Name>Association_3</a:Name>
+<a:Code>association3</a:Code>
+<a:CreationDate>1713433932</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1715356562</a:ModificationDate>
+<a:ModificationDate>1713443702</a:ModificationDate>
 <a:Modifier>Solicode</a:Modifier>
-<a:RoleAMultiplicity>0..1</a:RoleAMultiplicity>
+<a:RoleAMultiplicity>1..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
+{78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o32"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o34"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o16">
+<a:ObjectID>0737693E-0827-4B44-92B2-7CFF2C1769F5</a:ObjectID>
+<a:Name>Association_6</a:Name>
+<a:Code>association6</a:Code>
+<a:CreationDate>1713434082</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713442959</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
 {F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
@@ -2533,67 +2747,89 @@ LABL 0 Arial,12,N</a:FontList>
 
 </a:ExtendedAttributesText>
 <c:Object1>
-<o:Class Ref="o31"/>
+<o:Class Ref="o38"/>
 </c:Object1>
 <c:Object2>
-<o:Class Ref="o28"/>
+<o:Class Ref="o36"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o19">
+<a:ObjectID>184CC371-84F7-48BC-8670-DC65CD3D8B7C</a:ObjectID>
+<a:Name>Association_7</a:Name>
+<a:Code>association7</a:Code>
+<a:CreationDate>1713434085</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443042</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
+{78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o38"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o37"/>
 </c:Object2>
 </o:Association>
 <o:Association Id="o21">
-<a:ObjectID>CE429DE3-29B1-4520-A09E-D283AD28DC08</a:ObjectID>
-<a:Name>Association_3</a:Name>
-<a:Code>association3</a:Code>
-<a:CreationDate>1715433240</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433668</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
-<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
-<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+<a:ObjectID>F084C4D8-FA2F-4F69-AC31-0AA9DE29A2ED</a:ObjectID>
+<a:Name>Association_8</a:Name>
+<a:Code>association8</a:Code>
+<a:CreationDate>1713434486</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443465</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..*</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
 {F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
-{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
-{78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,17=java.util.HashSet
 
 </a:ExtendedAttributesText>
 <c:Object1>
-<o:Class Ref="o32"/>
+<o:Class Ref="o38"/>
 </c:Object1>
 <c:Object2>
-<o:Class Ref="o29"/>
+<o:Class Ref="o32"/>
 </c:Object2>
 </o:Association>
 <o:Association Id="o24">
-<a:ObjectID>3881F02A-A23D-48EB-96FB-F0A962BE747B</a:ObjectID>
-<a:Name>Association_4</a:Name>
-<a:Code>association4</a:Code>
-<a:CreationDate>1715433708</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715433983</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
-<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
-<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+<a:ObjectID>89BB4042-EA6C-42AC-9C20-F4BC624D87B3</a:ObjectID>
+<a:Name>Association_10</a:Name>
+<a:Code>association10</a:Code>
+<a:CreationDate>1713434716</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443487</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:RoleAMultiplicity>1..1</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
 {F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
-{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
-{78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,17=java.util.HashSet
 
 </a:ExtendedAttributesText>
 <c:Object1>
-<o:Class Ref="o33"/>
+<o:Class Ref="o38"/>
 </c:Object1>
 <c:Object2>
-<o:Class Ref="o29"/>
+<o:Class Ref="o35"/>
 </c:Object2>
 </o:Association>
 <o:Association Id="o26">
-<a:ObjectID>68F8EDEC-147B-4476-9829-14768A6EF1B3</a:ObjectID>
-<a:Name>Association_5</a:Name>
-<a:Code>association5</a:Code>
-<a:CreationDate>1715446126</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715446318</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
+<a:ObjectID>2D3AF585-B38D-42CD-A052-F09699B78BC8</a:ObjectID>
+<a:Name>Association_11</a:Name>
+<a:Code>association11</a:Code>
+<a:CreationDate>1713439088</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713443567</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:Comment>chaque brief aura des etats de réalisations personnalisés</a:Comment>
+<a:RoleAMultiplicity>1..*</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
 <a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
 {F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
@@ -2605,51 +2841,65 @@ LABL 0 Arial,12,N</a:FontList>
 <o:Class Ref="o32"/>
 </c:Object1>
 <c:Object2>
-<o:Class Ref="o27"/>
+<o:Class Ref="o36"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o28">
+<a:ObjectID>554B57AC-AE49-4CC9-9DFE-DC153BB67A04</a:ObjectID>
+<a:Name>Association_12</a:Name>
+<a:Code>association12</a:Code>
+<a:CreationDate>1713439759</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1713527116</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
+<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
+{78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o34"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o37"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o31">
+<a:ObjectID>3F726FD6-A0C2-481E-85D1-514C4F97D39F</a:ObjectID>
+<a:Name>Association_15</a:Name>
+<a:Code>association15</a:Code>
+<a:CreationDate>1713440616</a:CreationDate>
+<a:Creator>Solicode</a:Creator>
+<a:ModificationDate>1716033631</a:ModificationDate>
+<a:Modifier>hp</a:Modifier>
+<a:RoleAMultiplicity>1..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>1..1</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,276={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,6=&lt;None&gt;
+{78C31404-0EE5-4FD0-9038-EE396B305F05},roleBContainer,6=&lt;None&gt;
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o38"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o39"/>
 </c:Object2>
 </o:Association>
 </c:Associations>
-<c:Generalizations>
-<o:Generalization Id="o9">
-<a:ObjectID>980D9717-2D78-4622-BA5D-870AE5C7B9DC</a:ObjectID>
-<a:Name>Generalisation_4</a:Name>
-<a:Code>Generalisation_4</a:Code>
-<a:CreationDate>1714338602</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1715355640</a:ModificationDate>
-<a:Modifier>Solicode</a:Modifier>
-<c:Object1>
-<o:Class Ref="o29"/>
-</c:Object1>
-<c:Object2>
-<o:Class Ref="o28"/>
-</c:Object2>
-</o:Generalization>
-<o:Generalization Id="o12">
-<a:ObjectID>A0F3AAD3-6D9D-4A49-A695-21542A2D6160</a:ObjectID>
-<a:Name>Generalisation_7</a:Name>
-<a:Code>Generalisation_7</a:Code>
-<a:CreationDate>1714420703</a:CreationDate>
-<a:Creator>rida</a:Creator>
-<a:ModificationDate>1714420703</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
-<c:Object1>
-<o:Class Ref="o29"/>
-</c:Object1>
-<c:Object2>
-<o:Class Ref="o27"/>
-</c:Object2>
-</o:Generalization>
-</c:Generalizations>
 <c:TargetModels>
-<o:TargetModel Id="o100">
+<o:TargetModel Id="o112">
 <a:ObjectID>FAB3618E-4384-4BDD-BF58-378DD1DB49AC</a:ObjectID>
 <a:Name>Java</a:Name>
 <a:Code>Java</a:Code>
 <a:CreationDate>1713429458</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714336026</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ModificationDate>1713429458</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:TargetModelURL>file:///%_OBJLANG%/java5-j2ee14.xol</a:TargetModelURL>
 <a:TargetModelID>0DEDDB90-46E2-45A0-886E-411709DA0DC9</a:TargetModelID>
 <a:TargetModelClassID>1811206C-1A4B-11D1-83D9-444553540000</a:TargetModelClassID>
@@ -2657,14 +2907,14 @@ LABL 0 Arial,12,N</a:FontList>
 <o:Shortcut Ref="o3"/>
 </c:SessionShortcuts>
 </o:TargetModel>
-<o:TargetModel Id="o101">
+<o:TargetModel Id="o113">
 <a:ObjectID>02C076D9-36D5-4B49-9466-8420FA3FBED4</a:ObjectID>
 <a:Name>WSDL for Java</a:Name>
 <a:Code>WSDLJava</a:Code>
 <a:CreationDate>1713429460</a:CreationDate>
 <a:Creator>Solicode</a:Creator>
-<a:ModificationDate>1714336026</a:ModificationDate>
-<a:Modifier>rida</a:Modifier>
+<a:ModificationDate>1713429460</a:ModificationDate>
+<a:Modifier>Solicode</a:Modifier>
 <a:TargetModelURL>file:///%_XEM%/WSDLJ2EE.xem</a:TargetModelURL>
 <a:TargetModelID>C8F5F7B2-CF9D-4E98-8301-959BB6E86C8A</a:TargetModelID>
 <a:TargetModelClassID>186C8AC3-D3DC-11D3-881C-00508B03C75C</a:TargetModelClassID>
