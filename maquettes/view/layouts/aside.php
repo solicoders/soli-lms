@@ -63,17 +63,24 @@ $current_route = $_SERVER['REQUEST_URI'];
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../GestionRH/Formateur/index.php"
-                class="nav-link <?php echo (strpos($current_route, 'Formateurs') !== false) ? 'active' : ''; ?>">
+              <a href="../view/GestionRH/Formateur/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Formateur') !== false) ? 'active' : ''; ?>">
                 <i class="fa-solid fa-chalkboard-user"></i>
                 <p>Gestion Formateurs</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../GestionRH/Apprenant/index.php"
-                class="nav-link <?php echo (strpos($current_route, 'Apprenants') !== false) ? 'active' : ''; ?>">
+              <a href="../view/GestionRH/Apprenant/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Apprenant') !== false) ? 'active' : ''; ?>">
                 <i class="fa-solid fa-users"></i>
                 <p>Gestion Apprenants</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../view/GestionRH/Ville/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Ville') !== false) ? 'active' : ''; ?>">
+                <i class="fa-solid fa-city"></i>
+                <p>Gestion Villes</p>
               </a>
             </li>
           </ul>
