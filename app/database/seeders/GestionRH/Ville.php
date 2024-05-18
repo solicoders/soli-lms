@@ -14,7 +14,7 @@ class Ville extends Seeder
      */
     public function run(): void
     {
-        $csvFile = fopen(base_path("database/data/ville.csv"), "r");
+        $csvFile = fopen(base_path("database/data/GestionRH/ville.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {

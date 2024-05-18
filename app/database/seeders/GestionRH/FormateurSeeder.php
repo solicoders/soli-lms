@@ -18,7 +18,7 @@ class FormateurSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = fopen(base_path("database/data/formateur.csv"), "r");
+        $csvFile = fopen(base_path("database/data/GestionRH/formateur.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
