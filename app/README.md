@@ -71,8 +71,8 @@ npm run build
 ## Login and password 
 
 ### Formateur: 
-- **Email:** ``Formateure@gmail.com``
-- **Password:** ``Formateure``
+- **Email:** ``Formateur@gmail.com``
+- **Password:** ``Formateur``
 
 ### Apprenant: 
 - **Email:** ``Apprenant@gmail.com``
