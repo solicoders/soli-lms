@@ -37,7 +37,7 @@ class FormateurSeeder extends Seeder
                     "profile_image"=>$data['10'],
                     "remember_token"=>$data['11'],
                     "email"=>$data['12'],
-                    'password' => Hash::make('formateur'),
+                    'password' => Hash::make('Formateur'),
                     'updated_at' => Carbon::now(),
                     'created_at' => Carbon::now()
                 ]);
