@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package : pkg_gestion_validation
-order: 390
+order: 340
 ---
 
 ## Diagamme de cas d'utilisation : pkg_gestion_validation
