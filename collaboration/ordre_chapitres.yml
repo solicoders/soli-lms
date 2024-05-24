@@ -15,3 +15,4 @@
   - 40  : pkg_gestion_validation
   - 45  : pkg_gestion_autorisation
   - 50  : pkg_gestion_formations
+  - 51  : pkg_suivi_autoformations
