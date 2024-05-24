@@ -1,0 +1,64 @@
+{
+    "folders": [
+        {
+            "path": "./app/app/Models/pkg_suivi_autoformations",
+            "name":"Models"
+        },   
+        {
+            "path": "./app/resources/views/pkg_suivi_autoformations",
+            "name":"Views"
+        },
+        {
+            "path": "./app/app/Http/Controllers/pkg_suivi_autoformations",
+            "name":"Controllers"
+        },
+      
+       
+        {
+            "path": "./app/app/Repositories/pkg_suivi_autoformations",
+            "name":"Repositories"
+        },
+        {
+            "path": "./app/app/Http/Requests/pkg_suivi_autoformations",
+            "name":"requests"
+        },
+        {
+            "path": "./app/database/seeders/pkg_suivi_autoformations",
+            "name":"seeders"
+        },
+        {
+            "path": "./app/database/migrations/pkg_suivi_autoformations",
+            "name":"migrations"
+        },
+        {
+            "path": "./docs/pkg_suivi_autoformations",
+            "name":"docs"
+        },
+        {
+            "path": "./docs/diagrammes/pkg_suivi_autoformations",
+            "name":"docs/diagrammes"
+        },
+        {
+            "path": "./modélisation/pkg_suivi_autoformations",
+            "name":"modélisation"
+        },   
+      
+        {
+            "path": "./maquettes/view/pkg_suivi_autoformations",
+            "name": "maquettes"
+        },
+        {
+            "path": "./collaboration",
+            "name": "collaboration"
+        }
+    ],
+    "settings": {
+        "todo-tree.general.showActivityBarBadge": true,
+        "todo-tree.general.periodicRefreshInterval": 1,
+        "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+        "todo-tree.general.statusBar": "tags",
+        "workbench.startupEditor": "readme",
+        "plantuml.diagramsRoot": "./",
+		"plantuml.exportOutDir": "./"
+    }
+}
