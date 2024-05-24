@@ -1,0 +1,64 @@
+{
+    "folders": [
+        {
+            "path": "./app/app/Models/pkg_gestion_compétences",
+            "name":"Models"
+        },   
+        {
+            "path": "./app/resources/views/pkg_gestion_compétences",
+            "name":"Views"
+        },
+        {
+            "path": "./app/app/Http/Controllers/pkg_gestion_compétences",
+            "name":"Controllers"
+        },
+      
+       
+        {
+            "path": "./app/app/Repositories/pkg_gestion_compétences",
+            "name":"Repositories"
+        },
+        {
+            "path": "./app/app/Http/Requests/pkg_gestion_compétences",
+            "name":"requests"
+        },
+        {
+            "path": "./app/database/seeders/pkg_gestion_compétences",
+            "name":"seeders"
+        },
+        {
+            "path": "./app/database/migrations/pkg_gestion_compétences",
+            "name":"migrations"
+        },
+        {
+            "path": "./docs/pkg_gestion_compétences",
+            "name":"docs"
+        },
+        {
+            "path": "./docs/diagrammes/pkg_gestion_compétences",
+            "name":"docs/diagrammes"
+        },
+        {
+            "path": "./modélisation/pkg_gestion_compétences",
+            "name":"modélisation"
+        },   
+      
+        {
+            "path": "./maquettes/view/pkg_gestion_compétences",
+            "name": "maquettes"
+        },
+        {
+            "path": "./collaboration",
+            "name": "collaboration"
+        }
+    ],
+    "settings": {
+        "todo-tree.general.showActivityBarBadge": true,
+        "todo-tree.general.periodicRefreshInterval": 1,
+        "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+        "todo-tree.general.statusBar": "tags",
+        "workbench.startupEditor": "readme",
+        "plantuml.diagramsRoot": "./",
+		"plantuml.exportOutDir": "./"
+    }
+}
