@@ -6,6 +6,10 @@
 		{
 			"path": "../docs/diagrammes"
 
+		},
+		{
+			"path": "../collaboration"
+
 		}
 	],
 	"settings": {
