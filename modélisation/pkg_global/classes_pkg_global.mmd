@@ -1,12 +1,24 @@
 classDiagram
+
 direction LR
 
 
 namespace pkg_competences {
-  class Competence 
-  class DescriptionNiveauCompetence
+class Competence 
+  %% Description d'un niveau de compétence
+class NiveauCompetence 
+class Technologie 
+class CategorieTechnologie 
 }
-Competence "1" -- "*" DescriptionNiveauCompetence
+Competence "1" -- "*" NiveauCompetence
+
+
+
+Competence "1" --> "*" Technologie 
+Technologie "*" --> "1" CategorieTechnologie
+
+
+
 
 namespace pkg_rh {
   class Utilisateur 
@@ -14,6 +26,9 @@ namespace pkg_rh {
   class Formateur 
   class Apprenant
   class  Groupe 
+  class  Ville
+  class  NivaeuScholaire
+  class Specialite
 }
 Personne <|-- Formateur
 Personne <|-- Apprenant 
@@ -21,21 +36,36 @@ Utilisateur "1" <-- "1" Formateur : "compte"
 Utilisateur "1" <-- "1" Apprenant : "compte"
 Apprenant  "*" --> "1"  Groupe 
 Formateur "*" --> "1" Groupe
+Formateur "*" --> "1" Specialite
+Apprenant "*" --> "1" NivaeuScholaire
 
 namespace pkg_creation_projets {
   class BriefProjet 
+  class Tache 
   class Resource 
   class Livrable 
-  class AffectationCompetence
+  class TransfertCompetence
   class EtatRealisation 
+  class StatutTache 
+
 }
-BriefProjet "*" -- "1" Formateur
+BriefProjet "*" <-- "1" Formateur :"*"
 BriefProjet "1" --> "*" Resource
 BriefProjet "1" --> "*" Livrable
 BriefProjet "1" --> "*" EtatRealisation
-BriefProjet "1" -- "*" AffectationCompetence
-AffectationCompetence "*" -- "1" Competence
-AffectationCompetence "*" -- "1" NiveauCompetence_Formateur
+BriefProjet "1" -- "*" TransfertCompetence
+TransfertCompetence "*" -- "1" Competence : "*"
+TransfertCompetence "*" -- "1" Appreciation
+
+
+BriefProjet "1" --> "*" Tache
+Tache "*" --> "1" Apprenant : 1
+Tache "*" --> "1" NiveauCompetence
+Tache "*" --> "*" Technologie
+Tache "*" --> "1" StatutTache 
+Equipe "*" --> "1" BriefProjet
+Equipe   "*" --> "*"  Apprenant  : *
+
 
 
 namespace pkg_realisation_projets {
@@ -48,12 +78,12 @@ Realisation "*" --> "1" BriefProjet
 
 namespace pkg_validations {
 class Validation 
-class NiveauCompetence_Formateur
+class Appreciation
 }
-Validation "*" --> "1" NiveauCompetence_Formateur
-Validation "*" --> "1" AffectationCompetence
+Validation "*" --> "1" Appreciation
+Validation "*" --> "1" TransfertCompetence
 Validation  "*" --> "1" Realisation
-NiveauCompetence_Formateur "*" --> "1" DescriptionNiveauCompetence
+Appreciation "*" --> "1" NiveauCompetence
 
 namespace pkg_formations {
   class Formation

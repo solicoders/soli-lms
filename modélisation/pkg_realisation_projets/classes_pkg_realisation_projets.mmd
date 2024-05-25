@@ -12,8 +12,32 @@ class LivrableRealisation {
     lien: String 
 }
 
+ class Livrable {
+    id: int
+    titre: string
+    lien: string
+    description: text
+  }
+
+   class NatureLivrable {
+    id: int
+    nom: string
+    description: text
+  }
+
+  class Message {
+    id: int
+    titre: string
+    description: text
+  }
+
 }
 
 Realisation "*" --> "1" EtatRealisation
 Realisation "1" --> "*" LivrableRealisation
 Realisation "*" --> "1" BriefProjet
+
+Projet "1" --> "*" Livrable
+Livrable "*" --> "1" NatureLivrable
+Message "*"--> "1" Tâche
+Message "*"--> "1" Projet

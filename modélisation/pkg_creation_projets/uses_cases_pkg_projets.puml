@@ -7,7 +7,7 @@ actor Formateur as formateur
 actor Apprenant as apprenant
 
 
-package pkg_creation_projets {
+package pkg_projets {
 
   formateur --  (Gestion des projets) 
   formateur --  (Gestion des tâches)
