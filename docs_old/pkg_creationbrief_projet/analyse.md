@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package : pkg_creationbrief_projet
-order: 330
+order: 390
 ---
 
 ## Diagamme de cas d'utilisation : pkg_creationbrief_projet
