@@ -1,0 +1,17 @@
+- Ordre des phases  : 
+  - 100 : Introduction
+  - 200 : Besoin
+  - 300 : Analyse
+  - 400 : Analyse Techniques
+  - 500 : Conception
+  - 600 : Réalisation
+
+- Ordre des packages :
+  - 0   : pk_rapport
+  - 20  : pkg_gestion_compétences
+  - 25  : pkg_gestion_rh
+  - 30  : pkg_creationbrief_projet
+  - 35  : pkg_realisationbrief_projet
+  - 40  : pkg_gestion_validation
+  - 45  : pkg_gestion_autorisation
+  - 50  : pkg_gestion_formations
