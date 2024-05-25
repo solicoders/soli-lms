@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_creationbrief_projet
-order: 590
+order: 530
 ---
 
 ## Conception - pkg_creationbrief_projet
