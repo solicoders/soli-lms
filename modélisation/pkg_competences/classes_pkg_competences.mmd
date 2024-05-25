@@ -1,7 +1,37 @@
 classDiagram
 
-
 namespace pkg_competences {
+  class Competence 
+  %% Description d'un niveau de compétence
+  class NiveauCompetence 
+  class Technologie 
+  class CategorieTechnologie 
+  class Appreciation
+}
+
+Competence "1" -- "*" NiveauCompetence
+Competence "1" --> "*" Technologie 
+Technologie "*" --> "1" CategorieTechnologie
+Appreciation "*" --> "1" NiveauCompetence
+Appreciation "*" --> "1" Formateur
+
+%% Relations avec les packages
+TransfertCompetence "*" -- "1" Competence 
+TransfertCompetence "*" -- "*" Technologie
+TransfertCompetence "*" -- "1" Appreciation
+Validation "*" --> "1" Appreciation
+
+namespace pkg_rh {
+  class Formateur 
+}
+namespace pkg_creation_projets {
+  class TransfertCompetence
+}
+namespace pkg_validations {
+class Validation 
+}
+Validation "*" --> "1" TransfertCompetence : "1"
+
 class Competence {
   id : Integer
   code: String
@@ -24,8 +54,11 @@ class CategorieTechnologie {
   nom : string
   description : string
 }
+
+class Appreciation{
+  id : int
+  nom : string
+  description : string
+  noteMin : float
+  noteMax : float
 }
-
-
-Competence "1" --> "*" Technologie 
-Technologie "*" --> "1" CategorieTechnologie

@@ -9,5 +9,5 @@ order: 590
 
 ### Diagramme de classes 
 
-![Conception - pkg_authentification ](/prototype/diagrammes/pkg_authentification/classes_pkg_authentification.svg){:width="400px"}
+![Conception - pkg_authentification ](/soli-lms/diagrammes/pkg_authentification/classes_pkg_authentification.svg){:width="100%"}
 **Conception - pkg_authentification**
