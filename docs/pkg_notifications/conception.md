@@ -9,5 +9,5 @@ order: 590
 
 ### Diagramme de classes 
 
-![Conception - pkg_notifications ](/prototype/diagrammes/pkg_notifications/classes_pkg_notifications.svg){:width="400px"}
+![Conception - pkg_notifications ](/soli-lms/diagrammes/pkg_notifications/classes_pkg_notifications.svg){:width="100%"}
 **Conception - pkg_notifications**

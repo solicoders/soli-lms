@@ -1,6 +1,11 @@
 classDiagram
 
 namespace pkg_authentification {
+class User
+class Role
+}
+User "*" --> "1" Role
+
 
 class User {
     + id : int
@@ -16,6 +21,5 @@ class Role{
 }
 
 
-}
 
-User "*" --> "1" Role
+

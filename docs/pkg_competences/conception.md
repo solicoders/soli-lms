@@ -9,5 +9,5 @@ order: 590
 
 ### Diagramme de classes 
 
-![Conception - pkg_competences ](/prototype/diagrammes/pkg_competences/classes_pkg_competences.svg){:width="400px"}
+![Conception - pkg_competences ](/soli-lms/diagrammes/pkg_competences/classes_pkg_competences.svg){:width="100%"}
 **Conception - pkg_competences**

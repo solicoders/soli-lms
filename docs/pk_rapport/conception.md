@@ -9,5 +9,5 @@ order: 590
 
 ### Diagramme de classes 
 
-![Conception - pk_rapport ](/prototype/diagrammes/pk_rapport/classes_pk_rapport.svg){:width="400px"}
+![Conception - pk_rapport ](/soli-lms/diagrammes/pk_rapport/classes_pk_rapport.svg){:width="100%"}
 **Conception - pk_rapport**

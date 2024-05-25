@@ -1,9 +1,57 @@
 classDiagram
 
+namespace pkg_rh {
+  class Formateur 
+
+}
+  
+
+namespace pkg_competences {
+  class Competence 
+  class Technologie 
+  class Appreciation
+}
+Competence "1" --> "*" Technologie 
+
+
+
 namespace pkg_creation_projets {
+  class Projet 
+  class Resource 
+  class Livrable 
+  class NatureLivrable 
+  %% par défaut il faut ajouter deux livrable : Code, Présentation
+  class TransfertCompetence
+}
+Formateur "1" <-- "*" Projet
+Projet "1" --> "*" Resource
+Projet "1" --> "*" Livrable
+Projet "1" --> "*" TransfertCompetence
+TransfertCompetence "*" -- "1" Competence 
+TransfertCompetence "*" -- "*" Technologie
+Livrable "*" --> "1" NatureLivrable
+TransfertCompetence "*" -- "1" Appreciation
 
 
-class BriefProjet {
+
+namespace pkg_realisation_projets {
+  class RealisationProjet
+  class LivrableRealisation 
+}
+Projet "1" --> "*" RealisationProjet
+RealisationProjet "1" --> "*" LivrableRealisation
+LivrableRealisation "*" --> "1" Livrable
+
+
+namespace pkg_validations {
+class Validation 
+}
+RealisationProjet "1" --> "*" Validation
+Validation "*" --> "1" TransfertCompetence
+Validation "*" --> "1" Appreciation
+
+
+class Projet {
   id : int
   titre: String
   travailAFaire: String
@@ -20,38 +68,23 @@ class Resource {
   description: String
 }
 
-class Livrable {
+
+class NatureLivrable {
   id : int
   nom: String
   description: Text
 }
 
-
-class AffectationCompetence {
+class TransfertCompetence{
   id : int
 }
 
-class EtatRealisation {
-id : int
-nom: String
-description: String
+
+class Livrable {
+  id: int
+  titre: string
+  lien: string
+  description: text
 }
 
 
-
-}
-
-namespace pkg_competences {
-class Competence
-}
-
-namespace pkg_validations {
-class NiveauCompetence_Formateur
-}
-
-BriefProjet "1" --> "*" Resource
-BriefProjet "1" --> "*" Livrable
-BriefProjet "1" --> "*" EtatRealisation
-BriefProjet "1" -- "*" AffectationCompetence
-AffectationCompetence "*" -- "1" Competence
-AffectationCompetence "*" -- "1" NiveauCompetence_Formateur

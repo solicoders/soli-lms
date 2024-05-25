@@ -9,5 +9,5 @@ order: 590
 
 ### Diagramme de classes 
 
-![Conception - pkg_formations ](/prototype/diagrammes/pkg_formations/classes_pkg_formations.svg){:width="400px"}
+![Conception - pkg_formations ](/soli-lms/diagrammes/pkg_formations/classes_pkg_formations.svg){:width="100%"}
 **Conception - pkg_formations**
