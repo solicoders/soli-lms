@@ -2,12 +2,14 @@ classDiagram
 
 namespace pkg_competences {
 
-class Entity {
-  id : int
-  nom : String
-  description : String
+
+class Competence {
+  id : Integer
+  code: String
+  nom: String
+  description: Text
+}
+ 
 }
 
-}
 
-Entity "*" --> "1" Entity

@@ -2,12 +2,56 @@ classDiagram
 
 namespace pkg_creation_projets {
 
-class Entity {
+
+class BriefProjet {
   id : int
-  nom : String
-  description : String
+  titre: String
+  travailAFaire: String
+  critereDeTravail: String
+  description: String
+  dateDebut: DateTime
+  dateFin: DateTime
 }
+
+class Resource {
+  id : int
+  nom: String
+  lien: String
+  description: String
+}
+
+class Livrable {
+  id : int
+  nom: String
+  description: Text
+}
+
+
+class AffectationCompetence {
+  id : int
+}
+
+class EtatRealisation {
+id : int
+nom: String
+description: String
+}
+
+
 
 }
 
-Entity "*" --> "1" Entity
+namespace pkg_competences {
+class Competence
+}
+
+namespace pkg_validations {
+class NiveauCompetence_Formateur
+}
+
+BriefProjet "1" --> "*" Resource
+BriefProjet "1" --> "*" Livrable
+BriefProjet "1" --> "*" EtatRealisation
+BriefProjet "1" -- "*" AffectationCompetence
+AffectationCompetence "*" -- "1" Competence
+AffectationCompetence "*" -- "1" NiveauCompetence_Formateur

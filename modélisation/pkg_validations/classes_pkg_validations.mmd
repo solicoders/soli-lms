@@ -2,12 +2,24 @@ classDiagram
 
 namespace pkg_validations {
 
-class Entity {
+class Validation {
+  id : int
+  note : float
+}
+
+class NiveauCompetence_Formateur{
   id : int
   nom : String
   description : String
+  noteMax : float
+  noteMin : float
 }
+
 
 }
 
-Entity "*" --> "1" Entity
+
+
+Validation "*" --> "1" NiveauCompetence_Formateur
+Validation "*" --> "1" AffectationCompetence
+Validation  "*" --> "1" Realisation

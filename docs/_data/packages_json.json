@@ -1,9 +1,5 @@
 [
-    {
-        "name":"pkg_authentification",
-        "titre":"Gestion d'authentification"
-        
-    },
+  
     {
         "name":"pkg_competences",
         "titre":"Gestion des compétences"

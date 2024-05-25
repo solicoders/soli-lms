@@ -2,12 +2,41 @@ classDiagram
 
 namespace pkg_rh {
 
-class Entity {
-  id : int
-  nom : String
-  description : String
+
+class Personne {
+    + id: int 
+    + nom: string 
+    + prenom: string 
+
+    %% + type : string : Voue ne pouvez pas ajouter le champs type ici, il doit être ajouter dans la base de données 
+    %% Le change type est sumbolisé dans le diagramme de classe par la notion d'héritage
+}
+class Formateur 
+class Apprenant
+
+class  Groupe {
+    id: int
+    nom: string
+    description: text
 }
 
 }
 
-Entity "*" --> "1" Entity
+
+namespace gestion_authentifications {
+
+class Utilisateur {
+    + id : int
+    + login: string 
+    + password: string 
+}
+}
+
+Personne <|-- Formateur
+Personne <|-- Apprenant 
+Utilisateur "1" <-- "1" Formateur : "compte"
+Utilisateur "1" <-- "1" Apprenant : "compte"
+
+Apprenant  "*" --> "1"  Groupe 
+
+Formateur "*" --> "1" Groupe
