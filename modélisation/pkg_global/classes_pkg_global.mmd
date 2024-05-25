@@ -1,13 +1,63 @@
 classDiagram
+direction LR
 
-namespace pkg_global {
 
-class Entity {
-  id : int
-  nom : String
-  description : String
+namespace pkg_competences {
+  class Competence 
+  class DescriptionNiveauCompetence
+}
+Competence "1" -- "*" DescriptionNiveauCompetence
+
+namespace pkg_rh {
+  class Utilisateur 
+  class Personne
+  class Formateur 
+  class Apprenant
+  class  Groupe 
+}
+Personne <|-- Formateur
+Personne <|-- Apprenant 
+Utilisateur "1" <-- "1" Formateur : "compte"
+Utilisateur "1" <-- "1" Apprenant : "compte"
+Apprenant  "*" --> "1"  Groupe 
+Formateur "*" --> "1" Groupe
+
+namespace pkg_creation_projets {
+  class BriefProjet 
+  class Resource 
+  class Livrable 
+  class AffectationCompetence
+  class EtatRealisation 
+}
+BriefProjet "*" -- "1" Formateur
+BriefProjet "1" --> "*" Resource
+BriefProjet "1" --> "*" Livrable
+BriefProjet "1" --> "*" EtatRealisation
+BriefProjet "1" -- "*" AffectationCompetence
+AffectationCompetence "*" -- "1" Competence
+AffectationCompetence "*" -- "1" NiveauCompetence_Formateur
+
+
+namespace pkg_realisation_projets {
+class Realisation 
+class LivrableRealisation 
+}
+Realisation "*" --> "1" EtatRealisation
+Realisation "1" --> "*" LivrableRealisation
+Realisation "*" --> "1" BriefProjet
+
+namespace pkg_validations {
+class Validation 
+class NiveauCompetence_Formateur
+}
+Validation "*" --> "1" NiveauCompetence_Formateur
+Validation "*" --> "1" AffectationCompetence
+Validation  "*" --> "1" Realisation
+NiveauCompetence_Formateur "*" --> "1" DescriptionNiveauCompetence
+
+namespace pkg_formations {
+  class Formation
 }
 
-}
 
-Entity "*" --> "1" Entity
+
