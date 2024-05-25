@@ -1,6 +1,10 @@
 {
     "folders": [
         {
+            "path": "./app/app/Http/Controllers/pk_rapport",
+            "name":"Controllers"
+        },
+        {
             "path": "./app/app/Models/pk_rapport",
             "name":"Models"
         },   
@@ -9,18 +13,16 @@
             "name":"Views"
         },
         {
-            "path": "./app/app/Http/Controllers/pk_rapport",
-            "name":"Controllers"
-        },
-      
-       
-        {
             "path": "./app/app/Repositories/pk_rapport",
             "name":"Repositories"
         },
         {
             "path": "./app/app/Http/Requests/pk_rapport",
             "name":"requests"
+        },
+        {
+            "path": "./app/lang/fr/pk_rapport",
+            "name":"lang"
         },
         {
             "path": "./app/database/seeders/pk_rapport",

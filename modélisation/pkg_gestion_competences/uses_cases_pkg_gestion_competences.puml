@@ -1,0 +1,17 @@
+@startuml uses_cases_pkg_gestion_competences
+
+left to right direction
+
+
+actor Admin as admin
+
+package pkg_gestion_competences {
+
+  Admin -->  (Cas d'utilisation) 
+  (extend 1 Cas d'utilisation)  <..  (Cas d'utilisation)  : <<extend>>
+  (extend 2 Cas d'utilisation)  <.  (Cas d'utilisation)  : <<extend>>
+}  
+
+' note right of admin : "note 1"
+
+@enduml

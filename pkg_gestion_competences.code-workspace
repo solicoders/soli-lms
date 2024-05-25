@@ -1,52 +1,52 @@
 {
     "folders": [
         {
-            "path": "./app/app/Http/Controllers/pkg_gestion_autorisation",
+            "path": "./app/app/Http/Controllers/pkg_gestion_competences",
             "name":"Controllers"
         },
         {
-            "path": "./app/app/Models/pkg_gestion_autorisation",
+            "path": "./app/app/Models/pkg_gestion_competences",
             "name":"Models"
         },   
         {
-            "path": "./app/resources/views/pkg_gestion_autorisation",
+            "path": "./app/resources/views/pkg_gestion_competences",
             "name":"Views"
         },
         {
-            "path": "./app/app/Repositories/pkg_gestion_autorisation",
+            "path": "./app/app/Repositories/pkg_gestion_competences",
             "name":"Repositories"
         },
         {
-            "path": "./app/app/Http/Requests/pkg_gestion_autorisation",
+            "path": "./app/app/Http/Requests/pkg_gestion_competences",
             "name":"requests"
         },
         {
-            "path": "./app/lang/fr/pkg_gestion_autorisation",
+            "path": "./app/lang/fr/pkg_gestion_competences",
             "name":"lang"
         },
         {
-            "path": "./app/database/seeders/pkg_gestion_autorisation",
+            "path": "./app/database/seeders/pkg_gestion_competences",
             "name":"seeders"
         },
         {
-            "path": "./app/database/migrations/pkg_gestion_autorisation",
+            "path": "./app/database/migrations/pkg_gestion_competences",
             "name":"migrations"
         },
         {
-            "path": "./docs/pkg_gestion_autorisation",
+            "path": "./docs/pkg_gestion_competences",
             "name":"docs"
         },
         {
-            "path": "./docs/diagrammes/pkg_gestion_autorisation",
+            "path": "./docs/diagrammes/pkg_gestion_competences",
             "name":"docs/diagrammes"
         },
         {
-            "path": "./modélisation/pkg_gestion_autorisation",
+            "path": "./modélisation/pkg_gestion_competences",
             "name":"modélisation"
         },   
       
         {
-            "path": "./maquettes/view/pkg_gestion_autorisation",
+            "path": "./maquettes/view/pkg_gestion_competences",
             "name": "maquettes"
         },
         {

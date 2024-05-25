@@ -1,6 +1,10 @@
 {
     "folders": [
         {
+            "path": "./app/app/Http/Controllers/pkg_gestion_validation",
+            "name":"Controllers"
+        },
+        {
             "path": "./app/app/Models/pkg_gestion_validation",
             "name":"Models"
         },   
@@ -9,18 +13,16 @@
             "name":"Views"
         },
         {
-            "path": "./app/app/Http/Controllers/pkg_gestion_validation",
-            "name":"Controllers"
-        },
-      
-       
-        {
             "path": "./app/app/Repositories/pkg_gestion_validation",
             "name":"Repositories"
         },
         {
             "path": "./app/app/Http/Requests/pkg_gestion_validation",
             "name":"requests"
+        },
+        {
+            "path": "./app/lang/fr/pkg_gestion_validation",
+            "name":"lang"
         },
         {
             "path": "./app/database/seeders/pkg_gestion_validation",
