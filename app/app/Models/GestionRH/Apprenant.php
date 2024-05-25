@@ -10,7 +10,7 @@ class Apprenant extends Model
 {
     use HasFactory;
     protected $table = 'apprenant';
-
+    public $timestamps = false;
     public function User()
     {
         return $this->belongsTo(User::class);

@@ -8,7 +8,7 @@ use App\Models\User;
 
 class Formateur extends Model
 {
-    
+    public $timestamps = false;
     protected $table = 'formateur';
 
     use HasFactory;
