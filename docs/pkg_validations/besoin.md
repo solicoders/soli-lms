@@ -15,3 +15,10 @@ order: 240
 
 
 
+### Définir le problème
+
+## Problème Central
+Les apprenants manquent de retours détaillés et constructifs sur leurs projets, ce qui limite leur progression et compréhension des concepts.
+
+## Enjeu
+Comment mettre en place un système efficace permettant aux formateurs de fournir des évaluations détaillées et constructives pour améliorer les compétences et la motivation des apprenants?
