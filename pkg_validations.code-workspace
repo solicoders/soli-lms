@@ -1,0 +1,66 @@
+{
+    "folders": [
+        {
+            "path": "./app/app/Http/Controllers/pkg_validations",
+            "name":"Controllers"
+        },
+        {
+            "path": "./app/app/Models/pkg_validations",
+            "name":"Models"
+        },   
+        {
+            "path": "./app/resources/views/pkg_validations",
+            "name":"Views"
+        },
+        {
+            "path": "./app/app/Repositories/pkg_validations",
+            "name":"Repositories"
+        },
+        {
+            "path": "./app/app/Http/Requests/pkg_validations",
+            "name":"requests"
+        },
+        {
+            "path": "./app/lang/fr/pkg_validations",
+            "name":"lang"
+        },
+        {
+            "path": "./app/database/seeders/pkg_validations",
+            "name":"seeders"
+        },
+        {
+            "path": "./app/database/migrations/pkg_validations",
+            "name":"migrations"
+        },
+        {
+            "path": "./docs/pkg_validations",
+            "name":"docs"
+        },
+        {
+            "path": "./docs/diagrammes/pkg_validations",
+            "name":"docs/diagrammes"
+        },
+        {
+            "path": "./modélisation/pkg_validations",
+            "name":"modélisation"
+        },   
+      
+        {
+            "path": "./maquettes/view/pkg_validations",
+            "name": "maquettes"
+        },
+        {
+            "path": "./collaboration",
+            "name": "collaboration"
+        }
+    ],
+    "settings": {
+        "todo-tree.general.showActivityBarBadge": true,
+        "todo-tree.general.periodicRefreshInterval": 1,
+        "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+        "todo-tree.general.statusBar": "tags",
+        "workbench.startupEditor": "readme",
+        "plantuml.diagramsRoot": "./",
+		"plantuml.exportOutDir": "./"
+    }
+}
