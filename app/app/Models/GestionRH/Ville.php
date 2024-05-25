@@ -9,6 +9,7 @@ use App\Models\User;
 class Ville extends Model
 {
     protected $table = 'ville';
+    protected $fillable = ['nom'];
 
     use HasFactory;
 
