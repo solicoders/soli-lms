@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('niveaux', function (Blueprint $table) {
+        Schema::create('validations', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->text('description');
-            $table->unsignedBigInteger('competence_id');
-            $table->foreign('competence_id')->references('id')->on('competences')->onDelete('cascade');
+            $table->float('note');
+            $table->unsignedBigInteger('niveaucompetenceformateur_id');
+            $table->foreign('niveaucompetenceformateur_id')->references('id')->on('niveauscompetenceformateur')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('niveaux');
+        Schema::dropIfExists('validations');
     }
 };

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('responsable_formation', function (Blueprint $table) {
+        Schema::create('niveauscompetenceformateur', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('personnel_id');
-            $table->foreign('personnel_id')->references('id')->on('personnel')->onDelete('cascade');
+            $table->string('nom');
+            $table->string('description');
+            $table->float('note_max');
+            $table->float('note_min');
             $table->timestamps();
         });
     }
@@ -24,7 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('responsable_formation');
-
+        Schema::dropIfExists('niveauscompetenceformateur');
     }
 };
