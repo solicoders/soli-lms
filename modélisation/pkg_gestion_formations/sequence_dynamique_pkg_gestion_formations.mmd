@@ -1,9 +1,0 @@
-sequenceDiagram
-
-actor Admin
-Admin->>EntityController: use case : Name
-EntityController-->>Admin: Formulaire d'insertion
-Admin->>+EntityController: Create(params)
-EntityController ->> EntityRepository : Create(params)
-EntityController-->>-Admin: message de confirmation
-

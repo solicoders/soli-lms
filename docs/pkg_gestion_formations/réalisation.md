@@ -1,9 +1,0 @@
----
-layout: default
-chapitre : true
-package: pkg_gestion_formations
-order:  690
----
-
-## Réalisation package pkg_gestion_formations
-
