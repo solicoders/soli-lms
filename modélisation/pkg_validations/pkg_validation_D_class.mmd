@@ -1,0 +1,17 @@
+classDiagram
+
+namespace pkg_validations {
+  class Validation {
+    id : int
+    note : float
+  }
+  class Message {
+    id: int
+    titre: string
+    description: text
+  }
+}
+
+Validation "1" --> "*" Message
+
+
