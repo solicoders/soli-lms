@@ -158,4 +158,17 @@ php artisan make:seeder pkg_realisation_tache/EtatRealisationTacheSeeder
 ```bash
 php artisan make:seeder pkg_creation_tache/TacheSeeder
 ```
+10. **Seeder de chaque package:**
+
+```bash
+php artisan make:seeder pkg_authentificationSeeder
+php artisan make:seeder pkg_rhSeeder
+php artisan make:seeder pkg_competencesSeeder
+php artisan make:seeder pkg_creation_projetsSeeder
+php artisan make:seeder pkg_realisation_projetsSeeder
+php artisan make:seeder pkg_validationsSeeder
+php artisan make:seeder pkg_formationsSeeder
+php artisan make:seeder pkg_realisation_tacheSeeder
+php artisan make:seeder pkg_creation_tacheSeeder
+```
 
