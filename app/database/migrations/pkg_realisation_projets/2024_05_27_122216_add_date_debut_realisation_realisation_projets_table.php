@@ -17,9 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('projet_id');
             $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');
             $table->unsignedBigInteger('etat_realisation_projet_id');
-            $table->foreign('etat_realisation_projet_id')->references('id')->on('etats_realisation_projet')->onDelete('cascade');
-            $table->unsignedBigInteger('apprenant_id');
-            $table->foreign('apprenant_id')->references('id')->on('apprenants')->onDelete('cascade');
+            $table->foreign('etat_realisation_projet_id')->references('id')->on('etat_realisation_projets')->onDelete('cascade');            
+            $table->unsignedBigInteger('personne_id')->nullable();
+            $table->foreign('personne_id')->references('id')->on('personnes')->onDelete('cascade');
         });
     }
 
@@ -29,7 +29,14 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('realisation_projets', function (Blueprint $table) {
-            //
+            $table->dropForeign(['apprenant_id']);
+            $table->dropForeign(['etat_realisation_projet_id']);
+            $table->dropForeign(['projet_id']);
+            $table->dropColumn('date_debut_realisation');
+            $table->dropColumn('date_fin_realisation');
+            $table->dropColumn('projet_id');
+            $table->dropColumn('etat_realisation_projet_id');
+            $table->dropColumn('apprenant_id');
         });
     }
 };
