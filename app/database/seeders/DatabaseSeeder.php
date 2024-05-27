@@ -12,12 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(GestionRHSeeder::class);
-        // $this->call(GestionCompetencesSeeder::class);
-        $this->call(CreationBriefProjetSeeder::class);
-        // $this->call(RealisationBriefProjetSeeder::class);
-        $this->call(GestionValidationsSeeder::class);
-
-
+        $this->call(pkg_authentificationSeeder::class);
+        $this->call(pkg_competencesSeeder::class);
+        $this->call(pkg_creation_projetsSeeder::class);
+        $this->call(pkg_creation_tacheSeeder::class);
+        $this->call(pkg_formationsSeeder::class);
+        $this->call(pkg_realisation_projetsSeeder::class);
+        $this->call(pkg_realisation_tacheSeeder::class);
+        $this->call(pkg_rhSeeder::class);
+        $this->call(pkg_validationsSeeder::class);
     }
 }
