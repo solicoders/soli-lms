@@ -28,6 +28,9 @@
     {
         "name":"pkg_formations",
         "titre":"Gestion références des formations"
-        
+    },
+    {
+        "name":"pkg_suivi",
+        "titre":"Suivi de développement des compétences"
     }
   ]
