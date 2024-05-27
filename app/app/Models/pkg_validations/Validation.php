@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Models\pkg_validations;
-
+use App\Models\pkg_creation_projets\TransfertCompetence ;
+use App\Models\pkg_competences\Appreciation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

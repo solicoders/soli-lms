@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->text('description');
-            $table->unsignedBigInteger('validation_id');
-            $table->foreign('validation_id')->references('id')->on('validations')->onDelete('cascade');
+            // TODO : messages
+            // $table->string('titre');
+            // $table->text('description');
+            // $table->unsignedBigInteger('validation_id');
+            // $table->foreign('validation_id')->references('id')->on('validations')->onDelete('cascade');
             $table->timestamps();
         });
     }

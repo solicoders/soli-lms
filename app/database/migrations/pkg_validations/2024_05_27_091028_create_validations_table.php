@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('validations', function (Blueprint $table) {
             $table->id();
-            $table->float('note');
-            $table->unsignedBigInteger('transfert_competence_id');
-            $table->foreign('transfert_competence_id')->references('id')->on('transfert_competences')->onDelete('cascade');
-            $table->unsignedBigInteger('appreciation_id');
-            $table->foreign('appreciation_id')->references('id')->on('appreciations')->onDelete('cascade');
+            // TODO : validations
+            // $table->float('note');
+            // $table->unsignedBigInteger('transfert_competence_id');
+            // $table->foreign('transfert_competence_id')->references('id')->on('transfert_competences')->onDelete('cascade');
+            // $table->unsignedBigInteger('appreciation_id');
+            // $table->foreign('appreciation_id')->references('id')->on('appreciations')->onDelete('cascade');
             $table->timestamps();
         });
     }
