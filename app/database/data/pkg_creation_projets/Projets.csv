@@ -1,0 +1,11 @@
+id,titre,travailAFaire,critereDeTravail,description,dateDebut,dateFin
+1,Développement de site web,Développer un site web pour l'entreprise,Suivre les meilleures pratiques du développement web,Projet de développement du nouveau site web de l'entreprise,2024-01-01,2024-06-01
+2,Application mobile,Créer une application mobile pour l'entreprise,Doit être conviviale et efficace,Développer une application mobile pour l'engagement client,2024-02-01,2024-08-01
+3,Système de gestion de contenu,Développer un CMS interne,Doit être facile à utiliser et sécurisé,Création d'un système de gestion de contenu pour les employés,2024-03-01,2024-09-01
+4,Analyse de données,Mettre en place un système d'analyse de données,Doit être précis et rapide,Analyse des données des ventes pour les rapports trimestriels,2024-04-01,2024-10-01
+5,Plateforme e-commerce,Développer une plateforme de vente en ligne,Doit être robuste et évolutive,Création d'un site de commerce électronique,2024-05-01,2024-11-01
+6,Automatisation des tâches,Automatiser les processus répétitifs,Doit réduire les erreurs et augmenter l'efficacité,Développement de scripts pour automatiser les tâches administratives,2024-06-01,2024-12-01
+7,Système de gestion des ressources humaines,Développer un HRMS,Doit être complet et intuitif,Création d'un système pour gérer les employés et les paies,2024-07-01,2025-01-01
+8,Application de santé,Créer une application de suivi de la santé,Doit être précise et sécurisée,Développement d'une application pour suivre les paramètres de santé,2024-08-01,2025-02-01
+9,Migration vers le cloud,Migrer les systèmes existants vers le cloud,Doit être sans interruption de service,Migration de l'infrastructure IT vers une solution cloud,2024-09-01,2025-03-01
+10,Système de gestion de la chaîne d'approvisionnement,Développer un SCM,Doit être efficace et transparent,Création d'un système pour gérer la chaîne d'approvisionnement,2024-10-01,2025-04-01
