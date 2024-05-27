@@ -29,11 +29,10 @@ class pkg_rhSeeder extends Seeder
             PersonneSeeder::class,
             ApprenantSeeder::class,
             FormateurSeeder::class,
+            VilleSeeder::class,
             GroupeSeeder::class,
             NiveauScholaireSeeder::class,
-            PersonneSeeder::class,
             SpecialiteSeeder::class,
-            VilleSeeder::class,
         ];
     }
 }
