@@ -3,26 +3,14 @@ layout: default
 order: 1
 ---
 
+# Rapports
 
-- [Rapport](https://solicoders.github.io/soli-lms/documentation/) 
-- [Présentation](https://solicoders.github.io/soli-lms/documentation/presentation.html#/) 
+<a href="/soli-lms/pkg_global/rapport"> Rapport globale </a> 
 
-- Gestion des Compétences
-    - [Rapport Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/)
-    - [Présentation Gestion des Compétences](https://solicoders.github.io/soli-lms/documentation/GestionCompetences/presentation.html#/)
-  
-- Gestion des RH
-    - [Rapport Gestion des RH](https://solicoders.github.io/soli-lms/documentation/GestionRH/)
-    - [Présentation Gestion des RH](https://solicoders.github.io/soli-lms/documentation/GestionRH/presentation.html#/)
-  
-- Realisationt Breif
-    - [RapporT Realisationt Breif](https://solicoders.github.io/soli-lms/documentation/RealisationtBreif/)
-    - [Présentation Realisationt Breif](https://solicoders.github.io/soli-lms/documentation/RealisationtBreif/presentation.html#/)
+## Par packages
 
-- Gestion Brief Projet
-    - [Rapport Gestion Brief Projet](https://solicoders.github.io/soli-lms/documentation/GestionBriefProjet/)
-    - [Présentation Gestion Brief Projet](https://solicoders.github.io/soli-lms/documentation/GestionBriefProjet/presentation.html#/)
-  
-- Gestion des Validation
-    - [RapporT Gestion Validations](https://solicoders.github.io/soli-lms/documentation/GestionValidations/)
-    - [Présentation Gestion Validations](https://solicoders.github.io/soli-lms/documentation/GestionValidations/presentation.html#/)
+<ul>
+  {% for package in site.data.packages_json %}
+    <li> <a href="/soli-lms/{{ package.name }}/rapport"> {{ package.titre }} </a> </li>
+  {% endfor %}
+</ul>

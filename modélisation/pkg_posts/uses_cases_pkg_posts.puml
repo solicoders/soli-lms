@@ -1,0 +1,17 @@
+@startuml uses_cases_pkg_posts
+
+left to right direction
+
+
+actor Admin as admin
+
+package pkg_posts {
+
+  Admin -->  (Cas d'utilisation) 
+  (extend 1 Cas d'utilisation)  <..  (Cas d'utilisation)  : <<extend>>
+  (extend 2 Cas d'utilisation)  <.  (Cas d'utilisation)  : <<extend>>
+}  
+
+' note right of admin : "note 1"
+
+@enduml

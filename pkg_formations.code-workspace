@@ -1,0 +1,66 @@
+{
+    "folders": [
+        {
+            "path": "./app/app/Http/Controllers/pkg_formations",
+            "name":"Controllers"
+        },
+        {
+            "path": "./app/app/Models/pkg_formations",
+            "name":"Models"
+        },   
+        {
+            "path": "./app/resources/views/pkg_formations",
+            "name":"Views"
+        },
+        {
+            "path": "./app/app/Repositories/pkg_formations",
+            "name":"Repositories"
+        },
+        {
+            "path": "./app/app/Http/Requests/pkg_formations",
+            "name":"requests"
+        },
+        {
+            "path": "./app/lang/fr/pkg_formations",
+            "name":"lang"
+        },
+        {
+            "path": "./app/database/seeders/pkg_formations",
+            "name":"seeders"
+        },
+        {
+            "path": "./app/database/migrations/pkg_formations",
+            "name":"migrations"
+        },
+        {
+            "path": "./docs/pkg_formations",
+            "name":"docs"
+        },
+        {
+            "path": "./docs/diagrammes/pkg_formations",
+            "name":"docs/diagrammes"
+        },
+        {
+            "path": "./modélisation/pkg_formations",
+            "name":"modélisation"
+        },   
+      
+        {
+            "path": "./maquettes/view/pkg_formations",
+            "name": "maquettes"
+        },
+        {
+            "path": "./collaboration",
+            "name": "collaboration"
+        }
+    ],
+    "settings": {
+        "todo-tree.general.showActivityBarBadge": true,
+        "todo-tree.general.periodicRefreshInterval": 1,
+        "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+        "todo-tree.general.statusBar": "tags",
+        "workbench.startupEditor": "readme",
+        "plantuml.diagramsRoot": "./",
+		"plantuml.exportOutDir": "./"
+    }
+}

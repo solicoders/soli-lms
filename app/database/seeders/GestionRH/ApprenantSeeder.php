@@ -18,36 +18,38 @@ class ApprenantSeeder extends Seeder
      */
     public function run(): void
     {
-        $user1 = User::create([
-            'prenom' => 'reda',
-            'nom' => 'grain',
-            'nom_arab' => 'reda',
-            'prenom_arab' => 'reda',
-            'date_naissance' => '2003/10/17',
-            'tele_num' => '010414141814',
-            'rue' => 'tanger',
-            'ville_id' => 1,
-            'cin' => 'kl447787',
-            'profile_image' => 'default_profile_image.png',
-            'remember_token' => '40hfg44q444gUGU4y56guyg5uG45HQGQE4IAY5584',
-            'type'=> 'Apprenant',
-            'email' => 'apprenant@gmail.com',
-            'password' => Hash::make('apprenant'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-
-        ]);
-
-        Apprenant::create([
-            'niveau_scholaire' => 'Bac',
-            'cne'=> 12345678989,
-            'lieu_naissance' => 'tange',
-            'date_inscription' => '2023/10/14',
-            'user_id' => $user1->id,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-
-
+        $csvFile = fopen(base_path("database/data/GestionRH/apprenant.csv"), "r");
+        $firstline = true;
+        $i = 0;
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstline) {
+                $user = User::create([
+                    "prenom"=>$data['0'],
+                    "nom"=>$data['1'],
+                    "nom_arab"=>$data['2'],
+                    "prenom_arab"=>$data['3'],
+                    "date_naissance"=>$data['4'],
+                    "tele_num"=>$data['5'],
+                    "rue"=>$data['6'],
+                    "ville_id"=>$data['7'],
+                    "role_id"=>$data['8'],
+                    "cin"=>$data['9'],
+                    "profile_image"=>$data['10'],
+                    "remember_token"=>$data['11'],
+                    "email"=>$data['12'],
+                    'password' => Hash::make('Apprenant'),
+                    'updated_at' => Carbon::now(),
+                    'created_at' => Carbon::now()
+                ]);
+                Apprenant::create([
+                    'nivaeu_scholaire_id' => $data['13'],
+                    'cne'=> $data['14'],
+                    'lieu_naissance_id' => $data['15'],
+                    'date_inscription' => $data['16'],
+                    'user_id' => $user->id
+                ]);
+            }
+            $firstline = false;
+        }
     }
 }

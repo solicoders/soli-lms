@@ -1,0 +1,33 @@
+[
+  
+    {
+        "name":"pkg_competences",
+        "titre":"Gestion des compétences"
+        
+    },
+    {
+        "name":"pkg_rh",
+        "titre":"Gestion RH"
+        
+    },
+    {
+        "name":"pkg_creation_projets",
+        "titre":"Création des projets"
+        
+    },
+    {
+        "name":"pkg_realisation_projets",
+        "titre":"Réalisation des projets"
+        
+    },
+    {
+        "name":"pkg_validations",
+        "titre":"Validation des projets"
+        
+    },
+    {
+        "name":"pkg_formations",
+        "titre":"Gestion références des formations"
+        
+    }
+  ]
