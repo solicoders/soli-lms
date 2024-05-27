@@ -28,7 +28,6 @@ return new class extends Migration
             $table->Date('date_inscription');
             $table->unsignedBigInteger('lieu_naissance_id');
             $table->unsignedBigInteger('nivaeu_scholaire_id');
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('group_id');
             $table->foreign('lieu_naissance_id')->references('id')->on('villes')->onDelete('cascade');
             $table->unsignedBigInteger('specialite_id');
