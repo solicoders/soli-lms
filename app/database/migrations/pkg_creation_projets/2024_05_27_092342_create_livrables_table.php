@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->string('lien');
-            $table->string('description');
+            $table->text('description');
             $table->unsignedBigInteger('projet_id');
             $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');
             $table->unsignedBigInteger('nature_livrable_id');
