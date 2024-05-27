@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('livrable_realisations', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->text('description')->nullable();
+            $table->string('lien');
+            $table->foreignId('realisation_projet_id')->constrained();
             $table->timestamps();
         });
     }
