@@ -2,7 +2,7 @@
 layout: default
 package: pkg_rh
 presentation: pkg_rh
-order: 5
+order: 525
 ---
 
 ## Diagramme de classe pour la gestion de rh
