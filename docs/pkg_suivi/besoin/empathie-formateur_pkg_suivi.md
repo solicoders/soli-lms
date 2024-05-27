@@ -12,7 +12,7 @@ order: 255
 
 <!-- note -->
 
-Une séance d'empathie a été réalisée avec une Formateur, le 27 mai 2024.
+Une séance d'empathie a été réalisée avec le Formateur , le 27 mai 2024.
 
 ### Persona
 Formateur ...
