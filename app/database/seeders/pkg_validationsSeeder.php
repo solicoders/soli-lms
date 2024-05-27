@@ -21,8 +21,8 @@ class pkg_validationsSeeder extends Seeder
     public static function Classes(): array
     {
         return [
-            MessageSeeder::class,
             ValidationSeeder::class,
+            MessageSeeder::class,
         ];
     }
 }
