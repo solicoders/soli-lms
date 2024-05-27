@@ -1,0 +1,11 @@
+nom,lien,description,projet_id
+Documentation,https://exemple.com/doc,Documentation officielle du projet,1
+Guide API,https://exemple.com/api,Guide de référence API pour les développeurs,2
+Tutoriel,Divers tutoriels en ligne,Guide étape par étape pour les nouveaux utilisateurs,3
+FAQ,https://exemple.com/faq,Foire aux questions sur le projet,4
+Forum,https://forum.exemple.com,Forum de discussion pour les développeurs,5
+Code source,https://github.com/exemple/repo,Code source du projet,6
+Démo en ligne,https://demo.exemple.com,Démonstration en ligne du projet,7
+Cheat Sheet,https://exemple.com/cheat-sheet,Feuille de triche pour les commandes courantes,8
+Modèles,https://exemple.com/templates,Modèles de documents et de code,9
+Webinaire,https://exemple.com/webinar,Enregistrement du webinaire sur le projet,10
