@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'titre',
+        'description',
+        'validation_id',
+    ];
+
+    public function validation()
+    {
+        return $this->belongsTo(Validation::class);
+    }
 }
