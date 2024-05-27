@@ -18,16 +18,16 @@ class MessageSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
         $csvFile = fopen(base_path("database/data/pkg_validations/messages.csv"), "r");
-        $firstLine = true;
-        while (($data = fgetcsv($csvFile, 1000, ",")) !== FALSE) {
-            if (!$firstLine && count($data) >= 4) {
+        $firstline = true;
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+                    if (!$firstline) {
                 Message::create([
-                    'titre' => $data[1],
-                    'description' => $data[2],
-                    'validation_id' => $data[3]
+                    'titre' => $data[0],
+                    'description' => $data[1],
+                    'validation_id' => $data[2]
                 ]);
             }
-            $firstLine = false;
+            $firstline = false;
         }
 
         fclose($csvFile);

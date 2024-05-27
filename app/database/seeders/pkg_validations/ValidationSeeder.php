@@ -16,23 +16,18 @@ class ValidationSeeder extends Seeder
         Schema::disableForeignKeyConstraints();
         Validation::truncate();
         Schema::enableForeignKeyConstraints();
-
         $csvFile = fopen(base_path("database/data/pkg_validations/validations.csv"), "r");
-        $firstLine = true;
-        while (($data = fgetcsv($csvFile, 1000, ",")) !== FALSE) {
-            if (!$firstLine) {
-                // Check if the transfert_competence_id exists in the transfert_competences table
-                $transfertCompetence = \App\Models\pkg_creation_projets\TransfertCompetence::find($data[2]);
-                if ($transfertCompetence) {
-                    Validation::create([
-                        'note' => $data[1],
-                        'transfert_competence_id' => $data[2],
-                        'appreciation_id' => $data[3],
-                        'realisation_projet_id' => $data[4]
-                    ]);
-                }
+        $firstline = true;
+while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstline) {
+                Validation::create([
+                    'note' => $data[0],
+                    'transfert_competence_id' => $data[1],
+                    'appreciation_id' => $data[2],
+                    'realisation_projet_id' => $data[3]
+                ]);
             }
-            $firstLine = false;
+            $firstline = false;
         }
 
         fclose($csvFile);
