@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Resource extends Model
 {
     use HasFactory;
-    protected $fillable = ['nom', 'description', 'lien', 'brief_projet_id'];
+    protected $fillable = ['nom', 'description', 'lien','nature', 'brief_projet_id'];
 
     public function briefProjet()
     {

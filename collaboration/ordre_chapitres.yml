@@ -8,10 +8,12 @@
 
 - Ordre des packages :
   - 0   : pk_rapport
-  - 20  : pkg_gestion_compétences
-  - 25  : pkg_gestion_rh
-  - 30  : pkg_creationbrief_projet
-  - 35  : pkg_realisationbrief_projet
-  - 40  : pkg_gestion_validation
-  - 45  : pkg_gestion_autorisation
-  - 50  : pkg_gestion_formations
+  - 10  : pkg_authentification
+  - 15  : pkg_autorisations
+  + 20  : pkg_competences
+  + 25  : pkg_rh
+  + 30  : pkg_creation_projets
+  + 35  : pkg_realisation_projets
+  + 40  : pkg_validations
+  - 45  : pkg_notifications
+  + 50  : pkg_formations
