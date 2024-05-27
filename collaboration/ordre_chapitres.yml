@@ -17,3 +17,4 @@
   + 40  : pkg_validations
   - 45  : pkg_notifications
   + 50  : pkg_formations
+  + 55  : pkg_suivi
