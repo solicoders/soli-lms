@@ -39,7 +39,6 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('specialite_id')->references('id')->on('specialites')->onDelete('cascade');
             $table->foreign('group_id')->references('id')->on('groupes')->onDelete('cascade');
-            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
     }
