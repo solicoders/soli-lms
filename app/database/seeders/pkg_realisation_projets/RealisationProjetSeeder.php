@@ -4,6 +4,9 @@ namespace Database\Seeders\pkg_realisation_projets;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\pkg_realisation_projets\RealisationProjet;
+use Carbon\Carbon;
 
 class RealisationProjetSeeder extends Seeder
 {
@@ -12,23 +15,23 @@ class RealisationProjetSeeder extends Seeder
      */
     public function run(): void
     {
-        $csv = Reader::createFromPath(database_path('seeders/data/pkg_realisation_projets/realisation_projets.csv'), 'r');
-        $csv->setHeaderOffset(0); //set the CSV header offset
-
-        $records = $csv->getRecords(); //get all the records
-
-        foreach ($records as $record) {
-            DB::table('realisation_projets')->insert([
-                'date_debut_realisation' => $record['date_debut_realisation'],
-                'date_fin_realisation' => $record['date_fin_realisation'],
-                'projet_id' => $record['projet_id'],
-                'etat_realisation_projet_id' => $record['etat_realisation_projet_id'],
-                'personne_id' => $record['personne_id'],
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
+        $csvFile = fopen(base_path("database/data/pkg_realisation_projets/realisation_projets.csv"), "r");
+        $firstLine = true;
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstLine) {
+                RealisationProjet::create([
+                    'date_debut_realisation' => $data[0],
+                    'date_fin_realisation' => $data[1],
+                    'projet_id' => $data[2],
+                    'etat_realisation_projet_id' => $data[3],
+                    'personne_id' => $data[4],
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ]);
+            }
+            $firstLine = false;
         }
-    }
 
+        fclose($csvFile);
     }
-
+}

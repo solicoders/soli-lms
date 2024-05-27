@@ -4,7 +4,8 @@ namespace Database\Seeders\pkg_realisation_projets;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use League\Csv\Reader;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class LivrableRealisationSeeder extends Seeder
 {
@@ -13,21 +14,26 @@ class LivrableRealisationSeeder extends Seeder
      */
     public function run(): void
     {
-        // Load the CSV document from a file path
-        $csv = Reader::createFromPath(database_path('seeders/data/livrable_realisations.csv'), 'r');
-        $csv->setHeaderOffset(0); // Set the CSV header offset
+        Schema::disableForeignKeyConstraints();
+        DB::table('livrable_realisations')->truncate();
+        Schema::enableForeignKeyConstraints();
 
-        $records = $csv->getRecords(); // Get all the records
-
-        foreach ($records as $record) {
-            DB::table('livrable_realisations')->insert([
-                'nom' => $record['nom'],
-                'description' => $record['description'],
-                'lien' => $record['lien'],
-                'realisation_projet_id' => $record['realisation_projet_id'],
-                'created_at' => now(),
-                'updated_at' => now()
-            ]);
+        $csvFile = fopen(base_path("database/data/pkg_realisation_projets/livrable_realisations.csv"), "r");
+        $firstLine = true;
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstLine) {
+                DB::table('livrable_realisations')->insert([
+                    'nom' => $data[0],
+                    'description' => $data[1],
+                    'lien' => $data[2],
+                    'realisation_projet_id' => $data[3],
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]);
+            }
+            $firstLine = false;
         }
+
+        fclose($csvFile);
     }
 }

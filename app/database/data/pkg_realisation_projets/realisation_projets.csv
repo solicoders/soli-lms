@@ -1,4 +1,4 @@
-date_debut_realisation,date_fin_realisation,projet_id,etat_realisation_projet_id,personne_id
+date_debut_realisation,date_fin_realisation,,etat_realisation_projet_id,personne_id
 2023-01-01,2023-12-31,1,1,1
 2023-02-01,2023-12-31,2,2,2
 2023-03-01,2023-12-31,3,3,3
