@@ -25,10 +25,9 @@ class TransfertCompetenceSeeder extends Seeder
             if (!$firstline) {
                 TransfertCompetence::create([
                     'projet_id' => $data[0],
-                    'validation_id' => $data[1],
-                    'competence_id' => $data[2],
-                    'appreciation_id' => $data[3],
-                    'technologie_id' => $data[4],
+                    'competence_id' => $data[1],
+                    'appreciation_id' => $data[2],
+                    'technologie_id' => $data[3],
                 ]);
             }
             $firstline = false;
