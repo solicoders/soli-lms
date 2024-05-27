@@ -13,11 +13,7 @@ return new class extends Migration
     {
         Schema::create('realisation_projets', function (Blueprint $table) {
             $table->id();
-            $table->date('date_debut_realisation');
-            $table->date('date_fin_realisation');
-            $table->foreignId('projet_id')->constrained();
-            $table->foreignId('etat_realisation_projet_id')->constrained();
-            $table->foreignId('apprenant_id')->constrained('apprenants');
+
             $table->timestamps();
         });
     }
