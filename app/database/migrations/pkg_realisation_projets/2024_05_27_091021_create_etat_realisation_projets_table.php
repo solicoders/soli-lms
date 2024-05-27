@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('etat_realisation_projets', function (Blueprint $table) {
             $table->id();
+            $table->string('etat');
             $table->timestamps();
         });
     }
