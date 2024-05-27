@@ -6,12 +6,15 @@
         "docs/Besoin/{{package_name}}",
         "docs/documentation/{{package_name}}",
         "docs/Realisation/{{package_name}}",
+        "docs/diagrammes/{{package_name}}",
+        "docs/{{package_name}}",
         "scripts"
         
     ],
     "LaravelAuthorizedDirectories":[
         "conception/{{package_name}}",
         "maquettes/view/{{package_name}}",
+        "modélisation/{{package_name}}",
         "{{directory_code}}/app/Exports/{{package_name}}",
         "{{directory_code}}/app/Imports/{{package_name}}",
         "{{directory_code}}/app/Http/Controllers/{{package_name}}",
