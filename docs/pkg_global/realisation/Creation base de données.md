@@ -11,74 +11,74 @@ order: 290
 1. **`pkg_authentification` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_authentification/User -m
-php artisan make:model Models/pkg_authentification/Role -m
+php artisan make:model pkg_authentification/User -m
+php artisan make:model pkg_authentification/Role -m
 ```
 
 2. **`pkg_rh` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_rh/Personne -m
-php artisan make:model Models/pkg_rh/Formateur -m
-php artisan make:model Models/pkg_rh/Apprenant -m
-php artisan make:model Models/pkg_rh/Groupe -m
-php artisan make:model Models/pkg_rh/Ville -m
-php artisan make:model Models/pkg_rh/NiveauScholaire -m
-php artisan make:model Models/pkg_rh/Specialite -m
+php artisan make:model pkg_rh/Personne -m
+php artisan make:model pkg_rh/Formateur -m
+php artisan make:model pkg_rh/Apprenant -m
+php artisan make:model pkg_rh/Groupe -m
+php artisan make:model pkg_rh/Ville -m
+php artisan make:model pkg_rh/NiveauScholaire -m
+php artisan make:model pkg_rh/Specialite -m
 ```
 
 3. **`pkg_competences` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_competences/Competence -m
-php artisan make:model Models/pkg_competences/NiveauCompetence -m
-php artisan make:model Models/pkg_competences/Technologie -m
-php artisan make:model Models/pkg_competences/CategorieTechnologie -m
-php artisan make:model Models/pkg_competences/Appreciation -m
+php artisan make:model pkg_competences/Competence -m
+php artisan make:model pkg_competences/NiveauCompetence -m
+php artisan make:model pkg_competences/Technologie -m
+php artisan make:model pkg_competences/CategorieTechnologie -m
+php artisan make:model pkg_competences/Appreciation -m
 ```
 
 4. **`pkg_creation_projets` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_creation_projets/Projet -m
-php artisan make:model Models/pkg_creation_projets/Resource -m
-php artisan make:model Models/pkg_creation_projets/Livrable -m
-php artisan make:model Models/pkg_creation_projets/NatureLivrable -m
-php artisan make:model Models/pkg_creation_projets/TransfertCompetence -m
+php artisan make:model pkg_creation_projets/Projet -m
+php artisan make:model pkg_creation_projets/Resource -m
+php artisan make:model pkg_creation_projets/Livrable -m
+php artisan make:model pkg_creation_projets/NatureLivrable -m
+php artisan make:model pkg_creation_projets/TransfertCompetence -m
 ```
 
 5. **`pkg_realisation_projets` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_realisation_projets/RealisationProjet -m
-php artisan make:model Models/pkg_realisation_projets/LivrableRealisation -m
-php artisan make:model Models/pkg_realisation_projets/EtatRealisationProjet -m
+php artisan make:model pkg_realisation_projets/RealisationProjet -m
+php artisan make:model pkg_realisation_projets/LivrableRealisation -m
+php artisan make:model pkg_realisation_projets/EtatRealisationProjet -m
 ```
 
 6. **`pkg_validations` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_validations/Validation -m
-php artisan make:model Models/pkg_validations/Message -m
+php artisan make:model pkg_validations/Validation -m
+php artisan make:model pkg_validations/Message -m
 ```
 
 7. **`pkg_formations` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_formations/Formation -m
+php artisan make:model pkg_formations/Formation -m
 ```
 
 8. **`pkg_realisation_tache` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_realisation_tache/RealisationTache -m
-php artisan make:model Models/pkg_realisation_tache/EtatRealisationTache -m
+php artisan make:model pkg_realisation_tache/RealisationTache -m
+php artisan make:model pkg_realisation_tache/EtatRealisationTache -m
 ```
 
 9. **`pkg_creation_tache` namespace:**
 
 ```bash
-php artisan make:model Models/pkg_creation_tache/Tache -m
+php artisan make:model pkg_creation_tache/Tache -m
 ```
 
 ### Création des seeders
