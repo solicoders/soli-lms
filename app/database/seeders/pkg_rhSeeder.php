@@ -4,9 +4,18 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\pkg_rh\{
+ApprenantSeeder,
+FormateurSeeder,
+GroupeSeeder,
+NiveauScholaireSeeder,
+PersonneSeeder,
+SpecialiteSeeder,
+VilleSeeder,
+};
 
-
-class pkg_rhSeeder extends Seeder {
+class pkg_rhSeeder extends Seeder
+{
     /**
      * Run the database seeds.
      */
@@ -14,6 +23,7 @@ class pkg_rhSeeder extends Seeder {
     {
         $this->call(pkg_rhSeeder::Classes());
     }
+
     public static function Classes(): array
     {
         return [
