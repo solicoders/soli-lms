@@ -4,7 +4,6 @@ left to right direction
 
 
 actor Formateur as formateur
-actor responsable de formation as responsable de formation
 
 package pkg_competences {
 
