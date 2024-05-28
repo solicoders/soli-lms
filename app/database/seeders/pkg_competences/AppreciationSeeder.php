@@ -34,6 +34,7 @@ class AppreciationSeeder extends Seeder
                     "description" => $data['1'],
                     "noteMin" => $data['2'],
                     "noteMax" => $data['3'],
+                    'niveau_competence_id' => $data[4],
                 ]);
             }
             $firstline = false;
