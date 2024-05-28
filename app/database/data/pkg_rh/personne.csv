@@ -1,0 +1,3 @@
+prenom,nom,nom_arab,prenom_arab,email,type,date_naissance,tele_num,rue,cin,cne,date_inscription,profile_image,remember_token,ville_id,nivaeu_scholaire_id,lieu_naissance_id,groupe_id
+Reda,Grain,Reda,Grain,apprenant@gmail.com,apprenant,2003/10/17,010414141814,tanger,kl487787,P145555575,2023/10/14,default_profile_image.png,40hfg44q444gUGU4y56guyg5uG45HQGQE4IAY5584,1,1,1,1
+Fouad,Esseraje,Fouad,Fouad,formateur@gmail.com,formateur,1988/10/17,010414141814,tanger,kl487787,NULL,NULL,default_profile_image.png,40hfg44q444gUGU4y56guyg5uG45HQGQE4IAY5584,1,NULL,NULL,NULL
