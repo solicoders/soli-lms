@@ -9,7 +9,7 @@ class NiveauCompetence extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nom', 'description'
+        'nom', 'description','competence_id'
     ];
 
     public function competence()
