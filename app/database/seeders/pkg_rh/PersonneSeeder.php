@@ -27,7 +27,7 @@ class PersonneSeeder extends Seeder
             $cne = $data['10'] == 'NULL' ? null : $data['17'];
 
             if (!$firstline) {
-                User::create([
+                $user = User::create([
                     "email"=>$data['4'],
                     'password' => Hash::make($data['5']),
                     "remember_token"=>$data['13'],
@@ -51,6 +51,7 @@ class PersonneSeeder extends Seeder
                     "nivaeu_scholaire_id"=>$nivaeu_scholaire_id,
                     "lieu_naissance_id"=>$lieu_naissance_id,
                     "groupe_id"=>$groupe_id,
+                    "user_id" => $user,
                     'updated_at' => Carbon::now(),
                     'created_at' => Carbon::now()
                 ]);
