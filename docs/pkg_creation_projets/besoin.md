@@ -10,7 +10,7 @@ order: 230
 ### Carte d'empathie 
 
 
-![Carte empathie : pkg_creation_projets](/soli-lms/Besoin/pkg_creation_projets/carte-empathie.svg)
+![Carte empathie : pkg_creation_projets](/soli-lms/conception/pkg_creation_projets/carte-empathie.svg)
 **Carte d'empathie : pkg_creation_projets**
 
 
