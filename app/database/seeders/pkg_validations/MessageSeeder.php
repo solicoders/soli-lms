@@ -28,6 +28,7 @@ class MessageSeeder extends Seeder
                 ]);
             }
             $firstline = false;
+            
         }
 
         fclose($csvFile);
