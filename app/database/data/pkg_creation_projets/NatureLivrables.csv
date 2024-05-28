@@ -1,0 +1,11 @@
+id,nom,description
+1,Code,Code source du projet.
+2,Présentation,Présentation PowerPoint.
+3,Documentation,Documentation technique.
+4,Test,Plan de test et résultats.
+5,Guide utilisateur,Manuel d'utilisation.
+6,Plan de projet,Plan détaillé du projet.
+7,Design,Maquettes et designs graphiques.
+8,Prototype,Version prototype du projet.
+9,Script,Scripts d'automatisation.
+10,Rapport,Rapport final du projet.

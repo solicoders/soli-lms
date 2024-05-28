@@ -12,26 +12,15 @@ order: 255
 
 <!-- note -->
 
-Une séance d'empathie a été réalisée avec une Apprenant, le 27 mai 2024.
+Une séance d'empathie a été réalisée avec l'pprenant, le 27 mai 2024.
 
 ### Persona
 Apprenant ...
 
 **Ce qu'il dit :**
-- Il y a une difficulté pour suivre chaque apprenant et voir les statistiques.
-- Il y a une difficulté pour suivre l'avancement des apprenants sur les briefs et les projets.
+- Il y a une difficulté pour suivre mon avancement sur l'autoformation.
+- Il y a une difficulté pour suivre mon avancement sur les projets par rapport à mes collègues en classe et pour consulter mes compétences validées.
 
 **Ce qu’il fait :**
-- Suit son avancement en autoformation sur un tableur Excel ou directement sur la plateforme de cours
-- Consulte ses compétences sur un tableu Excel
-
-       
-
-       
-       ce qu'il fait
-        Suit son avancement en autoformation sur un tableur Excel ou directement sur la plateforme de cours
-        Consulte ses compétences sur un tableur Excel
-
-      ce qu'il dit
-        Il y a une difficulté pour suivre mon avancement en autoformation.
-        Il y a une difficulté pour suivre mon avancement sur la réalisation des projets par rapport à mes collègues de classe
+- Suit son avancement en autoformation sur la table Excel ou directement sur la plateforme de cours.
+- Consulte ses compétences sur la table Excel.
