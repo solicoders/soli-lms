@@ -14,7 +14,7 @@ class GroupeSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = fopen(base_path("database/data/pkg_rh/groupe.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_rh/groupes.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {

@@ -26,9 +26,9 @@ return new class extends Migration
             $table->string('profile_image');
             $table->string('cne')->nullable();
             $table->Date('date_inscription')->nullable();
-            $table->unsignedBigInteger('lieu_naissance_id');
+            $table->unsignedBigInteger('lieu_naissance_id')->nullable();
             $table->unsignedBigInteger('nivaeu_scholaire_id')->nullable();
-            $table->unsignedBigInteger('group_id')->nullable();
+            $table->unsignedBigInteger('groupe_id')->nullable();
             $table->unsignedBigInteger('specialite_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('lieu_naissance_id')->references('id')->on('villes')->onDelete('cascade');
@@ -36,7 +36,7 @@ return new class extends Migration
             $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('specialite_id')->references('id')->on('specialites')->onDelete('cascade');
-            $table->foreign('group_id')->references('id')->on('groupes')->onDelete('cascade');
+            $table->foreign('groupe_id')->references('id')->on('groupes')->onDelete('cascade');
             $table->timestamps();
         });
     }
