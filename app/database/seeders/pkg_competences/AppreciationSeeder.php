@@ -40,5 +40,6 @@ class AppreciationSeeder extends Seeder
         }
 
         fclose($csvFile);
+        
     }
 }
