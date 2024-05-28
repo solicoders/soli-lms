@@ -7,13 +7,16 @@ namespace pkg_competences {
   class Technologie 
   class CategorieTechnologie 
   class Appreciation
+  class Module
+  class Filiere
 }
 
 Competence "1" -- "*" NiveauCompetence
 Competence "1" --> "*" Technologie 
 Technologie "*" --> "1" CategorieTechnologie
 Appreciation "*" --> "1" NiveauCompetence
-Appreciation "*" --> "1" Formateur
+Competence "*" --> "1" Module
+Module "*" --> "1" Filiere
 
 %% Relations avec les packages
 TransfertCompetence "*" -- "1" Competence 
@@ -61,4 +64,18 @@ class Appreciation{
   description : string
   noteMin : float
   noteMax : float
+}
+
+class Module {
+  id : int
+  N : string
+  nom : string
+  description : string
+  Masse_horaire : string
+}
+
+class Filiere {
+  id : int
+  nom : string
+  description : string 
 }
