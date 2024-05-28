@@ -12,8 +12,6 @@ package pkg_competences {
   formateur -->  (Gestion des technologies) 
   formateur -->  (Gestion des catégories des technologies)
 
-
-
   (Gestion des technologies) <..  (Ajouter) : <<extend>>
   (Ajouter) <. (Affecter la technologie à une compétence)   : <<extend>>
    (Ajouter) <. (Affecter la technologie à une catégorie)   : <<extend>>
