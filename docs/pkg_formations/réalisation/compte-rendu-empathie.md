@@ -31,4 +31,4 @@ Les formateurs ont la possibilité de créer et de gérer des liens de formation
 
 
 ## Conclusion
-La création et la gestion des liens de formation par les formateurs sont des éléments clés pour garantir une expérience d'apprentissage personnalisée et efficace, en mettant l'accent sur l'adaptation aux besoins individuels des apprenants et l'optimisation des ressources disponibles.
+La création et la gestion des liens de formation par les formateurs sont des éléments clés pour garantir une expérience d'apprentissage personnalisée et efficace, en mettant l'accent sur l'adaptation aux besoins individuels des apprenants et l'optimisation des ressources disponibles.    
