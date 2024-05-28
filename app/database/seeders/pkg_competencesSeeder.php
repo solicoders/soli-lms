@@ -24,9 +24,9 @@ class pkg_competencesSeeder extends Seeder
     public static function Classes(): array
     {
         return [
-            AppreciationSeeder::class,
             CompetenceSeeder::class,
             NiveauCompetenceSeeder::class,
+            AppreciationSeeder::class,
             CategorieTechnologieSeeder::class,
             TechnologieSeeder::class,
         ];
