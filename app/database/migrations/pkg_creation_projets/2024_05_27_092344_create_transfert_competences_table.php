@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('projet_id');
             $table->foreign('projet_id')->references('id')->on('projets')->onDelete('cascade');
-            $table->unsignedBigInteger('validation_id');
-            $table->foreign('validation_id')->references('id')->on('validations')->onDelete('cascade');
             $table->unsignedBigInteger('competence_id');
             $table->foreign('competence_id')->references('id')->on('competences')->onDelete('cascade');
             $table->unsignedBigInteger('appreciation_id');
@@ -24,6 +22,15 @@ return new class extends Migration
             $table->unsignedBigInteger('technologie_id');
             $table->foreign('technologie_id')->references('id')->on('technologies')->onDelete('cascade');
 
+            $table->timestamps();
+        });
+
+        Schema::create('transfert_competence_technologie', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('technologie_id');
+            $table->foreign('technologie_id')->references('id')->on('technologies')->onDelete('cascade');
+            $table->unsignedBigInteger('transfert_competence_id');
+            $table->foreign('transfert_competence_id')->references('id')->on('transfert_competences')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -34,5 +41,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('transfert_competences');
+        Schema::dropIfExists('transfert_competence_technologie');
+
     }
 };
