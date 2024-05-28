@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Resource extends Model
 {
     use HasFactory;
+    
+    protected $fillable = [
+        'nom', 'lien', 'description', 'projet_id'
+    ];
+
+    public function projet()
+    {
+        return $this->belongsTo(Projet::class);
+    }
 }
