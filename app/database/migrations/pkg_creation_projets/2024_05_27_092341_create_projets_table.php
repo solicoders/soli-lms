@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('titre');
             $table->string('description');
-            $table->string('travail_a_faire');
-            $table->string('critere_de_validation');
-            $table->date('date_debut');
-            $table->date('date_fin');
+            $table->string('travailAFaire');
+            $table->string('critereDeTravail');
+            $table->date('dateDebut');
+            $table->date('dateFin');
             $table->timestamps();
         });
     }

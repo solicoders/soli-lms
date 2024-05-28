@@ -2,8 +2,10 @@
 
 namespace Database\Seeders\pkg_creation_projets;
 
+use App\Models\pkg_creation_projets\TransfertCompetence;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class TransfertCompetenceSeeder extends Seeder
 {
@@ -12,6 +14,26 @@ class TransfertCompetenceSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Schema::disableForeignKeyConstraints();
+        TransfertCompetence::truncate();
+        Schema::enableForeignKeyConstraints();
+
+        $csvFile = fopen(base_path("database/data/pkg_creation_projets/TransfertCompetences.csv"), "r");
+        $firstline = true;
+
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstline) {
+                TransfertCompetence::create([
+                    'projet_id' => $data[0],
+                    'validation_id' => $data[1],
+                    'competence_id' => $data[2],
+                    'appreciation_id' => $data[3],
+                    'technologie_id' => $data[4],
+                ]);
+            }
+            $firstline = false;
+        }
+
+        fclose($csvFile);
     }
 }
