@@ -18,6 +18,7 @@ class NiveauCompetencesSeeder extends Seeder
      */
     public function run(): void
     {
+
         Schema::disableForeignKeyConstraints();
         NiveauCompetence::truncate();
         Schema::enableForeignKeyConstraints();
