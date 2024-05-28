@@ -13,7 +13,6 @@ package pkg_competences {
   formateur -->  (Gestion des technologies) 
   formateur -->  (Gestion des catégories des technologies)
 
-  responsable de formation -->  (Gestion des compétences)
 
 
   (Gestion des technologies) <..  (Ajouter) : <<extend>>
