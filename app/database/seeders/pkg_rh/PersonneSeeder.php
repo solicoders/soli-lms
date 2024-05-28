@@ -51,7 +51,7 @@ class PersonneSeeder extends Seeder
                     "nivaeu_scholaire_id"=>$nivaeu_scholaire_id,
                     "lieu_naissance_id"=>$lieu_naissance_id,
                     "groupe_id"=>$groupe_id,
-                    "user_id" => $user,
+                    "user_id" => $user->id,
                     'updated_at' => Carbon::now(),
                     'created_at' => Carbon::now()
                 ]);
