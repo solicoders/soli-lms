@@ -15,3 +15,12 @@ order: 230
 
 
 
+### Définir le problème
+
+Difficulté à équilibrer les objectifs pédagogiques avec les ressources disponibles et le temps imparti
+
+Manque de clarté sur les compétences visées dans chaque projet
+
+
+### Ideation
+Développer une application web dédiée à la gestion de projets pédagogiques. Cette application offrirait aux formateurs un ensemble d'outils pour simplifier la conception de projets et en accroître l'efficacité pour les apprenants.
