@@ -1,5 +1,6 @@
 @startuml uses_cases_pkg_validations
 
+left to right direction
 actor Formateur
 actor Apprenant
 

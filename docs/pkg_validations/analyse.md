@@ -31,7 +31,7 @@ order: 340
 
 
 ## Diagamme de cas d'utilisation : pkg_validations
-![Diagamme de cas d'utilisation : pkg_validations](/soli-lms/diagrammes/pkg_validations/uses_cases_pkg_validations/uses_cases_pkg_validations.svg)
+![Diagamme de cas d'utilisation : pkg_validations](/soli-lms/diagrammes/pkg_validations/uses_cases_pkg_validations/uses_cases_pkg_validations.svg){:width="150%"}
 *Diagamme de cas d'utilisation : pkg_validations*
 
 

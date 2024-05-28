@@ -4,13 +4,10 @@ chapitre : true
 package: pkg_validations
 order:  640
 ---
-
-# Compte Rendu d'Entretien avec l'Utilisateur
+# Compte Rendu d'Entretien avec l'Utilisateur 
 
 ## Introduction
 Ce document présente les principaux enseignements et conclusions tirés des entretiens avec les utilisateurs concernant la validation des projets par les formateurs.
-# Compte Rendu d'Entretien avec les Utilisateurs
-
 ## Principaux Enseignements et Conclusions
 
 ### Validation des Projets
