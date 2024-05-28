@@ -12,7 +12,7 @@ use App\Models\pkg_notifications\Notification;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Spatie\Permission\Models\Role;
 
-class TechnologiesSeeder extends Seeder
+class TechnologieSeeder extends Seeder
 {
     /**
      * Run the database seeds.

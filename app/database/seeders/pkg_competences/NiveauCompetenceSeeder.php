@@ -11,7 +11,7 @@ use Spatie\Permission\Models\Permission;
 use App\Models\User;
 
 
-class NiveauCompetencesSeeder extends Seeder
+class NiveauCompetenceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,7 +23,7 @@ class NiveauCompetencesSeeder extends Seeder
         NiveauCompetence::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $csvFile = fopen(base_path("database/data/pkg_competences/niveauxCompetences/NiveauCompetences.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_competences/NiveauCompetences.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {

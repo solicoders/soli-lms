@@ -12,7 +12,7 @@ use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 
-class CategorieTechnologiesSeeder extends Seeder
+class CategorieTechnologieSeeder extends Seeder
 {
     /**
      * Run the database seeds.
