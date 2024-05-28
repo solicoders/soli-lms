@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class CategorieTechnologie extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nom', 'description'
+    ];
+
+    public function technologies()
+    {
+        return $this->hasMany(Technologie::class);
+    }
 }
