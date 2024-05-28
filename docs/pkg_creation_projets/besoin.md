@@ -1,11 +1,17 @@
 ---
 layout: default
 chapitre: true
-package : pkg_creation_projets
-order: 
+package: pkg_creation_projets
+order: 230
 ---
 
-## Diagamme de cas d'utilisation : pkg_creation_projets
+## Besoin : pkg_creation_projets 
 
-![Diagamme de cas d'utilisation : pkg_creation_projets](/soli-lms/diagrammes/pkg_creation_projets/uses_cases_pkg_technologies.svg)
-**Diagamme de cas d'utilisation : pkg_creation_projets**
+### Carte d'empathie 
+
+
+![Carte empathie : pkg_creation_projets](/soli-lms/Besoin/pkg_creation_projets/carte-empathie.svg)
+**Carte d'empathie : pkg_creation_projets**
+
+
+
