@@ -52,14 +52,16 @@
                                             </ul>
 
                                         </div>
+                                      
+                                      
                                         <form action="index.php">
                                             <table class="table table-bordered ">
                                                 <thead>
                                                     <tr>
                                                         <th>Compétence</th>
-                                                        <th>Niveau</th>
-                                                        <th><i class="fas fa-check"></i></th>
-                                                        <th><i class="fas fa-times"></i></th>
+                                                        <th>Appreciation</th>
+                                                        <th><i class="fas fa-check" style="color: green;"></i></th>
+                                                        <th><i class="fas fa-times" style="color: red;"></i></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -72,11 +74,11 @@
                                                                 <option value="transposer">Transposer</option>
                                                             </select>
                                                         </td>
-                                                        <td>
-                                                        <input type="radio" name="competence_backend_level1" value="imiter"> 
+                                                        <td >
+                                                        <input type="radio" name="competence_backend_level1" value="imiter" style="accent-color: green;"> 
                                                         </td>
-                                                        <td>
-                                                        <input type="radio" name="competence_backend_level1" value="adapter"> 
+                                                        <td >
+                                                        <input type="radio" name="competence_backend_level1" value="adapter" style="accent-color: red;"> 
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -89,19 +91,15 @@
                                                                 <option value="transposer">Transposer</option>
                                                             </select>
                                                         </td>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <input type="radio" name="competence_backend_level2" value="imiter" class="form-check-input">
-                                                            </div>
+                                                        <td >
+                                                        <input type="radio" name="competence_backend_level1" value="imiter" style="accent-color: green;"> 
                                                         </td>
-                                                        <td>
-                                                            <div class="form-check">
-                                                                <input type="radio" name="competence_backend_level2" value="adapter" class="form-check-input">
-                                                            </div>
+                                                        <td >
+                                                        <input type="radio" name="competence_backend_level1" value="adapter" style="accent-color: red;"> 
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Développer la partie back-end d’une application web ou web
+                                                        <td>Développer la partie back-end d'une application web ou web
                                                             mobile - perfectionnement</td>
                                                         <td>
                                                             <select name="competence_backend_level"
@@ -111,15 +109,30 @@
                                                                 <option value="transposer">Transposer</option>
                                                             </select>
                                                         </td>
-                                                        <td>
-                                                        <input type="radio" name="competence_backend_level3" value="imiter"> 
+                                                        <td >
+                                                        <input type="radio" name="competence_backend_level1" value="imiter" style="accent-color: green;"> 
                                                         </td>
-                                                        <td>
-                                                        <input type="radio" name="competence_backend_level3" value="adapter"> 
+                                                        <td >
+                                                        <input type="radio" name="competence_backend_level1" value="adapter" style="accent-color: red;"> 
                                                         </td>
                                                     </tr>
+
+                                                       
                                                 </tbody>
                                             </table>
+
+                                            <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea class="form-control" id="message" name="validation_message" rows="20"></textarea>
+    </div>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#message'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
                                             <div class="text-right m-5">
                                                 <button type="submit" class="btn btn-primary">Valider le brief</button>
                                             </div>
@@ -154,4 +167,6 @@
     <?php include_once "../../../layouts/script-link.php" ?>
 </body>
 
+</html>
+</html>
 </html>
