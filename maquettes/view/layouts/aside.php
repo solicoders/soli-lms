@@ -36,10 +36,10 @@ $current_route = $_SERVER['REQUEST_URI'];
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/view/GestionBriefProjet/Formateur/GestionBriefs/index.php"
-                  class="nav-link <?php echo (strpos($current_route, 'Briefs') !== false) ? 'active' : ''; ?>">
+                <a href="/view/pkg_creation_projets/index.php"
+                  class="nav-link <?php echo (strpos($current_route, 'Projets') !== false) ? 'active' : ''; ?>">
                   <i class="far fa-file-alt nav-icon"></i>
-                  <p>Briefs</p>
+                  <p>Projets</p>
                 </a>
               </li>
               <li class="nav-item">
