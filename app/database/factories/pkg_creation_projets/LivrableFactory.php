@@ -17,7 +17,10 @@ class LivrableFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'titre' => $this->faker->sentence,
+            'lien' => $this->faker->url,
+            'description' => $this->faker->paragraph,
+
         ];
     }
 }

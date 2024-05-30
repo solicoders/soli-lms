@@ -2,6 +2,7 @@
 
 namespace App\Repositories\pkg_creation_projets;
 
+use App\Exceptions\pkg_creation_projets\NatureLivrableAlreadyExistException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\pkg_creation_projets\NatureLivrable;
@@ -32,6 +33,18 @@ class NatureLivrableRepository extends BaseRepository
     public function __construct()
     {
         parent::__construct(new NatureLivrable());
+    }
+    public function create(array $data)
+    {
+        $nom = $data['nom'];
+
+        $existingProject =  $this->model->where('nom', $nom)->exists();
+
+        if ($existingProject) {
+            throw NatureLivrableAlreadyExistException::createNatureLivrable();
+        } else {
+            return parent::create($data);
+        }
     }
 
 }

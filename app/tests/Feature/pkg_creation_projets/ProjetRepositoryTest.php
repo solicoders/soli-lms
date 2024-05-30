@@ -7,18 +7,22 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\pkg_creation_projets\Projet;
 use App\Repositories\pkg_creation_projets\ProjetRepository;
-use Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase; // Add this line
+use Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase;
+use App\Exceptions\pkg_creation_projets\ProjetAlreadyExistException;
+use App\Models\pkg_authentification\User;
 
 class ProjetRepositoryTest extends TestCase
 {
-    use RefreshDatabase, WithFaker, InteractsWithDatabase; // Add InteractsWithDatabase trait
+    use RefreshDatabase, WithFaker, InteractsWithDatabase;
 
     protected $projetRepo;
+    protected $user;
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->projetRepo = new ProjetRepository();
+        $this->user = User::factory()->create(); // Ensure User factory exists or create one
     }
 
     /**
@@ -77,6 +81,44 @@ class ProjetRepositoryTest extends TestCase
 
         // Manually check that the model has been deleted
         $this->assertNull(Projet::find($projet->id));
+    }
+
+    /**
+     * Test creating a project that already exists.
+     */
+    public function test_create_project_already_exist()
+    {
+        $this->actingAs($this->user);
+
+        $project = Projet::factory()->create();
+        $projectData = [
+            'nom' => $project->nom,
+            'description' => 'project create test',
+        ];
+
+        try {
+            $project = $this->projetRepo->create($projectData);
+            $this->fail('Expected ProjetAlreadyExistException was not thrown');
+        } catch (ProjetAlreadyExistException $e) {
+            $this->assertEquals(__('pkg_creation_projets/projet/message.createProjectException'), $e->getMessage());
+        } catch (\Exception $e) {
+            $this->fail('Unexpected exception was thrown: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Test pagination of projects.
+     */
+    public function test_paginate()
+    {
+        $this->actingAs($this->user);
+        $projectData = [
+            'nom' => 'project create test',
+            'description' => 'project create test',
+        ];
+        $project = $this->projetRepo->create($projectData);
+        $projects = $this->projetRepo->paginate();
+        $this->assertNotNull($projects);
     }
 }
 

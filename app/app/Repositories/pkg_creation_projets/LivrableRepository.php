@@ -2,6 +2,7 @@
 
 namespace App\Repositories\pkg_creation_projets;
 
+use App\Exceptions\pkg_creation_projets\LivrableAlreadyExistException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\pkg_creation_projets\Livrable;
@@ -32,5 +33,17 @@ class LivrableRepository extends BaseRepository
     public function __construct()
     {
         parent::__construct(new Livrable());
+    }
+    public function create(array $data)
+    {
+        $titre = $data['titre'];
+
+        $existingProject =  $this->model->where('titre', $titre)->exists();
+
+        if ($existingProject) {
+            throw LivrableAlreadyExistException::createLivrable();
+        } else {
+            return parent::create($data);
+        }
     }
 }

@@ -17,7 +17,8 @@ class NatureLivrableFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nom' => $this->faker->word(),
+            'description' => $this->faker->text(),
         ];
     }
 }

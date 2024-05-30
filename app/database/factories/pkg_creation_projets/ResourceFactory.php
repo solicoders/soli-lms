@@ -17,7 +17,9 @@ class ResourceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nom' => $this->faker->word,
+            'lien' => $this->faker->url,
+            'description' => $this->faker->paragraph,
         ];
     }
 }
