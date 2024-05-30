@@ -6,7 +6,7 @@ actor Apprenant
 
 
 package pkg_validations {
-
+ (Évaluer un Projet)  #palegreen
   Formateur -- (Évaluer un Projet)
   Formateur -- (Définir les Niveaux de Validation pour chaque compétence)
   Formateur -- (Consulter le Tableau de Bord)/
