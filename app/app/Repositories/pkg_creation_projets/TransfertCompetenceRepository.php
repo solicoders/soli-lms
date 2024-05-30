@@ -3,10 +3,10 @@
 namespace App\Repositories\pkg_creation_projets;
 
 use App\Models\pkg_competences\Competence;
+use App\Models\pkg_creation_projets\TransfertCompetence;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\pkg_creation_projets\ProjetAlreadyExistException;
-use App\Models\pkg_creation_projets\Projet;
 
 class TransfertCompetenceRepository extends BaseRepository
 {
@@ -33,6 +33,6 @@ class TransfertCompetenceRepository extends BaseRepository
      */
     public function __construct()
     {
-        parent::__construct(new Projet());
+        parent::__construct(new TransfertCompetence());
     }
 }

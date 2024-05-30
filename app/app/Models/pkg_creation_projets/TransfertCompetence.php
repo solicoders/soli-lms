@@ -2,6 +2,10 @@
 
 namespace App\Models\pkg_creation_projets;
 
+use App\Models\pkg_competences\Appreciation;
+use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Technologie;
+use App\Models\pkg_validations\Validation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

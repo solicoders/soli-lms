@@ -17,7 +17,7 @@ class ProjetRepository extends BaseRepository
      */
     protected $fieldsSearchable = [
         'titre',
-        'description',
+        'description'
 
     ];
 

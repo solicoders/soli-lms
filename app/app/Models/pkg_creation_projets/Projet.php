@@ -33,20 +33,4 @@ class Projet extends Model
     {
         return $this->hasMany(RealisationProjet::class);
     }
- /**
-     * Get the searchable fields for the model.
-     *
-     * @return array
-     */
-    public function getFieldsSearchable(): array
-    {
-        // Define the searchable fields for the Projet model
-        return [
-            'titre',
-            'travailAFaire',
-            'critereDeTravail',
-            'description'
-            // Add other searchable fields here
-        ];
-    }
 }

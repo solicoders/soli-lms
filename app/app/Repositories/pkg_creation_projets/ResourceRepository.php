@@ -2,7 +2,6 @@
 
 namespace App\Repositories\pkg_creation_projets;
 
-use App\Models\pkg_competences\Competence;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\pkg_creation_projets\Resource;
@@ -15,7 +14,7 @@ class ResourceRepository extends BaseRepository
      * @var array
      */
     protected $fieldsSearchable = [
-
+        'nom', 'description'
     ];
 
     /**
