@@ -7,20 +7,22 @@ order: 255
 
 ## Cartes d'empathies - Apprenant
 
-![carte d'empatie d'apprenant : pkg_suivi](/soli-lms/diagrammes/pkg_suivi/empathie-Apprenant_pkg_suivi.svg){:width="100%" height="500px"}
-**carte d'empatie de Apprenant : pkg_suivi**
+![carte d'empatie d'apprenant : pkg_suivi](/soli-lms/diagrammes/pkg_suivi/empathie-apprenant_pkg_suivi.svg){:width="100%" height="500px"}
+*carte d'empatie d'apprenant : pkg_suivi*
 
 <!-- note -->
 
-Une séance d'empathie a été réalisée avec l'pprenant, le 27 mai 2024.
+Une séance d'empathie a été réalisée avec l'apprenant Daifane Yasmine, le 27 mai 2024.
 
 ### Persona
-Apprenant ...
+Apprenante Daifane Yasmine.
 
 **Ce qu'il dit :**
-- Il y a une difficulté pour suivre mon avancement sur l'autoformation.
-- Il y a une difficulté pour suivre mon avancement sur les projets par rapport à mes collègues en classe et pour consulter mes compétences validées.
+- J'aimerais avoir un outil qui me permette de voir facilement mes progrès et mes compétences validées.
+
+- Il y a une difficulté pour suivre mon avancement sur les projets par rapport à mes collègues en classe.
+- Il est difficile de consulter mes compétences validées de manière claire et organisée.
 
 **Ce qu’il fait :**
-- Suit son avancement en autoformation sur la table Excel ou directement sur la plateforme de cours.
-- Consulte ses compétences sur la table Excel.
+- Consulte ses compétences sur la table Excel et sur github.
+
