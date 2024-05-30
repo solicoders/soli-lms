@@ -47,9 +47,9 @@ class ProjetRepository extends BaseRepository
      */
     public function create(array $data)
     {
-        $nom = $data['nom'];
+        $titre = $data['titre'];
 
-        $existingProject =  $this->model->where('nom', $nom)->exists();
+        $existingProject =  $this->model->where('titre', $titre)->exists();
 
         if ($existingProject) {
             throw ProjetAlreadyExistException::createProject();
@@ -68,7 +68,7 @@ class ProjetRepository extends BaseRepository
     public function searchData($searchableData, $perPage = 4)
     {
         return $this->model->where(function ($query) use ($searchableData) {
-            $query->where('nom', 'like', '%' . $searchableData . '%')
+            $query->where('titre', 'like', '%' . $searchableData . '%')
                 ->orWhere('description', 'like', '%' . $searchableData . '%');
         })->paginate($perPage);
     }

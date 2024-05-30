@@ -2,6 +2,7 @@
 
 namespace App\Exceptions\pkg_creation_projets;
 
+use App\Exceptions\BusinessException;
 use Exception;
 
 class ProjetAlreadyExistException extends BusinessException
