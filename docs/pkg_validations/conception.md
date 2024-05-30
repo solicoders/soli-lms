@@ -10,4 +10,4 @@ order: 590
 ### Diagramme de classes 
 
 ![Conception - pkg_validations ](/soli-lms/diagrammes/pkg_validations/classes_pkg_validations.svg){:width="100%"}
-**Conception - pkg_validations**
+*Conception - pkg_validations*
