@@ -1,9 +1,16 @@
 sequenceDiagram
+    actor Apprenant as Apprenant
+    actor Formateur as Formateur
+    participant Système as Système
 
-actor Admin
-Admin->>EntityController: use case : Name
-EntityController-->>Admin: Formulaire d'insertion
-Admin->>+EntityController: Create(params)
-EntityController ->> EntityRepository : Create(params)
-EntityController-->>-Admin: message de confirmation
+    Apprenant ->> Système: Soumet le livrable pour validation
+    Système ->> Formateur: Notification de soumission du livrable
 
+    Formateur ->> Système: Consulte la liste des projets réalisés
+    Système ->> Formateur: Affiche la liste des projets
+
+    Apprenant ->> Système: Consulte l'état de son projet
+    Système ->> Apprenant: Affiche l'état du projet
+
+    Formateur ->> Système: Consulte l'état de progression et validation des projets
+    Système ->> Formateur: Affiche l'état de progression et validation des projets
