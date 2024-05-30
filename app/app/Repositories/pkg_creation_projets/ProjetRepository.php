@@ -52,7 +52,7 @@ class ProjetRepository extends BaseRepository
         $existingProject =  $this->model->where('nom', $nom)->exists();
 
         if ($existingProject) {
-            // throw ProjetAlreadyExistException::createProject();
+            throw ProjetAlreadyExistException::createProject();
         } else {
             return parent::create($data);
         }
