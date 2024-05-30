@@ -59,7 +59,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Compétence</th>
-                                                        <th>Appreciation</th>
+                                                        <th>Niveau</th>
                                                         <th><i class="fas fa-check" style="color: green;"></i></th>
                                                         <th><i class="fas fa-times" style="color: red;"></i></th>
                                                     </tr>
