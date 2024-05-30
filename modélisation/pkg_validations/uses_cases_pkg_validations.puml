@@ -2,25 +2,30 @@
 
 left to right direction
 actor Formateur
-actor Apprenant
+
 
 
 package pkg_validations {
- (Évaluer un Projet)  #palegreen
-  Formateur -- (Évaluer un Projet)
-  Formateur -- (Définir les Niveaux de Validation pour chaque compétence)
+ (Consulter le Tableau de Bord)  #DeepSkyblue
+ (Recevoir des Notifications)    #DeepSkyblue
+
+
+ 
   Formateur -- (Consulter le Tableau de Bord)/
   Formateur -- (Recevoir des Notifications)/
 
-  Apprenant -- (Soumettre un Projet)
-  Apprenant -- (Consulter les Évaluations)/
-  Apprenant -- (Recevoir des Notifications)/
+  (Valider un Projet) <.. (Définir les Niveaux de Validation pour chaque compétence)
+  (Valider un Projet) <.. (Ajouter des Commentaires)
+  
 
-  (Évaluer un Projet) <.. (Définir les Niveaux de Validation pour chaque compétence)
-  (Évaluer un Projet) <.. (Ajouter des Commentaires)
-  (Consulter les Évaluations) <.. (Voir les statistiques d''Évaluation)
-  (Évaluer un Projet)<.. (Voir liste des Projets en Attente de validation)
+} 
 
-}  
+
+package pkg_realisation_projet{
+
+   Formateur -- (Consulter la liste des projets réalisés en attente de validation)
+   (Consulter la liste des projets réalisés en attente de validation) <.. (Valider un Projet)
+
+}
 
 @enduml
