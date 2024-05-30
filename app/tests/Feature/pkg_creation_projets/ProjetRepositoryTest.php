@@ -47,10 +47,23 @@ class ProjetRepositoryTest extends TestCase
      */
     public function testUpdateProjet(): void
     {
-        $projet = Projet::factory()->create();
-        $updateData = ['titre' => 'Updated Title'];
-        $updatedProjet = $this->projetRepo->update($projet->id, $updateData);
+        $projet = Projet::factory()->create([
+            'titre' => 'Original Title',
+            'description' => 'Original Description',
+            // Add other fields as necessary
+        ]);
+        $updateData = [
+            'titre' => 'Updated Title',
+        ];
+        $updateResult = $this->projetRepo->update($projet->id, $updateData);
+        $this->assertTrue($updateResult, 'Update operation failed or project not found.');
+
+        // Retrieve the updated project
+        $updatedProjet = Projet::find($projet->id);
+
         $this->assertEquals('Updated Title', $updatedProjet->titre);
+        $this->assertEquals('Original Description', $updatedProjet->description);
+        // Add assertions for other fields as necessary
     }
 
     /**
@@ -59,9 +72,11 @@ class ProjetRepositoryTest extends TestCase
     public function testDeleteProjet(): void
     {
         $projet = Projet::factory()->create();
-        $deleteResult = $this->projetRepo->delete($projet->id);
+        $deleteResult = $this->projetRepo->destroy($projet->id);
         $this->assertTrue($deleteResult);
-        $this->assertDeleted($projet); // Add this line
+
+        // Manually check that the model has been deleted
+        $this->assertNull(Projet::find($projet->id));
     }
 }
 
