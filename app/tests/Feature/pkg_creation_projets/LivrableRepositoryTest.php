@@ -142,7 +142,7 @@ class LivrableRepositoryTest extends TestCase
             $livrable = $this->livrableRepo->create($livrableData);
             $this->fail('Expected LivrableAlreadyExistException was not thrown');
         } catch (LivrableAlreadyExistException $e) {
-            $this->assertEquals(__('pkg_creation_projets/livrable/message.createLivrableException'), $e->getMessage());
+            $this->assertEquals(__('pkg_creation_projets/message.createLivrableException'), $e->getMessage());
         } catch (\Exception $e) {
             $this->fail('Unexpected exception was thrown: ' . $e->getMessage());
         }
