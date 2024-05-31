@@ -52,3 +52,12 @@ Apprenante Hamza Zaani.
 
 **Ce qu’il fait :**
 - Consulte ses compétences sur la table Excel et sur github.
+
+## Définir le problème
+
+### Problème Central
+L'absence d'un système centralisé et intuitif pour le suivi des progrès et des compétences des apprenants entraîne une inefficacité notable dans le processus éducatif. Les méthodes actuelles, basées sur des tableurs Excel et des documents papier, compliquent la tâche des formateurs pour évaluer et intervenir rapidement, et empêchent les apprenants de suivre efficacement leur propre avancement.
+
+### Enjeu
+
+Comment concevoir et mettre en œuvre un outil centralisé et intuitif qui permette aux formateurs de suivre de manière efficace et détaillée les progrès des apprenants, et aux apprenants de consulter facilement et clairement leurs compétences validées et leur avancement par rapport à leurs collègues?
