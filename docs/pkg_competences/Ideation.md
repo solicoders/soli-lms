@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 590
+order: 592
 ---
 
 # Idéation

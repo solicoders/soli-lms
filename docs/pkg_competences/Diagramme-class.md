@@ -2,10 +2,10 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 590
+order: 595
 ---
 
 # Diagramme de class
 
-![Diagramme de class](/soli-lms/pkg_competences/images/Ideation.png)
+![Diagramme de class](/soli-lms/pkg_competences/images/classes_pkg_competences.svg)
 **Diagramme de class**
