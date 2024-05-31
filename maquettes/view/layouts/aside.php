@@ -43,7 +43,7 @@ $current_route = $_SERVER['REQUEST_URI'];
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/view/GestionBriefProjet/Formateur/Realisations/index.php"
+                <a href="/view/pkg_validations/Formateur/Realisations/index.php"
                   class="nav-link <?php echo (strpos($current_route, 'Réalisations') !== false) ? 'active' : ''; ?>">
                   <i class="far fa-chart-bar nav-icon"></i>
                   <p>Réalisations</p>
