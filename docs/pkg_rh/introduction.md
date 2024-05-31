@@ -2,10 +2,10 @@
 layout: default
 chapitre: true
 package : pkg_rh
-order: 390
+order: 125
 ---
 
 ## Introduction
 
-![Diagamme de cas d'utilisation : pkg_rh](./images/introduction.jpeg)
-**Diagamme de cas d'utilisation : pkg_rh**
+![Introduction : pkg_rh](./images/introduction.jpeg)
+*Figure: Introduction*
