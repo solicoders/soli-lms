@@ -5,10 +5,14 @@ package: pkg_competences
 order: 593
 ---
 
+## Persona :
+
+Abdelmounaim Hammouda 
+
 # Carte d’empathie
 
 ![Carte d’empathie](/soli-lms/pkg_competences/images/)
-**Carte d’empathie**
+*Carte d’empathie*
 
 ### Ce qu’il dit :
 

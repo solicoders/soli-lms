@@ -8,7 +8,7 @@ order: 592
 # Idéation
 
 ![Idéation](/soli-lms/pkg_competences/images/Ideation.png)
-**Idéation**
+*Idéation*
 
 - Créer une plateforme numérique interactive qui répertorie toutes les filières, modules, compétences et niveaux de formation. Les utilisateurs pourront accéder rapidement à ces informations de manière claire et organisée.
 
