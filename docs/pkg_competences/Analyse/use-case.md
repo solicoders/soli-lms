@@ -5,7 +5,10 @@ package: pkg_competences
 order: 594
 ---
 
-# Cas d’utilisation
+# Diagramme de cas d'utilisation : Compétences
 
-![Cas d’utilisation](/soli-lms/pkg_competences/images/)
-*Cas d’utilisation*
+![Diagramme de cas d'utilisation Compétences](/soli-lms/pkg_competences/images/)
+*Diagramme de cas d'utilisation compétences*
+
+
+<!-- new slide -->
