@@ -16,7 +16,7 @@
                             </h3>
                         </div>
                         <!-- Obtenir le formulaire -->
-                        @include('GestionProjets.projet.fields')
+                        @include('pkg_creation_projets.fields')
                     </div>
                 </div>
             </div>

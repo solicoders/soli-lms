@@ -3,29 +3,33 @@
         <thead>
             <tr>
                 <th>{{ __('GestionProjets/projet.singular') }}</th>
-                <th>{{ __('app.description') }}</th>
+                <th>{{ __('GestionProjets/competence.singular') }}</th>
+                <th>{{ __('GestionProjets/datedebut') }}</th>
+                <th>{{ __('GestionProjets/datefin') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($projectData as $project)
+            @foreach ($projetData as  $projet)
                 <tr>
-                    <td>{{ $project->nom }}</td>
-                    <td>{{ $project->description }}</td>
+                    <td>{{ $projet->titre }}</td>
+                    <td>{{ $projet->competence }}</td>
+                    <td>{{ $projet->dateDebut }}</td>
+                    <td>{{ $projet->dateFin }}</td>
 
                     <td class="text-center">
-                        @can('show-ProjetController')
-                            <a href="{{ route('projets.show', $project) }}" class="btn btn-default btn-sm">
+                        {{-- @can('show-ProjetController') --}}
+                            <a href="{{ route('projets.show', $projet) }}" class="btn btn-default btn-sm">
                                 <i class="far fa-eye"></i>
                             </a>
-                        @endcan
-                        @can('edit-ProjetController')
-                            <a href="{{ route('projets.edit', $project) }}" class="btn btn-sm btn-default">
+                        {{-- @endcan --}}
+                        {{-- @can('edit-ProjetController') --}}
+                            <a href="{{ route('projets.edit', $projet) }}" class="btn btn-sm btn-default">
                                 <i class="fas fa-pen-square"></i>
                             </a>
-                        @endcan
-                        @can('destroy-ProjetController')
-                            <form action="{{ route('projets.destroy', $project) }}" method="POST" style="display: inline;">
+                        {{-- @endcan --}}
+                        {{-- @can('destroy-ProjetController') --}}
+                            <form action="{{ route('projets.destroy', $projet) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger"
@@ -33,7 +37,7 @@
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
-                        @endcan
+                        {{-- @endcan --}}
 
                     </td>
                 </tr>
@@ -45,7 +49,7 @@
 <div class="d-md-flex justify-content-between align-items-center p-2">
     <div class="d-flex align-items-center mb-2 ml-2 mt-2">
 
-        @can('import-ProjetController')
+        {{-- @can('import-ProjetController') --}}
             <!-- TODO : Import et export ne doit pas s'afficher dans la version mobile -->
             <form action="{{ route('projets.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
                 id="importForm">
@@ -56,17 +60,17 @@
                 </label>
                 <input type="file" id="upload" name="file" style="display:none;" onchange="submitForm()" />
             </form>
-        @endcan
-        @can('export-ProjetController')
+        {{-- @endcan --}}
+        {{-- @can('export-ProjetController') --}}
             <form class="">
                 <a href="{{ route('projets.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
                     <i class="fas fa-file-export"></i>
                     {{ __('app.export') }}</a>
             </form>
-        @endcan
+        {{-- @endcan --}}
     </div>
-    
+
     <ul class="pagination  m-0 float-right">
-        {{ $projectData->onEachSide(1)->links() }}
+        {{ $projetData->onEachSide(1)->links() }}
     </ul>
 </div>
