@@ -29,7 +29,7 @@ class FormationController extends Controller
                 return view('formation.index', compact('formationData'))->render();
             }
         }
-        return view('formation.index', compact('formationData'));
+        return view('GestionFormation.Formation.index', compact('formationData'));
     }
 
     public function create()
