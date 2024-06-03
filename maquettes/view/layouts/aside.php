@@ -83,6 +83,13 @@ $current_route = $_SERVER['REQUEST_URI'];
                 <p>Gestion Villes</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="../view/pkg_rh/Groupe/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Groupe') !== false) ? 'active' : ''; ?>">
+                <i class="fa-solid fa-table"></i>
+                <p>Gestion Groupes</p>
+              </a>
+            </li>
           </ul>
         </li>
         <!-- Authorisation -->
