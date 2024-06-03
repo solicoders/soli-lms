@@ -32,7 +32,7 @@ Formateur Essarraj Fouad
 
 <!-- new slide -->
 
-### Carte d'empathie d'apprenante
+### Carte d'empathie d'apprenant
 
 ![carte d'empatie d'apprenant : pkg_suivi](/soli-lms/diagrammes/pkg_suivi/empathie-apprenant_pkg_suivi.svg){:width="100%" height="500px"}
 *carte d'empatie d'apprenant : pkg_suivi*
@@ -42,7 +42,7 @@ Formateur Essarraj Fouad
 Une séance d'empathie a été réalisée avec l'apprenant Hamza Zaani, le 27 mai 2024.
 
 ### Persona
-Apprenante Hamza Zaani.
+Apprenant Hamza Zaani.
 
 **Ce qu'il dit :**
 - J'aimerais avoir un outil qui me permette de voir facilement mes progrès et mes compétences validées.
