@@ -12,5 +12,11 @@ class Formation extends Model
         'nom',
         'description',
         'lien',
+        'formateur_id',
     ];
+
+    public function formateur()
+    {
+        return $this->belongsTo(Formateur::class);
+    }
 }
