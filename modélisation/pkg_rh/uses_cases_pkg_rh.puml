@@ -3,15 +3,20 @@
 left to right direction
 
 
-actor Admin as admin
-
 package pkg_rh {
 
-  Admin -->  (Cas d'utilisation) 
-  (extend 1 Cas d'utilisation)  <..  (Cas d'utilisation)  : <<extend>>
-  (extend 2 Cas d'utilisation)  <.  (Cas d'utilisation)  : <<extend>>
-}  
+  Responsable_de_Formation ----> (gestion des specialites)
+  Responsable_de_Formation ----> (gestion des groupes) 
+  Responsable_de_Formation ----> (gestion des villes) 
+  Responsable_de_Formation ----> (gestion des apprenant) 
+  Responsable_de_Formation ----> (gestion des formateurs) 
 
-' note right of admin : "note 1"
+  ' (gestion des formateurs) <... (Auth) : <<extend>>
+  ' (gestion des apprenant) <... (Auth) : <<extend>>
+  ' (gestion des groupes) <... (Auth) : <<extend>>
+  ' (gestion des villes) <... (Auth) : <<extend>>
+  ' (gestion des specialites) <... (Auth) : <<extend>>
+
+}  
 
 @enduml
