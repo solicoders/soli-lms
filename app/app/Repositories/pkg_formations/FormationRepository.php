@@ -101,8 +101,8 @@ class FormationRepository extends BaseRepository
         $formation = $this->model->findOrFail($id);
         return $formation->delete();
     }
-
- 
+     
+    
     /**
      * Recherche les formations correspondants aux critères spécifiés.
      *
@@ -117,4 +117,9 @@ class FormationRepository extends BaseRepository
                 ->orWhere('description', 'like', '%' . $searchableData . '%');
         })->paginate($perPage);
     }
+
+    
+
+
+    
 }
