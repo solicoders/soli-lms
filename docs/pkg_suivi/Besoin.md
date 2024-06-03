@@ -32,7 +32,7 @@ Formateur Essarraj Fouad
 
 <!-- new slide -->
 
-### Carte d'empathie d'apprenant
+### Carte d'empathie d'apprenante
 
 ![carte d'empatie d'apprenant : pkg_suivi](/soli-lms/diagrammes/pkg_suivi/empathie-apprenant_pkg_suivi.svg){:width="100%" height="500px"}
 *carte d'empatie d'apprenant : pkg_suivi*
@@ -42,7 +42,7 @@ Formateur Essarraj Fouad
 Une séance d'empathie a été réalisée avec l'apprenant Hamza Zaani, le 27 mai 2024.
 
 ### Persona
-Apprenant Hamza Zaani.
+Apprenante Hamza Zaani.
 
 **Ce qu'il dit :**
 - J'aimerais avoir un outil qui me permette de voir facilement mes progrès et mes compétences validées.
@@ -52,4 +52,21 @@ Apprenant Hamza Zaani.
 
 **Ce qu’il fait :**
 - Consulte ses compétences sur la table Excel et sur github.
+
+<!-- new slide -->
+
+## Définir le problème
+
+![Définir le problème : pkg_suivi](./images/problem.jpg){:height="600px"}
+*Définir le problème*
+
+<!-- note -->
+
+### Problème Central
+L'absence d'un système centralisé et intuitif pour le suivi des progrès et des compétences des apprenants entraîne une inefficacité notable dans le processus éducatif. Les méthodes actuelles, basées sur des tableurs Excel et des documents papier, compliquent la tâche des formateurs pour évaluer et intervenir rapidement, et empêchent les apprenants de suivre efficacement leur propre avancement.
+
+### Enjeu
+
+Comment concevoir et mettre en œuvre un outil centralisé et intuitif qui permette aux formateurs de suivre de manière efficace et détaillée les progrès des apprenants, et aux apprenants de consulter facilement et clairement leurs compétences validées et leur avancement par rapport à leurs collègues?
+
 <!-- new slide -->
