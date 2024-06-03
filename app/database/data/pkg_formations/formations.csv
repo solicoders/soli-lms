@@ -1,5 +1,6 @@
-nom,description
-Laravel,Formation complète sur le framework Laravel.
-Html5,Introduction et avancées en HTML5.
-CSS3,Maîtrise du style avec CSS3.
-Figma,Conception d'interfaces avec Figma.
+nom,description,lien
+Laravel,Formation complète sur le framework Laravel.,https://example.com/laravel
+HTML5,Introduction et avancées en HTML5.,https://example.com/html5
+CSS3,Maîtrise du style avec CSS3.,https://example.com/css3
+Figma,Conception d'interfaces avec Figma.,https://example.com/figma
+

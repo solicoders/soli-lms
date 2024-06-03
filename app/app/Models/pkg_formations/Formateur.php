@@ -5,12 +5,14 @@ namespace App\Models\pkg_formations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Formation extends Model
+class Formateur extends Model
 {
     use HasFactory;
+
+    protected $table = 'formateurs';
+
     protected $fillable = [
         'nom',
-        'description',
-        'lien',
+
     ];
 }
