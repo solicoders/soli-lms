@@ -2,6 +2,7 @@
 
 namespace App\Models\pkg_creation_projets;
 
+use App\Models\pkg_realisation_projets\RealisationProjet;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
