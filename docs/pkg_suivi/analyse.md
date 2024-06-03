@@ -5,6 +5,7 @@ package : pkg_suivi
 order: 355
 ---
 ## Idéation
+{:class="sectionHeader"}
 
 <!-- note -->
 
