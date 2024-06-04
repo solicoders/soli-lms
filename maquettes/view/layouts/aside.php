@@ -90,6 +90,20 @@ $current_route = $_SERVER['REQUEST_URI'];
                 <p>Gestion Groupes</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="../view/pkg_rh/NiveauxScolaire/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'NiveauxScolaire') !== false) ? 'active' : ''; ?>">
+                <i class="fa-solid fa-book"></i>
+                <p>Gestion Niveaux Scolaire</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../view/pkg_rh/NiveauxScolaire/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'NiveauxScolaire') !== false) ? 'active' : ''; ?>">
+                <i class="fa-solid fa-book"></i>
+                <p>Gestion Spécialité</p>
+              </a>
+            </li>
           </ul>
         </li>
         <!-- Authorisation -->
