@@ -7,3 +7,5 @@ order: 725
 
 ## Conclusion : pkg_rh
 
+![Conclusion : pkg_rh](./images/conclusion.png)
+*Figure: Conclusion*
