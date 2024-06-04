@@ -46,13 +46,6 @@ class ValidationsRepository extends BaseRepository
      */
     public function create(array $data)
     {
-        $titre = $data['titre'];
-    
-        $existingProject = $this->model->where('titre', $titre)->exists();
-    
-        if ($existingProject) {
-            throw ValidationAlreadyExistException::createValidation();
-        } else {
             // Prepare data for creating the validation
             $validationData = [
                 'note' => $data['note'],
@@ -73,7 +66,7 @@ class ValidationsRepository extends BaseRepository
             $message = Message::create($messageData);
     
             return $validation;
-        }
+        
     }
 
     /**
