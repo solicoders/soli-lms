@@ -11,13 +11,34 @@
         </thead>
         <tbody>
             @foreach ($projetData as  $projet)
-                <tr>
-                    <td>{{ $projet->titre }}</td>
-                    <td>{{ $projet->competence }}</td>
-                    <td>{{ $projet->dateDebut }}</td>
-                    <td>{{ $projet->dateFin }}</td>
+            <tr>
+                <td>{{ $projet->titre }}</td>
+                <td>
+                    <ul>
+                        @if ($projet->competences)
+                            @foreach($projet->competences as $competence)
+                                <li>
+                                    {{ $competence->nom }}
+                                    @if ($competence->niveau_competences)
+                                    <ul>
+                                        @foreach($competence->niveau_competences as $niveau_competence)
+                                            <li>{{ $niveau_competence->nom }}</li>
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <p>No niveaux available</p>
+                                @endif
+                                </li>
+                            @endforeach
+                        @else
+                            <p>No competences available</p>
+                        @endif
+                    </ul>
+                </td>
+                <td>{{ $projet->dateDebut }}</td>
+                <td>{{ $projet->dateFin }}</td>
 
-                    <td class="text-center">
+                <td class="text-center">
                         {{-- @can('show-ProjetController') --}}
                             <a href="{{ route('projets.show', $projet) }}" class="btn btn-default btn-sm">
                                 <i class="far fa-eye"></i>
@@ -39,7 +60,7 @@
                             </form>
                         {{-- @endcan --}}
 
-                    </td>
+                </td>
                 </tr>
             @endforeach
         </tbody>

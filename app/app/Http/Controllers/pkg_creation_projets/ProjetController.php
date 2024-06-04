@@ -22,10 +22,9 @@ class ProjetController extends Controller
     {
         // Assuming 'transfertCompetences', 'competence', and other related models are the relationships
         $projetData = $this->projetRepository->with([
-            'transfertCompetences',
-            'competence',
-            'anotherRelation', // Add more relations as needed
-            // More relationships can be added here
+            'livrables',
+            'resources',
+            'competences.niveauxCompetence'
         ])->paginate();
 
         if ($request->ajax()) {
