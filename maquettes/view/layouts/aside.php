@@ -98,8 +98,8 @@ $current_route = $_SERVER['REQUEST_URI'];
               </a>
             </li>
             <li class="nav-item">
-              <a href="../view/pkg_rh/NiveauxScolaire/index.php"
-                class="nav-link <?php echo (strpos($current_route, 'NiveauxScolaire') !== false) ? 'active' : ''; ?>">
+              <a href="../view/pkg_rh/Specialite/index.php"
+                class="nav-link <?php echo (strpos($current_route, 'Specialite') !== false) ? 'active' : ''; ?>">
                 <i class="fa-solid fa-book"></i>
                 <p>Gestion Spécialité</p>
               </a>
