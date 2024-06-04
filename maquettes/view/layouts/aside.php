@@ -100,7 +100,7 @@ $current_route = $_SERVER['REQUEST_URI'];
             <li class="nav-item">
               <a href="../view/pkg_rh/Specialite/index.php"
                 class="nav-link <?php echo (strpos($current_route, 'Specialite') !== false) ? 'active' : ''; ?>">
-                <i class="fa-solid fa-book"></i>
+                <i class="nav-icon fas fa-th"></i>
                 <p>Gestion Spécialité</p>
               </a>
             </li>
