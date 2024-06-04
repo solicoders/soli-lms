@@ -10,7 +10,7 @@ use App\Models\pkg_validations\Validation;
 
 class ValidationsRepository extends BaseRepository
 {
-   /**
+    /**
      * Les champs de recherche disponibles pour les projets.
      *
      * @var array
@@ -29,8 +29,9 @@ class ValidationsRepository extends BaseRepository
     {
         return $this->fieldsSearchable;
     }
- /**
-     * Constructeur de la classe ProjetRepository.
+
+    /**
+     * Constructeur de la classe ValidationsRepository.
      */
     public function __construct()
     {
@@ -38,49 +39,61 @@ class ValidationsRepository extends BaseRepository
     }
 
     /**
-     * Crée un nouveau projet.
+     * Crée une nouvelle validation avec un message associé.
      *
-     * @param array $data Données du projet à créer.
-     * @return mixed
-     * @throws ValidationAlreadyExistException Si le projet existe déjà.
+     * @param array $data Données du formulaire de validation.
+     * @return Validation
+     * @throws ValidationAlreadyExistException Si la validation existe déjà.
      */
-    public function create(array $data)
+    public function createWithMessage(array $data)
     {
-            // Prepare data for creating the validation
-            $validationData = [
-                'note' => $data['note'],
-                'transfert_competence_id' => $data['transfert_competence_id'],
-                'appreciation_id' => $data['appreciation_id'],
-                'realisation_projet_id' => $data['realisation_projet_id'],
-            ];
-    
-            // Create the validation
-            $validation = parent::create($validationData);
-    
-            // Create associated message
-            $messageData = [
-                'titre' => $data['message_titre'],
-                'description' => $data['message_description'],
-                'validation_id' => $validation->id,
-            ];
-            $message = Message::create($messageData);
-    
-            return $validation;
-        
+        // Prepare data for creating the validation
+        $validationData = [
+            'note' => $data['note'],
+            'transfert_competence_id' => $data['transfert_competence_id'],
+            'appreciation_id' => $data['appreciation_id'],
+            'realisation_projet_id' => $data['realisation_projet_id'],
+        ];
+
+        // Check if validation already exists
+        if ($this->alreadyExists($validationData)) {
+            throw  ValidationAlreadyExistException::createValidation();
+        }
+
+        // Create the validation
+        $validation = parent::create($validationData);
+        dd($validation);
+
+        // Create associated message
+        $messageData = [
+            'titre' => $data['message_title'],
+            'description' => $data['message_description'],
+            'validation_id' => $validation->id,
+        ];
+        $message = Message::create($messageData);
+
+        return $validation;
     }
 
     /**
-     * Recherche les projets correspondants aux critères spécifiés.
+     * Checks if a similar validation already exists.
      *
-     * @param mixed $searchableData Données de recherche.
-     * @param int $perPage Nombre d'éléments par page.
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @param array $data
+     * @return bool
      */
-    public function searchData($searchableData, $perPage = 4)
+    /**
+     * Checks if a validation with the same transfert_competence_id, appreciation_id, and realisation_projet_id already exists in the database.
+     *
+     * @param array $data Data containing keys for transfert_competence_id, appreciation_id, and realisation_projet_id.
+     * @return bool Returns true if a similar validation exists, otherwise false.
+     */
+    private function alreadyExists(array $data): bool
     {
-        return $this->model->where(function ($query) use ($searchableData) {
-            $query->where('titre', 'like', '%' . $searchableData . '%')
-                ->orWhere('description', 'like', '%' . $searchableData . '%');
-        })->paginate($perPage);
+        return Validation::where('transfert_competence_id', $data['transfert_competence_id'])
+                         ->where('appreciation_id', $data['appreciation_id'])
+                         ->where('realisation_projet_id', $data['realisation_projet_id'])
+                         ->exists();
     }
+
+   
 }

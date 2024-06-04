@@ -8,6 +8,6 @@ class ValidationAlreadyExistException extends Exception
 {
     public static function createValidation()
     {
-        return new self(__('pkg_validations/message.createValidationException'));
+        return new self('The validation is already exists.');
     }
 }
