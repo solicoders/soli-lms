@@ -7,6 +7,7 @@ use App\Http\Requests\pkg_creation_projets\ProjetRequest;
 use App\Repositories\pkg_creation_projets\ProjetRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProjetController extends Controller
 {
