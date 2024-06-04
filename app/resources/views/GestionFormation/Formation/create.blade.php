@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once "../layouts/heade.php" ?>
+
 
 <body class="sidebar-mini" style="height: auto;">
 
