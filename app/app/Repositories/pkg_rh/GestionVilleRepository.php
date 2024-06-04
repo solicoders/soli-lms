@@ -1,10 +1,10 @@
 <?php
-namespace App\Repositories\GestionRH;
+namespace App\Repositories\pkg_rh;
 
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\GestionRH\VilleException;
-use App\Models\GestionRH\Ville;
+use App\Exceptions\pkg_rh\VilleException;
+use App\Models\pkg_rh\Ville;
 
 class GestionVilleRepository extends BaseRepository
 {

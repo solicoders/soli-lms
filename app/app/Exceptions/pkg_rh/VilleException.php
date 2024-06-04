@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions\GestionRH;
+namespace App\Exceptions\pkg_rh;
 
 use Exception;
 
@@ -8,6 +8,6 @@ class VilleException extends Exception
 {
     public static function AlreadyExistVille()
     {
-        return new self(__('GestionRH/message.alreadyexistville'));
+        return new self('Ville deja exist');
     }
 }

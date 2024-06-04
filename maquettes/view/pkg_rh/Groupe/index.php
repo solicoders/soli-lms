@@ -19,11 +19,11 @@
                     <div class="container-fluid ">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Liste des Personnel</h1>
+                                <h1>Liste des Groupes</h1>
                             </div>
                             <div class="col-sm-6">
                                 <a href="./create.php" type="button" class="btn btn-primary float-right">
-                                    <i class="fas fa-plus"></i> Ajouter un Personnel
+                                    <i class="fas fa-plus"></i> Ajouter un Groupe
                                 </a>
                             </div>
                         </div>
@@ -31,89 +31,48 @@
                 </section>
                 
                 <div class="card">
-                    <div class="card-header col-md-12"> 
-                        <div class="input-group input-group-sm float-sm-right col-md-3 p-0">
-                            <input type="text" name="table_search" id="table_search" class="form-control float-right" placeholder="Recherche">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="input-group input-group-sm float-sm-left col-md-3 p-0">
-                            <select class="form-control " id="filterSelect">
-                                <option value="">Toutes les spécialités</option>
-                                <option value="option1">Professeur</option>
-                                <option value="option2">Responsable</option>
-                                <option value="option3">Secrétaire Générale</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Nom</th>
-                                    <th>Prénom</th>
-                                    <th>Numéro de téléphone</th>
-                                    <th>Spécialité</th>
+                                    <th>Date d'ajout</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Essaraj</td>
-                                    <td>Fouad</td>
-                                    <td>0612345689</td>
-                                    <td>Professeur</td>
+                                    <td>DWB101</td>
+                                    <td>2023/10/22</td>
                                     <td class="text-center">
-                                        <a href="./show.php" class='btn btn-default btn-sm'>
-                                            <i class="far fa-eye"></i>
-                                        </a>
                                         <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Hamouda</td>
-                                    <td>Chrif</td>
-                                    <td>0612345689</td>
-                                    <td>Responsable</td>
+                                    <td>DWB102</td>
+                                    <td>2023/10/22</td>
                                     <td class="text-center">
-                                        <a href="./show.php" class='btn btn-default btn-sm'>
-                                            <i class="far fa-eye"></i>
-                                        </a>
                                         <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Chebbab</td>
-                                    <td>Fatine</td>
-                                    <td>0612345689</td>
-                                    <td>Professeure</td>
+                                    <td>DWB103</td>
+                                    <td>2023/10/22</td>
                                     <td class="text-center">
-                                        <a href="./show.php" class='btn btn-default btn-sm'>
-                                            <i class="far fa-eye"></i>
-                                        </a>
                                         <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Souklabi</td>
-                                    <td>Abdellatif</td>
-                                    <td>0612345689</td>
-                                    <td>Professeur</td>
+                                    <td>DMB101</td>
+                                    <td>2023/10/22</td>
                                     <td class="text-center">
-                                        <a href="./show.php" class='btn btn-default btn-sm'>
-                                            <i class="far fa-eye"></i>
-                                        </a>
                                         <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
