@@ -15,7 +15,7 @@ order: 235
  
 #### Carte d'empathie  Formateur realisation projets  
 
-![Carte d'empathie Formateur](/soli-lms/Besoin/pkg_realisation_projets/carte-empathie-Formateur.svg){:width="200px"} 
+![Carte d'empathie Formateur](/soli-lms/Besoin/pkg_realisation_projets/carte-empathie-Formateur.svg)
 *figure 2:Carte d'empathie Formateur*
 
 ### Définir le problème
