@@ -13,5 +13,6 @@ return [
     'action'=> 'Action',
     'detail' => 'Detail',
     'description' => 'Description',
-    'list' => 'List'
+    'list' => 'List',
+    'link' => 'Lien',
 ];

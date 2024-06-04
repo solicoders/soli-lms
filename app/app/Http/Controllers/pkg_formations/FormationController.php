@@ -61,12 +61,12 @@ class FormationController extends Controller
     {
         $validatedData = $request->validated();
         $this->formationRepository->update($id, $validatedData);
-        return redirect()->route('formations.index')->with('success', 'La formation a été modifiée avec succès.');
+        return redirect()->route('formation.index')->with('success', 'La formation a été modifiée avec succès.');
     }
 
     public function destroy($id)
     {
         $this->formationRepository->destroy($id);
-        return redirect()->route('formations.index')->with('success', 'La formation a été supprimée avec succès.');
+        return redirect()->route('formation.index')->with('success', 'La formation a été supprimée avec succès.');
     }
 }
