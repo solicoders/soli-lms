@@ -19,7 +19,14 @@ class ProjetController extends Controller
 
     public function index(Request $request)
     {
-        $projetData = $this->projetRepository->paginate();
+        // Assuming 'transfertCompetences', 'competence', and other related models are the relationships
+        $projetData = $this->projetRepository->with([
+            'transfertCompetences',
+            'competence',
+            'anotherRelation', // Add more relations as needed
+            // More relationships can be added here
+        ])->paginate();
+
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
