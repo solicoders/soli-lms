@@ -19,15 +19,15 @@
                             @foreach($projet->competences as $competence)
                                 <li>
                                     {{ $competence->nom }}
-                                    @if ($competence->niveau_competences)
-                                    <ul>
-                                        @foreach($competence->niveau_competences as $niveau_competence)
-                                            <li>{{ $niveau_competence->nom }}</li>
-                                        @endforeach
-                                    </ul>
-                                @else
-                                    <p>No niveaux available</p>
-                                @endif
+                                    @if ($competence->niveauxCompetences && $competence->niveauxCompetences->isNotEmpty())
+                                        <ul>
+                                            @foreach($competence->niveauxCompetences as $niveauxCompetence)
+                                                <li>{{ $niveauxCompetence->nom }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        <p>No niveaux available</p>
+                                    @endif
                                 </li>
                             @endforeach
                         @else
