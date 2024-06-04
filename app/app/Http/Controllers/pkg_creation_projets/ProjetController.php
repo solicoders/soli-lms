@@ -25,16 +25,16 @@ class ProjetController extends Controller
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $projetData = $this->projetRepository->searchData($searchQuery);
-                return view('projet.index', compact('projetData'))->render();
+                return view('pkg_creation_projets.index', compact('projetData'))->render();
             }
         }
-        return view('projet.index', compact('projetData'));
+        return view('pkg_creation_projets.index', compact('projetData'));
     }
 
     public function create()
     {
         $dataToEdit = null;
-        return view('projet.create', compact('dataToEdit'));
+        return view('pkg_creation_projets.create', compact('dataToEdit'));
     }
 
     public function store(ProjetRequest $request)
@@ -47,7 +47,7 @@ class ProjetController extends Controller
     public function show(Request $request, $id)
     {
         $projet = $this->projetRepository->find($id);
-        return view('projet.show', compact('projet'));
+        return view('pkg_creation_projets.show', compact('projet'));
     }
 
     public function edit($id)
@@ -55,7 +55,7 @@ class ProjetController extends Controller
         $dataToEdit = $this->projetRepository->find($id);
         $dataToEdit->dateDebut = Carbon::parse($dataToEdit->dateDebut)->format('Y-m-d');
         $dataToEdit->dateFin = Carbon::parse($dataToEdit->dateFin)->format('Y-m-d');
-        return view('projet.edit', compact('dataToEdit'));
+        return view('pkg_creation_projets.edit', compact('dataToEdit'));
     }
 
     public function update(ProjetRequest $request, $id)
