@@ -1,7 +1,7 @@
 ---
 layout: default
 chapitre: true
-package : pkg_validations
+package : pkg_realisation_projets
 order: 1000
 ---
 

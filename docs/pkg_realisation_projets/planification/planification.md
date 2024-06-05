@@ -1,8 +1,8 @@
 ---
 layout: default
 chapitre: true
-package : pkg_validations
-order: 440
+package : pkg_realisation_projets
+order: 435
 ---
 
 # Planification

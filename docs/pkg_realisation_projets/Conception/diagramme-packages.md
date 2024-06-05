@@ -1,8 +1,8 @@
 ---
 layout: default
 chapitre: true
-package : pkg_validations
-order: 540
+package : pkg_realisation_projets
+order: 535
 ---
 
 
@@ -18,12 +18,15 @@ Dans le processus de conception d’une interface utilisateur, il est important 
 
 
 
-
 ## Diagramme de classes 
 
-![Conception - pkg_validations ](/soli-lms/diagrammes/pkg_validations/classes_pkg_validations.svg){:width="70%"}
-*Conception - pkg_validations*
+![Conception - pkg_realisation_projets ](/soli-lms/diagrammes/pkg_realisation_projets/classes_pkg_realisation_projets.svg){:width="100%"}
+**Conception - pkg_realisation_projets**
 
+## Diagramme de packages
+
+![Diagramme de packages](./images/Diagramme-des-paquetages.png){:width="900px"}
+*Figure: Diagramme de packages* 
 
 <!-- new slide -->
 

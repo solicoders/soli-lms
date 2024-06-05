@@ -1,22 +1,14 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
-order: 145
+package : pkg_realisation_projets
+order: 235
 ---
-
-# Context de projet
+# Besoin 
+## Context de projet
 {:class="sectionHeader"}
 
-<!-- note -->
-
-
-
-<!-- new slide -->
-
-## Cahier  des charges
-
+<!-- new slide  -->
 ![Context de projet](./images/Context-de-projet.jpg){:width="1000px"}_figure: Context de projet_
 
 <!-- note -->
