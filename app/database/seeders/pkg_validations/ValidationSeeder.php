@@ -21,7 +21,7 @@ class ValidationSeeder extends Seeder
 while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {
                 Validation::create([
-                    'note' => $data[0],
+                    'note' => substr($data[0], 0, 255),
                     'transfert_competence_id' => $data[1],
                     'appreciation_id' => $data[2],
                     'realisation_projet_id' => $data[3]

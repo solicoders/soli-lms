@@ -39,5 +39,5 @@ class BriefProjetRepository extends BaseRepositorie
     {
        return Competences::all();
     }
-    
+
 }

@@ -10,6 +10,8 @@ CategorieTechnologieSeeder,
 CompetenceSeeder,
 NiveauCompetenceSeeder,
 TechnologieSeeder,
+ModuleSeeder,
+FiliereSeeder,
 };
 
 class pkg_competencesSeeder extends Seeder
@@ -26,6 +28,8 @@ class pkg_competencesSeeder extends Seeder
         return [
             CompetenceSeeder::class,
             NiveauCompetenceSeeder::class,
+            FiliereSeeder::class,
+            ModuleSeeder::class,
             AppreciationSeeder::class,
             CategorieTechnologieSeeder::class,
             TechnologieSeeder::class,
