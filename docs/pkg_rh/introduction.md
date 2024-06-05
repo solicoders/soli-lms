@@ -5,7 +5,7 @@ package : pkg_rh
 order: 125
 ---
 
-## Introduction
+# Introduction
 
 ![Introduction : pkg_rh](./images/introduction.jpeg)
 *Figure: Introduction*
