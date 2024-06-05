@@ -27,3 +27,9 @@ De plus, l'ajout et l'organisation des groupes et des spécialités sont complex
 
 ![Méthode 2TUP](./images/2TUP.png){:width="70%"}
 *Figure: Méthode 2TUP*
+
+## Méthode Agile - SCRUM
+
+![Méthode agile - SCRUM](./images/agile-scrum.png){:width="700px"}*figure: Méthode agile - Scrum*
+
+En ingénierie logicielle, les pratiques agiles mettent en avant la collaboration entre des équipes auto-organisées et pluridisciplinaires et leurs clients. Elles s'appuient sur l'utilisation d'un cadre méthodologique léger mais suffisant centré sur l'humain et la communication.
