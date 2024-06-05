@@ -5,7 +5,7 @@ package: pkg_competences
 order: 125
 ---
 
-# Idéation
+# Idéation : Compétences
 
 ![Idéation](/soli-lms/pkg_competences/Besoin/images/Ideation.png)
 *Idéation*
