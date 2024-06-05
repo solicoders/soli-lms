@@ -1,17 +1,31 @@
 @startuml uses_cases_pkg_validations
 
 left to right direction
+actor Formateur
 
 
-actor Admin as admin
 
 package pkg_validations {
+ (Consulter le Tableau de Bord)  #DeepSkyblue
+ (Recevoir des Notifications)    #DeepSkyblue
 
-  Admin -->  (Cas d'utilisation) 
-  (extend 1 Cas d'utilisation)  <..  (Cas d'utilisation)  : <<extend>>
-  (extend 2 Cas d'utilisation)  <.  (Cas d'utilisation)  : <<extend>>
-}  
 
-' note right of admin : "note 1"
+ 
+  Formateur -- (Consulter le Tableau de Bord)/
+  Formateur -- (Recevoir des Notifications)/
+
+  (Valider un Projet) <.. (Définir les Niveaux de Validation pour chaque compétence)
+  (Valider un Projet) <.. (Ajouter des Commentaires)
+  
+
+} 
+
+
+package pkg_realisation_projet{
+
+   Formateur -- (Consulter la liste des projets réalisés en attente de validation)
+   (Consulter la liste des projets réalisés en attente de validation) <.. (Valider un Projet)
+
+}
 
 @enduml

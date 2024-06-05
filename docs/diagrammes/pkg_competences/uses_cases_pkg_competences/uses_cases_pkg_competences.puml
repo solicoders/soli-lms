@@ -1,0 +1,28 @@
+@startuml 
+
+left to right direction
+
+
+actor Formateur as formateur
+actor Responsable de formation as Responsable de formation
+
+package pkg_competences {
+
+  formateur -->  (Gestion des compétences) 
+  formateur -->  (Gestion des niveaux de compétences) 
+  formateur -->  (Gestion des technologies) 
+  formateur -->  (Gestion des catégories des technologies)
+
+  Responsable de formation -->  (Gestion des compétences)
+  Responsable de formation -->  (Gestion des modules)
+  Responsable de formation -->  (Lire les guite des compéteneces et des modules)
+
+
+  (Gestion des technologies) <..  (Ajouter) : <<extend>>
+  (Ajouter) <. (Affecter la technologie à une compétence)   : <<extend>>
+   (Ajouter) <. (Affecter la technologie à une catégorie)   : <<extend>>
+}  
+
+' note right of admin : "note 1"
+
+@enduml

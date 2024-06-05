@@ -1,0 +1,25 @@
+classDiagram
+
+namespace pkg_authentification {
+class User
+class Role
+}
+User "*" --> "1" Role
+
+
+class User {
+    + id : int
+    + login: string 
+    + password: string 
+
+}
+
+class Role{
+    + id : int
+    + name: string 
+    + description: text 
+}
+
+
+
+
