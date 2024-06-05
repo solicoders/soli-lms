@@ -3,15 +3,16 @@
 left to right direction
 
 
-actor Admin as admin
-
+actor Apprenant as apprenant
+actor Formateur as formateur
 package pkg_realisation_projets {
 
-  Admin -->  (Cas d'utilisation) 
-  (extend 1 Cas d'utilisation)  <..  (Cas d'utilisation)  : <<extend>>
-  (extend 2 Cas d'utilisation)  <.  (Cas d'utilisation)  : <<extend>>
-}  
 
-' note right of admin : "note 1"
+  apprenant --> (Soumet le livrable pour validation)
+  apprenant --> (Consulte l'état de son projet)
+  formateur --> (Consulte la liste des projets réalisés)
+  (Consulte l'état de progression et validation des projets) <.. (Consulte la liste des projets réalisés) : <<extend>>
+  (Soumet le livrable pour validation) <.. (Change l'état des projets en progression) : <<extend>>
+}
 
 @enduml
