@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 589
+order: 1
 ---
 
 # Table de matière

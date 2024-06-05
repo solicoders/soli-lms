@@ -3,7 +3,7 @@ layout: default
 presentation: true
 chapitre: true
 package : pkg_competences
-order: 1000
+order: 135
 ---
 
 # Conclusion

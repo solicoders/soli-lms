@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 591
+order: 124
 ---
 
 # Définir le problème : Compétences

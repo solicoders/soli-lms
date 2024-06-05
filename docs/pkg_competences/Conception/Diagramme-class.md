@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 595
+order: 131
 ---
 
 # Diagramme de class : Compétences
