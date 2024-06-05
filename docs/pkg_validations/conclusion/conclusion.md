@@ -1,8 +1,7 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
+package : pkg_validations
 order: 1000
 ---
 
@@ -20,3 +19,16 @@ Le projet a été une occasion précieuse pour développer vos compétences en m
 Le résultat final est une application web mobile fonctionnelle qui répond parfaitement aux besoins des utilisateurs. Cela témoigne de ma capacité à relever les défis techniques inhérents au développement d'applications web et mobile, et à fournir des solutions efficaces. Cette expérience a également renforcé ma capacité à travailler en équipe et à communiquer de manière efficace avec les autres membres de l'équipe. J'ai pu collaborer harmonieusement, échanger des idées, partager des responsabilités et atteindre les objectifs fixés grâce à une communication claire et une bonne coordination.
 
 En résumé, ce projet de formation a été extrêmement enrichissant en tant que développeur d'applications web et mobile. Il m'a permis d'acquérir de nouvelles compétences et de consolider mes connaissances existantes. Je me sens maintenant mieux préparé pour faire face à de nouveaux défis dans ma future carrière professionnelle. Je suis fier de ce que j'ai accompli et de ma capacité à fournir des solutions efficaces dans le domaine du développement d'applications web et mobile
+
+
+# Annex 1 : Planning
+
+ <!-- picture -->
+
+
+
+# Annex 2 : Coneption
+
+ <!-- maquette extra -->
+
+
