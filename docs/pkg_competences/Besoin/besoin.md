@@ -2,11 +2,11 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 593
+order: 592
 ---
 
 
-## Cart d'empathie 
+# Cart d'empathie 
 {:class="sectionHeader"}
 
 <!-- note -->
