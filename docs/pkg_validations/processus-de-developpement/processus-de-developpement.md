@@ -16,10 +16,10 @@ Donc ce chapitre sera divisé en deux parties ,la première partie portera sur 2
 
 <!-- new slide -->
 
-## 2TUP
+## 2TUP  (Two Tracks Unified Process)
 
-![2TUP](./images/2tup.png){:width="1000px"}_figure: 2TUP_
-
+![2TUP](/soli-lms/pkg_validations/processus-de-developpement/images/2tup.png){:width="70%"}*figure: 2TUP*
+       
 <!-- note -->
 
 2TUP est un processus de développement logiciel qui implémente le Processus Unifié.
