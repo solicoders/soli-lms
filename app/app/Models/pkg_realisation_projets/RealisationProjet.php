@@ -46,4 +46,8 @@ class RealisationProjet extends Model
 {
     return $this->hasOne(Validation::class, 'realisation_projet_id', 'id');
 }
+public function LivrableRealisation()
+{
+    return $this->hasOne(LivrableRealisation::class);
+}
 }
