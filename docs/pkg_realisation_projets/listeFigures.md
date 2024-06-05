@@ -2,8 +2,10 @@
 layout: default
 chapitre: true
 package : pkg_realisation_projets
-order: 037
+order: 036
 ---
 
-# Remerciement
-yyy
+{:id="list-des-figure"}
+# List des figure 
+
+<!-- new slide -->
