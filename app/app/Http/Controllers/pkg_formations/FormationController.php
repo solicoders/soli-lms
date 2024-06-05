@@ -7,8 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_formations\FormationRequest;
 use App\Repositories\pkg_formations\FormationRepository;
 
-
-
 class FormationController extends Controller
 {
     protected $formationRepository;
@@ -33,7 +31,7 @@ class FormationController extends Controller
     }
 
     public function create()
-    {
+    {  
         $dataToEdit = null;
         return view('GestionFormation.Formation.create', compact('dataToEdit'));
     }
@@ -54,19 +52,19 @@ class FormationController extends Controller
     public function edit($id)
     {
         $dataToEdit = $this->formationRepository->find($id);
-        return view('formations.edit', compact('dataToEdit'));
+        return view('GestionFormation.Formation.edit', compact('dataToEdit'));
     }
 
     public function update(FormationRequest $request, $id)
     {
         $validatedData = $request->validated();
         $this->formationRepository->update($id, $validatedData);
-        return redirect()->route('formation.index')->with('success', 'La formation a été modifiée avec succès.');
+        return redirect()->route('formations.index')->with('success', 'La formation a été modifiée avec succès.');
     }
 
     public function destroy($id)
     {
         $this->formationRepository->destroy($id);
-        return redirect()->route('formation.index')->with('success', 'La formation a été supprimée avec succès.');
+        return redirect()->route('formations.index')->with('success', 'La formation a été supprimée avec succès.');
     }
 }

@@ -1,4 +1,4 @@
-<form action="{{ $dataToEdit ? route('formations.update', $dataToEdit->id) : route('formations.store') }}" method="POST">
+<form id="formationForm" action="{{ $dataToEdit ? route('formations.update', $dataToEdit->id) : route('formations.store') }}" method="POST">
     @csrf
     @if ($dataToEdit)
         @method('PUT')
@@ -20,7 +20,6 @@
             @enderror
         </div>
 
-        <!-- Nouveau champ pour le lien cliquable -->
         <div class="form-group">
             <label for="link">{{ __('app.link') }}</label>
             <input name="link" type="url" class="form-control" id="link" placeholder="Entrez le lien" value="{{ $dataToEdit ? $dataToEdit->link : old('link') }}">
