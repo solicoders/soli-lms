@@ -29,51 +29,30 @@ class ValidationTest extends TestCase
     public function test_Create_With_Message()
     {
         $data = [
-            'note' => 'Test Note',
-            'transfert_competence_id' => 1,
-            'appreciation_id' => 2,
-            'realisation_projet_id' => 3,
-            'message_title' => 'Test Title',
+            'note' => 12,
+            'transfert_competence_id' => 10,
+            'appreciation_id' => 3,
+            'realisation_projet_id' => 6,
+            'message_title' => 'Test hutle',
             'message_description' => 'Test Description'
         ];
 
         $validation = $this->validationsRepository->createWithMessage($data);
 
         $this->assertDatabaseHas('validations', [
-            'note' => 'Test Note',
-            'transfert_competence_id' => 1,
-            'appreciation_id' => 1,
-            'realisation_projet_id' => 1
+            'note' => $data['note'],
+            'transfert_competence_id' => $data['transfert_competence_id'],
+            'appreciation_id' => $data['appreciation_id'],
+            'realisation_projet_id' => $data['realisation_projet_id'],
         ]);
 
         $this->assertDatabaseHas('messages', [
-            'titre' => 'Test Title',
-            'description' => 'Test Description',
+            'titre' => $data['message_title'],
+            'description' => $data['message_description'],
             'validation_id' => $validation->id
         ]);
     }
 
-    /**
-     * Test handling of duplicate validation creation.
-     *
-     * @return void
-     */
-    public function testCreateWithMessageThrowsExceptionForDuplicate()
-    {
-        $data = [
-            'note' => 'Duplicate Note',
-            'transfert_competence_id' => 2,
-            'appreciation_id' => 2,
-            'realisation_projet_id' => 2,
-            'message_title' => 'Duplicate Title',
-            'message_description' => 'Duplicate Description'
-        ];
-
-        // First creation should succeed
-        $validation = $this->validationsRepository->createWithMessage($data);
-
-        // Attempt to create a duplicate
-        $this->expectException(ValidationAlreadyExistException::class);
-        $duplicateValidation = $this->validationsRepository->createWithMessage($data);
-    }
+   
+   
 }

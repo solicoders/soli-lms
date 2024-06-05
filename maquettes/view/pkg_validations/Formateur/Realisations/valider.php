@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-default">
-                                <div class="card-header">
+                                <div class="card-header  bg-info">
                                     <h3 class="card-title">Validation : lab-markdown</h3>
                                 </div>
                                 <div class="card-body p-0">
@@ -166,7 +166,7 @@
 
 
                                     <div class="text-right m-5">
-                                        <button type="submit" class="btn btn-info">Valider le brief</button>
+                                        <button type="submit" class="btn btn-info">Valider</button>
                                     </div>
                                     </form>
                                 </div>
@@ -174,14 +174,15 @@
 
 
                                 <!-- Include footer -->
-                                <?php include_once "../../../layouts/footer.php" ?>
+                            <div>
+                               
 
-
+                         
 
 
                                 <!-- Inclure le pied de page -->
                                 <?php include_once "../../../layouts/footer.php" ?>
-
+                                </div>
                             </div>
                         </div>
                     </div>

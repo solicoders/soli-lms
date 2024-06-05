@@ -61,8 +61,7 @@ class ValidationsRepository extends BaseRepository
         }
 
         // Create the validation
-        $validation = parent::create($validationData);
-        dd($validation);
+        $validation = Validation::create($validationData);
 
         // Create associated message
         $messageData = [
