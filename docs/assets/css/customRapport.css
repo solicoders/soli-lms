@@ -17,3 +17,10 @@ a {
 a:hover {
     color: #2E74B5;
 }
+
+#listes-des-figures li{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #919191;
+    padding: 10px 0;
+}
