@@ -5,6 +5,9 @@ import 'jquery/dist/jquery';
 import "admin-lte/dist/js/adminlte";
 import 'admin-lte/plugins/bootstrap/js/bootstrap.bundle';
 import 'admin-lte/dist/js/adminlte';
+import 'admin-lte/plugins/bs-stepper/js/bs-stepper.min.js';
+
+
 
 // Importation de CKEditor
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
@@ -45,5 +48,6 @@ $(document).ready(function () {
         }
         window.history.replaceState({ path: url }, "", url + hash);
     }
+
 
 })

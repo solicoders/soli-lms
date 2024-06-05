@@ -37,18 +37,18 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                         <img src="{{ asset('images/man.png') }}" class="user-image img-circle elevation-2"
                             alt="User Image">
-                        <span class="d-none d-md-inline">{{ Auth::user()->nom }}</span>
+                        <!-- <span class="d-none d-md-inline"></span> -->
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-info">
                             <img src="{{ asset('images/man.png') }}" class="user-image img-circle elevation-2"
                                 alt="User Image">
-                            <p>
-                                {{ Auth::user()->name }}
-                                <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
-                            </p>
-                        </li>
+                            <!--  <p>
+                               
+                                <small>Member since </small>
+                            </p> -->
+                        </li> 
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
