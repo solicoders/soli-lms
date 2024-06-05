@@ -2,13 +2,13 @@
 layout: default
 presentation: true
 chapitre: true
-package : pkg_rapport
+package : pkg_competences
 order: 1000
 ---
 
 # Conclusion
 
-![Conclusion](./images/conclusion.jpg){:width="700px"}
+![Conclusion](/soli-lms/pkg_competences/conclusion/images/conclusion.png){:width="700px"}
 *Figure: Conclusion*
 
 <!-- note -->

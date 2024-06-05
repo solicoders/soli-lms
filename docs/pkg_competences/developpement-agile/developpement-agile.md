@@ -2,7 +2,7 @@
 layout: default
 presentation: true
 chapitre: true
-package : pkg_rapport
+package : pkg_competences
 order: 320
 ---
 
@@ -19,7 +19,7 @@ Dans ce chapitre, nous allons d'abord expliquer les principes fondamentaux de l'
 
 ## Méthode agile
 
-![Méthode agile](./images/Methode-agile.jpg){:width="700px"}*figure: Méthode agile*
+![Méthode agile](/soli-lms/pkg_competences/developpement-agile/images/Methode-agile.png){:width="700px"}*figure: Méthode agile*
 
 En ingénierie logicielle, les pratiques agiles mettent en avant la collaboration entre des équipes auto-organisées et pluridisciplinaires et leurs clients. Elles s'appuient sur l'utilisation d'un cadre méthodologique léger mais suffisant centré sur l'humain et la communication.
 

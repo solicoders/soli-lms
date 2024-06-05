@@ -14,12 +14,12 @@ order: 328
 
 ## Analyse technique
 
-![Analyse technique](./images/analyse-technique.png){:width="900px"}
+![Analyse technique](/soli-lms/pkg_competences/branche-technique/images/analyse-technique.png){:width="500px"}
 *Figure: Analyse technique*
 
 <!-- note -->
 
-Pour le développement de le prototype, ont va utiliser de différentes technologies, notamment :
+Pour le développement na utiliser de différentes technologies, notamment :
 
 PHP: est un langage de script côté serveur.
 Rôle : Gérer la logique métier de l’application, traiter les requêtes et générer des pages dynamiques.
@@ -39,16 +39,12 @@ Interfaces : Les développeurs ne respectent pas les méthodes.
 
 ## Architecture mvc :
 
-![Architecture mvc](./images/Architecture-mvc.png){:width="100%" height="500px"}
-_Figure : Cart d'empathie : Architecture mvc_
+![Architecture mvc](/soli-lms/pkg_competences/branche-technique/images/Architecture-mvc.png){:width="100%" height="500px"}
+_Figure : Architecture mvc_
 
 <!-- note -->
 
 L'architecture MVC (Modèle-Vue-Contrôleur) est un modèle de conception qui permet de séparer les différentes parties d'une application pour faciliter la maintenance et l'évolutivité du code. Le Modèle gère les données, la Vue présente les données à l'utilisateur et le Contrôleur gère les interactions de l'utilisateur avec l'application. L'architecture MVC est 
 souvent utilisée dans le développement de sites Web, d'applications mobiles et d'autres projets logiciels pour améliorer l'organisation du code, la réutilisabilité et la maintenance.
-
-<!-- new slide -->
-
-## Prototype 
 
 <!-- new slide -->

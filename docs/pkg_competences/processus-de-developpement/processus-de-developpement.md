@@ -2,7 +2,7 @@
 layout: default
 presentation: true
 chapitre: true
-package : pkg_rapport
+package : pkg_competences
 order: 320
 ---
 
@@ -19,7 +19,7 @@ Donc ce chapitre sera divisé en deux parties ,la première partie portera sur 2
 
 ## 2TUP
 
-![2TUP](./images/2tup.png){:width="1000px"}_figure: 2TUP_
+![2TUP](/soli-lms/pkg_competences/processus-de-developpement/images/La-methode-2TUP.png){:width="1000px"}_figure: 2TUP_
 
 <!-- note -->
 
@@ -44,7 +44,7 @@ Le processus s'articule ensuite autour de 3 phases essentielles:
 
 ## Design thinking
 
-![Design thinking](./images/design-thinking.png){:width="1000px"}_figure: Design thinking_
+![Design thinking](/soli-lms/pkg_competences/processus-de-developpement/images/designthinking.png){:width="1000px"}_figure: Design thinking_
 
 <!-- note -->
 
