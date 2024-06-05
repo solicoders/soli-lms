@@ -7,7 +7,7 @@ order: 591
 
 # Définir le problème : Compétences
 
-![Définir le problème](/soli-lms/pkg_competences/images/Definir-probleme.png){:width="700px"}
+![Définir le problème](/soli-lms/pkg_competences/Besoin/images/Definir-probleme.png){:width="700px"}
 *Définir le problème*
 
 <!-- note -->

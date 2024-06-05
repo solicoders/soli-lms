@@ -7,7 +7,7 @@ order: 592
 
 # Idéation
 
-![Idéation](/soli-lms/pkg_competences/images/Ideation.png)
+![Idéation](/soli-lms/pkg_competences/Besoin/images/Ideation.png)
 *Idéation*
 
 

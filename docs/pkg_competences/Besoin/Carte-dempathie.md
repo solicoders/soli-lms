@@ -5,13 +5,15 @@ package: pkg_competences
 order: 593
 ---
 
+# Carte d’empathie
+
 ## Persona :
 
 Abdelmounaim Hammouda 
 
 ## Carte d’empathie responsable de formation : pkg_competences
 
-![Carte d’empathie](/soli-lms/pkg_competences/images/carte_dempathie_responsable_de_formation_pkg_competences.svg)
+![Carte d’empathie](/soli-lms/pkg_competences/Besoin/images/carte_dempathie_responsable_de_formation_pkg_competences.svg)
 *Carte d’empathie responsable de formation : pkg_competences*
 
 ### Ce qu’il dit :
@@ -32,7 +34,7 @@ Les formateurs
 
 ## Carte d’empathie des formateur : pkg_competences
 
-![Carte d’empathie des formateur](/soli-lms/pkg_competences/images/carte_dempathie_formateur_pkg_competences.svg)
+![Carte d’empathie des formateur](/soli-lms/pkg_competences/Besoin/images/carte_dempathie_formateur_pkg_competences.svg)
 *Carte d’empathie des formateur : pkg_competences*
 
 ### Ce qu’il dit :
