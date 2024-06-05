@@ -6,8 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
 use App\Models\pkg_realisation_projets\RealisationProjet;
+use App\Models\pkg_competences\Competence; // Assuming you have a Skill model
+use App\Models\pkg_creation_projets\Projet; // Assuming you have a Project model
+use App\Models\pkg_rh\Personne; // Assuming you have a Learner model
+use App\Models\pkg_realisation_projets\EtatRealisationProjet;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\pkg_realisation_projets\RealisationProjetRequest; // Assuming you have specific request validation
+use App\Http\Requests\pkg_realisation_projets\RealisationProjetRequest;
+use App\Models\pkg_validations\Validation;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectRealisationController extends Controller
 {
@@ -21,7 +27,20 @@ class ProjectRealisationController extends Controller
     public function index(Request $request)
     {
         $realisationProjets = $this->projectRealisationRepository->paginate();
-        return view('pkg_realisation_projets.index', compact('realisationProjets'));
+        $Competences = Competence::all();
+        $projects = Projet::all();
+        $EtatRealisationProjet = EtatRealisationProjet::all();
+    // Get the current user's groupe_id
+    $userGroupeId = Auth::user()->groupe_id;
+
+    // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
+    $Personnes = Personne::where('type', 'apprenant')
+                          ->where('groupe_id', $userGroupeId)
+                          ->get();
+           
+              $realisationProjets = RealisationProjet::with('validation')->paginate();
+    // dd($validation);
+         return view('pkg_realisation_projets.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes','EtatRealisationProjet'));
     }
 
     public function create()
@@ -65,5 +84,3 @@ class ProjectRealisationController extends Controller
         return redirect()->route('realisationProjets.index')->with('success', 'Realisation Projet deleted successfully.');
     }
 }
-
-

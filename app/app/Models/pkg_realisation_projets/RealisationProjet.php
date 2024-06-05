@@ -5,6 +5,9 @@ namespace App\Models\pkg_realisation_projets;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\pkg_rh\Personne;
+use App\Models\pkg_creation_projets\Projet;
+use App\Models\pkg_validations\Validation;
+
 
 class RealisationProjet extends Model
 {
@@ -27,7 +30,7 @@ class RealisationProjet extends Model
 
     public function etatRealisationProjet()
     {
-        return $this->belongsTo(EtatRealisationProjet::class);
+        return $this->belongsTo(EtatRealisationProjet::class,);
     }
 
     public function personne()
@@ -39,4 +42,8 @@ class RealisationProjet extends Model
     {
         return $this->hasMany(LivrableRealisation::class, 'realisation_projet_id');
     }
+    public function validation()
+{
+    return $this->hasOne(Validation::class, 'realisation_projet_id', 'id');
+}
 }
