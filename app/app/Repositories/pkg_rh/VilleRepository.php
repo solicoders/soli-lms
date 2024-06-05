@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\pkg_rh\VilleException;
 use App\Models\pkg_rh\Ville;
 
-class GestionVilleRepository extends BaseRepository
+class VilleRepository extends BaseRepository
 {
     protected $fieldsSearchable = [
         'name'
