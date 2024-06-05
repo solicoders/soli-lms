@@ -1,9 +1,8 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
-order: 321
+package : pkg_validations
+order: 440
 ---
 
 # Planification

@@ -81,7 +81,7 @@
                                      </td>
                                     </td>
                                     <td class='actions'>
-                                        <a href="./valider.php" class="btn btn-success btn-sm">
+                                        <a href="{{ route('validations.validate', ['realisation_id' => $project->id]) }}" class="btn btn-success btn-sm">
                                             <i class="fas fa-check"></i> Valider
                                         </a>
                                     </td>

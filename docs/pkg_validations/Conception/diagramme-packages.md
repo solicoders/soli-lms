@@ -1,10 +1,11 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
-order: 500
+package : pkg_validations
+order: 540
 ---
+
+
 
 # Conception
 {:class="sectionHeader"}
@@ -15,9 +16,16 @@ Dans le processus de conception d’une interface utilisateur, il est important 
 
 <!-- new slide -->
 
-## Diagramme de packages
 
-![Diagramme de packages](./images/Diagramme-des-paquetages.png){:width="900px"}
-*Figure: Diagramme de packages* 
+
+
+## Diagramme de classes 
+
+![Conception - pkg_validations ](/soli-lms/diagrammes/pkg_validations/classes_pkg_validations.svg){:width="70%"}
+*Conception - pkg_validations*
+
 
 <!-- new slide -->
+
+## Maquette
+
