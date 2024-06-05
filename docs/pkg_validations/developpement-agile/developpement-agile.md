@@ -1,8 +1,7 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
+package : pkg_validations
 order: 320
 ---
 
