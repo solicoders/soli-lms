@@ -4,7 +4,7 @@ left to right direction
 
 
 actor Formateur as formateur
-actor Responsable_de_formation as Responsable_de_formation
+actor Responsable de formation as Responsable de formation
 
 package pkg_competences {
 
@@ -13,10 +13,9 @@ package pkg_competences {
   formateur -->  (Gestion des technologies) 
   formateur -->  (Gestion des catégories des technologies)
 
-  Responsable_de_formation -->  (Gestion des compétences)
-  Responsable_de_formation -->  (Gestion des modules)
-  Responsable_de_formation -->  (Gestion des filière)
-  Responsable_de_formation -->  (Lire les guite des compéteneces et des modules)
+  Responsable de formation -->  (Gestion des compétences)
+  Responsable de formation -->  (Gestion des modules)
+  Responsable de formation -->  (Lire les guite des compéteneces et des modules)
 
 
   (Gestion des technologies) <..  (Ajouter) : <<extend>>
