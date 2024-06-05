@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_rh
-order: 525
+order: 590
 ---
 
 ## Conception - pkg_rh
@@ -10,4 +10,4 @@ order: 525
 ### Diagramme de classes 
 
 ![Conception - pkg_rh ](/soli-lms/diagrammes/pkg_rh/classes_pkg_rh.svg){:width="100%"}
-*Figure: Conception - pkg_rh*
+**Conception - pkg_rh**
