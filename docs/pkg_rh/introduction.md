@@ -5,12 +5,10 @@ package : pkg_rh
 order: 125
 ---
 
-## Introduction
+# Introduction
 
 ![Introduction : pkg_rh](./images/introduction.jpeg)
 *Figure: Introduction*
-
-<!-- note -->
 
 L'application Gestion RH fait partie intégrante du projet SoliLMS, le système de gestion de l'apprentissage du Centre de SoliCode.
 
