@@ -32,4 +32,4 @@ De plus, l'ajout et l'organisation des groupes et des spécialités sont complex
 
 ![Méthode agile - SCRUM](./images/agile-scrum.png){:width="700px"}*figure: Méthode agile - Scrum*
 
-En ingénierie logicielle, les pratiques agiles mettent en avant la collaboration entre des équipes auto-organisées et pluridisciplinaires et leurs clients. Elles s'appuient sur l'utilisation d'un cadre méthodologique léger mais suffisant centré sur l'humain et la communication.
+Scrum est un cadre de gestion de projet agile utilisé pour développer des produits de manière flexible. Il se caractérise par des itérations courtes appelées "sprints", favorisant la collaboration et l'adaptabilité. Scrum permet une livraison régulière de valeur aux clients grâce à des réunions régulières et un processus itératif.
