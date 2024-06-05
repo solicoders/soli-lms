@@ -1,8 +1,7 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
+package : pkg_realisation_projets
 order: 1000
 ---
 

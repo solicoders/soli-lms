@@ -1,10 +1,11 @@
 ---
 layout: default
-presentation: true
 chapitre: true
-package : pkg_rapport
-order: 500
+package : pkg_realisation_projets
+order: 535
 ---
+
+
 
 # Conception
 {:class="sectionHeader"}
@@ -15,9 +16,19 @@ Dans le processus de conception d’une interface utilisateur, il est important 
 
 <!-- new slide -->
 
+
+
+## Diagramme de classes 
+
+![Conception - pkg_realisation_projets ](/soli-lms/diagrammes/pkg_realisation_projets/classes_pkg_realisation_projets.svg){:width="100%"}
+**Conception - pkg_realisation_projets**
+
 ## Diagramme de packages
 
 ![Diagramme de packages](./images/Diagramme-des-paquetages.png){:width="900px"}
 *Figure: Diagramme de packages* 
 
 <!-- new slide -->
+
+## Maquette
+
