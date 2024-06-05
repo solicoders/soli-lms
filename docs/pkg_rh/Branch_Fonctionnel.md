@@ -20,3 +20,10 @@ order: 390
 Le Responsable de Formation rencontre des difficultés majeures avec l'utilisation d'Excel pour la gestion des données éducatives. La gestion des étudiants et des formateurs est fastidieuse et sujette aux erreurs, et la validation des compétences des étudiants manque de transparence et d'efficacité.
 
 De plus, l'ajout et l'organisation des groupes et des spécialités sont complexes et chronophages, rendant difficile le maintien d'un système à jour.
+
+## Processus de Développement
+
+### Méthode 2TUP
+
+![Méthode 2TUP](./images/2TUP.png){:width="70%"}
+*Figure: Méthode 2TUP*

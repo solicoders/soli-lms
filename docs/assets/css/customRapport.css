@@ -7,7 +7,13 @@
 * Le code javascript add_anchor_link_to_titles() 
 * convert tous les titres en lien anchor
 */
+
 a {
     text-decoration: none;
+    color: #181818;
+    transition: 0.7s;
 }
 
+a:hover {
+    color: #2E74B5;
+}
