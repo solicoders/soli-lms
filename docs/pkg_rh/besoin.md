@@ -9,5 +9,4 @@ order: 225
 
 ## Context de Projet
 
-
-## Objectifs de formation 
+## Objectifs de formation
