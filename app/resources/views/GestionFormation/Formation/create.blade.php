@@ -20,8 +20,10 @@
                     <div class="card card-info">
                         <div class="card-header">
                             <h3 class="card-title">
+                            <a href="{{ route('formations.create')  }}">
                                 <i class="nav-icon fas fa-table"></i>
                                 {{ __('app.add') }} {{ __('pkg_formations/formations.singular') }}
+                                </a>
                             </h3>
                         </div>
                         <!-- Obtenir le formulaire -->

@@ -8,24 +8,17 @@
             </div>
         @endif
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>
-                      
-                    </h1>
-                </div>
-                <div class="col-sm-6">
-                    <div class="float-sm-right">
-                        @can('create-FormationController')
-                            <a href="{{ route('formations.create') }}" class="btn btn-info">
-                                <i class="fas fa-plus"></i>
-                                {{ __('app.add') }} {{ __('pkg_formations/Formations.singular') }}
-                            </a>
-                        @endcan
-                    </div>
-                </div>
-            </div>
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1>{{ __('app.Gestion_des_formations') }}</h1>
         </div>
+        <div class="col-sm-6 d-flex justify-content-end align-items-center">
+            <a href="{{ route('formations.create') }}" class="btn btn-info">
+                <i class="fas fa-plus"></i> {{ __('app.add') }} {{ __('pkg_formations/Formations.singular') }}
+            </a>
+        </div>
+    </div>
+</div>
     </div>
     <section class="content">
         <div class="container-fluid">
@@ -51,6 +44,7 @@
                 </div>
             </div>
         </div>
+        
         <input type="hidden" id='page' value="1">
     </section>
 @endsection

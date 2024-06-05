@@ -26,7 +26,7 @@ class FormationController extends Controller
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $formationData = $this->formationRepository->searchData($searchQuery);
-                return view('formation.index', compact('formationData'))->render();
+                return view('GestionFormation.formations.index', compact('formationData'))->render();
             }
         }
         return view('GestionFormation.Formation.index', compact('formationData'));
@@ -35,7 +35,7 @@ class FormationController extends Controller
     public function create()
     {
         $dataToEdit = null;
-        return view('formation.create', compact('dataToEdit'));
+        return view('GestionFormation.Formation.create', compact('dataToEdit'));
     }
 
     public function store(FormationRequest $request)
@@ -54,7 +54,7 @@ class FormationController extends Controller
     public function edit($id)
     {
         $dataToEdit = $this->formationRepository->find($id);
-        return view('formation.edit', compact('dataToEdit'));
+        return view('formations.edit', compact('dataToEdit'));
     }
 
     public function update(FormationRequest $request, $id)

@@ -16,18 +16,18 @@
                     <td>{{ $formation->lien }}</td>
 
                     <td class="text-center">
-                        @can('show-FormationController')
-                            <a href="{{ route('formation.show', $formation) }}" class="btn btn-default btn-sm">
+                        {{-- @can('show-FormationController') --}}
+                            <a href="{{ route('formations.show', $formation) }}" class="btn btn-default btn-sm">
                                 <i class="far fa-eye"></i>
                             </a>
-                        @endcan
-                        @can('edit-FormationController')
-                            <a href="{{ route('formation.edit', $formation) }}" class="btn btn-sm btn-default">
+                        {{-- @endcan --}}
+                        {{-- @can('edit-FormationController') --}}
+                            <a href="{{ route('formations.edit', $formation) }}" class="btn btn-sm btn-default">
                                 <i class="fas fa-pen-square"></i>
                             </a>
-                        @endcan
-                        @can('destroy-FormationController')
-                            <form action="{{ route('formation.destroy', $formation) }}" method="POST" style="display: inline;">
+                        {{-- @endcan --}}
+                        {{-- @can('destroy-FormationController') --}}
+                            <form action="{{ route('formations.destroy', $formation) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger"
@@ -35,7 +35,7 @@
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </form>
-                        @endcan
+                        {{-- @endcan --}}
 
                     </td>
                 </tr>

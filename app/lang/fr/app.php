@@ -15,4 +15,5 @@ return [
     'description' => 'Description',
     'list' => 'List',
     'link' => 'Lien',
+    'Gestion_des_formations' => 'Gestion des formations',
 ];
