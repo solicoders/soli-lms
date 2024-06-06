@@ -12,7 +12,7 @@ order: 127
 ![Diagramme de class compétences](/soli-lms/pkg_competences/Conception/images/classes_pkg_competences.svg)
 *Diagramme de class competences*
 
-NB : Voir le giagramme de classe dans Annexe
+NB : Voir le diagramme de classe global dans l'annexe
 
 
 <!-- new slide -->
