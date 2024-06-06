@@ -68,58 +68,58 @@
                   <tbody>
                     <tr>
                       <td>Adnan l'harrak</td>
-                      <td><span class="badge bg-warning">Imiter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-warning">Insuffisant</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-success">Transposer</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-success">Très bien</span></td>
                     </tr>
                     <tr>
                       <td>Achaou Hamid</td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
-                      <td><span class="badge bg-warning">Imiter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-success">Transposer</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-warning">Insuffisant</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-success">Très bien</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                     </tr>
                     <tr>
                       <td>Lamchatab Amine</td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
-                      <td><span class="badge bg-success">Transposer</span></td>
-                      <td><span class="badge bg-success">Transposer</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-success">Très bien</span></td>
+                      <td><span class="badge bg-success">Très bien</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                     </tr>
                     <tr>
                       <td>Hamza Zaani</td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                     </tr>
 
                     <tr>
                       <td>Yasmine Daifane</td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
                     </tr>
 
                     <tr>
                       <td>Grain Reda</td>
-                      <td><span class="badge bg-success">Transposer</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-success">Très bien</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
-                      <td><span class="badge bg-info">Adapter</span></td>
+                      <td><span class="badge bg-info">Passable</span></td>
                       <td><span class="badge bg-secondary">Aucun</span></td>
                     </tr>
                   
