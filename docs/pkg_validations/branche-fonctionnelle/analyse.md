@@ -17,7 +17,7 @@ Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en uti
 ## Carte d'empathie de Formateur
 
 
-![Carte empathie : pkg_validations](/soli-lms/Besoin/pkg_validations/Carte-empathie.svg)
+![Carte empathie : pkg_validations](/soli-lms/Besoin/pkg_validations/Carte-empathie.svg
 *Carte d'empathie formateur : pkg_validations*
 
 
