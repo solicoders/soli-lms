@@ -75,3 +75,19 @@ Les formateurs et les responsables de formation manquent actuellement d’une pl
 - Proposer des fonctionnalités de personnalisation pour adapter l’application aux besoins spécifiques de chaque formateur.
 
 <!-- new slide -->
+
+
+## Diagramme de cas d'utilisation : Compétences 
+
+Un cas d'utilisation est un outil de modélisation qui permet de décrire les interactions entre un utilisateur et un système informatique.
+Il est utilisé pour identifier les besoins fonctionnels d'un système et pour décrire les actions que les utilisateurs peuvent effectuer pour atteindre un objectif spécifique.
+
+
+<!-- new slide -->
+
+
+![Diagramme de cas d'utilisation Compétences](/soli-lms/pkg_competences/Branche-fonctionnelle/images/uses_cases_pkg_competences.svg)
+*Diagramme de cas d'utilisation compétences*
+
+
+<!-- new slide -->
