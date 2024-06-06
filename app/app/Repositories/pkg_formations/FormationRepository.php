@@ -15,7 +15,7 @@ class FormationRepository extends BaseRepository
      * @var array
      */
     protected $fieldsSearchable = [
-        'nom','description'
+        'nom','description','lien'
     ];
 
     /**
@@ -37,32 +37,38 @@ class FormationRepository extends BaseRepository
     }
 
     public function create(array $data)
-    {
-        $nom = $data['nom'];
-    
-        $existingFormation =  $this->model->where('nom', $nom)->exists();
-    
-        if ($existingFormation) {
-            throw FormationAlreadyExistException::createFormation();
-        } else {
-            // Ajout du lien et de la clé étrangère formateur_id
-            $formation = parent::create($data);
-    
-            // Vérifie si le lien est présent dans les données et l'associe à la formation
-            if (isset($data['lien'])) {
-                $formation->lien = $data['lien'];
-                $formation->save();
-            }
-    
-            // Vérifie si le formateur_id est présent dans les données et l'associe à la formation
-            if (isset($data['formateur_id'])) {
-                $formation->formateur_id = $data['formateur_id'];
-                $formation->save();
-            }
-    
-            return $formation;
+{
+    $nom = $data['nom'];
+
+    $existingFormation = $this->model->where('nom', $nom)->exists();
+
+    if ($existingFormation) {
+        throw FormationAlreadyExistException::createFormation();
+    } else {
+        // Ajout de la valeur par défaut pour 'lien' si elle n'est pas présente
+        if (!isset($data['lien'])) {
+            $data['lien'] = null; // ou une valeur par défaut de votre choix
         }
+
+        // Créer la formation
+        $formation = parent::create($data);
+
+        // Vérifie si le lien est présent dans les données et l'associe à la formation
+        if (isset($data['lien'])) {
+            $formation->lien = $data['lien'];
+            $formation->save();
+        }
+
+        //Vérifie si le formateur_id est présent dans les données et l'associe à la formation
+        if (isset($data['formateur_id'])) {
+          $formation->formateur_id = $data['formateur_id'];
+           $formation->save();
+        }
+
+        return $formation;
     }
+}
+
      
      /**
      * Met à jour une formation existante.
@@ -118,8 +124,10 @@ class FormationRepository extends BaseRepository
         })->paginate($perPage);
     }
 
-    
-
+    public function with($relations)
+    {
+        return $this->model->with($relations);
+    }
 
     
 }

@@ -5,6 +5,7 @@
                 <th>{{ __('app.name') }}</th>
                 <th>{{ __('app.description') }}</th>
                 <th>{{ __('app.link') }}</th>
+                <th>{{ __('app.formateur') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
@@ -14,6 +15,8 @@
                     <td>{{ $formation->nom }}</td>
                     <td>{{ $formation->description }}</td>
                     <td>{{ $formation->lien }}</td>
+                    <td>{{ $formation->formateur->nom ?? 'N/A' }} {{ $formation->formateur->prenom ?? '' }}</td>
+                    
 
                     <td class="text-center">
                         {{-- @can('show-FormationController') --}}
@@ -22,12 +25,12 @@
                             </a>
                         {{-- @endcan --}}
                         {{-- @can('edit-FormationController') --}}
-                            <a href="{{ route('formations.edit', $formation) }}" class="btn btn-sm btn-default">
+                               <a href="{{ route('formations.edit', ['id' => $formation->id]) }}" class="btn btn-sm btn-default"> 
                                 <i class="fas fa-pen-square"></i>
                             </a>
                         {{-- @endcan --}}
                         {{-- @can('destroy-FormationController') --}}
-                            <form action="{{ route('formations.destroy', $formation) }}" method="POST" style="display: inline;">
+                            <form action="{{ route('formations.destroy', ['id' => $formation->id]) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger"
@@ -47,9 +50,9 @@
 <div class="d-md-flex justify-content-between align-items-center p-2">
     <div class="d-flex align-items-center mb-2 ml-2 mt-2">
 
-        @can('import-FormationController')
+        
             <!-- TODO : Import et export ne doit pas s'afficher dans la version mobile -->
-            <form action="{{ route('formation.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
+            <form action="{{ route('formations.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
                 id="importForm">
                 @csrf
                 <label for="upload" class="btn btn-default btn-sm font-weight-normal">
@@ -58,14 +61,13 @@
                 </label>
                 <input type="file" id="upload" name="file" style="display:none;" onchange="submitForm()" />
             </form>
-        @endcan
-        @can('export-FormationController')
+       
             <form class="">
-                <a href="{{ route('formation.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
+                <a href="{{ route('formations.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
                     <i class="fas fa-file-export"></i>
                     {{ __('app.export') }}</a>
             </form>
-        @endcan
+       
     </div>
     
     <ul class="pagination  m-0 float-right">

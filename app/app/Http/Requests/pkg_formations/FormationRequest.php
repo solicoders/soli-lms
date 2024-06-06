@@ -23,8 +23,8 @@ class FormationRequest extends FormRequest
     {
         return [
             'nom' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'lien' => 'nullable|url',
+            'description' => 'required|nullable|string',
+            'lien' => 'required|nullable|url',
             'formateur_id' => 'required|exists:formateurs,id',
         ];
     }
