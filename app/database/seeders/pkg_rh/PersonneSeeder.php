@@ -49,7 +49,7 @@ class PersonneSeeder extends Seeder
                     "date_inscription"=>$date_inscription,
                     "profile_image"=>$data['12'],
                     "ville_id"=>$data['14'],
-                    "nivaeu_scholaire_id"=>$nivaeu_scholaire_id,
+                    "niveau_scolaire_id"=>$nivaeu_scholaire_id,
                     "lieu_naissance_id"=>$lieu_naissance_id,
                     "groupe_id"=>$groupe_id,
                     "user_id" => $user->id,
