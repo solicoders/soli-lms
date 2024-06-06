@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package: pkg_competences
-order: 132
+order: 127
 ---
 
 # Conception
@@ -12,5 +12,11 @@ order: 132
 ![Diagramme de class compétences](/soli-lms/pkg_competences/Conception/images/classes_pkg_competences.svg)
 *Diagramme de class competences*
 
+
+<!-- new slide -->
+
+
+## Maquettages : Compétences
+{:class="sectionHeader"}
 
 <!-- new slide -->

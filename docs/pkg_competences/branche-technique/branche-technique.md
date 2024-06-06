@@ -3,7 +3,7 @@ layout: default
 presentation: true
 chapitre: true
 package : pkg_competences
-order: 131
+order: 126
 ---
 
 
@@ -48,3 +48,7 @@ L'architecture MVC (Modèle-Vue-Contrôleur) est un modèle de conception qui pe
 souvent utilisée dans le développement de sites Web, d'applications mobiles et d'autres projets logiciels pour améliorer l'organisation du code, la réutilisabilité et la maintenance.
 
 <!-- new slide -->
+
+## Prototype
+
+Pour la partie web, nous avons mis en place un prototype qui permettait de créer, lire, mettre à jour, supprimer, rechercher, filtrer, importer et exporter (CRUD) des compétences en utilisant Laravel et en intégrant des patterns de conception.

@@ -18,7 +18,7 @@ La première partie du cahier de charge est un document élaboré lors du cadrag
 
 ## Cahier  des charges
 
-![Context de projet](/soli-lms/pkg_competences/contexte-projet/images/Context-de-projet.png){:width="1000px"}_figure: Context de projet_
+![Context de projet](/soli-lms/pkg_competences/Besoin/images/Context-de-projet.png){:width="1000px"}_figure: Context de projet_
 
 <!-- note -->
 
