@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-body p-0">
                         <div class="bs-stepper">
-                            <div id="deliverable-form">
+                            <div id="livrable-form">
                                 <form action="{{ $dataToEdit ? route('projets.update', $dataToEdit->id) : route('projets.store') }}" method="POST">
                                     @csrf
                                     @if ($dataToEdit)
@@ -58,12 +58,12 @@
                                                     <input type="date" class="form-control" id="dateFin"
                                                            name="dateFin" value="{{ old('dateFin') ? old('dateFin') : date('Y-m-d') }}">
                                                 </div>
-                                                <div class="form-group" id="deliverables-container">
+                                                <div class="form-group" id="livrables-container">
                                                     <label for="livrable">Nom de livrable</label>
                                                     @if(isset($dataToEdit->livrables))
                                                         @foreach($dataToEdit->livrables as $livrable)
                                                             <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" name="deliverable[]" placeholder="Nom de livrable" value="{{ $livrable->nom }}">
+                                                                <input type="text" class="form-control" name="livrable[]" placeholder="Nom de livrable" value="{{ $livrable->nom }}">
                                                                 <div class="input-group-append ">
                                                                     <select class="form-control" name="livrable_nature[]">
                                                                         @foreach($livrableNatures as $nature)
@@ -85,7 +85,7 @@
                                                         @endforeach
                                                     @else
                                                         <div class="input-group mb-3">
-                                                            <input type="text" class="form-control" name="deliverable[]" placeholder="Nom de livrable" value="Presentation">
+                                                            <input type="text" class="form-control" name="livrable[]" placeholder="Nom de livrable" value="Presentation">
                                                             <div class="input-group-append">
 
                                                                 <select class="form-control" name="livrable_nature[]">
@@ -316,7 +316,7 @@
         var nomInput = document.createElement("input");
         nomInput.type = "text";
         nomInput.className = "form-control";
-        nomInput.name = "deliverable[]";
+        nomInput.name = "livrable[]";
         nomInput.placeholder = "Nom de livrable";
 
         // Create select for livrable nature
@@ -354,7 +354,7 @@
         livraisonDiv.appendChild(descriptionTextarea);
 
         // Append the livraisonDiv to the container
-        document.getElementById("deliverables-container").appendChild(livraisonDiv);
+        document.getElementById("livrables-container").appendChild(livraisonDiv);
     }
 </script>
 <script>
