@@ -4,9 +4,51 @@ chapitre: true
 package : pkg_validations
 order: 320
 ---
+# Processus de développement et méthodes
+{:class="sectionHeader"}
 
+<!-- note -->
 
-# Développement agile  
+Le processus de développement décrit une approche du développement logiciel. Il définit une séquence d'étapes, en partie ordonnées, qui concourent à l'obtention d'un système logiciel ou à l'évolution d'un système existant.
+Donc ce chapitre sera divisé en deux parties ,la première partie portera sur 2TUP ,le deuxième partie design thinking.
+
+<!-- new slide -->
+
+## 2TUP  (Two Tracks Unified Process)
+
+![2TUP](/soli-lms/pkg_validations/developpement-agile/images/2tup.png){:width="70%"}*figure: 2TUP*
+       
+<!-- note -->
+
+2TUP est un processus de développement logiciel qui implémente le Processus Unifié.
+Il commence par une étude préliminaire qui consiste essentiellement :
+- identifier les acteurs qui vont interagir avec le système à construire
+- cahier des charges
+- modéliser le contexte
+
+Le processus s'articule ensuite autour de 3 phases essentielles: 
+   - une branche technique 
+   - une branchefonctionnelle
+   - une phase de réalisation
+
+**Branche fonctionnelle** qui consiste en la modélisation et le maquettage pour clarifier les besoinsfonctionnels.
+
+**Branche Technique** qui recense toutes les contraintes à respecter pour réaliser le système Elledéfinit ensuite les composants nécessaires à la construction de l’architecture technique.
+
+**La phase de réalisation** consiste à réunir les deux branches, permettant de mener une conceptionapplicative et enfin la livraison d'une solution adaptée aux besoins. Arrive par la suite l’étape decodage et enfin l’étape de recette, qui consiste à valider les fonctions du système développé.
+
+<!-- new slide -->
+
+## Design thinking
+
+![Design thinking](/soli-lms/pkg_validations/developpement-agile/images/desingthinking.png){:width="1000px"}*figure: Design thinking*
+
+<!-- note -->
+
+Le design thinking est une approche de l'innovation centrée sur l'humain. C'est une méthode ou un processus de conception globale, centré sur l'utilisateur (ou l'humain), en vue de réaliser des services ou produits innovants.
+
+<!-- new slide -->
+## Méthodes de Développement agiles
 {:class="sectionHeader"}
 
 <!-- note -->
@@ -14,12 +56,8 @@ order: 320
 Le développement Agile est une approche flexible et itérative qui vise à fournir des versions fonctionnelles du logiciel de manière régulière, en répondant aux besoins changeants des utilisateurs.
 Dans ce chapitre, nous allons d'abord expliquer les principes fondamentaux de l'Agilité, ses avantages et ses limites. Ensuite, nous allons nous concentrer sur Scrum, l'une des méthodes Agile les plus populaires, en expliquant ses rôles clés, ses événements, ses artefacts et les bonnes pratiques pour réussir un projet Scrum.
 
-<!-- new slide -->
-
-## Méthode agile
 
 ![Méthode agile](/soli-lms/pkg_validations/developpement-agile/images/Scrum.png){:width="700px"}*figure: Méthode agile*
 
-En ingénierie logicielle, les pratiques agiles mettent en avant la collaboration entre des équipes auto-organisées et pluridisciplinaires et leurs clients. Elles s'appuient sur l'utilisation d'un cadre méthodologique léger mais suffisant centré sur l'humain et la communication.
 
 <!-- new slide -->

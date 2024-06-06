@@ -2,22 +2,20 @@
 layout: default
 chapitre: true
 package : pkg_validations
-order: 440
+order: 441
 ---
-
-
 
 # Branche technique 
 {:class="sectionHeader"}
 
-<!-- new slide -->
+
 
 ## Analyse technique
 
 ![Analyse technique](./images/analyse-technique.png){:width="900px"}
 *Figure: Analyse technique*
 
-<!-- note -->
+
 
 Pour le développement de le prototype, ont va utiliser de différentes technologies, notamment :
 
@@ -35,7 +33,7 @@ Test unitaire : Séparation des tâches en frontend et backend pour l’ajout de
 
 Interfaces : Les développeurs ne respectent pas les méthodes.
 
-<!-- new slide -->
+
 
 ## Architecture mvc :
 
@@ -43,13 +41,12 @@ Interfaces : Les développeurs ne respectent pas les méthodes.
 _Figure : Architecture mvc_
 
 
-<!-- note -->
+
 
 L'architecture MVC (Modèle-Vue-Contrôleur) est un modèle de conception qui permet de séparer les différentes parties d'une application pour faciliter la maintenance et l'évolutivité du code. Le Modèle gère les données, la Vue présente les données à l'utilisateur et le Contrôleur gère les interactions de l'utilisateur avec l'application. L'architecture MVC est 
 souvent utilisée dans le développement de sites Web, d'applications mobiles et d'autres projets logiciels pour améliorer l'organisation du code, la réutilisabilité et la maintenance.
 
-<!-- new slide -->
+
 
 ## Prototype 
 
-<!-- new slide -->

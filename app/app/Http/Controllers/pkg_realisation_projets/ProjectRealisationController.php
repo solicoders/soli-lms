@@ -32,13 +32,14 @@ class ProjectRealisationController extends Controller
         $EtatRealisationProjet = EtatRealisationProjet::all();
     // Get the current user's groupe_id
     $userGroupeId = Auth::user()->id;
-    $user_id = Personne::where('user_id',$userGroupeId)->id;
+    $user_id = Personne::where('user_id',$userGroupeId);
 
 
     // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
     $Personnes = Personne::where('type', 'apprenant')
     ->where('user_id', $userGroupeId)
-    ->get();           dd($user_id);
+    ->get();          
+     dd($user_id);
               $realisationProjets = RealisationProjet::with('validation')->paginate();
     // dd($validation);
          return view('pkg_realisation_projets.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes','EtatRealisationProjet'));
