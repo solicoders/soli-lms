@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_creation_projets\ProjetRequest;
 use App\Models\pkg_competences\Competence;
 use App\Models\pkg_competences\Appreciation;
+use App\Models\pkg_competences\Technologie;
 use App\Models\pkg_creation_projets\NatureLivrable;
 use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Personne;
@@ -52,7 +53,8 @@ class ProjetController extends Controller
         $competences = Competence::all();
         $appreciations = Appreciation::all(); 
         $livrableNatures = NatureLivrable::all(); 
-        return view('pkg_creation_projets.create', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures'));
+        $technologies = Technologie::all();
+        return view('pkg_creation_projets.create', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures','technologies'));
     }
 
     public function store(ProjetRequest $request)
