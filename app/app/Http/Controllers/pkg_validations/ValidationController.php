@@ -45,13 +45,25 @@ class ValidationController extends Controller
         $validations = Validation::find($realisation_projet_id);
          $Projet = Projet::all();
          $messages = Message::find($realisation_projet_id);
+         $RealisationProjet = RealisationProjet::all();
         return view('pkg_validations.index', compact('realisation' ,'Competences'  ,'LivrableRealisation','appreciations','validations','Projet','messages')
 
         );
     }
 
 
-    public function store(Request $request){
+    public function store(Request $request, $realisation_projet_id){
+
+        $realisation = RealisationProjet::find($realisation_projet_id);
+        $TransfertCompetence = TransfertCompetence::find($realisation_projet_id);
+        $Competences = Competence::find($TransfertCompetence); 
+        $LivrableRealisation = LivrableRealisation::find($realisation_projet_id);
+        $appreciations = Appreciation::all();
+        $validations = Validation::find($realisation_projet_id);
+         $Projet = Projet::all();
+         $messages = Message::find($realisation_projet_id);
+         $RealisationProjet = RealisationProjet::all();
+        
         dd($request);
         
     }
