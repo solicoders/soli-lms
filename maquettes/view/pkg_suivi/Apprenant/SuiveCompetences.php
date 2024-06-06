@@ -128,7 +128,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-              <div class="d-flex justify-content-between align-items-right p-2">
+              <div class="d-flex justify-content-end align-items-right p-2">
                 <div class="mr-5">
                   <ul class="pagination m-0 float-right ">
                     <li class="page-item"><a class="page-link text-info" href="#">«</a></li>
