@@ -10,7 +10,7 @@ Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en uti
 
 ## Carte d'empathie de Formateur
 ![Carte empathie : pkg_validations](/soli-lms/Besoin/pkg_validations/Carte-empathie.svg)
-*Figure 2 : Carte d'empathie formateur*
+*Figure 7 : Carte d'empathie formateur*
 
 ## Définir le problème
 **Problèmes Identifiés par les Formateurs**
@@ -33,6 +33,6 @@ Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en uti
 
 ## Diagamme de cas d'utilisation 
 ![Diagamme de cas d'utilisation : pkg_validations](/soli-lms/diagrammes/pkg_validations/uses_cases_pkg_validations/uses_cases_pkg_validations.svg){:width="1000%"}
-*Figure 3 : Diagamme de cas d'utilisation*
+*Figure 8 : Diagamme de cas d'utilisation*
 
 
