@@ -9,7 +9,7 @@ order:  128
 
 Ce chapitre portera sur définition les différentes technologies et outils nécessaires à la conception d'applications pour le web et les mobiles, ainsi que sur l'utilisation de captures d'écran pour présenter efficacement ces applications.
 
-## Technologies 
+## Les Technologies et Les outils
 
 <style>
 table, th, td {
