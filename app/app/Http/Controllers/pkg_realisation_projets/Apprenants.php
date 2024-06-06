@@ -6,17 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
 use App\Models\pkg_realisation_projets\RealisationProjet;
-use App\Models\pkg_competences\Competence; // Assuming you have a Skill model
-use App\Models\pkg_creation_projets\Projet; // Assuming you have a Project model
-use App\Models\pkg_rh\Personne; // Assuming you have a Learner model
+use App\Models\pkg_competences\Competence;
+use App\Models\pkg_creation_projets\Projet;
+use App\Models\pkg_rh\Personne;
 use App\Models\pkg_realisation_projets\EtatRealisationProjet;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\pkg_realisation_projets\RealisationProjetRequest;
-use App\Models\pkg_validations\Validation;
-use Faker\Provider\ar_EG\Person;
 use Illuminate\Support\Facades\Auth;
 
-class ProjectRealisationController extends Controller
+class Apprenants extends Controller
 {
     protected $projectRealisationRepository;
 
@@ -31,19 +27,13 @@ class ProjectRealisationController extends Controller
         $Competences = Competence::all();
         $projects = Projet::all();
         $EtatRealisationProjet = EtatRealisationProjet::all();
-    // Get the current user's groupe_id
-    $userGroupeId = Auth::user()->id;
-    $user_id = Personne::where('user_id',$userGroupeId);
+        $userGroupeId = Auth::user()->id;
+        $Personnes = Personne::where('type', 'apprenant')
+            ->where('user_id', $userGroupeId)
+            ->get();
+        $realisationProjets = RealisationProjet::with('validation')->paginate();
 
-
-    // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
-    $Personnes = Personne::where('type', 'apprenant')
-    ->where('user_id', $userGroupeId)
-    ->get();          
-    //  dd($user_id);
-              $realisationProjets = RealisationProjet::with('validation')->paginate();
-    // dd($validation);
-         return view('pkg_realisation_projets.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes','EtatRealisationProjet'));
+        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes', 'EtatRealisationProjet'));
     }
 
     public function create()
@@ -51,7 +41,7 @@ class ProjectRealisationController extends Controller
         return view('pkg_realisation_projets.realisationProjet.create');
     }
 
-    public function store( $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validated();
         try {
@@ -74,7 +64,7 @@ class ProjectRealisationController extends Controller
         return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet'));
     }
 
-    public function update( $request, $id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validated();
         $this->projectRealisationRepository->update($id, $validatedData);
