@@ -4,6 +4,11 @@ namespace App\Http\Controllers\pkg_creation_projets;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_creation_projets\ProjetRequest;
+use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Appreciation;
+use App\Models\pkg_creation_projets\NatureLivrable;
+use App\Models\pkg_rh\Apprenant;
+use App\Models\pkg_rh\Personne;
 use App\Repositories\pkg_creation_projets\ProjetRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -24,8 +29,10 @@ class ProjetController extends Controller
         $projetData = $this->projetRepository->with([
             'livrables',
             'resources',
-            'competences.niveauxCompetence'
+            'transfertCompetences.competence',
+            'transfertCompetences.appreciation'
         ])->paginate();
+
 
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
@@ -40,8 +47,12 @@ class ProjetController extends Controller
 
     public function create()
     {
-        $dataToEdit = null;
-        return view('pkg_creation_projets.create', compact('dataToEdit'));
+        $dataToEdit = null; 
+        $apprenants = Personne::whereIn('type', ['Formateur', 'Apprenant'])->get();
+        $competences = Competence::all();
+        $appreciations = Appreciation::all(); 
+        $livrableNatures = NatureLivrable::all(); 
+        return view('pkg_creation_projets.create', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures'));
     }
 
     public function store(ProjetRequest $request)
@@ -53,7 +64,12 @@ class ProjetController extends Controller
 
     public function show(Request $request, $id)
     {
-        $projet = $this->projetRepository->find($id);
+        $projet =  $this->projetRepository->with([
+            'livrables.natureLivrable',
+            'resources',
+            'transfertCompetences.competence',
+            'transfertCompetences.appreciation'
+        ])->findOrFail($id);
         return view('pkg_creation_projets.show', compact('projet'));
     }
 

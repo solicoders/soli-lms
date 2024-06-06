@@ -10,35 +10,33 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($projetData as  $projet)
-            <tr>
-                <td>{{ $projet->titre }}</td>
-                <td>
-                    <ul>
-                        @if ($projet->competences)
-                            @foreach($projet->competences as $competence)
-                                <li>
-                                    {{ $competence->nom }}
-                                    @if ($competence->niveauxCompetences && $competence->niveauxCompetences->isNotEmpty())
-                                        <ul>
-                                            @foreach($competence->niveauxCompetences as $niveauxCompetence)
-                                                <li>{{ $niveauxCompetence->nom }}</li>
-                                            @endforeach
-                                        </ul>
-                                    @else
-                                        <p>No niveaux available</p>
-                                    @endif
-                                </li>
-                            @endforeach
-                        @else
-                            <p>No competences available</p>
-                        @endif
-                    </ul>
-                </td>
-                <td>{{ $projet->dateDebut }}</td>
-                <td>{{ $projet->dateFin }}</td>
-
-                <td class="text-center">
+            @foreach ($projetData as $projet)
+                <tr>
+                    <td class="text-wrap w-50">{{ $projet->titre }}</td>
+                    <td class="text-wrap w-50">
+                        <ul>
+                            @if ($projet->transfertCompetences)
+                                @foreach($projet->transfertCompetences as $transfertCompetence)
+                                    <li>
+                                        {{ $transfertCompetence->competence->nom ?? 'No competence' }}
+                                        @if ($transfertCompetence->appreciation)
+                                            <ul>
+                                                <li>{{ $transfertCompetence->appreciation->description ?? 'No appreciation' }}</li>
+                                            </ul>
+                                        @else
+                                            <p>No appreciation available</p>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            @else
+                                <p>No competences available</p>
+                            @endif
+                        </ul>
+                    </td>
+                    <td>{{ $projet->dateDebut }}</td>
+                    <td>{{ $projet->dateFin }}</td>
+        
+                    <td class="text-center">
                         {{-- @can('show-ProjetController') --}}
                             <a href="{{ route('projets.show', $projet) }}" class="btn btn-default btn-sm">
                                 <i class="far fa-eye"></i>
@@ -59,11 +57,11 @@
                                 </button>
                             </form>
                         {{-- @endcan --}}
-
-                </td>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
+        
     </table>
 </div>
 
