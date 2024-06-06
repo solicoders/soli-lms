@@ -10,7 +10,7 @@ order: 140
 
 # Introduction
 
-![Introduction](./images/introduction.png){:width="700px"}*figure 1: Introduction*
+![Introduction](/soli-lms/pkg_validations/introduction/images/introduction.png){:width="700px"}*figure 1: Introduction*
 
 <!-- note -->
 

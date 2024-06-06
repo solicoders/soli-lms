@@ -43,7 +43,7 @@ Le processus s'articule ensuite autour de 3 phases essentielles:
 
 ## Design thinking
 
-![Design thinking](./images/design-thinking.png){:width="1000px"}_figure: Design thinking_
+![Design thinking](/soli-lms/pkg_validations/processus-de-developpement/images/desingthinking.png){:width="1000px"}_figure: Design thinking_
 
 <!-- note -->
 
