@@ -12,12 +12,11 @@ order: 140
 
 ![Introduction](/soli-lms/pkg_validations/introduction/images/introduction.png){:width="700px"}*figure 1: Introduction*
 
-<!-- note -->
 
 
-## Nécessité d'une application de démonstration :
+<!-- ## Nécessité d'une application de démonstration :
 
-<!-- TODO : image -->
+
 
 Le développement de ce prototype s'avère crucial pour la création d'une application qui servira à illustrer l'ensemble des concepts et compétences acquis au cours de la formation Laravel. Cette application de démonstration jouera un rôle clé dans le cadre des futurs projets Laravel en nous permettant de :
 
@@ -34,7 +33,7 @@ En résumé, l'application de démonstration constituera un outil précieux pour
 
 ## Démonstration des fonctionnalités techniques requises 
 
-<!-- TODO : Insertion d'une image qui représente  l'objectif 1 - différents types de relations de données -->
+<!-- : Insertion d'une image qui représente  l'objectif 1 - différents types de relations de données 
 
 * **Interface CRUD (Create, Read, Update, Delete):** Permettre la création, la lecture, la mise à jour et la suppression de données de manière individuelle.
 
@@ -47,12 +46,10 @@ En résumé, le prototype vise à illustrer la capacité à implémenter des int
 
 ## Développement d'un système d'authentification et d'autorisation : 
 
-<!-- TODO : Insertion d'une image qui représente  l'objectif 2 - un système d'authentification et d'autorisation réutilisable-->
+<!-- TODO : Insertion d'une image qui représente  l'objectif 2 - un système d'authentification et d'autorisation réutilisable
 
 Le prototype mettra également en œuvre un système d'authentification et d'autorisation adaptable à n'importe quelle application Laravel. Ce système permettra de gérer les utilisateurs, les rôles et les permissions, garantissant un accès sécurisé aux ressources de l'application.
 
-En résumé, le prototype servira de preuve de concept pour les fonctionnalités techniques clés requises pour le projet, tout en fournissant un système d'authentification et d'autorisation réutilisable pour les futures applications Laravel.
+En résumé, le prototype servira de preuve de concept pour les fonctionnalités techniques clés requises pour le projet, tout en fournissant un système d'authentification et d'autorisation réutilisable pour les futures applications Laravel. -->
 
-<!-- new slide -->
 
-<!-- new slide -->
