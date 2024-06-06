@@ -6,21 +6,11 @@ order: 340
 ---
 
 # Branche fonctionnelle
-{:class="sectionHeader"}
-
-<!-- note -->
-
 Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en utilisant le processus de développement comme la carte d'empathie et la définition du problème, ainsi que des techniques d'idéation pour identifier les besoins  des utilisateurs. aussi, l'utilisation d'UML(diagrammes de cas d'utilisation et les diagrammes de classe).
 
-
-
 ## Carte d'empathie de Formateur
-
-
 ![Carte empathie : pkg_validations](/soli-lms/Besoin/pkg_validations/Carte-empathie.svg)
 *Figure 2 : Carte d'empathie formateur*
-
-
 
 ## Définir le problème
 **Problèmes Identifiés par les Formateurs**
