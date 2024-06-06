@@ -30,11 +30,9 @@ Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en uti
 - **Variabilité des Niveaux de Validation** : La diversité des niveaux de validation ("Basic", "Standard", "Premium", "Livecoding", etc.) peut créer de la confusion et un manque de cohérence dans l'évaluation des compétences des apprenants.
 - **Manque de Visibilité sur les Problèmes d'Avancement des Apprenants** : Les formateurs manquent d'outils efficaces pour identifier et suivre les apprenants qui rencontrent des difficultés dans leur progression, ce qui entrave la capacité à fournir un soutien ciblé.
 
-## Enjeu
-- Comment concevoir et mettre en œuvre un système d'évaluation efficace qui permette aux formateurs de fournir des retours approfondis et constructifs afin d'améliorer les compétences et la motivation des apprenants, tout en identifiant et en aidant les apprenants en difficulté?
 
 
-## Analyse
+
 
 ### Idéation
 
