@@ -9,15 +9,13 @@ order: 240
 {:class="sectionHeader"}
 
 <!-- new slide  -->
-![Context de projet](./images/Context-de-projet.jpg){:width="1000px"}_figure: Context de projet_
-
+![Context de projet](/soli-lms/pkg_validations/Besoin/images/LMS.png){:width="1000px"}*figure: Context de projet *
 <!-- note -->
 
 
 
 
 ## Objectifs de formation 
-
 
 
 <!-- new slide -->
