@@ -39,8 +39,9 @@ Interfaces : Les développeurs ne respectent pas les méthodes.
 
 ## Architecture mvc :
 
-![Architecture mvc](./images/Architecture-mvc.png){:width="100%" height="500px"}
-_Figure : Cart d'empathie : Architecture mvc_
+![Architecture mvc](/soli-lms/pkg_validations/branche-technique/images/MVC.png){:width="100%"}
+_Figure : Architecture mvc_
+
 
 <!-- note -->
 
