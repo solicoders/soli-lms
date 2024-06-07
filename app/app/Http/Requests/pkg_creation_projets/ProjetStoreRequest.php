@@ -24,24 +24,24 @@ class ProjetStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom' => 'required|string|max:255',
+            'titre' => 'required|string|max:255',
+            'travailAFaire' => 'required|string',
+            'critereDeTravail' => 'required|string',
             'description' => 'nullable|string',
-            'date_debut' => 'required|date',
-            'date_fin' => 'required|date|after_or_equal:date_debut',
-            'statut_projet_id' => 'required|integer|exists:statut_projets,id',
-            'type_projet_id' => 'required|integer|exists:type_projets,id',
-            'domaine_id' => 'required|integer|exists:domaines,id',
-            'livrable.*' => 'nullable|string|max:255',
+            'dateDebut' => 'required|date',
+            'dateFin' => 'required|date|after_or_equal:dateDebut',
+            'livrable.*' => 'required|string|max:255', // Make sure Livrables have a title
             'livrable_description.*' => 'nullable|string',
             'livrable_link.*' => 'nullable|url',
             'livrable_nature.*' => 'required|integer|exists:nature_livrables,id',
-            'ressource_nom.*' => 'nullable|string|max:255',
+            'ressource_nom.*' => 'required|string|max:255', // Make sure Resources have a name
             'ressource_description.*' => 'nullable|string',
             'ressource_lien.*' => 'nullable|url',
             'competences.*' => 'required|integer|exists:competences,id',
             'competence_*_appreciation' => 'required|integer|exists:appreciations,id',
             'technologie_ids.*' => 'nullable|integer|exists:technologies,id',
-            'apprenants.*' => 'required|integer|exists:personnes,id', // Assuming 'personnes' table holds apprenants
+            // Assuming 'personnes' table holds apprenants
+            'apprenants.*' => 'required|integer|exists:personnes,id',
         ];
     }
 
