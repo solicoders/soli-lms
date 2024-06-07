@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <a href="./create.php" type="button" class="btn btn-primary float-right">
-                                    <i class="fas fa-plus"></i> Ajouter un ville
+                                    <i class="fas fa-plus"></i> Ajouter une ville
                                 </a>
                             </div>
                         </div>
