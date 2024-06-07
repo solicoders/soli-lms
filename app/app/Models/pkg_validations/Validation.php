@@ -33,8 +33,8 @@ class Validation extends Model
         return $this->belongsTo(RealisationProjet::class);
     }
 
-    public function messages()
+    public function message()
     {
-        return $this->hasMany(Message::class);
+        return $this->hasOne(Message::class);
     }
 }

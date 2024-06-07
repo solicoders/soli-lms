@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\GestionRH\Ville;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/test', function () {
-    return Ville::all();
+    return Auth::user();
 });
 
 Route::get('/', function () {
