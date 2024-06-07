@@ -1,7 +1,7 @@
 ---
 layout: default
 chapitre: true
-package : pkg_formations
+package : pkg_creation_projet
 order: 250
 ---
 # Besoin 
