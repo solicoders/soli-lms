@@ -19,6 +19,6 @@ class Competence extends Model
 
     public function technologies()
     {
-        return $this->hasMany(Technologie::class);
+        return $this->hasMany(Technologie::class,'technologie_competences');
     }
 }

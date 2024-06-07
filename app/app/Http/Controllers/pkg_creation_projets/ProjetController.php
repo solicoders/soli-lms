@@ -185,20 +185,14 @@ class ProjetController extends Controller
 
     public function edit($id)
     {
-        $dataToEdit = $this->projetRepository->find($id);
-    
-        // Fetch associated data for the edit form
-        $dataToEdit->livrables = $this->livrableRepository->where('projet_id', $id)->get();
-        $dataToEdit->resources = $this->resourceRepository->where('projet_id', $id)->get();
-        $dataToEdit->transfertCompetences = $this->transfercompetenceRepository->where('projet_id', $id)->get();
-        
-        // Load apprenants relationship
-        $dataToEdit->load('realisationProjets.personne');
-        
-        // Check if $dataToEdit->transfertCompetences exists and is not null
-        if ($dataToEdit->transfertCompetences) {
-            $dataToEdit->transfertCompetences->load('competence.technologies', 'appreciation');
-        }
+        $dataToEdit = $this->projetRepository->with([
+            'livrables.natureLivrable', // Eager load natureLivrable relationship
+            'resources',
+            'transfertCompetences.competence', 
+            'transfertCompetences.appreciation',
+            'transfertCompetences.technologies',
+            'realisationProjets.personne' // Assuming this is how you access apprentices
+        ])->findOrFail($id);
     
         // Convert date strings to DateTime objects if they are not already
         if (!$dataToEdit->dateDebut instanceof \DateTime) {
@@ -208,17 +202,29 @@ class ProjetController extends Controller
             $dataToEdit->dateFin = new \DateTime($dataToEdit->dateFin);
         }
     
+        // Format dates
         $dateDebutFormatted = $dataToEdit->dateDebut->format('Y-m-d');
         $dateFinFormatted = $dataToEdit->dateFin->format('Y-m-d');
     
+        // Fetch other required data
         $apprenants = Personne::whereIn('type', ['Apprenant'])->get();
         $competences = Competence::all();
         $appreciations = Appreciation::all();
         $livrableNatures = NatureLivrable::all();
         $technologies = Technologie::all();
     
-        return view('pkg_creation_projets.create', compact('dataToEdit', 'dateDebutFormatted', 'dateFinFormatted', 'apprenants', 'competences', 'appreciations', 'livrableNatures', 'technologies'));
+        return view('pkg_creation_projets.create', compact(
+            'dataToEdit', 
+            'dateDebutFormatted', 
+            'dateFinFormatted', 
+            'apprenants', 
+            'competences', 
+            'appreciations', 
+            'livrableNatures', 
+            'technologies'
+        ));
     }
+    
     
     
     

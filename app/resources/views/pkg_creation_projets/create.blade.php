@@ -206,7 +206,12 @@
                                                     <label for="technologies">Technologies:</label>
                                                     <select name="technologie_ids[]" id="technologies" multiple>
                                                         @foreach($technologies as $technology)
-                                                            <option value="{{ $technology->id }}" @if(isset($dataToEdit->transfertCompetences) && in_array($technology->id, $dataToEdit->transfertCompetences->pluck('technologie_id')->toArray())) selected @endif>
+                                                            <option value="{{ $technology->id }}" 
+                                                                    @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                        @if(in_array($technology->id, $transfertCompetence->technologies->pluck('id')->toArray()))
+                                                                            selected
+                                                                        @endif
+                                                                    @endforeach>
                                                                 {{ $technology->nom }}
                                                             </option>
                                                         @endforeach
@@ -222,7 +227,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        @foreach($competences as $competence)
+                                                            @foreach($competences as $competence)
                                                             <tr>
                                                                 <td>
                                                                     <label>
@@ -230,25 +235,29 @@
                                                                                name="competences[]"
                                                                                id="competence_{{ $competence->id }}"
                                                                                value="{{ $competence->id }}"
-                                                                               @if(isset($dataToEdit) && in_array($competence->id, $dataToEdit->competences->pluck('id')->toArray())) checked @endif>
+                                                                               @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                                   @if($transfertCompetence->competence_id == $competence->id)
+                                                                                       checked 
+                                                                                   @endif
+                                                                               @endforeach>
                                                                         <i class="fas fa-{{ $competence->icon }}"></i>
                                                                         {{ $competence->nom }}
                                                                     </label>
                                                                 </td>
                                                                 <td>
-                                                                    <select name="competence_{{ $competence->id }}_appreciation"
-                                                                        class="form-control @error("competence_{{ $competence->id }}_appreciation") is-invalid @enderror">
-                                                                    @foreach($appreciations as $appreciation)
-                                                                        @php
-                                                                            $competenceMatch = isset($dataToEdit) ? $dataToEdit->competences->where('id', $competence->id)->first() : null;
-                                                                        @endphp
-                                                                        <option value="{{ $appreciation->id }}"
-                                                                                @if($competenceMatch && $competenceMatch->appreciation_id == $appreciation->id) selected @endif>
-                                                                            {{ $appreciation->nom }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                                
+                                                                    <select name="competence_{{ $competence->id }}_appreciation">
+                                                                        @foreach($appreciations as $appreciation)
+                                                                            <option value="{{ $appreciation->id }}"
+                                                                                    @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                                        @if($transfertCompetence->competence_id == $competence->id && $transfertCompetence->appreciation_id == $appreciation->id)
+                                                                                            selected 
+                                                                                        @endif
+                                                                                    @endforeach>
+                                                                                {{ $appreciation->nom }}
+                                                                            </option>
+                                                                        @endforeach
+                                                                    </select>
+                                                        
                                                                     @error("competence_{{ $competence->id }}_appreciation")
                                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                                     @enderror
@@ -258,9 +267,9 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-
                                             </div>
                                         </div>
+                                        
 
                                         <div class="step" id="step3" style="display:none;">
                                             <div id="affectation-part"  role="tabpanel"
