@@ -1,0 +1,4 @@
+nom,description,noteMin,noteMax,niveau_competence_id
+Très bien,Excellent performance,16,20,2
+Passable,Adequate performance,10,15,2
+Insuffisant,Insufficient performance,0,9,1
