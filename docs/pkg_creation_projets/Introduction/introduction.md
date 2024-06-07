@@ -10,7 +10,7 @@ order: 130
 
  ## Introduction
 
-![Introduction](./images/introduction.png){:width="700px"}
+![Introduction](./images/SOLI-LMS-intro.png){:width="700px"}
 *Figure 1: Introduction*
 
 <!-- note -->
