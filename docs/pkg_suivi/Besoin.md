@@ -1,9 +1,3 @@
----
-layout: default
-chapitre: true
-package: pkg_suivi
-order: 255
----
 
 ## Besoin : pkg_suivi 
 {:class="sectionHeader"}

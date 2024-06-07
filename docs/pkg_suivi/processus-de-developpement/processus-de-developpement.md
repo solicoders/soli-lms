@@ -2,7 +2,7 @@
 layout: default
 chapitre: true
 package : pkg_suivi
-order: 357
+order: 256
 ---
 
 
@@ -11,14 +11,13 @@ order: 357
 
 <!-- note -->
 
-Le processus de développement décrit une approche du développement logiciel. Il définit une séquence d'étapes, en partie ordonnées, qui concourent à l'obtention d'un système logiciel ou à l'évolution d'un système existant.
-Donc ce chapitre sera divisé en deux parties ,la première partie portera sur 2TUP ,le deuxième partie design thinking.
+Le processus de développement logiciel représente une méthodologie structurée définissant une séquence d'étapes, souvent ordonnées, visant à créer un nouveau système logiciel ou à améliorer un système existant. Ainsi, ce chapitre sera divisé en deux parties distinctes : la première partie se concentrera sur le modèle 2TUP, tandis que la seconde abordera le concept du design thinking.
 
 <!-- new slide -->
 
 ## 2TUP  (Two Tracks Unified Process)
 
-![2TUP](/soli-lms/pkg_validations/processus-de-developpement/images/2tup.png){:width="70%"}*figure: 2TUP*
+![2TUP](/soli-lms/pkg_suivi/processus-de-developpement/images/2tup.png){:width="70%"}*figure: 2TUP*
        
 <!-- note -->
 
@@ -43,11 +42,15 @@ Le processus s'articule ensuite autour de 3 phases essentielles:
 
 ## Design thinking
 
-![Design thinking](/soli-lms/pkg_validations/processus-de-developpement/images/desingthinking.png){:width="1000px"}_figure: Design thinking_
+![Design thinking](/soli-lms/pkg_suivi/processus-de-developpement/images/desingthinking.png){:width="1000px"}_figure: Design thinking_
 
 <!-- note -->
 
-Le design thinking est une approche de l'innovation centrée sur l'humain. C'est une méthode ou un processus de conception globale, centré sur l'utilisateur (ou l'humain), en vue de réaliser des services ou produits innovants.
+Le Design Thinking est une approche inspirée de la pensée du designer, qui révolutionne la manière dont nous abordons l'innovation et la résolution de problèmes. Son objectif principal est de concevoir des solutions centrées sur l'humain, qui répondent aux besoins réels des clients ou utilisateurs.
 
-<!-- new slide -->
+- L’empathie (processus de compréhension de l’utilisateur/client).
+- La problématisation (processus de mise à plat de la problématique).
+- L’idéation (processus de créativité).
+- Le prototype (processus de création de la solution).
+- Le test (processus d’essai).
 

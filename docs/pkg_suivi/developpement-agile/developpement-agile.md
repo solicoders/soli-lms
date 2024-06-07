@@ -2,24 +2,25 @@
 layout: default
 chapitre: true
 package : pkg_suivi
-order: 356
+order: 257
 ---
 
 
-# Développement agile  
+## Le développement agile  
 {:class="sectionHeader"}
 
 <!-- note -->
 
-Le développement Agile est une approche flexible et itérative qui vise à fournir des versions fonctionnelles du logiciel de manière régulière, en répondant aux besoins changeants des utilisateurs.
-Dans ce chapitre, nous allons d'abord expliquer les principes fondamentaux de l'Agilité, ses avantages et ses limites. Ensuite, nous allons nous concentrer sur Scrum, l'une des méthodes Agile les plus populaires, en expliquant ses rôles clés, ses événements, ses artefacts et les bonnes pratiques pour réussir un projet Scrum.
+Le développement Agile est une approche souple et itérative visant à fournir des versions fonctionnelles du logiciel de manière régulière, tout en s'adaptant aux besoins changeants des utilisateurs.
+
+Dans ce chapitre, nous commencerons par expliquer les principes fondamentaux de l'Agilité, mettant en lumière ses avantages ainsi que ses limites. Ensuite, nous nous pencherons sur Scrum, l'une des méthodes Agile les plus répandues. Nous détaillerons ses rôles clés, ses événements, ses artefacts, ainsi que les bonnes pratiques permettant de mener à bien un projet Scrum.
 
 <!-- new slide -->
 
-## Méthode agile
+### La Méthode agile
 
-![Méthode agile](/soli-lms/pkg_validations/developpement-agile/images/Scrum.png){:width="700px"}*figure: Méthode agile*
+![Méthode agile](/soli-lms/pkg_suivi/developpement-agile/images/agile-methode.png){:width="700px"}*figure: Méthode agile*
 
-En ingénierie logicielle, les pratiques agiles mettent en avant la collaboration entre des équipes auto-organisées et pluridisciplinaires et leurs clients. Elles s'appuient sur l'utilisation d'un cadre méthodologique léger mais suffisant centré sur l'humain et la communication.
+La méthode agile est une méthode de gestion de projet. L’idée, lorsque l’on utilise cette approche, est d’apporter souplesse et performance à la gestion de projet. Centrée sur l’humain et la communication, elle permet aux clients de participer au développement d’un produit tout au long de l’avancement du projet.
 
 <!-- new slide -->
