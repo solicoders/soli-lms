@@ -8,6 +8,8 @@ use App\Http\Requests\pkg_formations\FormationRequest;
 use App\Repositories\pkg_formations\FormationRepository;
 use App\Models\pkg_formations\Formateur;
 use App\Models\pkg_formations\Formation;
+use Illuminate\Support\ViewErrorBag;
+use Illuminate\Support\Facades\Log;
 
 class FormationController extends Controller
 {
@@ -16,22 +18,35 @@ class FormationController extends Controller
     public function __construct(FormationRepository $formationRepository)
     {
         $this->formationRepository = $formationRepository;
+        $this->middleware('can:add formation')->only(['create', 'store']);
+        $this->middleware('can:edit formation')->only(['edit', 'update']);
+        $this->middleware('can:delete formation')->only(['destroy']);
+        $this->middleware('can:view formation')->only(['index', 'show']);
     }
 
     public function index(Request $request)
-    {
-        $formationData = $this->formationRepository->with('formateur')->paginate();
-        if ($request->ajax()) {
-            $searchValue = $request->get('searchValue');
-            if ($searchValue !== '') {
-                $searchQuery = str_replace(' ', '%', $searchValue);
-                $formationData = $this->formationRepository->with('formateur')->searchData($searchQuery);
-                return view('GestionFormation.Formation.index', compact('formationData'))->render();
-            }
+{
+    // Check if the user is authenticated
+   
+
+    $user = auth()->user();
+    Log::info('User roles:', $user->roles->pluck('name')->toArray());
+    Log::info('User permissions:', $user->getAllPermissions()->pluck('name')->toArray());
+
+    $formationData = $this->formationRepository->with('formateur')->paginate();
+
+    if ($request->ajax()) {
+        $searchValue = $request->get('searchValue');
+        if ($searchValue !== '') {
+            $searchQuery = str_replace(' ', '%', $searchValue);
+            $formationData = $this->formationRepository->with('formateur')->searchData($searchQuery);
+            return view('GestionFormation.Formation.index', compact('formationData'))->render();
         }
-    
-        return view('GestionFormation.Formation.index', compact('formationData'));
     }
+
+    return view('GestionFormation.Formation.index', compact('formationData'));
+}
+
     
 
     
@@ -39,29 +54,37 @@ class FormationController extends Controller
     public function create()
     {
         $dataToEdit = Formateur::all();
-        return view('GestionFormation.Formation.create', compact('dataToEdit'));
+        $errors = session('errors', new ViewErrorBag());
+        return view('GestionFormation.Formation.create', compact('dataToEdit'),['errors' => $errors]);
 
     }
 
     public function store(FormationRequest $request)
-{
-    
-    $validatedData = $request->validated();
-    
-    // Vérifier si le champ "lien" est vide
-    if(empty($validatedData['lien'])) {
-        // Retourner une réponse d'erreur indiquant que le champ "lien" est obligatoire
-        return redirect()->back()->withErrors(['lien' => 'Le champ lien est obligatoire'])->withInput();
+    {
+        // Validate the incoming request
+       
+        $validatedData = $request->validated();
+        
+        // Check if validation fails
+        if ($request->fails()) {
+            // Redirect back with validation errors
+            return redirect()->back()->withErrors($request->errors())->withInput();
+        }
+        
+        // Continue with the insertion if validation passes
+        if (!isset($validatedData['formateur_id'])) {
+            // Set a default value for 'formateur_id' if not present
+            $validatedData['formateur_id'] = 1;
+        }
+        
+        // Perform the insertion
+        $this->formationRepository->create($validatedData);
+        
+        // Redirect with success message
+        return redirect()->route('formations.index')->with('success', 'La formation a été ajoutée avec succès.');
     }
-    if (!isset($validatedData['formateur_id'])) {
-        // Si le champ "formateur_id" n'est pas présent, définir une valeur par défaut
-        $validatedData['formateur_id'] = 1; // Valeur par défaut du formateur_id
-    }
-
-    // Le champ "lien" n'est pas vide, donc nous pouvons continuer avec l'insertion
-    $formations = $this->formationRepository->create($validatedData);
-    return redirect()->route('formations.index')->with('success', 'La formation a été ajoutée avec succès.');
-}
+    
+    
 
 
 public function show(Request $request, $id)
@@ -74,7 +97,7 @@ public function show(Request $request, $id)
     public function edit($id)
 {
     $dataToEdit = $this->formationRepository->find($id);
-
+    $errors = session('errors', new ViewErrorBag());
     // Vérifier si $dataToEdit est null
     if (is_null($dataToEdit)) {
         // Afficher un message d'erreur personnalisé
@@ -82,7 +105,7 @@ public function show(Request $request, $id)
         return view('GestionFormation.Formation.edit', ['errorMessage' => $errorMessage]);
     }
     $formateurs = Formateur::all();
-    return view('GestionFormation.Formation.edit', compact('dataToEdit','formateurs'));
+    return view('GestionFormation.Formation.edit', compact('dataToEdit','formateurs'),['errors' => $errors]);
 }
 
 
