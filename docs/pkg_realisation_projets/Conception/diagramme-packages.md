@@ -31,4 +31,14 @@ Dans le processus de conception d’une interface utilisateur, il est important 
 <!-- new slide -->
 
 ## Maquette
+### Formateur
+ ![Maquette  Formateur](/soli-lms/pkg_realisation_projets/Conception/formature.png){:width="100%"}
+ *Maquette  Formateur* 
+
+
+
+### Apprennent 
+ ![Maquette  Apprennent](/soli-lms/pkg_realisation_projets/Conception/apprenent.png){:width="100%"}
+ *Maquette  Formateur* 
+
 
