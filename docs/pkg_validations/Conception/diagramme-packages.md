@@ -16,6 +16,14 @@ Ce chapitre présente le diagramme de classe et les maquettes de l'interface uti
 
 **NB:** Voir le diagramme de classe global dans l'annexe
 
+
+## Diagramme de packages 
+![Conception - pkg_packages ](/soli-lms/diagrammes/pkg_global/digramme_package.svg){:width="60%"}
+*Figure 11 : Diagramme packages - pkg_global*
+
+
+
+
 ## Maquette
 
 ![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu1.png){:width="70%"}
