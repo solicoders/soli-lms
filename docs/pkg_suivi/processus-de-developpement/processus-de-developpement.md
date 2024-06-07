@@ -17,7 +17,7 @@ Le processus de développement logiciel représente une méthodologie structuré
 
 ## 2TUP  (Two Tracks Unified Process)
 
-![2TUP](/soli-lms/pkg_suivi/processus-de-developpement/images/2tup.png){:width="70%"}*figure: 2TUP*
+![2TUP](/soli-lms/pkg_suivi/processus-de-developpement/images/2tup.png){:width="70%"}*Figure 3: 2TUP*
        
 <!-- note -->
 
@@ -42,7 +42,7 @@ Le processus s'articule ensuite autour de 3 phases essentielles:
 
 ## Design thinking
 
-![Design thinking](/soli-lms/pkg_suivi/processus-de-developpement/images/desingthinking.png){:width="1000px"}_figure: Design thinking_
+![Design thinking](/soli-lms/pkg_suivi/processus-de-developpement/images/desingthinking.png){:width="1000px"}*Figure 4: Design thinking*
 
 <!-- note -->
 

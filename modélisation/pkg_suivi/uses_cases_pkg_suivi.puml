@@ -12,7 +12,7 @@ package pkg_suivi {
   Apprenant --> (suivi l'avencement des compétences)
   
   (suivi l'avencement des projets) <.. (consulter la table d'avencement des projet)
-  (suivi l'avencement des projets) <.. (filtrer des projets)
+  (suivi l'avencement des projets) <.. (filtrer par projets)
   (suivi l'avencement des compétences) <.. (consulter la table de validation des compétences)
   (suivi l'avencement des compétences) <.. (filtrer les compétences par apprenant)
   

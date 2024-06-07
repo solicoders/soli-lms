@@ -8,15 +8,11 @@ order: 255
 ## Context de projet
 {:class="sectionHeader"}
 
-<!-- new slide  -->
-![Context de projet](/soli-lms/pkg_suivi/Besoin/images/project-context.jpg){:width="1000px"}*figure: Context de projet*
-
-<!-- note -->
-
-### Introduction de projet SoliLMS
 Le Centre Solicode de Développement est une institution renommée dédiée à la formation de jeunes talents en développement logiciel. Cependant, le centre fait face à plusieurs défis majeurs dans la gestion des projets étudiants. Ces défis incluent l'attribution efficace des projets aux étudiants, le suivi de l'avancement des projets, le suivi de l'acquisition des compétences par les étudiants, et la validation de ces compétences.
 
 Pour répondre à ces besoins, le projet "soliLMS" a été conçu. "soliLMS" est une plateforme de gestion de l'apprentissage (LMS) innovante qui vise à améliorer la gestion des projets étudiants au sein du Centre Solicode. Cette plateforme vise à résoudre les problèmes actuels en fournissant des outils robustes et conviviaux pour gérer l'ensemble du cycle de vie des projets étudiants.
+
+![Context de projet](/soli-lms/pkg_suivi/Besoin/images/project-context.jpg){:width="1000px"}*Figure 2: Context de projet*
 
 ### Objectifs du Projet SoliLMS
 
@@ -32,8 +28,10 @@ Validation des Compétences : Mettre en place des mécanismes de validation des 
 
 
 ## Objectifs de formation 
-
 Au Centre Solicode, sous l'encadrement de Monsieur Esseraj Fouad, j'ai acquis des compétences essentielles en développement web et en gestion de projet. Solicode est reconnu pour son approche pratique et son engagement à former des développeurs polyvalents et compétents.
+
+![Objectifs de formation](/soli-lms/pkg_suivi/Besoin/images/formation.jpg){:width="1000px"}*Figure 3: Objectifs de formation*
+
 
 ### Technologies Apprises
 J'ai maîtrisé Laravel, un framework PHP qui permet de créer des applications web robustes et évolutives. Cette formation m'a permis de comprendre des concepts avancés tels que l'architecture MVC (Modèle-Vue-Contrôleur), la gestion des bases de données.

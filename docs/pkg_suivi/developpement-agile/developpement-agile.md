@@ -19,7 +19,7 @@ Dans ce chapitre, nous commencerons par expliquer les principes fondamentaux de 
 
 ### La Méthode agile
 
-![Méthode agile](/soli-lms/pkg_suivi/developpement-agile/images/agile-methode.png){:width="700px"}*figure: Méthode agile*
+![Méthode agile](/soli-lms/pkg_suivi/developpement-agile/images/agile-methode.png){:width="700px"}*Figure 5: Méthode agile*
 
 La méthode agile est une méthode de gestion de projet. L’idée, lorsque l’on utilise cette approche, est d’apporter souplesse et performance à la gestion de projet. Centrée sur l’humain et la communication, elle permet aux clients de participer au développement d’un produit tout au long de l’avancement du projet.
 

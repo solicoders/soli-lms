@@ -8,7 +8,7 @@ order: 155
 
 # Introduction
 
-![Introduction](/soli-lms/pkg_suivi/introduction/images/introduction.png){:width="700px"}*figure : Introduction*
+![Introduction](/soli-lms/pkg_suivi/introduction/images/introduction.png){:width="700px"}*Figure 1: Introduction*
 
 <!-- note -->
 
