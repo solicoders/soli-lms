@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\ViewErrorBag;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -36,13 +35,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-    public function showLoginForm()
-    {
-        // Create an empty validator instance
-        $errors = session('errors', new ViewErrorBag());
-
-        // Pass the validator instance to the view with errors
-        return view('auth.login', ['errors' => $errors]);
     }
 }

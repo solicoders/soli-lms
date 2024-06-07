@@ -18,43 +18,33 @@
         </div>
     </div>
     <section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="col-sm-12">
-                            <label for="nom">{{ __('app.name') }}:</label>
-                            <p>{{ $formation->nom }}</p>
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-sm-12">
+                                <label for="nom">{{ __('app.name') }}:</label>
+                                <p>{{ $fetchedData->nom }}</p>
+                            </div>
 
-                        <!-- Description Field -->
-                        <div class="col-sm-12">
-                            <label for="description">{{ __('app.description') }}:</label>
-                            @if ($formation->description)
-                                <p>
-                                    {!! $formation->description !!}
-                                </p>
-                            @else
-                                <p class="text-secondary">Aucune information disponible</p>
-                            @endif
-                        </div>
+                            <!-- Description Field -->
+                            <div class="col-sm-12">
+                                <label for="description">{{ __('app.description') }}:</label>
+                                @if ($fetchedData->description)
+                                    <p>
+                                        {!! $fetchedData->description !!}
+                                    </p>
+                                @else
+                                    <p class="text-secondary">Aucune information disponible</p>
+                                @endif
+                            </div>
+                          
 
-                        <!-- Lien Field -->
-                        <div class="col-sm-12">
-                            <label for="lien">{{ __('app.link') }}:</label>
-                            <p>{{ $formation->lien }}</p>
-                        </div>
-
-                        <!-- Nom du Formateur -->
-                        <div class="col-sm-12">
-                            <label for="formateur">{{ __('app.formateur') }}:</label>
-                            <p>{{$formation->formateur->nom}}{{ $formation->formateur->prenom}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

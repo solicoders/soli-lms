@@ -1,26 +1,33 @@
 @extends('layouts.app')
-
 @section('content')
-        @if ($errors->any())
+    <div class="content-header">
+        @if ($errors->has('formations_exists'))
             <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                {{ $errors->first('formations_exists') }}
             </div>
+        @else
+            @if ($errors->has('unexpected_error'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('unexpected_error') }}
+                </div>
+            @endif
         @endif
-
-
-        <!-- You can add other conditional error messages here if needed -->
     </div>
-
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-info">
-                    @include('GestionFormation.Formation.fields')
+                        <div class="card-header">
+                            <h3 class="card-title">
+                            <a href="{{ route('formations.create')  }}">
+                                <i class="nav-icon fas fa-table"></i>
+                                {{ __('app.add') }} {{ __('pkg_formations/formations.singular') }}
+                                </a>
+                            </h3>
+                        </div>
+                        <!-- Obtenir le formulaire -->
+                        @include('GestionFormation.Formation.fields')
                     </div>
                 </div>
             </div>

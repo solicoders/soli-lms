@@ -2,8 +2,8 @@
 layout: default
 presentation: true
 chapitre: true
-package : pkg_creation_projet
-order: 250
+package : pkg_creation_projets
+order: 230
 ---
 
 # Cahier de charge  
