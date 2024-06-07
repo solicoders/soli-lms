@@ -5,7 +5,10 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\pkg_formations\{
+
     FormationSeeder,
+    ApprenantsTableSeeder,
+    FormateursTableSeeder,
 };
 
 class pkg_formationsSeeder extends Seeder
@@ -21,6 +24,8 @@ class pkg_formationsSeeder extends Seeder
     {
         return [
             FormationSeeder::class,
+            ApprenantsTableSeeder::class,
+            FormateursTableSeeder::class,
         ];
     }
 }
