@@ -14,6 +14,7 @@ Ce chapitre présente le diagramme de classe et les maquettes de l'interface uti
 ![Conception - pkg_validations ](/soli-lms/diagrammes/pkg_validations/classes_pkg_validations.svg){:width="60%"}
 *Figure 11 :Conception - pkg_validations*
 
+**NB:** Voir le diagramme de classe global dans l'annexe
 
 ## Maquette
 
