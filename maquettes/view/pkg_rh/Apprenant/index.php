@@ -47,7 +47,7 @@
                                     <td>Grain</td>
                                     <td>Reda</td>
                                     <td>123456</td>
-                                    <td>DWM 10</td>
+                                    <td>DMB 101</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -57,10 +57,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Grain</td>
-                                    <td>Reda</td>
+                                    <td>jalil	</td>
+                                    <td>Betroji</td>
                                     <td>123456</td>
-                                    <td>DWM 10</td>
+                                    <td>DMB 101</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -70,10 +70,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Grain</td>
-                                    <td>Reda</td>
+                                    <td>Assaid</td>
+                                    <td>Amina</td>
                                     <td>123456</td>
-                                    <td>DWM 10</td>
+                                    <td>DMB 101</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -83,10 +83,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Grain</td>
-                                    <td>Reda</td>
+                                    <td>Safaa</td>
+                                    <td>Faiz</td>
                                     <td>123456</td>
-                                    <td>DWM 10</td>
+                                    <td>DMB 101</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -96,10 +96,10 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Grain</td>
-                                    <td>Reda</td>
+                                    <td>Achaou</td>
+                                    <td>Hamid</td>
                                     <td>123456</td>
-                                    <td>DWM 10</td>
+                                    <td>DMB 101</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -108,6 +108,98 @@
                                         <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>Soufian</td>
+                                    <td>Boukhar</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>daifane</td>
+                                    <td>Yasmine</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>lamchatab</td>
+                                    <td>Amine</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>bouik</td>
+                                    <td>Hussein</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>harrak</td>
+                                    <td>Adnan</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>sarsri</td>
+                                    <td>Imrane</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Ben nasar</td>
+                                    <td>Adnan</td>
+                                    <td>123456</td>
+                                    <td>DMB 101</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
