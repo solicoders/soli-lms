@@ -2,7 +2,7 @@
 
 namespace Database\Seeders\pkg_rh;
 
-use App\Models\pkg_rh\NiveauScholaire;
+use App\Models\pkg_rh\NiveauScholaires;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -19,7 +19,7 @@ class NiveauScholaireSeeder extends Seeder
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {
-                NiveauScholaire::create([
+                NiveauScholaires::create([
                     "nom"=>$data['0'],
                     "description"=>$data['1'],
                     'updated_at' => Carbon::now(),

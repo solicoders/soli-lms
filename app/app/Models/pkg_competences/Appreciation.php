@@ -2,6 +2,8 @@
 
 namespace App\Models\pkg_competences;
 
+use App\Models\pkg_rh\Formateur;
+use App\Models\pkg_validations\Validation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

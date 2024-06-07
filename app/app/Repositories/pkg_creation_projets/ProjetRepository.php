@@ -38,6 +38,10 @@ class ProjetRepository extends BaseRepository
         parent::__construct(new Projet());
     }
 
+    public function with($relations)
+    {
+        return $this->model->with($relations);
+    }
     /**
      * Crée un nouveau projet.
      *

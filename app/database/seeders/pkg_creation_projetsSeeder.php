@@ -10,6 +10,7 @@ NatureLivrableSeeder,
 ProjetSeeder,
 ResourceSeeder,
 TransfertCompetenceSeeder,
+TechnologieCompetenceSeeder,
 };
 
 class pkg_creation_projetsSeeder extends Seeder
@@ -29,6 +30,7 @@ class pkg_creation_projetsSeeder extends Seeder
             LivrableSeeder::class,
             ResourceSeeder::class,
             TransfertCompetenceSeeder::class,
+            TechnologieCompetenceSeeder::class,
         ];
     }
 }
