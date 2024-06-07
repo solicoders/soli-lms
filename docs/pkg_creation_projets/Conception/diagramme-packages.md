@@ -19,13 +19,11 @@ La conception d'une interface utilisateur intuitive et efficace est essentielle 
 
 ## Modélisation orientée objet
 
-### Diagramme de classes 
+### Diagramme des packages 
 
-![Conception - plateforme d'apprentissage ](/soli-lms/diagrammes/pkg_creation_projets/classes_pkg_creation_projets.svg){:width="70%"}
+![Conception - Diagramme des packages ](/soli-lms/diagrammes/pkg_creation_projets/diagramme_pckages.svg){:width="70%"}
 *Conception - plateforme d'apprentissage*
 
-
-<!-- new slide -->
 
 ##  Du modèle à l'interface 
 
