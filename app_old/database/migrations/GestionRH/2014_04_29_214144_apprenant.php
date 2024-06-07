@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('apprenant', function (Blueprint $table) {
             $table->id();
-            $table->string('niveau_scholaire');
+            $table->string('niveau_scolaire');
             $table->unsignedBigInteger('cne');
             $table->string('lieu_naissance');
             $table->Date('date_inscription');

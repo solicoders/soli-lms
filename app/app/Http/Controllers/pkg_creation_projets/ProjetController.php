@@ -17,6 +17,7 @@ use App\Repositories\pkg_creation_projets\ProjetRepository;
 use App\Repositories\pkg_creation_projets\ResourceRepository;
 use App\Repositories\pkg_creation_projets\TechnologieCompetenceRepository;
 use App\Repositories\pkg_creation_projets\TransfertCompetenceRepository;
+use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
 use App\Repositories\pkg_rh\ApprenantRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class ProjetController extends Controller
     protected $apprenantRepository;
     protected $transfercompetenceRepository;
     protected $technologiecompetenceRepository;
+    protected $projectRealisationRepository;
 
     public function __construct(
         ProjetRepository $projetRepository,
@@ -42,7 +44,8 @@ class ProjetController extends Controller
         ApprenantRepository $apprenantRepository,
         TransfertCompetenceRepository $transfercompetenceRepository,
         TechnologieCompetenceRepository $technologiecompetenceRepository,
-        
+        projectRealisationRepository $projectRealisationRepository,
+
     ) {
         $this->projetRepository = $projetRepository;
         $this->livrableRepository = $livrableRepository;
@@ -52,6 +55,7 @@ class ProjetController extends Controller
         $this->apprenantRepository = $apprenantRepository;
         $this->transfercompetenceRepository = $transfercompetenceRepository;
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
+        $this->projectRealisationRepository = $projectRealisationRepository;
     }
 
     public function index(Request $request)
@@ -78,11 +82,11 @@ class ProjetController extends Controller
 
     public function create()
     {
-        $dataToEdit = null; 
+        $dataToEdit = null;
         $apprenants = Personne::whereIn('type', ['Formateur', 'Apprenant'])->get();
         $competences = Competence::all();
-        $appreciations = Appreciation::all(); 
-        $livrableNatures = NatureLivrable::all(); 
+        $appreciations = Appreciation::all();
+        $livrableNatures = NatureLivrable::all();
         $technologies = Technologie::all();
         return view('pkg_creation_projets.create', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures','technologies'));
     }
@@ -123,7 +127,7 @@ class ProjetController extends Controller
         }
 
 
-    // 5. Create TransfertCompetence records 
+    // 5. Create TransfertCompetence records
     if (isset($validatedData['competences'])) {
         foreach ($validatedData['competences'] as $competence_id) {
             $transfertCompetenceData = [
@@ -153,9 +157,9 @@ class ProjetController extends Controller
                 'personne_id' => $apprenantId, // Assuming 'personne_id' is the apprenant ID field
                 'date_debut_realisation' => now(), // Or set a default start date
                 'date_fin_realisation' => now()->addDays(14), // Or set a default end date (example: 14 days)
-                'etat_realisation_projet_id' => 1, // Or set a default state ID 
+                'etat_realisation_projet_id' => 1, // Or set a default state ID
             ];
-            $this->realisationProjetRepository->create($realisationProjetData);
+            $this->projectRealisationRepository->create($realisationProjetData);
         }
     }
 
