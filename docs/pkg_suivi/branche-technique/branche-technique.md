@@ -34,12 +34,21 @@ Le Repository Pattern ajoute une couche supplémentaire d'abstraction qui sépar
 En utilisant cette architecture, nous avons pu séparer les différentes responsabilités de l'application, ce qui facilite la maintenance et l'évolution de celle-ci.
 
 
-![Architecture mvc](/soli-lms/pkg_validations/branche-technique/images/MVC.png){:width="100%"}
-*Figure 10:  Architecture de l'application*
+![Architecture mvc](/soli-lms/pkg_suivi/branche-technique/images/mvc.png){:width="100%"}
+*Figure 11:  Architecture de l'application*
 
 
 ## Prototype 
 
-Avant de démarrer la réalisation de notre projet Soli-LMS, nous avons mis en place un prototype fonctionnel. Ce prototype a été conçu pour permettre des opérations CRUD (Create, Read, Update, Delete) basiques, ainsi que des fonctionnalités avancées telles que l'exportation et l'importation de données, la recherche avec Ajax et des filtres dynamiques.
+Avant de démarrer la réalisation de notre projet Soli-LMS, nous avons mis en place un prototype fonctionnel détaillé, développé sur trois sprints distincts :
 
-En plus de ces fonctionnalités, le prototype intègre également un système d'authentification et d'autorisation utilisant Spatie, assurant ainsi la sécurité et la gestion des droits d'accès des utilisateurs. Ce prototype nous a permis de valider rapidement les principales fonctionnalités de l'application et de recueillir des retours pour optimiser l'expérience utilisateur avant de passer à la phase de développement complète.
+- **Gestion des Projets (Sprint 1):**
+Nous avons commencé par la création du sprint de gestion des projets, incluant les opérations CRUD de base pour la gestion des projets. Ces opérations couvrent la création, la lecture, la mise à jour et la suppression de projets, ainsi que leur association avec les utilisateurs et les tâches. Nous avons également intégré des fonctionnalités d’importation et d’exportation de données, permettant aux utilisateurs de manipuler facilement les données et d’effectuer des recherches dynamiques avec Ajax.
+
+- **Gestion des Tâches (Sprint 2)**
+Bien que prévu dans le planning, ce sprint n’a pas encore été réalisé. Il sera consacré à la gestion des tâches au sein des projets, comprenant la création, l’assignation, le suivi et la collaboration sur les différentes tâches.
+
+- **Gestion de Stock (Sprint 3)**
+Également en attente de réalisation, ce sprint se concentrera sur la gestion des stocks et des ressources matérielles nécessaires à la réalisation des projets. Cela inclura la gestion des stocks, des commandes, des entrées et sorties de matériel, ainsi que d’autres fonctionnalités liées à la gestion des ressources.
+
+En parallèle, le prototype intègre un système d’authentification et d’autorisation utilisant Spatie pour assurer la sécurité et la gestion des droits d’accès des utilisateurs. Ce processus itératif nous a permis de valider rapidement les principales fonctionnalités de l’application, de recueillir des retours d’utilisateurs pour optimiser l’expérience utilisateur, et de garantir une transition fluide vers la phase de développement complète.
