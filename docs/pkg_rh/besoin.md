@@ -5,33 +5,42 @@ package: pkg_rh
 order: 225
 ---
 
-## Besoin - pkg_rh
+# Besoin
 
-### Carte d'empathie avec Mr Hamouda - Responsable Formation
+## Context de Projet
 
-![Carte d'empathie avec Mr Hamouda - Responsable Formation - pkg_rh ](./images/carte-empathie.svg){:width="70%"}
-*Figure: Carte d'empathie avec Mr Hamouda - Responsable Formation - pkg_rh*
 
-### Definire le problème
+## Objectifs de formation
 
-![Definire le problème : pkg_rh](./images/problem.png)
-*Figure: Definire le problème*
+L'objectif de cette formation en développement web est de fournir aux participants les compétences et les connaissances nécessaires pour concevoir, développer et maintenir des sites web modernes et interactifs. Les participants apprendront à utiliser des langages de programmation pour créer des interfaces utilisateur dynamiques et réactives. Ils seront également formés à l'utilisation de frameworks et bibliothèques populaires, tels que Laravel, ainsi qu'à des technologies de backend comme PHP et MySQL pour développer des applications web complètes et performantes.
 
-<!-- note -->
+En plus des aspects techniques, cette formation intègre des méthodologies de gestion de projet modernes, notamment la méthodologie Agile et le framework Scrum, pour assurer une gestion efficace et flexible des projets web. Les participants apprendront à collaborer efficacement au sein d'équipes de développement, en utilisant des outils de versionnement et de collaboration pour gérer les projets de manière productive.
 
-Le Responsable de Formation rencontre des difficultés majeures avec l'utilisation d'Excel pour la gestion des données éducatives. La gestion des étudiants et des formateurs est fastidieuse et sujette aux erreurs, et la validation des compétences des étudiants manque de transparence et d'efficacité.
+À la fin de cette formation, les participants seront capables de :
 
-De plus, l'ajout et l'organisation des groupes et des spécialités sont complexes et chronophages, rendant difficile le maintien d'un système à jour.
+- Maîtriser les principes fondamentaux du développement web front-end et back-end.
+- Concevoir des interfaces utilisateur intuitives et adaptatives pour différents appareils et tailles d'écran.
+- Utiliser le framework Laravel pour développer des applications web robustes et évolutives.
+- Gérer et manipuler des bases de données relationnelles avec MySQL.
+- Appliquer les principes et pratiques de la méthodologie Agile et du framework Scrum pour la gestion de projets.
+- Collaborer efficacement avec des équipes de développement, en utilisant des outils de versionnement et de gestion de projet.
 
-### Idéation
 
-![Idéation : pkg_rh](./images/ideation.png)
-*Figure: Idéation*
+## Processus de Développement
 
-<!-- note -->
+### Méthode 2TUP
 
-La solution est de simplifiez la gestion des données éducatives en automatisant les processus de suivi des étudiants et formateurs.
+![Méthode 2TUP](./images/2TUP.png){:width="70%"}
+*Figure: Méthode 2TUP*
 
-Améliorez la transparence et l'efficacité de la validation des compétences.
+## Méthode Agile - SCRUM
 
-Concevez une interface conviviale pour l'ajout et l'organisation des groupes et spécialités, réduisant ainsi la complexité et le temps nécessaire à la mise à jour du système.
+![Méthode agile - SCRUM](./images/agile-scrum.png){:width="700px"}*figure: Méthode agile - Scrum*
+
+Scrum est un cadre de gestion de projet agile utilisé pour développer des produits de manière flexible. Il se caractérise par des itérations courtes appelées "sprints", favorisant la collaboration et l'adaptabilité. Scrum permet une livraison régulière de valeur aux clients grâce à des réunions régulières et un processus itératif.
+
+## Design Thinking
+
+![Design Thinking](./images/design-thinking.png){:width="700px"}*figure: Design Thinking*
+
+Le design thinking est une approche d'innovation axée sur l'humain. Cette méthode de conception holistique place l'utilisateur au centre du processus, avec pour objectif de développer des produits ou services novateurs.
