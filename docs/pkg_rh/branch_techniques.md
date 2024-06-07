@@ -26,4 +26,4 @@ AdminLTE : un thème d’administration basé sur Bootstrap. Rôle : offrir une 
 
 L'architecture MVC (Modèle-Vue-Contrôleur) est une approche de conception qui divise une application en trois composants distincts, ce qui facilite la maintenance et l'évolution du code. Le Modèle s'occupe de la gestion des données, la Vue présente ces données à l'utilisateur, et le Contrôleur gère les interactions entre l'utilisateur et l'application. Utilisée couramment dans le développement de sites web, d'applications mobiles et autres logiciels, cette architecture améliore l'organisation du code, permet une meilleure réutilisabilité et simplifie la maintenance.
 
-## Protoype
+## Prototype

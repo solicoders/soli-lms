@@ -40,14 +40,14 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="input-group input-group-sm float-sm-left col-md-3 p-0">
+                        <!-- <div class="input-group input-group-sm float-sm-left col-md-3 p-0">
                             <select class="form-control " id="filterSelect">
                                 <option value="">Toutes les spécialités</option>
                                 <option value="option1">Professeur</option>
                                 <option value="option2">Responsable</option>
                                 <option value="option3">Secrétaire Générale</option>
                             </select>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
@@ -65,20 +65,7 @@
                                     <td>Essaraj</td>
                                     <td>Fouad</td>
                                     <td>0612345689</td>
-                                    <td>Professeur</td>
-                                    <td class="text-center">
-                                        <a href="./show.php" class='btn btn-default btn-sm'>
-                                            <i class="far fa-eye"></i>
-                                        </a>
-                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>ABDELMOUNAIM</td>
-                                    <td>Hamouda</td>
-                                    <td>0612345689</td>
-                                    <td>Responsable</td>
+                                    <td>Professeur de développement Mobile</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -91,7 +78,7 @@
                                     <td>Chebbab</td>
                                     <td>Fatine</td>
                                     <td>0612345689</td>
-                                    <td>Professeure</td>
+                                    <td>Professeure de développement Web</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -104,7 +91,7 @@
                                     <td>Souklabi</td>
                                     <td>Abdellatif</td>
                                     <td>0612345689</td>
-                                    <td>Professeur</td>
+                                    <td>Professeur d'entrepreneuriat</td>
                                     <td class="text-center">
                                         <a href="./show.php" class='btn btn-default btn-sm'>
                                             <i class="far fa-eye"></i>
@@ -113,7 +100,19 @@
                                         <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <td>EL Masoudi</td>
+                                    <td>Abdelouhabe</td>
+                                    <td>0612345689</td>
+                                    <td>Professeur de développement Web</td>
+                                    <td class="text-center">
+                                        <a href="./show.php" class='btn btn-default btn-sm'>
+                                            <i class="far fa-eye"></i>
+                                        </a>
+                                        <a href="./edit.php" class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
