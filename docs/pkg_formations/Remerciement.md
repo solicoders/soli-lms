@@ -5,7 +5,7 @@ package : pkg_formations
 order:  053
 ---
 
-## Remerciements
+# Remerciements
 
 Ce projet est le fruit d'une collaboration précieuse et du soutien généreux de plusieurs personnes, et je tiens à exprimer ma profonde gratitude envers chacune d'elles.
 
