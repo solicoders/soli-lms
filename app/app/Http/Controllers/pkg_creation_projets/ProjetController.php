@@ -4,6 +4,7 @@ namespace App\Http\Controllers\pkg_creation_projets;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_creation_projets\ProjetRequest;
+use App\Http\Requests\pkg_creation_projets\ProjetStoreRequest;
 use App\Models\pkg_competences\Competence;
 use App\Models\pkg_competences\Appreciation;
 use App\Models\pkg_competences\Technologie;
@@ -42,7 +43,7 @@ class ProjetController extends Controller
         ApprenantRepository $apprenantRepository,
         TransfertCompetenceRepository $transfercompetenceRepository,
         TechnologieCompetenceRepository $technologiecompetenceRepository,
-        
+
     ) {
         $this->projetRepository = $projetRepository;
         $this->livrableRepository = $livrableRepository;
@@ -78,16 +79,16 @@ class ProjetController extends Controller
 
     public function create()
     {
-        $dataToEdit = null; 
+        $dataToEdit = null;
         $apprenants = Personne::whereIn('type', ['Formateur', 'Apprenant'])->get();
         $competences = Competence::all();
-        $appreciations = Appreciation::all(); 
-        $livrableNatures = NatureLivrable::all(); 
+        $appreciations = Appreciation::all();
+        $livrableNatures = NatureLivrable::all();
         $technologies = Technologie::all();
         return view('pkg_creation_projets.create', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures','technologies'));
     }
 
-    public function store(ProjetRequest $request)
+    public function store(ProjetStoreRequest $request)
     {
         // 1. Validate the request data
         $validatedData = $request->validated();
@@ -123,7 +124,7 @@ class ProjetController extends Controller
         }
 
 
-    // 5. Create TransfertCompetence records 
+    // 5. Create TransfertCompetence records
     if (isset($validatedData['competences'])) {
         foreach ($validatedData['competences'] as $competence_id) {
             $transfertCompetenceData = [
@@ -153,7 +154,7 @@ class ProjetController extends Controller
                 'personne_id' => $apprenantId, // Assuming 'personne_id' is the apprenant ID field
                 'date_debut_realisation' => now(), // Or set a default start date
                 'date_fin_realisation' => now()->addDays(14), // Or set a default end date (example: 14 days)
-                'etat_realisation_projet_id' => 1, // Or set a default state ID 
+                'etat_realisation_projet_id' => 1, // Or set a default state ID
             ];
             $this->realisationProjetRepository->create($realisationProjetData);
         }
