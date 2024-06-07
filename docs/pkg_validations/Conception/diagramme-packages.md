@@ -17,5 +17,9 @@ Ce chapitre présente le diagramme de classe et les maquettes de l'interface uti
 
 ## Maquette
 
-![Maquette - pkg_validation ](/soli-lms/diagrammes/pkg_validations/){:width="70%"}
+![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu1.png){:width="70%"}
+*Figure 12 :Maquette - pkg_Realisations*
+
+
+![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu2.png){:width="70%"}
 *Figure 12 :Maquette - pkg_validations*
