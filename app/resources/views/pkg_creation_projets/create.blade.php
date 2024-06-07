@@ -139,7 +139,7 @@
                                                     @endif
                                                 </div>
                                                 <button type="button" class="btn btn-primary mb-3" onclick="addRessource()">Ajouter une autre ressource</button>
-                                                
+
                                             </div>
                                         </div>
 
@@ -192,7 +192,7 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
 
@@ -441,7 +441,7 @@
                 });
 
     </script>
-    
+
 
 
 <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
