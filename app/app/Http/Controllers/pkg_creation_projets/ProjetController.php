@@ -18,6 +18,7 @@ use App\Repositories\pkg_creation_projets\ProjetRepository;
 use App\Repositories\pkg_creation_projets\ResourceRepository;
 use App\Repositories\pkg_creation_projets\TechnologieCompetenceRepository;
 use App\Repositories\pkg_creation_projets\TransfertCompetenceRepository;
+use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
 use App\Repositories\pkg_rh\ApprenantRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -33,6 +34,7 @@ class ProjetController extends Controller
     protected $apprenantRepository;
     protected $transfercompetenceRepository;
     protected $technologiecompetenceRepository;
+    protected $projectRealisationRepository;
 
     public function __construct(
         ProjetRepository $projetRepository,
@@ -44,6 +46,8 @@ class ProjetController extends Controller
         TransfertCompetenceRepository $transfercompetenceRepository,
         TechnologieCompetenceRepository $technologiecompetenceRepository,
 
+        projectRealisationRepository $projectRealisationRepository,
+
     ) {
         $this->projetRepository = $projetRepository;
         $this->livrableRepository = $livrableRepository;
@@ -53,6 +57,7 @@ class ProjetController extends Controller
         $this->apprenantRepository = $apprenantRepository;
         $this->transfercompetenceRepository = $transfercompetenceRepository;
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
+        $this->projectRealisationRepository = $projectRealisationRepository;
     }
 
     public function index(Request $request)
@@ -156,7 +161,7 @@ class ProjetController extends Controller
                 'date_fin_realisation' => now()->addDays(14), // Or set a default end date (example: 14 days)
                 'etat_realisation_projet_id' => 1, // Or set a default state ID
             ];
-            $this->realisationProjetRepository->create($realisationProjetData);
+            $this->projectRealisationRepository->create($realisationProjetData);
         }
     }
 

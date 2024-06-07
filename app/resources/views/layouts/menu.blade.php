@@ -17,4 +17,5 @@
         </p>
     </a>
 </li>
+@include('layouts.pkg_rh.RHMenu')
 {{-- @endcan --}}

@@ -10,49 +10,23 @@ order: 140
 
 # Introduction
 
-![Introduction](/soli-lms/pkg_validations/introduction/images/introduction.png){:width="700px"}*figure 1: Introduction*
-
-<!-- note -->
+![Introduction](/soli-lms/pkg_validations/introduction/images/introduction.png){:width="700px"}*Figure 1: Introduction*
 
 
-## Nécessité d'une application de démonstration :
+Soli-LMS (Learning Management System) est un système de gestion de la formation puissant et polyvalent conçu pour satisfaire les besoins variés des organismes de formation et des établissements d'enseignement.
 
-<!-- TODO : image -->
+Soli-LMS offre une gestion efficace de toutes les étapes de la formation, de la création des projets à l'évaluation finale des apprenants. 
 
-Le développement de ce prototype s'avère crucial pour la création d'une application qui servira à illustrer l'ensemble des concepts et compétences acquis au cours de la formation Laravel. Cette application de démonstration jouera un rôle clé dans le cadre des futurs projets Laravel en nous permettant de :
+Les formateurs ont la capacité de créer et d'organiser des projets de formation, de définir des objectifs précis, de structurer les activités pédagogiques et de fournir les ressources nécessaires aux apprenants. De leur côté, les apprenants bénéficient d'un suivi personnalisé de leur progression, ont la possibilité de consulter leurs notes et commentaires, et peuvent accéder facilement aux ressources pédagogiques disponibles.
 
-* **Mettre en pratique les connaissances acquises :** L'application nous fournira un terrain d'expérimentation concret pour appliquer les notions apprises en matière de Laravel, consolidant ainsi notre maîtrise du framework.
+ Soli-LMS facilite également la gestion des ressources humaines, des modules de formation, des compétences, et des parcours d'autoformation, offrant ainsi une solution complète pour une gestion intégrée et efficace des formations.
 
-* **Identifier les forces et les faiblesses (Labs) :** Le processus de développement nous permettra d'évaluer notre niveau de compréhension et d'identifier les domaines nécessitant un approfondissement .
+Dans le cadre de notre projet, je me concentre principalement sur le package de validation. La mise en place de ce package est vitale pour s'assurer que les projets de formation respectent les normes de qualité attendues, et que les apprenants reçoivent des évaluations justes et constructives.
 
-* **Établir une base réutilisable :** L'application servira de base solide pour les projets Laravel ultérieurs, nous évitant de recréer des fonctionnalités communes à chaque fois.
+En validant chaque compétence associée à ces projets, les formateurs peuvent valider les projets réalisés par les apprenants grâce au package de validation.
 
-* **Promouvoir la collaboration :** Le travail sur l'application favorisera la collaboration et le partage de connaissances entre les membres de l'équipe, renforçant ainsi la cohésion et l'efficacité du groupe.
+Grâce à cette fonctionnalité, il est possible de garantir la conformité des projets aux objectifs de formation tout en améliorant continuellement les compétences des apprenants grâce à des retours précis et personnalisés.
 
-En résumé, l'application de démonstration constituera un outil précieux pour la mise en pratique, l'évaluation et le partage des compétences acquises en Laravel, tout en jetant les bases de futurs projets réussis.
+ Mon travail consiste  à développer et à améliorer ce package pour simplifier le processus d'évaluation des formateurs et améliorer l'expérience d'apprentissage des apprenants.
 
 
-## Démonstration des fonctionnalités techniques requises 
-
-<!-- TODO : Insertion d'une image qui représente  l'objectif 1 - différents types de relations de données -->
-
-* **Interface CRUD (Create, Read, Update, Delete):** Permettre la création, la lecture, la mise à jour et la suppression de données de manière individuelle.
-
-* **Gestion des relations entre entités :**
-    * **Relation Many-to-One :** Gérer les relations entre plusieurs entités dépendantes d'une seule entité principale.
-    * **Relation Many-to-Many :** Gérer les relations entre plusieurs entités où chaque entité peut être associée à plusieurs autres entités.
-    * **Relation One-to-One :** Gérer les relations exclusives entre deux entités, où une entité ne peut être associée qu'à une seule autre entité.
-
-En résumé, le prototype vise à illustrer la capacité à implémenter des interfaces CRUD pour différents types de relations de données, conformément aux exigences techniques du projet.
-
-## Développement d'un système d'authentification et d'autorisation : 
-
-<!-- TODO : Insertion d'une image qui représente  l'objectif 2 - un système d'authentification et d'autorisation réutilisable-->
-
-Le prototype mettra également en œuvre un système d'authentification et d'autorisation adaptable à n'importe quelle application Laravel. Ce système permettra de gérer les utilisateurs, les rôles et les permissions, garantissant un accès sécurisé aux ressources de l'application.
-
-En résumé, le prototype servira de preuve de concept pour les fonctionnalités techniques clés requises pour le projet, tout en fournissant un système d'authentification et d'autorisation réutilisable pour les futures applications Laravel.
-
-<!-- new slide -->
-
-<!-- new slide -->
