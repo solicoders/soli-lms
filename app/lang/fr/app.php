@@ -13,5 +13,7 @@ return [
     'action'=> 'Action',
     'detail' => 'Detail',
     'description' => 'Description',
-    'list' => 'List'
+    'list' => 'List',
+    'link' => 'Lien',
+    'Gestion_des_formations' => 'Gestion des formations',
 ];
