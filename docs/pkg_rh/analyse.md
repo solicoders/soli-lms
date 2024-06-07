@@ -5,7 +5,9 @@ package : pkg_rh
 order: 390
 ---
 
-# Idéation
+# Analyse
+
+## Idéation
 
 ![Idéation](./images/ideation.png)
 *Figure: Idéation*
