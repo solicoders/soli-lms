@@ -18,6 +18,27 @@ class PersonneSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create roles 
+        $responsable = Role::create(['name' => User::RESPONSABLE]);
+        Role::create(['name' => User::APPRENANT]);
+        Role::create(['name' => User::FORMATEUR]);
+
+        // Seed and Add Permissions to responsable and as well to Formateures And Apprenants
+        $csvFile = fopen(base_path("database/data/pkg_rh/permissions.csv"), "r");
+        $firstline = true;
+        $i = 0;
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstline) {
+                $existingPermission = Permission::where('name', $data['0'])->first();
+                if (!$existingPermission) {
+                    Permission::create(['name' => $data['0'], 'guard_name' => 'web']);
+                }
+                $responsable->givePermissionTo($data['0']);
+            }
+            $firstline = false;
+        }
+
+        // Seed to personnes model with users model 
         $csvFile = fopen(base_path("database/data/pkg_rh/personne.csv"), "r");
         $firstline = true;
         $i = 0;
@@ -74,26 +95,6 @@ class PersonneSeeder extends Seeder
             }
             $firstline = false;
         }
-
-
-        // Seed and Add Permissions to responsable and as well to Formateures And Apprenants
-        
-        $csvFile = fopen(base_path("database/data/pkg_rh/Permissions.csv"), "r");
-        $firstline = true;
-        $i = 0;
-
-        while (($data = fgetcsv($csvFile)) !== FALSE) {
-
-            $existingPermission = Permission::where('name', $data['0'])->first();
-
-            if (!$firstline) {
-                if (!$existingPermission) {
-                    Permission::create(['name' => $data['0'], 'guard_name' => 'web']);
-                }
-            }
-        }
-
-        $firstline = false;
 
     }
 }
