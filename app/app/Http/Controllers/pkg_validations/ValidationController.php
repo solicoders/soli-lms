@@ -64,11 +64,9 @@ class ValidationController extends Controller
             $query->where('id', $realisationProjetId);
         })->orderBy('created_at', 'desc')->first();
 
-        $notes = DB::table('validations')
-        ->join('transfert_competences', 'validations.transfert_competence_id', '=', 'transfert_competences.id')
-        ->where('validations.realisation_projet_id', $realisationProjetId)
-        ->pluck('validations.note');
-        $note = $notes->first() ?? 0; // Get the first note, or 0 if no notes are found
+      // Get notes using Eloquent relationships
+      $notes = $realisation->validation()->pluck('note');
+      $note = $notes->first() ?? 0;
         // dd($notes);
         return view('pkg_validations.index', compact(
             'realisation',
