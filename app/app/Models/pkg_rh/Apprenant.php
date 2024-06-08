@@ -18,10 +18,11 @@ class Apprenant extends Personne
     }
 
     public function niveauScolaire(){
-        return $this->has(NiveauScolaires::class);
+        return $this->belongsTo(NiveauScolaires::class);
     }
 
     public function Ville(){
         return $this->belongsTo(Ville::class);
     }
+    
 }

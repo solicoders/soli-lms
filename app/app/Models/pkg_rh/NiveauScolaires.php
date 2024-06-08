@@ -10,6 +10,6 @@ class NiveauScolaires extends Model
     use HasFactory;
 
     public function Apprenant(){
-        return $this->belongsTo(Apprenant::class);
+        return $this->hasMany(Apprenant::class);
     }
 }
