@@ -20,14 +20,12 @@ class pkg_formationsSeeder extends Seeder
     {
         $this->call(pkg_formationsSeeder::Classes());
     }
-
     public static function Classes(): array
     {
         return [
-
-            FormationSeeder::class,
-
+            // FormationSeeder::class,
+            // ApprenantsTableSeeder::class,
+            // FormateursTableSeeder::class,
         ];
     }
-
 }
