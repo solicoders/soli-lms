@@ -6,17 +6,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
 use App\Models\pkg_realisation_projets\RealisationProjet;
-use App\Models\pkg_competences\Competence; // Assuming you have a Skill model
-use App\Models\pkg_creation_projets\Projet; // Assuming you have a Project model
-use App\Models\pkg_rh\Personne; // Assuming you have a Learner model
+use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\NiveauCompetence;
+use App\Models\pkg_creation_projets\Projet;
+use App\Models\pkg_creation_projets\TransfertCompetence;
+use App\Models\pkg_rh\Personne;
+use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_realisation_projets\EtatRealisationProjet;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\pkg_realisation_projets\RealisationProjetRequest;
-use App\Models\pkg_validations\Validation;
-use Faker\Provider\ar_EG\Person;
+
 use Illuminate\Support\Facades\Auth;
 
-class ProjectRealisationController extends Controller
+class Apprenants extends Controller
 {
     protected $projectRealisationRepository;
 
@@ -28,22 +28,30 @@ class ProjectRealisationController extends Controller
     public function index(Request $request)
     {
         $realisationProjets = $this->projectRealisationRepository->paginate();
+
+        $projectID = $this->projectRealisationRepository->all();
+        // dd($projectID);
         $Competences = Competence::all();
         $projects = Projet::all();
+        $pjctid = Projet::pluck('id');
+        
         $EtatRealisationProjet = EtatRealisationProjet::all();
-    // Get the current user's groupe_id
-    $userGroupeId = Auth::user()->id;
-    $user_id = Personne::where('user_id',$userGroupeId);
+        $userGroupeId = Auth::user()->id;
+        // $Personnes = Apprenant::where()
+        //     ('user_id', $userGroupeId)
+        //     ->get();
+        $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
+        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
+        $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competence)->pluck('nom');
 
+        // dd($nivauCopetence);
 
-    // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
-    $Personnes = Personne::where('type', 'apprenant')
-    ->where('user_id', $userGroupeId)
-    ->get();          
-    //  dd($user_id);
-              $realisationProjets = RealisationProjet::with('validation')->paginate();
-    // dd($validation);
-         return view('pkg_realisation_projets.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes','EtatRealisationProjet'));
+        $realisationProjets = RealisationProjet::with('validation')->paginate();
+
+        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 
+        // 'Personnes', 
+        'nivauCopetence',
+        'EtatRealisationProjet'));
     }
 
     public function create()
@@ -51,7 +59,7 @@ class ProjectRealisationController extends Controller
         return view('pkg_realisation_projets.realisationProjet.create');
     }
 
-    public function store( $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validated();
         try {
@@ -65,16 +73,27 @@ class ProjectRealisationController extends Controller
     public function show($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.realisationProjet.show', compact('realisationProjet'));
+        $projects = Projet::all();
+        $pjctid = Projet::pluck('id');
+
+        $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
+        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
+        $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competences)->pluck('nom');
+        $EtatRealisationProjet = EtatRealisationProjet::all();
+        $userGroupeId = Auth::user()->id;
+
+
+        // dd($realisationProjet );
+        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','projects','projectCompetenceId','Competences','EtatRealisationProjet','userGroupeId'));
     }
 
     public function edit($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet'));
+        return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet','projects'));
     }
 
-    public function update( $request, $id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validated();
         $this->projectRealisationRepository->update($id, $validatedData);
