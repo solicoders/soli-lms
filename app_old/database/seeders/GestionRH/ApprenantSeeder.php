@@ -39,7 +39,7 @@ class ApprenantSeeder extends Seeder
         ]);
 
         Apprenant::create([
-            'niveau_scholaire' => 'Bac',
+            'niveau_scolaire' => 'Bac',
             'cne'=> 12345678989,
             'lieu_naissance' => 'tange',
             'date_inscription' => '2023/10/14',
