@@ -68,4 +68,9 @@ class projectRealisationRepository extends BaseRepository
             }
         })->paginate($perPage);
     }
+        public function with($relations)
+    {
+        return $this->model->with($relations);
+    }
+
 }
