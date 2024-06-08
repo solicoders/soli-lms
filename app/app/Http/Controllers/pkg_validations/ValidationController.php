@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\pkg_validations;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\pkg_validations\ValidationRequest;
 use App\Repositories\pkg_creation_projets\TransfertCompetenceRepository;
 use App\Repositories\pkg_realisation_projets\EtatRealisationProjetRepository;
 use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
@@ -51,7 +52,6 @@ class ValidationController extends Controller
         // Find the RealisationProjet by its ID
         $realisation = RealisationProjet::findOrFail($realisationProjetId);
     
-        $allcompetences = Competence::all();
         // Get all competencies for the project
         $competences = $realisation->projet->transfertCompetences()
         ->with(['competence', 'appreciation', 'validations' => function ($query) use ($realisationProjetId) {
@@ -75,27 +75,48 @@ class ValidationController extends Controller
             'competences',
             'message',
             'appreciations',
-            'allcompetences',
             'note' // Pass the notes to the view
         ));
     }
 
-    public function store(Request $request, $realisation_projet_id){
+    public function store(ValidationRequest $request)
+    {
+        $realisationProjetId = $request->input('realisation_projet_id');
+        $validationsData = $request->input('validations');
 
-        $realisation = RealisationProjet::find($realisation_projet_id);
-        $TransfertCompetence = TransfertCompetence::find($realisation_projet_id);
-        $Competences = Competence::find($TransfertCompetence);
-        $LivrableRealisation = LivrableRealisation::find($realisation_projet_id);
-        $appreciations = Appreciation::all();
-        $validations = Validation::find($realisation_projet_id);
-         $Projet = Projet::all();
-         $messages = Message::find($realisation_projet_id);
-         $RealisationProjet = RealisationProjet::all();
+        // 1. Update Validation Notes and Create Messages
+        foreach ($validationsData as $competenceId => $validationData) {
+            // Create or update Validation
+            $validation = Validation::updateOrCreate(
+                [
+                    'transfert_competence_id' => $competenceId,
+                    'realisation_projet_id' => $realisationProjetId,
+                ],
+                [
+                    'appreciation_id' => $validationData['appreciation_id'],
+                    'note' => $validationData['note'],
+                ]
+            );
 
-        dd($request);
+            // Create Appreciation if it doesn't exist yet
+            if (!$validation->appreciation) {
+                $appreciation = Appreciation::create([
+                    'nom' => $validationData['appreciation_nom'], // Assuming you have this data
+                ]);
+                $validation->appreciation()->associate($appreciation)->save();
+            }
 
+            // Create Message associated with the Validation
+            $message = new Message();
+            $message->validation_id = $validation->id;
+            $message->titre = $validationData['titre']; // Assuming you have this data
+            $message->description = $validationData['description']; // Assuming you have this data
+            $message->save(); 
+        }
+
+        return redirect()->route('realisationProjets.index', ['realisationProjetId' => $realisationProjetId])
+            ->with('success', 'Validations and messages updated successfully!');
     }
-
 
     public function create()
     {

@@ -41,15 +41,16 @@
                                         @endforeach
                                     </ul>
                                 </div>
-
+    
                                 <table class="table table-bordered">
                                     <caption style="caption-side: top; text-align: center; font-size: 1.5em; margin: 10px 0;">Formulaire pour la validation des Compétences</caption>
                                     <thead>
                                         <tr>
                                             <th>Compétence</th>
                                             <th>Appréciation</th>
-                                          
                                             <th>Note</th>
+                                            <th>Titre</th>
+                                            <th>Description</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -66,46 +67,35 @@
                                                             @endif
                                                         @endforeach
                                                     </select>
+                                                    @error("validations.{$competence->id}.appreciation_id")
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
                                                 </td>
-                                              
                                                 <td>
-                                                    <input type="number" name="validations[{{ $competence->id }}][note]" class="form-control" value="{{ $note }}">                                                </td>
+                                                    <input type="number" name="validations[{{ $competence->id }}][note]" class="form-control" value="{{ $note }}">
+                                                    @error("validations.{$competence->id}.note")
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" placeholder="Titre">
+                                                    @error("validations.{$competence->id}.titre")
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </td>
+                                                <td>
+                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description"></textarea>
+                                                    @error("validations.{$competence->id}.description")
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-
-                                <h3 style="text-align: center; font-size: 1.5em; color: #6c757d; margin: 20px 0;">Formulaire de Retour sur les Compétences</h3>
-                                <div class="form-group">
-
-                                    <label for="selected_competence">Compétence</label>
-                                    <select id="selected_competence" class="form-control">
-                                        @foreach ($allcompetences as $Competence)
-                                        <option value="competence_mobile">{{ $Competence->nom }}</option>
-                                        @endforeach
-                                    </select>
+                                <div class="text-right m-5">
+                                    <button type="submit" class="btn btn-info">Valider</button>
                                 </div>
-                                <div class="form-group">
-                                    <label for="message">Titre:</label>
-                                <input type="text" id="message_title" class="form-control" value="{{ $message->titre}}" placeholder="Entrez le titre du message">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message:</label>
-                                    <textarea class="form-control" id="message" name="message" rows="20">{{ $message ? $message->description : '' }}</textarea>
-                                </div>
-
-                                <script>
-                                    ClassicEditor
-                                        .create(document.querySelector('#message'))
-                                        .catch(error => {
-                                            console.error(error);
-                                        });
-                                </script>
-
-                            </div>
-
-                            <div class="text-right m-5">
-                                <button type="submit" class="btn btn-info">Valider</button>
                             </div>
                         </div>
                     </div>
