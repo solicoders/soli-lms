@@ -129,30 +129,34 @@ class ProjetController extends Controller
         }
 
 
-    // 5. Create TransfertCompetence records
-    if (isset($validatedData['competences'])) {
-        foreach ($validatedData['competences'] as $competence_id) {
-            // Get the appreciation ID directly from the request
-            $appreciation_id = $request->input('competence_' . $competence_id . '_appreciation');
+// 5. Update TransfertCompetence records
+if (isset($validatedData['competences'])) {
+    foreach ($validatedData['competences'] as $competence_id) {
+        // Get the appreciation ID directly from the request
+        $appreciation_id = $request->input('competence_' . $competence_id . '_appreciation');
 
-            $transfertCompetenceData = [
-                'projet_id' => $projet->id,
-                'competence_id' => $competence_id,
-                'appreciation_id' => $appreciation_id,
-            ];
-            $transfertCompetence = $this->transfercompetenceRepository->create($transfertCompetenceData);
-            // 6. Attach technologies (if any) to the newly created TransfertCompetence
-            if (isset($validatedData['technologie_ids'])) {
-                foreach ($validatedData['technologie_ids'] as $technologie_id) {
-                    $technologieCompetenceData = [
-                        'transfert_competence_id' => $transfertCompetence->id,
-                        'technologie_id' => $technologie_id,
-                    ];
-                    $this->technologiecompetenceRepository->create($technologieCompetenceData);
-                }
+        $transfertCompetenceData = [
+            'projet_id' => $projet->id,
+            'competence_id' => $competence_id,
+            'appreciation_id' => $appreciation_id,
+        ];
+        $transfertCompetence = $this->transfercompetenceRepository->create($transfertCompetenceData);
+
+        // Update technologies for the current TransfertCompetence
+        if (isset($validatedData['technologie_ids'])) {
+            foreach ($validatedData['technologie_ids'] as $technologie_id) {
+                $technologieCompetenceData = [
+                    'transfert_competence_id' => $transfertCompetence->id,
+                    'technologie_id' => $technologie_id,
+                ];
+                $this->technologiecompetenceRepository->Create(
+                    ['transfert_competence_id' => $transfertCompetence->id, 'technologie_id' => $technologie_id],
+                    $technologieCompetenceData
+                );
             }
         }
     }
+}
 
     if (isset($validatedData['apprenants'])) {
         foreach ($validatedData['apprenants'] as $apprenantId) {
