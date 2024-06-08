@@ -32,7 +32,7 @@ return new class extends Migration
             $table->unsignedBigInteger('specialite_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('lieu_naissance_id')->references('id')->on('villes')->onDelete('cascade');
-            $table->foreign('niveau_scolaire_id')->references('id')->on('niveau_scolaires')->onDelete('cascade');
+            $table->foreign('niveau_scolaire_id')->references('id')->on('niveau_scholaires')->onDelete('cascade');
             $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('specialite_id')->references('id')->on('specialites')->onDelete('cascade');
