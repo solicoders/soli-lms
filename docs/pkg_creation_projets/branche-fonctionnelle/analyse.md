@@ -14,7 +14,7 @@ Dans cette phase de capture des besoins fonctionnels de notre plateforme de gest
 
 ##  Comprendre les besoins du formateur 
 
-![Carte empathie : plateforme d'apprentissage](/soli-lms/Besoin/pkg_creation_projets/Carte-empathie.svg)
+![Carte empathie : plateforme d'apprentissage](/soli-lms/Besoin/pkg_creation_projets/carte-empathie-Formateur.svg)
 *Carte d'empathie formateur : plateforme d'apprentissage*
 
 ### Identifier les points critiques

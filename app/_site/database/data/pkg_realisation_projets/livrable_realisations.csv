@@ -1,0 +1,9 @@
+nom,description,lien,realisation_projet_id
+"Conception Produit","Conception complète du produit","http://exemple.com/design",1
+"Module de Code","Module pour l'authentification des utilisateurs","http://exemple.com/code",1
+"Interface Utilisateur","Création d'une interface utilisateur intuitive","http://exemple.com/ui",2
+"Base de Données","Configuration de la base de données principale","http://exemple.com/database",2
+"Optimisation SEO","Amélioration du référencement naturel","http://exemple.com/seo",3
+"Support Technique","Assistance technique pour les clients","http://exemple.com/support",3
+"Formation","Programme de formation pour les utilisateurs","http://exemple.com/training",4
+"Documentation Technique","Documentation détaillée du projet","http://exemple.com/docs",4

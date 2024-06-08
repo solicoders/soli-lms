@@ -1,0 +1,109 @@
+nom,description,competence_id
+imiter,"A partir d'un outil de maquettage désigné, reproduire une maquette réalisée sur le même outil.
+
+- Décrire les éléments de la charte graphique utilisée ainsi que les éléments de sécurité prévus.
+
+- Formaliser les enchaînements des interfaces en s'inspirant du modèle fourni.
+
+- Être capable de montrer que la maquette s'adapte à des équipements mobiles.
+
+- Être capable de justifier le choix de l'ergonomie pour une expérience utilisateur réussie.",1
+adapter,"A partir d'un outil de maquettage désigné, reproduire une maquette réalisée sur le même outil :
+
+- Décrire les éléments de la charte graphique utilisée ainsi que les éléments de sécurité prévus.
+
+- Formaliser les enchaînements des interfaces en s'inspirant du modèle fourni.
+
+- Être capable de montrer que la maquette s'adapte à des équipements mobiles.
+
+- Être capable de justifier le choix de l'ergonomie pour une expérience utilisateur ciblée.
+
+- Être capable de justifier le lien entre les interfaces réalisées et des cas d’utilisation ou scénarios utilisateurs.
+
+- Ajouter de nouvelles interfaces correspondantes à d'autres cas d'utilisation en respectant les critères précédents de charte graphique, de sécurité, d'ergonomie et d'adaptabilité.",1
+transposer,"À partir de cas d'utilisation ou de scénarios utilisateur, de la charte graphique et des exigences de sécurité identifiées, concevoir la maquette des interfaces utilisateurs de l’application, avec du contenu en langue française ou anglaise, y compris celles appropriées à l’équipement ciblé et en tenant compte de l’expérience utilisateur et pour un équipement mobile des spécificités ergonomiques.
+
+Formaliser les enchaînements des interfaces afin que l’utilisateur les valide ainsi que les maquettes.
+
+Description de la compétence – processus de mise en œuvre
+À partir de cas d'utilisation ou de scénarios utilisateur, de la charte graphique et des exigences de sécurité identifiées, concevoir la maquette des interfaces utilisateurs de l’application, avec du contenu en langue française ou anglaise, y compris celles appropriées à l’équipement ciblé et en tenant compte de l’expérience utilisateur et pour un équipement mobile des spécificités ergonomiques.
+
+Formaliser les enchaînements des interfaces afin que l’utilisateur les valide ainsi que les maquettes.
+
+Contexte(s) professionnel(s) de mise en œuvre
+Le maquettage intervient en phase de conception avec une forte implication de l'utilisateur final, actuel ou futur, et dans une démarche itérative centrée sur l'expérience utilisateur (approche Agile).
+
+Chaque itération permet d'enrichir et de finaliser la maquette, afin que l’utilisateur valide l’interface graphique de l’application et en retrouve les principales fonctionnalités tout au long du cycle de développement.
+
+Les itérations peuvent donner lieu à des ateliers de présentation aux utilisateurs.
+
+Le maquettage intervient pour des applications sur des supports et environnements multiples.",1
+imiter,"A partir d'une expression de besoin (maquette) et d'une interface utilisateur statique existante :
+
+- J'adapte le contenu de l'interface (changer le texte, ...)
+
+- J'apporte des changements mineurs dans la structure de l'interface (je rajoute un titre, un paragraphe, ...)
+
+- J'adapte la mise en forme de l'interface (changer la couleur d'un titre, changer la police, ...)",2
+adapter,"A partir d'une expression de besoin (maquette) et d'une interface utilisateur statique existante (réalisée personnellement ou fournie par l'équipe pédagogique) :
+
+- J'apporte des changements majeurs à la structure de l'interface (ajout de nouveaux blocs fonctionnels, suppression de blocs fontionnels existants, ...)
+
+- J'ajoute des pages à mon interface
+
+- J'ajoute des règles de mise en forme",2
+transposer,"À partir de la maquette de l’interface à réaliser, de la charte graphique et à l'aide d'un langage de présentation, créer les pages web statiques et adaptables, y compris pour les équipements mobiles, afin d’obtenir un rendu visuel optimisé et adapté à l’équipement de l’utilisateur et à l’ensemble des navigateurs ciblés. Respecter les bonnes pratiques de structuration et de sécurité ainsi que les contraintes de l'architecture du matériel cible. Publier les pages web sur un serveur et les rendre visibles sur les moteurs de recherche. Rechercher des solutions pertinentes pour la résolution de problèmes techniques de rendu et d'accessibilité en utilisant de la documentation en langue française ou anglaise. Partager le résultat de sa veille avec ses pairs.",2
+imiter,"À partir d'un site existant développé à l'aide d'une solution de gestion de contenu ou e-commerce, créer une copie conforme qui utilise le même thème et les mêmes fonctionnalités. Les modifications se feront via le back-office.
+Le site sera publié sur un serveur et plusieurs comptes utilisateurs (avec plusieurs rôles) seront mis en place.",3
+adapter,"À partir d'un site existant développé à l'aide d'une solution de gestion de contenu ou e-commerce, créer une copie conforme qui utilise le même thème et les mêmes fonctionnalités. Les modifications se feront via le back-office.
+Le site sera publié sur un serveur et plusieurs comptes utilisateurs (avec plusieurs rôles) seront mis en place.",3
+transposer,"À partir d’un besoin client, installer, paramétrer ou maintenir une solution de gestion de contenu ou d’e- commerce afin de réaliser de manière facilitée un site vitrine ou une boutique en ligne, créer les différents comptes utilisateurs avec leurs droits et rôles dans le respect des règles de sécurité, créer ou adapter la structure du site ou de la boutique afin de permettre à l’utilisateur d’en gérer le contenu et d’en suivre l’activité.
+
+Personnaliser l’aspect visuel du site ou de la boutique afin de respecter la charte graphique du client et d’être adapté à l’équipement de l’utilisateur, y compris mobile, et à l’ensemble des navigateurs ciblés.
+
+Publier le site vitrine ou la boutique en ligne sur un serveur et le (la) rendre visible sur les moteurs de recherche.
+
+Pratiquer une veille technologique, y compris en anglais, pour résoudre un problème technique ou mettre en œuvre une nouvelle fonctionnalité ainsi que pour s’informer sur la sécurité informatique et les vulnérabilités connues.
+
+Partager le résultat de sa veille avec ses pairs.
+
+Cette compétence s'exerce seul ou en équipe.
+
+L’installation et le paramétrage se font via des pages d’administration des solutions de gestion de contenu ou d’e-commerce.",3
+imiter,"À partir d'un site existant développé à l'aide d'une solution de gestion de contenu ou e-commerce, créer une copie conforme qui utilise le même thème et les mêmes fonctionnalités. Les modifications se feront via le back-office.
+Le site sera publié sur un serveur et plusieurs comptes utilisateurs (avec plusieurs rôles) seront mis en place.",4
+adapter,"À partir d'un site existant développé à l'aide d'une solution de gestion de contenu ou e-commerce, ajouter différentes fonctionnalités (multilingue, RGPD, suivi d'analyse, sécurité, SEO, SEM). Le thème devra être modifié pour respecter les spécifications techniques.
+Le site sera publié sur un serveur et plusieurs comptes utilisateurs (avec plusieurs rôles) seront mis en place.",4
+transposer,"À partir d’un besoin client, installer, paramétrer ou maintenir une solution de gestion de contenu ou d’e- commerce afin de réaliser de manière facilitée un site vitrine ou une boutique en ligne, créer les différents comptes utilisateurs avec leurs droits et rôles dans le respect des règles de sécurité, créer ou adapter la structure du site ou de la boutique afin de permettre à l’utilisateur d’en gérer le contenu et d’en suivre l’activité.
+
+Personnaliser l’aspect visuel du site ou de la boutique afin de respecter la charte graphique du client et d’être adapté à l’équipement de l’utilisateur, y compris mobile, et à l’ensemble des navigateurs ciblés.
+
+Publier le site vitrine ou la boutique en ligne sur un serveur et le (la) rendre visible sur les moteurs de recherche.
+
+Pratiquer une veille technologique, y compris en anglais, pour résoudre un problème technique ou mettre en œuvre une nouvelle fonctionnalité ainsi que pour s’informer sur la sécurité informatique et les vulnérabilités connues.
+
+Partager le résultat de sa veille avec ses pairs.
+
+Cette compétence s'exerce seul ou en équipe.
+
+L’installation et le paramétrage se font via des pages d’administration des solutions de gestion de contenu ou d’e-commerce.",4
+imiter,"A partir d'un schéma physique de données et dans le contexte d'un besoin client décrit, créer une base de données sur un SGBD désigné. Créer des utilisateurs pour cette base et leur attribuer des droits spécifiés. A partir de données dans un tableau, créer un script d'insertion de données. Être capable de justifier le choix relationnel ou non relationnel retenu à partir du contexte du besoin client. Recopier et utiliser des procédures de sauvegarde et de restauration de la BD.",5
+adapter,"A partir d'un schéma existant dans le contexte d'un besoin client décrit, enrichir le schéma pour prendre en compte un nouveau besoin client. Créer la base de données sur un SGBD désigné. Créer des utilisateurs pour cette base et leur attribuer des droits spécifiés. Créer un jeu données pour cette BD et créer un script pour insérer ces données. Adapter et utiliser des procédures de sauvegarde et de restauration de la BD.",5
+transposer,"À partir d’une demande client nécessitant le stockage de données, organiser les données et définir un schéma physique. A l’aide d’un SGBD, écrire et exécuter le script de création de la base de données, insérer les données de test, définir les droits d'utilisation et prévoir les procédures de sauvegarde et de restauration de la base de données de test. Conformément à l’état de l’art de la sécurité et aux exigences de sécurité identifiées, exprimer le besoin de sécurité du SGDB afin de permettre l’élaboration d’une base de données sécurisée. Rechercher, en utilisant de la documentation en langue française ou anglaise, des solutions pertinentes pour la résolution de problèmes techniques et de nouveaux usages, notamment des bases de données non relationnelles. Partager le résultat de sa veille avec ses pairs.",5
+imiter	,"A partir d'une expression de besoin (mini cahier des charges) et d'un programme avec un composant d'accès aux données déjà existant :
+- J'adapte les requêtes de selection pour requêter mes données (changement du nom des tables ou des collections, changement du nom des attributs)
+- J'adapte les requêtes d'insertion ou de mise à jour de mes données (changement des valeurs, changement du nom des tables ou collections, changement du nom des attributs)
+- J'adapte les requêtes de suppression (changement du nom des tables ou collections, changement du nom des attributs)",6
+adapter	,"A partir d'une expression de besoin (mini cahier des charges) et d'un programme avec au moins un composant d'accès aux données déjà existant :
+- J'ajoute des requêtes de selection pour requêter mes données
+- J'ajoute des requêtes d'insertion ou de mise à jour de mes données
+- J'aoute des requêtes de suppression
+- Je crée de nouveau composants d'accès aux données
+- J'organise mes composants d'accès aux données de manière logique (ex : un composant d'accès par type de données)
+- Je stocke mes données venant de la source de données sous forme d'objet",6
+transposer	,"À partir du dossier de conception technique et d’une bibliothèque d’objets spécialisés dans l’accès aux données, coder, tester et documenter les composants d'accès aux données stockées dans une base de données afin d’opérer des sélections et des mises à jour de données nécessaires à une application informatique et de façon sécurisée. Rechercher, éventuellement en langue anglaise, des solutions innovantes et pertinentes pour la résolution de problèmes techniques et de nouveaux usages, notamment d'accès aux données non relationnelles. Pratiquer une veille technologique sur la sécurité informatique et les vulnérabilités connues. Partager le résultat de sa recherche ou de sa veille avec ses pairs.",6
+imiter	,"A partir d'un back-end existant, je suis en mesure d'apporter des modifications mineures aux traitements réalisés côté serveur.
+Il peut notamment s'agit des traitements liés à la collecte, au traitement ou à la restitution de données.",7
+adapter	,"A partir d'un back-end existant (qu'il ait été ou non réalisé par l'apprenant), je suis en mesure d'apporter des modifications majeurs aux traitements réalisés côté serveur.
+En particulier, je suis en mesure d'ajouter de nouveaux traitements de données existantes voire de collecter ou de restituer de nouvelles données.",7
+transposer	,"À partir des fonctionnalités décrites dans le dossier de conception technique, et dans le respect des bonnes pratiques de développement et de sécurisation d'application web, coder, tester et documenter les traitements côté serveur, afin d’assurer la collecte, le traitement et la restitution d’informations numériques. Publier l’application web sur un serveur. Pratiquer une veille technologique, y compris en anglais, pour résoudre un problème technique ou mettre en œuvre une nouvelle fonctionnalité ainsi que pour s’informer sur la sécurité informatique et les vulnérabilités connues. Partager le résultat de sa veille avec ses pairs.",7
