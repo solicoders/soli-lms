@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 use App\Repositories\pkg_realisation_projets\projectRealisationRepository;
 use App\Models\pkg_realisation_projets\RealisationProjet;
 use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\NiveauCompetence;
 use App\Models\pkg_creation_projets\Projet;
+use App\Models\pkg_creation_projets\TransfertCompetence;
 use App\Models\pkg_rh\Personne;
+use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_realisation_projets\EtatRealisationProjet;
+
 use Illuminate\Support\Facades\Auth;
 
 class Apprenants extends Controller
@@ -24,16 +28,30 @@ class Apprenants extends Controller
     public function index(Request $request)
     {
         $realisationProjets = $this->projectRealisationRepository->paginate();
+
+        $projectID = $this->projectRealisationRepository->all();
+        // dd($projectID);
         $Competences = Competence::all();
         $projects = Projet::all();
+        $pjctid = Projet::pluck('id');
+        
         $EtatRealisationProjet = EtatRealisationProjet::all();
         $userGroupeId = Auth::user()->id;
-        $Personnes = Personne::where('type', 'apprenant')
-            ->where('user_id', $userGroupeId)
-            ->get();
+        // $Personnes = Apprenant::where()
+        //     ('user_id', $userGroupeId)
+        //     ->get();
+        $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
+        $Competence = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
+        $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competence)->pluck('nom');
+
+        // dd($nivauCopetence);
+
         $realisationProjets = RealisationProjet::with('validation')->paginate();
 
-        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes', 'EtatRealisationProjet'));
+        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 
+        // 'Personnes', 
+        'nivauCopetence',
+        'EtatRealisationProjet'));
     }
 
     public function create()

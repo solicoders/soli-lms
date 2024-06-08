@@ -55,50 +55,66 @@
 
                                 </div>
                                 <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Brief projet</th>
-                                            <th>Competences</th>
-                                            <th>Etat de réalisation</th>
-                                            <th>Date debut</th> 
-                                            <th>Date de fin</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                        
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        @foreach($realisationProjets as $project)
-                                       
-                                            <td>
-                                                {{ $project->projet->titre }}
-                                               
-                                            </td>
-                                            @endforeach
-                                            <td>
-                                                <ul>
-                                                    <li>C1. Maquetter une application mobile <span>(Imiter)</span></li>
-                                                    <li>C2. Manipuler une base de données <span>(Adapter)</span> </li>
-                                                </ul>
-                                            </td>
-                                            <td class="etat">
-                                                <span class="badge badge-info">En cours</span>
-                                            </td>
-                                            <td>2021-12-01</td>
-                                            <td>2021-12-8</td>
-                                            <td class="text-center">
+    <thead>
+        <tr>
+            <th>Brief projet</th>
+            <th>Competences</th>
+            <th>Etat de réalisation</th>
+            <th>Date debut</th>
+            <th>Date de fin</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($realisationProjets as $project)
+        <tr>
+            <td>{{ $project->projet->titre }}</td>
+            <td>
+            @foreach($project->projet->competences as $competence)
+            @if(strlen($competence->nom) > 20)
+        <span>{{ substr($competence->nom, 0, 20) }} <span>...</span></span>
+        <a href="#" class="expand-content">Read more</a>
+        <span class="full-content" style="display: none;">{{ $competence->nom }}</span>
+    @else
+        <span>{{ $competence->nom }}</span>
+    @endif
+        @endforeach
+        
+<script>
+    document.querySelectorAll('.expand-content').forEach(item => {
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            item.style.display = 'none';
+            item.nextElementSibling.style.display = 'inline';
+        });
+    });
+</script>
+    </td>
+        <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
+    <span class="badge badge-danger">A faire</span>
+@elseif($project->EtatRealisationProjet->etat == 'Pending')
+    <span class="badge badge-secondary">En pause</span>
+@elseif($project->EtatRealisationProjet->etat == 'In Progress')
+    <span class="badge badge-info">En cours</span>
+@elseif($project->EtatRealisationProjet->etat == 'Completed')
+    <span class="badge badge-success">Terminer</span>
+@endif</td>
+            <td>{{ $project->date_debut_realisation }}</td>
+            <td>{{ $project->date_fin_realisation }}</td>
+
+            <td class="text-center">
                                                 <a href="show.php" class='btn btn-default btn-sm'>
                                                     <i class="far fa-eye"></i>
                                                 </a>
                                                 <a href="edit.php" class="btn btn-default btn-sm" >
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-                                            </td>
-                                            
-
-                                        </tr>
-                                    </tbody>
-                                </table>
+            </td>
+            <!-- Add more columns if needed -->
+        </tr>
+        @endforeach
+    </tbody>
+</table>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">

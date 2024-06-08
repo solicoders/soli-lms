@@ -31,44 +31,55 @@ class ProjectRealisationTest extends TestCase
         $this->assertNotNull($realisationProjets);
     }
 
-    // public function test_create()
-    // {
-    //     $this->actingAs($this->user);
-    //     $realisationProjetData = [
-    //         'name' => 'Project Realisation Test',
-    //         'description' => 'Description for Project Realisation',
-    //     ];
-    //     $realisationProjet = $this->realisationProjetRepository->create($realisationProjetData);
-    //     $this->assertEquals($realisationProjetData['name'], $realisationProjet->name);
-    // }
+    public function test_create()
+    {
+        $this->actingAs($this->user);
+        $realisationProjetData = [
+            // 'name' => 'Project Realisation Test',
+            // 'description' => 'Description for Project Realisation',
+            'date_debut_realisation' => '2024-05-27',
+            'date_fin_realisation' => '2024-06-27',
+            'projet_id' => 1, // Update with the appropriate project ID
+            'etat_realisation_projet_id' => 1, // Update with the appropriate state ID
+            'personne_id' => null, // Update with the appropriate person ID if needed
+        ];
+        $realisationProjet = $this->realisationProjetRepository->create($realisationProjetData);
+        $this->assertEquals($realisationProjetData['date_debut_realisation'], $realisationProjet->date_debut_realisation);
+    }
 
-    // public function test_create_project_realisation_already_exist()
-    // {
-    //     $this->actingAs($this->user);
-
-    //     $realisationProjet = RealisationProjet::factory()->create();
-    //     $realisationProjetData = [
-    //         'name' => $realisationProjet->name,
-    //         'description' => 'Description for Project Realisation',
-    //     ];
-
-    //     try {
-    //         $realisationProjet = $this->realisationProjetRepository->create($realisationProjetData);
-    //         $this->fail('Expected ProjectRealisationAlreadyExistException was not thrown');
-    //     } catch (ProjectRealisationAlreadyExistException $e) {
-    //         $this->assertEquals(__('pkg_realisation_projets/message.createProjectRealisationException'), $e->getMessage());
-    //     } catch (\Exception $e) {
-    //         $this->fail('Unexpected exception was thrown: ' . $e->getMessage());
-    //     }
-    // }
+    public function test_create_project_realisation_already_exist()
+    {
+        $this->actingAs($this->user);
+    
+        $realisationProjet = RealisationProjet::factory()->create();
+        $realisationProjetData = [
+            'date_debut_realisation' => '2024-05-27',
+            'date_fin_realisation' => '2024-06-27',
+            'projet_id' => 1, // Update with a valid project ID that exists in the `projets` table
+            'etat_realisation_projet_id' => 1, // Update with the appropriate state ID
+            'personne_id' => 1, // Update with the appropriate person ID if needed
+        ];
+    
+        try {
+            $realisationProjet = $this->realisationProjetRepository->create($realisationProjetData);
+            $this->fail('Expected ProjectRealisationAlreadyExistException was not thrown');
+        } catch (ProjectRealisationAlreadyExistException $e) {
+            $this->assertEquals(__('pkg_realisation_projets/message.createProjectRealisationException'), $e->getMessage());
+        } catch (\Exception $e) {
+            $this->fail('Unexpected exception was thrown: ' . $e->getMessage());
+        }
+    }
 
     // public function test_update()
     // {
     //     $this->actingAs($this->user);
     //     $realisationProjet = RealisationProjet::factory()->create();
     //     $realisationProjetData = [
-    //         'name' => 'Updated Project Realisation',
-    //         'description' => 'Updated description',
+    //         'date_debut_realisation' => '2024-05-27',
+    //         'date_fin_realisation' => '2024-06-27',
+    //         'projet_id' => 1, // Update with the appropriate project ID
+    //         'etat_realisation_projet_id' => 1, // Update with the appropriate state ID
+    //         'personne_id' => null, // Update with the appropriate person ID if needed
     //     ];
     //     $this->realisationProjetRepository->update($realisationProjet->id, $realisationProjetData);
     //     $this->assertDatabaseHas('realisation_projets', $realisationProjetData);
@@ -86,8 +97,11 @@ class ProjectRealisationTest extends TestCase
     // {
     //     $this->actingAs($this->user);
     //     $realisationProjetData = [
-    //         'name' => 'search test',
-    //         'description' => 'search project realisation test',
+    //         'date_debut_realisation' => '2024-05-27',
+    //         'date_fin_realisation' => '2024-06-27',
+    //         'projet_id' => 1, // Update with the appropriate project ID
+    //         'etat_realisation_projet_id' => 1, // Update with the appropriate state ID
+    //         'personne_id' => null, // Update with the appropriate person ID if needed
     //     ];
     //     $this->realisationProjetRepository->create($realisationProjetData);
     //     $searchValue = 'search test';

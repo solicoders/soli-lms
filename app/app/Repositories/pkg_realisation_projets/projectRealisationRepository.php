@@ -57,11 +57,11 @@ class projectRealisationRepository extends BaseRepository
         $projetId = $data['projet_id'];
         $existingRealisation = $this->model->where('projet_id', $projetId)->exists();
 
-        if ($existingRealisation) {
-            throw new RealisationProjetAlreadyExistException("A RealisationProjet with this project ID already exists.");
-        } else {
+        // if ($existingRealisation) {
+        //     throw new RealisationProjetAlreadyExistException("A RealisationProjet with this project ID already exists.");
+        // } else {
             return parent::create($data);
-        }
+        // }
     }
 
     /**
