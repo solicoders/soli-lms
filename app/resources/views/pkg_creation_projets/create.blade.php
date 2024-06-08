@@ -207,17 +207,19 @@
                                                     <select name="technologie_ids[]" id="technologies" multiple>
                                                         @foreach($technologies as $technology)
                                                             <option value="{{ $technology->id }}" 
-                                                                    @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
-                                                                        @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
-                                                                            @if(in_array($technology->id, $transfertCompetence->technologies->pluck('id')->toArray()))
-                                                                                selected
-                                                                            @endif
-                                                                        @endforeach
-                                                                    @endif>
-                                                                {{ $technology->nom }}
+                                                                @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
+                                                                    @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                        @if($transfertCompetence->technologies->contains($technology->id))
+                                                                            selected
+                                                                        @endif
+                                                                    @endforeach
+                                                                @endif
+                                                            >
+                                                            {{ $technology->nom }}
                                                             </option>
                                                         @endforeach
                                                     </select>
+                                                    
                                                     @error('technologie_ids.*')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror

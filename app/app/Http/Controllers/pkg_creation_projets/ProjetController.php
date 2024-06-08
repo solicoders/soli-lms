@@ -242,6 +242,7 @@ class ProjetController extends Controller
     
         // 4. Update livrables (if any)
         if (isset($validatedData['livrable'])) {
+            $livrableIds = []; // Keep track of existing livrables by their IDs
             foreach ($validatedData['livrable'] as $index => $livrable) {
                 $livrableData = [
                     'titre' => $livrable,
@@ -250,18 +251,25 @@ class ProjetController extends Controller
                     'nature_livrable_id' => $validatedData['livrable_nature'][$index],
                     'projet_id' => $projet->id,
                 ];
+    
                 if (isset($validatedData['livrable_id'][$index])) {
                     // Update existing livrable
-                    $this->livrableRepository->update($validatedData['livrable_id'][$index], $livrableData);
+                    $livrableId = $validatedData['livrable_id'][$index];
+                    $this->livrableRepository->update($livrableId, $livrableData);
+                    $livrableIds[] = $livrableId; // Add to the list of existing IDs
                 } else {
                     // Create new livrable
-                    $this->livrableRepository->create($livrableData);
+                    $newLivrable = $this->livrableRepository->create($livrableData);
+                    $livrableIds[] = $newLivrable->id; // Add to the list of existing IDs
                 }
             }
+            // Delete any livrables that were not included in the update
+            $projet->livrables()->whereNotIn('id', $livrableIds)->delete(); 
         }
     
         // 5. Update resources (if any)
         if (isset($validatedData['ressource_nom'])) {
+            $ressourceIds = []; // Keep track of existing resources
             foreach ($validatedData['ressource_nom'] as $index => $ressource_nom) {
                 $ressourceData = [
                     'nom' => $ressource_nom,
@@ -269,18 +277,25 @@ class ProjetController extends Controller
                     'lien' => $validatedData['ressource_lien'][$index] ?? null,
                     'projet_id' => $projet->id,
                 ];
+    
                 if (isset($validatedData['ressource_id'][$index])) {
                     // Update existing resource
-                    $this->resourceRepository->update($validatedData['ressource_id'][$index], $ressourceData);
+                    $ressourceId = $validatedData['ressource_id'][$index];
+                    $this->resourceRepository->update($ressourceId, $ressourceData);
+                    $ressourceIds[] = $ressourceId; // Add to the list of existing IDs
                 } else {
                     // Create new resource
-                    $this->resourceRepository->create($ressourceData);
+                    $newRessource = $this->resourceRepository->create($ressourceData);
+                    $ressourceIds[] = $newRessource->id; // Add to the list of existing IDs
                 }
             }
+            // Delete any resources that were not included in the update
+            $projet->resources()->whereNotIn('id', $ressourceIds)->delete();
         }
     
- // 6. Update TransfertCompetence records
- if (isset($validatedData['competences'])) {
+// 6. Update TransfertCompetence records
+if (isset($validatedData['competences'])) {
+    $transfertCompetenceIds = []; // Keep track of existing TransfertCompetence records
     foreach ($validatedData['competences'] as $competence_id) {
         // Get the appreciation ID directly from the request
         $appreciation_id = $request->input('competence_' . $competence_id . '_appreciation');
@@ -291,18 +306,34 @@ class ProjetController extends Controller
             'appreciation_id' => $appreciation_id,
         ];
 
+        $transfertCompetenceId = null; // Initialize the variable
+
         if (isset($validatedData['transfert_competence_id'][$competence_id])) {
             // Update existing TransfertCompetence
-            $this->transfercompetenceRepository->update($validatedData['transfert_competence_id'][$competence_id], $transfertCompetenceData);
+            $transfertCompetenceId = $validatedData['transfert_competence_id'][$competence_id];
+            $this->transfercompetenceRepository->update($transfertCompetenceId, $transfertCompetenceData);
+            $transfertCompetenceIds[] = $transfertCompetenceId; // Add to the list of existing IDs
         } else {
             // Create new TransfertCompetence
-            $this->transfercompetenceRepository->create($transfertCompetenceData);
+            $newTransfertCompetence = $this->transfercompetenceRepository->create($transfertCompetenceData);
+            $transfertCompetenceId = $newTransfertCompetence->id; // Assign the newly created ID
+            $transfertCompetenceIds[] = $transfertCompetenceId; // Add to the list of existing IDs
+        }
+
+        // Update or attach technologies (if any) to the TransfertCompetence
+        if (isset($validatedData['technologie_ids'][$competence_id])) {
+            $technologieIds = $validatedData['technologie_ids'][$competence_id];
+            $transfertCompetence = $this->transfercompetenceRepository->find($transfertCompetenceId); // Use the defined ID
+            $transfertCompetence->technologies()->sync($technologieIds);
         }
     }
+
+
+    // Delete any TransfertCompetence records that were not included in the update
+    $projet->transfertCompetences()->whereNotIn('id', $transfertCompetenceIds)->delete(); 
 }
-    
-        // 7. Update apprentice records
-        $this->projectRealisationRepository->where('projet_id', $projet->id)->delete();
+
+        // 7. Update apprentice records (RealisationProjets)
         if (isset($validatedData['apprenants'])) {
             foreach ($validatedData['apprenants'] as $apprenantId) {
                 $realisationProjetData = [
@@ -313,8 +344,9 @@ class ProjetController extends Controller
                 $this->projectRealisationRepository->create($realisationProjetData);
             }
         }
-          // 8. Redirect with a success message
-          return redirect()->route('projets.index')->with('success', 'Le projet a été ajouté avec succès.');
+    
+        // 8. Redirect with a success message
+        return redirect()->route('projets.index')->with('success', 'Le projet a été mis à jour avec succès.');
     }
     
     
