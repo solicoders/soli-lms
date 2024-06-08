@@ -17,6 +17,7 @@
         </p>
     </a>
 </li>
+<<<<<<< HEAD
 
 @include('layouts.pkg_creation_projets.gestionprojets')
 
@@ -25,4 +26,7 @@
 @include('layouts.pkg_suivi.pkg_suivi')
 
 @include('layouts.pkg_competences.CompetencesMenu')
+=======
+@include('layouts.pkg_rh.RHMenu')
+>>>>>>> 2f111a44 (up)
 {{-- @endcan --}}

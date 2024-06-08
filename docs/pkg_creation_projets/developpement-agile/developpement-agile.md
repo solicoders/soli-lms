@@ -5,7 +5,11 @@ package : pkg_creation_projets
 order: 330
 ---
 
+<<<<<<< HEAD
 ## Processus de développement et méthodes
+=======
+## Processus de développement
+>>>>>>> 2f111a44 (up)
 {:class="sectionHeader"}
 
 <!-- note -->
@@ -71,6 +75,21 @@ Le Design Thinking,  approche centrée sur l'utilisateur,  nourrit chaque étape
 En combinant 2TUP et Design Thinking,  nous nous assurons de développer une plateforme  qui répond  non seulement  aux besoins fonctionnels,  mais aussi aux attentes et aux préférences des utilisateurs,  offrant ainsi une expérience optimale. 
 
 <!-- new slide -->
+<<<<<<< HEAD
+=======
+
+## La Construction Logicielle : Plans et Outils
+{:class="sectionHeader"}
+
+<!-- note -->
+
+Le développement logiciel est comparable à la construction d'un chef-d'œuvre numérique. Il s'agit d'une série d'étapes méticuleusement orchestrées, une feuille de route pour donner vie à un système ou le remodeler. Ce chapitre vous emmène dans un voyage à travers deux approches puissantes : 2TUP et Design Thinking, chacune ayant son propre style et expertise unique.
+
+
+<!-- new slide -->
+
+## Le Développement Agile : Une Approche Adaptative
+>>>>>>> 2f111a44 (up)
 
 layout: default
 chapitre: true

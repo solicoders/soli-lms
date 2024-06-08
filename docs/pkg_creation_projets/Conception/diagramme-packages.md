@@ -21,14 +21,22 @@ La conception d'une interface utilisateur intuitive et efficace est essentielle 
 ### Diagramme de classes 
 
 ![Conception - pkg_creation_projets ](/soli-lms/diagrammes/pkg_creation_projets/classes_pkg_creation_projets.svg){:width="100%"}
+<<<<<<< HEAD
 *Conception - pkg_creation_projets*
+=======
+**Conception - pkg_creation_projets**
+>>>>>>> 2f111a44 (up)
 
 <!-- new slide -->
 
 
 ### Diagramme des packages 
 
+<<<<<<< HEAD
 ![Conception - Diagramme des packages ](/soli-lms/diagrammes/pkg_global/digramme_package.svg){:width="70%"}
+=======
+![Conception - Diagramme des packages ](/soli-lms/diagrammes/pkg_creation_projets/diagramme_pckages.svg){:width="70%"}
+>>>>>>> 2f111a44 (up)
 *Conception - plateforme d'apprentissage*
 
 <!-- new slide -->

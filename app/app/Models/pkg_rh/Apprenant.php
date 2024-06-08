@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apprenant extends Personne
 {
+<<<<<<< HEAD
     protected $table = 'personnes';
     use HasFactory, MorphType;
     protected $fillable = [
@@ -44,4 +45,7 @@ class Apprenant extends Personne
         return $this->belongsTo(Ville::class);
     }
 
+=======
+    
+>>>>>>> 2f111a44 (up)
 }

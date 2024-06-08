@@ -10,8 +10,13 @@ use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Formateur;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
+<<<<<<< HEAD
 use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+=======
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+>>>>>>> 2f111a44 (up)
 
 class PersonneSeeder extends Seeder
 {
@@ -72,10 +77,14 @@ class PersonneSeeder extends Seeder
                 //     $user->assignRole(User::RESPONSABLE);
                 // }
 
+<<<<<<< HEAD
                 
                 $this->model = $data['5'] == "apprenant" ? new Apprenant : ($data['5'] == "formateur" ? new Formateur : new Personne);
                 
                 $this->model->create([
+=======
+                Personne::create([
+>>>>>>> 2f111a44 (up)
                     "prenom"=>$data['0'],
                     "nom"=>$data['1'],
                     "nom_arab"=>$data['2'],

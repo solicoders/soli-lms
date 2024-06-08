@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 namespace App\Repositories\pkg_rh;
 
@@ -27,10 +28,26 @@ class FormateurRepository extends BaseRepository
      *
      * @return array
      */
+=======
+namespace App\Repositories\pkg_rh;
+
+use App\Repositories\BaseRepository;
+use Illuminate\Database\Eloquent\Model;
+use App\Exceptions\pkg_rh\FormateureException;
+use App\Models\pkg_rh\Formateur; 
+
+class FormateurRepository extends BaseRepository
+{
+    protected $fieldsSearchable = [
+        'name'
+    ];
+
+>>>>>>> 2f111a44 (up)
     public function getFieldsSearchable(): array
     {
         return $this->fieldsSearchable;
     }
+<<<<<<< HEAD
 
     /**
      * Constructeur de la classe ProjetRepository.
@@ -38,22 +55,36 @@ class FormateurRepository extends BaseRepository
     public function __construct()
     {
         $this->type = "formateur";
+=======
+    public function __construct()
+    {
+>>>>>>> 2f111a44 (up)
         parent::__construct(new Formateur());
     }
 
     public function create(array $data)
     {
         $nom = $data['nom'];
+<<<<<<< HEAD
         $preom = $data['prenom'];
 
         $existingFormateur = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
         if ($existingFormateur) {
             throw FormateurException::AlreadyExistFormateur();
         }else{
+=======
+
+        $existingFormateure =  $this->model->where('nom', $nom)->exists();
+
+        if ($existingFormateure) {
+            throw FormateureException::AlreadyExistFormateure();
+        } else {
+>>>>>>> 2f111a44 (up)
             return parent::create($data);
         }
     }
 
+<<<<<<< HEAD
 
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
@@ -79,3 +110,18 @@ class FormateurRepository extends BaseRepository
         })->paginate($perPage);
     }
 }
+=======
+    public function update($id, array $data)
+    {
+        $nom = $data['nom'];
+
+        $existingFormateure =  $this->model->where('nom', $nom)->where('id', '!=', $id)->exists();
+
+        if ($existingFormateure) {
+            throw FormateureException::AlreadyExistFormateure();
+        } else {
+            return parent::update($id, $data);
+        }
+    }
+}
+>>>>>>> 2f111a44 (up)
