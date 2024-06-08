@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\pkg_rh;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Formateur;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
-use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
-use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
-use App\Repositories\pkg_rh\ApprenantRepositorie;
+use App\Repositories\pkg_rh\GroupeRepository;
 use App\Repositories\pkg_rh\GroupRepositorie;
+use App\Repositories\pkg_rh\ApprenantRepositorie;
+use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
+use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
 
 
 
@@ -22,7 +23,7 @@ class PersonneController extends Controller
     public function index(Request $request)
     {
         
-        $view = 'pkg_rh.'. $this->getType() .'.index';
+        $view = 'pkg_rh.Personnes.index';
         $type = $this->getType();
 
         if ($request->ajax()) {
@@ -34,7 +35,7 @@ class PersonneController extends Controller
                 return view($view, compact('personnes', 'type'))->render();
             }
         }
-        $personnes = $this->getRepositorie()->paginate();
+        $personnes = $this->getRepository()->paginate();
         return view($view, compact('personnes', 'type'));
     }
 
@@ -42,9 +43,8 @@ class PersonneController extends Controller
     public function create()
     {
         $type = $this->getType();
-        $GroupRepositorie = new GroupRepositorie();
-
-        $groupes = $GroupRepositorie->paginate();
+        $GroupRepositorie = new GroupeRepository();
+        $groupes = $GroupRepositorie->all();
         return view('pkg_rh.personne.create',compact('type','groupes'));
     }
 
@@ -53,7 +53,7 @@ class PersonneController extends Controller
         try {
             $data = $request->all();
             $type = $this->getType();
-            $personne =  $this->getRepositorie()->create($data);
+            $personne =  $this->getRepository()->create($data);
             return redirect()->route($type . '.index')->with('success', $type . ' a été ajouté avec succès');
         } catch (FormateurAlreadyExistException $e) {
             return back()->withInput()->withErrors(['personne_exists' =>__('pkg_rh/personne.formateurException')]);
@@ -67,14 +67,14 @@ class PersonneController extends Controller
     public function show($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepositorie()->find($id);
-        return view('pkg_rh.personne.show', compact('personne'))->with('type', $type);
+        $personne = $this->getRepository()->find($id);
+        return view('pkg_rh.Personnes.show', compact('personne'))->with('type', $type);
     }
 
     public function edit($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepositorie()->find($id);
+        $personne = $this->getRepository()->find($id);
         $GroupRepositorie = new GroupRepositorie();
         $groupes = $GroupRepositorie->paginate();
         return view('pkg_rh.personne.edit', compact('personne','type','groupes'));
@@ -84,18 +84,18 @@ class PersonneController extends Controller
     {
         $data = $request->all();
         $type = $this->getType();
-        $personne = $this->getRepositorie()->update($id, $data);
+        $personne = $this->getRepository()->update($id, $data);
         return back()->with('success', $type.' a été modifiée avec succès');
     }
 
     public function delete(Request $request ,$id)
     {
         $type = $this->getType();
-        $personne = $this->getRepositorie()->delete($id);
+        $personne = $this->getRepository()->delete($id);
         return redirect()->route($type.'.index')->with('success', $type.' a été supprimée avec succès');
     }
 
-    private function getRepositorie(){
+    private function getRepository(){
         $route = Route::getCurrentRoute()->getName();
         $type = explode('.',$route);
         $model = str::ucfirst($type[0]);

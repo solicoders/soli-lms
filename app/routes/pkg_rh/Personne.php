@@ -1,9 +1,15 @@
 <?php
 
+use App\Models\User;
+use App\Models\pkg_rh\Personne;
+use App\Models\pkg_rh\Formateur;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pkg_rh\PersonneController;
 
 // Namespace all routes within this file
+Route::get('/tests', function () { return Personne::all()->where('type', User::FORMATEUR);
+});
+
 Route::middleware('auth')->group(function () {
         Route::prefix('Apprenant')->group(function () {
             Route::get('/', [PersonneController::class, 'index'])->name('Apprenant.index');

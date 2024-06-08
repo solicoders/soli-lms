@@ -1,49 +1,81 @@
 <?php
+
 namespace App\Repositories\pkg_rh;
 
 use App\Repositories\BaseRepository;
-use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\pkg_rh\FormateureException;
-use App\Models\pkg_rh\Formateur; 
+use App\Models\pkg_rh\Formateur;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
+
 
 class FormateurRepository extends BaseRepository
 {
+    protected $type;
+
+    /**
+     * Les champs de recherche disponibles pour les projets.
+     *
+     * @var array
+     */
     protected $fieldsSearchable = [
-        'name'
+        'nom','prenom','type' ,'groupe_id'
     ];
 
+    /**
+     * Renvoie les champs de recherche disponibles.
+     *
+     * @return array
+     */
     public function getFieldsSearchable(): array
     {
         return $this->fieldsSearchable;
     }
+
+    /**
+     * Constructeur de la classe ProjetRepository.
+     */
     public function __construct()
     {
+        $this->type = "formateur";
         parent::__construct(new Formateur());
     }
 
     public function create(array $data)
     {
         $nom = $data['nom'];
-
-        $existingFormateure =  $this->model->where('nom', $nom)->exists();
-
-        if ($existingFormateure) {
-            throw FormateureException::AlreadyExistFormateure();
+        $preom = $data['prenom'];
+        
+        $existingFormateur = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
+        
+        if ($existingFormateur) {
+            throw FormateurAlreadyExistException::createFormateur();
         } else {
+           
             return parent::create($data);
         }
     }
 
-    public function update($id, array $data)
+    public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
-        $nom = $data['nom'];
-
-        $existingFormateure =  $this->model->where('nom', $nom)->where('id', '!=', $id)->exists();
-
-        if ($existingFormateure) {
-            throw FormateureException::AlreadyExistFormateure();
+        if ($this->type !== null) {
+            return $this->model->where('type', $this->type)->paginate($perPage, $columns);
         } else {
-            return parent::update($id, $data);
+            return $this->model->paginate($perPage, $columns);
         }
+    }
+
+    /**
+     * Recherche apprenants correspondants aux critères spécifiés.
+     *
+     * @param mixed $searchableData Données de recherche.
+     * @param int $perPage Nombre d'éléments par page.
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function searchData($searchableData, $perPage = 10)
+    {
+        return $this->model->where('type', 'Formateur')->where(function($query) use ($searchableData) {
+            $query->where('nom', 'like', '%' . $searchableData . '%')
+                  ->orWhere('prenom', 'like', '%' . $searchableData . '%');
+        })->paginate($perPage);
     }
 }

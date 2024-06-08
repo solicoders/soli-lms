@@ -47,7 +47,6 @@ class PersonneSeeder extends Seeder
             $date_inscription = $data['11'] == 'NULL' ? null : $data['11'];
             $nivaeu_scholaire_id = $data['15'] == 'NULL' ? null : $data['15'];
             $lieu_naissance_id = $data['16'] == 'NULL' ? null : $data['16'];
-            $groupe_id = $data['17'] == 'NULL' ? null : $data['17'];
             $specialite_id = $data['18'] == 'NULL' ? null : $data['18'];
 
             if (!$firstline) {
@@ -86,7 +85,7 @@ class PersonneSeeder extends Seeder
                     "ville_id"=>$data['14'],
                     "niveau_scolaire_id"=>$nivaeu_scholaire_id,
                     "lieu_naissance_id"=>$lieu_naissance_id,
-                    "groupe_id"=>$groupe_id,
+                    "groupe_id"=>$data['17'],
                     "user_id" => $user->id,
                     "specialite_id" => $specialite_id,
                     'updated_at' => Carbon::now(),
