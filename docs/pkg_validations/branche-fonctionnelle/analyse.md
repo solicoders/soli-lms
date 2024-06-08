@@ -13,17 +13,21 @@ Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en uti
 *Figure 7 : Carte d'empathie formateur*
 
 ## Définir le problème
-Le centre **Solicode** manque d'un système efficace de gestion des projets de formation, ce qui entraîne des difficultés dans la mise en place de critères uniformes d'évaluation, l'intégration des outils de gestion et de communication, et la cohérence des appréciations de validation des compétences des apprenants.
+**Problèmes Identifiés par les Formateurs**
+- **Manque de Critères Uniformes** : Les formateurs expriment un besoin de critères de validation plus uniformes pour assurer une équité dans les retours et évaluations des projets.
+- **Outils de Gestion et de Communication Inadéquats** : Les formateurs utilisent divers outils (GitHub, Google Drive, Trello, Excel) qui ne sont pas toujours intégrés de manière efficace, rendant la gestion des projets et la communication avec les apprenants parfois laborieuse.
+- **Variabilité des Appreciattion de Validation** : La diversité des appreciattions de validation ("Basic", "Standard", "Premium", "Livecoding", etc.) peut créer de la confusion et un manque de cohérence dans l'validation des compétences des apprenants.
 
 
 ## Idéation
 
-Créer une application web conviviale pour le centre Solicode qui permettra :
+**Application Web de validation  :**
+- Développer une application web dédiée à la validation des projets des apprenants.
+- Permettre aux formateurs d'évaluer chaque compétence ciblée dans un projet ou un brief.
+- Intégrer des niveaux de validation personnalisables (1, 2, 3 ou Basic, Standard, Premium).
 
-- La validation des projets des apprenants.
-- Aux formateurs de valider chaque compétence ciblée dans un projet ou un brief.
-- L'intégration de appréciation de validation personnalisables.
-- L'inclusion de champs permettant aux formateurs d'ajouter des remarques et des commentaires détaillés.
+**Système de Commentaires Détailés :**
+- Inclure des champs pour que les formateurs puissent ajouter des remarques et des commentaires détaillés.
 
 
 ## Diagramme de cas d'utilisation

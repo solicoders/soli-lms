@@ -17,22 +17,25 @@ use App\Repositories\pkg_rh\GroupRepositorie;
 
 class PersonneController extends Controller
 {
-   
+
+
     public function index(Request $request)
     {
         
-       
+        $view = 'pkg_rh.'. $this->getType() .'.index';
         $type = $this->getType();
+
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(" ", "%", $searchValue);
                 $personnes = $this->searchData($searchQuery);
-                return view('pkg_rh.personne.index', compact('personnes', 'type'))->render();
+
+                return view($view, compact('personnes', 'type'))->render();
             }
         }
         $personnes = $this->getRepositorie()->paginate();
-        return view('pkg_rh.personne.index', compact('personnes', 'type'));
+        return view($view, compact('personnes', 'type'));
     }
 
 
@@ -96,13 +99,13 @@ class PersonneController extends Controller
         $route = Route::getCurrentRoute()->getName();
         $type = explode('.',$route);
         $model = str::ucfirst($type[0]);
-        $modelRepository = $model.'Repositorie';
+        $modelRepository = $model.'Repository';
         $path = "\\App\\Repositories\\pkg_rh\\".$modelRepository;
 
         if($model === 'Formateur'){
-            $repository = new $path(new Formateur);
+            $repository = new $path();
         }elseif($model === 'Apprenant'){
-            $repository = new $path(new Apprenant);
+            $repository = new $path();
         }
         return $repository;
     }
@@ -112,4 +115,5 @@ class PersonneController extends Controller
         $type = explode('.',$route);
         return $type[0];
     }
+
 }

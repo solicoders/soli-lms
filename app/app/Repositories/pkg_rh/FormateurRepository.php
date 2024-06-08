@@ -4,9 +4,9 @@ namespace App\Repositories\pkg_rh;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\pkg_rh\FormateureException;
-use App\Models\pkg_rh\Formateur;
+use App\Models\pkg_rh\Formateur; 
 
-class FormateureRepository extends BaseRepository
+class FormateurRepository extends BaseRepository
 {
     protected $fieldsSearchable = [
         'name'
