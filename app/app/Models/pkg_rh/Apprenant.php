@@ -9,4 +9,5 @@ use App\Models\pkg_rh\Personne;
 
 class Apprenant extends Personne
 {
+    
 }

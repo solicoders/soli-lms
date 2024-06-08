@@ -88,6 +88,11 @@ npm run build
         - apprenant
 - **Formateures:**
     - **Emails:**
-        - Formateur@solicode.co
+        - Fouad@solicode.co
     - **Password**
-        - Formateur
+        - formateur
+- **Responsable:**
+    - **Emails:**
+        - hammouda@solicode.co
+    - **Password**
+        - responsable

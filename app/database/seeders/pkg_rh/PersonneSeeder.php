@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class PersonneSeeder extends Seeder
 {
@@ -35,6 +37,18 @@ class PersonneSeeder extends Seeder
                     'updated_at' => Carbon::now(),
                     'created_at' => Carbon::now()
                 ]);
+
+                // $data['5'] has the type of user
+                $user->assignRole($data['5']);
+
+                // if ($data['5'] == 'formateur') {
+                //     $user->assignRole(User::FORMATEUR);
+                // }elseif ($data['5'] == 'apprenant') {
+                //     $user->assignRole(User::APPRENANT);
+                // }elseif ($data['5'] == 'responsable') {
+                //     $user->assignRole(User::RESPONSABLE);
+                // }
+
                 Personne::create([
                     "prenom"=>$data['0'],
                     "nom"=>$data['1'],
@@ -60,5 +74,26 @@ class PersonneSeeder extends Seeder
             }
             $firstline = false;
         }
+
+
+        // Seed and Add Permissions to responsable and as well to Formateures And Apprenants
+        
+        $csvFile = fopen(base_path("database/data/pkg_rh/Permissions.csv"), "r");
+        $firstline = true;
+        $i = 0;
+
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+
+            $existingPermission = Permission::where('name', $data['0'])->first();
+
+            if (!$firstline) {
+                if (!$existingPermission) {
+                    Permission::create(['name' => $data['0'], 'guard_name' => 'web']);
+                }
+            }
+        }
+
+        $firstline = false;
+
     }
 }
