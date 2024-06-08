@@ -69,6 +69,8 @@ class ProjetController extends Controller
             'transfertCompetences.competence',
             'transfertCompetences.appreciation'
         ])->paginate();
+        $competences = Competence::all();
+
 
 
         if ($request->ajax()) {
@@ -79,7 +81,7 @@ class ProjetController extends Controller
                 return view('pkg_creation_projets.index', compact('projetData'))->render();
             }
         }
-        return view('pkg_creation_projets.index', compact('projetData'));
+        return view('pkg_creation_projets.index', compact('projetData','competences'));
     }
 
     public function create()
@@ -140,20 +142,13 @@ if (isset($validatedData['competences'])) {
             'competence_id' => $competence_id,
             'appreciation_id' => $appreciation_id,
         ];
+
         $transfertCompetence = $this->transfercompetenceRepository->create($transfertCompetenceData);
 
-        // Update technologies for the current TransfertCompetence
-        if (isset($validatedData['technologie_ids'])) {
-            foreach ($validatedData['technologie_ids'] as $technologie_id) {
-                $technologieCompetenceData = [
-                    'transfert_competence_id' => $transfertCompetence->id,
-                    'technologie_id' => $technologie_id,
-                ];
-                $this->technologiecompetenceRepository->Create(
-                    ['transfert_competence_id' => $transfertCompetence->id, 'technologie_id' => $technologie_id],
-                    $technologieCompetenceData
-                );
-            }
+        // Associate technologies with the TransfertCompetence
+        if (isset($validatedData['technologie_ids'][$competence_id])) {
+            $technologieIds = $validatedData['technologie_ids'][$competence_id];
+            $transfertCompetence->technologies()->attach($technologieIds); // Use attach to associate
         }
     }
 }
@@ -178,11 +173,12 @@ if (isset($validatedData['competences'])) {
 
     public function show(Request $request, $id)
     {
-        $projet =  $this->projetRepository->with([
+        $projet = $this->projetRepository->with([
             'livrables.natureLivrable',
             'resources',
             'transfertCompetences.competence',
-            'transfertCompetences.appreciation'
+            'transfertCompetences.appreciation',
+            'transfertCompetences.technologies' // Add this line
         ])->findOrFail($id);
         return view('pkg_creation_projets.show', compact('projet'));
     }
@@ -192,12 +188,12 @@ if (isset($validatedData['competences'])) {
         $dataToEdit = $this->projetRepository->with([
             'livrables.natureLivrable', // Eager load natureLivrable relationship
             'resources',
-            'transfertCompetences.competence', 
+            'transfertCompetences.competence',
             'transfertCompetences.appreciation',
             'transfertCompetences.technologies',
             'realisationProjets.personne' // Load apprentices through RealisationProjet
         ])->findOrFail($id);
-    
+
         // Convert date strings to DateTime objects if they are not already
         if (!$dataToEdit->dateDebut instanceof \DateTime) {
             $dataToEdit->dateDebut = new \DateTime($dataToEdit->dateDebut);
@@ -205,45 +201,45 @@ if (isset($validatedData['competences'])) {
         if (!$dataToEdit->dateFin instanceof \DateTime) {
             $dataToEdit->dateFin = new \DateTime($dataToEdit->dateFin);
         }
-    
+
         // Format dates
         $dateDebutFormatted = $dataToEdit->dateDebut->format('Y-m-d');
         $dateFinFormatted = $dataToEdit->dateFin->format('Y-m-d');
-    
-        // Fetch ALL apprentices 
-        $apprenants = Personne::whereIn('type', ['Apprenant'])->get(); 
+
+        // Fetch ALL apprentices
+        $apprenants = Personne::whereIn('type', ['Apprenant'])->get();
         $competences = Competence::all();
         $appreciations = Appreciation::all();
         $livrableNatures = NatureLivrable::all();
         $technologies = Technologie::all();
-    
+
         return view('pkg_creation_projets.create', compact(
-            'dataToEdit', 
-            'dateDebutFormatted', 
-            'dateFinFormatted', 
-            'apprenants', 
-            'competences', 
-            'appreciations', 
-            'livrableNatures', 
+            'dataToEdit',
+            'dateDebutFormatted',
+            'dateFinFormatted',
+            'apprenants',
+            'competences',
+            'appreciations',
+            'livrableNatures',
             'technologies'
         ));
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     public function update(ProjetStoreRequest $request, $id)
     {
         // 1. Validate the request data
         $validatedData = $request->validated();
-    
+
         // 2. Find the project
         $projet = $this->projetRepository->find($id);
-    
+
         // 3. Update the project
         $projet->update($validatedData);
-    
+
         // 4. Update livrables (if any)
         if (isset($validatedData['livrable'])) {
             $livrableIds = []; // Keep track of existing livrables by their IDs
@@ -255,7 +251,7 @@ if (isset($validatedData['competences'])) {
                     'nature_livrable_id' => $validatedData['livrable_nature'][$index],
                     'projet_id' => $projet->id,
                 ];
-    
+
                 if (isset($validatedData['livrable_id'][$index])) {
                     // Update existing livrable
                     $livrableId = $validatedData['livrable_id'][$index];
@@ -268,9 +264,9 @@ if (isset($validatedData['competences'])) {
                 }
             }
             // Delete any livrables that were not included in the update
-            $projet->livrables()->whereNotIn('id', $livrableIds)->delete(); 
+            $projet->livrables()->whereNotIn('id', $livrableIds)->delete();
         }
-    
+
         // 5. Update resources (if any)
         if (isset($validatedData['ressource_nom'])) {
             $ressourceIds = []; // Keep track of existing resources
@@ -281,7 +277,7 @@ if (isset($validatedData['competences'])) {
                     'lien' => $validatedData['ressource_lien'][$index] ?? null,
                     'projet_id' => $projet->id,
                 ];
-    
+
                 if (isset($validatedData['ressource_id'][$index])) {
                     // Update existing resource
                     $ressourceId = $validatedData['ressource_id'][$index];
@@ -296,10 +292,11 @@ if (isset($validatedData['competences'])) {
             // Delete any resources that were not included in the update
             $projet->resources()->whereNotIn('id', $ressourceIds)->delete();
         }
-    
-// 6. Update TransfertCompetence records
-if (isset($validatedData['competences'])) {
+
+   // 6. Update TransfertCompetence records
+   if (isset($validatedData['competences'])) {
     $transfertCompetenceIds = []; // Keep track of existing TransfertCompetence records
+
     foreach ($validatedData['competences'] as $competence_id) {
         // Get the appreciation ID directly from the request
         $appreciation_id = $request->input('competence_' . $competence_id . '_appreciation');
@@ -310,33 +307,35 @@ if (isset($validatedData['competences'])) {
             'appreciation_id' => $appreciation_id,
         ];
 
-        $transfertCompetenceId = null; // Initialize the variable
-
         if (isset($validatedData['transfert_competence_id'][$competence_id])) {
             // Update existing TransfertCompetence
             $transfertCompetenceId = $validatedData['transfert_competence_id'][$competence_id];
             $this->transfercompetenceRepository->update($transfertCompetenceId, $transfertCompetenceData);
-            $transfertCompetenceIds[] = $transfertCompetenceId; // Add to the list of existing IDs
         } else {
             // Create new TransfertCompetence
             $newTransfertCompetence = $this->transfercompetenceRepository->create($transfertCompetenceData);
             $transfertCompetenceId = $newTransfertCompetence->id; // Assign the newly created ID
-            $transfertCompetenceIds[] = $transfertCompetenceId; // Add to the list of existing IDs
         }
 
-        // Update or attach technologies (if any) to the TransfertCompetence
+        // Add to the list of existing or newly created IDs
+        $transfertCompetenceIds[] = $transfertCompetenceId;
+
+        // Update technologies associated with the TransfertCompetence
         if (isset($validatedData['technologie_ids'][$competence_id])) {
             $technologieIds = $validatedData['technologie_ids'][$competence_id];
-            $transfertCompetence = $this->transfercompetenceRepository->find($transfertCompetenceId); // Use the defined ID
+            $transfertCompetence = $this->transfercompetenceRepository->find($transfertCompetenceId);
+            // Use the `sync` method to update the technologies associated with the TransfertCompetence
             $transfertCompetence->technologies()->sync($technologieIds);
+        } else {
+            // If no technologies are selected, detach all associated technologies
+            $transfertCompetence = $this->transfercompetenceRepository->find($transfertCompetenceId);
+            $transfertCompetence->technologies()->detach();
         }
     }
 
-
     // Delete any TransfertCompetence records that were not included in the update
-    $projet->transfertCompetences()->whereNotIn('id', $transfertCompetenceIds)->delete(); 
+    $projet->transfertCompetences()->whereNotIn('id', $transfertCompetenceIds)->delete();
 }
-
         // 7. Update apprentice records (RealisationProjets)
         if (isset($validatedData['apprenants'])) {
             foreach ($validatedData['apprenants'] as $apprenantId) {
@@ -348,12 +347,12 @@ if (isset($validatedData['competences'])) {
                 $this->projectRealisationRepository->create($realisationProjetData);
             }
         }
-    
+
         // 8. Redirect with a success message
         return redirect()->route('projets.index')->with('success', 'Le projet a été mis à jour avec succès.');
     }
-    
-    
+
+
     public function destroy($id)
     {
         $this->projetRepository->destroy($id);

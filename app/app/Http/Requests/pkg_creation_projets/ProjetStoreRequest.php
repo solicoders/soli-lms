@@ -39,7 +39,8 @@ class ProjetStoreRequest extends FormRequest
             'ressource_lien.*' => 'nullable|url',
             'competences.*' => 'required|integer|exists:competences,id',
             'competence_*_appreciation' => 'required|integer|exists:appreciations,id',
-            'technologie_ids.*' => 'nullable|integer|exists:technologies,id',
+            // Corrected technology rule
+            'technologie_ids.*.*' => 'nullable|integer|exists:technologies,id',
             // Assuming 'personnes' table holds apprenants
             'apprenants.*' => 'required|integer|exists:personnes,id',
         ];

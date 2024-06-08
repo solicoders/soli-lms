@@ -76,7 +76,7 @@
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </div>
-                                                
+
                                                 <div class="form-group" id="livrables-container">
                                                     <label for="livrable">Nom de livrable</label>
                                                     @if(isset($dataToEdit->livrables))
@@ -198,57 +198,44 @@
                                         </div>
 
                                         <div class="step" id="step2" style="display:none;">
-                                            <div id="competence-part"  role="tabpanel"
-                                                 aria-labelledby="projet-part-trigger">
+                                            <div id="competence-part" role="tabpanel" aria-labelledby="projet-part-trigger">
                                                 <div class="form-group">
                                                     <h2>Compétences</h2>
                                                     <p>Veuillez sélectionner les compétences que vous possédez.</p>
-                                                    <label for="technologies">Technologies:</label>
-                                                    <select name="technologie_ids[]" id="technologies" multiple>
-                                                        @foreach($technologies as $technology)
-                                                            <option value="{{ $technology->id }}" 
-                                                                @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
-                                                                    @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
-                                                                        @if($transfertCompetence->technologies->contains($technology->id))
-                                                                            selected
-                                                                        @endif
-                                                                    @endforeach
-                                                                @endif
-                                                            >
-                                                            {{ $technology->nom }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                    
-                                                    @error('technologie_ids.*')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                    @enderror
                                                     <table class="table">
                                                         <thead>
                                                         <tr>
                                                             <th>Compétences</th>
+                                                            <th>Technologies</th>
                                                             <th>Appréciations</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach($competences as $competence)
+                                                        @foreach($competences as $competence)
                                                             <tr>
                                                                 <td>
                                                                     <label>
-                                                                        <input type="checkbox" class="mr-2"
-                                                                               name="competences[]"
-                                                                               id="competence_{{ $competence->id }}"
-                                                                               value="{{ $competence->id }}"
-                                                                               @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
-                                                                                   @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
-                                                                                       @if($transfertCompetence->competence_id == $competence->id)
-                                                                                           checked 
-                                                                                       @endif
-                                                                                   @endforeach
-                                                                               @endif>
+                                                                        <input type="checkbox" class="mr-2" name="competences[]" id="competence_{{ $competence->id }}" value="{{ $competence->id }}" @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences)) @foreach($dataToEdit->transfertCompetences as $transfertCompetence) @if($transfertCompetence->competence_id == $competence->id) checked @endif @endforeach @endif>
                                                                         <i class="fas fa-{{ $competence->icon }}"></i>
                                                                         {{ $competence->nom }}
                                                                     </label>
+                                                                </td>
+                                                                <td>
+                                                                    <select name="technologie_ids[{{ $competence->id }}][]" id="technologie_{{ $competence->id }}" multiple>
+                                                                        @foreach($technologies as $technology)
+                                                                            <option value="{{ $technology->id }}"
+                                                                                    @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
+                                                                                        @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                                            @if($transfertCompetence->competence_id == $competence->id && $transfertCompetence->technologies->contains($technology->id))
+                                                                                                selected
+                                                                                            @endif
+                                                                                        @endforeach
+                                                                                    @endif
+                                                                            >
+                                                                                {{ $technology->nom }}
+                                                                            </option>
+                                                                        @endforeach
+                                                                    </select>
                                                                 </td>
                                                                 <td>
                                                                     <select name="competence_{{ $competence->id }}_appreciation">
@@ -257,7 +244,7 @@
                                                                                     @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
                                                                                         @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
                                                                                             @if($transfertCompetence->competence_id == $competence->id && $transfertCompetence->appreciation_id == $appreciation->id)
-                                                                                                selected 
+                                                                                                selected
                                                                                             @endif
                                                                                         @endforeach
                                                                                     @endif>
@@ -265,10 +252,6 @@
                                                                             </option>
                                                                         @endforeach
                                                                     </select>
-                                                        
-                                                                    @error("competence_{{ $competence->id }}_appreciation")
-                                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                                    @enderror
                                                                 </td>
                                                             </tr>
                                                         @endforeach
@@ -277,7 +260,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
 
                                         <div class="step" id="step3" style="display:none;">
                                             <div id="affectation-part"  role="tabpanel"
@@ -289,19 +272,19 @@
                                                            for="flexCheckIndeterminate">Tout
                                                         cocher<br>
                                                         <div class="row">
-                                                            @foreach($apprenants as $apprenant) 
+                                                            @foreach($apprenants as $apprenant)
                                                                 <div class="col-sm-4 mb-2">
                                                                     <div class="form-check">
                                                                         <input class="form-check-input" type="checkbox"
                                                                                name="apprenants[]"
-                                                                               value="{{ $apprenant->id }}" 
+                                                                               value="{{ $apprenant->id }}"
                                                                                @if(isset($dataToEdit) && isset($dataToEdit->realisationProjets) && in_array($apprenant->id, $dataToEdit->realisationProjets->pluck('personne.id')->toArray())) checked @endif>
                                                                         <label class="form-check-label" for="{{ $apprenant->id }}">
                                                                             {{ $apprenant->nom }} {{ $apprenant->prenom }} ({{ $apprenant->type }})
                                                                         </label>
                                                                     </div>
                                                                 </div>
-                                                            @endforeach 
+                                                            @endforeach
                                                         </div>
                                                     </label>
                                                 </div>
