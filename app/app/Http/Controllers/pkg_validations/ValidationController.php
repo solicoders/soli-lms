@@ -65,8 +65,10 @@ class ValidationController extends Controller
         })->orderBy('created_at', 'desc')->first();
 
       // Get notes using Eloquent relationships
-      $notes = $realisation->validation()->pluck('note');
-      $note = $notes->first() ?? 0;
+     // Get notes using Eloquent relationships
+     $notes = $realisation->validation()->pluck('note');
+     // Convert the first note to a string with 2 decimal places
+     $note = number_format($notes->first() ?? 0, 2); 
         // dd($notes);
         return view('pkg_validations.index', compact(
             'realisation',
