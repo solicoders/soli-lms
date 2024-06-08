@@ -207,11 +207,13 @@
                                                     <select name="technologie_ids[]" id="technologies" multiple>
                                                         @foreach($technologies as $technology)
                                                             <option value="{{ $technology->id }}" 
-                                                                    @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
-                                                                        @if(in_array($technology->id, $transfertCompetence->technologies->pluck('id')->toArray()))
-                                                                            selected
-                                                                        @endif
-                                                                    @endforeach>
+                                                                    @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
+                                                                        @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                            @if(in_array($technology->id, $transfertCompetence->technologies->pluck('id')->toArray()))
+                                                                                selected
+                                                                            @endif
+                                                                        @endforeach
+                                                                    @endif>
                                                                 {{ $technology->nom }}
                                                             </option>
                                                         @endforeach
@@ -235,11 +237,13 @@
                                                                                name="competences[]"
                                                                                id="competence_{{ $competence->id }}"
                                                                                value="{{ $competence->id }}"
-                                                                               @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
-                                                                                   @if($transfertCompetence->competence_id == $competence->id)
-                                                                                       checked 
-                                                                                   @endif
-                                                                               @endforeach>
+                                                                               @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
+                                                                                   @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                                       @if($transfertCompetence->competence_id == $competence->id)
+                                                                                           checked 
+                                                                                       @endif
+                                                                                   @endforeach
+                                                                               @endif>
                                                                         <i class="fas fa-{{ $competence->icon }}"></i>
                                                                         {{ $competence->nom }}
                                                                     </label>
@@ -248,11 +252,13 @@
                                                                     <select name="competence_{{ $competence->id }}_appreciation">
                                                                         @foreach($appreciations as $appreciation)
                                                                             <option value="{{ $appreciation->id }}"
-                                                                                    @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
-                                                                                        @if($transfertCompetence->competence_id == $competence->id && $transfertCompetence->appreciation_id == $appreciation->id)
-                                                                                            selected 
-                                                                                        @endif
-                                                                                    @endforeach>
+                                                                                    @if(isset($dataToEdit) && isset($dataToEdit->transfertCompetences))
+                                                                                        @foreach($dataToEdit->transfertCompetences as $transfertCompetence)
+                                                                                            @if($transfertCompetence->competence_id == $competence->id && $transfertCompetence->appreciation_id == $appreciation->id)
+                                                                                                selected 
+                                                                                            @endif
+                                                                                        @endforeach
+                                                                                    @endif>
                                                                                 {{ $appreciation->nom }}
                                                                             </option>
                                                                         @endforeach
@@ -281,20 +287,19 @@
                                                            for="flexCheckIndeterminate">Tout
                                                         cocher<br>
                                                         <div class="row">
-                                                            @foreach($apprenants as $apprenant)
-                                                            <div class="col-sm-4 mb-2">
-                                                                <div class="form-check">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                           name="apprenants[]"
-                                                                           value="{{ $apprenant->id }}"
-                                                                           @if(isset($dataToEdit) && $dataToEdit->apprenants && in_array($apprenant->id, $dataToEdit->apprenants->pluck('id')->toArray())) checked @endif>
-                                                                    <label class="form-check-label" for="{{ $apprenant->id }}">
-                                                                        {{ $apprenant->nom }} {{ $apprenant->prenom }} ({{ $apprenant->type }})
-                                                                    </label>
+                                                            @foreach($apprenants as $apprenant) 
+                                                                <div class="col-sm-4 mb-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox"
+                                                                               name="apprenants[]"
+                                                                               value="{{ $apprenant->id }}" 
+                                                                               @if(isset($dataToEdit) && isset($dataToEdit->realisationProjets) && in_array($apprenant->id, $dataToEdit->realisationProjets->pluck('personne.id')->toArray())) checked @endif>
+                                                                        <label class="form-check-label" for="{{ $apprenant->id }}">
+                                                                            {{ $apprenant->nom }} {{ $apprenant->prenom }} ({{ $apprenant->type }})
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        @endforeach
-                                                        
+                                                            @endforeach 
                                                         </div>
                                                     </label>
                                                 </div>

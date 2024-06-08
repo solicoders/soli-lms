@@ -191,7 +191,7 @@ class ProjetController extends Controller
             'transfertCompetences.competence', 
             'transfertCompetences.appreciation',
             'transfertCompetences.technologies',
-            'realisationProjets.personne' // Assuming this is how you access apprentices
+            'realisationProjets.personne' // Load apprentices through RealisationProjet
         ])->findOrFail($id);
     
         // Convert date strings to DateTime objects if they are not already
@@ -206,8 +206,8 @@ class ProjetController extends Controller
         $dateDebutFormatted = $dataToEdit->dateDebut->format('Y-m-d');
         $dateFinFormatted = $dataToEdit->dateFin->format('Y-m-d');
     
-        // Fetch other required data
-        $apprenants = Personne::whereIn('type', ['Apprenant'])->get();
+        // Fetch ALL apprentices 
+        $apprenants = Personne::whereIn('type', ['Apprenant'])->get(); 
         $competences = Competence::all();
         $appreciations = Appreciation::all();
         $livrableNatures = NatureLivrable::all();
@@ -229,21 +229,19 @@ class ProjetController extends Controller
     
     
     
-    public function update(ProjetRequest $request, $id)
+    public function update(ProjetStoreRequest $request, $id)
     {
+        // 1. Validate the request data
         $validatedData = $request->validated();
-
+    
+        // 2. Find the project
         $projet = $this->projetRepository->find($id);
-
-        // Update the project
+    
+        // 3. Update the project
         $projet->update($validatedData);
-
-        // Handle Livrables
+    
+        // 4. Update livrables (if any)
         if (isset($validatedData['livrable'])) {
-            // Delete existing livrables
-            $this->livrableRepository->where('projet_id', $id)->delete();
-
-            // Create new livrables
             foreach ($validatedData['livrable'] as $index => $livrable) {
                 $livrableData = [
                     'titre' => $livrable,
@@ -252,16 +250,18 @@ class ProjetController extends Controller
                     'nature_livrable_id' => $validatedData['livrable_nature'][$index],
                     'projet_id' => $projet->id,
                 ];
-                $this->livrableRepository->create($livrableData);
+                if (isset($validatedData['livrable_id'][$index])) {
+                    // Update existing livrable
+                    $this->livrableRepository->update($validatedData['livrable_id'][$index], $livrableData);
+                } else {
+                    // Create new livrable
+                    $this->livrableRepository->create($livrableData);
+                }
             }
         }
-
-        // Handle Resources
+    
+        // 5. Update resources (if any)
         if (isset($validatedData['ressource_nom'])) {
-            // Delete existing resources
-            $this->resourceRepository->where('projet_id', $id)->delete();
-
-            // Create new resources
             foreach ($validatedData['ressource_nom'] as $index => $ressource_nom) {
                 $ressourceData = [
                     'nom' => $ressource_nom,
@@ -269,60 +269,55 @@ class ProjetController extends Controller
                     'lien' => $validatedData['ressource_lien'][$index] ?? null,
                     'projet_id' => $projet->id,
                 ];
-                $this->resourceRepository->create($ressourceData);
-            }
-        }
-
-        // Handle TransfertCompetences
-        if (isset($validatedData['competences'])) {
-            // Delete existing transfertCompetences
-            $this->transfercompetenceRepository->where('projet_id', $id)->delete();
-
-            // Create new transfertCompetences
-            foreach ($validatedData['competences'] as $competence_id) {
-                $appreciation_id = $request->input('competence_' . $competence_id . '_appreciation');
-
-                $transfertCompetenceData = [
-                    'projet_id' => $projet->id,
-                    'competence_id' => $competence_id,
-                    'appreciation_id' => $appreciation_id,
-                ];
-                $transfertCompetence = $this->transfercompetenceRepository->create($transfertCompetenceData);
-
-                // Attach technologies (if any)
-                if (isset($validatedData['technologie_ids'])) {
-                    foreach ($validatedData['technologie_ids'] as $technologie_id) {
-                        $technologieCompetenceData = [
-                            'transfert_competence_id' => $transfertCompetence->id,
-                            'technologie_id' => $technologie_id,
-                        ];
-                        $this->technologiecompetenceRepository->create($technologieCompetenceData);
-                    }
+                if (isset($validatedData['ressource_id'][$index])) {
+                    // Update existing resource
+                    $this->resourceRepository->update($validatedData['ressource_id'][$index], $ressourceData);
+                } else {
+                    // Create new resource
+                    $this->resourceRepository->create($ressourceData);
                 }
             }
         }
+    
+ // 6. Update TransfertCompetence records
+ if (isset($validatedData['competences'])) {
+    foreach ($validatedData['competences'] as $competence_id) {
+        // Get the appreciation ID directly from the request
+        $appreciation_id = $request->input('competence_' . $competence_id . '_appreciation');
 
-        // Handle RealisationProjets
+        $transfertCompetenceData = [
+            'projet_id' => $projet->id,
+            'competence_id' => $competence_id,
+            'appreciation_id' => $appreciation_id,
+        ];
+
+        if (isset($validatedData['transfert_competence_id'][$competence_id])) {
+            // Update existing TransfertCompetence
+            $this->transfercompetenceRepository->update($validatedData['transfert_competence_id'][$competence_id], $transfertCompetenceData);
+        } else {
+            // Create new TransfertCompetence
+            $this->transfercompetenceRepository->create($transfertCompetenceData);
+        }
+    }
+}
+    
+        // 7. Update apprentice records
+        $this->projectRealisationRepository->where('projet_id', $projet->id)->delete();
         if (isset($validatedData['apprenants'])) {
-            // Delete existing realisationProjets
-            $this->projectRealisationRepository->where('projet_id', $id)->delete();
-
-            // Create new realisationProjets
             foreach ($validatedData['apprenants'] as $apprenantId) {
                 $realisationProjetData = [
                     'projet_id' => $projet->id,
+
                     'personne_id' => $apprenantId, // Assuming 'personne_id' is the apprenant ID field
-                    'date_debut_realisation' => now(), // Or set a default start date
-                    'date_fin_realisation' => now()->addDays(14), // Or set a default end date (example: 14 days)
-                    'etat_realisation_projet_id' => 1, // Or set a default state ID
                 ];
                 $this->projectRealisationRepository->create($realisationProjetData);
             }
         }
-
-        return redirect()->route('projets.index')->with('success', 'Le projet a été modifié avec succès.');
+          // 8. Redirect with a success message
+          return redirect()->route('projets.index')->with('success', 'Le projet a été ajouté avec succès.');
     }
-
+    
+    
     public function destroy($id)
     {
         $this->projetRepository->destroy($id);
