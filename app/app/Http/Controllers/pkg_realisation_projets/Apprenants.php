@@ -41,7 +41,7 @@ class Apprenants extends Controller
         //     ('user_id', $userGroupeId)
         //     ->get();
         $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
-        $Competence = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
+        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
         $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competence)->pluck('nom');
 
         // dd($nivauCopetence);
@@ -73,13 +73,24 @@ class Apprenants extends Controller
     public function show($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.realisationProjet.show', compact('realisationProjet'));
+        $projects = Projet::all();
+        $pjctid = Projet::pluck('id');
+
+        $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
+        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
+        $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competences)->pluck('nom');
+        $EtatRealisationProjet = EtatRealisationProjet::all();
+        $userGroupeId = Auth::user()->id;
+
+
+        // dd($realisationProjet );
+        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','projects','projectCompetenceId','Competences','EtatRealisationProjet','userGroupeId'));
     }
 
     public function edit($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet'));
+        return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet','projects'));
     }
 
     public function update(Request $request, $id)

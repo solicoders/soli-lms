@@ -9,22 +9,22 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header bg-info">
-                        <h3 class="card-title">Validation : {{ $realisation->Projet->titre }}</h3>
+                        <h3 class="card-title">Validation : {{ $RealisationProjet->Projet->titre }}</h3>
                         </div>
                     <div class="card-body p-0">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="nom">Nom: </label> {{ $realisation->Personne->nom }}
+                                <label for="nom">Nom: </label> {{ $RealisationProjet->Personne->nom }}
                             </div>
                             <div class="form-group">
-                                <label for="prenom">Prénom: </label> {{ $realisation->Personne->prenom }}
+                                <label for="prenom">Prénom: </label> {{ $RealisationProjet->Personne->prenom }}
                             </div>
                             <div class="form-group">
                                 <label for="livrables">Les livrables:</label>
                                 <ul class="list-group list-group-horizontal d-flex flex-row">
                                     
                                     <li class="list-group-item mr-2">
-                                        <strong>{{ $realisation->LivrableRealisation->nom }}</strong> <a href="{{ $realisation->LivrableRealisation->lien }}"><i class="fab fa-github"></i> Github</a>
+                                        <strong>{{ $RealisationProjet->LivrableRealisation->nom }}</strong> <a href="{{ $realisation->LivrableRealisation->lien }}"><i class="fab fa-github"></i> Github</a>
                                     </li>
                                 </ul>
                             </div>

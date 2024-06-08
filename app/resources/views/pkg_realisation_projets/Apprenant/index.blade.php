@@ -57,7 +57,7 @@
                                 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Brief projet</th>
+            <th> projet</th>
             <th>Competences</th>
             <th>Etat de réalisation</th>
             <th>Date debut</th>
@@ -103,7 +103,7 @@
             <td>{{ $project->date_fin_realisation }}</td>
 
             <td class="text-center">
-                                                <a href="show.php" class='btn btn-default btn-sm'>
+                                                <a href="{{ route('apprenantRealisations.show', $project->id) }}" class='btn btn-default btn-sm'>
                                                     <i class="far fa-eye"></i>
                                                 </a>
                                                 <a href="edit.php" class="btn btn-default btn-sm" >
