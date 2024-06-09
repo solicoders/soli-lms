@@ -41,7 +41,7 @@ class Apprenants extends Controller
         //     ('user_id', $userGroupeId)
         //     ->get();
         $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
-        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
+        $Competence = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
         $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competence)->pluck('nom');
 
         // dd($nivauCopetence);
@@ -73,14 +73,20 @@ class Apprenants extends Controller
     public function show($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
+        
         $projects = Projet::all();
         $pjctid = Projet::pluck('id');
 
         $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
-        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('id');
-        $nivauCopetence = NiveauCompetence::whereIn('competence_id', $Competences)->pluck('nom');
+        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('nom');
+        $competence_id = TransfertCompetence::whereIn('competence_id', $pjctid)->pluck('competence_id');
+        $Competence = Competence::whereIn('id', $competence_id)->pluck('nom');
+
         $EtatRealisationProjet = EtatRealisationProjet::all();
         $userGroupeId = Auth::user()->id;
+        // dd($Competence);
+
+
 
 
         // dd($realisationProjet );
