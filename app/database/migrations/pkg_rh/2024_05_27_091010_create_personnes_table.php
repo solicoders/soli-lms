@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('nom_arab');
             $table->string('prenom_arab');
+            $table->string('email');
+            $table->string('password');    
             $table->date('date_naissance');
             $table->string('type')->nullable();
             $table->string('tele_num');
