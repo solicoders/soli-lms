@@ -21,7 +21,7 @@
                                         {{ $transfertCompetence->competence->nom ?? 'No competence' }}
                                         @if ($transfertCompetence->appreciation)
                                             <ul>
-                                                <li>{{ $transfertCompetence->appreciation->description ?? 'No appreciation' }}</li>
+                                                <li>{{ $transfertCompetence->appreciation->nom ?? 'No appreciation' }}</li>
                                             </ul>
                                         @else
                                             <p>No appreciation available</p>
