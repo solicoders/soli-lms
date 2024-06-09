@@ -2,8 +2,8 @@
     <table class="table table-striped text-nowrap">
         <thead>
             <tr>
-                <th>{{ __('GestionProjets/projet.singular') }}</th>
-                <th>{{ __('GestionProjets/competence.singular') }}</th>
+                <th>{{ __('pkg_creation_projets/projet.singular') }}</th>
+                <th>{{ __('pkg_competences/competence.singular') }}</th>
                 <th>{{ __('app.datedebut') }}</th>
                 <th>{{ __('app.datefin') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>

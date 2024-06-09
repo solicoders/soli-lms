@@ -13,7 +13,7 @@ return [
     'action'=> 'Action',
     'detail' => 'Detail',
     'description' => 'Description',
-    'list' => 'List',
+    'list' => 'Liste',
     'link' => 'Lien',
     'Gestion_des_formations' => 'Gestion des formations',
     'datedebut' =>'Date debut',

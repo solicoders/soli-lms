@@ -29,7 +29,7 @@
 
                             <!-- Champ Compétences -->
                             <div class="col-sm-12">
-                                <label for="competences">Compétences :</label>
+                                <label for="competences">{{ __('pkg_compentences/competence.plural') }}</label>
                                 <ul>
                                     @foreach ($projet->transfertCompetences as $transfertCompetence)
                                     <li>{{ $transfertCompetence->competence->nom ?? 'No competence' }}
@@ -59,8 +59,8 @@
                             <!-- Champ Date de début et de fin -->
                             <div class="col-sm-12">
                                 <label for="date">{{ __('app.date') }}</label>
-                                <p>Date de début : {{ $projet->dateDebut }}</p>
-                                <p>Date de fin : {{ $projet->dateFin }}</p>
+                                <p>{{ __('app.dateDebut') }} : {{ $projet->dateDebut }}</p>
+                                <p>{{ __('app.dateFin') }}  : {{ $projet->dateFin }}</p>
                             </div>
 
                             <!-- Champ Ressources -->
