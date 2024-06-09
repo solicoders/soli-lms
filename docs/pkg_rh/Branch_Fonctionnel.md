@@ -21,15 +21,18 @@ Le Responsable de Formation rencontre des difficultés majeures avec l'utilisati
 
 De plus, l'ajout et l'organisation des groupes et des spécialités sont complexes et chronophages, rendant difficile le maintien d'un système à jour.
 
-## Processus de Développement
+## Idéation
 
-### Méthode 2TUP
+![Idéation](./images/ideation.png)
+*Figure: Idéation*
 
-![Méthode 2TUP](./images/2TUP.png){:width="70%"}
-*Figure: Méthode 2TUP*
+La solution est de simplifiez la gestion des données éducatives en automatisant les processus de suivi des étudiants et formateurs.
 
-## Méthode Agile - SCRUM
+Améliorez la transparence et l'efficacité de la validation des compétences.
 
-![Méthode agile - SCRUM](./images/agile-scrum.png){:width="700px"}*figure: Méthode agile - Scrum*
+Concevez une interface conviviale pour l'ajout et l'organisation des groupes et spécialités, réduisant ainsi la complexité et le temps nécessaire à la mise à jour du système.
 
-Scrum est un cadre de gestion de projet agile utilisé pour développer des produits de manière flexible. Il se caractérise par des itérations courtes appelées "sprints", favorisant la collaboration et l'adaptabilité. Scrum permet une livraison régulière de valeur aux clients grâce à des réunions régulières et un processus itératif.
+## Diagamme de cas d'utilisation
+
+![Diagamme de cas d'utilisation](./images/use-case.PNG)
+*Diagamme de cas d'utilisation*

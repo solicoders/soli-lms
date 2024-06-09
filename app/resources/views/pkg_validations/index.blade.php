@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="content">
-    <form action="{{ route('validations.store') }}">
+    <form action="">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -76,13 +76,13 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="message">ha l3ar b3di mni:</label>
+                                    <label for="message">Titre:</label>
                                 <input type="text" id="message_title" class="form-control" value="{{ $messages->titre}}" placeholder="Entrez le titre du message">
                                 </div>
                               
                                 <div class="form-group">
                                     <label for="message">Message:</label>
-                                    <textarea class="form-control" id="message" name="validation_message" rows="20"></textarea>
+                                    <div class="form-control" id="message"  name="validation_message" rows="20">{{ $messages->description}}</textarea>
                                 </div>
                             
                                 <script>
@@ -96,10 +96,8 @@
                         </div>
                     
                                 <div class="text-right m-5">
-                                    <form method="POST" action="">
-                                        @csrf
-                                        <button type="submit" class="btn btn-info">Valider</button>
-                                    </form>                                
+                                        <a href="{{ route('validations.store') }}" class="btn btn-info">Valider</a>
+                            
                                 </div>
                             </form>
                         </div>

@@ -10,13 +10,32 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($projetData as  $projet)
+            @foreach ($projetData as $projet)
                 <tr>
-                    <td>{{ $projet->titre }}</td>
-                    <td>{{ $projet->competence }}</td>
+                    <td class="text-wrap w-50">{{ $projet->titre }}</td>
+                    <td class="text-wrap w-50">
+                        <ul>
+                            @if ($projet->transfertCompetences)
+                                @foreach($projet->transfertCompetences as $transfertCompetence)
+                                    <li>
+                                        {{ $transfertCompetence->competence->nom ?? 'No competence' }}
+                                        @if ($transfertCompetence->appreciation)
+                                            <ul>
+                                                <li>{{ $transfertCompetence->appreciation->description ?? 'No appreciation' }}</li>
+                                            </ul>
+                                        @else
+                                            <p>No appreciation available</p>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            @else
+                                <p>No competences available</p>
+                            @endif
+                        </ul>
+                    </td>
                     <td>{{ $projet->dateDebut }}</td>
                     <td>{{ $projet->dateFin }}</td>
-
+        
                     <td class="text-center">
                         {{-- @can('show-ProjetController') --}}
                             <a href="{{ route('projets.show', $projet) }}" class="btn btn-default btn-sm">
@@ -38,11 +57,11 @@
                                 </button>
                             </form>
                         {{-- @endcan --}}
-
                     </td>
                 </tr>
             @endforeach
         </tbody>
+        
     </table>
 </div>
 
