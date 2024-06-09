@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
-class NiveauCompetenceExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
+class ModuleExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
 {
     protected $data;
 
@@ -23,20 +23,22 @@ class NiveauCompetenceExport implements FromCollection, WithHeadings, ShouldAuto
     public function headings(): array
     {
         return [
+            'N',
             'nom',
             'description',
-            'competence_id',
+            'filiere_id',
 
         ];
     }
 
     public function collection()
     {
-        return $this->data->map(function ($NiveauCompetence) {
+        return $this->data->map(function ($Module) {
             return [
-                'nom' => $NiveauCompetence->nom,
-                'description' => $NiveauCompetence->description,
-                'competence_id' => $NiveauCompetence->competence_id,
+                'N' => $Module->N,
+                'nom' => $Module->nom,
+                'description' => $Module->description,
+                'filiere_id' => $Module->filiere_id,
 
             ];
         });

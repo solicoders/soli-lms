@@ -64,7 +64,7 @@ class TechnologieController extends AppBaseController
             return redirect()->route('technologies.index')->with('success', __('Pkg_competences.Technologie.singular') . ' ' . __('app.addSucées'));
 
         } catch (TechnologieAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['technologie_exists' => __('Pkg_competences.Technologie/message.createProjectException')]);
+            return back()->withInput()->withErrors(['technologie_exists' => 'Technologie est déjà existant']);
         } catch (\Exception $e) {
             return abort(500);
         }
