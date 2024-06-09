@@ -41,7 +41,7 @@
                                         @endforeach
                                     </ul>
                                 </div>
-    
+
                                 <table class="table table-bordered">
                                     <caption style="caption-side: top; text-align: center; font-size: 1.5em; margin: 10px 0;">Formulaire pour la validation des Compétences</caption>
                                     <thead>
@@ -78,13 +78,13 @@
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" placeholder="Titre">
+                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" value="{{ $message && $message->validation->transfertCompetence->id == $competence->id ? $message->titre : '' }}" placeholder="Titre">
                                                     @error("validations.{$competence->id}.titre")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description"></textarea>
+                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description">{{ $message && $message->validation->transfertCompetence->id == $competence->id ? $message->description : '' }}</textarea>
                                                     @error("validations.{$competence->id}.description")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
