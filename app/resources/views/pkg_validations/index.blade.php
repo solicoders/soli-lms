@@ -10,18 +10,18 @@
                 <div class="col-md-12">
                     <div class="card card-default">
                         <div class="card-header bg-info">
-                            <h3 class="card-title">Validation : {{ $realisation->Projet->titre }}</h3>
+                            <h3 class="card-title"> {{ __('pkg_validations/validation.plural') }} : {{ $realisation->Projet->titre }}</h3>
                         </div>
                         <div class="card-body p-0">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="nom">Nom: </label> {{ $realisation->Personne->nom }}
+                                    <label for="nom">{{ __('app.name') }} </label> {{ $realisation->Personne->nom }}
                                 </div>
                                 <div class="form-group">
                                     <label for="prenom">Prénom: </label> {{ $realisation->Personne->prenom }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="livrables">Les livrables:</label>
+                                    <label for="livrables">Les {{ __('pkg_creation_projets/Livrable.plural') }}:</label>
                                     <ul class="list-group list-group-horizontal d-flex flex-row">
                                         @foreach ($realisation->livrableRealisations as $livrableRealisation)
                                             <li class="list-group-item mr-2">
@@ -43,14 +43,14 @@
                                 </div>
 
                                 <table class="table table-bordered">
-                                    <caption style="caption-side: top; text-align: center; font-size: 1.5em; margin: 10px 0;">Formulaire pour la validation des Compétences</caption>
-                                    <thead>
+                                    <h1 style="caption-side: top; text-align: center; font-size: 1.5em; margin: 10px 0;">{{ __('pkg_validations/validation.Form') }}   {{ __('pkg_validations/validation.plural') }} {{ __('pkg_competences/competence.plural')}}
+                                    </h1>
                                         <tr>
-                                            <th>Compétence</th>
-                                            <th>Appréciation</th>
-                                            <th>Note</th>
-                                            <th>Titre</th>
-                                            <th>Description</th>
+                                            <th>{{ __('pkg_competences/competence.plural') }}</th>
+                                            <th>{{ __('pkg_competences/appreciation.plural') }}</th>
+                                            <th>{{ __('pkg_validations/validation.Note') }}</th>
+                                            <th>{{ __('app.title') }}</th>
+                                            <th>{{ __('app.description') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -90,7 +90,7 @@
                                     </tbody>
                                 </table>
                                 <div class="text-right m-5">
-                                    <button type="submit" class="btn btn-info">Valider</button>
+                                    <button type="submit" class="btn btn-info">{{ __('pkg_validations/validation.Validate') }}</button>
                                 </div>
                             </div>
                         </div>
