@@ -16,4 +16,6 @@ return [
     'list' => 'List',
     'link' => 'Lien',
     'Gestion_des_formations' => 'Gestion des formations',
+    'datedebut' =>'Date debut',
+    'datefin' => 'Date fin'
 ];

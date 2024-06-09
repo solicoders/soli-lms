@@ -4,8 +4,8 @@
             <tr>
                 <th>{{ __('GestionProjets/projet.singular') }}</th>
                 <th>{{ __('GestionProjets/competence.singular') }}</th>
-                <th>{{ __('GestionProjets/datedebut') }}</th>
-                <th>{{ __('GestionProjets/datefin') }}</th>
+                <th>{{ __('app.datedebut') }}</th>
+                <th>{{ __('app.datefin') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
@@ -35,7 +35,7 @@
                     </td>
                     <td>{{ $projet->dateDebut }}</td>
                     <td>{{ $projet->dateFin }}</td>
-        
+
                     <td class="text-center">
                         {{-- @can('show-ProjetController') --}}
                             <a href="{{ route('projets.show', $projet) }}" class="btn btn-default btn-sm">
@@ -61,7 +61,7 @@
                 </tr>
             @endforeach
         </tbody>
-        
+
     </table>
 </div>
 
