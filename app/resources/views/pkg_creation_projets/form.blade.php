@@ -61,7 +61,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="dateDebut">{{ __('app.dateDebut') }}</label>
+                                                    <label for="dateDebut">{{ __('app.datedebut') }}</label>
                                                     <input type="date" class="form-control @error('dateDebut') is-invalid @enderror" id="dateDebut"
                                                            name="dateDebut" value="{{ old('dateDebut') ?? ($dataToEdit ? $dateDebutFormatted : date('Y-m-d')) }}">
                                                     @error('dateDebut')
@@ -69,7 +69,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="dateFin">{{ __('app.dateFin') }}</label>
+                                                    <label for="dateFin">{{ __('app.datefin') }}</label>
                                                     <input type="date" class="form-control @error('dateFin') is-invalid @enderror" id="dateFin"
                                                            name="dateFin" value="{{ old('dateFin') ?? ($dataToEdit ? $dateFinFormatted : date('Y-m-d')) }}">
                                                     @error('dateFin')
@@ -126,7 +126,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="livrable_description">{{ __('app.title') }}</label>
+                                                            <label for="livrable_description">{{ __('app.description') }} {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                             <textarea class="form-control @error('livrable_description.*') is-invalid @enderror ckeditor-textarea" id="livrable_description" name="livrable_description[]" rows="3"></textarea>
                                                             @error('livrable_description.*')
                                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -200,14 +200,21 @@
                                         <div class="step" id="step2" style="display:none;">
                                             <div id="competence-part" role="tabpanel" aria-labelledby="projet-part-trigger">
                                                 <div class="form-group">
-                                                    <h2>{{ __('pkg_compentences/competence.plural') }}</h2>
-                                                    <p>Veuillez sélectionner les compétences que vous possédez.</p>
+                                                    <h2>{{ __('pkg_competences/competence.plural') }}</h2>
+                                                    <p> {{ __('app.select') }}    @php
+                                                        // Generate the title using the title function
+                                                        use App\helpers\TranslationHelper;
+                                                        $lang = Config::get('app.locale');
+                                                        $translatedName = TranslationHelper::getTitle(  __('pkg_competences/competence.plural'), $lang);
+                                                        echo $translatedName;
+                                
+                                                    @endphp     .</p>
                                                     <table class="table">
                                                         <thead>
                                                         <tr>
-                                                            <th>{{ __('pkg_compentences/competence.plural') }}</th>
-                                                            <th>{{ __('pkg_compentences/technologie.plural') }}</th>
-                                                            <th>{{ __('pkg_compentences/appreciation.plural') }}</th>
+                                                            <th>{{ __('pkg_competences/competence.plural') }}</th>
+                                                            <th>{{ __('pkg_competences/technologie.plural') }}</th>
+                                                            <th>{{ __('pkg_competences/appreciation.plural') }}</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>

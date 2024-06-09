@@ -44,7 +44,7 @@
                                                             <div class="card">
                                                                 <div class="card-header"><div class="row mb-3">
                                                                     <div class="col-md-3">
-                                                                        <label for="skill">Compétence :</label>
+                                                                        <label for="skill"> {{ __('pkg_competences/competence.plural') }} :</label>
                                                                         <select class="form-control" id="skill">
                                                                             <option value="">Toutes</option>
                                                                             <option value="C1">Maquetter une application mobile</option>
@@ -57,7 +57,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-md-3">
-                                                                        <label for="projectName">Rechercher</label>
+                                                                        <label for="projectName">{{ __('app.rechercher') }}</label>
                                                                         <input type="text" class="form-control" id="projectName" placeholder="Nom du projet :...">
                                                                     </div>
                                                                 </div>
