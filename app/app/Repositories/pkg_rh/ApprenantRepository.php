@@ -47,21 +47,27 @@ class ApprenantRepository extends BaseRepository
         $prenom = $data['prenom'];
         
         $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $prenom)->exists();
-        try {
+        if ($existingApprenant) {
+            throw ApprenantException::AlreadyExistApprenant();
+        }else{
             parent::create($data);
-        } catch (\Exception $e) {
-            dd($e->getMessage());
         }
 
-        // if ($existingApprenant) {
-        //     throw ApprenantException::AlreadyExistApprenant();
-        // } else {
-        //     User::create($data);
-        //     $add = parent::create($data);
-        //     return $add;
-        // }
     }
 
+    public function update($id, array $data)
+    {
+        // $nom = $data['nom'];
+        // $prenom = $data['prenom'];
+        
+        // $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $prenom)->exists();
+        // if ($existingApprenant) {
+        //     throw ApprenantException::AlreadyExistApprenant();
+        // }else{
+        // }
+        parent::update($id, $data);
+
+    }
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
         if ($this->type !== null) {

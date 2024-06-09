@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers\pkg_rh;
 
-use App\Repositories\pkg_rh\NiveauScolaireRepository;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Formateur;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
-use App\Repositories\pkg_rh\GroupeRepository;
-use App\Exceptions\pkg_rh\FormateurException;
-use App\Exceptions\pkg_rh\ApprenantException;
-use App\Repositories\pkg_rh\SpecialiteRepository;
 use App\Repositories\pkg_rh\VilleRepository;
+use App\Exceptions\pkg_rh\ApprenantException;
+use App\Exceptions\pkg_rh\FormateurException;
+use App\Http\Requests\pkg_rh\PersonneRequest;
+use App\Repositories\pkg_rh\GroupeRepository;
+use App\Http\Requests\pkg_rh\FormateurRequest;
+use App\Repositories\pkg_rh\SpecialiteRepository;
+use App\Repositories\pkg_rh\NiveauScolaireRepository;
 
 class PersonneController extends Controller
 {
@@ -40,6 +43,7 @@ class PersonneController extends Controller
 
     public function create()
     {
+        $dataToEdit = NULL;
         $type = $this->getType();
         $GroupRepositorie = new GroupeRepository();
         $NiveauxScolaireRepository = new NiveauScolaireRepository();
@@ -51,19 +55,18 @@ class PersonneController extends Controller
         $villes = $VilleRepository->all();
         $niveauxScolaire = $NiveauxScolaireRepository->all();
 
-        return view('pkg_rh.Personnes.create',compact('type','groupes','specialites', 'villes', 'niveauxScolaire'));
+        return view('pkg_rh.Personnes.create',compact('type','groupes','specialites', 'villes', 'niveauxScolaire', 'dataToEdit'));
     }
 
-    public function store(Request $request)
+    public function store(PersonneRequest $personneRequest)
     {
         try {
-            $data = $request->all();
             $type = $this->getType();
-            $data += ['type' => $type,'profile_image' => 'default_profile_image.png'];
-            $personne =  $this->getRepository()->create($data);
-
+            $data = $personneRequest->validated();
+            $user = User::create(["email" => $data['email'],"password" => $data['password'], 'remember_token' => $data['_token']]);
+            $data += ['type' => $type,'profile_image' => 'default_profile_image.png', 'user_id' => $user->id];
+            $this->getRepository()->create($data);
             return redirect()->route($type . '.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.addSucées'));
-
         }catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -79,18 +82,34 @@ class PersonneController extends Controller
     public function edit($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->find($id);
-        $GroupRepositorie = new GroupRepositorie();
-        $groupes = $GroupRepositorie->paginate();
-        return view('pkg_rh.Personnes.edit', compact('personne','type','groupes'));
+        $dataToEdit = $this->getRepository()->find($id);
+
+        $GroupRepositorie = new GroupeRepository();
+        $NiveauxScolaireRepository = new NiveauScolaireRepository();
+        $VilleRepository = new VilleRepository();
+        $SpecialiteRepository = new SpecialiteRepository();
+
+        $groupes = $GroupRepositorie->all();
+        $specialites = $SpecialiteRepository->all();
+        $villes = $VilleRepository->all();
+        $niveauxScolaire = $NiveauxScolaireRepository->all();
+
+        return view('pkg_rh.Personnes.edit',compact('type','groupes','specialites', 'villes', 'niveauxScolaire', 'dataToEdit'));
+
     }
 
-    public function update(Request $request, $id)
+    public function update(PersonneRequest $personneRequest, $id)
     {
-        $data = $request->all();
-        $type = $this->getType();
-        $personne = $this->getRepository()->update($id, $data);
-        return back()->with('success', $type.' a été modifiée avec succès');
+        try {
+            $type = $this->getType();
+            $data = $personneRequest->validated(); 
+            $this->getRepository()->update($id, $data);
+
+            return redirect()->route($type . '.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.updateSucées'));
+
+        }catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        } 
     }
 
     public function delete(Request $request ,$id)

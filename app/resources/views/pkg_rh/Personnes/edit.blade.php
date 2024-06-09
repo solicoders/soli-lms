@@ -11,7 +11,7 @@
                     <div class="container-fluid ">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>{{__('app.add')}} un nouvel {{ __('pkg_rh/'.$type.'.singular')}}</h1>
+                                <h1>{{ __('app.edit') .' '. __('pkg_rh/'.$type.'.singular')}}</h1>
                             </div>
                         </div>
                     </div>

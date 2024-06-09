@@ -12,11 +12,11 @@
             <div class="container-fluid ">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Liste des Formateurs</h1>
+                        <h1>Liste des {{ __('pkg_rh/'.$type.'.plural')}}</h1>
                     </div>
                     <div class="col-sm-6">
                         <a href={{ route($type.'.create')}} type="button" class="btn btn-primary float-right">
-                            <i class="fas fa-plus"></i> Ajouter un Formateur
+                            <i class="fas fa-plus"></i> Ajouter un {{ __('pkg_rh/'.$type.'.singular')}}
                         </a>
                     </div>
                 </div>

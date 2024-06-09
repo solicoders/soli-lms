@@ -22,6 +22,7 @@ class Apprenant extends Personne
         'tele_num',
         'rue',
         'ville_id',
+        'user_id',
         'cin',
         'groupe_id',
         'cne',
