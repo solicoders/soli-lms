@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Détails du projet</h1>
+                    <h1>{{ __('app.detail') }}  {{ __('pkg_creation_projets/Projet.singular') }}</h1>
                 </div>
                 {{-- @can('edit-ProjetController') --}}
                 <div class="col-sm-6">
                     <a href="{{ route('projets.edit', $projet->id) }}" class="btn btn-default float-right">
-                        <i class="far fa-edit"></i> Modifier
+                        <i class="far fa-edit"></i> {{ __('app.edit') }}
                     </a>
                 </div>
                 {{-- @endcan --}}
@@ -29,7 +29,7 @@
 
                             <!-- Champ Compétences -->
                             <div class="col-sm-12">
-                                <label for="competences">Compétences :</label>
+                                <label for="competences">{{ __('pkg_competences/competence.plural') }}</label>
                                 <ul>
                                     @foreach ($projet->transfertCompetences as $transfertCompetence)
                                     <li>{{ $transfertCompetence->competence->nom ?? 'No competence' }}
@@ -59,8 +59,8 @@
                             <!-- Champ Date de début et de fin -->
                             <div class="col-sm-12">
                                 <label for="date">{{ __('app.date') }}</label>
-                                <p>Date de début : {{ $projet->dateDebut }}</p>
-                                <p>Date de fin : {{ $projet->dateFin }}</p>
+                                <p>{{ __('app.datedebut') }} : {{ $projet->dateDebut }}</p>
+                                <p>{{ __('app.datefin') }}  : {{ $projet->dateFin }}</p>
                             </div>
 
                             <!-- Champ Ressources -->
@@ -86,7 +86,7 @@
 
                             <!-- Champ Apprenants -->
                             <div class="col-sm-12">
-                                <label for="apprenants">Apprenants :</label>
+                                <label for="apprenants">{{ __('app.learner') }}  :</label>
                                 <ul>
                                     @foreach ($learners as $learner)
                                         <li>{{ $learner->nom }} {{ $learner->prenom }}</li>

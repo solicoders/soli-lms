@@ -12,7 +12,7 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">
-                        <h3 class="card-title">{{ $dataToEdit ? __('app.edit') : __('app.add') }} un {{ __('pkg_creation_projets/Projet.singular') }}</h3>
+                        <h3 class="card-title">{{ $dataToEdit ? __('app.edit') : __('app.add') }}  {{ __('pkg_creation_projets/Projet.singular') }}</h3>
                     </div>
                     <div class="card-body p-0">
                         <div class="bs-stepper">
@@ -61,7 +61,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="dateDebut">{{ __('app.dateDebut') }}</label>
+                                                    <label for="dateDebut">{{ __('app.datedebut') }}</label>
                                                     <input type="date" class="form-control @error('dateDebut') is-invalid @enderror" id="dateDebut"
                                                            name="dateDebut" value="{{ old('dateDebut') ?? ($dataToEdit ? $dateDebutFormatted : date('Y-m-d')) }}">
                                                     @error('dateDebut')
@@ -69,7 +69,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="dateFin">{{ __('app.dateFin') }}</label>
+                                                    <label for="dateFin">{{ __('app.datefin') }}</label>
                                                     <input type="date" class="form-control @error('dateFin') is-invalid @enderror" id="dateFin"
                                                            name="dateFin" value="{{ old('dateFin') ?? ($dataToEdit ? $dateFinFormatted : date('Y-m-d')) }}">
                                                     @error('dateFin')
@@ -78,7 +78,7 @@
                                                 </div>
 
                                                 <div class="form-group" id="livrables-container">
-                                                    <label for="livrable">{{ __('app.name') }} du  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
+                                                    <label for="livrable">{{ __('app.name') }}   {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                     @if(isset($dataToEdit->livrables))
                                                         @foreach($dataToEdit->livrables as $livrable)
                                                             <div class="input-group mb-3">
@@ -104,7 +104,7 @@
                                                                 @enderror
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="livrable_link">{{ __('app.link') }} de la {{ __('pkg_creation_projets/Livrable.singular') }}</label>
+                                                                <label for="livrable_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                                 <input type="text" class="form-control @error('livrable_link.*') is-invalid @enderror" id="livrable_link" name="livrable_link[]" value="{{ $livrable->lien }}">
                                                                 @error('livrable_link.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -126,14 +126,14 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="livrable_description">{{ __('app.title') }}</label>
+                                                            <label for="livrable_description">{{ __('app.description') }} {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                             <textarea class="form-control @error('livrable_description.*') is-invalid @enderror ckeditor-textarea" id="livrable_description" name="livrable_description[]" rows="3"></textarea>
                                                             @error('livrable_description.*')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="livrable_link">{{ __('app.link') }} de la {{ __('pkg_creation_projets/Livrable.singular') }}</label>
+                                                            <label for="livrable_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                             <input type="text" class="form-control @error('livrable_link.*') is-invalid @enderror" id="livrable_link" name="livrable_link[]" value="">
                                                             @error('livrable_link.*')
                                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -142,26 +142,26 @@
                                                     @endif
                                                 </div>
                                                 <button type="button" class="btn btn-primary mb-3"
-                                                        onclick="addLivraison()">{{ __('app.add') }} un autre  {{ __('pkg_creation_projets/Livrable.singular') }}
+                                                        onclick="addLivraison()">{{ __('app.add') }}   {{ __('pkg_creation_projets/Livrable.singular') }}
                                                 </button>
                                                 <div class="form-group" id="ressources-container">
-                                                    <label for="ressource">{{ __('app.name') }} de la {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                    <label for="ressource">{{ __('app.name') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                     @if(isset($dataToEdit->resources))
                                                         @foreach($dataToEdit->resources as $resource)
                                                             <div class="ressource mb-3">
-                                                                <input type="text" class="form-control @error('ressource_nom.*') is-invalid @enderror" name="ressource_nom[]" placeholder="Nom de la ressource" value="{{ $resource->nom }}">
+                                                                <input type="text" class="form-control @error('ressource_nom.*') is-invalid @enderror" name="ressource_nom[]" placeholder="Nom  ressource" value="{{ $resource->nom }}">
                                                                 @error('ressource_nom.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                                 @enderror
                                                                 <div class="form-group">
-                                                                    <label for="ressource_description">{{ __('app.add') }} de la {{ __('app.add') }}</label>
+                                                                    <label for="ressource_description">{{ __('app.add') }}  {{ __('app.add') }}</label>
                                                                     <textarea class="form-control @error('ressource_description.*') is-invalid @enderror ckeditor-textarea" id="ressource_description" name="ressource_description[]" rows="3">{{ $resource->description }}</textarea>
                                                                     @error('ressource_description.*')
                                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                                     @enderror
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="ressource_link">{{ __('app.link') }} de la {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                                    <label for="ressource_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                                     <input type="text" class="form-control @error('ressource_lien.*') is-invalid @enderror" id="ressource_link" name="ressource_lien[]" value="{{ $resource->lien }}">
                                                                     @error('ressource_lien.*')
                                                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -171,19 +171,19 @@
                                                         @endforeach
                                                     @else
                                                         <div class="ressource mb-3">
-                                                            <input type="text" class="form-control @error('ressource_nom.*') is-invalid @enderror" name="ressource_nom[]" placeholder="Nom de la ressource">
+                                                            <input type="text" class="form-control @error('ressource_nom.*') is-invalid @enderror" name="ressource_nom[]" placeholder="Nom  ressource">
                                                             @error('ressource_nom.*')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
                                                             <div class="form-group">
-                                                                <label for="ressource_description">{{ __('app.description') }} de la {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                                <label for="ressource_description">{{ __('app.description') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                                 <textarea class="form-control @error('ressource_description.*') is-invalid @enderror ckeditor-textarea" id="ressource_description" name="ressource_description[]" rows="3"></textarea>
                                                                 @error('ressource_description.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                                 @enderror
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="ressource_link">{{ __('app.link') }} de la {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                                <label for="ressource_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                                 <input type="text" class="form-control @error('ressource_lien.*') is-invalid @enderror" id="ressource_link" name="ressource_lien[]">
                                                                 @error('ressource_lien.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -192,7 +192,7 @@
                                                         </div>
                                                     @endif
                                                 </div>
-                                                <button type="button" class="btn btn-primary mb-3" onclick="addRessource()">Ajouter une autre ressource</button>
+                                                <button type="button" class="btn btn-primary mb-3" onclick="addRessource()">{{ __('app.add') }}  {{ __('pkg_creation_projets/Resource.singular') }}</button>
 
                                             </div>
                                         </div>
@@ -200,14 +200,21 @@
                                         <div class="step" id="step2" style="display:none;">
                                             <div id="competence-part" role="tabpanel" aria-labelledby="projet-part-trigger">
                                                 <div class="form-group">
-                                                    <h2>{{ __('pkg_compentences/competence.plural') }}</h2>
-                                                    <p>Veuillez sélectionner les compétences que vous possédez.</p>
+                                                    <h2>{{ __('pkg_competences/competence.plural') }}</h2>
+                                                    <p> {{ __('app.select') }}    @php
+                                                        // Generate the title using the title function
+                                                        use App\helpers\TranslationHelper;
+                                                        $lang = Config::get('app.locale');
+                                                        $translatedName = TranslationHelper::getTitle(  __('pkg_competences/competence.plural'), $lang);
+                                                        echo $translatedName;
+                                
+                                                    @endphp     .</p>
                                                     <table class="table">
                                                         <thead>
                                                         <tr>
-                                                            <th>{{ __('pkg_compentences/competence.plural') }}</th>
-                                                            <th>{{ __('pkg_compentences/technologie.plural') }}</th>
-                                                            <th>{{ __('pkg_compentences/appreciation.plural') }}</th>
+                                                            <th>{{ __('pkg_competences/competence.plural') }}</th>
+                                                            <th>{{ __('pkg_competences/technologie.plural') }}</th>
+                                                            <th>{{ __('pkg_competences/appreciation.plural') }}</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
@@ -392,7 +399,7 @@
 
         // Create select for livrable nature
         var natureLabel = document.createElement("label");
-        natureLabel.textContent = "Nature du livrable";
+        natureLabel.textContent = "Nature  livrable";
 
         var natureSelect = document.createElement("select");
         natureSelect.className = "form-control";
@@ -408,13 +415,13 @@
 
         // Create textarea for livrable description
         var descriptionLabel = document.createElement("label");
-        descriptionLabel.textContent = "Description du livrable";
+        descriptionLabel.textContent = "Description  livrable";
 
         var descriptionTextarea = document.createElement("textarea");
         descriptionTextarea.classList.add("form-control", "livrableDescription", "ckeditor-textarea");
         descriptionTextarea.name = "livrable_description[]";
         descriptionTextarea.rows = "3";
-        descriptionTextarea.placeholder = "Description du livrable";
+        descriptionTextarea.placeholder = "Description  livrable";
 
         // Append all inputs to the livraisonDiv
         livraisonDiv.appendChild(nomLabel);
@@ -436,36 +443,36 @@
 
         // Create label for resource name
         var nomLabel = document.createElement("label");
-        nomLabel.textContent = "Nom de la ressource";
+        nomLabel.textContent = "Nom  ressource";
 
         // Create input for resource name
         var nomInput = document.createElement("input");
         nomInput.type = "text";
         nomInput.className = "form-control";
         nomInput.name = "ressource_nom[]";
-        nomInput.placeholder = "Nom de la ressource";
+        nomInput.placeholder = "Nom  ressource";
 
         // Create label for resource link
         var lienLabel = document.createElement("label");
-        lienLabel.textContent = "Lien de la ressource";
+        lienLabel.textContent = "Lien  ressource";
 
         // Create input for resource link
         var lienInput = document.createElement("input");
         lienInput.type = "text";
         lienInput.className = "form-control";
         lienInput.name = "ressource_lien[]";
-        lienInput.placeholder = "Lien de la ressource";
+        lienInput.placeholder = "Lien  ressource";
 
         // Create label for resource description
         var descriptionLabel = document.createElement("label");
-        descriptionLabel.textContent = "Description de la ressource";
+        descriptionLabel.textContent = "Description  ressource";
 
         // Create textarea for resource description
         var descriptionTextarea = document.createElement("textarea");
         descriptionTextarea.classList.add("form-control", "ckeditor-textarea");
         descriptionTextarea.name = "ressource_description[]";
         descriptionTextarea.rows = "3";
-        descriptionTextarea.placeholder = "Description de la ressource";
+        descriptionTextarea.placeholder = "Description  ressource";
 
         // Append labels and inputs to the ressourceDiv
         ressourceDiv.appendChild(nomLabel);

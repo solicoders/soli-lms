@@ -2,24 +2,26 @@
 
 namespace App\Repositories\pkg_competences;
 
-use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Appreciation;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\pkg_competences\CompetenceAlreadyExistException;
+use App\Exceptions\pkg_competences\AppreciationAlreadyExistException;
 
 /**
- * Class CompetenRepository that manages the persistence of competences in the database.
+ * Class AppreciationRepository that manages the persistence of Appreciation in the database.
  */
-class CompetenceRepository extends BaseRepository
+class AppreciationRepository extends BaseRepository
 {
     /**
-     * Searchable fields for competences.
+     * Searchable fields for Appreciation.
      *
      * @var array
      */
     protected $fieldsSearchable = [
-        'name',
-        'description'
+        'nom',
+        'description',
+        'noteMin',
+        'noteMax'
     ];
 
     /**
@@ -37,33 +39,34 @@ class CompetenceRepository extends BaseRepository
      */
     public function __construct()
     {
-        parent::__construct(new Competence());
+        parent::__construct(new Appreciation());
     }
 
     /**
-     * Create a new competence.
+     * Create a new Appreciation.
      *
-     * @param array $data Competence data.
+     * @param array $data Appreciation data.
      * @return mixed
-     * @throws CompetenceAlreadyExistException If the competence already exists.
+     * @throws AppreciationAlreadyExistException If the Appreciation already exists.
      */
     public function create(array $data)
     {
         $nom = $data['nom'];
-        $description = $data['description'];
+        $nom = $data['description'];
+        $noteMin = $data['noteMin'];
+        $noteMax = $data['noteMax'];
 
-        $existingCompetence = $this->model->where('nom', $nom)->exists();
-        $existingCompetence = $this->model->where('description', $description)->exists();
+        $existingFiliere = $this->model->where('nom', $nom)->exists();
 
-        if ($existingCompetence) {
-            throw new CompetenceAlreadyExistException("Competence already exists.");
+        if ($existingFiliere) {
+            throw new AppreciationAlreadyExistException("Appreciation already exists.");
         } else {
             return parent::create($data);
         }
     }
 
     /**
-     * Search competences based on specified criteria.
+     * Search Filiere based on specified criteria.
      *
      * @param mixed $searchableData Search data.
      * @param int $perPage Items per page.
