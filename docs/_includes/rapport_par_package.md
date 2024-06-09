@@ -16,7 +16,7 @@
 {% endif %}
 
 
-{% if page.chapitre == true %}
+{% if page.chapitre == true and page.package != "pkg_rapport" %}
 <!-- {{- page.path  | markdownify -}} -->
     {{- page.content | markdownify -}}
 {%  endif %} 
