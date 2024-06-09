@@ -12,6 +12,11 @@
                 <tr>
                     <td>{{ $project->nom }}</td>
                     <td>{{ $project->description }}</td>
+                    <td> <ul>
+                        @foreach ($projet->transfertCompetences as $transfert)
+                            <li>{{ $transfert->competence->nom }}</li>
+                        @endforeach
+                    </ul></td>
 
                     <td class="text-center">
                         @can('show-ProjetController')

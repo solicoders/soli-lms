@@ -13,6 +13,7 @@ use App\Models\pkg_realisation_projets\EtatRealisationProjet;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\pkg_realisation_projets\RealisationProjetRequest;
 use App\Models\pkg_validations\Validation;
+use Faker\Provider\ar_EG\Person;
 use Illuminate\Support\Facades\Auth;
 
 class ProjectRealisationController extends Controller
@@ -31,13 +32,15 @@ class ProjectRealisationController extends Controller
         $projects = Projet::all();
         $EtatRealisationProjet = EtatRealisationProjet::all();
     // Get the current user's groupe_id
-    $userGroupeId = Auth::user()->groupe_id;
+    $userGroupeId = Auth::user()->id;
+    $user_id = Personne::where('user_id',$userGroupeId);
+
 
     // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
     $Personnes = Personne::where('type', 'apprenant')
-                          ->where('groupe_id', $userGroupeId)
-                          ->get();
-           
+    ->where('user_id', $userGroupeId)
+    ->get();          
+     dd($user_id);
               $realisationProjets = RealisationProjet::with('validation')->paginate();
     // dd($validation);
          return view('pkg_realisation_projets.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes','EtatRealisationProjet'));
@@ -48,7 +51,7 @@ class ProjectRealisationController extends Controller
         return view('pkg_realisation_projets.realisationProjet.create');
     }
 
-    public function store(RealisationProjetRequest $request)
+    public function store( $request)
     {
         $validatedData = $request->validated();
         try {
@@ -71,7 +74,7 @@ class ProjectRealisationController extends Controller
         return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet'));
     }
 
-    public function update(RealisationProjetRequest $request, $id)
+    public function update( $request, $id)
     {
         $validatedData = $request->validated();
         $this->projectRealisationRepository->update($id, $validatedData);
