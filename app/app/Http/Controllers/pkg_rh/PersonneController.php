@@ -62,14 +62,10 @@ class PersonneController extends Controller
             $data += ['type' => $type,'profile_image' => 'default_profile_image.png'];
             $personne =  $this->getRepository()->create($data);
 
-            return redirect()->route($type . '.index')->with('success', $type . ' a été ajouté avec succès');
+            return redirect()->route($type . '.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.addSucées'));
 
-        } catch (FormateurException $e) {
-            return back()->withInput()->withErrors(['personne_exists' =>__('pkg_rh/personne.'.$type.'singular') . ' est déja exist']);
-        } catch (ApprenantException $e) {
-            return back()->withInput()->withErrors(['personne_exists' => __('pkg_rh/personne.'.$type.'singular') . ' est déja exist']);
-        } catch (\Exception $e) {
-            return back()->withInput()->withErrors($e->getMessage());
+        }catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
         }
     }
 

@@ -2,10 +2,11 @@
 
 namespace App\Repositories\pkg_rh;
 
-use App\Repositories\BaseRepository;
 use App\Models\pkg_rh\Formateur;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use App\Repositories\BaseRepository;
+use App\Exceptions\pkg_rh\FormateurException;
 use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 
 class FormateurRepository extends BaseRepository
@@ -46,13 +47,18 @@ class FormateurRepository extends BaseRepository
         $preom = $data['prenom'];
         
         $existingFormateur = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
-        
         if ($existingFormateur) {
-            throw FormateurAlreadyExistException::createFormateur();
-        } else {
-           
-            return parent::create($data);
+            throw FormateurException::AlreadyExistFormateur();
+        }else{
+            parent::create($data);
         }
+
+        // if ($existingFormateur) {
+        //     throw FormateurAlreadyExistException::createFormateur();
+        // } else {
+           
+        //     return parent::create($data);
+        // }
     }
 
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator

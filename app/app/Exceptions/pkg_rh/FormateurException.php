@@ -8,6 +8,6 @@ class FormateurException extends Exception
 {
     public static function AlreadyExistFormateur()
     {
-        return new self('Formateur deja exist');
+        return new self(__('pkg_rh.Formateur.singular') . ' est deja exist');
     }
 }

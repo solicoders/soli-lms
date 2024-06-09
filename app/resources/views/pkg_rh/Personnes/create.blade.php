@@ -3,10 +3,15 @@
         <section class="content">
             <div class="container-fluid">
                 <section class="content-header">
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <div class="container-fluid ">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Créer un nouvel {{$type}}</h1>
+                                <h1>Créer un nouvel {{ __('pkg_rh/'.$type.'.singular')}}</h1>
                             </div>
                         </div>
                     </div>
@@ -145,8 +150,8 @@
                             <!-- End Other Information -->
 
 
-                            <a type="button" class="btn btn-secondary" href={{ route($type.'.index') }}>Annuler</a>
-                            <button type="submit" class="btn btn-info">Enregistrer</button>
+                            <a type="button" class="btn btn-secondary" href={{ route($type.'.index') }}>{{ __('app.cancel')}}</a>
+                            <button type="submit" class="btn btn-info">{{ __('app.add')}}</button>
                         </form>
                     </div>
                 </div>
