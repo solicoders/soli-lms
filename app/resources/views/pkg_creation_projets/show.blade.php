@@ -32,10 +32,15 @@
                                 <label for="competences">Compétences :</label>
                                 <ul>
                                     @foreach ($projet->transfertCompetences as $transfertCompetence)
-                                        <li>{{ $transfertCompetence->competence->nom ?? 'No competence' }}
-                                            <span>({{ $transfertCompetence->appreciation->description ?? 'No appreciation' }})</span>
-                                        </li>
-                                    @endforeach
+                                    <li>{{ $transfertCompetence->competence->nom ?? 'No competence' }}
+                                        <span>({{ $transfertCompetence->appreciation->description ?? 'No appreciation' }})</span>
+                                        <ul>
+                                            @foreach ($transfertCompetence->technologies as $technology)
+                                                <li>{{ $technology->nom }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endforeach
                                 </ul>
                             </div>
 

@@ -18,7 +18,7 @@ class projectRealisationRepository extends BaseRepository
      * @var array
      */
     protected $fieldsSearchable = [
-        'titre', 
+        'titre',
         'description',
         'date_debut_realisation',
         'date_fin_realisation',
@@ -52,6 +52,7 @@ class projectRealisationRepository extends BaseRepository
      * @return mixed
      * @throws RealisationProjetAlreadyExistException Si le RealisationProjet existe déjà.
      */
+<<<<<<< HEAD
     public function create(array $data)
     {
         $projetId = $data['projet_id'];
@@ -63,6 +64,8 @@ class projectRealisationRepository extends BaseRepository
             return parent::create($data);
         // }
     }
+=======
+>>>>>>> Develop-pkg_creation_projets
 
     /**
      * Recherche les RealisationProjets correspondants aux critères spécifiés.
