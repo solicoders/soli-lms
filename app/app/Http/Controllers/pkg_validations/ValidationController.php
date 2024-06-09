@@ -144,4 +144,51 @@ class ValidationController extends Controller
     {
         return view('pkg_validations.create');
     }
+
+
+    public function detail($realisationProjetId)
+    {
+ // Find the RealisationProjet by its ID
+ $realisation = RealisationProjet::findOrFail($realisationProjetId);
+
+ // Get all competencies for the project
+ $competences = $realisation->projet->transfertCompetences()
+     ->with(['competence', 'appreciation', 'validations' => function ($query) use ($realisationProjetId) {
+         $query->where('realisation_projet_id', $realisationProjetId);
+     }])
+     ->get();
+
+ // Get all possible appreciations
+ $appreciations = Appreciation::all();
+
+ // Fetch messages associated with each competence
+ $messages = Message::whereHas('validation', function ($query) use ($realisationProjetId) {
+     $query->where('realisation_projet_id', $realisationProjetId);
+ })->get();
+
+ // Group messages by competence ID for easy access in the view
+ $messagesByCompetence = [];
+ foreach ($messages as $message) {
+     $messagesByCompetence[$message->validation->transfertCompetence->id][] = $message;
+ }
+
+ // Fetch and format notes from validations
+ $notesByCompetence = [];
+ foreach ($competences as $competence) {
+     $validation = $competence->validations->first(); // Get the first validation (assuming only one per competence)
+     if ($validation) {
+         $notesByCompetence[$competence->id] = $validation->note;
+         $appreciationId = $validation->appreciation_id;
+         $competence->appreciation_id = $appreciationId; // Update the appreciation ID for the competence
+     }
+ }
+
+ return view('pkg_validations.validation.show', compact(
+     'realisation',
+     'competences',
+     'appreciations',
+     'messagesByCompetence',
+     'notesByCompetence' // Pass the notes to the view
+ ));     
+    }
 }

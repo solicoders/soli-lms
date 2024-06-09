@@ -109,6 +109,13 @@
                                             <i class="fas fa-check"></i> Valider
                                         </a>
                                     </td>
+                                    <td >
+                                            <a href="{{ route('validations.detail', ['realisation_id' => $project->id]) }}" class="btn btn-default btn-sm">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+    
+                                      
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
