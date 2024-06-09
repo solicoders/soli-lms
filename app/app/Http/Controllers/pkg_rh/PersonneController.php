@@ -19,11 +19,10 @@ use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
 class PersonneController extends Controller
 {
 
-
+    
     public function index(Request $request)
     {
         
-        $view = 'pkg_rh.Personnes.index';
         $type = $this->getType();
 
         if ($request->ajax()) {
@@ -32,11 +31,11 @@ class PersonneController extends Controller
                 $searchQuery = str_replace(" ", "%", $searchValue);
                 $personnes = $this->searchData($searchQuery);
 
-                return view($view, compact('personnes', 'type'))->render();
+                return view('pkg_rh.Personnes.index', compact('personnes', 'type'))->render();
             }
         }
         $personnes = $this->getRepository()->paginate();
-        return view($view, compact('personnes', 'type'));
+        return view('pkg_rh.Personnes.index', compact('personnes', 'type'));
     }
 
 
@@ -45,7 +44,7 @@ class PersonneController extends Controller
         $type = $this->getType();
         $GroupRepositorie = new GroupeRepository();
         $groupes = $GroupRepositorie->all();
-        return view('pkg_rh.personne.create',compact('type','groupes'));
+        return view('pkg_rh.Personnes.create',compact('type','groupes'));
     }
 
     public function store(Request $request)
@@ -77,7 +76,7 @@ class PersonneController extends Controller
         $personne = $this->getRepository()->find($id);
         $GroupRepositorie = new GroupRepositorie();
         $groupes = $GroupRepositorie->paginate();
-        return view('pkg_rh.personne.edit', compact('personne','type','groupes'));
+        return view('pkg_rh.Personnes.edit', compact('personne','type','groupes'));
     }
 
     public function update(Request $request, $id)

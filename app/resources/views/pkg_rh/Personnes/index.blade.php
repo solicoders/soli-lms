@@ -9,7 +9,7 @@
                         <h1>Liste des Formateurs</h1>
                     </div>
                     <div class="col-sm-6">
-                        <a href="./create.php" type="button" class="btn btn-primary float-right">
+                        <a href={{ route($type.'.create')}} type="button" class="btn btn-primary float-right">
                             <i class="fas fa-plus"></i> Ajouter un Formateur
                         </a>
                     </div>
