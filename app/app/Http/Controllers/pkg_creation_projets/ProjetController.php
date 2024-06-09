@@ -386,9 +386,6 @@ if (isset($validatedData['competences'])) {
 
     public function export()
     {
-        // Export the data to an Excel file
-       Excel::download(new ProjetExport, 'projets.xlsx');
-       return redirect()->route('projets.index')->with('success', 'Les projets ont été exportés avec succès.');
-
+        return Excel::download(new ProjetExport, 'projets.xlsx'); // Add 'return' 
     }
 }
