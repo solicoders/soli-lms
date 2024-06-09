@@ -2,14 +2,14 @@
 
 namespace App\Repositories\pkg_rh;
 
-use App\Models\User;
-use App\Models\pkg_rh\Apprenant;
+use App\Models\pkg_rh\Formateur;
 use App\Repositories\BaseRepository;
-use App\Exceptions\pkg_rh\ApprenantException;
-use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
+use App\Exceptions\pkg_rh\FormateurException;
+use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
-class ApprenantRepository extends BaseRepository
+
+class FormateurRepository extends BaseRepository
 {
     protected $type;
 
@@ -37,28 +37,27 @@ class ApprenantRepository extends BaseRepository
      */
     public function __construct()
     {
-        $this->type = "Apprenant";
-        parent::__construct(new Apprenant());
+        $this->type = "formateur";
+        parent::__construct(new Formateur());
     }
 
     public function create(array $data)
     {
         $nom = $data['nom'];
-        $prenom = $data['prenom'];
+        $preom = $data['prenom'];
         
-        $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $prenom)->exists();
-        try {
+        $existingFormateur = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
+        if ($existingFormateur) {
+            throw FormateurException::AlreadyExistFormateur();
+        }else{
             parent::create($data);
-        } catch (\Exception $e) {
-            dd($e->getMessage());
         }
 
-        // if ($existingApprenant) {
-        //     throw ApprenantException::AlreadyExistApprenant();
+        // if ($existingFormateur) {
+        //     throw FormateurAlreadyExistException::createFormateur();
         // } else {
-        //     User::create($data);
-        //     $add = parent::create($data);
-        //     return $add;
+           
+        //     return parent::create($data);
         // }
     }
 
@@ -80,7 +79,7 @@ class ApprenantRepository extends BaseRepository
      */
     public function searchData($searchableData, $perPage = 10)
     {
-        return $this->model->where('type', 'Apprenant')->where(function($query) use ($searchableData) {
+        return $this->model->where('type', 'Formateur')->where(function($query) use ($searchableData) {
             $query->where('nom', 'like', '%' . $searchableData . '%')
                   ->orWhere('prenom', 'like', '%' . $searchableData . '%');
         })->paginate($perPage);
