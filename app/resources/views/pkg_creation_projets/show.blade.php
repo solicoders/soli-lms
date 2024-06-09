@@ -23,7 +23,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="col-sm-12">
-                                <label for="nom">Nom :</label>
+                                <label for="nom">{{ __('app.name') }} :</label>
                                 <p>{{ $projet->titre }}</p>
                             </div>
 
@@ -46,26 +46,26 @@
 
                             <!-- Champ Travail à faire -->
                             <div class="col-sm-12">
-                                <label for="travail">Travail à faire :</label>
+                                <label for="travail">{{ __('app.travailAFaire') }}</label>
                                 <p>{{ $projet->travailAFaire }}</p>
                             </div>
 
                             <!-- Champ Critères de validation -->
                             <div class="col-sm-12">
-                                <label for="validation">Critères de validation :</label>
+                                <label for="validation">{{ __('app.critereDeTravail') }}</label>
                                 <p>{{ $projet->critereDeTravail }}</p>
                             </div>
 
                             <!-- Champ Date de début et de fin -->
                             <div class="col-sm-12">
-                                <label for="date">Date :</label>
+                                <label for="date">{{ __('app.date') }}</label>
                                 <p>Date de début : {{ $projet->dateDebut }}</p>
                                 <p>Date de fin : {{ $projet->dateFin }}</p>
                             </div>
 
                             <!-- Champ Ressources -->
                             <div class="col-sm-12">
-                                <label for="resources">Ressources :</label>
+                                <label for="resources">{{ __('pkg_creation_projets/Resource.plural') }} :</label>
                                 <ul>
                                     @foreach ($projet->resources as $resource)
                                         <li><a href="{{ $resource->lien }}">{{ $resource->nom }}</a>: {{ $resource->description }}</li>
@@ -75,7 +75,7 @@
 
                             <!-- Champ Livrables -->
                             <div class="col-sm-12">
-                                <label for="livrables">Livrables :</label>
+                                <label for="livrables">{{ __('pkg_creation_projets/Livrable.plural') }} :</label>
                                 <ul>
                                     @foreach ($projet->livrables as $livrable)
                                         <li>{{ $livrable->titre }}: <a href="{{ $livrable->lien }}">{{ $livrable->lien }}</a>
@@ -83,6 +83,17 @@
                                     @endforeach
                                 </ul>
                             </div>
+
+                            <!-- Champ Apprenants -->
+                            <div class="col-sm-12">
+                                <label for="apprenants">Apprenants :</label>
+                                <ul>
+                                    @foreach ($learners as $learner)
+                                        <li>{{ $learner->nom }} {{ $learner->prenom }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </div>

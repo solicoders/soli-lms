@@ -67,7 +67,7 @@ class ProjetController extends Controller
             'livrables',
             'resources',
             'transfertCompetences.competence',
-            'transfertCompetences.appreciation'
+            'transfertCompetences.appreciation',
         ])->paginate();
         $competences = Competence::all();
 
@@ -178,10 +178,13 @@ if (isset($validatedData['competences'])) {
             'resources',
             'transfertCompetences.competence',
             'transfertCompetences.appreciation',
-            'transfertCompetences.technologies' // Add this line
+            'transfertCompetences.technologies',
+            'realisationProjets.personne'
         ])->findOrFail($id);
-        return view('pkg_creation_projets.show', compact('projet'));
-    }
+ // Get the learners associated with the project
+ $learners = $projet->realisationProjets->pluck('personne'); // This will give you a collection of Personnes
+
+ return view('pkg_creation_projets.show', compact('projet', 'learners'));     }
 
     public function edit($id)
     {

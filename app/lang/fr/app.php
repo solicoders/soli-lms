@@ -24,7 +24,8 @@ return [
    'Previous'=>'Précédent',
     'Next'=>'Suivant',
     'Submit'=>'Soumettre',
-    'checkall'=>'Tout cocher'
+    'checkall'=>'Tout cocher',
+    'date'=>'Date'
 
 
 

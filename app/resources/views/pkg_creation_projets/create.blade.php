@@ -314,18 +314,21 @@
     function showStep(n) {
         var steps = document.getElementsByClassName("step");
         var totalSteps = steps.length;
+        for (var i = 0; i < steps.length; i++) {
+            steps[i].style.display = "none";
+        }
         steps[n].style.display = "block";
 
         // Always show the Previous button, but change its function on the first step
         document.getElementById("prevBtn").style.display = "inline";
         if (n === 0) {
-            document.getElementById("prevBtn").innerHTML = {{ __('app.cancel') }}; // or "Go Back", etc.
+            document.getElementById("prevBtn").innerHTML = "{{ __('app.cancel') }}"; // or "Go Back", etc.
         } else {
-            document.getElementById("prevBtn").innerHTML = {{ __('app.back') }};
+            document.getElementById("prevBtn").innerHTML = "{{ __('app.back') }}";
         }
 
         // Adjust the Next/Submit button visibility
-        if (n === totalSteps - 1) {
+        if (n == totalSteps - 1) {
             document.getElementById("nextBtn").style.display = "none";
             document.getElementById("submitBtn").style.display = "inline";
         } else {
@@ -369,6 +372,7 @@
         return true;
     }
 </script>
+
 <!-- Inclure le script -->
 <script>
     function addLivraison() {
