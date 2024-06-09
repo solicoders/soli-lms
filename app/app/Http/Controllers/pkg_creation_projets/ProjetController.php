@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\pkg_creation_projets;
 
+use App\Exports\pkg_creation_projets\ProjetExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_creation_projets\ProjetRequest;
 use App\Http\Requests\pkg_creation_projets\ProjetStoreRequest;
+use App\Imports\pkg_creation_projets\ProjetImport;
 use App\Models\pkg_competences\Competence;
 use App\Models\pkg_competences\Appreciation;
 use App\Models\pkg_competences\Technologie;
@@ -23,6 +25,7 @@ use App\Repositories\pkg_rh\ApprenantRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProjetController extends Controller
 {
@@ -92,7 +95,7 @@ class ProjetController extends Controller
         $appreciations = Appreciation::all();
         $livrableNatures = NatureLivrable::all();
         $technologies = Technologie::all();
-        return view('pkg_creation_projets.create', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures','technologies'));
+        return view('pkg_creation_projets.form', compact('dataToEdit', 'apprenants', 'competences', 'appreciations', 'livrableNatures','technologies'));
     }
 
     public function store(ProjetStoreRequest $request)
@@ -216,7 +219,7 @@ if (isset($validatedData['competences'])) {
         $livrableNatures = NatureLivrable::all();
         $technologies = Technologie::all();
 
-        return view('pkg_creation_projets.create', compact(
+        return view('pkg_creation_projets.form', compact(
             'dataToEdit',
             'dateDebutFormatted',
             'dateFinFormatted',
@@ -360,5 +363,32 @@ if (isset($validatedData['competences'])) {
     {
         $this->projetRepository->destroy($id);
         return redirect()->route('projets.index')->with('success', 'Le projet a été supprimé avec succès.');
+    }
+
+    public function import(Request $request)
+    {
+        // Validate the file upload (ensure it's an Excel file)
+        $request->validate([
+            'file' => 'required|file|mimes:xls,xlsx',
+        ]);
+
+        // Import the Excel file
+        try {
+            Excel::import(new ProjetImport, $request->file('file'));
+
+            // Redirect with success message
+            return redirect()->route('projets.index')->with('success', 'Les projets ont été importés avec succès.');
+        } catch (\Exception $e) {
+            // Handle errors and provide feedback to the user
+            return redirect()->route('projets.index')->with('error', 'Une erreur s\'est produite lors de l\'importation des projets. Veuillez vérifier votre fichier Excel.');
+        }
+    }
+
+    public function export()
+    {
+        // Export the data to an Excel file
+       Excel::download(new ProjetExport, 'projets.xlsx');
+       return redirect()->route('projets.index')->with('success', 'Les projets ont été exportés avec succès.');
+
     }
 }
