@@ -14,8 +14,7 @@ Route::middleware('auth')->group(function () {
         Route::put('projets/{projet}', [ProjetController::class, 'update'])->name('projets.update');
         Route::delete('projets/{projet}', [ProjetController::class, 'destroy'])->name('projets.destroy');
 
-        Route::get('projets/export', [ProjetController::class, 'export'])->name('projets.export');
-        Route::post('projets/import', [ProjetController::class, 'import'])->name('projets.import');
-        Route::post('projets/import', [ProjetController::class, 'import'])->name('projets.import');
+        Route::get('/export', [ProjetController::class, 'export'])->name('projets.export');
+        Route::post('/import', [ProjetController::class, 'import'])->name('projets.import');
     });
 });

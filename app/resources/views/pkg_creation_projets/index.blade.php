@@ -12,15 +12,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Les briefs projets
-                        {{-- @php
-                            // Generate the title using the title function
-                            use App\helpers\TranslationHelper;
-                            $lang = Config::get('app.locale');
-                            $translatedName = TranslationHelper::getTitle(__('GestionProjets/projet.singular'), $lang);
-                            echo $translatedName;
-
-                        @endphp --}}
+                        Les  {{ __('pkg_creation_projets/Projet.plural') }}
                     </h1>
 
                 </div>
