@@ -14,46 +14,50 @@
                 
                 <div class="card">
                     <div class="card-body">
-                        <form id="createPersonnelForm">
+                        <form method="post" action={{ route($type.'.store') }}>
+                            @csrf
+                            @method('POST')
                             <!-- Personal Information -->
+                            <h4 class="mb-3 mt-3">Informations personnelles</h4>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nom">Nom</label>
-                                        <input type="text" class="form-control" value="Souklabi" id="nom" name="nom">
+                                        <input type="text" class="form-control"  id="nom" name="nom">
                                     </div>
                                     <div class="form-group">
                                         <label for="prenom">Prénom</label>
-                                        <input type="text" class="form-control" value="Abdellatif" id="prenom" name="prenom">
+                                        <input type="text" class="form-control"  id="prenom" name="prenom">
                                     </div>
                                     <div class="form-group">
                                         <label for="date_naissance">Date de Naissance</label>
-                                        <input type="date" class="form-control" value="2000-01-01" id="date_naissance" name="date_naissance">
+                                        <input type="date" class="form-control"  id="date_naissance" name="date_naissance">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nom_arab">Nom en Arabe</label>
-                                        <input type="text" class="form-control" value="..." id="nom_arab" name="nom_arab">
+                                        <input type="text" class="form-control" id="nom_arab" name="nom_arab">
                                     </div>
                                     <div class="form-group">
                                         <label for="prenom_arab">Prénom en Arabe</label>
-                                        <input type="text" class="form-control" value="..." id="prenom_arab" name="prenom_arab">
+                                        <input type="text" class="form-control"  id="prenom_arab" name="prenom_arab">
                                     </div>
                                     <div class="form-group">
                                         <label for="tele_num">Numéro de Téléphone</label>
-                                        <input type="text" class="form-control" value="0601020304" id="tele_num" name="tele_num">
+                                        <input type="text" class="form-control"  id="tele_num" name="tele_num">
                                     </div>
                                 </div>
                             </div>
                             <!-- End Personal Information -->
 
                             <!-- Contact Information -->
+                            <h4 class="mb-3 mt-3">Informations de contact</h4>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" value="personnel@example.com" id="email" name="email">
+                                        <input type="email" class="form-control"  id="email" name="email">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
@@ -63,14 +67,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="rue">Rue</label>
-                                        <input type="text" class="form-control" value="..." id="rue" name="rue">
+                                        <input type="text" class="form-control" id="rue" name="rue">
                                     </div>
                                     <div class="form-group">
                                         <label for="ville_id">Ville</label>
                                         <select class="form-control" id="ville_id" name="ville_id">
-                                            <option value="1">Ville 1</option>
-                                            <option value="2">Ville 2</option>
-                                            <!-- Add more options as needed -->
+                                            <option>Choisissez</option>
+                                            @foreach ($villes as $ville)
+                                                <option value={{$ville->id}}>{{$ville->nom}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -78,69 +83,72 @@
                             <!-- End Contact Information -->
 
                             <!-- Other Information -->
+                            <h4 class="mb-3 mt-3">Autres informations</h4>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="cin">CIN</label>
-                                        <input type="text" class="form-control" value="123456789" id="cin" name="cin">
+                                        <input type="text" class="form-control"  id="cin" name="cin">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="type_id">Type</label>
-                                        <select class="form-control" id="Type_id" name="type">
-                                            <option value="1">Type</option>
-                                            <option value="1">Formateur</option>
-                                            <option value="2">Responasble</option>
-                                            <!-- Add more options as needed -->
+                                        <label for="groupe_id">Groupe</label>
+                                        <select class="form-control" id="groupe_id" name="groupe_id">
+                                            <option>Choisissez</option>
+                                            @foreach ($groupes as $groupe)
+                                                <option value={{$groupe->id}}>{{$groupe->nom}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                @if ($type == 'Apprenant')
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="CNE">CNE</label>
+                                        <input type="text" class="form-control"  id="CNE" name="cne">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="niveau_scolaire_id">Niveau scolaire</label>
+                                        <select class="form-control" id="niveau_scolaire_id" name="niveau_scolaire_id">
+                                            <option>Choisissez</option>
+                                            @foreach ($niveauxScolaire as $niveauScolaire)
+                                                <option value={{$niveauScolaire->id}}>{{$niveauScolaire->nom}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                @endif
+                                <div class="col-md-6">
+                                    @if ($type == 'Formateur')
+                                    <div class="form-group">
+                                        <label for="specialite_id">Spécialité</label>
+                                        <select class="form-control" id="specialite_id" name="specialite_id">
+                                            <option>Choisissez</option>
+                                            @foreach ($specialites as $specialite)
+                                                <option value={{$specialite->id}}>{{$specialite->nom}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @endif
+                                    <div class="form-group">
+                                        <label for="lieu_naissance_id">Lieu de Naissance</label>
+                                        <select class="form-control" id="lieu_naissance_id" name="lieu_naissance_id">
+                                            <option>Choisissez</option>
+                                            @foreach ($villes as $ville)
+                                                <option value={{$ville->id}}>{{$ville->nom}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Other Information -->
 
-                            <!-- Additional Information -->
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="matricule">Matricule</label>
-                                        <input type="text" class="form-control" value="123456789" id="matricule" name="matricule">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="grade_id">Grade</label>
-                                        <select class="form-control" id="grade_id" name="grade_id">
-                                            <option value="1">Grade 1</option>
-                                            <option value="2">Grade 2</option>
-                                            <!-- Add more options as needed -->
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="specialite_id">Spécialité</label>
-                                        <select class="form-control" id="specialite_id" name="specialite_id">
-                                            <option value="1">Spécialité 1</option>
-                                            <option value="2">Spécialité 2</option>
-                                            <!-- Add more options as needed -->
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="etablissement_id">Établissement</label>
-                                        <select class="form-control" id="etablissement_id" name="etablissement_id">
-                                            <option value="1">Établissement 1</option>
-                                            <option value="2">Établissement 2</option>
-                                            <!-- Add more options as needed -->
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Additional Information -->
 
-                            <a type="button" class="btn btn-secondary" href="./index.php">Annuler</a>
-                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            <a type="button" class="btn btn-secondary" href={{ route($type.'.index') }}>Annuler</a>
+                            <button type="submit" class="btn btn-info">Enregistrer</button>
                         </form>
                     </div>
-                    <!-- /.card-body -->
                 </div>
             </div>
         </section>

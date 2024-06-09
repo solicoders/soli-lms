@@ -2,10 +2,12 @@
 
 namespace App\Repositories\pkg_rh;
 
-use App\Repositories\BaseRepository;
+use App\Models\User;
 use App\Models\pkg_rh\Apprenant;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use App\Repositories\BaseRepository;
+use App\Exceptions\pkg_rh\ApprenantException;
 use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ApprenantRepository extends BaseRepository
 {
@@ -42,16 +44,22 @@ class ApprenantRepository extends BaseRepository
     public function create(array $data)
     {
         $nom = $data['nom'];
-        $preom = $data['prenom'];
+        $prenom = $data['prenom'];
         
-        $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
-        
-        if ($existingApprenant) {
-            throw ApprenantAlreadyExistException::createApprenant();
-        } else {
-           
-            return parent::create($data);
+        $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $prenom)->exists();
+        try {
+            parent::create($data);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
         }
+
+        // if ($existingApprenant) {
+        //     throw ApprenantException::AlreadyExistApprenant();
+        // } else {
+        //     User::create($data);
+        //     $add = parent::create($data);
+        //     return $add;
+        // }
     }
 
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator

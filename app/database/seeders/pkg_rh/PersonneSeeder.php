@@ -2,20 +2,23 @@
 
 namespace Database\Seeders\pkg_rh;
 
-use App\Models\pkg_rh\Personne;
-use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
+use App\Models\pkg_rh\Personne;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
+use App\Models\pkg_rh\Apprenant;
+use App\Models\pkg_rh\Formateur;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PersonneSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
+    protected $model;
     public function run(): void
     {
         // Create roles 
@@ -69,17 +72,20 @@ class PersonneSeeder extends Seeder
                 //     $user->assignRole(User::RESPONSABLE);
                 // }
 
-                Personne::create([
+                
+                $this->model = $data['5'] == "apprenant" ? new Apprenant : ($data['5'] == "formateur" ? new Formateur : new Personne);
+                
+                $this->model->create([
                     "prenom"=>$data['0'],
                     "nom"=>$data['1'],
                     "nom_arab"=>$data['2'],
                     "prenom_arab"=>$data['3'],
-                    "type"=>$data['5'],
                     "date_naissance"=>$data['6'],
                     "tele_num"=>$data['7'],
                     "rue"=>$data['8'],
                     "cin"=>$data['9'],
                     "cne"=>$cne,
+                    "_token"=>"hfkdsjhfksshdkqsshdqheqzhe",
                     "date_inscription"=>$date_inscription,
                     "profile_image"=>$data['12'],
                     "ville_id"=>$data['14'],

@@ -8,7 +8,11 @@ trait MorphType
     {
         static::creating(function ($model) {
             $class = class_basename(static::class);
-            $model->type = $class;
+            if ($class !== "Personne") {
+                $model->type = $class;
+            }else{
+                $model->type = "Responsable";
+            }
         });
     }
 }

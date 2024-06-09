@@ -8,6 +8,6 @@ use App\Traits\MorphType;
 
 class Personne extends Model
 {
-    use HasFactory,MorphType;
-
+    use HasFactory;
+    use MorphType;
 }

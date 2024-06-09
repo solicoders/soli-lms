@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\pkg_rh;
 
+use App\Repositories\pkg_rh\NiveauScolaireRepository;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\pkg_rh\Apprenant;
@@ -9,12 +10,10 @@ use App\Models\pkg_rh\Formateur;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Repositories\pkg_rh\GroupeRepository;
-use App\Repositories\pkg_rh\GroupRepositorie;
-use App\Repositories\pkg_rh\ApprenantRepositorie;
-use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
-use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
-
-
+use App\Exceptions\pkg_rh\FormateurException;
+use App\Exceptions\pkg_rh\ApprenantException;
+use App\Repositories\pkg_rh\SpecialiteRepository;
+use App\Repositories\pkg_rh\VilleRepository;
 
 class PersonneController extends Controller
 {
@@ -43,8 +42,16 @@ class PersonneController extends Controller
     {
         $type = $this->getType();
         $GroupRepositorie = new GroupeRepository();
+        $NiveauxScolaireRepository = new NiveauScolaireRepository();
+        $VilleRepository = new VilleRepository();
+        $SpecialiteRepository = new SpecialiteRepository();
+
         $groupes = $GroupRepositorie->all();
-        return view('pkg_rh.Personnes.create',compact('type','groupes'));
+        $specialites = $SpecialiteRepository->all();
+        $villes = $VilleRepository->all();
+        $niveauxScolaire = $NiveauxScolaireRepository->all();
+
+        return view('pkg_rh.Personnes.create',compact('type','groupes','specialites', 'villes', 'niveauxScolaire'));
     }
 
     public function store(Request $request)
@@ -52,14 +59,17 @@ class PersonneController extends Controller
         try {
             $data = $request->all();
             $type = $this->getType();
+            $data += ['type' => $type,'profile_image' => 'default_profile_image.png'];
             $personne =  $this->getRepository()->create($data);
+
             return redirect()->route($type . '.index')->with('success', $type . ' a été ajouté avec succès');
-        } catch (FormateurAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['personne_exists' =>__('pkg_rh/personne.formateurException')]);
-        } catch (ApprenantAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['personne_exists' => __('pkg_rh/personne.apprenantException')]);
+
+        } catch (FormateurException $e) {
+            return back()->withInput()->withErrors(['personne_exists' =>__('pkg_rh/personne.'.$type.'singular') . ' est déja exist']);
+        } catch (ApprenantException $e) {
+            return back()->withInput()->withErrors(['personne_exists' => __('pkg_rh/personne.'.$type.'singular') . ' est déja exist']);
         } catch (\Exception $e) {
-            return abort(500);
+            return back()->withInput()->withErrors($e->getMessage());
         }
     }
 

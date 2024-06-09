@@ -12,7 +12,24 @@ class Apprenant extends Personne
 {
     protected $table = 'personnes';
     use HasFactory, MorphType;
-    
+    protected $fillable = [
+        'nom',
+        'prenom',
+        'nom_arab',
+        'prenom_arab',
+        'profile_image',
+        'date_naissance',
+        'tele_num',
+        'rue',
+        'ville_id',
+        'cin',
+        'groupe_id',
+        'cne',
+        'niveau_scolaire_id',
+        'lieu_naissance_id',
+        '_token'
+    ];
+
     public function groupe(){
         return $this->belongsTo(Groupe::class);
     }
