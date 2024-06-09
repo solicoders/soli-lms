@@ -2,7 +2,7 @@
 
 namespace App\Exports\pkg_competences;
 
-use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Appreciation;
 use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
-class NiveauCompetenceExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
+class AppreciationExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
 {
     protected $data;
 
@@ -23,20 +23,22 @@ class NiveauCompetenceExport implements FromCollection, WithHeadings, ShouldAuto
     public function headings(): array
     {
         return [
-            'nom',
-            'description',
-            'competence_id',
+        'nom',
+        'description',
+        'noteMin',
+        'noteMax'
 
         ];
     }
 
     public function collection()
     {
-        return $this->data->map(function ($NiveauCompetence) {
+        return $this->data->map(function ($Appreciation) {
             return [
-                'nom' => $NiveauCompetence->nom,
-                'description' => $NiveauCompetence->description,
-                'competence_id' => $NiveauCompetence->competence_id,
+                'nom' => $Appreciation->nom,
+                'description' => $Appreciation->description,
+                'noteMin' => $Appreciation->noteMin,
+                'noteMax' => $Appreciation->noteMax,
 
             ];
         });

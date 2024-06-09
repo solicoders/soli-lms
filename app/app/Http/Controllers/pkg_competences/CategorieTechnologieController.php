@@ -23,7 +23,7 @@ class CategorieTechnologieController extends Controller
     }
 
     public function index(Request $request)
-    { 
+    {
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
@@ -48,7 +48,7 @@ class CategorieTechnologieController extends Controller
             $this->CategorieTechnologie->create($data);
             return redirect()->route('CategorieTechnologie.index')->with('success', 'Catégorie technologie  ' . __('app.addSucées'));
         } catch (categorietechnologieException $e) {
-            return back()->with('error', $e->getMessage());
+            return back()->withInput()->withErrors(['CategorieTechnologie_exists' => 'CategorieTechnologie est déjà existant']);
         }
     }
     public function show($id)

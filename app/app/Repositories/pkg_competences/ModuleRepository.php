@@ -2,24 +2,26 @@
 
 namespace App\Repositories\pkg_competences;
 
-use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Module;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\pkg_competences\CompetenceAlreadyExistException;
+use App\Exceptions\pkg_competences\ModuleAlreadyExistException;
 
 /**
- * Class CompetenRepository that manages the persistence of competences in the database.
+ * Class ModuleRepository that manages the persistence of Module in the database.
  */
-class CompetenceRepository extends BaseRepository
+class ModuleRepository extends BaseRepository
 {
     /**
-     * Searchable fields for competences.
+     * Searchable fields for Module.
      *
      * @var array
      */
     protected $fieldsSearchable = [
-        'name',
-        'description'
+        'N',
+        'nom',
+        'description',
+        'filiere_id',
     ];
 
     /**
@@ -33,30 +35,28 @@ class CompetenceRepository extends BaseRepository
     }
 
     /**
-     * CompetenceRepository constructor.
+     * ModuleRepository constructor.
      */
     public function __construct()
     {
-        parent::__construct(new Competence());
+        parent::__construct(new Module());
     }
 
     /**
-     * Create a new competence.
+     * Create a new Module.
      *
      * @param array $data Competence data.
      * @return mixed
-     * @throws CompetenceAlreadyExistException If the competence already exists.
+     * @throws ModuleAlreadyExistException If the Module already exists.
      */
     public function create(array $data)
     {
         $nom = $data['nom'];
-        $description = $data['description'];
 
-        $existingCompetence = $this->model->where('nom', $nom)->exists();
-        $existingCompetence = $this->model->where('description', $description)->exists();
+        $existingModule = $this->model->where('nom', $nom)->exists();
 
-        if ($existingCompetence) {
-            throw new CompetenceAlreadyExistException("Competence already exists.");
+        if ($existingModule) {
+            throw new ModuleAlreadyExistException("Module already exists.");
         } else {
             return parent::create($data);
         }

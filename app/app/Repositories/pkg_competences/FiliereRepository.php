@@ -2,24 +2,24 @@
 
 namespace App\Repositories\pkg_competences;
 
-use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Filiere;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\pkg_competences\CompetenceAlreadyExistException;
+use App\Exceptions\pkg_competences\FiliereAlreadyExistException;
 
 /**
- * Class CompetenRepository that manages the persistence of competences in the database.
+ * Class FiliereRepository that manages the persistence of Filiere in the database.
  */
-class CompetenceRepository extends BaseRepository
+class FiliereRepository extends BaseRepository
 {
     /**
-     * Searchable fields for competences.
+     * Searchable fields for Filiere.
      *
      * @var array
      */
     protected $fieldsSearchable = [
-        'name',
-        'description'
+        'nom',
+        'description',
     ];
 
     /**
@@ -37,33 +37,32 @@ class CompetenceRepository extends BaseRepository
      */
     public function __construct()
     {
-        parent::__construct(new Competence());
+        parent::__construct(new Filiere());
     }
 
     /**
-     * Create a new competence.
+     * Create a new Filiere.
      *
-     * @param array $data Competence data.
+     * @param array $data Filiere data.
      * @return mixed
-     * @throws CompetenceAlreadyExistException If the competence already exists.
+     * @throws FiliereAlreadyExistException If the Filiere already exists.
      */
     public function create(array $data)
     {
         $nom = $data['nom'];
-        $description = $data['description'];
+        $nom = $data['description'];
 
-        $existingCompetence = $this->model->where('nom', $nom)->exists();
-        $existingCompetence = $this->model->where('description', $description)->exists();
+        $existingFiliere = $this->model->where('nom', $nom)->exists();
 
-        if ($existingCompetence) {
-            throw new CompetenceAlreadyExistException("Competence already exists.");
+        if ($existingFiliere) {
+            throw new FiliereAlreadyExistException("Filiere already exists.");
         } else {
             return parent::create($data);
         }
     }
 
     /**
-     * Search competences based on specified criteria.
+     * Search Filiere based on specified criteria.
      *
      * @param mixed $searchableData Search data.
      * @param int $perPage Items per page.
