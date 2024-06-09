@@ -4,6 +4,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                {{ session('success') }}.
+            </div>
+        @endif
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>Les réalisations</h1>
@@ -53,7 +59,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                
+
                                 <!-- Learners Dropdown -->
                                 <div class="col-md-3">
                                     <select class="form-control-sm form-control" id="learner">

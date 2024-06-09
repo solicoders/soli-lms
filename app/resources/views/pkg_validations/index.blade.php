@@ -60,11 +60,7 @@
                                                 <td>
                                                     <select name="validations[{{ $competence->id }}][appreciation_id]" class="form-control">
                                                         @foreach ($appreciations as $appreciation)
-                                                            @if ($competence->appreciation_id == $appreciation->id)
-                                                                <option value="{{ $appreciation->id }}" selected>{{ $appreciation->nom }}</option>
-                                                            @else
-                                                                <option value="{{ $appreciation->id }}">{{ $appreciation->nom }}</option>
-                                                            @endif
+                                                            <option value="{{ $appreciation->id }}" {{ $competence->appreciation_id == $appreciation->id ? 'selected' : '' }}>{{ $appreciation->nom }}</option>
                                                         @endforeach
                                                     </select>
                                                     @error("validations.{$competence->id}.appreciation_id")
@@ -72,19 +68,19 @@
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="validations[{{ $competence->id }}][note]" class="form-control" value="{{ $note }}">
+                                                    <input type="number" name="validations[{{ $competence->id }}][note]" class="form-control" value="{{ isset($notesByCompetence[$competence->id]) ? $notesByCompetence[$competence->id] : '' }}">
                                                     @error("validations.{$competence->id}.note")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" value="{{ $message && $message->validation->transfertCompetence->id == $competence->id ? $message->titre : '' }}" placeholder="Titre">
+                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" value="{{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->titre : '' }}" placeholder="Titre">
                                                     @error("validations.{$competence->id}.titre")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description">{{ $message && $message->validation->transfertCompetence->id == $competence->id ? $message->description : '' }}</textarea>
+                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description">{{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->description : '' }}</textarea>
                                                     @error("validations.{$competence->id}.description")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
