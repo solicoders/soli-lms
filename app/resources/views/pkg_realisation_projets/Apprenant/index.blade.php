@@ -6,7 +6,18 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Mes projets</h1>
+                        <h1>
+                        Mes projets
+                        {{-- @php
+                            // Generate the title using the title function
+                            use App\helpers\TranslationHelper;
+                            $lang = Config::get('app.locale');
+                            $translatedName = TranslationHelper::getTitle(__('GestionProjets/projet.singular'), $lang);
+                            echo $translatedName;
+
+                        @endphp --}}
+                    </h1>
+
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -57,12 +68,12 @@
                                 <table class="table table-bordered">
     <thead>
         <tr>
-            <th> projet</th>
-            <th>Competences</th>
-            <th>Etat de réalisation</th>
-            <th>Date debut</th>
-            <th>Date de fin</th>
-            <th>Actions</th>
+            <th> {{ __('GestionProjets/projet.singular') }}</th>
+            <th>{{ __('GestionProjets/competence.singular') }}</th>
+            <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.singular') }}</th>
+            <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.date_debut_realisation') }}</th>
+            <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.date_fin_realisation') }}</th>
+            <th class="text-center">{{ __('app.action') }}</th>
         </tr>
     </thead>
     <tbody>

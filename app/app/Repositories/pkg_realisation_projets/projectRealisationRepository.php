@@ -52,7 +52,6 @@ class projectRealisationRepository extends BaseRepository
      * @return mixed
      * @throws RealisationProjetAlreadyExistException Si le RealisationProjet existe déjà.
      */
-<<<<<<< HEAD
     public function create(array $data)
     {
         $projetId = $data['projet_id'];
@@ -64,8 +63,6 @@ class projectRealisationRepository extends BaseRepository
             return parent::create($data);
         // }
     }
-=======
->>>>>>> Develop-pkg_creation_projets
 
     /**
      * Recherche les RealisationProjets correspondants aux critères spécifiés.
@@ -82,4 +79,9 @@ class projectRealisationRepository extends BaseRepository
             }
         })->paginate($perPage);
     }
+    public function with($relations)
+    {
+        return $this->model->with($relations);
+    }
+
 }
