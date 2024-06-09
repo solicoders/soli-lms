@@ -18,7 +18,7 @@
                                     <label for="nom">{{ __('app.name') }} </label> {{ $realisation->Personne->nom }}
                                 </div>
                                 <div class="form-group">
-                                    <label for="prenom">Prénom: </label> {{ $realisation->Personne->prenom }}
+                                    <label for="prenom">{{ __('pkg_validations/validation.LastName') }}:</label> {{ $realisation->Personne->prenom }}
                                 </div>
                                 <div class="form-group">
                                     <label for="livrables">Les {{ __('pkg_creation_projets/Livrable.plural') }}:</label>

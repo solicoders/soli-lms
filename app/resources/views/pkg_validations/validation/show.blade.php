@@ -59,9 +59,9 @@
                                 <label for="nom">{{ __('app.name') }} </label> {{ $realisation->Personne->nom }}
                             </div>
                             <div class="col-sm-12">
-                                <label for="prenom">Prénom: </label> {{ $realisation->Personne->prenom }}
+                                <label for="prenom">{{ __('pkg_validations/validation.LastName') }}:</label> {{ $realisation->Personne->prenom }}
                             </div>
-
+                         
                             <!-- Livrables List -->
                             <div class="col-sm-12">
                                 <label for="livrables">{{ __('pkg_creation_projets/Livrable.plural') }}:</label>

@@ -7,5 +7,6 @@
         'Message' => 'Message',
         'Validate' => 'Valider',
         'Form' => 'Formulaire ',
+        'LastName' => 'Prénom ',
 
     ];
