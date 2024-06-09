@@ -60,10 +60,9 @@
                                                     <tr>
                                                         <th>Compétence</th>
                                                         <th>Appréciation</th>
-                                                        <th><i class="fas fa-check" style="color: green;"></i></th>
-                                                        <th><i class="fas fa-times" style="color: red;"></i></th>
                                                         <th>Note</th>
-
+                                                        <th>Titre du message</th>
+                                                        <th>Description du message</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -77,15 +76,14 @@
                                                             </select>
                                                         </td>
                                                         <td>
-                                                            <input type="radio" name="competence_mobile_appreciation" value="Passable" style="accent-color: green;">
-                                                        </td>
-                                                        <td>
-                                                            <input type="radio" name="competence_mobile_appreciation" value="Insuffisant" style="accent-color: red;">
-                                                        </td>
-                                                        <td>
                                                             <input type="number" name="competence_mobile_note" step="0.01" class="form-control" style="width: 100px;">
                                                         </td>
-
+                                                        <td>
+                                                            <input type="text" name="competence_mobile_titre" class="form-control" placeholder="Titre">
+                                                        </td>
+                                                        <td>
+                                                            <textarea name="competence_mobile_description" class="form-control" placeholder="Description"></textarea>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Manipuler une base de données - perfectionnement</td>
@@ -97,15 +95,14 @@
                                                             </select>
                                                         </td>
                                                         <td>
-                                                            <input type="radio" name="competence_database_appreciation" value="Passable" style="accent-color: green;">
-                                                        </td>
-                                                        <td>
-                                                            <input type="radio" name="competence_database_appreciation" value="Insuffisant" style="accent-color: red;">
-                                                        </td>
-                                                        <td>
                                                             <input type="number" name="competence_database_note" step="0.01" class="form-control" style="width: 100px;">
                                                         </td>
-
+                                                        <td>
+                                                            <input type="text" name="competence_database_titre" class="form-control" placeholder="Titre">
+                                                        </td>
+                                                        <td>
+                                                            <textarea name="competence_database_description" class="form-control" placeholder="Description"></textarea>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Développer la partie back-end d'une application web ou web
@@ -118,18 +115,15 @@
                                                             </select>
                                                         </td>
                                                         <td>
-                                                            <input type="radio" name="competence_backend_appreciation" value="Passable" style="accent-color: green;">
-                                                        </td>
-                                                        <td>
-                                                            <input type="radio" name="competence_backend_appreciation" value="Insuffisant" style="accent-color: red;">
-                                                        </td>
-                                                        <td>
                                                             <input type="number" name="competence_backend_note" step="0.01" class="form-control" style="width: 100px;">
                                                         </td>
-
+                                                        <td>
+                                                            <input type="text" name="competence_backend_titre" class="form-control" placeholder="Titre">
+                                                        </td>
+                                                        <td>
+                                                            <textarea name="competence_backend_description" class="form-control" placeholder="Description"></textarea>
+                                                        </td>
                                                     </tr>
-
-
                                                 </tbody>
                                             </table>
 
