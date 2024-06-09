@@ -56,15 +56,6 @@ class FormateurRepository extends BaseRepository
 
     public function update($id, array $data)
     {
-        // dd($data);
-        // $nom = $data['nom'];
-        // $preom = $data['prenom'];
-        
-        // $existingFormateur = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
-        // if ($existingFormateur) {
-        //     throw FormateurException::AlreadyExistFormateur();
-        // }else{
-        // }
         parent::update($id, $data);
     }
     

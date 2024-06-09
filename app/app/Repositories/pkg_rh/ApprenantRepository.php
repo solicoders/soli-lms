@@ -57,16 +57,7 @@ class ApprenantRepository extends BaseRepository
 
     public function update($id, array $data)
     {
-        // $nom = $data['nom'];
-        // $prenom = $data['prenom'];
-        
-        // $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $prenom)->exists();
-        // if ($existingApprenant) {
-        //     throw ApprenantException::AlreadyExistApprenant();
-        // }else{
-        // }
         parent::update($id, $data);
-
     }
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
