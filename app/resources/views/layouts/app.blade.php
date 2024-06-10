@@ -79,7 +79,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Droits d'auteur © 2024-2025 <a href="#" class="text-info">LAB CRUD</a>.</strong> Tous droits
+            <strong>Droits d'auteur © 2023-2024 <a href="#" class="text-info">SoliLMS</a>.</strong> Tous droits
             réservés.
         </footer>
     </div>
@@ -88,7 +88,8 @@
         const addDeliverableButton = document.getElementById("addDeliverable");
         const deliverableForm = document.getElementById("deliverableForm");
 
-        addDeliverableButton.addEventListener("click", function () {
+        if(addDeliverableButton){
+    addDeliverableButton.addEventListener("click", function () {
             // Clone the existing deliverable group (including all its inputs)
             const newDeliverableGroup = deliverableForm.querySelector(".deliverable-group").cloneNode(true);
 
@@ -98,6 +99,7 @@
             // Append the cloned group to the form
             deliverableForm.appendChild(newDeliverableGroup);
         });
+}
     </script>
     <!-- Inclure le script -->
 

@@ -46,12 +46,14 @@ class SuiviProjetRepository extends BaseRepository
         $projects = RealisationProjet::whereHas('personne', function ($query) use ($userGroupId) {
                 $query->where('groupe_id', $userGroupId);
             })
-            ->with(['projet', 'etatRealisationProjet', 'personne']) // Eager load related models
+            ->with(['projet', 'etatRealisationProjet', 'personne'])
             ->get()
             ->pluck('projet')
             ->unique('id');
+             
 
         return $projects;
     }
+  
     
 }
