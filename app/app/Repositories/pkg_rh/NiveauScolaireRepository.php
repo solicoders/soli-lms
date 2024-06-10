@@ -4,7 +4,7 @@ namespace App\Repositories\pkg_rh;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\pkg_rh\NiveauScolaireException;
-use App\Models\pkg_rh\NiveauScolaires;
+use App\Models\pkg_rh\NiveauScolaire;
 
 class NiveauScolaireRepository extends BaseRepository
 {
@@ -18,7 +18,7 @@ class NiveauScolaireRepository extends BaseRepository
     }
     public function __construct()
     {
-        parent::__construct(new NiveauScolaires());
+        parent::__construct(new NiveauScolaire());
     }
 
     public function create(array $data)

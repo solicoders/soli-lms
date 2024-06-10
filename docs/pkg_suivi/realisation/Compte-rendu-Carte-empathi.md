@@ -1,8 +1,7 @@
 ---
 layout: default
-chapitre : true
 package: pkg_suivi
-order:  655
+order:  640
 ---
 ## Compte Rendu d'Entretien avec les formateur 
 
@@ -38,4 +37,3 @@ Les entretiens ont mis en lumière une diversité dans les approches d'Validatio
 
 - **Appréciation Spécifique et Personnalisée** :
     - Une attention particulière est accordée à fournir une appréciation spécifique et personnalisée pour chaque formateur, en tenant compte des défis rencontrés et des délais de réalisation.
-

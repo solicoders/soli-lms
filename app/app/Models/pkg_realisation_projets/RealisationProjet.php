@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\pkg_rh\Personne;
 use App\Models\pkg_creation_projets\Projet;
 use App\Models\pkg_validations\Validation;
+use  App\Models\pkg_competences\Competence ;
 
 
 class RealisationProjet extends Model
@@ -30,7 +31,7 @@ class RealisationProjet extends Model
 
     public function etatRealisationProjet()
     {
-        return $this->belongsTo(EtatRealisationProjet::class,);
+        return $this->belongsTo(EtatRealisationProjet::class, 'etat_realisation_projet_id');
     }
 
     public function personne()
@@ -49,5 +50,9 @@ class RealisationProjet extends Model
 public function LivrableRealisation()
 {
     return $this->hasOne(LivrableRealisation::class);
+}
+public function competence()
+{
+    return $this->belongsTo(Competence::class, 'competence_id'); // Define the relationship with Competence model
 }
 }

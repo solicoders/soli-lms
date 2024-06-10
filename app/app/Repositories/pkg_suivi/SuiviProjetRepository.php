@@ -39,14 +39,19 @@ class SuiviProjetRepository extends BaseRepository
     }
     public function getProjectsForPersonne($personneId)
     {
-        $groupeId = Personne::where('id', $personneId)->value('groupe_id');
-        $projectsInGroup = RealisationProjet::whereHas('personne', function ($query) use ($groupeId) {
-            $query->where('groupe_id', $groupeId);
-        })->with('projet')->get();
-        $projects = $projectsInGroup->map(function ($realisationProjet) {
-            return $realisationProjet->projet;
-        });
-        return $projects->unique('id');
+        // Get the group ID of the authenticated user
+        $userGroupId = Personne::where('id', $personneId)->value('groupe_id');
+
+        // Fetch projects where any person in the same group is a participant
+        $projects = RealisationProjet::whereHas('personne', function ($query) use ($userGroupId) {
+                $query->where('groupe_id', $userGroupId);
+            })
+            ->with(['projet', 'etatRealisationProjet', 'personne']) // Eager load related models
+            ->get()
+            ->pluck('projet')
+            ->unique('id');
+
+        return $projects;
     }
     
 }

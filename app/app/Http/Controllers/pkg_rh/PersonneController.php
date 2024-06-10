@@ -2,55 +2,47 @@
 
 namespace App\Http\Controllers\pkg_rh;
 
-use App\Repositories\pkg_rh\NiveauScolaireRepository;
-use Illuminate\Support\Str;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Formateur;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
-use App\Repositories\pkg_rh\GroupeRepository;
-use App\Exceptions\pkg_rh\FormateurException;
-use App\Exceptions\pkg_rh\ApprenantException;
-use App\Repositories\pkg_rh\SpecialiteRepository;
-use App\Repositories\pkg_rh\VilleRepository;
+use App\Exceptions\pkg_rh\FormateurAlreadyExistException;
+use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
+use App\Repositories\pkg_rh\ApprenantRepositorie;
+use App\Repositories\pkg_rh\GroupRepositorie;
+
+
 
 class PersonneController extends Controller
 {
-
-    
+   
     public function index(Request $request)
     {
         
+       
         $type = $this->getType();
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(" ", "%", $searchValue);
                 $personnes = $this->searchData($searchQuery);
-
-                return view('pkg_rh.Personnes.index', compact('personnes', 'type'))->render();
+                return view('pkg_rh.personne.index', compact('personnes', 'type'))->render();
             }
         }
-        $personnes = $this->getRepository()->paginate();
-        return view('pkg_rh.Personnes.index', compact('personnes', 'type'));
+        $personnes = $this->getRepositorie()->paginate();
+        return view('pkg_rh.personne.index', compact('personnes', 'type'));
     }
 
 
     public function create()
     {
         $type = $this->getType();
-        $GroupRepositorie = new GroupeRepository();
-        $NiveauxScolaireRepository = new NiveauScolaireRepository();
-        $VilleRepository = new VilleRepository();
-        $SpecialiteRepository = new SpecialiteRepository();
+        $GroupRepositorie = new GroupRepositorie();
 
-        $groupes = $GroupRepositorie->all();
-        $specialites = $SpecialiteRepository->all();
-        $villes = $VilleRepository->all();
-        $niveauxScolaire = $NiveauxScolaireRepository->all();
-
-        return view('pkg_rh.Personnes.create',compact('type','groupes','specialites', 'villes', 'niveauxScolaire'));
+        $groupes = $GroupRepositorie->paginate();
+        return view('pkg_rh.personne.create',compact('type','groupes'));
     }
 
     public function store(Request $request)
@@ -58,48 +50,49 @@ class PersonneController extends Controller
         try {
             $data = $request->all();
             $type = $this->getType();
-            $data += ['type' => $type,'profile_image' => 'default_profile_image.png'];
-            $personne =  $this->getRepository()->create($data);
-
-            return redirect()->route($type . '.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.addSucées'));
-
-        }catch (\Exception $e) {
-            return back()->with('error', $e->getMessage());
+            $personne =  $this->getRepositorie()->create($data);
+            return redirect()->route($type . '.index')->with('success', $type . ' a été ajouté avec succès');
+        } catch (FormateurAlreadyExistException $e) {
+            return back()->withInput()->withErrors(['personne_exists' =>__('pkg_rh/personne.formateurException')]);
+        } catch (ApprenantAlreadyExistException $e) {
+            return back()->withInput()->withErrors(['personne_exists' => __('pkg_rh/personne.apprenantException')]);
+        } catch (\Exception $e) {
+            return abort(500);
         }
     }
 
     public function show($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->find($id);
-        return view('pkg_rh.Personnes.show', compact('personne'))->with('type', $type);
+        $personne = $this->getRepositorie()->find($id);
+        return view('pkg_rh.personne.show', compact('personne'))->with('type', $type);
     }
 
     public function edit($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->find($id);
+        $personne = $this->getRepositorie()->find($id);
         $GroupRepositorie = new GroupRepositorie();
         $groupes = $GroupRepositorie->paginate();
-        return view('pkg_rh.Personnes.edit', compact('personne','type','groupes'));
+        return view('pkg_rh.personne.edit', compact('personne','type','groupes'));
     }
 
     public function update(Request $request, $id)
     {
         $data = $request->all();
         $type = $this->getType();
-        $personne = $this->getRepository()->update($id, $data);
+        $personne = $this->getRepositorie()->update($id, $data);
         return back()->with('success', $type.' a été modifiée avec succès');
     }
 
     public function delete(Request $request ,$id)
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->delete($id);
+        $personne = $this->getRepositorie()->delete($id);
         return redirect()->route($type.'.index')->with('success', $type.' a été supprimée avec succès');
     }
 
-    private function getRepository(){
+    private function getRepositorie(){
         $route = Route::getCurrentRoute()->getName();
         $type = explode('.',$route);
         $model = str::ucfirst($type[0]);
