@@ -39,7 +39,7 @@ class CategorieTechnologieController extends AppBaseController
 
     public function create()
     {
-        $dataToEdit = null;
+        
         return view('pkg_competences.CategorieTechnologie.create', compact('dataToEdit'));
     }
 
@@ -59,30 +59,33 @@ class CategorieTechnologieController extends AppBaseController
     }
 
     public function show(string $id)
-    {
+{
+    $fetchedData = $this->CategorieTechnologieRepository->find((int)$id);
 
-        $fetchedData = $this->CategorieTechnologieRepository->find($id);
-        return view('pkg_competences.CategorieTechnologie.show', compact('fetchedData'));
+    if (!$fetchedData) {
+        return redirect()->route('CategorieTechnologie.index')->withErrors(__('messages.not_found'));
     }
+
+    return view('pkg_competences.CategorieTechnologie.show', compact('fetchedData'));
+}
 
     public function edit(string $id)
     {
-        $dataToEdit = $this->CategorieTechnologieRepository->find($id);
-
-        return view('pkg_competences.CategorieTechnologie.edit', compact('dataToEdit'));
+    $dataToEdit = $this->CategorieTechnologieRepository->find((int)$id);
+    return view('pkg_competences.CategorieTechnologie.edit', compact('dataToEdit'));
     }
 
     public function update(CategorieTechnologieRequest $request, string $id)
     {
-        $validatedData = $request->validated();
-        $this->CategorieTechnologieRepository->update($id, $validatedData);
-        return redirect()->route('CategorieTechnologie.index')->with('success', __('messages.update_success'));
+    $validatedData = $request->validated();
+    $this->CategorieTechnologieRepository->update((int)$id, $validatedData);
+    return redirect()->route('CategorieTechnologie.index')->with('success', __('messages.update_success'));
     }
 
     public function destroy(string $id)
     {
-        $this->CategorieTechnologieRepository->destroy($id);
-        return redirect()->route('CategorieTechnologie.index')->with('success', __('messages.delete_success'));
+    $this->CategorieTechnologieRepository->destroy((int)$id);
+    return redirect()->route('CategorieTechnologie.index')->with('success', __('messages.delete_success'));
     }
 
     public function export()
