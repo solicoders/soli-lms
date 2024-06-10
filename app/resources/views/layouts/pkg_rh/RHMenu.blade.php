@@ -1,4 +1,5 @@
 <!-- Gestion RH -->
+@can('index-PersonneController')   
 <li class="nav-item has-treeview">
     <a href="#"
         class="nav-link {{ Request::is('RH*') ? 'active' : '' }}" >    
@@ -51,3 +52,4 @@
         </li>
     </ul>
 </li>
+@endcan
