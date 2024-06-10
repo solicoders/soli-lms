@@ -20,6 +20,7 @@ class pkg_formationsSeeder extends Seeder
     {
         $this->call(pkg_formationsSeeder::Classes());
     }
+    
     public static function Classes(): array
     {
         return [
@@ -28,4 +29,5 @@ class pkg_formationsSeeder extends Seeder
             FormateursTableSeeder::class,
         ];
     }
+        
 }

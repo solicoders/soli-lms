@@ -17,5 +17,14 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('formations.index') }}"
+        class="nav-link {{ Request::is('formations*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-clipboard-list"></i>
+        <p>
+            Gestion des formations
+        </p>
+    </a>
+</li>
 @include('layouts.pkg_rh.RHMenu')
 {{-- @endcan --}}

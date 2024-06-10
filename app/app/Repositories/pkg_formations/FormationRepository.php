@@ -6,6 +6,9 @@ use App\Exceptions\GestionFormations\FormationAlreadyExistException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\pkg_formations\Formation;
+use Illuminate\Pagination\LengthAwarePaginator;
+
+
 
 class FormationRepository extends BaseRepository
 {
@@ -110,13 +113,17 @@ class FormationRepository extends BaseRepository
      * @param int $perPage Nombre d'éléments par page.
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function searchData($searchableData, $perPage = 4)
-    {
-        return $this->model->where(function ($query) use ($searchableData) {
-            $query->where('nom', 'like', '%' . $searchableData . '%')
-                ->orWhere('description', 'like', '%' . $searchableData . '%');
-        })->paginate($perPage);
-    }
+    public function searchData($searchableData, $perPage = 10)
+{
+    return $this->model->where(function ($query) use ($searchableData) {
+        $query->where('nom', 'like', '%' . $searchableData . '%')
+            ->orWhere('description', 'like', '%' . $searchableData . '%');
+    })->paginate($perPage);
+}
+    
+    // Other methods...
+
+    
 
     
 

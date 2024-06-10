@@ -22,8 +22,8 @@
 
         <div class="form-group">
             <label for="link">{{ __('app.link') }}</label>
-            <input name="link" type="url" class="form-control" id="link" placeholder="Entrez le lien" value="{{ $dataToEdit ? $dataToEdit->link : old('link') }}">
-            @error('link')
+            <input name="lien" type="url" class="form-control" id="link" placeholder="Entrez le lien" value="{{ $dataToEdit ? $dataToEdit->lien : old('lien') }}">
+            @error('lien')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
