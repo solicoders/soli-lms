@@ -12,16 +12,34 @@ class Apprenant extends Personne
 {
     protected $table = 'personnes';
     use HasFactory, MorphType;
-    
+    protected $fillable = [
+        'nom',
+        'prenom',
+        'nom_arab',
+        'prenom_arab',
+        'profile_image',
+        'date_naissance',
+        'tele_num',
+        'rue',
+        'ville_id',
+        'cin',
+        'groupe_id',
+        'cne',
+        'niveau_scolaire_id',
+        'lieu_naissance_id',
+        '_token'
+    ];
+
     public function groupe(){
         return $this->belongsTo(Groupe::class);
     }
 
-    public function niveauScholaire(){
-        return $this->belongsTo(NiveauScholaires::class);
+    public function niveauScolaire(){
+        return $this->belongsTo(NiveauScolaires::class);
     }
 
     public function Ville(){
         return $this->belongsTo(Ville::class);
     }
+    
 }

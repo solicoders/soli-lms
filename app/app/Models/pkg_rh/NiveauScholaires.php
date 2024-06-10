@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class NiveauScholaires extends Model
 {
     use HasFactory;
+
+    public function Apprenant(){
+        return $this->hasMany(Apprenant::class);
+    }
 }
