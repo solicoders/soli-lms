@@ -43,36 +43,32 @@
                     <!-- Boîte par défaut -->
                     <div class="card">
                         <div class="card-header">
-                            <div class="row mb-3">
-                                <div class="col-md-3">
-                                    <label for="skill"> {{ __('pkg_competences/competence.plural') }} :</label>
-                                    <select class="form-control" id="competenceFilter">
-                                        <option value="">Toutes</option>
-                                        @foreach($competences as $competence)
-                                            <option value="{{ $competence->id }}">{{ $competence->nom }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="projectName">{{ __('app.rechercher') }}</label>
-                                    <div class="input-group input-group-sm float-sm-right col-md-3 p-0">
-                                        <input type="text" name="table_search" id="table_search"
-                                            class="form-control float-right" placeholder="Recherche">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-default">
-                                                <i class="fas fa-search"></i>
-                                            </button>
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-4 form-group mb-2">
+                                        <label for="competenceFilter">{{ __('pkg_competences/competence.plural') }}:</label>
+                                        <select class="form-control" id="competenceFilter">
+                                            <option value="">Toutes</option>
+                                            @foreach($competences as $competence)
+                                                <option value="{{ $competence->id }}">{{ $competence->nom }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group mb-2">
+                                        <label for="table_search">{{ __('app.rechercher') }}</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="table_search" id="table_search" class="form-control" placeholder="Recherche">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-outline-secondary">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
 @include('pkg_creation_projets.table')
-
-                        
-
-
                     </div>
                     <!-- /.card -->
                 </div>
