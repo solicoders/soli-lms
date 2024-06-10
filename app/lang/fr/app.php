@@ -12,6 +12,8 @@ return [
     'message' => 'Message',
     'back' => 'Retour',
     'name' => 'Nom',
+    'noteMin' => 'note minimum',
+    'noteMax' => 'note maximum',
     'action' => 'Action',
     'detail' => 'Détail',
     'description' => 'Description',

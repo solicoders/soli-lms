@@ -1,20 +1,9 @@
-<form action="{{ $dataToEdit ? route('competence.update', $dataToEdit->id) : route('competence.store') }}" method="POST">
+<form action="{{ $dataToEdit ? route('NiveauCompetence.update', $dataToEdit->id) : route('NiveauCompetence.store') }}" method="POST">
     @csrf
     @if ($dataToEdit)
         @method('PUT')
     @endif
     <div class="card-body">
-        <div class="form-group">
-            <label for="code">{{ __('Code') }} <span
-                    class="text-danger">*</span></label>
-            <input name="code" type="text" class="form-control" id="code" placeholder="Entrez le code"
-                value="{{ $dataToEdit ? $dataToEdit->code : old('code') }}">
-            @error('code')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
-
-
         <div class="form-group">
             <label for="nom">{{ __('app.name') }} <span
                     class="text-danger">*</span></label>
@@ -39,7 +28,7 @@
     </div>
 
     <div class="card-footer">
-        <a href="{{ route('competence.index') }}" class="btn btn-default">{{ __('app.cancel') }}</a>
+        <a href="{{ route('NiveauCompetence.index') }}" class="btn btn-default">{{ __('app.cancel') }}</a>
         <button type="submit" class="btn btn-info ml-2">{{ $dataToEdit ? __('app.edit') : __('app.add') }}</button>
     </div>
 

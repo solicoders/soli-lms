@@ -1,15 +1,15 @@
-<form action="{{ $dataToEdit ? route('competence.update', $dataToEdit->id) : route('competence.store') }}" method="POST">
+<form action="{{ $dataToEdit ? route('Module.update', $dataToEdit->id) : route('Module.store') }}" method="POST">
     @csrf
     @if ($dataToEdit)
         @method('PUT')
     @endif
     <div class="card-body">
         <div class="form-group">
-            <label for="code">{{ __('Code') }} <span
+            <label for="nom">{{ __('N°') }} <span
                     class="text-danger">*</span></label>
-            <input name="code" type="text" class="form-control" id="code" placeholder="Entrez le code"
-                value="{{ $dataToEdit ? $dataToEdit->code : old('code') }}">
-            @error('code')
+            <input name="N" type="text" class="form-control" id="N" placeholder="Entrez le N°"
+                value="{{ $dataToEdit ? $dataToEdit->N : old('N') }}">
+            @error('N')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -25,8 +25,6 @@
             @enderror
         </div>
 
-
-
         <div class="form-group">
             <label for="inputDescription">{{ __('app.description') }}</label>
             <textarea name="description" id="editor" class="form-control" rows="7" placeholder="Entrez la description">
@@ -39,7 +37,7 @@
     </div>
 
     <div class="card-footer">
-        <a href="{{ route('competence.index') }}" class="btn btn-default">{{ __('app.cancel') }}</a>
+        <a href="{{ route('Appreciation.index') }}" class="btn btn-default">{{ __('app.cancel') }}</a>
         <button type="submit" class="btn btn-info ml-2">{{ $dataToEdit ? __('app.edit') : __('app.add') }}</button>
     </div>
 

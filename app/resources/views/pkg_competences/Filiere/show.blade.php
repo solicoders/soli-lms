@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('app.show') . ' ' . __('pkg_competences/competence.singular'))
+@section('title', __('app.show') . ' ' . __('pkg_competences/Filiere.singular'))
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
@@ -7,9 +7,9 @@
                 <div class="col-sm-6">
                     <h1>{{ __('app.detail') }}</h1>
                 </div>
-                @can('edit-CompetenceController')
+                @can('edit-FiliereController')
                     <div class="col-sm-6">
-                        <a href="{{ route('competence.edit', $fetchedData->id) }}" class="btn btn-default float-right">
+                        <a href="{{ route('Filiere.edit', $fetchedData->id) }}" class="btn btn-default float-right">
                             <i class="far fa-edit"></i>
                             {{ __('app.edit') }}
                         </a>
@@ -24,11 +24,6 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="col-sm-12">
-                                <label for="code">{{ __('Code') }}:</label>
-                                <p>{{ $fetchedData->code }}</p>
-                            </div>
-
                             <div class="col-sm-12">
                                 <label for="nom">{{ __('app.name') }}:</label>
                                 <p>{{ $fetchedData->nom }}</p>

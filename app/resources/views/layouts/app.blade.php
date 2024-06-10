@@ -17,7 +17,7 @@
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
-    @vite(['resources/css/pkg_creation_projets/pkg_creation_projets.css', 'resources/js/pkg_creation_projets/pkg_creation_projets.js'])
+    {{-- @vite(['resources/css/pkg_creation_projets/pkg_creation_projets.css', 'resources/js/pkg_creation_projets/pkg_creation_projets.js']) --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -46,10 +46,10 @@
                             <img src="{{ asset('images/man.png') }}" class="user-image img-circle elevation-2"
                                 alt="User Image">
                             <!--  <p>
-                               
+
                                 <small>Member since </small>
                             </p> -->
-                        </li> 
+                        </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
