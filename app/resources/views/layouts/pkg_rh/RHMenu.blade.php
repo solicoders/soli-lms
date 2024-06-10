@@ -24,13 +24,13 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="{{route('Villes.index')}}" class="nav-link {{ Request::is('Ville*') ? 'active' : '' }} ">
+        <a href="{{route('Villes.index')}}" class="nav-link {{ Request::is('Villes*') ? 'active' : '' }} ">
             <i class="fa-solid fa-city"></i>
             <p>Gestion Villes</p>
         </a>
         </li>
         <li class="nav-item">
-        <a href="{{route('Apprenant.index')}}" class="nav-link {{ Request::is('Ville*') ? 'active' : '' }}" >
+        <a href="{{route('Groupes.index')}}" class="nav-link {{ Request::is('Groupes*') ? 'active' : '' }}" >
         <i class="fa-solid fa-table"></i>
             <p>Gestion Groupes</p>
         </a>
