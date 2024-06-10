@@ -69,42 +69,25 @@ class ProjetRepository extends BaseRepository
      * @param int $perPage Nombre d'éléments par page.
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function searchData($searchableData, $perPage = 4)
-    {
-        return $this->model->where(function ($query) use ($searchableData) {
-            $query->where('titre', 'like', '%' . $searchableData . '%')
-                ->orWhere('description', 'like', '%' . $searchableData . '%');
-        })->paginate($perPage);
-    }
 
-    /**
-     * Filtre les projets par compétence.
-     *
-     * @param int $competenceId ID de la compétence.
-     * @param int $perPage Nombre d'éléments par page.
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
-     */
-    public function filterProjectsByCompetence($competenceId, $perPage = 4)
-    {
-        return $this->model->whereHas('transfertCompetences', function ($query) use ($competenceId) {
-            $query->where('competence_id', $competenceId);
-        })->paginate($perPage);
-    }
+     public function searchData($searchableData, $perPage = 2)
+     {
+         if ($perPage == 0) {
+             $perPage = $this->paginationLimit;
+         }
 
-    /**
-     * Recherche les projets en fonction de la requête de recherche.
-     *
-     * @param string $searchQuery Requête de recherche.
-     * @param int $perPage Nombre d'éléments par page.
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
-     */
-    public function searchProjects($searchQuery, $perPage = 4)
-    {
-        return $this->model->where(function ($query) use ($searchQuery) {
-            $query->where('titre', 'like', "%$searchQuery%")
-                ->orWhereHas('transfertCompetences', function ($query) use ($searchQuery) {
-                    $query->where('competence.nom', 'like', "%$searchQuery%");
-                });
-        })->paginate($perPage);
-    }
+         $query = $this->allQuery($searchableData);
+
+         if (isset($searchableData['search'])) {
+             $searchTerm = $searchableData['search'];
+             $query->where('titre', 'like', '%' . $searchTerm . '%');
+         }
+
+         // Important: Keep pagination information
+         return $query->paginate($perPage);
+     }
+
+
+
+
 }

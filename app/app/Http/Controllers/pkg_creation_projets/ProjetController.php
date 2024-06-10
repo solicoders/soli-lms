@@ -62,35 +62,29 @@ class ProjetController extends Controller
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
         $this->projectRealisationRepository = $projectRealisationRepository;
     }
-
     public function index(Request $request)
     {
-        $competences = Competence::all();
-        $perPage = 4; // Adjust as needed
+        $competences = Competence::all(); // Fetch all competences (if needed)
 
+        // Build the searchableData array from request parameters
+        $searchableData = [
+            'search' => $request->input('search'), // Search term
+            'competenceId' => $request->input('competenceId'), // Optional competence filter
+            // ... Add other search parameters as needed
+        ];
+
+        // Call the repository's searchData function
+        $projetData = $this->projetRepository->searchData($searchableData);
+
+        // Handle AJAX requests
         if ($request->ajax()) {
-            if ($request->has('competenceId')) {
-                $competenceId = $request->get('competenceId');
-                $projetData = $this->projetRepository->filterProjectsByCompetence($competenceId, $perPage);
-                return view('pkg_creation_projets.table_rows', compact('projetData'));
-            } elseif ($request->has('searchValue')) {
-                $searchValue = $request->get('searchValue');
-                $projetData = $this->projetRepository->searchProjects($searchValue, $perPage);
-                return view('pkg_creation_projets.table_rows', compact('projetData'));
-            }
+            // Render only the table rows
+            return view('pkg_creation_projets.table', compact('projetData'))->render();
         } else {
-            // Initial data load
-            $projetData = $this->projetRepository->with([
-                'livrables',
-                'resources',
-                'transfertCompetences.competence',
-                'transfertCompetences.appreciation',
-            ])->paginate($perPage);
+            // Render the full index view
+            return view('pkg_creation_projets.index', compact('projetData', 'competences'));
         }
-
-        return view('pkg_creation_projets.index', compact('projetData', 'competences'));
     }
-
     public function create()
     {
         $dataToEdit = null;
