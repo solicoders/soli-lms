@@ -107,7 +107,8 @@
         const addDeliverableButton = document.getElementById("addDeliverable");
         const deliverableForm = document.getElementById("deliverableForm");
 
-        addDeliverableButton.addEventListener("click", function () {
+        if(addDeliverableButton){
+    addDeliverableButton.addEventListener("click", function () {
             // Clone the existing deliverable group (including all its inputs)
             const newDeliverableGroup = deliverableForm.querySelector(".deliverable-group").cloneNode(true);
 
@@ -117,6 +118,7 @@
             // Append the cloned group to the form
             deliverableForm.appendChild(newDeliverableGroup);
         });
+}
     </script>
     <!-- Inclure le script -->
 

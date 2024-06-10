@@ -114,7 +114,7 @@ $current_route = $_SERVER['REQUEST_URI'];
             class="nav-link <?php echo (strpos($current_route, "Suivi d'avencement") !== false) ? 'active' : ''; ?>">
             <i class="fa-solid fa-signal"></i>
             <p>
-              Suivi d'avencement
+              Suivi d'avancement
               <i class="fas fa-angle-left right"></i>
             </p>
           </a>
