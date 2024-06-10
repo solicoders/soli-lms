@@ -9,19 +9,14 @@
                     {{ session('success') }}.
                 </div>
             @endif
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
             <div class="container-fluid ">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Liste des {{ __('pkg_rh/'.$type.'.plural')}}</h1>
+                        <h1>Liste des {{ __('pkg_rh/NiveauScolaire.plural')}}</h1>
                     </div>
                     <div class="col-sm-6">
-                        <a href={{ route($type.'.create')}} type="button" class="btn btn-info float-right">
-                            <i class="fas fa-plus"></i> Ajouter un {{ __('pkg_rh/'.$type.'.singular')}}
+                        <a href={{ route('NiveauxScolaire.create')}} type="button" class="btn btn-info float-right">
+                            <i class="fas fa-plus"></i> Ajouter un {{ __('pkg_rh/NiveauScolaire.singular')}}
                         </a>
                     </div>
                 </div>
@@ -44,25 +39,16 @@
                     <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Numéro de téléphone</th>
-                            <th>{{$type == 'Formateur' ? 'Spécialité' : 'Groupe' }} </th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($personnes as $personne)
+                        @foreach ($NiveauxScolaires as $NiveauScolaire)
                             <tr>
-                                <td>{{$personne->nom}}</td>
-                                <td>{{$personne->prenom}}</td>
-                                <td>{{$personne->tele_num}}</td>
-                                <td>{{$type == 'Formateur' ? $personne->specialite->nom : $personne->groupe->nom}}</td>
+                                <td>{{$NiveauScolaire->nom}}</td>
                                 <td class="text-center">
-                                    <a href={{ route($type.'.show', $personne->id) }} class='btn btn-default btn-sm'>
-                                        <i class="far fa-eye"></i>
-                                    </a>
-                                    <a href={{ route($type.'.edit', $personne->id) }} class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <form action={{ route($type.'.delete', $personne->id) }} method="POST" style="display: inline;">
+                                    <a href={{ route('NiveauxScolaire.edit', $NiveauScolaire->id) }} class="btn btn-sm btn-default"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <form action={{ route('NiveauxScolaire.delete', $NiveauScolaire->id) }} method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"
@@ -79,7 +65,7 @@
             <!-- /.card-body -->
             <div class="d-md-flex justify-content-between align-items-center p-2">
                 <div class="d-flex align-items-center mb-2 ml-2 mt-2">
-                    <form action="{{ route($type.'.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
+                    <form action="{{ route('NiveauxScolaire.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
                         id="importForm">
                         @csrf
                         <label for="upload" class="btn btn-default btn-sm font-weight-normal">
@@ -89,14 +75,14 @@
                         <input type="file" id="upload" name="file" style="display:none;" onchange="submitForm()" />
                     </form>
                     <form class="">
-                        <a href="{{ route($type.'.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
+                        <a href="{{ route('NiveauxScolaire.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
                             <i class="fas fa-file-export"></i>
                             {{ __('app.export') }}</a>
                     </form>
                 </div>
             
                 <ul class="pagination  m-0 float-right">
-                    {{ $personnes->onEachSide(1)->links() }}
+                    {{ $NiveauxScolaires->onEachSide(1)->links() }}
                 </ul>
             </div>
             

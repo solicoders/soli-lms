@@ -144,7 +144,9 @@ class PersonneController extends Controller
 
         try {
             Excel::import($import, $request->file('file'));
-        } catch (\InvalidArgumentException $e) {
+        } catch (\Exception $e) {
+            return redirect()->route($type.'.index')->withError($e->getMessage());
+        }catch (\InvalidArgumentException $e) {
             return redirect()->route($type.'.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
         }
         return redirect()->route($type.'.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.addSucées'));

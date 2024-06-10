@@ -36,8 +36,8 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="{{route('Apprenant.index')}}"
-            class="nav-link {{ Request::is('Ville*') ? 'active' : '' }}''; ?>">
+        <a href="{{route('NiveauxScolaire.index')}}"
+            class="nav-link {{ Request::is('NiveauxScolaire*') ? 'active' : '' }}''; ?>">
             <i class="fa-solid fa-book"></i>
             <p>Gestion Niveaux Scolaire</p>
         </a>
