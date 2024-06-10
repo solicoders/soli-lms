@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Imports\pkg_creation_projets;
+namespace App\Imports\pkg_rh;
 
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;

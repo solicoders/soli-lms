@@ -9,7 +9,7 @@ use App\Models\pkg_rh\Ville;
 class VilleRepository extends BaseRepository
 {
     protected $fieldsSearchable = [
-        'name'
+        'nom'
     ];
 
     public function getFieldsSearchable(): array

@@ -24,7 +24,7 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="{{route('Apprenant.index')}}" class="nav-link {{ Request::is('Ville*') ? 'active' : '' }} ">
+        <a href="{{route('Villes.index')}}" class="nav-link {{ Request::is('Ville*') ? 'active' : '' }} ">
             <i class="fa-solid fa-city"></i>
             <p>Gestion Villes</p>
         </a>

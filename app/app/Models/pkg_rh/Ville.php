@@ -12,4 +12,6 @@ class Ville extends Model
     public function Apprenant(){
         return $this->belongsTo(Apprenant::class);
     }
+
+    protected $fillable = ['nom'];
 }
