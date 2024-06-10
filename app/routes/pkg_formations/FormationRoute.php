@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pkg_formations\FormationController;
 
 Route::prefix('formations')->group(function () {

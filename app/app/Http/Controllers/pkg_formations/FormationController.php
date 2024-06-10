@@ -66,21 +66,22 @@ class FormationController extends Controller
         return redirect()->route('formations.index')->with('success', 'La formation a été supprimée avec succès.');
     }
     public function import(Request $request)
-{
-    $file = $request->file('file');
+    {
+        $request->validate([
+            'file' => 'required|file|mimes:xls,xlsx',
+        ]);
+    
+        try {
+            Excel::import(new FormationsImport, $request->file('file'));
+            return redirect()->route('Formations.index')->with('success', 'Les Formations ont été importés avec succès.');
+        } catch (\Exception $e) {
+            return redirect()->route('Formations.index')->with('error', 'Une erreur s\'est produite lors de l\'importation des Formations. Veuillez vérifier votre fichier Excel.');
+        }
+    }
 
-    // Validate the file
-    // Process the file using Excel import
-
-    // Example using Maatwebsite Excel package
-    Excel::import(new FormationsImport, $file);
-
-    return Excel::download(new YourExport(), 'filename.xlsx', \Maatwebsite\Excel\Excel::XLSX);
-}
-public function export()
-{
-    // Example using Maatwebsite Excel package
-    return Excel::download(new FormationsExport, 'formations.xlsx');
-}
+    public function export()
+    {
+        return Excel::download(new FormationsExport, 'Formations.xlsx'); // Add 'return' 
+    }
 
 }
