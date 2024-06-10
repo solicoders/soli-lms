@@ -79,17 +79,9 @@ class projectRealisationRepository extends BaseRepository
             }
         })->paginate($perPage);
     }
-<<<<<<< HEAD
-    public function with($relations)
-=======
         public function with($relations)
->>>>>>> Develop-pkg_validations
     {
         return $this->model->with($relations);
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Develop-pkg_validations

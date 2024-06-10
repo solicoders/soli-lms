@@ -60,31 +60,6 @@
             </select>
         </div>
 
-<<<<<<< HEAD
-        <!-- Learners Dropdown -->
-        <div class="col-md-3">
-            <select class="form-control-sm form-control" id="learner">
-                <option value="">Apprenants</option>
-                @foreach($Personnes as $Personne)
-                    <option value="{{ $Personne->id }}">{{ $Personne->prenom }}{{ $Personne->nom }}</option>
-                @endforeach
-            </select>
-        </div>
-        
-        <!-- Etat Dropdown -->
-        <div class="col-md-3">
-            <select class="form-control-sm form-control" id="etat">
-                <option value="">Etat</option>
-                @foreach($EtatRealisationProjet as $EtatRealisation)
-                    <option value="{{ $EtatRealisation->id }}">{{ $EtatRealisation->etat }}</option>
-                @endforeach
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Filter</button>
-
-    </div>
-</form>
-=======
                                 <!-- Learners Dropdown -->
                                 <div class="col-md-3">
                                     <select class="form-control-sm form-control" id="learner">
@@ -106,7 +81,6 @@
                                 </div>
                             </div>
                         </form>
->>>>>>> Develop-pkg_validations
                     </div>
                     <table class="table table-hover text-nowrap">
                         <thead>
@@ -123,7 +97,7 @@
                                 <tr>
                                     <td class="nom-brief">{{ $project->projet->titre }}</td>
                                     <td class="etat">{{ $project->Personne->nom }}</td>
-                                    {{-- <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
+                                    <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
     <span class="badge badge-danger">A faire</span>
 @elseif($project->EtatRealisationProjet->etat == 'Pending')
     <span class="badge badge-secondary">En pause</span>
@@ -131,7 +105,7 @@
     <span class="badge badge-info">En cours</span>
 @elseif($project->EtatRealisationProjet->etat == 'Completed')
     <span class="badge badge-success">Terminer</span>
-@endif</td> --}}
+@endif</td>
                                     <td >
                                     @if($project->validation)
                                     <span class="badge badge-success">Validé</span>
