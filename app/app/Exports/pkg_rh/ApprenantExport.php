@@ -37,6 +37,7 @@ class ApprenantExport implements FromCollection, WithHeadings, ShouldAutoSize, W
             'niveau_scolaire_id',
             'lieu_naissance_id',
             'email',
+            'password',
         ];
     }
 
@@ -59,6 +60,7 @@ class ApprenantExport implements FromCollection, WithHeadings, ShouldAutoSize, W
                 'niveau_scolaire_id' => $Formateur->niveau_scolaire_id,
                 'lieu_naissance_id' => $Formateur->lieu_naissance_id,
                 'email' => $Formateur->email,
+                'password' => $Formateur->password,
             ];
         });
     }

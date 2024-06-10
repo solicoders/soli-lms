@@ -9,8 +9,8 @@ use App\Exports\pkg_rh\FormateurExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_rh\FormateurRequest;
 use App\Http\Requests\pkg_rh\PersonneRequest;
-use App\Imports\pkg_creation_projets\ApprenantImport;
-use App\Imports\pkg_creation_projets\FormateurImport;
+use App\Imports\pkg_rh\ApprenantImport;
+use App\Imports\pkg_rh\FormateurImport;
 use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Formateur;
 use App\Models\User;
@@ -36,7 +36,7 @@ class PersonneController extends Controller
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(" ", "%", $searchValue);
-                $personnes = $this->searchData($searchQuery);
+                $personnes = $this->getRepository()->searchData($searchQuery);
 
                 return view('pkg_rh.Personnes.index', compact('personnes', 'type'))->render();
             }
@@ -121,13 +121,13 @@ class PersonneController extends Controller
     {
         $type = $this->getType();
         $personne = $this->getRepository()->destroy($id);
-        return redirect()->route($type.'.index')->with('success', $type.' a été supprimée avec succès');
+        return redirect()->route($type.'.index')->with('success', __('pkg_rh/'.$type.'.singular'). ' a été supprimée avec succès');
     }
 
     public function export()
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->all()->where('type', $type);
+        $personne = $this->getRepository()->getAll()->where('type', $type);
         $export = $type == "Formateur" ? new FormateurExport($personne) : new ApprenantExport($personne);
         return Excel::download($export, $type.'.xlsx');
     }
@@ -147,7 +147,7 @@ class PersonneController extends Controller
         } catch (\InvalidArgumentException $e) {
             return redirect()->route($type.'.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
         }
-        return redirect()->route($type.'.index')->with('success', __('pkg_rh/personne.singular') . ' ' . __('app.addSucées'));
+        return redirect()->route($type.'.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.addSucées'));
     }
 
 

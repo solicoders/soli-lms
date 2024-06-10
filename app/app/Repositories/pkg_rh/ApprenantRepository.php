@@ -32,6 +32,8 @@ class ApprenantRepository extends BaseRepository
         return $this->fieldsSearchable;
     }
 
+
+
     /**
      * Constructeur de la classe ProjetRepository.
      */
@@ -63,6 +65,12 @@ class ApprenantRepository extends BaseRepository
             return $this->model->paginate($perPage, $columns);
         }
     }
+
+    public function getAll(){
+        return $this->model->with('user')->get();
+    }
+    
+
 
     /**
      * Recherche apprenants correspondants aux critères spécifiés.

@@ -39,7 +39,7 @@ class GroupeController extends Controller
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(" ", "%", $searchValue);
-                $Groupes = $this->searchData($searchQuery);
+                $Groupes = $this->GroupeRepository->searchData($searchQuery);
 
                 return view('pkg_rh.Groupes.index', compact('Groupes'))->render();
             }
@@ -68,8 +68,8 @@ class GroupeController extends Controller
 
     public function show($id)
     {
-        $personne = $this->GroupeRepository->find($id);
-        return view('pkg_rh.Groupes.show', compact('personne'))->with('type', $type);
+        $Groupe = $this->GroupeRepository->find($id);
+        return view('pkg_rh.Groupes.show', compact('Groupe'));
     }
 
     public function edit($id)
@@ -118,5 +118,6 @@ class GroupeController extends Controller
         return redirect()->route('Groupes.index')->with('success', __('pkg_rh/Groupe.singular') . ' ' . __('app.addSucées'));
     }
 
+    
 
 }

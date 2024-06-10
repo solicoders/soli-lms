@@ -9,7 +9,7 @@
                             <h1>Details de Groupe</h1>
                         </div>
                         <div class="col-sm-6">
-                            <a href={{ route('Groupe.create') }} type="button" class="btn btn-info float-right">
+                            <a href={{ route('Groupes.create') }} type="button" class="btn btn-info float-right">
                                 <i class="fas fa-plus"></i> Ajouter un Groupe
                             </a>
                         </div>
@@ -28,8 +28,8 @@
                     @endif
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-secondary" href={{ route('Groupe.index') }}>Annuler</a>
-                    <a class="btn btn-info" href={{ route('Groupe.edit', $Groupe->id) }}>Modifier</a>
+                    <a class="btn btn-secondary" href={{ route('Groupes.index') }}>Annuler</a>
+                    <a class="btn btn-info" href={{ route('Groupes.edit', $Groupe->id) }}>Modifier</a>
                 </div>
             </div>
         </div>

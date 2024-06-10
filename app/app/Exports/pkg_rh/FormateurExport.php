@@ -36,7 +36,6 @@ class FormateurExport implements FromCollection, WithHeadings, ShouldAutoSize, W
             'specialite_id',
             'niveau_scolaire_id',
             'lieu_naissance_id',
-            'email',
         ];
     }
 
@@ -58,7 +57,6 @@ class FormateurExport implements FromCollection, WithHeadings, ShouldAutoSize, W
                 'specialite_id' => $Formateur->specialite_id,
                 'niveau_scolaire_id' => $Formateur->niveau_scolaire_id,
                 'lieu_naissance_id' => $Formateur->lieu_naissance_id,
-                'email' => $Formateur->email,
             ];
         });
     }

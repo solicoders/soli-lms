@@ -170,7 +170,7 @@ abstract class BaseRepository implements RepositoryInterface
 
         if (!$record) {
             return false;
-        } 
+        }
 
         return $record->update($data);
     }

@@ -11,7 +11,7 @@
                     <div class="container-fluid ">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>{{ __('app.edit') .' '. __('pkg_rh/Ville.singular')}}</h1>
+                                <h1>{{ __('app.edit') .' '. __('pkg_rh/Groupe.singular')}}</h1>
                             </div>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                 
                 <div class="card">
                     <div class="card-body">
-                        @include('pkg_rh.Villes.form')
+                        @include('pkg_rh.Groupes.form')
                     </div>
                 </div>
             </div>

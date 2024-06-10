@@ -2,10 +2,11 @@
 
 namespace App\Models\pkg_rh;
 
+use App\Models\pkg_rh\Personne;
+use App\Models\User;
+use App\Traits\MorphType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\pkg_rh\Personne;
-use App\Traits\MorphType;
 
 
 class Apprenant extends Personne
@@ -43,4 +44,7 @@ class Apprenant extends Personne
         return $this->belongsTo(Ville::class);
     }
     
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

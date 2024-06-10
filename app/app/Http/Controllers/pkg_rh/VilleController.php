@@ -40,7 +40,7 @@ class VilleController extends Controller
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(" ", "%", $searchValue);
-                $Villes = $this->searchData($searchQuery);
+                $Villes = $this->VilleRepository->searchData($searchQuery);
 
                 return view('pkg_rh.Villes.index', compact('Villes'))->render();
             }

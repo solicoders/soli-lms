@@ -3,6 +3,7 @@
 namespace App\Imports\pkg_rh;
 
 use App\Models\pkg_rh\Apprenant;
+use App\Models\User;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -13,7 +14,14 @@ class ApprenantImport implements ToModel, WithHeadingRow
 
     public function model(array $row)
     {
-        return new Apprenant([
+        $user = new User([
+            'email' => $row["email"],
+            'password' => $row["password"],
+        ]);
+
+        new Apprenant([
+            'nom' => $row["nom"],
+            'prenom' => $row["prenom"],
             'nom_arab' => $row["nom_arab"],
             'prenom_arab' => $row["prenom_arab"],
             'date_naissance' => $row["date_naissance"],
@@ -26,6 +34,9 @@ class ApprenantImport implements ToModel, WithHeadingRow
             'specialite_id' => $row["specialite_id"],
             'niveau_scolaire_id' => $row["niveau_scolaire_id"],
             'lieu_naissance_id' => $row["lieu_naissance_id"],
+            '_token' => 'fhskjfhsdkjfhskldjfhsdkfhoise',
+            'user_id' => $user->id,
+
         ]);
     }
 }
