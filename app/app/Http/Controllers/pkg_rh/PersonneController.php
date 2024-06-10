@@ -9,6 +9,8 @@ use App\Exports\pkg_rh\FormateurExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_rh\FormateurRequest;
 use App\Http\Requests\pkg_rh\PersonneRequest;
+use App\Imports\pkg_creation_projets\ApprenantImport;
+use App\Imports\pkg_creation_projets\FormateurImport;
 use App\Models\pkg_rh\Apprenant;
 use App\Models\pkg_rh\Formateur;
 use App\Models\User;
@@ -125,7 +127,7 @@ class PersonneController extends Controller
     public function export()
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->all();
+        $personne = $this->getRepository()->all()->where('type', $type);
         $export = $type == "Formateur" ? new FormateurExport($personne) : new ApprenantExport($personne);
         return Excel::download($export, $type.'.xlsx');
     }
@@ -138,8 +140,10 @@ class PersonneController extends Controller
             'file' => 'required|mimes:xlsx,xls,csv',
         ]);
 
+        $import = $type == "Formateur" ? new FormateurImport : new ApprenantImport;
+
         try {
-            Excel::import(new personneImport, $request->file('file'));
+            Excel::import($import, $request->file('file'));
         } catch (\InvalidArgumentException $e) {
             return redirect()->route($type.'.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
         }

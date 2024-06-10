@@ -23,18 +23,42 @@ class FormateurExport implements FromCollection, WithHeadings, ShouldAutoSize, W
     {
         return [
             'nom',
-            'description',
-           
+            'prenom',
+            'nom_arab',
+            'prenom_arab',
+            'date_naissance',
+            'tele_num',
+            'rue',
+            'ville_id',
+            'cin',
+            'groupe_id',
+            'cne',
+            'specialite_id',
+            'niveau_scolaire_id',
+            'lieu_naissance_id',
+            'email',
         ];
     }
 
     public function collection()
     {
-        return $this->data->map(function ($project) {
+        return $this->data->map(function ($Formateur) {
             return [
-                'nom' => $project->nom, 
-                'description' => $project->description,
-               
+                'nom' => $Formateur->nom, 
+                'prenom' => $Formateur->prenom,
+                'nom_arab' => $Formateur->nom_arab,
+                'prenom_arab' => $Formateur->prenom_arab,
+                'date_naissance' => $Formateur->date_naissance,
+                'tele_num' => $Formateur->tele_num,
+                'rue' => $Formateur->rue,
+                'ville_id' => $Formateur->ville_id,
+                'cin' => $Formateur->cin,
+                'groupe_id' => $Formateur->groupe_id,
+                'cne' => $Formateur->cne,
+                'specialite_id' => $Formateur->specialite_id,
+                'niveau_scolaire_id' => $Formateur->niveau_scolaire_id,
+                'lieu_naissance_id' => $Formateur->lieu_naissance_id,
+                'email' => $Formateur->email,
             ];
         });
     }
