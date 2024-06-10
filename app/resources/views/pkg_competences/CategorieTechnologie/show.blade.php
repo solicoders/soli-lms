@@ -1,20 +1,20 @@
 @extends('layouts.app')
-@section('title', __('app.show') . ' ' . __('pkg_competences/categorieTechnologie.singular'))
+@section('title', __('app.show') . ' ' . __('pkg_competences/CategorieTechnologie.singular'))
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{ __('app.detail') }} {{ __('pkg_competences/categorieTechnologie.singular') }}</h1>
+                    <h1>{{ __('app.detail') }}</h1>
                 </div>
-                {{-- @can('edit-TaskController') --}}
+                @can('edit-CategorieTechnologieController')
                     <div class="col-sm-6">
-                        <a href="{{ route('CategorieTechnologie.edit', $fetchedData->id) }}" class="btn btn-info float-right">
+                        <a href="{{ route('CategorieTechnologie.edit', $fetchedData->id) }}" class="btn btn-default float-right">
                             <i class="far fa-edit"></i>
                             {{ __('app.edit') }}
                         </a>
                     </div>
-                {{-- @endcan --}}
+                @endcan
             </div>
         </div>
     </div>
@@ -25,17 +25,32 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="col-sm-12">
-                                <label>{{ __('app.name') }}</label>
+                                <label for="nom">{{ __('app.name') }}:</label>
                                 <p>{{ $fetchedData->nom }}</p>
                             </div>
 
                             <div class="col-sm-12">
-                                <label>{{ __('app.description') }}</label>
-                                <p>{!! $fetchedData->description !!}</p>
+                                <label for="noteMin">{{ __('app.noteMin') }}:</label>
+                                <p>{{ $fetchedData->noteMin }}</p>
                             </div>
-                        </div>  
-                        <div class="card-footer">
-                            <a href="{{ route('CategorieTechnologie.index') }}" class="btn btn-secondary">{{ __('app.cancel') }}</a>
+
+                            <div class="col-sm-12">
+                                <label for="noteMax">{{ __('app.noteMax') }}:</label>
+                                <p>{{ $fetchedData->noteMax }}</p>
+                            </div>
+                            <!-- Description Field -->
+                            <div class="col-sm-12">
+                                <label for="description">{{ __('app.description') }}:</label>
+                                @if ($fetchedData->description)
+                                    <p>
+                                        {!! $fetchedData->description !!}
+                                    </p>
+                                @else
+                                    <p class="text-secondary">Aucune information disponible</p>
+                                @endif
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

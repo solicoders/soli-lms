@@ -47,10 +47,6 @@ class CategorieTechnologieSeeder extends Seeder
         $FormateurRole = Role::where('name', User::FORMATEUR)->first();
         $ApprenantRole = Role::where('name', User::APPRENANT)->first();
 
-        Schema::disableForeignKeyConstraints();
-        Permission::truncate();
-        Schema::enableForeignKeyConstraints();
-
         $csvFile = fopen(base_path("database/data/pkg_competences/CategorieTechnologiePermissions.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
@@ -74,7 +70,7 @@ class CategorieTechnologieSeeder extends Seeder
 
                 if ($ApprenantRole) {
                     // If the role exists, update its permissions
-                    if (in_array($data['0'], ['index-CategorieTechnologieController', 'show-CategorieTechnologieController', 'export-CategorieTechnologieController','import-CategorieTechnologieController'] )) {
+                    if (in_array($data['0'], ['index-CategorieTechnologieController', 'show-CategorieTechnologieController', 'export-CategorieTechnologieController','create-CategorieTechnologieController','store-CategorieTechnologieController','edit-CategorieTechnologieController','update-CategorieTechnologieController','destroy-CategorieTechnologieController','import-CategorieTechnologieController'] )) {
                         $ApprenantRole->givePermissionTo($data['0']);
                     }
                 } else {
@@ -88,5 +84,5 @@ class CategorieTechnologieSeeder extends Seeder
             $firstline = false;
         }
         fclose($csvFile);
-    
+
 

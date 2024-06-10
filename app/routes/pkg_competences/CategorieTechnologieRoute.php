@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pkg_competences\CategorieTechnologieController;
 
 Route::middleware('auth')->group(function () {
-    Route::prefix('/competences')->group(function () {
+    Route::prefix('/CategorieTechnologie')->group(function () {
         Route::get('/', [CategorieTechnologieController::class, 'index'])->name('CategorieTechnologie.index');
         Route::get('/CategorieTechnologie/form-ajouter', [CategorieTechnologieController::class, 'create'])->name('CategorieTechnologie.create');
         Route::post('/CategorieTechnologie/ajouter', [CategorieTechnologieController::class, 'store'])->name('CategorieTechnologie.store');

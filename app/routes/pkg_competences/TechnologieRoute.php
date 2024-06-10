@@ -5,7 +5,7 @@ use App\Http\Controllers\Pkg_competences\TechnologieController;
 
 // routes for project management
 Route::middleware('auth')->group(function () {
-    Route::prefix('/competences')->group(function () {
+    Route::prefix('/technologies')->group(function () {
         Route::get('/', [TechnologieController::class, 'index'])->name('technologies.index');
             Route::get('/technologies/form-ajouter', [TechnologieController::class, 'create'])->name('technologies.create');
             Route::post('/technologies/ajouter', [TechnologieController::class, 'store'])->name('technologies.store');

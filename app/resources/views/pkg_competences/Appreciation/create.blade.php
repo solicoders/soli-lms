@@ -4,7 +4,7 @@
     <div class="content-header">
         @if ($errors->has('Appreciation_exists'))
             <div class="alert alert-danger">
-                {{ $errors->first('Filiere_exists') }}
+                {{ $errors->first('Appreciation_exists') }}
             </div>
         @else
             @if ($errors->has('unexpected_error'))

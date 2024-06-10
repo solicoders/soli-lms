@@ -51,7 +51,7 @@ class CompetenceController extends AppBaseController
             return redirect()->route('competence.index')->with('success', __('messages.create_success'));
         } catch (CompetenceAlreadyExistException $e) {
             return back()->withInput()->withErrors(['competence_exists' => 'Competence est déjà existant']);
-            
+
         }
 
 

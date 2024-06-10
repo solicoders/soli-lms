@@ -50,11 +50,8 @@ class CompetenceSeeder extends Seeder
         // =========== Add Seeder Permission Assign Role ============
         // ==========================================================
         $FormateurRole = Role::where('name', User::FORMATEUR)->first();
-        $ApprenantRole = Role::where('name', User::RESPONSABLE)->first();
+        $responsableRole = Role::where('name', User::RESPONSABLE)->first();
 
-        Schema::disableForeignKeyConstraints();
-        Permission::truncate();
-        Schema::enableForeignKeyConstraints();
 
         $csvFile = fopen(base_path("database/data/pkg_competences/CompetencePermissions.csv"), "r");
         $firstline = true;
@@ -77,10 +74,10 @@ class CompetenceSeeder extends Seeder
                 }
 
 
-                if ($ApprenantRole) {
+                if ($responsableRole) {
                     // If the role exists, update its permissions
-                    if (in_array($data['0'], ['index-CategorieTechnologieController', 'show-CategorieTechnologieController', 'export-CategorieTechnologieController','import-CategorieTechnologieController'] )) {
-                        $ApprenantRole->givePermissionTo($data['0']);
+                    if (in_array($data['0'], ['index-CompetenceController', 'show-CompetenceController', 'destroy-CompetenceController','create-CompetenceController','store-CompetenceController','edit-CompetenceController','update-CompetenceController','export-CompetenceController','import-CompetenceController'] )) {
+                        $responsableRole->givePermissionTo($data['0']);
                     }
                 } else {
                     // If the role doesn't exist, create it and give permissions
