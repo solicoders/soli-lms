@@ -47,13 +47,9 @@
                                                                         <label for="skill"> {{ __('pkg_competences/competence.plural') }} :</label>
                                                                         <select class="form-control" id="skill">
                                                                             <option value="">Toutes</option>
-                                                                            <option value="C1">Maquetter une application mobile</option>
-                                                                            <option value="C2">Manipuler une base de données - perfectionnement</option>
-                                                                            <option value="C3">Développer la partie back-end d’une application web ou web mobile - perfectionnement</option>
-                                                                            <option value="C4">Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement - perfectionnement</option>
-                                                                            <option value="C5">Développer une application mobile native, avec Android et React Native</option>
-                                                                            <option value="C6">Préparer et exécuter les plans de tests d’une application</option>
-                                                                            <option value="C7">Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement</option>
+                                                                            @foreach($competences as $competence)
+                                                                                <option value="{{ $competence->id }}">{{ $competence->nom }}</option>
+                                                                            @endforeach
                                                                         </select>
                                                                     </div>
                                                                     <div class="col-md-3">
@@ -63,7 +59,7 @@
                                                                 </div>
                                                                                                                      </div>
                                                                 <div class="card-body">
-                                                                    
+
 
                                                                     </div>
 
