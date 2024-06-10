@@ -55,12 +55,20 @@
                                 </div>
                                 <div class="col-md-3">
                                     <label for="projectName">{{ __('app.rechercher') }}</label>
-                                    <input type="text" class="form-control" id="searchInput" placeholder="Nom du projet :...">
+                                    <div class="input-group input-group-sm float-sm-right col-md-3 p-0">
+                                        <input type="text" name="table_search" id="table_search"
+                                            class="form-control float-right" placeholder="Recherche">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-default">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body table-responsive p-0">
-                            <table id="projetTable"  class="table table-striped text-nowrap">
+                            <table  class="table table-striped text-nowrap">
                                 <thead>
                                     <tr>
                                         <th>{{ __('pkg_creation_projets/projet.singular') }}</th>
@@ -70,7 +78,7 @@
                                         <th class="text-center">{{ __('app.action') }}</th>
                                     </tr>
                                 </thead>
-                                <tbody id="projetTableBody">
+                                <tbody >
 @include('pkg_creation_projets.table')
                                 </tbody>
 
@@ -101,7 +109,7 @@
                                 {{-- @endcan --}}
                             </div>
 
-                            <ul class="pagination  m-0 float-right">
+                            <ul class="pagination m-0 float-right">
                                 {{ $projetData->onEachSide(1)->links() }}
                             </ul>
                         </div>

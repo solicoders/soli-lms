@@ -4,15 +4,16 @@ import 'jquery/dist/jquery';
 // Import AdminLTE
 import "admin-lte/dist/js/adminlte";
 import 'admin-lte/plugins/bootstrap/js/bootstrap.bundle';
-import 'admin-lte/dist/js/demo.js';
-import 'admin-lte/dist/js/pages/dashboard.js';
-
-
+import 'admin-lte/dist/js/adminlte';
+import './app.recherche';
+// digrame degan
+import 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js';
 // Importation de CKEditor
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import "https://code.jquery.com/jquery-3.6.0.min.js"
+// import "./pkg_projets/filterByprojets.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-
     // Initialisation de CKEditor
     ClassicEditor.create(document.querySelector("#editor"))
         .then((editor) => {
@@ -26,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-// TODO : comments , à trasmettre dans recherche.js
 $(document).ready(function () {
     // Fonction pour mettre à jour un paramètre dans l'URL
     function updateURLParameter(param, paramVal) {
@@ -49,5 +49,15 @@ $(document).ready(function () {
         window.history.replaceState({ path: url }, "", url + hash);
     }
 
-
 })
+
+// select2
+$(document).ready(function() {
+    $('.select2').select2();
+});
+
+// digrame degant
+mermaid.initialize({
+    startOnLoad: true,
+});
+
