@@ -42,6 +42,31 @@
                                                         <div class="col-12">
                                                             <!-- Boîte par défaut -->
                                                             <div class="card">
+<<<<<<< HEAD
+                                                                <div class="card-header">
+                                                                    <h3 class="card-title">Tableau des brief projets</h3>                                                                
+                                                                </div>
+                                                                <div class="card-body">
+
+                                                                    <div class="row mb-3">
+                                                                        <div class="col-md-3">
+                                                                            <label for="skill">Compétence :</label>
+                                                                            <select class="form-control" id="skill">
+                                                                                <option value="">Toutes</option>
+                                                                                <option value="C1">Maquetter une application mobile</option>
+                                                                                <option value="C2">Manipuler une base de données - perfectionnement</option>
+                                                                                <option value="C3">Développer la partie back-end d’une application web ou web mobile - perfectionnement</option>
+                                                                                <option value="C4">Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement - perfectionnement</option>
+                                                                                <option value="C5">Développer une application mobile native, avec Android et React Native</option>
+                                                                                <option value="C6">Préparer et exécuter les plans de tests d’une application</option>
+                                                                                <option value="C7">Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <label for="projectName">Rechercher</label>
+                                                                            <input type="text" class="form-control" id="projectName" placeholder="Nom du projet :...">
+                                                                        </div>
+=======
                                                                 <div class="card-header"><div class="row mb-3">
                                                                     <div class="col-md-3">
                                                                         <label for="skill"> {{ __('pkg_competences/competence.plural') }} :</label>
@@ -55,6 +80,7 @@
                                                                             <option value="C6">Préparer et exécuter les plans de tests d’une application</option>
                                                                             <option value="C7">Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement</option>
                                                                         </select>
+>>>>>>> Develop-pkg_validations
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <label for="projectName">{{ __('app.rechercher') }}</label>
