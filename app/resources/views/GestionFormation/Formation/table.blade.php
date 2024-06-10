@@ -6,15 +6,17 @@
                 <th>{{ __('app.name') }}</th>
                 <th>{{ __('app.description') }}</th>
                 <th>{{ __('app.link') }}</th>
+                <th>{{ __('app.link1') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($formationData as $formation)
                 <tr>
-                    <td>{{ $formation->nom }}</td>
+                    <td>{{ $formation->nom }}_{{ $formation->created_at }}</td>
                     <td>{{ $formation->description }}</td>
                     <td>{{ $formation->lien }}</td>
+                    <td>{{ $formation->lien1 }}</td>
                     <td class="text-center">
                         <a href="{{ route('formations.show', $formation->id) }}" class="btn btn-default btn-sm">
                             <i class="far fa-eye"></i>

@@ -22,7 +22,8 @@ class FormationSeeder extends Seeder
                 Formation::create([
                     "nom"=>$data['0'],
                     "description"=>$data['1'],
-                    "lien"=>$data['2']
+                    "lien"=>$data['2'],
+                    "lien1"=>$data['3']
                 ]);
             }
             $firstline = false;

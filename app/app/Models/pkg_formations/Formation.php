@@ -12,6 +12,7 @@ class Formation extends Model
         'nom',
         'description',
         'lien',
+        'lien1'
         
     ];
 }

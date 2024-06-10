@@ -52,10 +52,14 @@ class FormationRepository extends BaseRepository
             $formation = parent::create($data);
     
             // Vérifie si le lien est présent dans les données et l'associe à la formation
-            if (isset($data['lien'])) {
+        
                 $formation->lien = $data['lien'];
+                $formation->lien1 = $data['lien1'];
                 $formation->save();
-            }
+    
+
+
+    
     
             // Vérifie si le formateur_id est présent dans les données et l'associe à la formation
             if (isset($data['formateur_id'])) {
