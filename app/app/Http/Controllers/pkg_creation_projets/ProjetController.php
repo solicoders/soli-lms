@@ -65,26 +65,30 @@ class ProjetController extends Controller
 
     public function index(Request $request)
     {
-        // Assuming 'transfertCompetences', 'competence', and other related models are the relationships
-        $projetData = $this->projetRepository->with([
-            'livrables',
-            'resources',
-            'transfertCompetences.competence',
-            'transfertCompetences.appreciation',
-        ])->paginate();
         $competences = Competence::all();
-
-
+        $perPage = 4; // Adjust as needed
 
         if ($request->ajax()) {
-            $searchValue = $request->get('searchValue');
-            if ($searchValue !== '') {
-                $searchQuery = str_replace(' ', '%', $searchValue);
-                $projetData = $this->projetRepository->searchData($searchQuery);
-                return view('pkg_creation_projets.index', compact('projetData'))->render();
+            if ($request->has('competenceId')) {
+                $competenceId = $request->get('competenceId');
+                $projetData = $this->projetRepository->filterProjectsByCompetence($competenceId, $perPage);
+                return view('pkg_creation_projets.table_rows', compact('projetData'));
+            } elseif ($request->has('searchValue')) {
+                $searchValue = $request->get('searchValue');
+                $projetData = $this->projetRepository->searchProjects($searchValue, $perPage);
+                return view('pkg_creation_projets.table_rows', compact('projetData'));
             }
+        } else {
+            // Initial data load
+            $projetData = $this->projetRepository->with([
+                'livrables',
+                'resources',
+                'transfertCompetences.competence',
+                'transfertCompetences.appreciation',
+            ])->paginate($perPage);
         }
-        return view('pkg_creation_projets.index', compact('projetData','competences'));
+
+        return view('pkg_creation_projets.index', compact('projetData', 'competences'));
     }
 
     public function create()
@@ -386,6 +390,6 @@ if (isset($validatedData['competences'])) {
 
     public function export()
     {
-        return Excel::download(new ProjetExport, 'projets.xlsx'); // Add 'return' 
+        return Excel::download(new ProjetExport, 'projets.xlsx'); // Add 'return'
     }
 }
