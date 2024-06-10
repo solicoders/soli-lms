@@ -24,3 +24,4 @@ return [
     'deleteSucées' => 'a été supprimé avec succès.',
 ];
 
+

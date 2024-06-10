@@ -52,6 +52,17 @@ class projectRealisationRepository extends BaseRepository
      * @return mixed
      * @throws RealisationProjetAlreadyExistException Si le RealisationProjet existe déjà.
      */
+    public function create(array $data)
+    {
+        $projetId = $data['projet_id'];
+        $existingRealisation = $this->model->where('projet_id', $projetId)->exists();
+
+        // if ($existingRealisation) {
+        //     throw new RealisationProjetAlreadyExistException("A RealisationProjet with this project ID already exists.");
+        // } else {
+            return parent::create($data);
+        // }
+    }
 
     /**
      * Recherche les RealisationProjets correspondants aux critères spécifiés.
@@ -68,4 +79,9 @@ class projectRealisationRepository extends BaseRepository
             }
         })->paginate($perPage);
     }
+        public function with($relations)
+    {
+        return $this->model->with($relations);
+    }
+
 }

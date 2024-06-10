@@ -9,13 +9,18 @@
                     {{ session('success') }}.
                 </div>
             @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="container-fluid ">
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>Liste des {{ __('pkg_rh/'.$type.'.plural')}}</h1>
                     </div>
                     <div class="col-sm-6">
-                        <a href={{ route($type.'.create')}} type="button" class="btn btn-primary float-right">
+                        <a href={{ route($type.'.create')}} type="button" class="btn btn-info float-right">
                             <i class="fas fa-plus"></i> Ajouter un {{ __('pkg_rh/'.$type.'.singular')}}
                         </a>
                     </div>
@@ -72,21 +77,29 @@
                 </table>
             </div>
             <!-- /.card-body -->
-            <div class="card-footer">
-                <div class="d-flex justify-content-between align-items-center p-2">
-                    <div class="d-flex align-items-center mb-2">
-                        <button type="button" class="btn btn-default btn-sm">
-                            <i class="fas fa-download"></i> IMPORT
-                        </button>
-                        <button type="button" class="btn btn-default btn-sm mt-0 mx-2">
-                            <i class="fas fa-upload"></i> EXPORT
-                        </button>
-                    </div>
-                    <div class="mr-5">
-                        {{$personnes->links()}}
-                    </div>
+            <div class="d-md-flex justify-content-between align-items-center p-2">
+                <div class="d-flex align-items-center mb-2 ml-2 mt-2">
+                    <form action="{{ route($type.'.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
+                        id="importForm">
+                        @csrf
+                        <label for="upload" class="btn btn-default btn-sm font-weight-normal">
+                            <i class="fas fa-file-download"></i>
+                            {{ __('app.import') }}
+                        </label>
+                        <input type="file" id="upload" name="file" style="display:none;" onchange="submitForm()" />
+                    </form>
+                    <form class="">
+                        <a href="{{ route($type.'.export') }}" class="btn btn-default btn-sm mt-0 mx-2">
+                            <i class="fas fa-file-export"></i>
+                            {{ __('app.export') }}</a>
+                    </form>
                 </div>
+            
+                <ul class="pagination  m-0 float-right">
+                    {{ $personnes->onEachSide(1)->links() }}
+                </ul>
             </div>
+            
         </div>
     </div>
 </section>

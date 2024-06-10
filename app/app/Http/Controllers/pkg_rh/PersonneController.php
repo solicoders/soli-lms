@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers\pkg_rh;
 
-use App\Models\User;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use App\Models\pkg_rh\Apprenant;
-use App\Models\pkg_rh\Formateur;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Route;
-use App\Repositories\pkg_rh\VilleRepository;
 use App\Exceptions\pkg_rh\ApprenantException;
 use App\Exceptions\pkg_rh\FormateurException;
-use App\Http\Requests\pkg_rh\PersonneRequest;
-use App\Repositories\pkg_rh\GroupeRepository;
+use App\Exports\pkg_rh\ApprenantExport;
+use App\Exports\pkg_rh\FormateurExport;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\pkg_rh\FormateurRequest;
-use App\Repositories\pkg_rh\SpecialiteRepository;
+use App\Http\Requests\pkg_rh\PersonneRequest;
+use App\Imports\pkg_rh\ApprenantImport;
+use App\Imports\pkg_rh\FormateurImport;
+use App\Models\pkg_rh\Apprenant;
+use App\Models\pkg_rh\Formateur;
+use App\Models\User;
+use App\Repositories\pkg_rh\GroupeRepository;
 use App\Repositories\pkg_rh\NiveauScolaireRepository;
+use App\Repositories\pkg_rh\SpecialiteRepository;
+use App\Repositories\pkg_rh\VilleRepository;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PersonneController extends Controller
 {
@@ -31,7 +36,7 @@ class PersonneController extends Controller
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(" ", "%", $searchValue);
-                $personnes = $this->searchData($searchQuery);
+                $personnes = $this->getRepository()->searchData($searchQuery);
 
                 return view('pkg_rh.Personnes.index', compact('personnes', 'type'))->render();
             }
@@ -112,12 +117,42 @@ class PersonneController extends Controller
         } 
     }
 
-    public function delete(Request $request ,$id)
+    public function destroy($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->delete($id);
-        return redirect()->route($type.'.index')->with('success', $type.' a été supprimée avec succès');
+        $personne = $this->getRepository()->destroy($id);
+        return redirect()->route($type.'.index')->with('success', __('pkg_rh/'.$type.'.singular'). ' a été supprimée avec succès');
     }
+
+    public function export()
+    {
+        $type = $this->getType();
+        $personne = $this->getRepository()->getAll()->where('type', $type);
+        $export = $type == "Formateur" ? new FormateurExport($personne) : new ApprenantExport($personne);
+        return Excel::download($export, $type.'.xlsx');
+    }
+
+
+    public function import(Request $request)
+    {
+        $type = $this->getType();
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv',
+        ]);
+
+        $import = $type == "Formateur" ? new FormateurImport : new ApprenantImport;
+
+        try {
+            Excel::import($import, $request->file('file'));
+        } catch (\Exception $e) {
+            return redirect()->route($type.'.index')->withError($e->getMessage());
+        }catch (\InvalidArgumentException $e) {
+            return redirect()->route($type.'.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
+        }
+        return redirect()->route($type.'.index')->with('success', __('pkg_rh/'.$type.'.singular') . ' ' . __('app.addSucées'));
+    }
+
+
 
     private function getRepository(){
         $route = Route::getCurrentRoute()->getName();

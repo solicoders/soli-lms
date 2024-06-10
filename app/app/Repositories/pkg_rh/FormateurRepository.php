@@ -54,10 +54,6 @@ class FormateurRepository extends BaseRepository
         }
     }
 
-    public function update($id, array $data)
-    {
-        parent::update($id, $data);
-    }
     
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {

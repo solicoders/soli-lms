@@ -23,8 +23,10 @@ class pkg_formationsSeeder extends Seeder
     public static function Classes(): array
     {
         return [
+
             FormationSeeder::class,
-            
+
+
         ];
     }
 }

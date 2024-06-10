@@ -12,4 +12,6 @@ class NiveauScolaires extends Model
     public function Apprenant(){
         return $this->hasMany(Apprenant::class);
     }
+
+    protected $fillable = ['nom'] ;
 }
