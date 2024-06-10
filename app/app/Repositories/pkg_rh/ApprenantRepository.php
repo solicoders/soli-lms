@@ -52,7 +52,7 @@ class ApprenantRepository extends BaseRepository
         if ($existingApprenant) {
             throw ApprenantException::AlreadyExistApprenant();
         }else{
-            parent::create($data);
+            return parent::create($data);
         }
 
     }
