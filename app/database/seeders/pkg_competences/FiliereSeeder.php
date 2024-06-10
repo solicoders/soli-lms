@@ -56,7 +56,7 @@ class FiliereSeeder extends Seeder
         // ==========================================================
         $responsablerRole = User::RESPONSABLE;
         $Role = Role::where('name', $responsableRole)->first();
-        $csvFile = fopen(base_path("database/data/pkg_competences/CompetencePermission.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_competences/FilierePermission.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {

@@ -49,7 +49,7 @@ class TechnologieSeeder extends Seeder
         // ==========================================================
         $FormateurRole = User::FORMATEUR;
         $Role = Role::where('name', $FormateurRole)->first();
-        $csvFile = fopen(base_path("database/data/pkg_competences/CompetencePermission.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_competences/TechnologiePermission.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {

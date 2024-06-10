@@ -57,7 +57,7 @@ class ModuleSeeder extends Seeder
         // ==========================================================
         $responsableRole = User::RESPONSABLE;
         $Role = Role::where('name', $FresponsableRole)->first();
-        $csvFile = fopen(base_path("database/data/pkg_competences/CompetencePermission.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_competences/ModulePermission.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {

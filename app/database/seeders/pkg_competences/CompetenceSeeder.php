@@ -56,7 +56,7 @@ class CompetenceSeeder extends Seeder
         Permission::truncate();
         Schema::enableForeignKeyConstraints();
 
-        $csvFile = fopen(base_path("database/data/pkg_competences/CategorieTechnologiePermissions.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_competences/CompetencePermissions.csv"), "r");
         $firstline = true;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {
