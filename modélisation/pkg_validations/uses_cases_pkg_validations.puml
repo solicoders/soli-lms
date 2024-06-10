@@ -1,17 +1,23 @@
 @startuml uses_cases_pkg_validations
 
 left to right direction
+actor Formateur
 
 
-actor Admin as admin
 
 package pkg_validations {
 
-  Admin -->  (Cas d'utilisation) 
-  (extend 1 Cas d'utilisation)  <..  (Cas d'utilisation)  : <<extend>>
-  (extend 2 Cas d'utilisation)  <.  (Cas d'utilisation)  : <<extend>>
-}  
+ 
+  (Valider un Projet) <.. (Définir les Appreciation de Validation pour chaque compétence):<<Extend>>
+  (Valider un Projet) <.. (Saisie des Messages pour chaque compétence):<<Extend>>
+} 
 
-' note right of admin : "note 1"
+
+package pkg_realisation_projet{
+
+   Formateur -- (Consulter la liste des projets réalisés en attente de validation)
+   (Consulter la liste des projets réalisés en attente de validation) <.. (Valider un Projet):<<Extend>>
+
+}
 
 @enduml

@@ -5,6 +5,7 @@
 
     <!-- font awesom library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
     <!-- get app.css -->
     <link rel="stylesheet" href="/view/assets/css/app.css">

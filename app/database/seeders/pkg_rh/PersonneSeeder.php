@@ -16,11 +16,12 @@ class PersonneSeeder extends Seeder
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
+            $cne = $data['10'] == 'NULL' ? null : $data['17'];
             $date_inscription = $data['11'] == 'NULL' ? null : $data['11'];
             $nivaeu_scholaire_id = $data['15'] == 'NULL' ? null : $data['15'];
             $lieu_naissance_id = $data['16'] == 'NULL' ? null : $data['16'];
             $groupe_id = $data['17'] == 'NULL' ? null : $data['17'];
-            $cne = $data['10'] == 'NULL' ? null : $data['17'];
+            $specialite_id = $data['18'] == 'NULL' ? null : $data['18'];
 
             if (!$firstline) {
                 $user = User::create([
@@ -44,10 +45,11 @@ class PersonneSeeder extends Seeder
                     "date_inscription"=>$date_inscription,
                     "profile_image"=>$data['12'],
                     "ville_id"=>$data['14'],
-                    "nivaeu_scholaire_id"=>$nivaeu_scholaire_id,
+                    "niveau_scolaire_id"=>$nivaeu_scholaire_id,
                     "lieu_naissance_id"=>$lieu_naissance_id,
                     "groupe_id"=>$groupe_id,
                     "user_id" => $user->id,
+                    "specialite_id" => $specialite_id,
                     'updated_at' => Carbon::now(),
                     'created_at' => Carbon::now()
                 ]);

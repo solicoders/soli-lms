@@ -14,11 +14,11 @@ class Competence extends Model
 
     public function niveauxCompetence()
     {
-        return $this->hasMany(NiveauCompetence::class);
+        return $this->hasMany(NiveauCompetence::class, 'competence_id');
     }
 
-    public function technologiques()
+    public function technologies()
     {
-        return $this->hasMany(Technologie::class);
+        return $this->hasMany(Technologie::class,'technologie_competences');
     }
 }

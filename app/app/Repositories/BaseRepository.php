@@ -114,7 +114,7 @@ abstract class BaseRepository implements RepositoryInterface
      * @return void
      */
     public function searchData($searchableData, $perPage = 0)
-    {   
+    {
         if ($perPage == 0) { $perPage = $this->paginationLimit;}
         $query =  $this->allQuery($searchableData);
     }
@@ -183,5 +183,9 @@ abstract class BaseRepository implements RepositoryInterface
     public function destroy($id){
         $record = $this->model->find($id);
         return $record->delete();
+    }
+    public function where($column, $value)
+    {
+        return $this->model->where($column, $value);
     }
 }
