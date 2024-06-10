@@ -45,7 +45,7 @@
         <li class="nav-item">
         <a href="{{route('Apprenant.index')}}"
             class="nav-link {{ Request::is('Ville*') ? 'active' : '' }}>">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="fa-brands fa-google-scholar"></i>
             <p>Gestion Spécialité</p>
         </a>
         </li>
