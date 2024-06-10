@@ -22,19 +22,12 @@ $(document).ready(function () {
         window.history.replaceState({ path: url }, "", url + hash);
     }
 
-    $(document).on("change", "#competenceFilter", function () {
-        var page = $("#page").val(); // Assuming you have a "page" element in your HTML
-        var competenceId = $(this).val();
-        var searchValue = $("#table_search").val(); // Get the search term if there is one
-        fetchData(page, searchValue, competenceId); // Pass competenceId to fetchData
-    });
-
-    // Update fetchData to handle competenceId
-    function fetchData(page, searchValue, competenceId = null) {
+    // Fonction pour récupérer les données avec AJAX
+    function fetchData(page, searchValue) {
         var neededUrl = window.location.pathname;
         console.log(neededUrl);
         $.ajax({
-            url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue + (competenceId !== null ? '&competenceId=' + competenceId : ''),
+            url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
             success: function (data) {
                 var newData = $(data);
 
