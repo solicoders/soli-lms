@@ -18,7 +18,8 @@ class CompetenceRepository extends BaseRepository
      * @var array
      */
     protected $fieldsSearchable = [
-        'name'
+        'name',
+        'description'
     ];
 
     /**
@@ -49,8 +50,10 @@ class CompetenceRepository extends BaseRepository
     public function create(array $data)
     {
         $nom = $data['nom'];
+        $description = $data['description'];
 
         $existingCompetence = $this->model->where('nom', $nom)->exists();
+        $existingCompetence = $this->model->where('description', $description)->exists();
 
         if ($existingCompetence) {
             throw new CompetenceAlreadyExistException("Competence already exists.");

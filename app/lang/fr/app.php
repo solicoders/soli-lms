@@ -15,7 +15,7 @@ return [
     'action' => 'Action',
     'detail' => 'Détail',
     'description' => 'Description',
-    'list' => 'List',
+    'list' => 'Liste',
     'link' => 'Lien',
     'home' => 'Accueil',
     'Gestion_des_formations' => 'Gestion_des_formations',
