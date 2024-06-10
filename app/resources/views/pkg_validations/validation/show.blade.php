@@ -11,7 +11,7 @@
                 </div>
                 {{-- @can('edit-LivrableController') --}}
                     <div class="col-sm-6">
-                        <a href="" class="btn btn-default float-right">
+                        <a href="{{ route('realisationProjets.index')}}" class="btn btn-default float-right">
                             <i class="far fa-edit"></i>
                             {{ __('app.cancel') }}
                         </a>
@@ -103,7 +103,7 @@
                             <p><strong> <th>{{ __('pkg_validations/validation.Note') }}</th></strong> {{ isset($notesByCompetence[$competence->id]) ? $notesByCompetence[$competence->id] : '-' }}</p>
                         </div>
                         <div class="col-md-3">
-                            <p><strong>{{ __('app.titre') }}:</strong> {{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->titre : '-' }}</p>
+                            <p><strong>{{ __('app.title') }}:</strong> {{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->titre : '-' }}</p>
                             <p><strong>{{ __('app.description') }}:</strong> {{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->description : '-' }}</p>
                         </div>
                     </div>

@@ -137,7 +137,7 @@ class ValidationController extends Controller
         }
 
         return redirect()
-        ->route('realisationProjets.index', ['realisationProjetId' => $realisationProjetId])->with('success', 'Validations and messages updated successfully!');
+        ->route('realisationProjets.index', ['realisationProjetId' => $realisationProjetId])->with('success', 'Le projet a été validé avec succès!');
     }
 
     public function create()
