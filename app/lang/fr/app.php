@@ -20,7 +20,6 @@ return [
     'Gestion_des_formations' => 'Gestion des formations',
     'datedebut' =>'Date debut',
     'datefin' => 'Date fin',
-    'title' => 'Titre',
     'travailAFaire'=>'Travail à faire',
     'critereDeTravail'=>'Critère de validation',
    'Previous'=>'Précédent',
@@ -30,7 +29,4 @@ return [
     'date'=>'Date',
     'learner'=>'Apprenants',
     'select'=>'sélectionner'
-
-
-
 ];
