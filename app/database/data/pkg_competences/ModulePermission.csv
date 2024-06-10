@@ -1,5 +1,5 @@
 name,guard_name
-index-ModuleController,web
+
 show-ModuleController,web
 create-ModuleController,web
 store-ModuleController,web

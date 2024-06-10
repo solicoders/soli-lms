@@ -9,7 +9,6 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 
-
 class FiliereSeeder extends Seeder
 {
     /**
@@ -51,32 +50,26 @@ class FiliereSeeder extends Seeder
 }
 
 
-// ==========================================================
-        // =========== Add Seeder Permission Assign Role ============
-        // ==========================================================
-        $responsablerRole = User::RESPONSABLE;
-        $Role = Role::where('name', $responsableRole)->first();
-        $csvFile = fopen(base_path("database/data/pkg_competences/FilierePermission.csv"), "r");
-        $firstline = true;
-        while (($data = fgetcsv($csvFile)) !== FALSE) {
-            if (!$firstline) {
-                Permission::create([
-                    "name" => $data['0'],
-                    "guard_name" => $data['1'],
-                ]);
 
-                if ($Role) {
-                    // If the role exists, update its permissions
-                    $Role->givePermissionTo($data['0']);
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    $Role = Role::create([
-                        'name' => $responsablerRole,
-                        'guard_name' => 'web',
-                    ]);
-                    $Role->givePermissionTo($data['0']);
-                }
-            }
-            $firstline = false;
-        }
-        fclose($csvFile);
+// ==========================================================
+// =========== Add Seeder Permission Assign Role ============
+// ==========================================================
+$responsableRole = User::RESPONSABLE;
+$Role = Role::where('name', $responsableRole)->first();
+$csvFile = fopen(base_path("database/data/pkg_competences/FilierePermission.csv"), "r");
+$firstline = true;
+$firstline = true;
+while (($data = fgetcsv($csvFile)) !== FALSE) {
+    if (!$firstline && count($data) >= 2) {
+        Filiere::create([
+            "nom" => $data[0],
+            "description" => $data[1],
+        ]);
+    } elseif (!$firstline) {
+        error_log("Skipping malformed row in Filiere.csv: " . implode(',', $data));
+    }
+    $firstline = false;
+}
+
+
+fclose($csvFile);

@@ -56,28 +56,47 @@ class ModuleSeeder extends Seeder
         // =========== Add Seeder Permission Assign Role ============
         // ==========================================================
         $responsableRole = User::RESPONSABLE;
-        $Role = Role::where('name', $FresponsableRole)->first();
+        $Role = Role::where('name', $responsableRole)->first();
         $csvFile = fopen(base_path("database/data/pkg_competences/ModulePermission.csv"), "r");
         $firstline = true;
-        while (($data = fgetcsv($csvFile)) !== FALSE) {
-            if (!$firstline) {
-                Permission::create([
-                    "name" => $data['0'],
-                    "guard_name" => $data['1'],
-                ]);
+        $firstline = true;
+while (($data = fgetcsv($csvFile)) !== FALSE) {
+    if (!$firstline && count($data) >= 5) {
+        Module::create([
+            "N" => $data[0],
+            "nom" => $data[1],
+            "description" => $data[2],
+            "masse_horaire" => floatval($data[3]),
+            "filiere_id" => intval($data[4]),
+        ]);
+    } elseif (!$firstline) {
+        error_log("Skipping malformed row in Module.csv: " . implode(',', $data));
+    }
+    $firstline = false;
+}
 
-                if ($Role) {
-                    // If the role exists, update its permissions
-                    $Role->givePermissionTo($data['0']);
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    $Role = Role::create([
-                        'name' => $responsableRole,
-                        'guard_name' => 'web',
-                    ]);
-                    $Role->givePermissionTo($data['0']);
-                }
-            }
-            $firstline = false;
+$firstline = true;
+while (($data = fgetcsv($csvFile)) !== FALSE) {
+    if (!$firstline && count($data) >= 2) {
+        Permission::create([
+            "name" => $data[0],
+            "guard_name" => $data[1],
+        ]);
+
+        if ($Role) {
+            $Role->givePermissionTo($data[0]);
+        } else {
+            $Role = Role::create([
+                'name' => $responsableRole,
+                'guard_name' => 'web',
+            ]);
+            $Role->givePermissionTo($data[0]);
         }
+    } elseif (!$firstline) {
+        error_log("Skipping malformed row in ModulePermission.csv: " . implode(',', $data));
+    }
+    $firstline = false;
+}
+
+        
         fclose($csvFile);
