@@ -19,6 +19,9 @@ Route::middleware('auth')->group(function () {
             Route::get('/{id}/edit', [PersonneController::class, 'edit'])->name('Apprenant.edit');
             Route::post('/{id}/update', [PersonneController::class, 'update'])->name('Apprenant.update');
             Route::delete('/{id}/delete', [PersonneController::class, 'destroy'])->name('Apprenant.delete');
+            Route::delete('/{id}/delete', [PersonneController::class, 'destroy'])->name('Apprenant.delete');
+            Route::get('/export', [PersonneController::class, 'export'])->name('Apprenant.export');
+            Route::post('/import', [PersonneController::class, 'import'])->name('Apprenant.import');    
         });
         Route::prefix('Formateur')->group(function () {
             Route::get('/', [PersonneController::class, 'index'])->name('Formateur.index');
@@ -28,5 +31,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/{id}/edit', [PersonneController::class, 'edit'])->name('Formateur.edit');
             Route::post('/{id}/update', [PersonneController::class, 'update'])->name('Formateur.update');
             Route::delete('/{id}/delete', [PersonneController::class, 'destroy'])->name('Formateur.delete');
+            Route::get('/export', [PersonneController::class, 'export'])->name('Formateur.export');
+            Route::post('/import', [PersonneController::class, 'import'])->name('Formateur.import');    
         });
 });

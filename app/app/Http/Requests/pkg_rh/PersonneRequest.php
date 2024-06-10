@@ -37,8 +37,8 @@ class PersonneRequest extends FormRequest
             'niveau_scolaire_id' => 'sometimes',
             'lieu_naissance_id' => 'required',
             '_token' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'sometimes',
+            'password' => 'sometimes',
         ];
     }
 }

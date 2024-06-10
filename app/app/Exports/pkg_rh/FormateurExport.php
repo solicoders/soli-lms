@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Exports\GestionProjets;
+namespace App\Exports\pkg_rh;
 
-use App\Models\GestionProjets\Projet;
 use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -11,7 +10,7 @@ use Maatwebsite\Excel\Concerns\WithStyles;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 
-class ProjetExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
+class FormateurExport implements FromCollection, WithHeadings, ShouldAutoSize, WithStyles
 {
     protected $data;
 
