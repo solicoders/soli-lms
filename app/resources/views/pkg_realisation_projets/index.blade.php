@@ -78,8 +78,7 @@
                     <option value="{{ $EtatRealisation->id }}">{{ $EtatRealisation->etat }}</option>
                 @endforeach
             </select>
-        </div>
-        <button type="submit" class="btn btn-primary" id="btnFilter">Filter</button>
+        </div>        <button type="button" class="btn btn-primary" id="btnFilter">Filter</button>
 
     </div>
                         </div>

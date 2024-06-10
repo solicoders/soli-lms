@@ -35,6 +35,8 @@ $(document).ready(function () {
         $.ajax({
             url: requestUrl,
             success: function (data) {
+
+                console.log('yes');
                 var newData = $(data);
 
                 $("#CongesLastYear").html(newData.find('#CongesLastYear').html());
