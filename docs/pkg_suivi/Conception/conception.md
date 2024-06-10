@@ -25,7 +25,19 @@ Ce chapitre présente le diagramme de classe et les maquettes de l’interface u
 
 <!-- new slide -->
 
-## Diagramme de packages
+
+## Diagramme de packages 
+![Conception - pkg_packages ](/soli-lms/diagrammes/pkg_global/digramme_package.svg){:width="60%"}
+*Figure 13 : Diagramme packages - pkg_global*
+
+
 
 ## Maquette
 
+![maquette de Suivi des projets ](/soli-lms/pkg_suivi/Conception/images/suiviprojet.png){:width="100%"}
+*Figure 14 : Maquette de Suivi des projets*
+
+![maquette de Suivi des competences ](/soli-lms/pkg_suivi/Conception/images/suivicompetence.png){:width="100%"}
+*Figure 15 : Maquette de Suivi des competences*
+
+<!-- new slide -->

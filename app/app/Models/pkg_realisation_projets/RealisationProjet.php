@@ -31,7 +31,7 @@ class RealisationProjet extends Model
 
     public function etatRealisationProjet()
     {
-        return $this->belongsTo(EtatRealisationProjet::class,);
+        return $this->belongsTo(EtatRealisationProjet::class, 'etat_realisation_projet_id');
     }
 
     public function personne()

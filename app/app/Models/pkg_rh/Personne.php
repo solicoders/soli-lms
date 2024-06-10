@@ -2,11 +2,10 @@
 
 namespace App\Models\pkg_rh;
 
-use App\Traits\MorphType;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Personne extends Model
 {
-    use HasFactory,MorphType;
+    use HasFactory;
 }
