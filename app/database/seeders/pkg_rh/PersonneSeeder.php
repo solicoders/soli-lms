@@ -2,8 +2,12 @@
 
 namespace Database\Seeders\pkg_rh;
 
+use App\Models\pkg_rh\Personne;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class PersonneSeeder extends Seeder
 {
