@@ -52,15 +52,13 @@ class FormateurRepository extends BaseRepository
         }else{
             parent::create($data);
         }
-
-        // if ($existingFormateur) {
-        //     throw FormateurAlreadyExistException::createFormateur();
-        // } else {
-           
-        //     return parent::create($data);
-        // }
     }
 
+    public function update($id, array $data)
+    {
+        parent::update($id, $data);
+    }
+    
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
         if ($this->type !== null) {
