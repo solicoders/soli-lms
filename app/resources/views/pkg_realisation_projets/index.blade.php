@@ -4,6 +4,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                {{ session('success') }}.
+            </div>
+        @endif
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>
@@ -54,6 +60,7 @@
             </select>
         </div>
 
+<<<<<<< HEAD
         <!-- Learners Dropdown -->
         <div class="col-md-3">
             <select class="form-control-sm form-control" id="learner">
@@ -77,6 +84,29 @@
 
     </div>
 </form>
+=======
+                                <!-- Learners Dropdown -->
+                                <div class="col-md-3">
+                                    <select class="form-control-sm form-control" id="learner">
+                                        <option value="">Apprenants</option>
+                                        @foreach($Personnes as $Personne)
+                                            <option value="{{ $Personne->id }}">{{ $Personne->prenom }}{{ $Personne->nom }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <!-- Learners Dropdown -->
+                                <div class="col-md-3">
+                                    <select class="form-control-sm form-control" id="learner">
+                                        <option value="">etat</option>
+                                        @foreach($EtatRealisationProjet as $EtatRealisation)
+                                            <option value="{{ $EtatRealisation->id }}">{{ $EtatRealisation->etat }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+>>>>>>> Develop-pkg_validations
                     </div>
                     <table class="table table-hover text-nowrap">
                         <thead>
@@ -93,7 +123,7 @@
                                 <tr>
                                     <td class="nom-brief">{{ $project->projet->titre }}</td>
                                     <td class="etat">{{ $project->Personne->nom }}</td>
-                                    <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
+                                    {{-- <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
     <span class="badge badge-danger">A faire</span>
 @elseif($project->EtatRealisationProjet->etat == 'Pending')
     <span class="badge badge-secondary">En pause</span>
@@ -101,7 +131,7 @@
     <span class="badge badge-info">En cours</span>
 @elseif($project->EtatRealisationProjet->etat == 'Completed')
     <span class="badge badge-success">Terminer</span>
-@endif</td>
+@endif</td> --}}
                                     <td >
                                     @if($project->validation)
                                     <span class="badge badge-success">Validé</span>
@@ -114,6 +144,13 @@
                                         <a href="{{ route('validations.validate', ['realisation_id' => $project->id]) }}" class="btn btn-success btn-sm">
                                             <i class="fas fa-check"></i> Valider
                                         </a>
+                                    </td>
+                                    <td >
+                                            <a href="{{ route('validations.detail', ['realisation_id' => $project->id]) }}" class="btn btn-default btn-sm">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+    
+                                      
                                     </td>
                                 </tr>
                             @endforeach
