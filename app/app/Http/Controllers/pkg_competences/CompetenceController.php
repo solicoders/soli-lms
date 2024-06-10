@@ -53,9 +53,6 @@ class CompetenceController extends AppBaseController
             return back()->withInput()->withErrors(['competence_exists' => 'Competence est déjà existant']);
 
         }
-
-
-
     }
 
     public function show(string $id)
