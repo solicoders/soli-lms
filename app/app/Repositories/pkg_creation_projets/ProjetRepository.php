@@ -73,7 +73,7 @@ class ProjetRepository extends BaseRepository
      public function searchData($searchableData, $perPage = 2)
      {
          return $this->model->where(function ($query) use ($searchableData) {
-             $query->where('titre', 'like', '%' . $searchableData . '%');
+             $query->where('titre', 'like', '%' . $searchableData . '%'); // Only searches 'titre'
          })->paginate($perPage);
      }
 

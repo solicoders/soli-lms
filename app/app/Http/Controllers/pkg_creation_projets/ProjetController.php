@@ -70,20 +70,30 @@ class ProjetController extends Controller
             'resources',
             'transfertCompetences.competence',
             'transfertCompetences.appreciation',
-        ])->paginate();
+        ]);
         $competences = Competence::all();
 
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
-                $projetData = $this->projetRepository->searchData($searchQuery);
+                $projetData = $this->projetRepository->searchData($searchQuery); // Call searchData
                 return view('pkg_creation_projets.table', compact('projetData'))->render();
             }
         }
         $projetData = $this->projetRepository->paginate();
         return view('pkg_creation_projets.index', compact('projetData', 'competences'));
+
+
+
+
     }
+
+
+
+
+
+
 
     public function create()
     {
