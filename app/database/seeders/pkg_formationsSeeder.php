@@ -24,8 +24,8 @@ class pkg_formationsSeeder extends Seeder
     {
         return [
             FormationSeeder::class,
-            ApprenantsTableSeeder::class,
-            FormateursTableSeeder::class,
+            // ApprenantsTableSeeder::class,
+            // FormateursTableSeeder::class,
         ];
     }
 }
