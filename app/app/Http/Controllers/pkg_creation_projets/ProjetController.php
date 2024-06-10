@@ -75,18 +75,22 @@ class ProjetController extends Controller
 
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
+            $competenceId = $request->get('competenceId');
+
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
-                $projetData = $this->projetRepository->searchData($searchQuery); // Call searchData
+                $projetData = $this->projetRepository->searchData($searchQuery);
+                return view('pkg_creation_projets.table', compact('projetData'))->render();
+            }
+
+            if ($competenceId !== null) {
+                $projetData = $this->projetRepository->filterByCompetence($competenceId);
                 return view('pkg_creation_projets.table', compact('projetData'))->render();
             }
         }
+
         $projetData = $this->projetRepository->paginate();
         return view('pkg_creation_projets.index', compact('projetData', 'competences'));
-
-
-
-
     }
 
 

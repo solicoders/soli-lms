@@ -47,7 +47,7 @@
                                 <div class="row">
                                     <div class="col-md-4 form-group mb-2">
                                         <label for="competenceFilter">{{ __('pkg_competences/competence.plural') }}:</label>
-                                        <select class="form-control" id="competenceFilter">
+                                        <select class="form-control"id="competenceFilter">
                                             <option value="">Toutes</option>
                                             @foreach($competences as $competence)
                                                 <option value="{{ $competence->id }}">{{ $competence->nom }}</option>

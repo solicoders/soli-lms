@@ -22,12 +22,19 @@ $(document).ready(function () {
         window.history.replaceState({ path: url }, "", url + hash);
     }
 
-    // Fonction pour récupérer les données avec AJAX
-    function fetchData(page, searchValue) {
+    $(document).on("change", "#competenceFilter", function () {
+        var page = $("#page").val(); // Assuming you have a "page" element in your HTML
+        var competenceId = $(this).val();
+        var searchValue = $("#table_search").val(); // Get the search term if there is one
+        fetchData(page, searchValue, competenceId); // Pass competenceId to fetchData
+    });
+
+    // Update fetchData to handle competenceId
+    function fetchData(page, searchValue, competenceId = null) {
         var neededUrl = window.location.pathname;
         console.log(neededUrl);
         $.ajax({
-            url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
+            url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue + (competenceId !== null ? '&competenceId=' + competenceId : ''),
             success: function (data) {
                 var newData = $(data);
 
@@ -41,9 +48,10 @@ $(document).ready(function () {
                 }
             },
         });
-        if (page !== null && searchValue !== null) {
+        if (page !== null && searchValue !== null && competenceId !== null) {
             updateURLParameter("page", page);
             updateURLParameter("searchValue", searchValue);
+            updateURLParameter("competenceId", competenceId); // Update the URL
         } else {
             window.history.replaceState(
                 {},

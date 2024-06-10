@@ -77,6 +77,11 @@ class ProjetRepository extends BaseRepository
          })->paginate($perPage);
      }
 
-
+     public function filterByCompetence($competenceId)
+     {
+         return $this->model->whereHas('transfertCompetences', function ($query) use ($competenceId) {
+             $query->where('competence_id', $competenceId);
+         })->paginate();
+     }
 
 }
