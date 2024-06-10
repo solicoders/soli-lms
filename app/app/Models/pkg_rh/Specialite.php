@@ -12,4 +12,7 @@ class Specialite extends Model
     public function formateur(){
         return $this->hasMany(Formateur::class);
     }
+
+    protected $fillable = ['nom'];
+
 }
