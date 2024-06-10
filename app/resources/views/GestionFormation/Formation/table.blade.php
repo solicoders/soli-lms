@@ -36,8 +36,8 @@
     </table>
 </div>
 
-<div class="d-md-flex justify-content-between align-items-center p-2">
+<!-- <div class="d-md-flex justify-content-between align-items-center p-2">
     <ul class="pagination m-0 float-right">
 {{ $formationData->appends(['search' => request()->query('search')])->links() }}
     </ul>
-</div>
+</div> -->

@@ -23,7 +23,7 @@ class FormationController extends Controller
     public function index(Request $request)
     {
         $searchValue = $request->input('search');
-        $formationData = $this->formationRepository->searchData($searchValue, 10);
+        $formationData = $this->formationRepository->searchData($searchValue, 2);
         return view('GestionFormation.Formation.index', compact('formationData'));
     }
 
