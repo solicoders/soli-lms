@@ -9,7 +9,7 @@
                     <h1>Détails du projet</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a href="{{ url('./edit.php') }}" class="btn btn-default float-right"><i class="far fa-edit"></i>
+                    <a href="{{ url('apprenantRealisations.edit') }}" class="btn btn-default float-right"><i class="far fa-edit"></i>
                         Modifier</a>
                 </div>
             </div>
@@ -33,6 +33,11 @@
                             <!-- Champ Compétences -->
                             <div class="col-sm-12">
                                 <label for="competences">Compétences :</label>
+                                @foreach ($Competences as $Competence)
+                                {{ $Competence}}
+
+                                @endforeach
+                        
                                 <ul>
 
                                 </ul>
@@ -41,24 +46,28 @@
                             <!-- Champ Travail à faire -->
                             <div class="col-sm-12">
                                 <label for="travail">Travail à faire :</label>
-                                <p>Concevoir et développer un site Web responsive pour une entreprise fictive.
+                                <p>
+                                    {{ $realisationProjet->Projet->travailAFaire }}
                                 </p>
                             </div>
 
                             <!-- Champ Critères de validation -->
                             <div class="col-sm-12">
                                 <label for="validation">Critères de validation :</label>
-                                <p>Le site Web doit être entièrement responsive, respecter les meilleures
-                                    pratiques en développement Web et répondre aux exigences du client.</p>
+                                <p>
+                                {{ $realisationProjet->Projet->travailAFaire }}
+
+                                </p>
                             </div>
 
                             <!-- Champ Date de début et de fin -->
                             <div class="col-sm-12">
                                 <label for="date">Date :</label>
-                                <p>Date de début : 1er janvier 2024</p>
-                                <p>Date de fin : 31 mars 2024</p>
+                                <p>Date de début :{{ $realisationProjet->Projet->dateDebut }}
+                                </p>
+                                <p>Date de fin : {{ $realisationProjet->Projet->dateFin }}</p>
                             </div>
-
+{{-- 
                             <!-- Champ Ressources -->
                             <div class="col-sm-12">
                                 <label for="resources">Ressources :</label>
@@ -70,7 +79,7 @@
                             <div class="col-sm-12">
                                 <label for="reference">Référence :</label>
                                 <p><a href="https://exemple.com/reference">https://exemple.com/reference</a></p>
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>

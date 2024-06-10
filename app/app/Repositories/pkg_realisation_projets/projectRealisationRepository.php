@@ -79,17 +79,39 @@ class projectRealisationRepository extends BaseRepository
             }
         })->paginate($perPage);
     }
-<<<<<<< HEAD
-    public function with($relations)
-=======
         public function with($relations)
->>>>>>> Develop-pkg_validations
     {
         return $this->model->with($relations);
     }
 
-<<<<<<< HEAD
+    public function filterProjet($page = 1, $etat = null, $learner = null, $skill = null, $project = null, $perPage = 4)
+    {
+        $query = $this->model->newQuery();
+    
+        if ($etat !== null) {
+            $query->whereHas('etatRealisationProjet', function ($subQuery) use ($etat) {
+                $subQuery->where('id', $etat);
+            });
+        }
+    
+        if ($learner !== null) {
+            $query->whereHas('personne', function ($subQuery) use ($learner) {
+                $subQuery->where('id', $learner);
+            });
+        }
+    
+        if ($project !== null) {
+            $query->where('projet_id', $project);
+        }
+    
+        if ($skill !== null) {
+            // Assuming 'competence_id' is the foreign key column in 'realisation_projets'
+            $query->where('competence_id', $skill);
+        }
+    
+        return $query->paginate($perPage, ['*'], 'page', $page);
+    }
+    
+    
+    
 }
-=======
-}
->>>>>>> Develop-pkg_validations

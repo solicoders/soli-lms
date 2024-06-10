@@ -6,6 +6,8 @@ import "admin-lte/dist/js/adminlte";
 import 'admin-lte/plugins/bootstrap/js/bootstrap.bundle';
 import 'admin-lte/dist/js/demo.js';
 import 'admin-lte/dist/js/pages/dashboard.js';
+import './pkg_realisation_projets/filter.js';
+
 
 
 // Importation de CKEditor

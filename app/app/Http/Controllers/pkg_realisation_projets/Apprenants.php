@@ -113,30 +113,40 @@ class Apprenants extends Controller
     public function show($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
+        $TransfertCompetence = $this->transfercompetenceRepository->find($id);
+
+        $competence_id = $TransfertCompetence ->pluck('competence_id');
+
         
         $projects = Projet::all();
-        $pjctid = Projet::pluck('id');
+        $projectIds = [1,]; // Multiple project IDs
+        // $pjctid = TransfertCompetence::whereIn('projet_id', $projectIds)->pluck('competence_id');
 
-        $projectCompetenceId = TransfertCompetence::whereIn('projet_id', $pjctid)->pluck('competence_id');
-        $Competences = Competence::whereIn('id', $projectCompetenceId)->pluck('nom');
-        $competence_id = TransfertCompetence::whereIn('competence_id', $pjctid)->pluck('competence_id');
-        $Competence = Competence::whereIn('id', $competence_id)->pluck('nom');
+            $TransfertCompetenceid = $TransfertCompetence->competence_id;
+
+            // dd($TransfertCompetenceid);
+
+
+        $Competences = Competence::where('id', $TransfertCompetenceid)->pluck('nom');
+        // dd($Competence);
 
         $EtatRealisationProjet = EtatRealisationProjet::all();
         $userGroupeId = Auth::user()->id;
         // dd($Competence);
+        $realisationProjet = $this->projectRealisationRepository->find($id);
+        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','Competences'));
 
 
 
 
         // dd($realisationProjet );
-        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','projects','projectCompetenceId','Competences','EtatRealisationProjet','userGroupeId'));
+        // return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','projects','projectCompetenceId','Competences','EtatRealisationProjet','userGroupeId'));
     }
 
     public function edit($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.realisationProjet.edit', compact('realisationProjet','projects'));
+        return view('pkg_realisation_projets.Apprenant.edit', compact('realisationProjet'));
     }
 
     public function update(Request $request, $id)

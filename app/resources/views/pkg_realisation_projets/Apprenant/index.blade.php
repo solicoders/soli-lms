@@ -82,13 +82,10 @@
             <td>{{ $project->projet->titre }}</td>
             <td>
             @foreach($project->projet->competences as $competence)
-            @if(strlen($competence->nom) > 20)
-        <span>{{ substr($competence->nom, 0, 20) }} <span>...</span></span>
-        <a href="#" class="expand-content">Read more</a>
-        <span class="full-content" style="display: none;">{{ $competence->nom }}</span>
-    @else
-        <span>{{ $competence->nom }}</span>
-    @endif
+            
+        <span>{{ substr($competence->nom, 0, 60) }} <span>...</span>
+
+
         @endforeach
         
 <script>
@@ -117,7 +114,7 @@
                                                 <a href="{{ route('apprenantRealisations.show', $project->id) }}" class='btn btn-default btn-sm'>
                                                     <i class="far fa-eye"></i>
                                                 </a>
-                                                <a href="edit.php" class="btn btn-default btn-sm" >
+                                                <a href="{{ route('apprenantRealisations.edit', $project->id) }}" class="btn btn-default btn-sm" >
                                                     <i class="fas fa-edit"></i>
                                                 </a>
             </td>

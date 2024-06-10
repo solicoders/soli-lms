@@ -91,10 +91,17 @@ class ProjectRealisationController extends Controller
         $Personnes = Personne::where('type', 'apprenant')
             ->where('groupe_id', $userGroupeId)
             ->get();
-
             
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
+            $etat = $request->get('etat');
+            $learner = $request->get('learner');
+            $skill = $request->get('skill');
+            $project = $request->get('project');
+            
+            $projetData = $this->projectRealisationRepository->filterProjet($etat, $learner, $skill, $project,);
+
+            dd($projetData);
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
                 $projetData = $this->projetRepository->searchData($searchQuery);
@@ -109,7 +116,7 @@ class ProjectRealisationController extends Controller
     {
         return view('pkg_realisation_projets.realisationProjet.create');
     }
-
+    
     public function store( $request)
     {
         $validatedData = $request->validated();
