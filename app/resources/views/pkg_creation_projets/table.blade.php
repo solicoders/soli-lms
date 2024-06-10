@@ -90,6 +90,6 @@
     </div>
 
     <ul class="pagination m-0 float-right">
-        {{ $projetData->onEachSide(1)->links() }}
+        {{ $projetData->appends(['searchValue' => $searchValue, 'competenceId' => $competenceId])->onEachSide(1)->links() }}
     </ul>
 </div>

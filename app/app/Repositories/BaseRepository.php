@@ -153,7 +153,7 @@ abstract class BaseRepository implements RepositoryInterface
      * @return mixed
      */
     public function create(array $data){
-        
+
         return $this->model->create($data);
     }
 

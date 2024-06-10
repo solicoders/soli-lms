@@ -1,97 +1,87 @@
 import "https://code.jquery.com/jquery-3.6.0.min.js";
 
 $(document).ready(function () {
-    // Fonction pour mettre à jour un paramètre dans l'URL
-    function updateURLParameter(param, paramVal) {
-        var url = window.location.href;
-        var hash = location.hash;
-        url = url.replace(hash, "");
-        if (url.indexOf(param + "=") >= 0) {
-            var prefix = url.substring(0, url.indexOf(param + "="));
-            var suffix = url.substring(url.indexOf(param + "="));
-            suffix = suffix.substring(suffix.indexOf("=") + 1);
-            suffix =
-                suffix.indexOf("&") >= 0
-                    ? suffix.substring(suffix.indexOf("&"))
-                    : "";
-            url = prefix + param + "=" + paramVal + suffix;
-        } else {
-            if (url.indexOf("?") < 0) url += "?" + param + "=" + paramVal;
-            else url += "&" + param + "=" + paramVal;
-        }
-        window.history.replaceState({ path: url }, "", url + hash);
-    }
-
-    // Fonction pour récupérer les données avec AJAX
-    function fetchData(page, searchValue) {
-        var neededUrl = window.location.pathname;
-        console.log(neededUrl);
-        $.ajax({
-            url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
-            success: function (data) {
-                var newData = $(data);
-
-                $("tbody").html(newData.find("tbody").html());
-                $("#card-footer").html(newData.find("#card-footer").html());
-                var paginationHtml = newData.find(".pagination").html();
-                if (paginationHtml) {
-                    $(".pagination").html(paginationHtml);
-                } else {
-                    $(".pagination").html("");
-                }
-            },
+    function updateURLParameters(params) {
+        var url = new URL(window.location.href);
+        Object.keys(params).forEach(param => {
+            if (params[param] && params[param] !== "") {
+                url.searchParams.set(param, params[param]);
+            } else {
+                url.searchParams.delete(param);
+            }
         });
-        if (page !== null && searchValue !== null && competenceId !== null) {
-            updateURLParameter("page", page);
-            updateURLParameter("searchValue", searchValue);
-            updateURLParameter("competenceId", competenceId); // Update the URL
-        } else {
-            window.history.replaceState(
-                {},
-                document.title,
-                window.location.pathname
-            );
-        }
+        window.history.replaceState(null, "", url);
     }
 
-    // Function to get URL parameter value by name
+    function fetchData(page, searchValue, competenceId = null) {
+        var neededUrl = window.location.pathname;
+
+        if (searchValue.trim() !== "") {
+            $("tbody").html('<tr><td colspan="100%"><div class="loading-spinner"></div></td></tr>');
+        }
+
+        $.ajax({
+            url: neededUrl,
+            data: { page: page, searchValue: searchValue, competenceId: competenceId },
+            success: function (data) {
+                setTimeout(function() {
+                    var newData = $(data);
+                    $("tbody").html(newData.find("tbody").html());
+                    $("#card-footer").html(newData.find("#card-footer").html());
+                    $(".pagination").html(newData.find(".pagination").html() || "");
+
+                    updateURLParameters({ page: page, searchValue: searchValue, competenceId: competenceId });
+                }, 3000);
+            }
+        });
+    }
+
     function getUrlParameter(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-        var results = regex.exec(location.search);
-        return results === null
-            ? ""
-            : decodeURIComponent(results[1].replace(/\+/g, " "));
+        return new URLSearchParams(window.location.search).get(name) || "";
     }
 
     var searchValueFromUrl = getUrlParameter("searchValue");
+    var competenceIdFromUrl = getUrlParameter("competenceId");
+    var pageFromUrl = getUrlParameter("page") || 1;
+
     if (searchValueFromUrl) {
         $("#table_search").val(searchValueFromUrl);
-        fetchData($("#page").val(), searchValueFromUrl);
     }
+    if (competenceIdFromUrl) {
+        $("#competenceFilter").val(competenceIdFromUrl);
+    }
+    fetchData(pageFromUrl, searchValueFromUrl, competenceIdFromUrl);
 
-    // Gestion de l'événement de clic sur la pagination
-    $("body").on("click", ".pagination a", function (param) {
-        param.preventDefault();
-        var page = $(this).attr("href").split("page=")[1];
+    $(document).on("change", "#competenceFilter", function () {
+        var page = 1; // Reset to the first page on filter change
+        var competenceId = $(this).val();
         var searchValue = $("#table_search").val();
-        fetchData(page, searchValue);
+        fetchData(page, searchValue, competenceId);
     });
 
-    // Gestion de l'événement de saisie dans la barre de recherche
+    $("body").on("click", ".pagination button", function (event) {
+        event.preventDefault();
+        var page = $(this).attr("page-number");
+        var searchValue = $("#table_search").val();
+        var competenceId = $("#competenceFilter").val();
+        fetchData(page, searchValue, competenceId);
+    });
+
+
     $("body").on("keyup", "#table_search", function () {
-        var page = $("#page").val();
         var searchValue = $(this).val();
-        fetchData(page, searchValue);
+        var competenceId = $("#competenceFilter").val();
+        if (searchValue === "") {
+            updateURLParameters({ page: undefined, searchValue: undefined });
+            fetchData(1, searchValue, competenceId);
+        } else {
+            fetchData(1, searchValue, competenceId);
+        }
     });
 
-    // Import
     $(document).on("change", "#upload", function () {
         $("#importForm").submit();
-    })
-
-    // Activation des dropdowns Bootstrap
-    $(document).ready(function () {
-        $(".dropdown-toggle").dropdown();
     });
+
+    $(".dropdown-toggle").dropdown();
 });
