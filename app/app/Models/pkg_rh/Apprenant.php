@@ -42,5 +42,5 @@ class Apprenant extends Personne
     public function Ville(){
         return $this->belongsTo(Ville::class);
     }
-    
+
 }
