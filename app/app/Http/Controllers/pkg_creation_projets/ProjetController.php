@@ -72,26 +72,24 @@ class ProjetController extends Controller
             'transfertCompetences.appreciation',
         ]);
         $competences = Competence::all();
-
+    
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             $competenceId = $request->get('competenceId');
-
-            if ($searchValue !== '') {
-                $searchQuery = str_replace(' ', '%', $searchValue);
-                $projetData = $this->projetRepository->searchData($searchQuery);
+    
+            if ($searchValue !== '' || $competenceId !== null) {
+                $projetData = $this->projetRepository->filterAndSearch($competenceId, $searchValue);
                 return view('pkg_creation_projets.table', compact('projetData'))->render();
             }
-
-            if ($competenceId !== null) {
-                $projetData = $this->projetRepository->filterByCompetence($competenceId);
-                return view('pkg_creation_projets.table', compact('projetData'))->render();
-            }
+    
+            $projetData = $this->projetRepository->paginate();
+            return view('pkg_creation_projets.table', compact('projetData'))->render();
         }
-
+    
         $projetData = $this->projetRepository->paginate();
         return view('pkg_creation_projets.index', compact('projetData', 'competences'));
     }
+    
 
 
 

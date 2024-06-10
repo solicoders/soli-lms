@@ -83,5 +83,28 @@ class ProjetRepository extends BaseRepository
              $query->where('competence_id', $competenceId);
          })->paginate();
      }
+     public function filterAndSearch($competenceId, $searchValue)
+     {
+         $query = $this->model->newQuery();
+     
+         if ($competenceId !== null) {
+             $query->whereHas('transfertCompetences', function ($q) use ($competenceId) {
+                 $q->where('competence_id', $competenceId);
+             });
+         }
+     
+         if ($searchValue !== '') {
+             $searchQuery = '%' . str_replace(' ', '%', $searchValue) . '%';
+             $query->where(function ($q) use ($searchQuery) {
+                 $q->where('titre', 'like', $searchQuery)
+                     ->orWhereHas('transfertCompetences.competence', function ($q) use ($searchQuery) {
+                         $q->where('nom', 'like', $searchQuery);
+                     });
+             });
+         }
+     
+         return $query->paginate();
+     }
+          
 
 }
