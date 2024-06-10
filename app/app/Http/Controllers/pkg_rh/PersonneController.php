@@ -117,10 +117,10 @@ class PersonneController extends Controller
         } 
     }
 
-    public function delete(Request $request ,$id)
+    public function destroy($id)
     {
         $type = $this->getType();
-        $personne = $this->getRepository()->delete($id);
+        $personne = $this->getRepository()->destroy($id);
         return redirect()->route($type.'.index')->with('success', $type.' a été supprimée avec succès');
     }
 
