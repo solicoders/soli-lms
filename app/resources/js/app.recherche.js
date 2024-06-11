@@ -27,9 +27,12 @@ $(document).ready(function () {
         var neededUrl = window.location.pathname;
         console.log(neededUrl);
 
-        showLoading();
+        if (showLoading()) {
+            setTimeout(searchRequest, 300);
+        }else{
+            searchRequest();
+        }
 
-        setTimeout(searchRequest, 300);
         function searchRequest(){
             $.ajax({
                 url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
@@ -59,6 +62,8 @@ $(document).ready(function () {
                 );
             }
         }
+
+
     }
 
     // Function to get URL parameter value by name

@@ -79,7 +79,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Droits d'auteur © 2024-2025 <a href="#" class="text-info">LAB CRUD</a>.</strong> Tous droits
+            <strong>Droits d'auteur © 2024-2025 <a href="#" class="text-info">SoliLMS</a>.</strong> Tous droits
             réservés.
         </footer>
     </div>
@@ -87,10 +87,14 @@
         let tableForm = document.getElementById('tableForm');
 
         function showLoading() {
-            let loadingDiv = document.createElement('div');
-            loadingDiv.id = 'loading';
-            loadingDiv.innerHTML = '<div class="spinner"></div>';
-            tableForm.appendChild(loadingDiv);
+            if (tableForm) {
+                let loadingDiv = document.createElement('div');
+                loadingDiv.id = 'loading';
+                loadingDiv.innerHTML = '<div class="spinner"></div>';
+                tableForm.appendChild(loadingDiv);
+            }else{
+                return false;
+            }
         }
         function hideLoading() {
             let loadingDiv = document.getElementById('loading');
