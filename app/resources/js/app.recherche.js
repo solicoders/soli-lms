@@ -26,30 +26,38 @@ $(document).ready(function () {
     function fetchData(page, searchValue) {
         var neededUrl = window.location.pathname;
         console.log(neededUrl);
-        $.ajax({
-            url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
-            success: function (data) {
-                var newData = $(data);
 
-                $("tbody").html(newData.find("tbody").html());
-                $("#card-footer").html(newData.find("#card-footer").html());
-                var paginationHtml = newData.find(".pagination").html();
-                if (paginationHtml) {
-                    $(".pagination").html(paginationHtml);
-                } else {
-                    $(".pagination").html("");
-                }
-            },
-        });
-        if (page !== null && searchValue !== null) {
-            updateURLParameter("page", page);
-            updateURLParameter("searchValue", searchValue);
-        } else {
-            window.history.replaceState(
-                {},
-                document.title,
-                window.location.pathname
-            );
+        showLoading();
+
+        setTimeout(searchRequest, 300);
+        function searchRequest(){
+            $.ajax({
+                url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
+                success: function (data) {
+                    var newData = $(data);
+
+                    $("tbody").html(newData.find("tbody").html());
+                    $("#card-footer").html(newData.find("#card-footer").html());
+                    var paginationHtml = newData.find(".pagination").html();
+                    if (paginationHtml) {
+                        $(".pagination").html(paginationHtml);
+                    } else {
+                        $(".pagination").html("");
+                    }
+                    hideLoading();
+                },
+            });
+
+            if (page !== null && searchValue !== null) {
+                updateURLParameter("page", page);
+                updateURLParameter("searchValue", searchValue);
+            } else {
+                window.history.replaceState(
+                    {},
+                    document.title,
+                    window.location.pathname
+                );
+            }
         }
     }
 
