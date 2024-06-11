@@ -52,7 +52,8 @@ class CompetenceRepository extends BaseRepository
 {
 
 
-    $code = $data['code'];
+    $code = $data['code'] ++  ;
+    
     $nom = $data['nom'];
     $description = $data['description'];
 
