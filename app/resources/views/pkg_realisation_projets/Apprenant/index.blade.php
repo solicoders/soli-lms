@@ -47,7 +47,7 @@
                                         <label for="skill">Compétence :</label>
                                         <div class="col-md-3  mt-4">
                                             
-                                            <select class="form-control" id="skill">
+                                            <select class="form-control" id="competenceFilter">
                                             @foreach($Competences as $Competence)
                                             <option value="{{ $Competence->id }}">{{ $Competence->nom }}</option>
                                         @endforeach
@@ -55,9 +55,9 @@
                                         </div>
                                         <div class="col-md-3 mt-4">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="nom brief projet...">
+                                                <input id="table_search" type="text" class="form-control" placeholder="nom brief projet...">
                                                 <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button">
+                                                    <button class="btn btn-primary" type="subnit">
                                                         <i class="fas fa-search"></i>
                                                     </button>
                                                 </div>
@@ -66,88 +66,14 @@
                                     </div>
 
                                 </div>
-                                <table class="table table-bordered">
-    <thead>
-        <tr>
-            <th> {{ __('GestionProjets/projet.singular') }}</th>
-            <th>{{ __('GestionProjets/competence.singular') }}</th>
-            <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.singular') }}</th>
-            <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.date_debut_realisation') }}</th>
-            <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.date_fin_realisation') }}</th>
-            <th class="text-center">{{ __('app.action') }}</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($realisationProjets as $project)
-        <tr>
-            <td>{{ $project->projet->titre }}</td>
-            <td>
-            @foreach($project->projet->competences as $competence)
-            
-        <span>{{ substr($competence->nom, 0, 60) }} <span>...</span>
+                                @include('pkg_realisation_projets.Apprenant.table')
 
-
-        @endforeach
-        
-<script>
-    document.querySelectorAll('.expand-content').forEach(item => {
-        item.addEventListener('click', event => {
-            event.preventDefault();
-            item.style.display = 'none';
-            item.nextElementSibling.style.display = 'inline';
-        });
-    });
-</script>
-                                </td>
-                                    <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
-                                <span class="badge badge-danger">A faire</span>
-                            @elseif($project->EtatRealisationProjet->etat == 'Pending')
-                                <span class="badge badge-secondary">En pause</span>
-                            @elseif($project->EtatRealisationProjet->etat == 'In Progress')
-                                <span class="badge badge-info">En cours</span>
-                            @elseif($project->EtatRealisationProjet->etat == 'Completed')
-                                <span class="badge badge-success">Terminer</span>
-                            @endif</td>
-                                        <td>{{ $project->date_debut_realisation }}</td>
-                                        <td>{{ $project->date_fin_realisation }}</td>
-
-            <td class="text-center">
-                                                <a href="{{ route('apprenantRealisations.show', $project->id) }}" class='btn btn-default btn-sm'>
-                                                    <i class="far fa-eye"></i>
-                                                </a>
-                                                <a href="{{ route('apprenantRealisations.create', $project->EtatRealisationProjet->id) }}" class="btn btn-default btn-sm" >
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-            </td>
-            <!-- Add more columns if needed -->
-        </tr>
-        @endforeach
-    </tbody>
-</table>
                             </div>
                             <!-- /.card-body -->
-                            <div class="card-footer">
-                                <div class="d-flex justify-content-between align-items-center p-2">
-                                    <div class="d-flex align-items-center mb-2">
-                                        <button type="button" class="btn btn-default btn-sm">
-                                            <i class="fas fa-download"></i> IMPORT
-                                        </button>
-                                        <button type="button" class="btn btn-default btn-sm mt-0 mx-2">
-                                            <i class="fas fa-upload"></i> EXPORT
-                                        </button>
-                                    </div>
-                                    <div class="mr-5">
-                                        <ul class="pagination  m-0 float-right">
-                                            <li class="page-item"><a class="page-link" href="#">«</a></li>
-                                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">»</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                  
                             <!-- /.card-footer-->
+                            <input type="hidden" id='page' value="1">
+
                         </div>
                         <!-- /.card -->
                     </div>
@@ -156,6 +82,14 @@
         </section>
         <!-- /.content -->
     </div>
-
+    <script>
+        document.querySelectorAll('.expand-content').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                item.style.display = 'none';
+                item.nextElementSibling.style.display = 'inline';
+            });
+        });
+    </script>
 
 @endsection

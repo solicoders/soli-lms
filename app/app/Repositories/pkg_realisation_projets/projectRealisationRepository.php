@@ -71,14 +71,14 @@ class projectRealisationRepository extends BaseRepository
      * @param int $perPage Nombre d'éléments par page.
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function searchData($searchableData, $perPage = 4)
-    {
-        return $this->model->where(function ($query) use ($searchableData) {
-            foreach ($this->fieldsSearchable as $field) {
-                $query->orWhere($field, 'like', '%' . $searchableData . '%');
-            }
-        })->paginate($perPage);
-    }
+    // public function searchData($searchableData, $perPage = 4)
+    // {
+    //     return $this->model->where(function ($query) use ($searchableData) {
+    //         foreach ($this->fieldsSearchable as $field) {
+    //             $query->orWhere($field, 'like', '%' . $searchableData . '%');
+    //         }
+    //     })->paginate($perPage);
+    // }
         public function with($relations)
     {
         return $this->model->with($relations);
@@ -112,6 +112,52 @@ class projectRealisationRepository extends BaseRepository
         return $query->paginate($perPage, ['*'], 'page', $page);
     }
     
+    
+    public function searchData($searchableData, $perPage = 2)
+    {
+        return $this->modelwhereHas('projets', function ($query) use ($searchableData) {
+            $query->where('titre', 'like', '%' . $searchableData . '%'); // Only searches 'titre'
+        })->paginate($perPage);
+    }
+
+    public function filterByCompetence($competenceId)
+    {
+        return $this->model->whereHas('projet', function ($query) use ($competenceId) {
+            $query->whereHas('transfertCompetences', function ($query) use ($competenceId) {
+                $query->where('competence_id', $competenceId);
+            });
+        })->paginate();
+    }
+    
+
+    public function filterAndSearch($competenceId, $searchValue)
+    {
+        $query = $this->model->newQuery();
+    
+        // Filtering by competenceId
+        if ($competenceId !== null) {
+            $userGroupeId = Auth::user()->id;
+            $query->whereHas('projet', function ($query) use ($competenceId) {
+                $query->whereHas('transfertCompetences', function ($query) use ($competenceId) {
+                    $query->where('competence_id', $competenceId);
+                    $query->where('personne_id', $userGroupeId);
+                });
+            });
+        }
+    
+        // Searching with searchValue
+        if ($searchValue !== '') {
+            $searchQuery = '%' . str_replace(' ', '%', $searchValue) . '%';
+            $query->whereHas('projet', function ($q) use ($searchQuery) {
+                $q->where('titre', 'like', $searchQuery)
+                  ->orWhereHas('transfertCompetences.competence', function ($q) use ($searchQuery) {
+                      $q->where('nom', 'like', $searchQuery);
+                  });
+            });
+        }
+    
+        return $query->paginate(2);
+    }
     
     
 }

@@ -77,19 +77,21 @@ class Apprenants extends Controller
 
     public function index(Request $request)
     {
+        $userGroupeId = Auth::user()->id;
+
         $realisationProjets = $this->projectRealisationRepository->with([
-            'projet',
+            'projet.transfertCompetences.competence',
             'competence',
             'personne',
             'etatRealisationProjet',
             'validation'
-        ])->paginate();
+        ])->where('personne_id', $userGroupeId)->paginate();
         $Competences = Competence::all();
         $projects = Projet::all();
         $EtatRealisationProjet = EtatRealisationProjet::all();
     
+        
         // Get the current user's groupe_id
-        $userGroupeId = Auth::user()->id;
         
     
         // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
@@ -97,11 +99,23 @@ class Apprenants extends Controller
             ->where('groupe_id', $userGroupeId)
             ->get();
 
-        $realisationProjets = RealisationProjet::with('validation')
-        ->where('personne_id', $userGroupeId)
-        ->paginate();
+        // $realisationProjets = RealisationProjet::with('validation')
+        // ->where('personne_id', $userGroupeId)
+        // ->paginate();
+        $searchValue = $request->get('searchValue');
+        $competenceId = $request->get('competenceId');
+        if ($request->ajax()) {
 
-        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes', 'EtatRealisationProjet'));
+
+            if ($searchValue !== '' || $competenceId !== null) {
+                $realisationProjets = $this->projectRealisationRepository->filterAndSearch($competenceId, $searchValue);
+                return view('pkg_realisation_projets.Apprenant.table', compact('realisationProjets','searchValue','competenceId'))->render();
+            }
+
+            $realisationProjets = $this->projectRealisationRepository->where('personne_id', $userGroupeId)->paginate();
+            return view('pkg_realisation_projets.Apprenant.table', compact('realisationProjets','searchValue','competenceId'))->render();
+        }
+        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets','searchValue', 'Competences','competenceId', 'projects', 'Personnes', 'EtatRealisationProjet'));
     }
 
 
