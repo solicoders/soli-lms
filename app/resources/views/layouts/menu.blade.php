@@ -11,7 +11,4 @@
 @include('layouts.pkg_creation_projets.gestionprojets')
 
 @include('layouts.pkg_rh.RHMenu')
-
-
-@include('layouts.pkg_competences.CompetencesMenu')
 {{-- @endcan --}}

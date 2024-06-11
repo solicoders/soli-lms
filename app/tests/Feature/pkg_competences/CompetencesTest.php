@@ -3,71 +3,77 @@
 namespace Tests\Feature\pkg_competences;
 
 use App\Models\pkg_competences\Competence;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Carbon\Carbon;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CompetencesTest extends TestCase
 {
     use DatabaseTransactions;
 
-    protected $competence;
+    protected $model;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->competence = Competence::create([
-            'code' => 'TestCodeCompetence',
-            'nom' => 'TestNomCompetence',
-            'description' => 'TestDescriptionCompetence',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+        $this->model = new Competence();
+    }
+
+    public function test_paginate_competences(): void
+    {
+        $competences = $this->model->paginate(2);
+        $this->assertNotNull($competences);
+        $this->assertNotEmpty($competences);
+    }
+
+    public function test_create_competences(): void
+    {
+        $data = [
+            'nom' => 'TestNomCompetences',
+            'description' => 'TestDescriptionCompetences',
+        ];
+
+        $this->model->create($data);
+
+        $this->assertDatabaseHas('competences', [
+            'nom' => $data['nom'],
+            'description' => $data['description'],
         ]);
     }
 
-    public function test_create_competence(): void
+    public function test_update_competences(): void
     {
-        $data = [
-            'code' => 'TestCode',
-            'nom' => 'TestNom',
-            'description' => 'TestDescription',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ];
+        $existingCompetences = $this->model->create([
+            'nom' => 'ExistingNomCompetences',
+            'description' => 'ExistingDescriptionCompetences',
+        ]);
 
-        $competence = Competence::create($data);
+        $newName = 'UpdatedNomCompetences';
+        $newDescription = 'UpdatedDescriptionCompetences';
 
-        $this->assertDatabaseHas('competences', ['id' => $competence->id]);
+        $existingCompetences->update([
+            'nom' => $newName,
+            'description' => $newDescription,
+        ]);
+
+        $this->assertEquals($newName, $existingCompetences->nom);
+        $this->assertEquals($newDescription, $existingCompetences->description);
+        $this->assertDatabaseHas('competences', [
+            'nom' => $newName,
+            'description' => $newDescription,
+        ]);
     }
 
-    public function test_read_competence(): void
+    public function test_delete_competences(): void
     {
-        $competence = Competence::find($this->competence->id);
+        $existingCompetences = $this->model->create([
+            'nom' => 'ExistingNomCompetences',
+            'description' => 'ExistingDescriptionCompetences',
+        ]);
 
-        $this->assertNotNull($competence);
-        $this->assertEquals($this->competence->id, $competence->id);
-    }
+        $existingCompetences->delete();
 
-    public function test_update_competence(): void
-    {
-        $newName = 'UpdatedNom';
-        $this->competence->update(['nom' => $newName, 'updated_at' => Carbon::now()]);
-
-        $this->assertEquals($newName, $this->competence->fresh()->nom);
-    }
-
-    public function test_delete_competence(): void
-    {
-        $this->competence->delete();
-
-        $this->assertDatabaseMissing('competences', ['id' => $this->competence->id]);
-    }
-
-    public function test_filter_competence_by_code(): void
-    {
-        $filteredCompetences = Competence::where('code', 'TestCodeCompetence')->get();
-
-        $this->assertNotEmpty($filteredCompetences);
-        $this->assertEquals('TestCodeCompetence', $filteredCompetences->first()->code);
+        $this->assertDatabaseMissing('competences', [
+            'id' => $existingCompetences->id,
+        ]);
     }
 }

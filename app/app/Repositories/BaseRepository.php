@@ -27,7 +27,7 @@ abstract class BaseRepository implements RepositoryInterface
      *
      * @var int
      */
-    protected $paginationLimit = 10;
+    protected $paginationLimit = 2;
 
     /**
      * Méthode abstraite pour obtenir les champs recherchables.

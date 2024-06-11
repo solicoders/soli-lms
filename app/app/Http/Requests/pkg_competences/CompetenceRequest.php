@@ -21,9 +21,8 @@ class CompetenceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'code' => 'required|string|max:40',
-            'nom' => 'required|string|max:100',
-            'description' => 'nullable|string|max:255',
+            'nom' => 'required|string|max:40',
+            'description' => 'nullable|string|max:255', 
         ];
     }
 
@@ -35,12 +34,9 @@ class CompetenceRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'code.required' => 'Le nom est requis.',
-            'code.string' => 'Le nom doit être une chaîne de caractères.',
-            'code.max' => 'Le nom ne peut pas dépasser 40 caractères.',
             'nom.required' => 'Le nom est requis.',
             'nom.string' => 'Le nom doit être une chaîne de caractères.',
-            'nom.max' => 'Le nom ne peut pas dépasser 100 caractères.',
+            'nom.max' => 'Le nom ne peut pas dépasser 40 caractères.',
             'description.string' => 'La description doit être une chaîne de caractères.',
             'description.max' => 'La description ne peut pas dépasser 255 caractères.',
         ];

@@ -12,17 +12,16 @@ return [
     'message' => 'Message',
     'back' => 'Retour',
     'name' => 'Nom',
-    'noteMin' => 'note minimum',
-    'noteMax' => 'note maximum',
     'action' => 'Action',
     'detail' => 'Détail',
     'description' => 'Description',
-    'list' => 'List',
-    'home' => 'Accueil',
-    'addSucées' => 'a été ajouté avec succès.',
-    'updateSucées' => 'a été mis à jour avec succès.',
-    'deleteSucées' => 'a été supprimé avec succès.',
-
+    'list' => 'Liste',
+    'Gestion_des_formations' => 'Gestion des formations',
+   'Previous'=>'Précédent',
+    'Next'=>'Suivant',
+    'Submit'=>'Soumettre',
+    'checkall'=>'Tout cocher',
+    'date'=>'Date',
+    'learner'=>'Apprenants',
+    'select'=>'sélectionner'
 ];
-
-

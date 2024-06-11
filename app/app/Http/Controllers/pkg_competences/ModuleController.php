@@ -51,7 +51,7 @@ class ModuleController extends AppBaseController
             return redirect()->route('Module.index')->with('success', __('messages.create_success'));
         } catch (ModuleAlreadyExistException $e) {
             return back()->withInput()->withErrors(['Module_exists' => 'Module est déjà existant']);
-
+            
         }
 
 

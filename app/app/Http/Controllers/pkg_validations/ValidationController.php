@@ -105,7 +105,6 @@ class ValidationController extends Controller
         }
 
 
-
         $realisationProjetId = $validatedData['realisation_projet_id'];
 
         // Process validations for each competence

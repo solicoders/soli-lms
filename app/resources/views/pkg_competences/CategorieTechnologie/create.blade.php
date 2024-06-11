@@ -1,17 +1,11 @@
 @extends('layouts.app')
-@section('title', __('app.add') . ' ' . __('pkg_competences/CategorieTechnologie.singular'))
+@section('title', __('app.add') . ' ' . __('pkg_competences/categorieTechnologie.singular'))
 @section('content')
     <div class="content-header">
-        @if ($errors->has('CategorieTechnologie_exists'))
+        @if (session('error'))
             <div class="alert alert-danger">
-                {{ $errors->first('CategorieTechnologie_exists') }}
+                {{ session('error') }}
             </div>
-        @else
-            @if ($errors->has('unexpected_error'))
-                <div class="alert alert-danger">
-                    {{ $errors->first('unexpected_error') }}
-                </div>
-            @endif
         @endif
     </div>
     <section class="content">
@@ -22,11 +16,34 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="nav-icon fas fa-table"></i>
-                                {{ __('app.add') }} {{ __('pkg_competences/CategorieTechnologie.singular') }}
+                                {{ __('app.add') }} {{ __('pkg_competences/categorieTechnologie.singular') }}
                             </h3>
                         </div>
-                        <!-- Obtenir le formulaire -->
-                        @include('pkg_competences.CategorieTechnologie.fields')
+                        <div class="card-body">
+                            <form id="createForm" method="POST" action="{{ route('CategorieTechnologie.store') }}">
+                                @csrf
+                                <div class="modal-body">
+                                  <div class="form-group">
+                                    <label for="nom">Nom:</label>
+                                    <input type="text" class="form-control" id="nom" name="nom">
+                                    @error('nom')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" id="editor" name="description" rows="3"></textarea>
+                                    @error('description')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                  </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="{{ route('CategorieTechnologie.index') }}" class="btn btn-secondary">{{ __('app.cancel') }}</a>
+                                    <button type="submit" class="btn btn-info">{{ __('app.add') }}</button>
+                                </div>
+                              </form>
+                        </div>                    
                     </div>
                 </div>
             </div>

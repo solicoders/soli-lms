@@ -1,89 +1,114 @@
 <?php
 
-namespace App\Http\Controllers\pkg_competences;
+namespace App\Http\Controllers\Pkg_competences;
 
-use App\Exceptions\pkg_competences\TechnologieAlreadyExistException;
-use App\Http\Controllers\Controller;
-use App\Imports\pkg_competences\TechnologieImport;
-use App\Models\pkg_competences\Technologie;
-use Illuminate\Http\Request;
-use App\Http\Requests\pkg_competences\TechnologieRequest;
-use App\Repositories\pkg_competences\TechnologieRepository;
-use App\Http\Controllers\AppBaseController;
 use Carbon\Carbon;
-use App\Exports\pkg_competences\TechnologieExport;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Models\pkg_competences\Competence;
+use App\Http\Controllers\AppBaseController;
+use App\Models\pkg_competences\Technologie;
+use App\Exports\pkg_competences\TechnologieExport;
+use App\Imports\pkg_competences\TechnologieImport;
+use App\Models\pkg_competences\CategorieTechnologie;
+use App\Http\Requests\pkg_competences\TechnologieRequest;
+use App\Repositories\Pkg_competences\TechnologieRepository;
+use App\Exceptions\pkg_competences\TechnologieAlreadyExistException;
 
 class TechnologieController extends AppBaseController
 {
     protected $TechnologieRepository;
-
-    public function __construct(TechnologieRepository $TechnologieRepository)
+    protected $CategorieTechnologie;
+    protected $Competence;
+    public function __construct(TechnologieRepository $technologieRepository, CategorieTechnologie $categorieTechnologie, Competence $competence)
     {
-        $this->TechnologieRepository = $TechnologieRepository;
+
+        $this->TechnologieRepository = $technologieRepository;
+        $this->CategorieTechnologie = $categorieTechnologie;
+        $this->Competence = $competence;
     }
 
     public function index(Request $request)
     {
+
         if ($request->ajax()) {
             $searchValue = $request->get('searchValue');
             if ($searchValue !== '') {
                 $searchQuery = str_replace(' ', '%', $searchValue);
-                $TechnologieData = $this->TechnologieRepository->searchData($searchQuery);
-                return view('pkg_competences.technologie.index', compact('TechnologieData'))->render();
+                $technologieData = $this->TechnologieRepository->searchData($searchQuery);
+                return view('Pkg_competences.Technologie.index', compact('technologieData'))->render();
             }
         }
-        $TechnologieData = $this->TechnologieRepository->paginate();
-        return view('pkg_competences.technologie.index', compact('TechnologieData'));
+        $technologieData = $this->TechnologieRepository->paginate();
+        return view('Pkg_competences.Technologie.index', compact('technologieData'));
     }
+
 
     public function create()
     {
         $dataToEdit = null;
-        return view('pkg_competences.technologie.create', compact('dataToEdit'));
+        $CategorieTechnologie = $this->CategorieTechnologie::all();
+        $Competence = $this->Competence::all();
+        return view('Pkg_competences.Technologie.create', compact('dataToEdit', 'CategorieTechnologie', 'Competence'));
     }
+
 
     public function store(TechnologieRequest $request)
     {
+
         try {
             $validatedData = $request->validated();
+            // dd($validatedData);
             $this->TechnologieRepository->create($validatedData);
-            return redirect()->route('technologie.index')->with('success', __('messages.create_success'));
+            return redirect()->route('technologies.index')->with('success', __('Pkg_competences.Technologie.singular') . ' ' . __('app.addSucées'));
+
         } catch (TechnologieAlreadyExistException $e) {
-            return back()->withInput()->withErrors(['Technologie_exists' => 'Technologie est déjà existant']);
+            return back()->withInput()->withErrors(['technologie_exists' => 'Technologie est déjà existant']);
+        } catch (\Exception $e) {
+            return abort(500);
         }
     }
 
+
     public function show(string $id)
     {
-        $fetchedData = $this->TechnologieRepository->find((int)$id);
-        return view('pkg_competences.technologie.show', compact('fetchedData'));
+        $fetchedData = $this->TechnologieRepository->find($id);
+        return view('Pkg_competences.Technologie.show', compact('fetchedData'));
     }
+
 
     public function edit(string $id)
     {
-        $dataToEdit = $this->TechnologieRepository->find((int)$id);
-        return view('pkg_competences.technologie.edit', compact('dataToEdit'));
+        $CategorieTechnologie = $this->CategorieTechnologie::all();
+        $Competence = $this->Competence::all();
+        $dataToEdit = $this->TechnologieRepository->find($id);
+        return view('Pkg_competences.Technologie.edit', compact('dataToEdit', 'CategorieTechnologie', 'Competence'));
     }
+
 
     public function update(TechnologieRequest $request, string $id)
     {
         $validatedData = $request->validated();
         $this->TechnologieRepository->update($id, $validatedData);
-        return redirect()->route('technologie.index')->with('success', __('messages.update_success'));
+        return redirect()->route('technologies.index', $id)->with('success', __('Pkg_competences.technologie.singular') . ' ' . __('app.updateSucées'));
     }
+
 
     public function destroy(string $id)
     {
-        $this->TechnologieRepository->destroy((int)$id);
-        return redirect()->route('technologie.index')->with('success', __('messages.delete_success'));
+        $this->TechnologieRepository->destroy($id);
+        return redirect()->route('technologies.index')->with('success', __('pkg_competences.technologie.singular') . ' ' . __('app.deleteSucées'));
     }
+
 
     public function export()
     {
-        $Technologie = Technologie::all();
-        return Excel::download(new TechnologieExport($Technologie), 'Technologie_export.xlsx');
+        $projects = Technologie::all();
+
+        return Excel::download(new TechnologieExport($projects), 'technologie_export.xlsx');
     }
+
 
     public function import(Request $request)
     {
@@ -94,8 +119,8 @@ class TechnologieController extends AppBaseController
         try {
             Excel::import(new TechnologieImport, $request->file('file'));
         } catch (\InvalidArgumentException $e) {
-            return redirect()->route('technologie.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
+            return redirect()->route('technologies.index')->withError('Le symbole de séparation est introuvable. Pas assez de données disponibles pour satisfaire au format.');
         }
-        return redirect()->route('technologie.index')->with('success', __('pkg_competences/Technologie.singular') . ' ' . __('app.addSucées'));
+        return redirect()->route('technologies.index')->with('success', __('Pkg_competences.Technologie.singular') . ' ' . __('app.addSucées'));
     }
 }

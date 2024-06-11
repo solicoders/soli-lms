@@ -60,13 +60,13 @@ class FiliereController extends AppBaseController
     public function show(string $id)
     {
 
-        $fetchedData = $this->FiliereRepository->find((int)$id);
+        $fetchedData = $this->FiliereRepository->find($id);
         return view('pkg_competences.Filiere.show', compact('fetchedData'));
     }
 
     public function edit(string $id)
     {
-        $dataToEdit = $this->FiliereRepository->find((int)$id);
+        $dataToEdit = $this->FiliereRepository->find($id);
 
         return view('pkg_competences.Filiere.edit', compact('dataToEdit'));
     }

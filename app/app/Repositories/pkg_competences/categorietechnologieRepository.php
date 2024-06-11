@@ -1,30 +1,24 @@
 <?php
-
 namespace App\Repositories\pkg_competences;
 
-use App\Models\pkg_competences\CategorieTechnologie;
+use App\Exceptions\pkg_competences\categorietechnologieException;
+use App\Models\pkg_competences\categorietechnologie;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\pkg_competences\categorietechnologieException;
 
-/**
- * Class CompetenRepository that manages the persistence of Categorie Technologie in the database.
- */
 class categorietechnologieRepository extends BaseRepository
 {
-    /**
-     * Searchable fields for Categorie Technologie.
+        /**
+     * Les champs de recherche disponibles pour les projets.
      *
      * @var array
      */
     protected $fieldsSearchable = [
-
-        'name',
-        'description'
+        'nom'
     ];
 
     /**
-     * Get searchable fields.
+     * Renvoie les champs de recherche disponibles.
      *
      * @return array
      */
@@ -34,52 +28,63 @@ class categorietechnologieRepository extends BaseRepository
     }
 
     /**
-     * Categorie Technologie constructor.
+     * Constructeur de la classe ProjetRepository.
      */
     public function __construct()
     {
-        parent::__construct(new CategorieTechnologie());
+        parent::__construct(new categorietechnologie());
     }
 
-    /**
-     * Create a new Categorie Technologie.
-     *
-     * @param array $data Categorie Technologie data.
-     * @return mixed
-     * @throws categorietechnologieException If the Categorie Technologie already exists.
-     */
     public function create(array $data)
-{
+    {
+        $nom = $data['nom'];
 
+        $categorietechnologieExist =  $this->model->where('nom', $nom)->exists();
 
-
-    $nom = $data['nom'];
-    $description = $data['description'];
-
-    $existingCategorieTechnologie = $this->model->where('nom', $nom)->exists();
-    $existingCategorieTechnologie = $this->model->where('description', $description)->exists();
-
-    if ($existingCategorieTechnologie) {
-        throw new categorietechnologieException("Categorie Technologie already exists.");
-    } else {
-        return parent::create($data);
+        if ($categorietechnologieExist) {
+            throw categorietechnologieException::AlreadyExistCategorieTechnlogie();
+        } else {
+            return parent::create($data);
+        }
     }
-}
 
+    public function update($id, array $data)
+    {
+        $nom = $data['nom'];
 
-    /**
-     * Search Categorie Technologie based on specified criteria.
+        $categorietechnologieExist =  $this->model->where('nom', $nom)->where('id', '!=', $id)->exists();
+
+        if ($categorietechnologieExist) {
+            throw categorietechnologieException::AlreadyExistCategorieTechnlogie();
+        } else {
+            return parent::update($id, $data);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $categorietechnologieExist =  $this->model->find($id);
+
+        if (!$categorietechnologieExist) {
+            throw categorietechnologieException::NotExistCategorieTechnlogie();
+        } else {
+            return parent::destroy($id);
+        }
+    }
+
+        /**
+     * Recherche les projets correspondants aux critères spécifiés.
      *
-     * @param mixed $searchableData Search data.
-     * @param int $perPage Items per page.
+     * @param mixed $searchableData Données de recherche.
+     * @param int $perPage Nombre d'éléments par page.
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
+    
     public function searchData($searchableData, $perPage = 4)
     {
         return $this->model->where(function ($query) use ($searchableData) {
-            $query->orWhere('nom', 'like', '%' . $searchableData . '%')
+            $query->where('nom', 'like', '%' . $searchableData . '%')
                 ->orWhere('description', 'like', '%' . $searchableData . '%');
-
         })->paginate($perPage);
     }
 }
