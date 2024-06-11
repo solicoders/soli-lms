@@ -1,5 +1,6 @@
+
 <div class="card-body table-responsive p-0">
-    <table class="table table-striped text-nowrap">
+    <table  class="table table-striped text-nowrap">
         <thead>
             <tr>
                 <th>{{ __('pkg_creation_projets/projet.singular') }}</th>
@@ -9,8 +10,8 @@
                 <th class="text-center">{{ __('app.action') }}</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach ($projetData as $projet)
+        <tbody >
+               @foreach ($projetData as $projet)
                 <tr>
                     <td class="text-wrap w-50">{{ $projet->titre }}</td>
                     <td class="text-wrap w-50">
@@ -64,8 +65,7 @@
 
     </table>
 </div>
-
-<div class="d-md-flex justify-content-between align-items-center p-2">
+<div class="d-md-flex justify-content-between align-items-center p-2" id="card-footer">
     <div class="d-flex align-items-center mb-2 ml-2 mt-2">
 
         {{-- @can('import-ProjetController') --}}
@@ -89,7 +89,7 @@
         {{-- @endcan --}}
     </div>
 
-    <ul class="pagination  m-0 float-right">
-        {{ $projetData->onEachSide(1)->links() }}
+    <ul class="pagination m-0 float-right">
+        {{ $projetData->appends(['searchValue' => $searchValue, 'competenceId' => $competenceId])->onEachSide(1)->links() }}
     </ul>
 </div>

@@ -47,13 +47,14 @@
                             <!-- Champ Travail à faire -->
                             <div class="col-sm-12">
                                 <label for="travail">{{ __('app.travailAFaire') }}</label>
-                                <p>{{ $projet->travailAFaire }}</p>
+                                <p>{{ htmlspecialchars($projet->travailAFaire) }}</p>
                             </div>
 
                             <!-- Champ Critères de validation -->
                             <div class="col-sm-12">
                                 <label for="validation">{{ __('app.critereDeTravail') }}</label>
-                                <p>{{ $projet->critereDeTravail }}</p>
+                                <p>{{ htmlspecialchars($projet->critereDeTravail) }}
+                                </p>
                             </div>
 
                             <!-- Champ Date de début et de fin -->
@@ -68,7 +69,7 @@
                                 <label for="resources">{{ __('pkg_creation_projets/Resource.plural') }} :</label>
                                 <ul>
                                     @foreach ($projet->resources as $resource)
-                                        <li><a href="{{ $resource->lien }}">{{ $resource->nom }}</a>: {{ $resource->description }}</li>
+                                        <li><a href="{{ $resource->lien }}">{{ $resource->nom }}</a>: {{ htmlspecialchars($resource->description) }}</li>
                                     @endforeach
                                 </ul>
                             </div>
@@ -79,7 +80,7 @@
                                 <ul>
                                     @foreach ($projet->livrables as $livrable)
                                         <li>{{ $livrable->titre }}: <a href="{{ $livrable->lien }}">{{ $livrable->lien }}</a>
-                                            - {{ $livrable->description }} ({{ $livrable->natureLivrable->nom ?? 'No nature' }})</li>
+                                            - {{ htmlspecialchars($livrable->description) }} ({{ $livrable->natureLivrable->nom ?? 'No nature' }})</li>
                                     @endforeach
                                 </ul>
                             </div>
