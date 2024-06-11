@@ -23,7 +23,7 @@
                 @else
                     <option value="">Choisir un technologies</option>
                 @endif
-                @foreach ($technologies as $item)
+                @foreach ($TechnologieData as $item)
                     @if (!isset($dataToEdit) || !$dataToEdit->nom || $item->id !== $dataToEdit->competence->id)
                         <option value="{{ $item->id }}">{{ $item->nom }}</option>
                     @endif

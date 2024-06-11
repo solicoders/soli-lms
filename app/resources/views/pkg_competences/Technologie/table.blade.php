@@ -8,7 +8,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($technologieData as $technologie)
+            @foreach ($TechnologieData as $technologie)
                 <tr>
                     <td>{{ $technologie->nom }}</td>
                     <td>{!! Str::limit($technologie->description, 80) !!}</td>
@@ -67,7 +67,7 @@
     </div>
 
     <ul class="pagination  m-0 float-right">
-        {{ $technologieData->onEachSide(1)->links() }}
+        {{ $TechnologieData->onEachSide(1)->links() }}
     </ul>
 </div>
 

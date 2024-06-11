@@ -14,8 +14,8 @@ Route::middleware('auth')->group(function () {
             Route::post('/Competence/ajouter', [CompetenceController::class, 'store'])->name('competence.store');
             Route::get('/Competence/export', [CompetenceController::class, 'export'])->name('competence.export');
             Route::post('/Competence/import', [CompetenceController::class, 'import'])->name('competence.import');
-            
-            Route::get('/Competence/{id}', [CompetenceController::class, 'show'])->name('competence.show');
+
+            Route::get('/Competence/show/{id}', [CompetenceController::class, 'show'])->name('competence.show');
             Route::get('/Competence/{id}/edit', [CompetenceController::class, 'edit'])->name('competence.edit');
             Route::put('/Competence/{id}/update', [CompetenceController::class, 'update'])->name('competence.update');
             Route::delete('/Competence/{id}/delete', [CompetenceController::class, 'destroy'])->name('competence.delete');

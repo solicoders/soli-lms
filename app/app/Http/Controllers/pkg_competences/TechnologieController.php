@@ -56,13 +56,13 @@ class TechnologieController extends AppBaseController
 
     public function show(string $id)
     {
-        $fetchedData = $this->TechnologieRepository->find($id);
+        $fetchedData = $this->TechnologieRepository->find((int)$id);
         return view('pkg_competences.technologie.show', compact('fetchedData'));
     }
 
     public function edit(string $id)
     {
-        $dataToEdit = $this->TechnologieRepository->find($id);
+        $dataToEdit = $this->TechnologieRepository->find((int)$id);
         return view('pkg_competences.technologie.edit', compact('dataToEdit'));
     }
 
@@ -75,7 +75,7 @@ class TechnologieController extends AppBaseController
 
     public function destroy(string $id)
     {
-        $this->TechnologieRepository->destroy($id);
+        $this->TechnologieRepository->destroy((int)$id);
         return redirect()->route('technologie.index')->with('success', __('messages.delete_success'));
     }
 

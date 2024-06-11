@@ -78,7 +78,7 @@ class CompetenceController extends AppBaseController
 
     public function destroy(string $id)
     {
-        $this->competenceRepository->find((int)$id);
+        $this->competenceRepository->destroy((int)$id);
         return redirect()->route('competence.index')->with('success', __('messages.delete_success'));
     }
 
