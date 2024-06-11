@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(pkg_authentificationSeeder::class);
-        $this->call(pkg_rhSeeder::class);
+        // $this->call(pkg_rhSeeder::class);
         $this->call(pkg_competencesSeeder::class);
         $this->call(pkg_creation_projetsSeeder::class);
         $this->call(pkg_realisation_projetsSeeder::class);

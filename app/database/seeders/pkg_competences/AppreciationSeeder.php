@@ -41,6 +41,36 @@ class AppreciationSeeder extends Seeder
         }
 
         fclose($csvFile);
-        
+
     }
 }
+
+// ==========================================================
+        // =========== Add Seeder Permission Assign Role ============
+        // ==========================================================
+        $FormateurRole = User::FORMATEUR;
+        $Role = Role::where('name', $FormateurRole)->first();
+        $csvFile = fopen(base_path("database/data/pkg_competences/AppreciationPermission.csv"), "r");
+        $firstline = true;
+        while (($data = fgetcsv($csvFile)) !== FALSE) {
+            if (!$firstline) {
+                Permission::create([
+                    "name" => $data['0'],
+                    "guard_name" => $data['1'],
+                ]);
+
+                if ($Role) {
+                    // If the role exists, update its permissions
+                    $Role->givePermissionTo($data['0']);
+                } else {
+                    // If the role doesn't exist, create it and give permissions
+                    $Role = Role::create([
+                        'name' => $FormateurRole,
+                        'guard_name' => 'web',
+                    ]);
+                    $Role->givePermissionTo($data['0']);
+                }
+            }
+            $firstline = false;
+        }
+        fclose($csvFile);
