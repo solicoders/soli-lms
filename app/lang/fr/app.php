@@ -2,18 +2,32 @@
 
 return [
     'add' => 'Ajouter',
-    'rechercher'=>"Rechercher",
+    'rechercher' => "Rechercher",
     'delete' => 'Supprimer',
     'edit' => 'Modifier',
     'cancel' => 'Annuler',
     'export' => 'EXPORTER',
     'import' => 'IMPORTER',
+    'title' => 'Titre',
+    'message' => 'Message',
     'back' => 'Retour',
     'name' => 'Nom',
-    'action'=> 'Action',
-    'detail' => 'Detail',
+    'noteMin' => 'note minimum',
+    'noteMax' => 'note maximum',
+    'action' => 'Action',
+    'detail' => 'Détail',
     'description' => 'Description',
-    'list' => 'List',
+
+    'list' => 'Liste',
     'link' => 'Lien',
-    'Gestion_des_formations' => 'Gestion des formations',
+    'link1' => 'Lien1',
+
+    'home' => 'Accueil',
+    'Gestion_des_formations' => 'Gestion_des_formations',
+    'addSucées' => 'a été ajouté avec succès.',
+    'updateSucées' => 'a été mis à jour avec succès.',
+    'deleteSucées' => 'a été supprimé avec succès.',
+
+
 ];
+
