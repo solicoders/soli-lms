@@ -67,3 +67,10 @@
         {{ $FiliereData->onEachSide(1)->links() }}
     </ul>
 </div>
+
+
+<script>
+    function submitForm() {
+        document.getElementById("importForm").submit();
+    }
+</script>

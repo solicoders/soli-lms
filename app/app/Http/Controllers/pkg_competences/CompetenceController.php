@@ -58,13 +58,13 @@ class CompetenceController extends AppBaseController
     public function show(string $id)
     {
 
-        $fetchedData = $this->competenceRepository->find($id);
+        $fetchedData = $this->competenceRepository->find((int)$id);
         return view('pkg_competences.competence.show', compact('fetchedData'));
     }
 
     public function edit(string $id)
     {
-        $dataToEdit = $this->competenceRepository->find($id);
+        $dataToEdit = $this->competenceRepository->find((int)$id);
 
         return view('pkg_competences.competence.edit', compact('dataToEdit'));
     }
@@ -78,7 +78,7 @@ class CompetenceController extends AppBaseController
 
     public function destroy(string $id)
     {
-        $this->competenceRepository->destroy($id);
+        $this->competenceRepository->find((int)$id);
         return redirect()->route('competence.index')->with('success', __('messages.delete_success'));
     }
 
