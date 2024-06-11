@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SoliLMS') }}</title>
 
     <!-- TODO : à importer dans app.css -->
     <!-- Fonts -->
@@ -80,11 +80,31 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
+
             <strong>Droits d'auteur © 2023-2024 <a href="#" class="text-info">SoliLMS</a>.</strong> Tous droits
+
             réservés.
         </footer>
     </div>
     <script>
+        let tableForm = document.getElementById('tableForm');
+
+        function showLoading() {
+            if (tableForm) {
+                let loadingDiv = document.createElement('div');
+                loadingDiv.id = 'loading';
+                loadingDiv.innerHTML = '<div class="spinner"></div>';
+                tableForm.appendChild(loadingDiv);
+            }else{
+                return false;
+            }
+        }
+        function hideLoading() {
+            let loadingDiv = document.getElementById('loading');
+            loadingDiv.remove();
+        }
+
+
         // Add functionality for "Add Another Deliverable" button
         const addDeliverableButton = document.getElementById("addDeliverable");
         const deliverableForm = document.getElementById("deliverableForm");

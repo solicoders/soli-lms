@@ -1,39 +1,71 @@
 import "https://code.jquery.com/jquery-3.6.0.min.js";
 
 $(document).ready(function () {
-    function updateURLParameters(params) {
-        var url = new URL(window.location.href);
-        Object.keys(params).forEach(param => {
-            if (params[param] && params[param] !== "") {
-                url.searchParams.set(param, params[param]);
-            } else {
-                url.searchParams.delete(param);
-            }
-        });
-        window.history.replaceState(null, "", url);
+
+    // Fonction pour mettre à jour un paramètre dans l'URL
+    function updateURLParameter(param, paramVal) {
+        var url = window.location.href;
+        var hash = location.hash;
+        url = url.replace(hash, "");
+        if (url.indexOf(param + "=") >= 0) {
+            var prefix = url.substring(0, url.indexOf(param + "="));
+            var suffix = url.substring(url.indexOf(param + "="));
+            suffix = suffix.substring(suffix.indexOf("=") + 1);
+            suffix =
+                suffix.indexOf("&") >= 0
+                    ? suffix.substring(suffix.indexOf("&"))
+                    : "";
+            url = prefix + param + "=" + paramVal + suffix;
+        } else {
+            if (url.indexOf("?") < 0) url += "?" + param + "=" + paramVal;
+            else url += "&" + param + "=" + paramVal;
+        }
+        window.history.replaceState({ path: url }, "", url + hash);
     }
 
-    function fetchData(page, searchValue, competenceId = null) {
+    // Fonction pour récupérer les données avec AJAX
+    function fetchData(page, searchValue) {
         var neededUrl = window.location.pathname;
+        console.log(neededUrl);
 
-        if (searchValue.trim() !== "") {
-            $("tbody").html('<tr><td colspan="100%"><div class="loading-spinner"></div></td></tr>');
+        if (showLoading()) {
+            setTimeout(searchRequest, 300);
+        }else{
+            searchRequest();
         }
 
-        $.ajax({
-            url: neededUrl,
-            data: { page: page, searchValue: searchValue, competenceId: competenceId },
-            success: function (data) {
-                setTimeout(function() {
+        function searchRequest(){
+            $.ajax({
+                url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
+                success: function (data) {
                     var newData = $(data);
+
                     $("tbody").html(newData.find("tbody").html());
                     $("#card-footer").html(newData.find("#card-footer").html());
-                    $(".pagination").html(newData.find(".pagination").html() || "");
+                    var paginationHtml = newData.find(".pagination").html();
+                    if (paginationHtml) {
+                        $(".pagination").html(paginationHtml);
+                    } else {
+                        $(".pagination").html("");
+                    }
+                    hideLoading();
+                },
+            });
 
-                    updateURLParameters({ page: page, searchValue: searchValue, competenceId: competenceId });
-                }, 3000);
+            if (page !== null && searchValue !== null) {
+                updateURLParameter("page", page);
+                updateURLParameter("searchValue", searchValue);
+            } else {
+                window.history.replaceState(
+                    {},
+                    document.title,
+                    window.location.pathname
+                );
             }
-        });
+        }
+
+
+>>>>>>> origin/develop-pkg_rh
     }
 
     function getUrlParameter(name) {

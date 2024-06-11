@@ -14,6 +14,7 @@ class FormationSeeder extends Seeder
      */
     public function run(): void
     {
+
         $csvFile = fopen(base_path("database/data/pkg_formations/formations.csv"), "r");
         $firstline = true;
         $i = 0;
@@ -26,6 +27,7 @@ class FormationSeeder extends Seeder
                 ]);
             }
             $firstline = false;
+
         }
     }
 }
