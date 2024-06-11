@@ -8,13 +8,13 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item ">
-            @can('index-CompetenceController')
-                <a href="{{ route('competence.index') }}"
-                    class="nav-link nav-link {{ Request::is('competence*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-table"></i>
-                    <p>Gestion Competences</p>
-                </a>
-            @endcan
+            <a class="nav-link {{ Request::is('competences*') ? 'active' : '' }}">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                    Gestion des Competences
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
         </li>
         <li class="nav-item ">
             @can('index-AppreciationController')
@@ -80,7 +80,5 @@
                 </a>
             @endcan
         </li>
-
-</li>
-</ul>
+    </ul>
 </li>
