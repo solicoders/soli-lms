@@ -48,21 +48,21 @@ class Apprenants extends Controller
     protected $transfercompetenceRepository;
     protected $technologiecompetenceRepository;
     protected $LivrableRealisationRepository;
-    
+
     public function __construct(
-    ProjetRepository $projetRepository,
-    LivrableRepository $livrableRepository,
-    ResourceRepository $resourceRepository,
-    CompetenceRepository $competenceRepository,
-    TechnologieRepository $technologieRepository,
-    ApprenantRepository $apprenantRepository,
-    TransfertCompetenceRepository $transfercompetenceRepository,
-    TechnologieCompetenceRepository $technologiecompetenceRepository,
-    LivrableRealisationRepository $LivrableRealisationRepository,
+        ProjetRepository $projetRepository,
+        LivrableRepository $livrableRepository,
+        ResourceRepository $resourceRepository,
+        CompetenceRepository $competenceRepository,
+        TechnologieRepository $technologieRepository,
+        ApprenantRepository $apprenantRepository,
+        TransfertCompetenceRepository $transfercompetenceRepository,
+        TechnologieCompetenceRepository $technologiecompetenceRepository,
+        LivrableRealisationRepository $LivrableRealisationRepository,
 
 
-    ProjectRealisationRepository $projectRealisationRepository,)
-    {
+        ProjectRealisationRepository $projectRealisationRepository,
+    ) {
         $this->projectRealisationRepository = $projectRealisationRepository;
         $this->projetRepository = $projetRepository;
         $this->livrableRepository = $livrableRepository;
@@ -73,7 +73,7 @@ class Apprenants extends Controller
         $this->transfercompetenceRepository = $transfercompetenceRepository;
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
         $this->LivrableRealisationRepository = $LivrableRealisationRepository;
-        }
+    }
 
     public function index(Request $request)
     {
@@ -87,10 +87,10 @@ class Apprenants extends Controller
         $Competences = Competence::all();
         $projects = Projet::all();
         $EtatRealisationProjet = EtatRealisationProjet::all();
-    
+
         // Get the current user's groupe_id
         $userGroupeId = Auth::user()->id;
-    
+
         // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
         $Personnes = Personne::where('type', 'apprenant')
             ->where('groupe_id', $userGroupeId)
@@ -104,29 +104,40 @@ class Apprenants extends Controller
 
     public function create()
     {
-        
+
         return view('pkg_realisation_projets.Apprenant.create');
     }
 
     public function store(Request $request)
     {
-        
+
 
         // try {
-            $projetId = $request->realisation_projet_id;
+        // $projetId = $request->realisation_projet_id;
 
-            dd($projetId);
-            $validatedData = $request->validate([
-                'nom' => 'required|string',
-                'lien' => 'required|string',
+        $serverBag = $request->server;
 
-                // 'description' => 'nullable|string',
-                // 'nature_livrable_id' => 'required|integer',
-                'projet_id' => 'required|integer'
-            ]);
-            dd($validatedData);
-            $this->LivrableRealisationRepository->create($validatedData);
-            return redirect()->route('livrables.index')->with('success', 'Livrable ajouté avec succès.');
+        // Retrieve the "HTTP_REFERER" value
+        $httpReferer = $serverBag->get('HTTP_REFERER');
+
+        // Use the "HTTP_REFERER" value
+        $parts = explode('?', $httpReferer);
+        // dd(end($parts));
+
+        // $validatedData = $request->validate([
+        //     'nom' => 'required|string',
+        //     'lien' => 'required|string',
+        // ]);
+        // dd($request->lien);
+        $this->LivrableRealisationRepository->create(
+            [
+                'nom' => $request->nom,
+                'lien' => $request->lien,
+                'description' => $request->description,
+                'realisation_projet_id' => end($parts)
+            ]
+        );
+        return redirect()->back()->with('success', 'Livrable ajouté avec succès.');
         // } catch (LivrableAlreadyExistException $e) {
         //     return back()->withInput()->withErrors(['livrable_exists' => $e->getMessage()]);
         // } catch (\Exception $e) {
@@ -141,16 +152,16 @@ class Apprenants extends Controller
         $realisationProjet = $this->projectRealisationRepository->find($id);
         $TransfertCompetence = $this->transfercompetenceRepository->find($id);
 
-        $competence_id = $TransfertCompetence ->pluck('competence_id');
+        $competence_id = $TransfertCompetence->pluck('competence_id');
 
-        
+
         $projects = Projet::all();
         $projectIds = [1,]; // Multiple project IDs
         // $pjctid = TransfertCompetence::whereIn('projet_id', $projectIds)->pluck('competence_id');
 
-            $TransfertCompetenceid = $TransfertCompetence->competence_id;
+        $TransfertCompetenceid = $TransfertCompetence->competence_id;
 
-            // dd($TransfertCompetenceid);
+        // dd($TransfertCompetenceid);
 
 
         $Competences = Competence::where('id', $TransfertCompetenceid)->pluck('nom');
@@ -160,7 +171,7 @@ class Apprenants extends Controller
         $userGroupeId = Auth::user()->id;
         // dd($Competence);
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','Competences'));
+        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet', 'Competences'));
 
 
 
