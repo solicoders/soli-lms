@@ -65,7 +65,7 @@ $(document).ready(function () {
         }
 
 
->>>>>>> origin/develop-pkg_rh
+ origin/develop-pkg_rh
     }
 
     function getUrlParameter(name) {
