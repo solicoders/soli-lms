@@ -45,16 +45,16 @@ class FormateurRepository extends BaseRepository
     {
         $nom = $data['nom'];
         $preom = $data['prenom'];
-        
+
         $existingFormateur = $this->model->where('nom', $nom)->where('prenom', $preom)->exists();
         if ($existingFormateur) {
             throw FormateurException::AlreadyExistFormateur();
         }else{
-            parent::create($data);
+            return parent::create($data);
         }
     }
 
-    
+
     public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
         if ($this->type !== null) {

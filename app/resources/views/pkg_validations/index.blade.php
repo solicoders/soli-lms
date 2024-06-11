@@ -7,7 +7,6 @@
         {{ session('error') }}
     </div>
 @endif
-
     <form action="{{ route('validations.store') }}" method="POST">
         @csrf
         <input type="hidden" name="realisation_projet_id" value="{{ $realisation->id }}">
@@ -74,19 +73,19 @@
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <input type="number" name="validations[{{ $competence->id }}][note]" class="form-control" value="{{ isset($notesByCompetence[$competence->id]) ? $notesByCompetence[$competence->id] : old('note') }}">
+                                                    <input type="number" name="validations[{{ $competence->id }}][note]" class="form-control" value="{{ isset($notesByCompetence[$competence->id]) ? $notesByCompetence[$competence->id] : '' }}">
                                                     @error("validations.{$competence->id}.note")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" value="{{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->titre : old('titre') }}" placeholder="Titre">
+                                                    <input type="text" name="validations[{{ $competence->id }}][titre]" class="form-control" value="{{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->titre : '' }}" placeholder="Titre">
                                                     @error("validations.{$competence->id}.titre")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </td>
                                                 <td>
-                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description">{{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->description : old('description') }}</textarea>
+                                                    <textarea name="validations[{{ $competence->id }}][description]" class="form-control" placeholder="Description">{{ isset($messagesByCompetence[$competence->id]) ? $messagesByCompetence[$competence->id][0]->description : '' }}</textarea>
                                                     @error("validations.{$competence->id}.description")
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror

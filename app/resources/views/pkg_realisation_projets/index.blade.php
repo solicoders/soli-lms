@@ -98,7 +98,10 @@
                                     <td class="nom-brief">{{ $project->projet->titre }}</td>
                                     <td class="etat">{{ $project->Personne->nom }}</td>
                                 <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6fe2d0d8a154839e88cee2012bbaef5309739c86
     <span class="badge badge-danger">A faire</span>
 @elseif($project->EtatRealisationProjet->etat == 'Pending')
     <span class="badge badge-secondary">En pause</span>
@@ -106,6 +109,7 @@
     <span class="badge badge-info">En cours</span>
 @elseif($project->EtatRealisationProjet->etat == 'Completed')
     <span class="badge badge-success">Terminer</span>
+@endif</td>
 @endif</td>
                                     <td >
                                     @if($project->validation)

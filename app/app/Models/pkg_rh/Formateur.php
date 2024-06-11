@@ -2,6 +2,7 @@
 
 namespace App\Models\pkg_rh;
 
+use App\Models\pkg_creation_projets\Projet;
 use App\Models\pkg_rh\Personne;
 use App\Models\User;
 use App\Traits\MorphType;
@@ -42,5 +43,9 @@ class Formateur extends Personne
     }
     public function user(){
         return $this->belongsTo(User::class);
+    }
+    public function projets()
+    {
+        return $this->hasMany(Projet::class, 'formateur_id');
     }
 }
