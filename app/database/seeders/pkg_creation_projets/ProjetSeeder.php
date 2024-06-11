@@ -43,7 +43,7 @@ class ProjetSeeder extends Seeder
                     ])->givePermissionTo($data['0']);
                 }
 
-                
+
                 if ($ApprenantRole) {
                     if (in_array($data['0'], ['index-ProjetController', 'show-ProjetController', 'export-ProjetController'] )) {
                         $ApprenantRole->givePermissionTo($data['0']);
@@ -76,6 +76,7 @@ class ProjetSeeder extends Seeder
                     'critereDeTravail' => $data[3],
                     'dateDebut' => $data[4],
                     'dateFin' => $data[5],
+                    'formateur_id'=>$data[6],
                 ]);
             }
             $firstline = false;
