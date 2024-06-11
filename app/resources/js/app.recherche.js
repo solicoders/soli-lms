@@ -15,7 +15,6 @@ $(document).ready(function () {
 
     function fetchData(page, searchValue, competenceId = null) {
         var neededUrl = window.location.pathname;
-        console.log(neededUrl);
 
         if (showLoading()) {
             setTimeout(searchRequest, 300);
@@ -23,9 +22,17 @@ $(document).ready(function () {
             searchRequest();
         }
 
+
+        // if (searchValue.trim() !== "") {
+        //     $("tbody").html('<tr><td colspan="100%"><div class="loading-spinner"></div></td></tr>');
+        // }
+
         function searchRequest(){
             $.ajax({
                 url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
+                data : {
+                    page: page, searchValue: searchValue, competenceId: competenceId 
+                },
                 success: function (data) {
                     var newData = $(data);
 
@@ -41,57 +48,44 @@ $(document).ready(function () {
                 },
             });
 
-            if (page !== null && searchValue !== null) {
-                updateURLParameter("page", page);
-                updateURLParameter("searchValue", searchValue);
-            } else {
-                window.history.replaceState(
-                    {},
-                    document.title,
-                    window.location.pathname
-                );
-            }
+
+
         }
+        // $.ajax({
+        //     url: neededUrl,
+        //     data: { page: page, searchValue: searchValue, competenceId: competenceId },
+        //     success: function (data) {
+        //         setTimeout(function() {
+        //             var newData = $(data);
+        //             $("tbody").html(newData.find("tbody").html());
+        //             $("#card-footer").html(newData.find("#card-footer").html());
+        //             $(".pagination").html(newData.find(".pagination").html() || "");
 
-
-    }
-
-    // Function to get URL parameter value by name
-
-        if (searchValue.trim() !== "") {
-            $("tbody").html('<tr><td colspan="100%"><div class="loading-spinner"></div></td></tr>');
-        }
-
-        $.ajax({
-            url: neededUrl,
-            data: { page: page, searchValue: searchValue, competenceId: competenceId },
-            success: function (data) {
-                setTimeout(function() {
-                    var newData = $(data);
-                    $("tbody").html(newData.find("tbody").html());
-                    $("#card-footer").html(newData.find("#card-footer").html());
-                    $(".pagination").html(newData.find(".pagination").html() || "");
-
-                    updateURLParameters({ page: page, searchValue: searchValue, competenceId: competenceId });
-                }, 3000);
-            }
-        });
+        //             updateURLParameters({ page: page, searchValue: searchValue, competenceId: competenceId });
+        //         }, 3000);
+        //     }
+        // });
     }
 
     function getUrlParameter(name) {
-        return new URLSearchParams(window.location.search).get(name) || "";
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
+
 
     var searchValueFromUrl = getUrlParameter("searchValue");
     var competenceIdFromUrl = getUrlParameter("competenceId");
     var pageFromUrl = getUrlParameter("page") || 1;
-
+    
     if (searchValueFromUrl) {
         $("#table_search").val(searchValueFromUrl);
     }
     if (competenceIdFromUrl) {
         $("#competenceFilter").val(competenceIdFromUrl);
     }
+
     fetchData(pageFromUrl, searchValueFromUrl, competenceIdFromUrl);
 
     $(document).on("change", "#competenceFilter", function () {
