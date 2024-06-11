@@ -15,6 +15,48 @@ $(document).ready(function () {
 
     function fetchData(page, searchValue, competenceId = null) {
         var neededUrl = window.location.pathname;
+        console.log(neededUrl);
+
+        if (showLoading()) {
+            setTimeout(searchRequest, 300);
+        }else{
+            searchRequest();
+        }
+
+        function searchRequest(){
+            $.ajax({
+                url: neededUrl + "/?page=" + page + "&searchValue=" + searchValue,
+                success: function (data) {
+                    var newData = $(data);
+
+                    $("tbody").html(newData.find("tbody").html());
+                    $("#card-footer").html(newData.find("#card-footer").html());
+                    var paginationHtml = newData.find(".pagination").html();
+                    if (paginationHtml) {
+                        $(".pagination").html(paginationHtml);
+                    } else {
+                        $(".pagination").html("");
+                    }
+                    hideLoading();
+                },
+            });
+
+            if (page !== null && searchValue !== null) {
+                updateURLParameter("page", page);
+                updateURLParameter("searchValue", searchValue);
+            } else {
+                window.history.replaceState(
+                    {},
+                    document.title,
+                    window.location.pathname
+                );
+            }
+        }
+
+
+    }
+
+    // Function to get URL parameter value by name
 
         if (searchValue.trim() !== "") {
             $("tbody").html('<tr><td colspan="100%"><div class="loading-spinner"></div></td></tr>');

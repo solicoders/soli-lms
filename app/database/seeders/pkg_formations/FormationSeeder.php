@@ -15,26 +15,26 @@ class FormationSeeder extends Seeder
          */
         public function run(): void
         {
-            Schema::disableForeignKeyConstraints();
-            Formation::truncate();
-            Schema::enableForeignKeyConstraints();
+        //     Schema::disableForeignKeyConstraints();
+        //     Formation::truncate();
+        //     Schema::enableForeignKeyConstraints();
     
-            $csvFile = fopen(base_path("database/data/pkg_formations/formations.csv"), "r");
-            $firstline = true;
+        //     $csvFile = fopen(base_path("database/data/pkg_formations/formations.csv"), "r");
+        //     $firstline = true;
     
-            while (($data = fgetcsv($csvFile)) !== FALSE) {
-                if (!$firstline) {
-                    Formation::create([
-                        'nom' => $data[0],
-                        'description' => $data[1],
-                        'lien' => $data[2],
-                        'formateur_id' => $data[3],
-                    ]);
-                }
-                $firstline = false;
-            }
+        //     while (($data = fgetcsv($csvFile)) !== FALSE) {
+        //         if (!$firstline) {
+        //             Formation::create([
+        //                 'nom' => $data[0],
+        //                 'description' => $data[1],
+        //                 'lien' => $data[2],
+        //                 'formateur_id' => $data[3],
+        //             ]);
+        //         }
+        //         $firstline = false;
+        //     }
     
-            fclose($csvFile);
+        //     fclose($csvFile);
         }
     }
 
