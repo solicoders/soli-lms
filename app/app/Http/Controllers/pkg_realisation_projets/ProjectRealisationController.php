@@ -40,7 +40,7 @@ class ProjectRealisationController extends Controller
     $Personnes = Personne::where('type', 'apprenant')
     ->where('user_id', $userGroupeId)
     ->get();          
-     dd($user_id);
+    //  dd($user_id);
               $realisationProjets = RealisationProjet::with('validation')->paginate();
     // dd($validation);
          return view('pkg_realisation_projets.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes','EtatRealisationProjet'));
