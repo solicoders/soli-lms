@@ -33,7 +33,4 @@ return [
     'date'=>'Date',
     'learner'=>'Apprenants',
     'select'=>'sélectionner'
-
-
-
 ];
