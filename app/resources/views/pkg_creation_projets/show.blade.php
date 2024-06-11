@@ -46,13 +46,13 @@
 
                             <!-- Champ Travail à faire -->
                             <div class="col-sm-12">
-                                <label for="travail">{{ __('app.travailAFaire') }}</label>
+                                <label for="travail">{{ __('pkg_creation_projets/Projet.travailAFaire') }}</label>
                                 <p>{{ htmlspecialchars($projet->travailAFaire) }}</p>
                             </div>
 
                             <!-- Champ Critères de validation -->
                             <div class="col-sm-12">
-                                <label for="validation">{{ __('app.critereDeTravail') }}</label>
+                                <label for="validation">{{ __('pkg_creation_projets/Projet.critereDeTravail') }}</label>
                                 <p>{{ htmlspecialchars($projet->critereDeTravail) }}
                                 </p>
                             </div>
@@ -60,8 +60,8 @@
                             <!-- Champ Date de début et de fin -->
                             <div class="col-sm-12">
                                 <label for="date">{{ __('app.date') }}</label>
-                                <p>{{ __('app.datedebut') }} : {{ $projet->dateDebut }}</p>
-                                <p>{{ __('app.datefin') }}  : {{ $projet->dateFin }}</p>
+                                <p>{{ __('pkg_creation_projets/Projet.datedebut') }} : {{ $projet->dateDebut }}</p>
+                                <p>{{ __('pkg_creation_projets/Projet.datefin') }}  : {{ $projet->dateFin }}</p>
                             </div>
 
                             <!-- Champ Ressources -->
@@ -87,7 +87,7 @@
                             @if(auth()->user()->hasRole('formateur') && !auth()->user()->hasRole('apprenant'))
                             <!-- Champ Apprenants -->
                             <div class="col-sm-12">
-                                <label for="apprenants">{{ __('app.learner') }}  :</label>
+                                <label for="apprenants">{{ __('pkg_rh/Apprenant.plural') }}  :</label>
                                 <ul>
                                     @foreach ($learners as $learner)
                                         <li>{{ $learner->nom }} {{ $learner->prenom }}</li>
