@@ -24,13 +24,31 @@ Dans le processus de conception d’une interface utilisateur, il est important 
 ![Conception - pkg_validations ](/soli-lms/diagrammes/pkg_validations/classes_pkg_validations.svg){:width="70%"}
 *Figure 11 :Conception - pkg_validations*
 
+**NB:** Voir le diagramme de classe global dans l'annexe
+
+
+## Diagramme de packages 
+![Conception - pkg_packages ](/soli-lms/diagrammes/pkg_global/digramme_package.svg){:width="60%"}
+*Figure 11 : Diagramme packages - pkg_global*
+
+
+
 
 <!-- new slide -->
 
 ## Maquette
 
+<<<<<<< HEAD
 ![Maquette - pkg_validation ](/soli-lms/diagrammes/pkg_validations/){:width="70%"}
 *Figure 12 :Maquette - pkg_validations*
 
 
 
+=======
+![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu1.png){:width="70%"}
+*Figure 12 :Maquette - pkg_Realisations*
+
+
+![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu2.png){:width="70%"}
+*Figure 12 :Maquette - pkg_validations*
+>>>>>>> develop-pkg_validations

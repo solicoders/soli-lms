@@ -21,18 +21,14 @@ Dans cette phase de capture des besoins fonctionnels de la méthode 2TUP, en uti
 
 ## Idéation
 
-**Application Web de validation  :**
-- Développer une application web dédiée à la validation des projets des apprenants.
-- Permettre aux formateurs d'évaluer chaque compétence ciblée dans un projet ou un brief.
-- Intégrer des niveaux de validation personnalisables (1, 2, 3 ou Basic, Standard, Premium).
+Créer une application web conviviale pour le centre Solicode qui permettra :
 
-**Système de Commentaires Détailés :**
-- Inclure des champs pour que les formateurs puissent ajouter des remarques et des commentaires détaillés.
-
+- La validation des projets des apprenants.
+- Aux formateurs de valider chaque compétence ciblée dans un projet ou un brief.
+- L'intégration de appréciation de validation personnalisables.
+- L'inclusion de champs permettant aux formateurs d'ajouter des remarques et des commentaires détaillés.
 
 
-## Diagamme de cas d'utilisation 
-![Diagamme de cas d'utilisation : pkg_validations](/soli-lms/diagrammes/pkg_validations/uses_cases_pkg_validations/uses_cases_pkg_validations.svg){:width="1000%"}
-*Figure 8 : Diagamme de cas d'utilisation*
-
-
+## Diagramme de cas d'utilisation
+![Diagamme de cas d'utilisation : pkg_validations](/soli-lms/diagrammes/pkg_validations/uses_cases_pkg_validations/uses_cases_pkg_validations.svg){:width="100%"}
+*Figure 8 : Diagramme de cas d'utilisation*

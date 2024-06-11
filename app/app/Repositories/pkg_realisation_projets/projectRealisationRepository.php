@@ -18,7 +18,7 @@ class projectRealisationRepository extends BaseRepository
      * @var array
      */
     protected $fieldsSearchable = [
-        'titre', 
+        'titre',
         'description',
         'date_debut_realisation',
         'date_fin_realisation',
@@ -57,11 +57,11 @@ class projectRealisationRepository extends BaseRepository
         $projetId = $data['projet_id'];
         $existingRealisation = $this->model->where('projet_id', $projetId)->exists();
 
-        if ($existingRealisation) {
-            throw new RealisationProjetAlreadyExistException("A RealisationProjet with this project ID already exists.");
-        } else {
+        // if ($existingRealisation) {
+        //     throw new RealisationProjetAlreadyExistException("A RealisationProjet with this project ID already exists.");
+        // } else {
             return parent::create($data);
-        }
+        // }
     }
 
     /**
@@ -79,4 +79,9 @@ class projectRealisationRepository extends BaseRepository
             }
         })->paginate($perPage);
     }
+        public function with($relations)
+    {
+        return $this->model->with($relations);
+    }
+
 }

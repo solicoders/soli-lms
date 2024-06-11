@@ -12,7 +12,7 @@ Le Centre Solidaires Digital **SOLICODE** a un besoin pressant d'une solution de
 Soli-LMS a été développé pour répondre à ces besoins spécifiques. Cette plateforme permettra au centre de structurer et de gérer efficacement l'ensemble du cycle de formation, de la création des projets à l'évaluation des apprenants, tout en offrant une interface conviviale et des fonctionnalités complètes pour améliorer la qualité et l'efficacité des formations.
 
 
-![Context de projet](/soli-lms/pkg_validations/Besoin/images/LMS.png){:width="1000px"}*figure 2: Context de projet*
+![Context de projet](/soli-lms/pkg_validations/Besoin/images/LMS.png){:width="1000px"}*Figure 2: Context de projet*
 
 
 
@@ -26,4 +26,4 @@ Ce projet Soli-LMS vise à mettre en pratique et à présenter mes compétences 
 La plateforme offrira une interface conviviale aux clients pour accéder facilement aux services proposés. Elle intégrera des fonctionnalités favorisant une communication fluide et une évaluation précise des projets des apprenants, contribuant ainsi à leur développement de compétences de manière progressive
 
 
-![Context de projet](/soli-lms/pkg_validations/Besoin/images/shema.png)*figure 2: Shema Objectifs de formation*
+![Context de projet](/soli-lms/pkg_validations/Besoin/images/shema.png)*Figure 2: Shema Objectifs de formation*
