@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="content-wrapper" style="min-height: 1302.4px;">
+
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -34,15 +34,7 @@
                             <div class="col-sm-12">
                                 <label for="competences">Compétences :</label>
                                 <ul>
-                                @foreach($projects->competences as $competence)
-            @if(strlen($competence->nom) > 20)
-        <span>{{ substr($competence->nom, 0, 20) }} <span>...</span></span>
-        <a href="#" class="expand-content">Read more</a>
-        <span class="full-content" style="display: none;">{{ $competence->nom }}</span>
-    @else
-        <span>{{ $competence->nom }}</span>
-    @endif
-        @endforeach
+
                                 </ul>
                             </div>
 
@@ -87,5 +79,4 @@
         </div>
     </section>
 
-</div>
 @endsection
