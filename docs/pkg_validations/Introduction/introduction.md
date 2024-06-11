@@ -10,7 +10,7 @@ order: 140
 
 # Introduction
 
-![Introduction](/soli-lms/pkg_validations/introduction/images/introduction.png){:width="700px"}*figure 1: Introduction*
+![Introduction](/soli-lms/pkg_validations/introduction/images/introduction.png){:width="700px"}*Figure 1: Introduction*
 
 
 Soli-LMS (Learning Management System) est un système de gestion de la formation puissant et polyvalent conçu pour satisfaire les besoins variés des organismes de formation et des établissements d'enseignement.
