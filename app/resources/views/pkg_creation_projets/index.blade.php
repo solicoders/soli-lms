@@ -25,12 +25,12 @@
 
                 <div class="col-sm-6">
                     <div class="float-sm-right">
-                        {{-- @can('create-ProjetController') --}}
+                        @can('create-ProjetController')
                             <a href="{{ route('projets.create') }}" class="btn btn-info">
                                 <i class="fas fa-plus"></i>
                                 {{ __('app.add') }} {{ __('GestionProjets/projet.singular') }}
                             </a>
-                        {{-- @endcan --}}
+                        @endcan
                     </div>
                 </div>
             </div>

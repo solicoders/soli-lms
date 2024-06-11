@@ -72,26 +72,24 @@ class ProjetController extends Controller
             'transfertCompetences.appreciation',
         ]);
         $competences = Competence::all();
-
+        $searchValue = $request->get('searchValue');
+        $competenceId = $request->get('competenceId');
         if ($request->ajax()) {
-            $searchValue = $request->get('searchValue');
-            $competenceId = $request->get('competenceId');
 
-            if ($searchValue !== '') {
-                $searchQuery = str_replace(' ', '%', $searchValue);
-                $projetData = $this->projetRepository->searchData($searchQuery);
-                return view('pkg_creation_projets.table', compact('projetData'))->render();
+
+            if ($searchValue !== '' || $competenceId !== null) {
+                $projetData = $this->projetRepository->filterAndSearch($competenceId, $searchValue);
+                return view('pkg_creation_projets.table', compact('projetData','searchValue','competenceId'))->render();
             }
 
-            if ($competenceId !== null) {
-                $projetData = $this->projetRepository->filterByCompetence($competenceId);
-                return view('pkg_creation_projets.table', compact('projetData'))->render();
-            }
+            $projetData = $this->projetRepository->paginate();
+            return view('pkg_creation_projets.table', compact('projetData','searchValue','competenceId'))->render();
         }
 
         $projetData = $this->projetRepository->paginate();
-        return view('pkg_creation_projets.index', compact('projetData', 'competences'));
+        return view('pkg_creation_projets.index', compact('projetData', 'competences','searchValue','competenceId'));
     }
+
 
 
 
@@ -114,7 +112,14 @@ class ProjetController extends Controller
     {
         // 1. Validate the request data
         $validatedData = $request->validated();
+        // dd($validatedData);
+ // 2. Get the authenticated user's ID
+ $userId = auth()->id();
+//  dd($userId);
 
+ // 3. Create the project using the repository
+ $validatedData['formateur_id'] = $userId; // Set the formateur_id
+        //  dd($validatedData);
         // 2. Create the project using the repository
         $projet = $this->projetRepository->create($validatedData);
 
