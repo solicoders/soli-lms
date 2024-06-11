@@ -12,12 +12,12 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [NiveauCompetenceController::class, 'index'])->name('NiveauCompetence.index');
             Route::get('/NiveauCompetence/form-ajouter', [NiveauCompetenceController::class, 'create'])->name('NiveauCompetence.create');
             Route::post('/NiveauCompetence/ajouter', [NiveauCompetenceController::class, 'store'])->name('NiveauCompetence.store');
+            Route::get('/NiveauCompetence/export', [NiveauCompetenceController::class, 'export'])->name('NiveauCompetence.export');
+            Route::post('/NiveauCompetence/import', [NiveauCompetenceController::class, 'import'])->name('NiveauCompetence.import');
             Route::get('/NiveauCompetence/{id}', [NiveauCompetenceController::class, 'show'])->name('NiveauCompetence.show');
             Route::get('/NiveauCompetence/{id}/edit', [NiveauCompetenceController::class, 'edit'])->name('NiveauCompetence.edit');
             Route::put('/NiveauCompetence/{id}/update', [NiveauCompetenceController::class, 'update'])->name('NiveauCompetence.update');
             Route::delete('/NiveauCompetence/{id}/delete', [NiveauCompetenceController::class, 'destroy'])->name('NiveauCompetence.delete');
-            Route::get('/NiveauCompetence/export', [NiveauCompetenceController::class, 'export'])->name('NiveauCompetence.export');
-        Route::post('/NiveauCompetence/import', [NiveauCompetenceController::class, 'import'])->name('NiveauCompetence.import');
-        });
+            });
     });
 });

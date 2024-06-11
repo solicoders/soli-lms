@@ -17,7 +17,7 @@
         <div class="form-group">
             <label for="noteMin">{{ __('app.noteMin') }} <span
                     class="text-danger">*</span></label>
-            <input name="noteMin" type="text" class="form-control" id="noteMin" placeholder="Entrez le note minimun"
+            <input name="noteMin" type="number" class="form-control" id="noteMin" placeholder="Entrez le note minimun"
                 value="{{ $dataToEdit ? $dataToEdit->noteMin : old('noteMin') }}">
             @error('noteMin')
                 <div class="text-danger">{{ $message }}</div>
@@ -27,7 +27,7 @@
         <div class="form-group">
             <label for="noteMax">{{ __('app.noteMax') }} <span
                     class="text-danger">*</span></label>
-            <input name="noteMax" type="text" class="form-control" id="noteMax" placeholder="Entrez le note maximum"
+            <input name="noteMax" type="number" class="form-control" id="noteMax" placeholder="Entrez le note maximum"
                 value="{{ $dataToEdit ? $dataToEdit->noteMax : old('noteMax') }}">
             @error('noteMax')
                 <div class="text-danger">{{ $message }}</div>
@@ -53,3 +53,6 @@
     </div>
 
 </form>
+<script>
+    CKEDITOR.replace('editor');
+</script>

@@ -13,6 +13,7 @@
     <!-- TODO : à importer dans app.css -->
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
@@ -160,6 +161,10 @@
         });
 
     </script>
+
+<script>
+    CKEDITOR.replace('editor');
+</script>
     <script>
         // Get references to elements
         const addLinkButtons = document.querySelectorAll('.add-link-btn');
