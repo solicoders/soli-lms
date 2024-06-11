@@ -103,8 +103,7 @@ class ValidationController extends Controller
         }else if (($validatedData['validations'][$validatedData['realisation_projet_id']]['note'] < 13 ||$validatedData['validations'][$validatedData['realisation_projet_id']]['note'] > 20) && $validatedData['validations'][$validatedData['realisation_projet_id']]['appreciation_id'] == 1){
             return back()->with('error', 'la note dôit être  entre 13 et 20 pour cette appreciation ');
         }
-<<<<<<<<< Temporary merge branch 1
-=========
+
 
 
         $realisationProjetId = $validatedData['realisation_projet_id'];
