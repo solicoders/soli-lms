@@ -59,13 +59,7 @@ class CategorieTechnologieSeeder extends Seeder
                 if ($FormateurRole) {
                     // If the role exists, update its permissions
                     $FormateurRole->givePermissionTo($data['0']);
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    Role::create([
-                        'name' => User::FORMATEUR,
-                        'guard_name' => 'web',
-                    ])->givePermissionTo($data['0']);
-                }
+                } 
 
 
                 if ($ApprenantRole) {
@@ -73,13 +67,7 @@ class CategorieTechnologieSeeder extends Seeder
                     if (in_array($data['0'], ['index-CategorieTechnologieController', 'show-CategorieTechnologieController', 'export-CategorieTechnologieController','create-CategorieTechnologieController','store-CategorieTechnologieController','edit-CategorieTechnologieController','update-CategorieTechnologieController','destroy-CategorieTechnologieController','import-CategorieTechnologieController'] )) {
                         $ApprenantRole->givePermissionTo($data['0']);
                     }
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    Role::create([
-                        'name' => User::APPRENANT,
-                        'guard_name' => 'web',
-                    ])->givePermissionTo($data['0']);
-                }
+                } 
             }
             $firstline = false;
         }

@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
 namespace Database\Seeders;
 
@@ -29,4 +29,4 @@ class pkg_rhSeeder extends Seeder {
             PersonneSeeder::class,
         ];
     }
-} -->
+}

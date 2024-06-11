@@ -65,27 +65,16 @@ class CompetenceSeeder extends Seeder
                 if ($FormateurRole) {
                     // If the role exists, update its permissions
                     $FormateurRole->givePermissionTo($data['0']);
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    Role::create([
-                        'name' => User::FORMATEUR,
-                        'guard_name' => 'web',
-                    ])->givePermissionTo($data['0']);
-                }
-
+                } 
+                
 
                 if ($responsableRole) {
                     // If the role exists, update its permissions
                     if (in_array($data['0'], ['index-CompetenceController', 'show-CompetenceController', 'destroy-CompetenceController','create-CompetenceController','store-CompetenceController','edit-CompetenceController','update-CompetenceController','export-CompetenceController','import-CompetenceController'] )) {
                         $responsableRole->givePermissionTo($data['0']);
                     }
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    Role::create([
-                        'name' => User::RESPONSABLE,
-                        'guard_name' => 'web',
-                    ])->givePermissionTo($data['0']);
-                }
+                } 
+
             }
             $firstline = false;
         }

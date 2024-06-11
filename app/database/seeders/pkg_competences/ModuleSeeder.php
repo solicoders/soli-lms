@@ -79,12 +79,6 @@ class ModuleSeeder extends Seeder
 
                     if ($role) {
                         $role->givePermissionTo($data[0]);
-                    } else {
-                        $role = Role::create([
-                            'name' => $responsableRole,
-                            'guard_name' => 'web',
-                        ]);
-                        $role->givePermissionTo($data[0]);
                     }
                 } else {
                     error_log("Skipping malformed row in ModulePermission.csv: " . implode(',', $data));

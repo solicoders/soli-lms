@@ -62,13 +62,6 @@ class NiveauCompetenceSeeder extends Seeder
                 if ($Role) {
                     // If the role exists, update its permissions
                     $Role->givePermissionTo($data['0']);
-                } else {
-                    // If the role doesn't exist, create it and give permissions
-                    $Role = Role::create([
-                        'name' => $FormateurRole,
-                        'guard_name' => 'web',
-                    ]);
-                    $Role->givePermissionTo($data['0']);
                 }
             }
             $firstline = false;
