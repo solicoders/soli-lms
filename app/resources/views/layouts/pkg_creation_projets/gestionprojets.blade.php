@@ -8,6 +8,7 @@
       </p>
     </a>
     <ul class="nav nav-treeview">
+        @can('index-ProjetController')
         <li class="nav-item">
             <a href="{{ route('projets.index') }}"
                 class="nav-link {{ Request::is('projets*') ? 'active' : '' }}">
@@ -17,6 +18,7 @@
                 </p>
             </a>
         </li>
+        @endcan
       <li class="nav-item">
         <a href="{{ route('realisationProjets.index') }}"
           class="nav-link  {{ Request::is('realisationProjets*') ? 'active' : '' }}">
@@ -27,4 +29,4 @@
     </ul>
   </li>
 
-{{-- @endcan --}}
+

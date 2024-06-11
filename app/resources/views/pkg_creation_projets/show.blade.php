@@ -6,13 +6,13 @@
                 <div class="col-sm-6">
                     <h1>{{ __('app.detail') }}  {{ __('pkg_creation_projets/Projet.singular') }}</h1>
                 </div>
-                {{-- @can('edit-ProjetController') --}}
+                @can('edit-ProjetController')
                 <div class="col-sm-6">
                     <a href="{{ route('projets.edit', $projet->id) }}" class="btn btn-default float-right">
                         <i class="far fa-edit"></i> {{ __('app.edit') }}
                     </a>
                 </div>
-                {{-- @endcan --}}
+                @endcan
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-
+                            @if(auth()->user()->hasRole('formateur') && !auth()->user()->hasRole('apprenant'))
                             <!-- Champ Apprenants -->
                             <div class="col-sm-12">
                                 <label for="apprenants">{{ __('app.learner') }}  :</label>
@@ -94,6 +94,7 @@
                                     @endforeach
                                 </ul>
                             </div>
+                        @endif
 
                         </div>
                     </div>
