@@ -68,4 +68,31 @@ npm run build
 ```
 
 <!-- TODO :Loin and password   -->
-## Loin and password 
+## Login and password 
+
+- **Apprenants:**
+    - **Emails:**
+        - hamza@solicode.co
+        - Imrane@solicode.co
+        - reda@solicode.co
+        - Amine@solicode.co
+        - Adnan@solicode.co
+        - Safaa@solicode.co
+        - Yasmine@solicode.co
+        - Soufian@solicode.co
+        - Hussein@solicode.co
+        - jalil@solicode.co
+        - amina@solicode.co
+        - Hamid@solicode.co
+    - **Password**
+        - apprenant
+- **Formateures:**
+    - **Emails:**
+        - Fouad@solicode.co
+    - **Password**
+        - formateur
+- **Responsable:**
+    - **Emails:**
+        - hammouda@solicode.co
+    - **Password**
+        - responsable
