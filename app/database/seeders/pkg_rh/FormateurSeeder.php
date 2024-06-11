@@ -5,7 +5,7 @@ namespace Database\Seeders\pkg_rh;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class VilleSeeder extends Seeder
+class FormateurSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -2,8 +2,6 @@
 
 namespace Database\Seeders\pkg_rh;
 
-use App\Models\pkg_rh\Groupe;
-use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,19 +12,6 @@ class GroupeSeeder extends Seeder
      */
     public function run(): void
     {
-        $csvFile = fopen(base_path("database/data/pkg_rh/groupes.csv"), "r");
-        $firstline = true;
-        $i = 0;
-        while (($data = fgetcsv($csvFile)) !== FALSE) {
-            if (!$firstline) {
-                Groupe::create([
-                    "nom"=>$data['0'],
-                    "description"=>$data['1'],
-                    'updated_at' => Carbon::now(),
-                    'created_at' => Carbon::now()
-                ]);
-            }
-            $firstline = false;
-        }
+        //
     }
 }

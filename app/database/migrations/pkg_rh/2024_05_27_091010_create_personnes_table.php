@@ -37,7 +37,7 @@ return new class extends Migration
             $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('specialite_id')->references('id')->on('specialites')->onDelete('cascade');
-            $table->foreign('groupe_id')->references('id')->on('groupes')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('groupes')->onDelete('cascade');
             $table->timestamps();
         });
     }

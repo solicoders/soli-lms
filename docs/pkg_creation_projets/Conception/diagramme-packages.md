@@ -37,5 +37,5 @@ La conception d'une interface utilisateur intuitive et efficace est essentielle 
 
 ### Maquettes (wireframes)
 
-**[Insérer ici les maquettes (wireframes) de votre application, pour les versions web et mobile si possible]** 
+
 
