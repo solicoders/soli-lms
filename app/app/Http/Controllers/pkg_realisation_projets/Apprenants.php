@@ -48,21 +48,21 @@ class Apprenants extends Controller
     protected $transfercompetenceRepository;
     protected $technologiecompetenceRepository;
     protected $LivrableRealisationRepository;
-
+    
     public function __construct(
-        ProjetRepository $projetRepository,
-        LivrableRepository $livrableRepository,
-        ResourceRepository $resourceRepository,
-        CompetenceRepository $competenceRepository,
-        TechnologieRepository $technologieRepository,
-        ApprenantRepository $apprenantRepository,
-        TransfertCompetenceRepository $transfercompetenceRepository,
-        TechnologieCompetenceRepository $technologiecompetenceRepository,
-        LivrableRealisationRepository $LivrableRealisationRepository,
+    ProjetRepository $projetRepository,
+    LivrableRepository $livrableRepository,
+    ResourceRepository $resourceRepository,
+    CompetenceRepository $competenceRepository,
+    TechnologieRepository $technologieRepository,
+    ApprenantRepository $apprenantRepository,
+    TransfertCompetenceRepository $transfercompetenceRepository,
+    TechnologieCompetenceRepository $technologiecompetenceRepository,
+    LivrableRealisationRepository $LivrableRealisationRepository,
 
 
-        ProjectRealisationRepository $projectRealisationRepository,
-    ) {
+    ProjectRealisationRepository $projectRealisationRepository,)
+    {
         $this->projectRealisationRepository = $projectRealisationRepository;
         $this->projetRepository = $projetRepository;
         $this->livrableRepository = $livrableRepository;
@@ -73,7 +73,7 @@ class Apprenants extends Controller
         $this->transfercompetenceRepository = $transfercompetenceRepository;
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
         $this->LivrableRealisationRepository = $LivrableRealisationRepository;
-    }
+        }
 
     public function index(Request $request)
     {
@@ -87,24 +87,28 @@ class Apprenants extends Controller
         $Competences = Competence::all();
         $projects = Projet::all();
         $EtatRealisationProjet = EtatRealisationProjet::all();
-
+    
         // Get the current user's groupe_id
         $userGroupeId = Auth::user()->id;
-
+        
+    
         // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
         $Personnes = Personne::where('type', 'apprenant')
             ->where('groupe_id', $userGroupeId)
             ->get();
 
-        $realisationProjets = RealisationProjet::with('validation')->paginate();
+        $realisationProjets = RealisationProjet::with('validation')
+        ->where('personne_id', $userGroupeId)
+        ->paginate();
 
         return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes', 'EtatRealisationProjet'));
     }
 
 
-    public function create()
+    public function create(Request $request)
     {
-
+        // $realisationProjets = RealisationProjet::with('realisation_projet_id')->all();
+        // dd($realisationProjets);
         return view('pkg_realisation_projets.Apprenant.create');
     }
 
@@ -146,22 +150,21 @@ class Apprenants extends Controller
     }
 
 
-
     public function show($id)
     {
         $realisationProjet = $this->projectRealisationRepository->find($id);
         $TransfertCompetence = $this->transfercompetenceRepository->find($id);
 
-        $competence_id = $TransfertCompetence->pluck('competence_id');
+        $competence_id = $TransfertCompetence ->pluck('competence_id');
 
-
+        
         $projects = Projet::all();
         $projectIds = [1,]; // Multiple project IDs
         // $pjctid = TransfertCompetence::whereIn('projet_id', $projectIds)->pluck('competence_id');
 
-        $TransfertCompetenceid = $TransfertCompetence->competence_id;
+            $TransfertCompetenceid = $TransfertCompetence->competence_id;
 
-        // dd($TransfertCompetenceid);
+            // dd($TransfertCompetenceid);
 
 
         $Competences = Competence::where('id', $TransfertCompetenceid)->pluck('nom');
@@ -171,7 +174,7 @@ class Apprenants extends Controller
         $userGroupeId = Auth::user()->id;
         // dd($Competence);
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet', 'Competences'));
+        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','Competences'));
 
 
 
