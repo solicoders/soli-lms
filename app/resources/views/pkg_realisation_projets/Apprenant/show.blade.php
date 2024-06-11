@@ -33,11 +33,15 @@
                             <!-- Champ Compétences -->
                             <div class="col-sm-12">
                                 <label for="competences">Compétences :</label>
-                                @foreach ($Competences as $Competence)
-                                {{ $Competence}}
+                                <p>
+                                    @foreach ($Competences as $Competence)
+                                    {{ $Competence}}
+    
+                                    @endforeach
+                            
 
-                                @endforeach
-                        
+                                </p>
+
                                 <ul>
 
                                 </ul>

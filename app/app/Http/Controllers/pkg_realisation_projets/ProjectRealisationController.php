@@ -120,6 +120,7 @@ class ProjectRealisationController extends Controller
     public function store( $request)
     {
         $validatedData = $request->validated();
+        
         try {
             $this->projectRealisationRepository->create($validatedData);
             return redirect()->route('realisationProjets.index')->with('success', 'Realisation Projet created successfully.');

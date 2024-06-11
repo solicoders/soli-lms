@@ -43,16 +43,17 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row mb-3">
-                                        <div class="col-md-3">
-                                            <label for="skill">Compétence :</label>
+                                    <div class="row mb-3 ">
+                                        <label for="skill">Compétence :</label>
+                                        <div class="col-md-3  mt-4">
+                                            
                                             <select class="form-control" id="skill">
                                             @foreach($Competences as $Competence)
                                             <option value="{{ $Competence->id }}">{{ $Competence->nom }}</option>
                                         @endforeach
                                             </select>
                                         </div>
-                                        <div class="col-md-4 mt-4">
+                                        <div class="col-md-3 mt-4">
                                             <div class="input-group">
                                                 <input type="text" class="form-control" placeholder="nom brief projet...">
                                                 <div class="input-group-append">
@@ -97,24 +98,24 @@
         });
     });
 </script>
-    </td>
-        <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
-    <span class="badge badge-danger">A faire</span>
-@elseif($project->EtatRealisationProjet->etat == 'Pending')
-    <span class="badge badge-secondary">En pause</span>
-@elseif($project->EtatRealisationProjet->etat == 'In Progress')
-    <span class="badge badge-info">En cours</span>
-@elseif($project->EtatRealisationProjet->etat == 'Completed')
-    <span class="badge badge-success">Terminer</span>
-@endif</td>
-            <td>{{ $project->date_debut_realisation }}</td>
-            <td>{{ $project->date_fin_realisation }}</td>
+                                </td>
+                                    <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
+                                <span class="badge badge-danger">A faire</span>
+                            @elseif($project->EtatRealisationProjet->etat == 'Pending')
+                                <span class="badge badge-secondary">En pause</span>
+                            @elseif($project->EtatRealisationProjet->etat == 'In Progress')
+                                <span class="badge badge-info">En cours</span>
+                            @elseif($project->EtatRealisationProjet->etat == 'Completed')
+                                <span class="badge badge-success">Terminer</span>
+                            @endif</td>
+                                        <td>{{ $project->date_debut_realisation }}</td>
+                                        <td>{{ $project->date_fin_realisation }}</td>
 
             <td class="text-center">
                                                 <a href="{{ route('apprenantRealisations.show', $project->id) }}" class='btn btn-default btn-sm'>
                                                     <i class="far fa-eye"></i>
                                                 </a>
-                                                <a href="{{ route('apprenantRealisations.edit', $project->id) }}" class="btn btn-default btn-sm" >
+                                                <a href="{{ route('apprenantRealisations.create', $project->EtatRealisationProjet->id) }}" class="btn btn-default btn-sm" >
                                                     <i class="fas fa-edit"></i>
                                                 </a>
             </td>

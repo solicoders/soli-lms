@@ -29,7 +29,9 @@ use App\Repositories\pkg_creation_projets\ProjetRepository;
 use App\Repositories\pkg_creation_projets\ResourceRepository;
 use App\Repositories\pkg_creation_projets\TechnologieCompetenceRepository;
 use App\Repositories\pkg_creation_projets\TransfertCompetenceRepository;
+use App\Repositories\pkg_realisation_projets\LivrableRealisationRepository;
 use App\Repositories\pkg_rh\ApprenantRepository;
+use App\Models\pkg_realisation_projets\LivrableRealisation;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -45,6 +47,8 @@ class Apprenants extends Controller
     protected $apprenantRepository;
     protected $transfercompetenceRepository;
     protected $technologiecompetenceRepository;
+    protected $LivrableRealisationRepository;
+    
     public function __construct(
     ProjetRepository $projetRepository,
     LivrableRepository $livrableRepository,
@@ -54,6 +58,8 @@ class Apprenants extends Controller
     ApprenantRepository $apprenantRepository,
     TransfertCompetenceRepository $transfercompetenceRepository,
     TechnologieCompetenceRepository $technologiecompetenceRepository,
+    LivrableRealisationRepository $LivrableRealisationRepository,
+
 
     ProjectRealisationRepository $projectRealisationRepository,)
     {
@@ -66,6 +72,7 @@ class Apprenants extends Controller
         $this->apprenantRepository = $apprenantRepository;
         $this->transfercompetenceRepository = $transfercompetenceRepository;
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
+        $this->LivrableRealisationRepository = $LivrableRealisationRepository;
         }
 
     public function index(Request $request)
@@ -94,21 +101,40 @@ class Apprenants extends Controller
         return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes', 'EtatRealisationProjet'));
     }
 
+
     public function create()
     {
-        return view('pkg_realisation_projets.realisationProjet.create');
+        
+        return view('pkg_realisation_projets.Apprenant.create');
     }
 
     public function store(Request $request)
     {
-        $validatedData = $request->validated();
-        try {
-            $this->projectRealisationRepository->create($validatedData);
-            return redirect()->route('realisationProjets.index')->with('success', 'Realisation Projet created successfully.');
-        } catch (\Exception $e) {
-            return back()->withInput()->withErrors(['error' => $e->getMessage()]);
-        }
+        
+
+        // try {
+            $projetId = $request->realisation_projet_id;
+
+            dd($projetId);
+            $validatedData = $request->validate([
+                'nom' => 'required|string',
+                'lien' => 'required|string',
+
+                // 'description' => 'nullable|string',
+                // 'nature_livrable_id' => 'required|integer',
+                'projet_id' => 'required|integer'
+            ]);
+            dd($validatedData);
+            $this->LivrableRealisationRepository->create($validatedData);
+            return redirect()->route('livrables.index')->with('success', 'Livrable ajouté avec succès.');
+        // } catch (LivrableAlreadyExistException $e) {
+        //     return back()->withInput()->withErrors(['livrable_exists' => $e->getMessage()]);
+        // } catch (\Exception $e) {
+        //     return abort(500);
+        // }
     }
+
+
 
     public function show($id)
     {

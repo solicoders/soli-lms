@@ -155,6 +155,7 @@ abstract class BaseRepository implements RepositoryInterface
     public function create(array $data){
         
         return $this->model->create($data);
+        
     }
 
     /**
