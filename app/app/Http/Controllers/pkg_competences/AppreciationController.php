@@ -61,13 +61,13 @@ class AppreciationController extends AppBaseController
     public function show(string $id)
     {
 
-        $fetchedData = $this->AppreciationRepository->find($id);
+        $fetchedData = $this->AppreciationRepository->find((int)$id);
         return view('pkg_competences.Appreciation.show', compact('fetchedData'));
     }
 
     public function edit(string $id)
     {
-        $dataToEdit = $this->AppreciationRepository->find($id);
+        $dataToEdit = $this->AppreciationRepository->find((int)$id);
 
         return view('pkg_competences.Appreciation.edit', compact('dataToEdit'));
     }
@@ -81,7 +81,7 @@ class AppreciationController extends AppBaseController
 
     public function destroy(string $id)
     {
-        $this->AppreciationRepository->destroy($id);
+        $this->AppreciationRepository->destroy((int)$id);
         return redirect()->route('Appreciation.index')->with('success', __('messages.delete_success'));
     }
 

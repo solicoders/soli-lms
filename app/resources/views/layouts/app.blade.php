@@ -13,11 +13,12 @@
     <!-- TODO : à importer dans app.css -->
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
-    @vite(['resources/css/pkg_creation_projets/pkg_creation_projets.css', 'resources/js/pkg_creation_projets/pkg_creation_projets.js'])
+    {{-- @vite(['resources/css/pkg_creation_projets/pkg_creation_projets.css', 'resources/js/pkg_creation_projets/pkg_creation_projets.js']) --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -46,10 +47,10 @@
                             <img src="{{ asset('images/man.png') }}" class="user-image img-circle elevation-2"
                                 alt="User Image">
                             <!--  <p>
-                               
+
                                 <small>Member since </small>
                             </p> -->
-                        </li> 
+                        </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -160,6 +161,10 @@
         });
 
     </script>
+
+<script>
+    CKEDITOR.replace('editor');
+</script>
     <script>
         // Get references to elements
         const addLinkButtons = document.querySelectorAll('.add-link-btn');

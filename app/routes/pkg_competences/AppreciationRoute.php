@@ -12,12 +12,13 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [AppreciationController::class, 'index'])->name('Appreciation.index');
             Route::get('/Appreciation/form-ajouter', [AppreciationController::class, 'create'])->name('Appreciation.create');
             Route::post('/Appreciation/ajouter', [AppreciationController::class, 'store'])->name('Appreciation.store');
-            Route::get('/Appreciation/{id}', [AppreciationController::class, 'show'])->name('Appreciation.show');
+            Route::get('/Appreciation/export', [AppreciationController::class, 'export'])->name('Appreciation.export');
+            Route::post('/Appreciation/import', [AppreciationController::class, 'import'])->name('Appreciation.import');
+            Route::get('/Appreciation/show/{id}', [AppreciationController::class, 'show'])->name('Appreciation.show');
             Route::get('/Appreciation/{id}/edit', [AppreciationController::class, 'edit'])->name('Appreciation.edit');
             Route::put('/Appreciation/{id}/update', [AppreciationController::class, 'update'])->name('Appreciation.update');
             Route::delete('/Appreciation/{id}/delete', [AppreciationController::class, 'destroy'])->name('Appreciation.delete');
-            Route::get('/Appreciation/export', [AppreciationController::class, 'export'])->name('Appreciation.export');
-        Route::post('/Appreciation/import', [AppreciationController::class, 'import'])->name('Appreciation.import');
+
         });
     });
 });

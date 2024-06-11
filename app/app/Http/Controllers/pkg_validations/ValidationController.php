@@ -101,9 +101,8 @@ class ValidationController extends Controller
         }else  if(($validatedData['validations'][$validatedData['realisation_projet_id']]['note'] < 10 ||$validatedData['validations'][$validatedData['realisation_projet_id']]['note'] > 12 )&& $validatedData['validations'][$validatedData['realisation_projet_id']]['appreciation_id'] == 2){
             return back()->with('error', 'la note dôit être  entre  10 et 12 pour cette appreciation ');
         }else if (($validatedData['validations'][$validatedData['realisation_projet_id']]['note'] < 13 ||$validatedData['validations'][$validatedData['realisation_projet_id']]['note'] > 20) && $validatedData['validations'][$validatedData['realisation_projet_id']]['appreciation_id'] == 1){
-            return back()->with('error', 'la note dôit être  entre 13 et 20 pour cette appreciation '); 
+            return back()->with('error', 'la note dôit être  entre 13 et 20 pour cette appreciation ');
         }
-
 
         $realisationProjetId = $validatedData['realisation_projet_id'];
 
@@ -198,6 +197,6 @@ class ValidationController extends Controller
      'appreciations',
      'messagesByCompetence',
      'notesByCompetence' // Pass the notes to the view
- ));     
+ ));
     }
 }

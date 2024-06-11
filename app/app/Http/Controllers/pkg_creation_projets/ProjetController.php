@@ -65,27 +65,37 @@ class ProjetController extends Controller
 
     public function index(Request $request)
     {
-        // Assuming 'transfertCompetences', 'competence', and other related models are the relationships
         $projetData = $this->projetRepository->with([
             'livrables',
             'resources',
             'transfertCompetences.competence',
             'transfertCompetences.appreciation',
-        ])->paginate();
+        ]);
         $competences = Competence::all();
-
-
-
+        $searchValue = $request->get('searchValue');
+        $competenceId = $request->get('competenceId');
         if ($request->ajax()) {
-            $searchValue = $request->get('searchValue');
-            if ($searchValue !== '') {
-                $searchQuery = str_replace(' ', '%', $searchValue);
-                $projetData = $this->projetRepository->searchData($searchQuery);
-                return view('pkg_creation_projets.index', compact('projetData'))->render();
+
+
+            if ($searchValue !== '' || $competenceId !== null) {
+                $projetData = $this->projetRepository->filterAndSearch($competenceId, $searchValue);
+                return view('pkg_creation_projets.table', compact('projetData','searchValue','competenceId'))->render();
             }
+
+            $projetData = $this->projetRepository->paginate();
+            return view('pkg_creation_projets.table', compact('projetData','searchValue','competenceId'))->render();
         }
-        return view('pkg_creation_projets.index', compact('projetData','competences'));
+
+        $projetData = $this->projetRepository->paginate();
+        return view('pkg_creation_projets.index', compact('projetData', 'competences','searchValue','competenceId'));
     }
+
+
+
+
+
+
+
 
     public function create()
     {
@@ -386,6 +396,6 @@ if (isset($validatedData['competences'])) {
 
     public function export()
     {
-        return Excel::download(new ProjetExport, 'projets.xlsx'); // Add 'return' 
+        return Excel::download(new ProjetExport, 'projets.xlsx'); // Add 'return'
     }
 }
