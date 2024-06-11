@@ -8,6 +8,8 @@ return [
     'travailAFaire'=>'Travail à faire',
     'critereDeTravail'=>'Critère de validation',
     'link' => 'Lien',
+    'description' => 'Description',
+
 
 ];
 

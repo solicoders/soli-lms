@@ -112,7 +112,14 @@ class ProjetController extends Controller
     {
         // 1. Validate the request data
         $validatedData = $request->validated();
+        // dd($validatedData);
+ // 2. Get the authenticated user's ID
+ $userId = auth()->id();
+//  dd($userId);
 
+ // 3. Create the project using the repository
+ $validatedData['formateur_id'] = $userId; // Set the formateur_id
+        //  dd($validatedData);
         // 2. Create the project using the repository
         $projet = $this->projetRepository->create($validatedData);
 
