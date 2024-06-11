@@ -17,12 +17,17 @@ return [
     'action' => 'Action',
     'detail' => 'Détail',
     'description' => 'Description',
-    'list' => 'List',
+
+    'list' => 'Liste',
+    'link' => 'Lien',
+    'link1' => 'Lien1',
+
     'home' => 'Accueil',
+    'Gestion_des_formations' => 'Gestion_des_formations',
     'addSucées' => 'a été ajouté avec succès.',
     'updateSucées' => 'a été mis à jour avec succès.',
     'deleteSucées' => 'a été supprimé avec succès.',
 
-];
 
+];
 
