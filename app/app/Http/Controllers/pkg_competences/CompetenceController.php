@@ -6,6 +6,7 @@ use App\Exceptions\pkg_competences\CompetenceAlreadyExistException;
 use App\Http\Controllers\Controller;
 use App\Imports\pkg_competences\CompetenceImport;
 use App\Models\pkg_competences\Competence;
+use App\Models\pkg_competences\Module;
 use Illuminate\Http\Request;
 use App\Http\Requests\pkg_competences\CompetenceRequest;
 use App\Repositories\pkg_competences\CompetenceRepository;
@@ -24,18 +25,22 @@ class CompetenceController extends AppBaseController
     }
 
     public function index(Request $request)
-    {
-        if ($request->ajax()) {
-            $searchValue = $request->get('searchValue');
-            if ($searchValue !== '') {
-                $searchQuery = str_replace(' ', '%', $searchValue);
-                $competenceData = $this->competenceRepository->searchData($searchQuery);
-                return view('pkg_competences.competence.index', compact('competenceData'))->render();
-            }
+{
+    if ($request->ajax()) {
+        $searchValue = $request->get('searchValue');
+        if (!empty($searchValue)) {
+            $searchQuery = str_replace(' ', '%', $searchValue);
+            $competenceData = $this->competenceRepository->searchData($searchQuery);
+            return view('pkg_competences.competence.table', compact('competenceData'))->render();
         }
-        $competenceData = $this->competenceRepository->paginate();
-        return view('pkg_competences.competence.index', compact('competenceData'));
     }
+
+    $competenceData = $this->competenceRepository->paginate();
+    $allModules = Module::all();
+
+    return view('pkg_competences.competence.index', compact('competenceData', 'allModules'));
+}
+
 
     public function create()
     {
