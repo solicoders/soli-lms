@@ -2,6 +2,11 @@
 
 @section('content')
 <section class="content">
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
     <form action="{{ route('validations.store') }}" method="POST">
         @csrf
         <input type="hidden" name="realisation_projet_id" value="{{ $realisation->id }}">
