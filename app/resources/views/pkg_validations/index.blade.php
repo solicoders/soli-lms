@@ -58,7 +58,7 @@
                                             <th>{{ __('app.description') }}</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="richtext">
                                         @foreach ($competences as $competence)
                                             <tr>
                                                 <td>{{ $competence->competence->nom }}</td>
@@ -108,5 +108,23 @@
             </div>
         </div>
     </form>
+    <script>
+        // Wait for the DOM content to be loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the div element with id "step1"
+            var step1Div = document.getElementById('richtext');
+            // Get all textarea elements within the div
+            var textareas = step1Div.querySelectorAll('textarea');
+
+            // Loop through each textarea and initialize CKEditor
+            textareas.forEach(function (textarea) {
+                ClassicEditor
+                    .create(textarea)
+                    .catch(error => {
+                        console.error(error);
+                    });
+            });
+        });
+    </script>
 </section>
 @endsection
