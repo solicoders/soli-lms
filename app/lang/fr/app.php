@@ -22,6 +22,7 @@ return [
     'addSucées' => 'a été ajouté avec succès.',
     'updateSucées' => 'a été mis à jour avec succès.',
     'deleteSucées' => 'a été supprimé avec succès.',
+
 ];
 
 

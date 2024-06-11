@@ -35,7 +35,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="description">{{ __('app.description') }}</label>
+                                                    <label for="description">{{ __('pkg_creation_projets/Projet.description') }}</label>
                                                     <textarea class="form-control @error('description') is-invalid @enderror ckeditor-textarea" id="description"
                                                               name="description" rows="3">{{ old('description') ?? ($dataToEdit ? $dataToEdit->description : '') }}</textarea>
                                                     @error('description')
@@ -43,7 +43,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="travailAFaire">{{ __('app.travailAFaire') }}</label>
+                                                    <label for="travailAFaire">{{ __('pkg_creation_projets/Projet.travailAFaire') }}</label>
                                                     <textarea class="form-control @error('travailAFaire') is-invalid @enderror ckeditor-textarea" id="travailAFaire"
                                                               name="travailAFaire"
                                                               rows="3">{{ old('travailAFaire') ?? ($dataToEdit ? $dataToEdit->travailAFaire : '') }}</textarea>
@@ -52,7 +52,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="critereDeTravail">{{ __('app.critereDeTravail') }}</label>
+                                                    <label for="critereDeTravail">{{ __('pkg_creation_projets/Projet.critereDeTravail') }}</label>
                                                     <textarea class="form-control @error('critereDeTravail') is-invalid @enderror ckeditor-textarea" id="critereDeTravail"
                                                               name="critereDeTravail"
                                                               rows="3">{{ old('critereDeTravail') ?? ($dataToEdit ? $dataToEdit->critereDeTravail : '') }}</textarea>
@@ -61,7 +61,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="dateDebut">{{ __('app.datedebut') }}</label>
+                                                    <label for="dateDebut">{{ __('pkg_creation_projets/Projet.datedebut') }}</label>
                                                     <input type="date" class="form-control @error('dateDebut') is-invalid @enderror" id="dateDebut"
                                                            name="dateDebut" value="{{ old('dateDebut') ?? ($dataToEdit ? $dateDebutFormatted : date('Y-m-d')) }}">
                                                     @error('dateDebut')
@@ -69,7 +69,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="dateFin">{{ __('app.datefin') }}</label>
+                                                    <label for="dateFin">{{ __('pkg_creation_projets/Projet.datefin') }}</label>
                                                     <input type="date" class="form-control @error('dateFin') is-invalid @enderror" id="dateFin"
                                                            name="dateFin" value="{{ old('dateFin') ?? ($dataToEdit ? $dateFinFormatted : date('Y-m-d')) }}">
                                                     @error('dateFin')
@@ -97,14 +97,14 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="livrable_description">{{ __('app.description') }}</label>
+                                                                <label for="livrable_description">{{ __('pkg_creation_projets/Projet.description') }}</label>
                                                                 <textarea class="form-control @error('livrable_description.*') is-invalid @enderror ckeditor-textarea" id="livrable_description" name="livrable_description[]" rows="3">{{ $livrable->description }}</textarea>
                                                                 @error('livrable_description.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                                 @enderror
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="livrable_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
+                                                                <label for="livrable_link">{{ __('pkg_creation_projets/Projet.link') }}  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                                 <input type="text" class="form-control @error('livrable_link.*') is-invalid @enderror" id="livrable_link" name="livrable_link[]" value="{{ $livrable->lien }}">
                                                                 @error('livrable_link.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -126,14 +126,14 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="livrable_description">{{ __('app.description') }} {{ __('pkg_creation_projets/Livrable.singular') }}</label>
+                                                            <label for="livrable_description">{{ __('pkg_creation_projets/Projet.description') }} {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                             <textarea class="form-control @error('livrable_description.*') is-invalid @enderror ckeditor-textarea" id="livrable_description" name="livrable_description[]" rows="3"></textarea>
                                                             @error('livrable_description.*')
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="livrable_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
+                                                            <label for="livrable_link">{{ __('pkg_creation_projets/Projet.link') }}  {{ __('pkg_creation_projets/Livrable.singular') }}</label>
                                                             <input type="text" class="form-control @error('livrable_link.*') is-invalid @enderror" id="livrable_link" name="livrable_link[]" value="">
                                                             @error('livrable_link.*')
                                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -161,7 +161,7 @@
                                                                     @enderror
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="ressource_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                                    <label for="ressource_link">{{ __('pkg_creation_projets/Projet.link') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                                     <input type="text" class="form-control @error('ressource_lien.*') is-invalid @enderror" id="ressource_link" name="ressource_lien[]" value="{{ $resource->lien }}">
                                                                     @error('ressource_lien.*')
                                                                     <div class="invalid-feedback">{{ $message }}</div>
@@ -176,14 +176,14 @@
                                                             <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
                                                             <div class="form-group">
-                                                                <label for="ressource_description">{{ __('app.description') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                                <label for="ressource_description">{{ __('pkg_creation_projets/Projet.description') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                                 <textarea class="form-control @error('ressource_description.*') is-invalid @enderror ckeditor-textarea" id="ressource_description" name="ressource_description[]" rows="3"></textarea>
                                                                 @error('ressource_description.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
                                                                 @enderror
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="ressource_link">{{ __('app.link') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
+                                                                <label for="ressource_link">{{ __('pkg_creation_projets/Projet.link') }}  {{ __('pkg_creation_projets/Resource.singular') }}</label>
                                                                 <input type="text" class="form-control @error('ressource_lien.*') is-invalid @enderror" id="ressource_link" name="ressource_lien[]">
                                                                 @error('ressource_lien.*')
                                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -207,7 +207,7 @@
                                                         $lang = Config::get('app.locale');
                                                         $translatedName = TranslationHelper::getTitle(  __('pkg_competences/competence.plural'), $lang);
                                                         echo $translatedName;
-                                
+
                                                     @endphp     .</p>
                                                     <table class="table">
                                                         <thead>
@@ -413,6 +413,15 @@
             natureSelect.appendChild(option);
         @endforeach
 
+        var lienLabel = document.createElement("label");
+        lienLabel.textContent = "Lien du livrable";
+
+        var lienInput = document.createElement("input");
+        lienInput.type = "url";
+        lienInput.className = "form-control";
+        lienInput.name = "livrable_link[]";
+        lienInput.placeholder = "Lien du livrable";
+
         // Create textarea for livrable description
         var descriptionLabel = document.createElement("label");
         descriptionLabel.textContent = "Description  livrable";
@@ -426,13 +435,21 @@
         // Append all inputs to the livraisonDiv
         livraisonDiv.appendChild(nomLabel);
         livraisonDiv.appendChild(nomInput);
+
         livraisonDiv.appendChild(natureLabel);
         livraisonDiv.appendChild(natureSelect);
+        livraisonDiv.appendChild(lienLabel);
+        livraisonDiv.appendChild(lienInput);
         livraisonDiv.appendChild(descriptionLabel);
         livraisonDiv.appendChild(descriptionTextarea);
 
         // Append the livraisonDiv to the container
         document.getElementById("livrables-container").appendChild(livraisonDiv);
+        ClassicEditor
+            .create(descriptionTextarea)
+            .catch(error => {
+                console.error(error);
+            });
     }
 </script>
 <script>
@@ -484,44 +501,18 @@
 
         // Append the ressourceDiv to the container
         document.getElementById("ressources-container").appendChild(ressourceDiv);
+
+        // Initialize CKEditor for the newly created textarea
+        ClassicEditor
+            .create(descriptionTextarea)
+            .catch(error => {
+                console.error(error);
+            });
     }
 </script>
 
-    <script>
-        ClassicEditor
-    .create(document.querySelector('#description'))
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
 
-ClassicEditor
-    .create(document.querySelector('#travailAFaire'))
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
 
-ClassicEditor
-    .create(document.querySelector('#critereDeTravail'))
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-    ClassicEditor
-    .create(document.querySelectorAll('.ckeditor-textarea'))
-    .then(editors => {
-        console.log(editors);
-    })
-    .catch(error => {
-        console.error(error);
-    });    </script>
 
 
 
@@ -536,5 +527,24 @@ ClassicEditor
     });
 
 </script>
+<script>
+    // Wait for the DOM content to be loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the div element with id "step1"
+        var step1Div = document.getElementById('step1');
+        // Get all textarea elements within the div
+        var textareas = step1Div.querySelectorAll('textarea');
 
+        // Loop through each textarea and initialize CKEditor
+        textareas.forEach(function (textarea) {
+            ClassicEditor
+                .create(textarea)
+                .catch(error => {
+                    console.error(error);
+                });
+                
+        });
+    });
+    
+</script>
 @endsection
