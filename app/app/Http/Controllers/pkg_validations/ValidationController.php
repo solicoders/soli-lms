@@ -96,6 +96,15 @@ class ValidationController extends Controller
     {
         $validatedData = $request->validated(); // This will contain the validated data
 
+        if($validatedData['validations'][$validatedData['realisation_projet_id']]['note'] > 9 && $validatedData['validations'][$validatedData['realisation_projet_id']]['appreciation_id'] == 3){
+            return back()->with('error', 'la note dôit être  entre  0 et 9 pour cette appreciation ');
+        }else  if(($validatedData['validations'][$validatedData['realisation_projet_id']]['note'] < 10 ||$validatedData['validations'][$validatedData['realisation_projet_id']]['note'] > 12 )&& $validatedData['validations'][$validatedData['realisation_projet_id']]['appreciation_id'] == 2){
+            return back()->with('error', 'la note dôit être  entre  10 et 12 pour cette appreciation ');
+        }else if (($validatedData['validations'][$validatedData['realisation_projet_id']]['note'] < 13 ||$validatedData['validations'][$validatedData['realisation_projet_id']]['note'] > 20) && $validatedData['validations'][$validatedData['realisation_projet_id']]['appreciation_id'] == 1){
+            return back()->with('error', 'la note dôit être  entre 13 et 20 pour cette appreciation '); 
+        }
+
+
         $realisationProjetId = $validatedData['realisation_projet_id'];
 
         // Process validations for each competence
