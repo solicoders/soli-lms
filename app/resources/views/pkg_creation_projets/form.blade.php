@@ -207,7 +207,7 @@
                                                         $lang = Config::get('app.locale');
                                                         $translatedName = TranslationHelper::getTitle(  __('pkg_competences/competence.plural'), $lang);
                                                         echo $translatedName;
-                                
+
                                                     @endphp     .</p>
                                                     <table class="table">
                                                         <thead>
@@ -413,6 +413,15 @@
             natureSelect.appendChild(option);
         @endforeach
 
+        var lienLabel = document.createElement("label");
+        lienLabel.textContent = "Lien du livrable";
+
+        var lienInput = document.createElement("input");
+        lienInput.type = "url";
+        lienInput.className = "form-control";
+        lienInput.name = "livrable_link[]";
+        lienInput.placeholder = "Lien du livrable";
+
         // Create textarea for livrable description
         var descriptionLabel = document.createElement("label");
         descriptionLabel.textContent = "Description  livrable";
@@ -426,13 +435,21 @@
         // Append all inputs to the livraisonDiv
         livraisonDiv.appendChild(nomLabel);
         livraisonDiv.appendChild(nomInput);
+
         livraisonDiv.appendChild(natureLabel);
         livraisonDiv.appendChild(natureSelect);
+        livraisonDiv.appendChild(lienLabel);
+        livraisonDiv.appendChild(lienInput);
         livraisonDiv.appendChild(descriptionLabel);
         livraisonDiv.appendChild(descriptionTextarea);
 
         // Append the livraisonDiv to the container
         document.getElementById("livrables-container").appendChild(livraisonDiv);
+        ClassicEditor
+            .create(descriptionTextarea)
+            .catch(error => {
+                console.error(error);
+            });
     }
 </script>
 <script>
@@ -484,44 +501,18 @@
 
         // Append the ressourceDiv to the container
         document.getElementById("ressources-container").appendChild(ressourceDiv);
+
+        // Initialize CKEditor for the newly created textarea
+        ClassicEditor
+            .create(descriptionTextarea)
+            .catch(error => {
+                console.error(error);
+            });
     }
 </script>
 
-    <script>
-        ClassicEditor
-    .create(document.querySelector('#description'))
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
 
-ClassicEditor
-    .create(document.querySelector('#travailAFaire'))
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
 
-ClassicEditor
-    .create(document.querySelector('#critereDeTravail'))
-    .then(editor => {
-        console.log(editor);
-    })
-    .catch(error => {
-        console.error(error);
-    });
-    ClassicEditor
-    .create(document.querySelectorAll('.ckeditor-textarea'))
-    .then(editors => {
-        console.log(editors);
-    })
-    .catch(error => {
-        console.error(error);
-    });    </script>
 
 
 
@@ -536,5 +527,24 @@ ClassicEditor
     });
 
 </script>
+<script>
+    // Wait for the DOM content to be loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the div element with id "step1"
+        var step1Div = document.getElementById('step1');
+        // Get all textarea elements within the div
+        var textareas = step1Div.querySelectorAll('textarea');
 
+        // Loop through each textarea and initialize CKEditor
+        textareas.forEach(function (textarea) {
+            ClassicEditor
+                .create(textarea)
+                .catch(error => {
+                    console.error(error);
+                });
+                
+        });
+    });
+    
+</script>
 @endsection
