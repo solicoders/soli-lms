@@ -25,81 +25,56 @@
 
                 <div class="col-sm-6">
                     <div class="float-sm-right">
-                        {{-- @can('create-ProjetController') --}}
+                        @can('create-ProjetController')
                             <a href="{{ route('projets.create') }}" class="btn btn-info">
                                 <i class="fas fa-plus"></i>
                                 {{ __('app.add') }} {{ __('GestionProjets/projet.singular') }}
                             </a>
-                        {{-- @endcan --}}
+                        @endcan
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <section class="content">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <!-- Boîte par défaut -->
-                                                            <div class="card">
-<<<<<<< HEAD
-                                                                <div class="card-header">
-                                                                    <h3 class="card-title">Tableau des brief projets</h3>                                                                
-                                                                </div>
-                                                                <div class="card-body">
-
-                                                                    <div class="row mb-3">
-                                                                        <div class="col-md-3">
-                                                                            <label for="skill">Compétence :</label>
-                                                                            <select class="form-control" id="skill">
-                                                                                <option value="">Toutes</option>
-                                                                                <option value="C1">Maquetter une application mobile</option>
-                                                                                <option value="C2">Manipuler une base de données - perfectionnement</option>
-                                                                                <option value="C3">Développer la partie back-end d’une application web ou web mobile - perfectionnement</option>
-                                                                                <option value="C4">Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement - perfectionnement</option>
-                                                                                <option value="C5">Développer une application mobile native, avec Android et React Native</option>
-                                                                                <option value="C6">Préparer et exécuter les plans de tests d’une application</option>
-                                                                                <option value="C7">Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="col-md-3">
-                                                                            <label for="projectName">Rechercher</label>
-                                                                            <input type="text" class="form-control" id="projectName" placeholder="Nom du projet :...">
-                                                                        </div>
-=======
-                                                                <div class="card-header"><div class="row mb-3">
-                                                                    <div class="col-md-3">
-                                                                        <label for="skill"> {{ __('pkg_competences/competence.plural') }} :</label>
-                                                                        <select class="form-control" id="skill">
-                                                                            <option value="">Toutes</option>
-                                                                            <option value="C1">Maquetter une application mobile</option>
-                                                                            <option value="C2">Manipuler une base de données - perfectionnement</option>
-                                                                            <option value="C3">Développer la partie back-end d’une application web ou web mobile - perfectionnement</option>
-                                                                            <option value="C4">Collaborer à la gestion d’un projet informatique et à l’organisation de l’environnement de développement - perfectionnement</option>
-                                                                            <option value="C5">Développer une application mobile native, avec Android et React Native</option>
-                                                                            <option value="C6">Préparer et exécuter les plans de tests d’une application</option>
-                                                                            <option value="C7">Préparer et exécuter le déploiement d’une application web et mobile - perfectionnement</option>
-                                                                        </select>
->>>>>>> Develop-pkg_validations
-                                                                    </div>
-                                                                    <div class="col-md-3">
-                                                                        <label for="projectName">{{ __('app.rechercher') }}</label>
-                                                                        <input type="text" class="form-control" id="projectName" placeholder="Nom du projet :...">
-                                                                    </div>
-                                                                </div>
-                                                                                                                     </div>
-                                                                <div class="card-body">
-                                                                    
-
-                                                                    </div>
-
-                                                                    @include('pkg_creation_projets.table')
-
-                                                                </div>
-                                                                <!-- /.card-body -->
-                                                            </div>
-                                                            <!-- /.card -->
-                                                        </div>
-                                                    </div>
-                                            </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Boîte par défaut -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-md-4 form-group mb-2">
+                                        <label for="competenceFilter">{{ __('pkg_competences/competence.plural') }}:</label>
+                                        <select class="form-control"id="competenceFilter">
+                                            <option value="">Toutes</option>
+                                            @foreach($competences as $competence)
+                                                <option value="{{ $competence->id }}">{{ $competence->nom }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 form-group mb-2">
+                                        <label for="table_search">{{ __('app.rechercher') }}</label>
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" name="table_search" id="table_search" class="form-control" placeholder="Recherche">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-outline-secondary">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+@include('pkg_creation_projets.table')
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id='page' value="1">
+    </section>
 @endsection
+
