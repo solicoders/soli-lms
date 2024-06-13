@@ -25,7 +25,8 @@ class FormationRequest extends FormRequest
             'nom' => 'required|string|max:255',
             'description' => 'nullable|string',
             'lien' => 'nullable|url',
-            'lien1' => 'nullable|url'
+            'lien1' => 'nullable|url',
+            'categorie_id' => 'required'
 
         ];
     }

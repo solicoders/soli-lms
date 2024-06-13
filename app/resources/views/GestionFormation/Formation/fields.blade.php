@@ -27,14 +27,22 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-    
-    <div class="form-group">
-        <label for="lien1">{{ __('app.link1') }}</label>
-        <input name="lien1" type="url" class="form-control" id="link1" placeholder="Entrez le lien" value="{{ $dataToEdit ? $dataToEdit->lien1 : old('lien1') }}">
-        @error('lien1')
-            <div class="text-danger">{{ $message }}</div>
-        @enderror
-    </div>
+        
+        <div class="form-group">
+            <label for="categorie">{{ __('app.category') }}</label>
+            <select name="categorie_id" class="form-control" id="categorie">
+                <option value="">Sélectionner une catégorie</option>
+                @foreach ($categories as $categorie)
+                    <option value="{{ $categorie->id }}"
+                        {{ ($dataToEdit && $dataToEdit->categorie_id == $categorie->id) ? 'selected' : '' }}>
+                        {{ $categorie->nom }}
+                    </option>
+                @endforeach
+            </select>
+            @error('categorie_id')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
 </div>
 </div>
     <div class="card-footer">

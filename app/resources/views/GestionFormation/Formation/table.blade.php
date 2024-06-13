@@ -5,6 +5,7 @@
             <tr>
                 <th>{{ __('app.name') }}</th>
                 <th>{{ __('app.description') }}</th>
+                <th>{{ __('app.category') }}</th>
                 <th>{{ __('app.link') }}</th>
                 <th>{{ __('app.link1') }}</th>
                 <th class="text-center">{{ __('app.action') }}</th>
@@ -15,6 +16,7 @@
                 <tr>
                     <td>{{ $formation->nom }}_{{ $formation->created_at }}</td>
                     <td>{{ $formation->description }}</td>
+                    <td>{{ $formation->categorie->nom }}</td>
                     <td>{{ $formation->lien }}</td>
                     <td>{{ $formation->lien1 }}</td>
                     <td class="text-center">

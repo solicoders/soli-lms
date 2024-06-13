@@ -4,6 +4,7 @@ namespace App\Http\Controllers\pkg_formations;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\pkg_formations\Categorie;
 use App\Http\Requests\pkg_formations\FormationRequest;
 use App\Repositories\pkg_formations\FormationRepository;
 use App\Imports\pkg_formations\FormationsImport;
@@ -24,6 +25,7 @@ class FormationController extends Controller
     {
         $searchValue = $request->input('search');
         $formationData = $this->formationRepository->searchData($searchValue, 2);
+        $categories = Categorie::all();
         return view('GestionFormation.Formation.index', compact('formationData'));
     }
 
@@ -31,7 +33,8 @@ class FormationController extends Controller
     public function create()
     {  
         $dataToEdit = null;
-        return view('GestionFormation.Formation.create', compact('dataToEdit'));
+        $categories = Categorie::all();
+        return view('GestionFormation.Formation.create', compact('dataToEdit', 'categories'));
     }
 
     public function store(FormationRequest $request)
@@ -50,7 +53,7 @@ class FormationController extends Controller
     public function edit($id)
     {
         $dataToEdit = $this->formationRepository->find($id);
-        return view('GestionFormation.Formation.edit', compact('dataToEdit'));
+        return view('GestionFormation.Formation.edit', compact('dataToEdit', 'categories'));
     }
 
     public function update(FormationRequest $request, $id)

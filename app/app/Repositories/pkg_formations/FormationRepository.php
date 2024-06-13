@@ -54,7 +54,6 @@ class FormationRepository extends BaseRepository
             // Vérifie si le lien est présent dans les données et l'associe à la formation
         
                 $formation->lien = $data['lien'];
-                $formation->lien1 = $data['lien1'];
                 $formation->save();
     
 

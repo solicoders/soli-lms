@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(pkg_rhSeeder::class);
         $this->call(pkg_competencesSeeder::class);
         $this->call(pkg_creation_projetsSeeder::class);
-        // $this->call(pkg_realisation_projetsSeeder::class);
+        $this->call(pkg_realisation_projetsSeeder::class);
         $this->call(pkg_creation_tacheSeeder::class);
         $this->call(pkg_realisation_tacheSeeder::class);
         $this->call(pkg_validationsSeeder::class);
