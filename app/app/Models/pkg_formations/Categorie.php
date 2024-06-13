@@ -5,13 +5,9 @@ namespace App\Models\pkg_formations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Formation extends Model
+class Categorie extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nom',
-        'description',
-        'lien'
-        
-    ];
+    protected $table = 'categorie'; 
+    protected $fillable = ['nom'];
 }

@@ -2,27 +2,24 @@
 
 namespace Database\Seeders\pkg_formations;
 
-use App\Models\pkg_formations\Formation;
-use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\pkg_formations\Categorie;
 
-class FormationSeeder extends Seeder
+class categorieSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $csvFile = fopen(base_path("database/data/pkg_formations/formations.csv"), "r");
+        $csvFile = fopen(base_path("database/data/pkg_formations/categorie.csv"), "r");
         $firstline = true;
         $i = 0;
         while (($data = fgetcsv($csvFile)) !== FALSE) {
             if (!$firstline) {
-                Formation::create([
-                    "nom"=>$data['0'],
-                    "description"=>$data['1'],
-                    "lien"=>$data['2']
+                Categorie::create([
+                    "nom"=>$data['0']
                 ]);
             }
             $firstline = false;

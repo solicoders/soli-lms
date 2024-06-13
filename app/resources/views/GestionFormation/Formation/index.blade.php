@@ -71,7 +71,8 @@
                                                 {{$formationData->links()}}
                                                      </ul>
                                                     </div>
-                                                 </div>                                                                </div>
+                                                 </div>
+                                            </div>
                                             <!-- /.card-footer-->
                 </div>
             </div>
