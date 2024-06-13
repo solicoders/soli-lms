@@ -15,7 +15,9 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     public const ADMIN = "admin";
-    public const MEMBRE = "membre";
+    public const APPRENANT = "apprenant";
+    public const FORMATEUR = "formateur";
+    public const RESPONSABLE = "responsable";
 
     /**
      * The attributes that are mass assignable.

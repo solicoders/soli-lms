@@ -1,17 +1,32 @@
 <?php
+
 namespace App\Repositories\pkg_rh;
 
-use App\Repositories\BaseRepository;
-use Illuminate\Database\Eloquent\Model;
-use App\Exceptions\pkg_rh\ApprenantException;
+use App\Models\User;
 use App\Models\pkg_rh\Apprenant;
+use App\Repositories\BaseRepository;
+use App\Exceptions\pkg_rh\ApprenantException;
+use App\Exceptions\pkg_rh\ApprenantAlreadyExistException;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ApprenantRepository extends BaseRepository
 {
+    protected $type;
+
+    /**
+     * Les champs de recherche disponibles pour les projets.
+     *
+     * @var array
+     */
     protected $fieldsSearchable = [
-        'name'
+        'nom','prenom','type' ,'groupe_id'
     ];
 
+    /**
+     * Renvoie les champs de recherche disponibles.
+     *
+     * @return array
+     */
     public function getFieldsSearchable(): array
     {
         return $this->fieldsSearchable;
@@ -24,6 +39,7 @@ class ApprenantRepository extends BaseRepository
      */
     public function __construct()
     {
+        $this->type = "Apprenant";
         parent::__construct(new Apprenant());
     }
 
@@ -41,14 +57,10 @@ class ApprenantRepository extends BaseRepository
 
     }
 
-    public function update($id, array $data)
+    public function paginate($search = [], $perPage = 3, array $columns = ['*']): LengthAwarePaginator
     {
-        $nom = $data['nom'];
-
-        $existingApprenant =  $this->model->where('nom', $nom)->where('id', '!=', $id)->exists();
-
-        if ($existingApprenant) {
-            throw ApprenantException::AlreadyExistApprenant();
+        if ($this->type !== null) {
+            return $this->model->where('type', $this->type)->paginate($perPage, $columns);
         } else {
             return $this->model->paginate($perPage, $columns);
         }
