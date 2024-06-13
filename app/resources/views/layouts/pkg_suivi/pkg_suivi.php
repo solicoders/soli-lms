@@ -8,14 +8,9 @@
         </p>
     </a>
     <ul class="nav nav-treeview">
+        
         <li class="nav-item">
-            <a href="{{ route('suivi.projets') }}" class="nav-link {{ Request::is('suivi/projets*') ? 'active' : '' }}">
-                <i class="nav-icon fas fa-folder-open"></i>
-                <p>Suivi des projets</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link {{ Request::is('suiviCompetences*') ? 'active' : '' }}">
+            <a href="{{ route('suivi.competences') }}" class="nav-link {{ Request::is('suivi/competences*') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-star"></i>
                 <p>Suivi des compétences</p>
             </a>
