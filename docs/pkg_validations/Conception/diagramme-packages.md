@@ -38,9 +38,17 @@ Dans le processus de conception d’une interface utilisateur, il est important 
 
 ## Maquette
 
+<<<<<<< HEAD
+![Maquette - pkg_validation ](/soli-lms/diagrammes/pkg_validations/){:width="70%"}
+*Figure 12 :Maquette - pkg_validations*
+
+
+
+=======
 ![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu1.png){:width="70%"}
 *Figure 12 :Maquette - pkg_Realisations*
 
 
 ![Maquette - pkg_validation ](/soli-lms/pkg_validations/Conception/images/Maqu2.png){:width="70%"}
 *Figure 12 :Maquette - pkg_validations*
+>>>>>>> develop-pkg_validations

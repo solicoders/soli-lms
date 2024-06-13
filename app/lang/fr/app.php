@@ -13,7 +13,13 @@ return [
     'action'=> 'Action',
     'detail' => 'Detail',
     'description' => 'Description',
-    'list' => 'List',
-    'link' => 'Lien',
+    'list' => 'Liste',
     'Gestion_des_formations' => 'Gestion des formations',
+   'Previous'=>'Précédent',
+    'Next'=>'Suivant',
+    'Submit'=>'Soumettre',
+    'checkall'=>'Tout cocher',
+    'date'=>'Date',
+    'learner'=>'Apprenants',
+    'select'=>'sélectionner'
 ];

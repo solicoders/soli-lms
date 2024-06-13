@@ -16,6 +16,12 @@ class ApprenantRepository extends BaseRepository
     {
         return $this->fieldsSearchable;
     }
+
+
+
+    /**
+     * Constructeur de la classe ProjetRepository.
+     */
     public function __construct()
     {
         parent::__construct(new Apprenant());
@@ -24,14 +30,15 @@ class ApprenantRepository extends BaseRepository
     public function create(array $data)
     {
         $nom = $data['nom'];
-
-        $existingApprenant =  $this->model->where('nom', $nom)->exists();
-
+        $prenom = $data['prenom'];
+        
+        $existingApprenant = $this->model->where('nom', $nom)->where('prenom', $prenom)->exists();
         if ($existingApprenant) {
             throw ApprenantException::AlreadyExistApprenant();
-        } else {
+        }else{
             return parent::create($data);
         }
+
     }
 
     public function update($id, array $data)
@@ -43,7 +50,28 @@ class ApprenantRepository extends BaseRepository
         if ($existingApprenant) {
             throw ApprenantException::AlreadyExistApprenant();
         } else {
-            return parent::update($id, $data);
+            return $this->model->paginate($perPage, $columns);
         }
+    }
+
+    public function getAll(){
+        return $this->model->with('user')->get();
+    }
+    
+
+
+    /**
+     * Recherche apprenants correspondants aux critères spécifiés.
+     *
+     * @param mixed $searchableData Données de recherche.
+     * @param int $perPage Nombre d'éléments par page.
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function searchData($searchableData, $perPage = 10)
+    {
+        return $this->model->where('type', 'Apprenant')->where(function($query) use ($searchableData) {
+            $query->where('nom', 'like', '%' . $searchableData . '%')
+                  ->orWhere('prenom', 'like', '%' . $searchableData . '%');
+        })->paginate($perPage);
     }
 }
