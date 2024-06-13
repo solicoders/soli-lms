@@ -27,11 +27,18 @@
                                         <tr>
                                             <td>
                                                 <input type="text" name="nom" class="form-control">
+                                                @error('nom')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </td>
                                             <td>
                                                 <input type="text" name="lien" class="form-control"
                                                     value="https://example.com/presentation">
+                                                @error('lien')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </td>
+
                                             <td>
                                                 <input type="text" name="description" class="form-control">
                                             </td>

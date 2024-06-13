@@ -48,21 +48,21 @@ class Apprenants extends Controller
     protected $transfercompetenceRepository;
     protected $technologiecompetenceRepository;
     protected $LivrableRealisationRepository;
-    
+
     public function __construct(
-    ProjetRepository $projetRepository,
-    LivrableRepository $livrableRepository,
-    ResourceRepository $resourceRepository,
-    CompetenceRepository $competenceRepository,
-    TechnologieRepository $technologieRepository,
-    ApprenantRepository $apprenantRepository,
-    TransfertCompetenceRepository $transfercompetenceRepository,
-    TechnologieCompetenceRepository $technologiecompetenceRepository,
-    LivrableRealisationRepository $LivrableRealisationRepository,
+        ProjetRepository $projetRepository,
+        LivrableRepository $livrableRepository,
+        ResourceRepository $resourceRepository,
+        CompetenceRepository $competenceRepository,
+        TechnologieRepository $technologieRepository,
+        ApprenantRepository $apprenantRepository,
+        TransfertCompetenceRepository $transfercompetenceRepository,
+        TechnologieCompetenceRepository $technologiecompetenceRepository,
+        LivrableRealisationRepository $LivrableRealisationRepository,
 
 
-    ProjectRealisationRepository $projectRealisationRepository,)
-    {
+        ProjectRealisationRepository $projectRealisationRepository,
+    ) {
         $this->projectRealisationRepository = $projectRealisationRepository;
         $this->projetRepository = $projetRepository;
         $this->livrableRepository = $livrableRepository;
@@ -73,11 +73,34 @@ class Apprenants extends Controller
         $this->transfercompetenceRepository = $transfercompetenceRepository;
         $this->technologiecompetenceRepository = $technologiecompetenceRepository;
         $this->LivrableRealisationRepository = $LivrableRealisationRepository;
-        }
+    }
 
     public function index(Request $request)
     {
         $userGroupeId = Auth::user()->id;
+        $Competences = Competence::all();
+        $projects = Projet::all();
+        $EtatRealisationProjet = EtatRealisationProjet::all();
+        $Personnes = Personne::where('type', 'apprenant')
+            ->where('groupe_id', $userGroupeId)
+            ->get();
+
+        // dd($request->get('searchValue'));
+
+        if ($request->get('competenceId') != null) {
+            $competenceId = $request->get('competenceId');
+
+            $realisationProjets = $this->projectRealisationRepository->Filter($competenceId, $userGroupeId);
+            return view('pkg_realisation_projets.Apprenant.table', compact('realisationProjets', 'competenceId'))->render();
+        }
+
+        if ($request->get('searchValue') != null) {
+            // dd($request->get('competenceId'));
+            $searchValue = $request->get('searchValue');
+
+            $realisationProjets = $this->projectRealisationRepository->Search($searchValue);
+            return view('pkg_realisation_projets.Apprenant.table', compact('realisationProjets', 'searchValue'))->render();
+        }
 
         $realisationProjets = $this->projectRealisationRepository->with([
             'projet.transfertCompetences.competence',
@@ -85,37 +108,14 @@ class Apprenants extends Controller
             'personne',
             'etatRealisationProjet',
             'validation'
-        ])->where('personne_id', $userGroupeId)->paginate();
-        $Competences = Competence::all();
-        $projects = Projet::all();
-        $EtatRealisationProjet = EtatRealisationProjet::all();
-    
-        
-        // Get the current user's groupe_id
-        
-    
-        // Filter to get only 'apprenant' type Personnes with the same groupe_id as the current user
-        $Personnes = Personne::where('type', 'apprenant')
-            ->where('groupe_id', $userGroupeId)
-            ->get();
-
-        // $realisationProjets = RealisationProjet::with('validation')
-        // ->where('personne_id', $userGroupeId)
-        // ->paginate();
-        $searchValue = $request->get('searchValue');
-        $competenceId = $request->get('competenceId');
-        if ($request->ajax()) {
+        ])
+            ->where('personne_id', $userGroupeId)
+            ->paginate(2);
 
 
-            if ($searchValue !== '' || $competenceId !== null) {
-                $realisationProjets = $this->projectRealisationRepository->filterAndSearch($competenceId, $searchValue);
-                return view('pkg_realisation_projets.Apprenant.table', compact('realisationProjets','searchValue','competenceId'))->render();
-            }
 
-            $realisationProjets = $this->projectRealisationRepository->where('personne_id', $userGroupeId)->paginate();
-            return view('pkg_realisation_projets.Apprenant.table', compact('realisationProjets','searchValue','competenceId'))->render();
-        }
-        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets','searchValue', 'Competences','competenceId', 'projects', 'Personnes', 'EtatRealisationProjet'));
+
+        return view('pkg_realisation_projets.Apprenant.index', compact('realisationProjets', 'Competences', 'projects', 'Personnes', 'EtatRealisationProjet'));
     }
 
 
@@ -129,9 +129,11 @@ class Apprenants extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'nom' => 'required|string',
+            'lien' => 'required|string',
+        ]);
 
-        // try {
-        // $projetId = $request->realisation_projet_id;
 
         $serverBag = $request->server;
 
@@ -139,23 +141,21 @@ class Apprenants extends Controller
         $httpReferer = $serverBag->get('HTTP_REFERER');
 
         // Use the "HTTP_REFERER" value
-        $parts = explode('?', $httpReferer);
-        // dd(end($parts));
+        $parts = explode('create?', $httpReferer);
 
-        // $validatedData = $request->validate([
-        //     'nom' => 'required|string',
-        //     'lien' => 'required|string',
-        // ]);
-        // dd($request->lien);
+        if (isset($parts[1])) {
+            $partsTwo = explode('=', $parts[1]);
+        }
+
         $this->LivrableRealisationRepository->create(
             [
                 'nom' => $request->nom,
                 'lien' => $request->lien,
                 'description' => $request->description,
-                'realisation_projet_id' => end($parts)
+                'realisation_projet_id' => reset($partsTwo)
             ]
         );
-        return redirect()->back()->with('success', 'Livrable ajouté avec succès.');
+        return redirect()->route('apprenantRealisations.index')->with('success', 'Livrable ajouté avec succès.');
         // } catch (LivrableAlreadyExistException $e) {
         //     return back()->withInput()->withErrors(['livrable_exists' => $e->getMessage()]);
         // } catch (\Exception $e) {
@@ -169,16 +169,16 @@ class Apprenants extends Controller
         $realisationProjet = $this->projectRealisationRepository->find($id);
         $TransfertCompetence = $this->transfercompetenceRepository->find($id);
 
-        $competence_id = $TransfertCompetence ->pluck('competence_id');
+        $competence_id = $TransfertCompetence->pluck('competence_id');
 
-        
+
         $projects = Projet::all();
         $projectIds = [1,]; // Multiple project IDs
         // $pjctid = TransfertCompetence::whereIn('projet_id', $projectIds)->pluck('competence_id');
 
-            $TransfertCompetenceid = $TransfertCompetence->competence_id;
+        $TransfertCompetenceid = $TransfertCompetence->competence_id;
 
-            // dd($TransfertCompetenceid);
+        // dd($TransfertCompetenceid);
 
 
         $Competences = Competence::where('id', $TransfertCompetenceid)->pluck('nom');
@@ -188,7 +188,7 @@ class Apprenants extends Controller
         $userGroupeId = Auth::user()->id;
         // dd($Competence);
         $realisationProjet = $this->projectRealisationRepository->find($id);
-        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet','Competences'));
+        return view('pkg_realisation_projets.Apprenant.show', compact('realisationProjet', 'Competences'));
 
 
 
