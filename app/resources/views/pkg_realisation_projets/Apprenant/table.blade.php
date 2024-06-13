@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th> {{ __('GestionProjets/projet.singular') }}</th>
-            <th>{{ __('GestionProjets/competence.singular') }}</th>
+            <th>{{ __('pkg_competences/competence.singular') }}</th>
             <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.singular') }}</th>
             <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.date_debut_realisation') }}</th>
             <th>{{ __('pkg_realisation_projets/EtatRealisationProjet.date_fin_realisation') }}</th>
