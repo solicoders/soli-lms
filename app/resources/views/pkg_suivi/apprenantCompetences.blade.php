@@ -18,7 +18,7 @@
                 <div class="card-header col-md-12">
                     <div class="col-md-3">
                         <select class="form-control-sm form-control" id="apprenantSelect" name="apprenant">
-                            <option value="">Select Apprenant</option>
+                            <option value="">Apprenant</option>
                             @foreach ($results as $result)
                                 <option value="{{ $result['name'] }}" {{ request('apprenant') == $result['name'] ? 'selected' : '' }}>
                                     {{ $result['name'] }}
