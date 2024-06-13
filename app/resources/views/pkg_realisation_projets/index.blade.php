@@ -98,6 +98,7 @@
                                 <tr>
                                     <td class="nom-brief">{{ $project->projet->titre }}</td>
                                     <td class="etat">{{ $project->Personne->nom }}</td>
+<<<<<<< HEAD
                                     <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
                                      <span class="badge badge-danger">A faire</span>
                                         @elseif($project->EtatRealisationProjet->etat == 'Pending')
@@ -107,6 +108,18 @@
                                     @elseif($project->EtatRealisationProjet->etat == 'Completed')
                                      <span class="badge badge-success">Terminer</span>
                                     @endif</td>
+=======
+                                <td class="etat">@if($project->EtatRealisationProjet->etat == 'Cancelled')
+    <span class="badge badge-danger">A faire</span>
+@elseif($project->EtatRealisationProjet->etat == 'Pending')
+    <span class="badge badge-secondary">En pause</span>
+@elseif($project->EtatRealisationProjet->etat == 'In Progress')
+    <span class="badge badge-info">En cours</span>
+@elseif($project->EtatRealisationProjet->etat == 'Completed')
+    <span class="badge badge-success">Terminer</span>
+@endif</td>
+@endif</td>
+>>>>>>> File_Rouje
                                     <td >
                                     @if($project->validation)
                                     <span class="badge badge-success">Validé</span>
@@ -124,9 +137,17 @@
                                         </a>
                                     </td>
                                     <td >
+<<<<<<< HEAD
         
     
                                       
+=======
+                                            <a href="{{ route('validations.detail', ['realisation_id' => $project->id]) }}" class="btn btn-default btn-sm">
+                                                <i class="far fa-eye"></i>
+                                            </a>
+
+
+>>>>>>> File_Rouje
                                     </td>
                                 </tr>
                             @endforeach
