@@ -79,7 +79,6 @@ class ProjetRepository extends BaseRepository
 
      public function filterByCompetence($competenceId)
      {
-         dd($competenceId); // Check if the ID is being received
          return $this->model->whereHas('transfertCompetences', function ($query) use ($competenceId) {
              $query->where('competence_id', $competenceId);
          })->paginate();
