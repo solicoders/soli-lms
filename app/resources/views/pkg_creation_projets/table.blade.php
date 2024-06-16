@@ -1,6 +1,6 @@
 
 <div class="card-body table-responsive p-0">
-    <table  class="table table-striped text-nowrap">
+    <table id="example1"  class="table table-striped text-nowrap">
         <thead>
             <tr>
                 <th>{{ __('pkg_creation_projets/projet.singular') }}</th>
