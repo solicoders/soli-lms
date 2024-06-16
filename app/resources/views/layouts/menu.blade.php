@@ -22,6 +22,7 @@
 
 @include('layouts.pkg_rh.RHMenu')
 
+@include('layouts.pkg_suivi.pkg_suivi')
 
 @include('layouts.pkg_competences.CompetencesMenu')
 {{-- @endcan --}}
