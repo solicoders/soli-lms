@@ -8,7 +8,7 @@
         </p>
     </a>
     <ul class="nav nav-treeview">
-        
+
         <li class="nav-item">
             <a href="{{ route('suivi.competences') }}" class="nav-link {{ Request::is('suivi/competences*') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-star"></i>
