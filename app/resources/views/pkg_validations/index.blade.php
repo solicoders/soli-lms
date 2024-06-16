@@ -3,17 +3,10 @@
 @section('content')
 <section class="content">
     @if (session('error'))
-<<<<<<< HEAD
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
-=======
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
     @endif
->>>>>>> origin/develop-pkg_competences
     <form action="{{ route('validations.store') }}" method="POST">
         @csrf
         <input type="hidden" name="realisation_projet_id" value="{{ $realisation->id }}">
@@ -101,7 +94,7 @@
 
 
 
-                                            
+
                                         @endforeach
                                     </tbody>
                                 </table>

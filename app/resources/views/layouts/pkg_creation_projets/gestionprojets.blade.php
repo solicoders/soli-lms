@@ -19,8 +19,15 @@
             </a>
         </li>
         @endcan
-      <li class="nav-item">
+        <li class="nav-item">
         <a href="{{ route('realisationProjets.index') }}"
+          class="nav-link  {{ Request::is('realisationProjets*') ? 'active' : '' }}">
+          <i class="far fa-chart-bar nav-icon"></i>
+          <p>Réalisations</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('apprenantRealisations.index') }}"
           class="nav-link  {{ Request::is('realisationProjets*') ? 'active' : '' }}">
           <i class="far fa-chart-bar nav-icon"></i>
           <p>Réalisations</p>
